@@ -57,7 +57,7 @@ typedef struct FldWork {
     u16 unk_16;
     u8 unk_18[0x08];
     void* gfx;
-    u8 unk_24[0x14];
+    u8 tasks[0x14];
     u8 unk_38[0x10];
     s32 unk_48;
     u8 unk_4C[0x18];

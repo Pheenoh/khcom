@@ -358,8 +358,8 @@ void task_fld_sora_0(FldWork* work) {
         break;
     }
 
-    TaskPoolInit(work->unk_24, 2);
-    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
+    TaskPoolInit(work->tasks, 2);
+    TaskCreate(work->tasks, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
     ColliderInit(work->unk_38, 1, 4, 32);
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
 }
@@ -384,7 +384,7 @@ u8 func_08032268(FldWork* work, void* task) {
         work->unk_94 = 0;
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)task_fld_sora_1);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
     } else {
         p = &work->unk_98;
 
@@ -394,7 +394,7 @@ u8 func_08032268(FldWork* work, void* task) {
             work->unk_BC = 0;
         }
 
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         work->gfx = AnimUpdate(work->anim);
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         (*p)++;
@@ -458,7 +458,7 @@ u8 func_0803234C(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_080324DC(FldWork* work, void* task) {
@@ -750,12 +750,12 @@ u8 func_080324DC(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08032268);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
     }
 
     return 1;
@@ -899,7 +899,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_08033054(FldWork* work, void* task) {
@@ -1003,7 +1003,7 @@ u8 func_08033150(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_08033334(FldWork* work, void* task) {
@@ -1136,7 +1136,7 @@ u8 func_08033334(FldWork* work, void* task) {
         }
 
         if (work->unk_98 == 40) {
-            func_080A5830(work->unk_24, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
+            func_080A5830(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         }
 
         if (work->unk_98 > 140) {
@@ -1155,7 +1155,7 @@ u8 func_08033334(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_0803366C(FldWork* work, void* task) {
@@ -1389,7 +1389,7 @@ u8 func_0803366C(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
         work->unk_98 = 0;
@@ -1451,12 +1451,12 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
         work->gfx = AnimUpdate(work->anim);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         return 1;
     } else if (func_080DFC24() != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08033334);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         work->unk_94 = 15;
 
         if (func_080DFC24() == 1) {
@@ -1467,7 +1467,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
     } else if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08032268);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         return 1;
     } else {
         sx = act->fieldPosition.x;
@@ -1682,7 +1682,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 
@@ -1726,7 +1726,7 @@ void task_fld_sora_2(FldWork* work) {
     x = (act->fieldPosition.x >> 8) - (gUnk_02039BA0->x >> 8);
     y = (act->fieldPosition.y >> 8) + (act->fieldPosition.z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
-    TaskPoolDraw(work->unk_24);
+    TaskPoolDraw(work->tasks);
 }
 
 void task_fld_sora_3(FldWork* work) {
@@ -1750,7 +1750,7 @@ void task_fld_sora_3(FldWork* work) {
         gGameState.unk_024 = act->angle;
     }
 
-    TaskPoolDestroy(work->unk_24);
+    TaskPoolDestroy(work->tasks);
 }
 
 void func_08034368(FldActor* act) {
@@ -2057,8 +2057,8 @@ void task_fld_riku_0(FldWork* work) {
         break;
     }
 
-    TaskPoolInit(work->unk_24, 2);
-    TaskCreate(work->unk_24, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
+    TaskPoolInit(work->tasks, 2);
+    TaskCreate(work->tasks, &gTaskDescFldShadow, &gUnk_02039BA0->actor);
     ColliderInit(work->unk_38, 1, 4, 32);
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
 }
@@ -2083,7 +2083,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         work->unk_94 = 0;
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)task_fld_riku_1);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
     } else {
         p = &work->unk_98;
 
@@ -2093,7 +2093,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
             work->unk_BC = 0;
         }
 
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         work->gfx = AnimUpdate(work->anim);
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         (*p)++;
@@ -2158,7 +2158,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_08034C88(FldWork* work, void* task) {
@@ -2449,7 +2449,7 @@ u8 func_08034C88(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
 
     if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
         work->unk_98 = 0;
@@ -2597,7 +2597,7 @@ u8 func_080353DC(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_080357F4(FldWork* work, void* task) {
@@ -2701,7 +2701,7 @@ u8 func_080358F0(FldWork* work, void* task) {
 
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_08035AD4(FldWork* work, void* task) {
@@ -2829,7 +2829,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
         }
 
         if (work->unk_98 == 40) {
-            func_080A5830(work->unk_24, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
+            func_080A5830(work->tasks, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         }
 
         if (work->unk_98 > 140) {
@@ -2848,7 +2848,7 @@ u8 func_08035AD4(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 u8 func_08035DFC(FldWork* work, void* task) {
@@ -3082,12 +3082,12 @@ u8 func_08035DFC(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
 
     if (gUnk_02039BA0->unk_70 & 0x40000) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08034A0C);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
     }
 
     return 1;
@@ -3144,12 +3144,12 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
         func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
         work->gfx = AnimUpdate(work->anim);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         return 1;
     } else if (func_080DFC24() != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08035AD4);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         work->unk_94 = 15;
 
         if (func_080DFC24() == 1) {
@@ -3160,7 +3160,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
     } else if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08034A0C);
-        TaskPoolUpdate(work->unk_24);
+        TaskPoolUpdate(work->tasks);
         return 1;
     } else {
         sx = act->fieldPosition.x;
@@ -3375,7 +3375,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
     ColliderSetPosition(work->unk_38, act->fieldPosition.x, act->fieldPosition.y, act->fieldPosition.z);
     func_080E0298(act->fieldPosition.x, act->fieldPosition.y + act->fieldPosition.z);
     work->gfx = AnimUpdate(work->anim);
-    TaskPoolUpdate(work->unk_24);
+    TaskPoolUpdate(work->tasks);
     return 1;
 }
 
@@ -3419,7 +3419,7 @@ void task_fld_riku_2(FldWork* work) {
     x = (act->fieldPosition.x >> 8) - (gUnk_02039BA0->x >> 8);
     y = (act->fieldPosition.y >> 8) + (act->fieldPosition.z >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, pri, depth);
-    TaskPoolDraw(work->unk_24);
+    TaskPoolDraw(work->tasks);
 }
 
 void task_fld_riku_3(FldWork* work) {
@@ -3443,7 +3443,7 @@ void task_fld_riku_3(FldWork* work) {
         gGameState.unk_024 = act->angle;
     }
 
-    TaskPoolDestroy(work->unk_24);
+    TaskPoolDestroy(work->tasks);
 }
 
 void task_fld_shadow_0(FldShadowWork* work, FldActor* obj) {

@@ -270,7 +270,7 @@ typedef struct MapEnmWork {
     s32 unk_DC;
     s16 unk_E0;
     u8 unk_E2[0x02];
-    u8 unk_E4[0x14];
+    u8 tasks[0x14];
 } MapEnmWork;
 
 typedef struct LoadGameMenuWork {

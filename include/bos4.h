@@ -68,7 +68,7 @@ typedef struct BoogieExplosiondiceWork {
     u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
-    u32 unk_02C;
+    u32 tasks;
     u8 unk_030[0x10];
     u32 unk_040;
     u32 unk_044;
@@ -95,7 +95,7 @@ typedef struct BoogieDiskWork {
     u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
-    u32 unk_02C;
+    u32 tasks;
     u8 unk_030[0x10];
     u32 unk_040;
     u32 unk_044;
@@ -115,7 +115,7 @@ typedef struct UrsulaWork {
     u32 unk_000;
     u16 unk_004;
     u8 unk_006[0x2];
-    u32 unk_008;
+    u32 tasks;
     u8 unk_00C[0x10];
     u32 unk_01C;
     u32 unk_020;
@@ -214,7 +214,7 @@ typedef struct BoogieKnifereaderWork {
     u32 unk_000;
     u16 unk_004;
     u8 unk_006[0x2];
-    u32 unk_008;
+    u32 tasks;
     u8 unk_00C[0x10];
     u32 unk_01C;
     u8 unk_020[0x10C];
@@ -230,7 +230,7 @@ typedef struct BoogieDiceWork {
     u32 palette2;
     u32 anim;
     u8 unk_018[0x14];
-    u32 unk_02C;
+    u32 tasks;
     u8 unk_030[0x10];
     u32 unk_040;
     u32 unk_044;
@@ -260,7 +260,7 @@ typedef struct BoogieDiceWork {
 
 typedef struct UrsulaBubbleWork {
     u32 unk_000;
-    u32 unk_004;
+    u32 tasks;
     u8 unk_008[0x10];
     void* unk_018[10];
     u16 unk_040;
@@ -351,7 +351,7 @@ void func_080DD9B0(UrsulaBubbleWork* work);
 typedef struct UrsulaMapanimeWork {
     UnkStruct_080DDDDC unk_000;
     u32 unk_00C;
-    u32 unk_010;
+    u32 tasks;
     u8 unk_014[0x10];
     void* task;
     u8 unk_028;
@@ -381,7 +381,7 @@ typedef struct BoogieSakuWork {
     u16 unk_020;
     u8 unk_022[0x2];
     u32 unk_024;
-    u32 unk_028;
+    u32 tasks;
     u8 unk_02C[0x10];
     u32 unk_03C;
     u8 unk_040;

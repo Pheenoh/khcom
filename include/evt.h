@@ -25,7 +25,7 @@ typedef struct EvtObjWork {
     void* tiles;
     u16* palette;
     u8 anim[0x18];
-    u8 unk_24[0x14];
+    u8 tasks[0x14];
 } EvtObjWork;
 
 typedef struct EvtShadowWork {

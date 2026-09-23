@@ -1127,7 +1127,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     }
 
     w->unk_50 = n;
-    TaskPoolInit(&w->unk_3C, w->unk_50 + 1);
+    TaskPoolInit(&w->tasks, w->unk_50 + 1);
     ListPoolInit(&gUnk_0203A9D0->cards);
     gUnk_0203A9D0->selectedCard = 0;
     gUnk_0203A9D0->effectCount = 0;

@@ -6855,7 +6855,7 @@ u8 func_0810C32C(BosLstWork* work, s32 a) {
             d4 = (GetRandom() % 17 << 8) - range;
             s.unk_0C += d4;
             s.unk_10 = work->unk_07A * 4;
-            pool = &work->unk_890;
+            pool = &work->tasks;
             break;
         case 5:
             d5 = (GetRandom() % 33 << 8) - 0x1000;
@@ -6864,7 +6864,7 @@ u8 func_0810C32C(BosLstWork* work, s32 a) {
             s.unk_08 -= d6;
             d7 = (GetRandom() % 65 << 8) - 0x2000;
             s.unk_0C += d7;
-            pool = &work->unk_890;
+            pool = &work->tasks;
             break;
         }
         TaskCreate(pool, &gTaskDescBosLstFal, &s);
@@ -7131,7 +7131,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     AnimStart(&work->sub[0].anim, 0, 1);
     AnimInit(&work->sub[1].anim, gUnk_09EFAEAC, gUnk_09EFAE54);
     AnimStart(&work->sub[1].anim, 0, 1);
-    TaskPoolInit(&work->unk_890, 0x60);
+    TaskPoolInit(&work->tasks, 0x60);
     func_0801C298(0, 1);
     func_0801C298(1, 1);
     func_0801C298(2, 1);
@@ -8932,7 +8932,7 @@ u8 task_bos_lst_1(BosLstWork* work) {
         }
     }
     work->unk_06C += 1;
-    TaskPoolUpdate(&work->unk_890);
+    TaskPoolUpdate(&work->tasks);
     return r;
 }
 
@@ -8951,7 +8951,7 @@ void task_bos_lst_2(BosLstWork* work) {
     u16 v;
     u16 w;
 
-    TaskPoolDraw(&work->unk_890);
+    TaskPoolDraw(&work->tasks);
     anim = gUnk_09A4D0EC[work->unk_010] << 1;
     idx = 0;
     if (work->unk_012 < 0) {
@@ -9100,7 +9100,7 @@ void task_bos_lst_3(BosLstWork* work) {
     ReleaseObjTiles((void*)work->sub[1].tiles);
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
-    TaskPoolDestroy(&work->unk_890);
+    TaskPoolDestroy(&work->tasks);
 }
 
 s32 func_0810FE84(s32 x) {

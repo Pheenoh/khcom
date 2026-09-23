@@ -90,7 +90,7 @@ typedef struct LstState {
     u32 palette;
     u32 palette2;
     LstObj unk_0A0;
-    u32 unk_1B0;
+    u32 tasks;
     u8 unk_1B4[0x10];
     void* unk_1C4;
     void* unk_1C8;

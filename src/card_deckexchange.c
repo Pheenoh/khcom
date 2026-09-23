@@ -590,8 +590,8 @@ u8 func_080A82E0(UnkStruct_080A82E0* work, void* a) {
     work->unk_6C6 = 142;
     work->unk_6C8 = 142;
     work->unk_6CA = 142;
-    TaskPoolUpdate(&work->unk_614);
-    TaskPoolUpdate(&work->unk_628);
+    TaskPoolUpdate(&work->tasks);
+    TaskPoolUpdate(&work->tasks2);
     return 1;
 }
 u8 func_080A8430(UnkStruct_0808C940* w, void* a) {

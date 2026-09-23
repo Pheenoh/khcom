@@ -182,11 +182,11 @@ void func_08112768(StaffRollWork* w) {
             break;
         case 6:
             w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3] =
-                func_0801CE04(w->unk_110, &gTaskDescSrollBChar, (EvtObj*)func_08112748(w), w->unk_0CC[w->unk_0D0 + 4],
+                func_0801CE04(w->tasks2, &gTaskDescSrollBChar, (EvtObj*)func_08112748(w), w->unk_0CC[w->unk_0D0 + 4],
                               w->unk_0CC[w->unk_0D0 + 5], 0x2800, 0xF000, 0);
             break;
         case 7:
-            func_08000DE8(w->unk_110, (void*)w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3]);
+            func_08000DE8(w->tasks2, (void*)w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3]);
             break;
         case 8:
             w->unk_0D8 = 5;
@@ -221,7 +221,7 @@ void func_08112768(StaffRollWork* w) {
             arg.unk_00 = w->unk_0CC[w->unk_0D0 + 4];
             arg.x = e->x;
             arg.y = e->y;
-            TaskCreate(w->unk_110, &gTaskDescSrollBCrtn, &arg);
+            TaskCreate(w->tasks2, &gTaskDescSrollBCrtn, &arg);
             break;
         case 16:
             func_081149B0((void*)w->unk_124[w->unk_0CC[w->unk_0D0 + 3] + 3],
@@ -275,8 +275,8 @@ void mode_StaffRoll_0(void) {
     w->unk_0D4 = 0;
     w->unk_0D8 = -1;
     w->unk_0E0 = 0;
-    TaskPoolInit(w->unk_0FC, 32);
-    TaskPoolInit(w->unk_110, 32);
+    TaskPoolInit(w->tasks, 32);
+    TaskPoolInit(w->tasks2, 32);
     w->unk_124[0] = 0;
     w->unk_124[1] = 0;
     w->unk_124[2] = 0;
@@ -380,19 +380,19 @@ u8 func_08112C38(StaffRollWork* w) {
             arg.y = w->scene[w->unk_090].targetY;
             arg.targetX = w->scene[w->unk_090].targetX;
             arg.targetY = w->scene[w->unk_090].targetY;
-            w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
+            w->unk_124[0] = (s32)TaskCreate(w->tasks, &gTaskDescSrollAName, &arg);
             arg.unk_00 = 1;
             arg.unk_02 = 1;
             arg.unk_04 = w->scene[w->unk_090].unk_32;
             arg.x = -0x5000;
             z = 0x7800;
             arg.targetX = z;
-            w->unk_124[1] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
+            w->unk_124[1] = (s32)TaskCreate(w->tasks, &gTaskDescSrollAName, &arg);
             arg.unk_00 = 2;
             arg.unk_02 = w->scene[w->unk_090].unk_30;
             arg.unk_04 = w->scene[w->unk_090].unk_32;
             arg.x = z;
-            w->unk_124[2] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollAName, &arg);
+            w->unk_124[2] = (s32)TaskCreate(w->tasks, &gTaskDescSrollAName, &arg);
             w->unk_084 = 2;
             w->unk_08C = t;
             break;
@@ -414,9 +414,9 @@ u8 func_08112C38(StaffRollWork* w) {
         if ((w->unk_002 & 2) == 0) {
             break;
         }
-        func_08000DE8(w->unk_0FC, (void*)w->unk_124[0]);
-        func_08000DE8(w->unk_0FC, (void*)w->unk_124[1]);
-        func_08000DE8(w->unk_0FC, (void*)w->unk_124[2]);
+        func_08000DE8(w->tasks, (void*)w->unk_124[0]);
+        func_08000DE8(w->tasks, (void*)w->unk_124[1]);
+        func_08000DE8(w->tasks, (void*)w->unk_124[2]);
         w->unk_010 = 0x1518;
         w->unk_084 = 4;
         w->unk_08C = 0;
@@ -445,9 +445,9 @@ u8 func_08112C38(StaffRollWork* w) {
                 DisableBg(0);
             }
 
-            func_08000DE8(w->unk_0FC, (void*)w->unk_124[0]);
-            func_08000DE8(w->unk_0FC, (void*)w->unk_124[1]);
-            func_08000DE8(w->unk_0FC, (void*)w->unk_124[2]);
+            func_08000DE8(w->tasks, (void*)w->unk_124[0]);
+            func_08000DE8(w->tasks, (void*)w->unk_124[1]);
+            func_08000DE8(w->tasks, (void*)w->unk_124[2]);
             w->unk_094 = w->unk_090 + 1;
 
             if (w->unk_094 > 21) {
@@ -622,7 +622,7 @@ u8 func_08113180(StaffRollWork* w) {
                         logo.unk_04 = ((w->unk_0B8 >> 8) + 168) << 8;
                         logo.unk_08 = &w->unk_0B8;
                         logo.unk_0C = &w->unk_0B4;
-                        TaskCreate(w->unk_110, &gTaskDescSrollBLogo, &logo);
+                        TaskCreate(w->tasks2, &gTaskDescSrollBLogo, &logo);
                         loop = 0;
                         break;
                     case '<':
@@ -631,7 +631,7 @@ u8 func_08113180(StaffRollWork* w) {
                         secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
                         secn.unk_0C = &w->unk_0B8;
                         secn.unk_10 = &w->unk_0B4;
-                        TaskCreate(w->unk_110, &gTaskDescSrollBSecn, &secn);
+                        TaskCreate(w->tasks2, &gTaskDescSrollBSecn, &secn);
                         w->unk_014++;
                         loop = 0;
                         break;
@@ -641,7 +641,7 @@ u8 func_08113180(StaffRollWork* w) {
                         secn.unk_08 = ((w->unk_0B8 >> 8) + 168) << 8;
                         secn.unk_0C = &w->unk_0B8;
                         secn.unk_10 = &w->unk_0B4;
-                        TaskCreate(w->unk_110, &gTaskDescSrollBSecn, &secn);
+                        TaskCreate(w->tasks2, &gTaskDescSrollBSecn, &secn);
                         loop = 0;
                         break;
                     case '#':
@@ -754,8 +754,8 @@ u8 func_08113180(StaffRollWork* w) {
     }
 
     func_08112768(w);
-    TaskPoolUpdate(w->unk_110);
-    TaskPoolDraw(w->unk_110);
+    TaskPoolUpdate(w->tasks2);
+    TaskPoolDraw(w->tasks2);
     func_08112600(w);
 
     return result;
@@ -769,7 +769,7 @@ u8 func_0811394C(StaffRollWork* w) {
 
     switch (w->unk_0A4) {
     case 0:
-        TaskPoolDestroy(w->unk_110);
+        TaskPoolDestroy(w->tasks2);
         DisableBg(0);
         DisableBg(1);
         EnableBg(2);
@@ -849,9 +849,9 @@ u8 func_08113A94(StaffRollWork* w) {
         }
         if (FadeIsActive() == 0) {
             if ((gGameState.flags & 8) != 0) {
-                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollCChar, (void*)1);
+                w->unk_124[0] = (s32)TaskCreate(w->tasks, &gTaskDescSrollCChar, (void*)1);
             } else {
-                w->unk_124[0] = (s32)TaskCreate(w->unk_0FC, &gTaskDescSrollCChar, (void*)0);
+                w->unk_124[0] = (s32)TaskCreate(w->tasks, &gTaskDescSrollCChar, (void*)0);
             }
             w->unk_0BC = 2;
             w->unk_0C0 = 0;
@@ -1661,8 +1661,8 @@ void mode_StaffRoll_1(void) {
         break;
     }
 
-    TaskPoolUpdate(w->unk_0FC);
-    TaskPoolDraw(w->unk_0FC);
+    TaskPoolUpdate(w->tasks);
+    TaskPoolDraw(w->tasks);
     BlockAudioUpdate();
     w->unk_010++;
 }
@@ -1672,7 +1672,7 @@ void mode_StaffRoll_2(void) {
 
     w = gUnk_02036020;
     ReleaseObjPalette((void*)w->palette);
-    TaskPoolDestroy(w->unk_0FC);
+    TaskPoolDestroy(w->tasks);
 
     if (gUnk_02036020 != 0) {
         EwramFree(w);

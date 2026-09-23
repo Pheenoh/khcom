@@ -3630,7 +3630,7 @@ s32 func_080E5FB4(MapEnmWork* p) {
     if (func_080E02E0(&p->unk_08, p->unk_C8 / 2, p->unk_CA / 2)) {
         gUnk_0203C7AC->unk_00 |= 0x80;
         gUnk_0203C7AC->unk_00 |= 4;
-        TaskCreate(p->unk_E4, &gTaskDescMapSpark, &p->unk_08);
+        TaskCreate(p->tasks, &gTaskDescMapSpark, &p->unk_08);
 
         if (gGameState.flags & 8) {
             m4aSongNumStart(0xE4);
@@ -3823,10 +3823,10 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     p->palette = LoadObjPalette(d->palette, 32);
     p->gfx = 0;
     AnimInit((AnimState*)&p->anim, 0, 0);
-    TaskPoolInit((TaskPool*)&p->unk_E4, 2);
+    TaskPoolInit((TaskPool*)&p->tasks, 2);
 
     if ((d->unk_14 & 1) == 0) {
-        TaskCreate(&p->unk_E4, &gTaskDescFldShadow, e);
+        TaskCreate(&p->tasks, &gTaskDescFldShadow, e);
     }
 
     if (d->unk_14 & 8) {
@@ -3870,7 +3870,7 @@ void func_080E64D4(MapEnmWork* p) {
     t = flags;
     y = k + (q->unk_00.y >> 8) - (gUnk_02039BA0->y >> 8);
     DrawSprite(x, y, p->gfx, p->tiles, p->palette, z, t, v);
-    TaskPoolDraw(p->unk_E4);
+    TaskPoolDraw(p->tasks);
 }
 
 void func_080E657C(MapEnmWork* p) {
@@ -3893,7 +3893,7 @@ void func_080E657C(MapEnmWork* p) {
     ColliderUnregister(p->collider);
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
-    TaskPoolDestroy(p->unk_E4);
+    TaskPoolDestroy(p->tasks);
 }
 
 u8 func_080E6634(u8 a) {

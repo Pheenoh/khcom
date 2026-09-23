@@ -1629,7 +1629,7 @@ typedef struct LevelUpEffectWork {
     u8 unk_95;
     u8 unk_96;
     u8 unk_97;
-    u8 unk_98[0x14];
+    u8 tasks[0x14];
 } LevelUpEffectWork;
 
 typedef struct UnkStruct_0809FBCC {
@@ -2213,8 +2213,8 @@ typedef struct SelmapEventKeyWork {
 
 typedef struct UnkStruct_080A82E0 {
     u8 unk_000[0x614];
-    TaskPool unk_614;
-    TaskPool unk_628;
+    TaskPool tasks;
+    TaskPool tasks2;
     ListPool unk_63C;
     u8 unk_64C[0x78];
     u16 unk_6C4;
@@ -2460,7 +2460,7 @@ typedef struct UnkStruct_0809BB4C {
     u8 unk_32[2];
     s32 unk_34;
     s32 unk_38;
-    TaskPool unk_3C;
+    TaskPool tasks;
     u8 unk_50;
     u8 unk_51;
     u8 unk_52;

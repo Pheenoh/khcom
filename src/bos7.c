@@ -854,7 +854,7 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     AnimInit(&work->anim, gUnk_09EFBF18, gUnk_09EFBEC4);
     AnimStart(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
     func_0801B37C(&work->unk_0A0, &gUnk_09A4FD4C, work->unk_028, work->unk_02C, work->unk_030);
-    pool = &work->unk_1B0;
+    pool = &work->tasks;
     TaskPoolInit(pool, 4);
     sub.unk_00 = work->unk_00E;
     sub.unk_04 = work->unk_01C;
@@ -1163,7 +1163,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
     obj->unk_08 = work->unk_02C + work->unk_038;
     obj->unk_0C = work->unk_030 + work->unk_03C + work->unk_040;
     AnimUpdate(&work->anim);
-    TaskPoolUpdate(&work->unk_1B0);
+    TaskPoolUpdate(&work->tasks);
     work->unk_014++;
     work->unk_00C++;
 
@@ -1199,7 +1199,7 @@ void task_bos_lst_bit_2(LstState* work) {
     affine = AllocObjAffine(work->unk_01B, work->unk_074, work->unk_078, 0);
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, (void*)work->tiles, pal, affine, prio, z);
-    TaskPoolDraw(&work->unk_1B0);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_bos_lst_bit_3(LstBitWork* work) {
@@ -1207,7 +1207,7 @@ void task_bos_lst_bit_3(LstBitWork* work) {
     ReleaseObjTiles((void*)work->tiles);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjPalette((void*)work->palette2);
-    TaskPoolDestroy(&work->unk_1B0);
+    TaskPoolDestroy(&work->tasks);
 }
 
 s32 func_0811156C(s32 x) {

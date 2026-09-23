@@ -87,8 +87,8 @@ void task_evt_obj_0(EvtObjWork* work, EvtObjParam* param) {
     work->obj->anim = &work->anim;
     work->obj->unk_1C = work->palette[3];
     func_0801CE70(work);
-    TaskPoolInit(&work->unk_24, 1);
-    TaskCreate(&work->unk_24, &gTaskDescEvtShadow, work->obj);
+    TaskPoolInit(&work->tasks, 1);
+    TaskCreate(&work->tasks, &gTaskDescEvtShadow, work->obj);
 }
 
 s32 task_evt_obj_1(EvtObjWork* work) {
@@ -97,7 +97,7 @@ s32 task_evt_obj_1(EvtObjWork* work) {
     }
 
     AnimUpdate(&work->anim);
-    TaskPoolUpdate(&work->unk_24);
+    TaskPoolUpdate(&work->tasks);
 
     return 1;
 }
@@ -120,13 +120,13 @@ void task_evt_obj_2(EvtObjWork* work) {
     DrawSprite(x, y, gfx, work->tiles, work->palette,
         AllocObjAffine(obj->unk_28, obj->unk_20, obj->unk_24, 1), obj->unk_16,
         (u16)(-0x1002 - (obj->y >> 8) * 4));
-    TaskPoolDraw(&work->unk_24);
+    TaskPoolDraw(&work->tasks);
 }
 
 void task_evt_obj_3(EvtObjWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
-    TaskPoolDestroy(&work->unk_24);
+    TaskPoolDestroy(&work->tasks);
 }
 
 void task_evt_shadow_0(EvtShadowWork* work, EvtObj* obj) {

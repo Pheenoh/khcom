@@ -84,8 +84,8 @@ typedef struct StaffRollWork {
     s32 unk_0F0;
     s32 unk_0F4;
     u32 palette;
-    u8 unk_0FC[0x14];
-    u8 unk_110[0x14];
+    u8 tasks[0x14];
+    u8 tasks2[0x14];
     s32 unk_124[6];
     u8 unk_13C[0x84];
     u8 unk_1C0[0x258];

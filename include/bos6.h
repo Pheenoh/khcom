@@ -477,7 +477,7 @@ typedef struct BosLstWork {
     u8 unk_52C[8][0x5C];
     void* task;
     LstTask* lstTasks[0x20];
-    u32 unk_890;
+    u32 tasks;
     u8 unk_894[0x10];
     u8 unk_8A4[0x280];
     u8 unk_B24[0x24];

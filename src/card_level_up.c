@@ -1864,7 +1864,7 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
     w->unk_94 = 0;
     w->unk_95 = 0;
     w->unk_96 = 24;
-    TaskPoolInit(w->unk_98, 4);
+    TaskPoolInit(w->tasks, 4);
 
     if (w->unk_0C != 0 && gUnk_02034AF8 == 0) {
         args.x = w->x[0];
@@ -1872,7 +1872,7 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
         args.unk_0C = w->unk_0C;
         args.unk_10 = w->tiles;
         args.unk_14 = w->palette;
-        TaskCreate(w->unk_98, &gTaskDescLvupLogo, &args);
+        TaskCreate(w->tasks, &gTaskDescLvupLogo, &args);
         gUnk_02034AF8 = 1;
     }
 }
@@ -1906,7 +1906,7 @@ u8 LVUP_EFFECT_1(LevelUpEffectWork* w, void* a) {
     }
 
     w->unk_95++;
-    TaskPoolUpdate(&w->unk_98);
+    TaskPoolUpdate(&w->tasks);
 
     if (w->unk_30 == 0) {
         for (i = 0; i < 4; i++) {
@@ -1955,7 +1955,7 @@ u8 func_080A18F4(LevelUpEffectWork* w) {
         w->unk_94++;
     }
 
-    TaskPoolUpdate(&w->unk_98);
+    TaskPoolUpdate(&w->tasks);
 
     if (w->y[0] > 0xA000) {
         return 0;
@@ -1977,7 +1977,7 @@ void LVUP_EFFECT_2(LevelUpEffectWork* w) {
         }
     }
 
-    TaskPoolDraw(w->unk_98);
+    TaskPoolDraw(w->tasks);
 }
 
 void LVUP_EFFECT_3(u8* work) {
