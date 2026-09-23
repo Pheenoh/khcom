@@ -39,7 +39,7 @@ typedef struct RoomNameWork {
     s32 unk_1C;
     s32 unk_20;
     s32 unk_24;
-    u8 unk_28;
+    u8 state;
     u8 unk_29;
     u16 unk_2A;
     u16 unk_2C;

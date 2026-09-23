@@ -56,7 +56,7 @@ typedef struct VixenSub {
 typedef struct CloudWork {
     HumWork base;
     u32 unk_188;
-    u16 unk_18C;
+    u16 state;
     u16 unk_18E;
     u16 unk_190;
     u8 unk_192[0x02];
@@ -125,7 +125,7 @@ typedef struct VixenFrzWork {
 } VixenFrzWork;
 
 typedef struct VixenIceWork {
-    u32 unk_00;
+    u32 state;
     void* tiles;
     void* palette;
     AnimState anim;
@@ -163,7 +163,7 @@ typedef struct LexTmhWork {
     u8 unk_2C;
     u8 unk_2D;
     u16 unk_2E;
-    s32 unk_30;
+    s32 state;
     s32 unk_34;
     s32 unk_38;
     s32 unk_3C;
@@ -186,7 +186,7 @@ typedef struct RikuSpawn {
 } RikuSpawn;
 
 typedef struct MahluxiaFlwWork {
-    s32 unk_00;
+    s32 state;
     void* tiles;
     void* palette;
     AnimState anim;
@@ -228,7 +228,7 @@ typedef struct LaxeneKnfWork {
     s32 unk_30;
     s32 unk_34;
     s32 unk_38;
-    s32 unk_3C;
+    s32 state;
     s32 unk_40;
 } LaxeneKnfWork;
 
@@ -425,7 +425,7 @@ typedef struct LexRockWork {
     s32 z;
     u8 unk_160;
     u8 unk_161;
-    u16 unk_162;
+    u16 state;
     u16 unk_164;
     s16 unk_166;
     LexRockSub sub[12];

@@ -73,7 +73,7 @@ typedef struct AllmapBarWork {
     s32 unk_1C;
     s32 x;
     s32 unk_24;
-    u32 unk_28;
+    u32 state;
     u8 unk_2C;
     u8 unk_2D;
     u8 unk_2E[0x802];

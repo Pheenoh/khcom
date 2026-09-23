@@ -35,7 +35,7 @@ typedef struct FrdDonaldWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    s32 unk_148;
+    s32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -55,7 +55,7 @@ typedef struct FrdGoofyWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    u32 unk_148;
+    u32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -75,7 +75,7 @@ typedef struct FrdArielWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    u32 unk_148;
+    u32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -95,7 +95,7 @@ typedef struct FrdJackWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    s32 unk_148;
+    s32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -117,7 +117,7 @@ typedef struct FrdPanWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    u32 unk_148;
+    u32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -141,7 +141,7 @@ typedef struct FrdAladdinWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    u32 unk_148;
+    u32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;
@@ -159,7 +159,7 @@ typedef struct FrdBeastWork {
     void* palette;
     BtlObj body;
     AnimState anim;
-    s32 unk_148;
+    s32 state;
     u8 unk_14C;
     u8 unk_14D;
     s16 unk_14E;

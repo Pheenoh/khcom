@@ -382,7 +382,7 @@ void task_btl_exp_0(BtlExpWork* work) {
     work->unk_3C = 0;
     work->unk_3E = gGameState.progression.level;
     work->unk_44 = gGameState.progression.exp;
-    work->unk_48 = 0;
+    work->state = 0;
     work->unk_40 = 0;
 }
 
@@ -416,12 +416,12 @@ s32 task_btl_exp_1(BtlExpWork* work) {
         work->gfx = gUnk_08B25E40;
 #endif
         work->unk_3C = 0;
-        work->unk_48 = 3;
+        work->state = 3;
         work->unk_3E = gGameState.progression.level;
         work->unk_40 = 0;
     }
 
-    if (work->unk_48 != 3) {
+    if (work->state != 3) {
         if (work->unk_44 < gGameState.progression.exp) {
             work->unk_40 += gGameState.progression.exp - work->unk_44;
             func_0805CE60(work, work->unk_40);
@@ -448,20 +448,20 @@ s32 task_btl_exp_1(BtlExpWork* work) {
             work->gfx = gUnk_08B25E54;
 #endif
             work->unk_3C = 0;
-            work->unk_48 = 1;
+            work->state = 1;
             work->unk_44 = gGameState.progression.exp;
         }
     }
 
-    switch (work->unk_48) {
+    switch (work->state) {
     case 0:
         break;
     case 3:
         if (work->unk_3C > 100) {
             if (gGameState.progression.level > 98) {
-                work->unk_48 = 0;
+                work->state = 0;
             } else {
-                work->unk_48 = 2;
+                work->state = 2;
                 func_0805CE60(work, gGameState.progression.nextExp - gGameState.progression.exp);
 #ifdef VERSION_EU
                 switch (gLanguage) {
@@ -495,9 +495,9 @@ s32 task_btl_exp_1(BtlExpWork* work) {
     case 1:
         if (work->unk_3C > 60) {
             if (gGameState.progression.level > 98) {
-                work->unk_48 = 0;
+                work->state = 0;
             } else {
-                work->unk_48 = 2;
+                work->state = 2;
                 func_0805CE60(work, gGameState.progression.nextExp - gGameState.progression.exp);
 #ifdef VERSION_EU
                 switch (gLanguage) {
@@ -531,7 +531,7 @@ s32 task_btl_exp_1(BtlExpWork* work) {
     case 2:
         if (work->unk_3C > 100) {
             work->unk_3C = 0;
-            work->unk_48 = 0;
+            work->state = 0;
         } else {
             work->unk_3C++;
         }
@@ -546,7 +546,7 @@ void task_btl_exp_2(BtlExpWork* work) {
     s16 x;
     u16 y;
 
-    if (work->unk_48 != 0) {
+    if (work->state != 0) {
         y = 40;
         x = 0;
         DrawSprite(0, y, work->gfx, work->tiles, work->palette, x, 0x410, x);
@@ -554,7 +554,7 @@ void task_btl_exp_2(BtlExpWork* work) {
 #ifdef VERSION_JP
         x = 32;
 #else
-        if (work->unk_48 == 2) {
+        if (work->state == 2) {
 #ifdef VERSION_EU
             x = 48;
 #else

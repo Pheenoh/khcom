@@ -1943,7 +1943,7 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
     work->tiles = AllocObjTiles(0x80, gUnk_08A23630);
     AnimInit(work->anim, gUnk_09EE04F4, gUnk_09EE04E0);
     AnimStart(work->anim, 0, 1);
-    work->unk_038 = 0;
+    work->state = 0;
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
@@ -1957,7 +1957,7 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
 }
 
 u8 task_emy_16_b_1(Emy16bWork* work) {
-    switch (work->unk_038) {
+    switch (work->state) {
     case 0:
         if (work->unk_02C != 0) {
             work->x -= work->unk_034;
@@ -1976,7 +1976,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         }
 
         if (work->z >= 0) {
-            work->unk_038 = 1;
+            work->state = 1;
             work->unk_03C = 0;
         }
         break;
@@ -1988,11 +1988,11 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
 
         if (work->unk_06C != 0) {
             work->unk_03C = 0;
-            work->unk_038 = 2;
+            work->state = 2;
             ColliderSetDisabled(&work->collider, 1);
         } else if (work->unk_03C > 0x64) {
             work->unk_03C = 0;
-            work->unk_038 = 3;
+            work->state = 3;
         } else {
             work->unk_03C++;
         }
@@ -2001,7 +2001,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         if (work->unk_03C != 0) {
             if (work->z >= 0) {
                 work->unk_03C = 0;
-                work->unk_038 = 3;
+                work->state = 3;
                 break;
             }
         } else {
@@ -2018,7 +2018,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
 
         if (work->unk_06C != 0) {
             work->unk_03C = 0;
-            work->unk_038 = 2;
+            work->state = 2;
             ColliderSetDisabled(&work->collider, 1);
             work->unk_09C = 1;
         } else if (work->unk_03C > 0x3C) {
@@ -3354,7 +3354,7 @@ void task_emy_29_0(Emy29Work* work, void* obj) {
     work->base.unk_16C = 0x180;
     work->base.unk_150 = 7;
     work->base.unk_158 |= 1;
-    work->unk_184 = 0;
+    work->state = 0;
     work->unk_186 = 0;
 }
 
@@ -3367,7 +3367,7 @@ void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz) {
         work->unk_186--;
     } else {
         work->unk_186 = 8;
-        work->unk_184++;
+        work->state++;
     }
 }
 
@@ -3411,13 +3411,13 @@ u8 task_emy_29_1(Emy29Work* work) {
 
         if (c == 0) {
             func_08019068(gUnk_0813DFAC, &w->base.anim, 1, 0, w->base.tiles);
-            w->unk_184 = 0;
+            w->state = 0;
             w->unk_186 = 8;
             work->base.unk_154++;
             m4aSongNumStart(0x240);
         }
 
-        switch (w->unk_184) {
+        switch (w->state) {
         case 0:
             func_0803B468(w, 0, -25, 5, -10);
             break;
@@ -3761,7 +3761,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             break;
         }
 
-        w->unk_184 = 0;
+        w->state = 0;
     }
 
     switch (work->base.unk_14C) {
@@ -3770,7 +3770,7 @@ u8 task_emy_31_1(Emy31Work* work) {
         s32 y;
         work->base.unk_168 = 0;
 
-        switch (w->unk_184) {
+        switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
                 func_08019068(gUnk_0813E11C, &w->base.anim, 0, 0,
@@ -3778,7 +3778,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                w->unk_184 = 1;
+                w->state = 1;
                 work->base.unk_154 = 0;
             } else {
                 work->base.unk_154++;
@@ -3801,7 +3801,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (work->base.unk_154 > 30) {
-                w->unk_184 = 3;
+                w->state = 3;
                 work->base.unk_154 = 0;
             } else {
                 work->base.unk_154++;
@@ -3820,7 +3820,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             if (func_080128EC()) {
                 work->base.unk_154++;
             } else {
-                w->unk_184 = 0;
+                w->state = 0;
                 func_0800CB4C(&work->base);
             }
             break;
@@ -3832,7 +3832,7 @@ u8 task_emy_31_1(Emy31Work* work) {
         s32 y;
         work->base.unk_168 = 0;
 
-        switch (w->unk_184) {
+        switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
                 func_08019068(gUnk_0813E11C, &w->base.anim, 1, 0,
@@ -3840,7 +3840,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                w->unk_184 = 1;
+                w->state = 1;
                 work->base.unk_154 = 0;
             } else {
                 work->base.unk_154++;
@@ -3863,7 +3863,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (work->base.unk_154 > 60) {
-                w->unk_184 = 2;
+                w->state = 2;
                 work->base.unk_154 = 0;
             } else {
                 work->base.unk_154++;
@@ -3882,7 +3882,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             if (func_080128EC()) {
                 work->base.unk_154++;
             } else {
-                w->unk_184 = 0;
+                w->state = 0;
                 func_0800CB4C(&work->base);
             }
             break;
@@ -3892,7 +3892,7 @@ u8 task_emy_31_1(Emy31Work* work) {
     case 20:
         work->base.unk_168 = 0;
 
-        switch (w->unk_184) {
+        switch (w->state) {
         case 0:
             if (work->base.unk_154 == 0) {
                 func_08019068(gUnk_0813E11C, &w->base.anim, 2, 0,
@@ -3901,7 +3901,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                w->unk_184 = 1;
+                w->state = 1;
                 work->base.unk_154 = 0;
             } else {
                 work->base.unk_154++;
@@ -3929,7 +3929,7 @@ u8 task_emy_31_1(Emy31Work* work) {
                 }
 
                 if (!func_080128EC()) {
-                    w->unk_184 = 2;
+                    w->state = 2;
                     work->base.unk_154 = 0;
                     break;
                 }
@@ -3942,7 +3942,7 @@ u8 task_emy_31_1(Emy31Work* work) {
             }
 
             if (AnimIsFinished(&work->base.anim)) {
-                w->unk_184 = 0;
+                w->state = 0;
                 func_0800CB4C(&work->base);
             } else {
                 work->base.unk_154++;
@@ -5407,7 +5407,7 @@ void task_emy_83_3(Emy83Work* work) {
 }
 
 void task_emy_83_b_0(Emy83bWork* work, EmySpawn* spawn) {
-    work->unk_02C = 0;
+    work->state = 0;
     work->palette = LoadObjPalette(gUnk_08F69B84, 0x20);
     work->tiles = AllocObjTiles(0x80, gUnk_08B1B854);
     AnimInit(work->unk_008, gUnk_09EE10A4, gUnk_09EE1090);
@@ -5424,10 +5424,10 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
         return 0;
     }
 
-    switch (work->unk_02C) {
+    switch (work->state) {
     case 0:
         if (work->unk_030 > 0x0F) {
-            work->unk_02C = 1;
+            work->state = 1;
             work->unk_030 = 0;
         } else {
             work->unk_030++;
@@ -5445,7 +5445,7 @@ u8 task_emy_83_b_1(Emy83bWork* work) {
         }
 
         if (work->unk_030 > 0x1D) {
-            work->unk_02C = 2;
+            work->state = 2;
             work->unk_030 = 0;
         } else {
             work->unk_030++;

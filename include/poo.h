@@ -293,7 +293,7 @@ typedef struct PooHoneyWork {
     PooPos maxPos;
     u8 collider[0x5C];
     PooNode node;
-    u32 unk_F0;
+    u32 state;
     TaskPool tasks;
     u16 unk_108;
     u16 unk_10A;
@@ -347,7 +347,7 @@ typedef struct PooPigletWork {
     s32 unk_34;
     u8 collider[0x5C];
     TaskPool tasks;
-    u32 unk_A8;
+    u32 state;
     u16 unk_AC;
     u16 unk_AE;
     s32 unk_B0;
@@ -813,7 +813,7 @@ typedef struct PooCabbageWork {
     s32 unk_40;
     u8 collider[0x5C];
     s32 unk_A0;
-    u16 unk_A4;
+    u16 state;
     u16 unk_A6;
     TaskPool tasks;
     Task* task;
@@ -885,7 +885,7 @@ typedef struct PooMapBeeWork {
     u8 unk_30[0x04];
     u8 unk_34;
     u8 unk_35;
-    u16 unk_36;
+    u16 state;
 } PooMapBeeWork;
 
 typedef struct PooZzzWork {
@@ -1030,7 +1030,7 @@ typedef struct PooRooWork {
     TaskPool tasks;
     s32 unk_AC;
     s32 unk_B0;
-    u32 unk_B4;
+    u32 state;
     u16 unk_B8;
     u16 unk_BA;
 } PooRooWork;

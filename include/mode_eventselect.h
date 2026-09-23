@@ -93,7 +93,7 @@ typedef struct EffectWork {
     u16 unk_44;
     u16 unk_46;
     u8 unk_48;
-    u8 unk_49;
+    u8 state;
     u8 unk_4A[0x02];
     TaskPool tasks;
 } EffectWork;

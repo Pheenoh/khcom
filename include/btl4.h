@@ -58,7 +58,7 @@ typedef struct BtlExpWork {
     u16 unk_40;
     u8 unk_42[0x02];
     u32 unk_44;
-    u32 unk_48;
+    u32 state;
 } BtlExpWork;
 
 typedef struct BtlVslockonWork {

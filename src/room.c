@@ -19,7 +19,7 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->unk_24 = 0x19;
     work->unk_2A = 0;
     work->unk_2C = 0;
-    work->unk_28 = 0;
+    work->state = 0;
     work->unk_1C = 0x19;
     InitTextSlots(work->unk_3C, 0x24);
     work->palette2 = _08066468(1);
@@ -35,12 +35,12 @@ u8 task_room_name_1(RoomNameWork* work) {
         return 0;
     }
 
-    switch (work->unk_28) {
+    switch (work->state) {
     case 0:
         work->unk_2A++;
         if (work->unk_2A > 0x27) {
             work->unk_2A = 0;
-            work->unk_28++;
+            work->state++;
         }
         break;
     case 1:
@@ -51,7 +51,7 @@ u8 task_room_name_1(RoomNameWork* work) {
             work->unk_1C += 0x19;
             if (work->unk_1C > 0xFF) {
                 work->unk_1C = 0x100;
-                work->unk_28++;
+                work->state++;
             }
         }
         break;
@@ -59,7 +59,7 @@ u8 task_room_name_1(RoomNameWork* work) {
         work->unk_2A++;
         if (work->unk_2A > 0xB3) {
             work->unk_2A = 0;
-            work->unk_28++;
+            work->state++;
         }
         break;
     case 3:
@@ -81,7 +81,7 @@ u8 task_room_name_1(RoomNameWork* work) {
 void task_room_name_2(RoomNameWork* work) {
     s32 affine;
 
-    if (work->unk_28 != 0) {
+    if (work->state != 0) {
         affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
         DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
         DrawTextSlots(work->x2 >> 8, work->y2 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);

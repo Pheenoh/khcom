@@ -44,7 +44,7 @@ void task_wlogo_mons_0(WlogoMonsWork* work) {
     work->y = 64;
     work->unk_028 = 0;
     work->unk_02A = 0;
-    work->unk_02C = 0;
+    work->state = 0;
     work->unk_02D = 0;
     work->unk_02E = 0;
     SetBgBlend(0, 16, 0);
@@ -54,12 +54,12 @@ void task_wlogo_mons_0(WlogoMonsWork* work) {
 }
 
 u8 task_wlogo_mons_1(WlogoMonsWork* work) {
-    switch (work->unk_02C) {
+    switch (work->state) {
     case 0:
         work->unk_02A++;
         if (work->unk_02A > 29) {
             work->unk_02A = 0;
-            work->unk_02C++;
+            work->state++;
         }
         break;
     case 1:
@@ -69,7 +69,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
             work->unk_02E++;
             if (work->unk_02E > 15) {
                 work->unk_02E = 16;
-                work->unk_02C++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_02E, work->unk_02E);
         }
@@ -79,7 +79,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
         if (work->unk_02A > 29) {
             work->unk_02A = 0;
             work->unk_02D = 1;
-            work->unk_02C++;
+            work->state++;
         }
         break;
     case 3:
@@ -100,7 +100,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
                 } else if (work->unk_028 == 20) {
                     work->unk_02D = 0;
                     RequestDma3Copy(gUnk_096B7464, GetBgScreenBase(0), 0x800);
-                    work->unk_02C++;
+                    work->state++;
                 }
             }
             work->unk_028++;
@@ -110,7 +110,7 @@ u8 task_wlogo_mons_1(WlogoMonsWork* work) {
         work->unk_02A++;
         if (work->unk_02A > 49) {
             work->unk_02A = 0;
-            work->unk_02C++;
+            work->state++;
         }
         break;
     case 5:
@@ -148,14 +148,14 @@ void task_wlogo_hwt_0(WlogoHwtWork* work) {
     LoadBgMap(0, gUnk_096B7C64, 0x800);
     work->unk_000 = 0;
     work->unk_002 = 0;
-    work->unk_004 = 0;
+    work->state = 0;
     work->unk_005 = 0;
     SetBgBlend(0, 16, 0);
     TaskPoolInit(&gWlogoHwtTaskPool, 4);
 }
 
 u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
-    switch (work->unk_004) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 == 20) {
@@ -170,7 +170,7 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
         if (work->unk_002 == 140) {
             work->unk_002 = 0;
             TaskCreate(&gWlogoHwtTaskPool, &gTaskDescWlogoHwtObj, (void*)3);
-            work->unk_004++;
+            work->state++;
         }
         break;
     case 1:
@@ -180,7 +180,7 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
             work->unk_005++;
             if (work->unk_005 > 15) {
                 work->unk_005 = 16;
-                work->unk_004++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_005, work->unk_005);
         }
@@ -189,7 +189,7 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
         work->unk_002++;
         if (work->unk_002 > 119) {
             work->unk_002 = 0;
-            work->unk_004++;
+            work->state++;
         }
         break;
     case 3:
@@ -201,7 +201,7 @@ u8 task_wlogo_hwt_1(WlogoHwtWork* work) {
                 work->unk_005 = 0;
                 SetBgBlend(0, 16, 0);
                 DisableBg(0);
-                work->unk_004++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_005, work->unk_005);
         }
@@ -307,7 +307,7 @@ void task_wlogo_won_0(WlogoWonWork* work) {
     }
     work->unk_008 = 0;
     work->unk_00A = 0;
-    work->unk_0F2 = 0;
+    work->state = 0;
     work->unk_0F3 = 0;
     SetBgBlend(0, 16, 0);
 }
@@ -315,12 +315,12 @@ void task_wlogo_won_0(WlogoWonWork* work) {
 u8 task_wlogo_won_1(WlogoWonWork* work) {
     s32 i;
 
-    switch (work->unk_0F2) {
+    switch (work->state) {
     case 0:
         work->unk_008++;
         if (work->unk_008 > 9) {
             work->unk_008 = 0;
-            work->unk_0F2++;
+            work->state++;
         }
         break;
     case 1:
@@ -353,7 +353,7 @@ u8 task_wlogo_won_1(WlogoWonWork* work) {
             work->unk_008 = 0;
             work->unk_0F3 = 16;
             SetBgBlend(0, 0, 16);
-            work->unk_0F2++;
+            work->state++;
         }
         break;
     case 2:
@@ -378,7 +378,7 @@ void task_wlogo_won_2(WlogoWonWork* work) {
     s32 i;
     s32 affine;
 
-    if (work->unk_0F2 == 1) {
+    if (work->state == 1) {
         for (i = 0; i < 10; i++) {
             affine = AllocObjAffine(work->unk_00A, gUnk_09EF180C[work->unk_0CA[i]], 0x100, 0);
             DrawSprite(work->x[i] >> 8, work->y[i] >> 8, work->gfx[i], work->tiles, work->palette, affine, 0, gUnk_09EF167C[i].unk_10);
@@ -397,7 +397,7 @@ void task_wlogo_atl_0(WlogoAtlWork* work) {
     LoadBgMap(0, gUnk_096B8464, 0x800);
     RequestDma3Copy(gUnk_09634664, (u8*)GetBgCharBase(0) + 32, 0x360);
     work->unk_002 = 0;
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_008 = 0;
     work->unk_004 = 0;
     work->unk_006 = 0;
@@ -409,13 +409,13 @@ void task_wlogo_atl_0(WlogoAtlWork* work) {
 }
 
 u8 task_wlogo_atl_1(WlogoAtlWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
             EnableBgWave(0);
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 1:
@@ -435,7 +435,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
             if (work->unk_008 > 15) {
                 work->unk_008 = 16;
                 StopBgWave(0);
-                work->unk_000++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_008, work->unk_008);
         }
@@ -444,7 +444,7 @@ u8 task_wlogo_atl_1(WlogoAtlWork* work) {
         work->unk_002++;
         if (work->unk_002 > 113) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         work->unk_006++;
         break;
@@ -494,7 +494,7 @@ void task_wlogo_nvl_0(WlogoNvlWork* work) {
     LoadBgMap(0, gUnk_096B8C64, 0x800);
     RequestDma3Copy(gUnk_09638C84, GetBgCharBase(0), 0x340);
     work->unk_002 = 0;
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_00A = 0;
     work->unk_004 = 0;
     work->unk_006 = 0;
@@ -504,12 +504,12 @@ void task_wlogo_nvl_0(WlogoNvlWork* work) {
 }
 
 u8 task_wlogo_nvl_1(WlogoNvlWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 1:
@@ -519,7 +519,7 @@ u8 task_wlogo_nvl_1(WlogoNvlWork* work) {
             work->unk_00A++;
             if (work->unk_00A > 15) {
                 work->unk_00A = 16;
-                work->unk_000++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_00A, work->unk_00A);
         }
@@ -528,7 +528,7 @@ u8 task_wlogo_nvl_1(WlogoNvlWork* work) {
         work->unk_002++;
         if (work->unk_002 > 113) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
 
         if (work->unk_002 == 1) {
@@ -710,7 +710,7 @@ void task_wlogo_col_0(WlogoColWork* work) {
     work->x = gUnk_0961C792.unk_00;
     work->y = gUnk_0961C792.unk_02;
     work->unk_02A = 0;
-    work->unk_028 = 0;
+    work->state = 0;
     work->unk_030 = 0;
     work->unk_02C = 0;
     work->unk_02E = 0;
@@ -722,19 +722,19 @@ void task_wlogo_col_0(WlogoColWork* work) {
 }
 
 u8 task_wlogo_col_1(WlogoColWork* work) {
-    switch (work->unk_028) {
+    switch (work->state) {
     case 0:
         work->unk_02A++;
         if (work->unk_02A > 9) {
             work->unk_02A = 0;
             work->unk_031 = 1;
-            work->unk_028++;
+            work->state++;
         }
         break;
     case 1:
         if (AnimIsFinished(&work->anim)) {
             work->unk_031 = 0;
-            work->unk_028++;
+            work->state++;
         } else {
             work->gfx = AnimUpdate(&work->anim);
         }
@@ -746,7 +746,7 @@ u8 task_wlogo_col_1(WlogoColWork* work) {
             work->unk_030++;
             if (work->unk_030 > 15) {
                 work->unk_030 = 16;
-                work->unk_028++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_030, work->unk_030);
         }
@@ -754,7 +754,7 @@ u8 task_wlogo_col_1(WlogoColWork* work) {
     case 3:
         if (++work->unk_02A > 120) {
             work->unk_02A = 0;
-            work->unk_028++;
+            work->state++;
         }
         if (++work->unk_02E > 4) {
             work->unk_02E = 0;
@@ -800,18 +800,18 @@ void task_wlogo_hlw_0(WlogoHlwWork* work) {
     LoadBgTiles(0, gUnk_096438E4, 0xC00);
     LoadBgMap(0, gUnk_096BAC64, 0x800);
     work->unk_002 = 0;
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_004 = 0;
     SetBgBlend(0, 16, 0);
 }
 
 u8 task_wlogo_hlw_1(WlogoHlwWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 1:
@@ -821,7 +821,7 @@ u8 task_wlogo_hlw_1(WlogoHlwWork* work) {
             work->unk_004++;
             if (work->unk_004 > 15) {
                 work->unk_004 = 16;
-                work->unk_000++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_004, work->unk_004);
         }
@@ -830,7 +830,7 @@ u8 task_wlogo_hlw_1(WlogoHlwWork* work) {
         work->unk_002++;
         if (work->unk_002 > 113) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 3:
@@ -868,18 +868,18 @@ void task_wlogo_dil_0(WlogoDilWork* work) {
     work->y = 64;
     work->unk_016 = 0;
     work->unk_00E = 0;
-    work->unk_00C = 0;
+    work->state = 0;
     work->unk_010 = 0;
     SetBgBlend(0, 16, 0);
 }
 
 u8 task_wlogo_dil_1(WlogoDilWork* work) {
-    switch (work->unk_00C) {
+    switch (work->state) {
     case 0:
         work->unk_00E++;
         if (work->unk_00E > 29) {
             work->unk_00E = 0;
-            work->unk_00C++;
+            work->state++;
         }
         break;
     case 1:
@@ -890,7 +890,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
             if (work->unk_010 > 15) {
                 work->unk_010 = 16;
                 work->unk_016 = 1;
-                work->unk_00C++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_010, work->unk_010);
         }
@@ -899,7 +899,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
         LoadBgMap(0, gUnk_096BBC64, 0x800);
         work->unk_010 = 0;
         SetBgBlend(0, 16, 0);
-        work->unk_00C++;
+        work->state++;
         break;
     case 3:
         work->unk_00E++;
@@ -910,7 +910,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
                 work->unk_010 = 16;
                 LoadBgMap(0, gUnk_096BC464, 0x800);
                 work->unk_016 = 0;
-                work->unk_00C++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_010, work->unk_010);
         }
@@ -919,7 +919,7 @@ u8 task_wlogo_dil_1(WlogoDilWork* work) {
         work->unk_00E++;
         if (work->unk_00E > 113) {
             work->unk_00E = 0;
-            work->unk_00C++;
+            work->state++;
         }
         break;
     case 5:
@@ -963,7 +963,7 @@ void task_wlogo_agr_0(WlogoAgrWork* work, s32 arg) {
     work->y = 64;
     work->unk_010 = 0;
     work->unk_012 = 0;
-    work->unk_011 = 0;
+    work->state = 0;
     work->unk_014 = 0;
     work->unk_016 = 0;
     SetBgBlend(0, 16, 0);
@@ -974,12 +974,12 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
     WlogoAgrEntry a;
     WlogoAgrEntry b;
 
-    switch (work->unk_011) {
+    switch (work->state) {
     case 0:
         work->unk_012++;
         if (work->unk_012 > 29) {
             work->unk_012 = 0;
-            work->unk_011++;
+            work->state++;
             TaskCreate(&gWlogoAgrTaskPool, &gTaskDescWlogoAgrFlash0, (void*)0);
         }
         break;
@@ -991,7 +991,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
             if (work->unk_016 > 15) {
                 work->unk_016 = 16;
                 work->unk_010 = 1;
-                work->unk_011++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_016, work->unk_016);
         }
@@ -1000,7 +1000,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
         LoadBgMap(0, gUnk_096BA464, 0x800);
         work->unk_016 = 0;
         SetBgBlend(0, 16, 0);
-        work->unk_011++;
+        work->state++;
         break;
     case 3:
         if (work->unk_012 == gUnk_09EF191C[work->unk_014].unk_04) {
@@ -1022,7 +1022,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
                 work->unk_012 = 0;
                 work->unk_014 = 5;
                 work->unk_010 = 0;
-                work->unk_011++;
+                work->state++;
             }
         }
 
@@ -1086,7 +1086,7 @@ u8 task_wlogo_agr_1(WlogoAgrWork* work) {
         work->unk_012++;
         if (work->unk_012 > 169) {
             work->unk_012 = 0;
-            work->unk_011++;
+            work->state++;
         }
         break;
     case 5:
@@ -1219,7 +1219,7 @@ void task_wlogo_tvt_0(WlogoTvtWork* work) {
     work->x = 64;
     work->y = 64;
     work->unk_02A = 0;
-    work->unk_029 = 0;
+    work->state = 0;
     work->unk_030 = 0;
     work->unk_02C = 0;
     work->unk_02E = 0;
@@ -1231,11 +1231,11 @@ void task_wlogo_tvt_0(WlogoTvtWork* work) {
 }
 
 u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
-    switch (work->unk_029) {
+    switch (work->state) {
     case 0:
         if (++work->unk_02A > 29) {
             work->unk_02A = 0;
-            work->unk_029++;
+            work->state++;
         }
         break;
     case 1:
@@ -1249,7 +1249,7 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
             work->unk_030++;
             if (work->unk_030 > 15) {
                 work->unk_030 = 16;
-                work->unk_029++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_030, work->unk_030);
         }
@@ -1263,7 +1263,7 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
         if (++work->unk_02A > 89) {
             work->unk_02A = 0;
             work->unk_028 = 1;
-            work->unk_029++;
+            work->state++;
         }
         break;
     case 3:
@@ -1278,7 +1278,7 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
             work->unk_02C += 2;
             RequestDma3Copy(&gUnk_096474A4[work->unk_02C * 1024], (u8*)GetBgCharBase(0) + 32, 0x320);
             work->unk_028 = 0;
-            work->unk_029++;
+            work->state++;
         } else {
             work->gfx = AnimUpdate(&work->anim);
         }
@@ -1292,7 +1292,7 @@ u8 task_wlogo_tvt_1(WlogoTvtWork* work) {
         if (++work->unk_02A > 113) {
             work->unk_02A = 0;
             work->unk_02C = 2;
-            work->unk_029++;
+            work->state++;
         }
         break;
     case 5:
@@ -1333,7 +1333,7 @@ void task_wlogo_poo_0(WlogoPooWork* work) {
     LoadBgTiles(0, gUnk_09648484, 0xA20);
     LoadBgMap(0, gUnk_096BD464, 0x800);
     work->unk_002 = 0;
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_008 = 0;
     work->unk_004 = 0;
     work->unk_006 = 0;
@@ -1342,12 +1342,12 @@ void task_wlogo_poo_0(WlogoPooWork* work) {
 }
 
 u8 task_wlogo_poo_1(WlogoPooWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 1:
@@ -1361,7 +1361,7 @@ u8 task_wlogo_poo_1(WlogoPooWork* work) {
                 TaskCreate(&gWlogoPooTaskPool, &gTaskDescWlogoPooObj, (void*)1);
                 TaskCreate(&gWlogoPooTaskPool, &gTaskDescWlogoPooObj, (void*)2);
                 TaskCreate(&gWlogoPooTaskPool, &gTaskDescWlogoPooObj, (void*)3);
-                work->unk_000++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_008, work->unk_008);
         }
@@ -1370,7 +1370,7 @@ u8 task_wlogo_poo_1(WlogoPooWork* work) {
         work->unk_002++;
         if (work->unk_002 > 113) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 3:
@@ -1466,7 +1466,7 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
     LoadPalette(&gUnk_096FAEA4[15 * 32], (void*)0x050001E0, 0x20);
     work->unk_002 = 0;
     work->unk_004 = 0;
-    work->unk_000 = 0;
+    work->state = 0;
     work->unk_006 = 0;
     work->unk_007 = 0;
     work->unk_108 = 51;
@@ -1509,12 +1509,12 @@ void task_wlogo_tt_0(WlogoTtWork* work) {
 }
 
 u8 task_wlogo_tt_1(WlogoTtWork* work) {
-    switch (work->unk_000) {
+    switch (work->state) {
     case 0:
         work->unk_002++;
         if (work->unk_002 > 29) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 1:
@@ -1524,7 +1524,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_006++;
             if (work->unk_006 > 15) {
                 work->unk_006 = 16;
-                work->unk_000++;
+                work->state++;
             }
             SetBgBlend(0, 16 - work->unk_006, work->unk_006);
         }
@@ -1536,7 +1536,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         if (gUnk_0203AB38 > 332) {
             work->unk_100[2] = 1;
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 3:
@@ -1547,7 +1547,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_108 = gUnk_09EF1B08.first[0];
             work->unk_100[0] = 1;
-            work->unk_000++;
+            work->state++;
         } else {
             work->unk_002++;
         }
@@ -1567,7 +1567,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_100[2] = 0;
             work->unk_100[3] = 1;
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         } else {
             work->gfx = AnimUpdate(&work->anim[0]);
             work->gfx3 = AnimUpdate(&work->anim[2]);
@@ -1581,7 +1581,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_10C = gUnk_09EF1B08.second[0];
             work->unk_100[1] = 1;
-            work->unk_000++;
+            work->state++;
         } else {
             work->unk_002++;
         }
@@ -1605,7 +1605,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             TaskCreate(&work->tasks, &gTaskDescWlogoTtLine, (void*)0);
             work->unk_002 = 0;
             work->unk_004 = 0;
-            work->unk_000++;
+            work->state++;
         } else {
             work->gfx2 = AnimUpdate(&work->anim[1]);
             work->gfx4 = AnimUpdate(&work->anim[3]);
@@ -1625,7 +1625,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_007++;
             if (work->unk_007 == 4) {
-                work->unk_000++;
+                work->state++;
             }
             LoadObjPaletteBank(work->palette->index, &gUnk_096FAEA4[work->unk_007 * 32]);
         } else {
@@ -1639,7 +1639,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_007++;
             if (work->unk_007 > 8) {
-                work->unk_000++;
+                work->state++;
             } else {
                 LoadObjPaletteBank(work->palette->index, &gUnk_096FAEA4[work->unk_007 * 32]);
             }
@@ -1660,7 +1660,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         work->unk_100[1] = 0;
         work->gfx5 = AnimUpdate(&work->anim[4]);
         work->gfx6 = AnimUpdate(&work->anim[5]);
-        work->unk_000++;
+        work->state++;
         break;
     case 10:
         if (AnimIsFinished(&work->anim[4])) {
@@ -1669,7 +1669,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             work->unk_004 = 0;
             work->unk_002 = 0;
             work->unk_007 = 8;
-            work->unk_000++;
+            work->state++;
         } else {
             work->gfx5 = AnimUpdate(&work->anim[4]);
             work->gfx6 = AnimUpdate(&work->anim[5]);
@@ -1678,7 +1678,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
     case 11:
         if (work->unk_007 == 4) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         } else if (work->unk_004 > 1) {
             work->unk_004 = 0;
             work->unk_007--;
@@ -1691,7 +1691,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         work->unk_002++;
         if (work->unk_002 > 113) {
             work->unk_002 = 0;
-            work->unk_000++;
+            work->state++;
         }
         break;
     case 13:
@@ -1817,14 +1817,14 @@ void task_wlogo_tt_obj_3(WlogoTtObjWork* work) {
 void task_wlogo_tt_line_0(WlogoTtLineWork* work) {
     work->unk_000 = 0;
     work->unk_002 = 0;
-    work->unk_004 = 0;
+    work->state = 0;
     TaskPoolInit(&work->tasks, 33);
 }
 
 u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
     WlogoTtObjArg arg;
 
-    switch (work->unk_004) {
+    switch (work->state) {
     case 0:
         if (work->unk_000 == gUnk_09EF1B68[work->unk_002][2]) {
             work->unk_000 = 0;
@@ -1833,7 +1833,7 @@ u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
             TaskCreate(&work->tasks, &gTaskDescWlogoTtObj, &arg);
             work->unk_002++;
             if (work->unk_002 == 31) {
-                work->unk_004++;
+                work->state++;
             }
         } else {
             work->unk_000++;
@@ -1841,7 +1841,7 @@ u8 task_wlogo_tt_line_1(WlogoTtLineWork* work) {
         break;
     case 1:
         if (work->unk_000 > 29) {
-            work->unk_004++;
+            work->state++;
         }
         work->unk_000++;
         break;
@@ -2039,7 +2039,7 @@ void task_wlogo_bks_obj_0(WlogoBksObjWork* work, s32 arg) {
     work->unk_040 = 0x100;
     work->unk_024 = 0;
     work->unk_026 = 30;
-    work->unk_028 = 0;
+    work->state = 0;
     work->unk_046 = 10;
     work->tiles = LoadObjTiles(gUnk_09628DC0, 0x800);
     work->palette = LoadObjPalette(gUnk_096FB0A4, 0x20);
@@ -2049,7 +2049,7 @@ void task_wlogo_bks_obj_0(WlogoBksObjWork* work, s32 arg) {
 }
 
 u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
-    switch (work->unk_028) {
+    switch (work->state) {
     case 0:
         if (work->unk_026 > 0) {
             ApproachValue(&work->x, work->targetX, work->unk_026);
@@ -2063,7 +2063,7 @@ u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
         } else {
             work->unk_024 = 0;
             work->unk_026 = 0;
-            work->unk_028++;
+            work->state++;
         }
         break;
     case 1:

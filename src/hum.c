@@ -904,7 +904,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         if ((s32)work->base.unk_158 > 0) {
             work->base.unk_150 = 0;
             work->base.unk_170 = 29;
-            w->unk_18C = 0;
+            w->state = 0;
         } else {
             work->base.unk_150++;
         }
@@ -951,7 +951,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
             work->base.unk_160 = y;
             work->base.unk_164 = z - 0x1000;
             func_08019A30();
-            switch ((s16)w->unk_18C) {
+            switch ((s16)w->state) {
             case 0:
                 m4aSongNumStart(0x10B);
                 func_08019068(gUnk_0813EDE8, &w->base.anim, 15, 0, w->base.tiles);
@@ -977,7 +977,7 @@ u8 task_hum_cloud_1(CloudWork* work) {
         act->y += ((s32)work->base.unk_160 - act->y) >> 3;
         act->z += ((s32)work->base.unk_164 - act->z) >> 3;
         if (work->base.anim.timer == 0) {
-            switch ((s16)w->unk_18C) {
+            switch ((s16)w->state) {
             case 0:
                 if (AnimGetFrame(&work->base.anim) == 4) {
                     if ((act->unk_034 & 4)
@@ -1015,8 +1015,8 @@ u8 task_hum_cloud_1(CloudWork* work) {
         }
         if ((s16)work->base.unk_150 > 23 && AnimIsFinished(&work->base.anim)) {
             work->base.unk_150 = 0;
-            w->unk_18C++;
-            if ((s16)w->unk_18C > 2) {
+            w->state++;
+            if ((s16)w->state > 2) {
                 func_0801AF08(act);
                 work->base.unk_170 = 26;
                 w->unk_190 = 0;
@@ -4575,7 +4575,7 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->z = args->z;
     work->unk_2E = 0;
     work->unk_2D = 1;
-    work->unk_3C = 0;
+    work->state = 0;
     work->unk_30 = gBtlWork->actor->x;
     work->unk_34 = gBtlWork->actor->y;
     work->unk_38 = gBtlWork->actor->z;
@@ -4594,12 +4594,12 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
         return 0;
     }
 
-    switch (work->unk_3C) {
+    switch (work->state) {
     case 0:
         if (func_08011F78(0x133, work->x, work->y, work->z, 1, 6, 2)) {
             m4aSongNumStart(0x2A3);
             work->unk_2E = 0;
-            work->unk_3C = 1;
+            work->state = 1;
             func_08013994(work->x, work->y, work->z + 0x1000);
         } else {
             if (work->unk_2C != 0) {
@@ -6111,7 +6111,7 @@ void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
     work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
     work->tiles = LoadObjTiles(gUnk_08EE4264, 0x800);
     work->sub = args;
-    work->unk_00 = 3;
+    work->state = 3;
     AnimInit(&work->anim, gUnk_09EE26CC, gUnk_09EE26B4);
     AnimStart(&work->anim, 0, 0);
     ColliderInit(&work->collider, 12, 27, 1);
@@ -6131,7 +6131,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
     if (work->sub->unk_00 != 0) {
         FadeSetPaletteExcluded(((ObjPalette*)work->palette)->index + 16, 0);
         work->sub->unk_00 = 0;
-        work->unk_00 = 0;
+        work->state = 0;
         work->unk_84 = 0;
         work->unk_8C = 10;
 
@@ -6148,7 +6148,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         }
     }
 
-    switch (work->unk_00) {
+    switch (work->state) {
     case 0:
         if (work->unk_84 == 0) {
             work->unk_86 = 30;
@@ -6158,7 +6158,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         work->unk_86--;
         if ((s16)work->unk_86 <= 0) {
             ColliderSetDisabled(&work->collider, 0);
-            work->unk_00 = 1;
+            work->state = 1;
             work->unk_84 = 0;
             work->unk_88 = GetRandom() % 0x259 + 600;
         }
@@ -6170,7 +6170,7 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         }
 
         if (GetRandom() % 300 == 0) {
-            work->unk_00 = 2;
+            work->state = 2;
             work->unk_84 = 0;
         }
         break;
@@ -6181,13 +6181,13 @@ u8 task_hum_vixen_ice_1(VixenIceWork* work) {
         }
 
         if (AnimIsFinished(&work->anim)) {
-            work->unk_00 = 1;
+            work->state = 1;
             work->unk_84 = 0;
         }
         break;
     }
 
-    switch (work->unk_00) {
+    switch (work->state) {
     case 1:
     case 2:
         ApproachValue(&work->unk_8C, 10, work->unk_88);
@@ -7023,7 +7023,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->z = args->z;
     work->unk_34 = gBtlWork->unk_130 + (GetRandom() % 65 - 32) * 256;
     work->unk_38 = gBtlWork->unk_134 + (GetRandom() % 33 - 16) * 256;
-    work->unk_30 = 0;
+    work->state = 0;
     work->unk_4A = 0;
     work->unk_2D = 0;
     work->unk_3C = -0x980;
@@ -7041,7 +7041,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         return 0;
     }
 
-    switch (work->unk_30) {
+    switch (work->state) {
     case 0:
         work->x += (work->unk_34 - work->x) >> 4;
         work->y += (work->unk_38 - work->y) >> 4;
@@ -7051,11 +7051,11 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         if (func_08011F78(0x146, work->x, work->y, work->z, 16, 12, 16)) {
             m4aSongNumStart(0x2B3);
             work->unk_4A = 0;
-            work->unk_30 = 1;
+            work->state = 1;
         } else if (work->z >= 0) {
             m4aSongNumStart(0x2B2);
             work->unk_4A = 0;
-            work->unk_30 = 1;
+            work->state = 1;
         } else {
             work->unk_4A++;
         }
@@ -7215,7 +7215,7 @@ void task_hum_lex_rock_0(LexRockWork* work, VixenNdlArgs* args) {
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
-    work->unk_162 = 0;
+    work->state = 0;
     work->unk_164 = 0;
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
@@ -7232,20 +7232,20 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         return 0;
     }
 
-    switch (work->unk_162) {
+    switch (work->state) {
     case 0:
         work->unk_164 = 1;
         work->palette2 = LoadObjPalette(gUnk_08F6DCC4, 0x20);
         work->tiles2[0] = AllocObjTiles(0xDC0, gUnk_08C42BBE);
         AnimInit(&work->anim[0], gUnk_09EE2338, gUnk_09EE230C);
         AnimStart(&work->anim[0], 0, 0);
-        work->unk_162++;
+        work->state++;
         break;
     case 1:
         if (!AnimIsFinished(&work->anim[0])) {
             break;
         }
-        work->unk_162++;
+        work->state++;
         break;
     case 2:
         ReleaseObjTiles(work->tiles2[0]);
@@ -7256,19 +7256,19 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         AnimInit(&work->anim[0], gUnk_09EE239C, gUnk_09EE233C);
         AnimStart(&work->anim[0], 0, 0);
         work->z -= 0x4000;
-        work->unk_162++;
+        work->state++;
         break;
     case 3:
         if (gBtlWork->unk_068 & 0x100000) {
             m4aSongNumStart(0x2B8);
-            work->unk_162 += 2;
+            work->state += 2;
         }
         break;
     case 4:
         if (!AnimIsFinished(&work->anim[0])) {
             break;
         }
-        work->unk_162++;
+        work->state++;
         break;
     case 5:
         work->unk_164 = 12;
@@ -7297,7 +7297,7 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
                 e->unk_10 = GetRandom() % 1 + 0x300;
             }
         }
-        work->unk_162++;
+        work->state++;
         work->unk_166 = 0;
         break;
     case 6:
@@ -7415,7 +7415,7 @@ void task_hum_lex_rock_3(LexRockWork* work) {
 void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
     work->palette = LoadObjPalette(gUnk_08F6DC84, 0x20);
     work->tiles = LoadObjTiles(gUnk_08BCB3D8, 0x100);
-    work->unk_00 = 0;
+    work->state = 0;
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
@@ -7426,13 +7426,13 @@ void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
 }
 
 u8 task_hum_mahluxia_flw_1(MahluxiaFlwWork* work) {
-    switch (work->unk_00) {
+    switch (work->state) {
     case 0:
         work->x += work->unk_2C;
         work->z += work->unk_28;
         work->unk_28 += 17;
         if (work->unk_28 > 0x1CC) {
-            work->unk_00 = 1;
+            work->state = 1;
         }
         break;
     case 1:

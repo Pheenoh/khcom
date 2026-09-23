@@ -51,7 +51,7 @@ typedef struct WlogoTtMotion {
 } WlogoTtMotion;
 
 typedef struct WlogoTtWork {
-    u8 unk_000;
+    u8 state;
     u8 unk_001;
     u16 unk_002;
     u16 unk_004;
@@ -89,7 +89,7 @@ typedef struct WlogoBksObjWork {
     u8 unk_00C[0x18];
     s16 unk_024;
     s16 unk_026;
-    s8 unk_028;
+    s8 state;
     s8 unk_029;
     u8 unk_02A[0x2];
     s32 x;
@@ -151,13 +151,13 @@ typedef struct WlogoTtObjWork {
 typedef struct WlogoTtLineWork {
     s16 unk_000;
     s16 unk_002;
-    s8 unk_004;
+    s8 state;
     u8 unk_005[0x3];
     TaskPool tasks;
 } WlogoTtLineWork;
 
 typedef struct WlogoPooWork {
-    u8 unk_000;
+    u8 state;
     u8 unk_001;
     u16 unk_002;
     u8 unk_004;
@@ -203,7 +203,7 @@ typedef struct WlogoTvtWork {
     void* gfx;
     AnimState anim;
     u8 unk_028;
-    u8 unk_029;
+    u8 state;
     u16 unk_02A;
     u8 unk_02C;
     u8 unk_02D;
@@ -245,7 +245,7 @@ typedef struct WlogoAgrWork {
     s16 x;
     s16 y;
     u8 unk_010;
-    u8 unk_011;
+    u8 state;
     s16 unk_012;
     s16 unk_014;
     u8 unk_016;
@@ -256,7 +256,7 @@ typedef struct WlogoDilWork {
     void* tiles;
     void* palette;
     void* gfx;
-    u8 unk_00C;
+    u8 state;
     u8 unk_00D;
     u16 unk_00E;
     u8 unk_010;
@@ -274,7 +274,7 @@ typedef struct WlogoColWork {
     s16 y;
     void* gfx;
     AnimState anim;
-    u8 unk_028;
+    u8 state;
     u8 unk_029;
     u16 unk_02A;
     u8 unk_02C;
@@ -286,7 +286,7 @@ typedef struct WlogoColWork {
 } WlogoColWork;
 
 typedef struct WlogoHlwWork {
-    u8 unk_000;
+    u8 state;
     u8 unk_001;
     u16 unk_002;
     u8 unk_004;
@@ -334,7 +334,7 @@ typedef struct WlogoNvlObjWork {
 } WlogoNvlObjWork;
 
 typedef struct WlogoNvlWork {
-    u8 unk_000;
+    u8 state;
     u8 unk_001;
     u16 unk_002;
     s8 unk_004;
@@ -346,7 +346,7 @@ typedef struct WlogoNvlWork {
 } WlogoNvlWork;
 
 typedef struct WlogoAtlWork {
-    u8 unk_000;
+    u8 state;
     u8 unk_001;
     u16 unk_002;
     u8 unk_004;
@@ -371,7 +371,7 @@ typedef struct WlogoWonWork {
     u8 unk_0C0[10];
     u16 unk_0CA[10];
     u16 unk_0DE[10];
-    u8 unk_0F2;
+    u8 state;
     u8 unk_0F3;
     u8 unk_0F4[0x14];
 } WlogoWonWork;
@@ -419,7 +419,7 @@ typedef struct WlogoHwtObjWork {
 typedef struct WlogoHwtWork {
     u16 unk_000;
     u16 unk_002;
-    u8 unk_004;
+    u8 state;
     u8 unk_005;
     u8 unk_006[0x2];
 } WlogoHwtWork;
@@ -433,7 +433,7 @@ typedef struct WlogoMonsWork {
     AnimState anim;
     u16 unk_028;
     u16 unk_02A;
-    u8 unk_02C;
+    u8 state;
     u8 unk_02D;
     u8 unk_02E;
     u8 unk_02F;

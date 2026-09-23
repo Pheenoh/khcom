@@ -285,7 +285,7 @@ typedef struct UrsulaTakoWork {
     u8 unk_038[0x24];
     u64 unk_05C;
     u8 unk_064[0xD4];
-    u32 unk_138;
+    u32 state;
     u16 unk_13C;
     u8 unk_13E;
     u8 unk_13F[0x1];

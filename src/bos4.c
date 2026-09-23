@@ -2520,7 +2520,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     AnimInit(&work->anim, gUnk_09EF68A0, gUnk_09EF6860);
     AnimStart(&work->anim, (u16)(work->unk_024 + 4), 1);
-    work->unk_138 = 0;
+    work->state = 0;
     ColliderInit(&work->unk_140, 7, (u16)func_080DCA78(work->unk_13E), 1);
     ColliderSetPosition(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x3800);
     func_0801C7FC(&work->unk_028, 35, 51);
@@ -2535,7 +2535,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 
     if (func_080DC528()) {
         func_0801C2DC(p, 1);
-    } else if (work->unk_138 <= 1) {
+    } else if (work->state <= 1) {
         func_0801C2DC(p, 0);
     }
 
@@ -2545,29 +2545,29 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 
     switch (func_0801ADAC(p)) {
     case 5:
-        work->unk_138 = 7;
+        work->state = 7;
         work->unk_13C = 0;
         func_08083914();
         break;
     case 1:
     case 6:
     case 7:
-        work->unk_138 = 1;
+        work->state = 1;
         work->unk_13C = 0;
         break;
     case 3:
     case 8:
-        work->unk_138 = 2;
+        work->state = 2;
         work->unk_13C = 0;
         break;
     case 4:
         func_0801AF08(p);
-        work->unk_138 = 0;
+        work->state = 0;
         func_08083914();
         break;
     }
 
-    switch (work->unk_138) {
+    switch (work->state) {
     case 0:
         AnimChange((AnimState*)&work->anim, (u16)(work->unk_024 + 4), 1);
         break;
@@ -2578,7 +2578,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         work->unk_13C++;
         if (AnimIsFinished((AnimState*)&work->anim)) {
             func_0801AF08(p);
-            work->unk_138 = 0;
+            work->state = 0;
             work->unk_13C = 0;
         }
         break;
@@ -2594,7 +2594,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         } else if (AnimGetId((AnimState*)&work->anim) == (s16)work->unk_024 + 5) {
             if (AnimIsFinished((AnimState*)&work->anim)) {
                 func_0801AF08(p);
-                work->unk_138 = 3;
+                work->state = 3;
                 work->unk_13C = 0;
             }
         } else {
@@ -2603,7 +2603,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         break;
     case 3:
         if (work->unk_13C > 180) {
-            work->unk_138 = 4;
+            work->state = 4;
             work->unk_13C = 0;
         } else {
             work->unk_13C++;
@@ -2612,7 +2612,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
     case 4:
         if (work->unk_13C > 180) {
             AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 6), 0);
-            work->unk_138 = 5;
+            work->state = 5;
             work->unk_200 = 0x800;
             if (work->unk_13E) {
                 work->unk_1FC = -0x2AA;
@@ -2637,7 +2637,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
             if (!func_080DC528()) {
                 func_0801BCD4(&work->unk_028);
             }
-            work->unk_138 = 6;
+            work->state = 6;
             work->unk_13C = 0;
         } else {
             ApproachValue(&work->unk_200, 0, work->unk_13C);
@@ -2647,7 +2647,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
         break;
     case 6:
         if (work->unk_13C > 30) {
-            work->unk_138 = 0;
+            work->state = 0;
         } else {
             work->unk_13C++;
         }
@@ -2655,7 +2655,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
     case 7:
         AnimChange((AnimState*)&work->anim, (u16)(work->unk_024 + 6), 0);
         if (AnimIsFinished((AnimState*)&work->anim) || func_080DC528()) {
-            work->unk_138 = 0;
+            work->state = 0;
             AnimStart((AnimState*)&work->anim, (u16)(work->unk_024 + 4), 1);
             func_0801AF08(p);
         } else {
@@ -2687,13 +2687,13 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 
     AnimUpdate((AnimState*)&work->anim);
     func_080DC9DC(&p->x, &p->y, &p->z, work);
-    if (work->unk_138 - 3 <= 4 && gBtlWork->actor->z < -0x5000 && !func_080DC528()) {
+    if (work->state - 3 <= 4 && gBtlWork->actor->z < -0x5000 && !func_080DC528()) {
         ColliderSetDisabled(&work->unk_140, 0);
         ColliderSetPosition(&work->unk_140, work->unk_02C, work->unk_030 + 0x1000, -0x5000);
     } else {
         ColliderSetDisabled(&work->unk_140, 1);
     }
-    if (work->unk_138 == 3 && gBtlWork->actor->z <= -0x2000 && gBtlWork->actor->z > -0x3000) {
+    if (work->state == 3 && gBtlWork->actor->z <= -0x2000 && gBtlWork->actor->z > -0x3000) {
         ColliderSetDisabled(&work->unk_19C, 0);
         ColliderSetPosition(&work->unk_19C, work->unk_02C + work->unk_1F8, work->unk_030 + 0x1000, 0);
     } else {
@@ -2708,7 +2708,7 @@ void task_bos_ursula_tako_2(UrsulaTakoWork* work) {
     s16 x;
     s16 y;
 
-    if (work->unk_138 != 4 && func_080DC528() == 0) {
+    if (work->state != 4 && func_080DC528() == 0) {
         pal = func_0801CA00(p) != 0 ? work->palette2 : work->palette;
         WorldToScreen(&x, &y, p->x, p->y, p->z);
         DrawSprite(x, y, AnimGetGfx(&work->anim), work->tiles, pal, 0, 0x800, 0xFC00);
@@ -2725,7 +2725,7 @@ void task_bos_ursula_tako_3(UrsulaTakoWork* work) {
 }
 
 u8 func_080DD1FC(UrsulaTakoWork* work) {
-    if (work->unk_138 <= 1) {
+    if (work->state <= 1) {
         return 0;
     }
 
@@ -2733,8 +2733,8 @@ u8 func_080DD1FC(UrsulaTakoWork* work) {
 }
 
 void func_080DD210(UrsulaTakoWork* work) {
-    if (work->unk_138 >= 3 && work->unk_138 <= 4) {
-        work->unk_138 = 4;
+    if (work->state >= 3 && work->state <= 4) {
+        work->state = 4;
         work->unk_13C = 180;
     }
 }

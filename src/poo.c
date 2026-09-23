@@ -3111,24 +3111,24 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     w->maxPos.y += 0x100;
     TaskPoolInit(&w->tasks, 1);
     CreatePooShadowscaleTask(&w->tasks, &w->pos, 0xCC);
-    w->unk_F0 = 0;
+    w->state = 0;
     w->unk_108 = 0;
 }
 
 u8 task_poo_honey_1(PooHoneyWork* w) {
-    switch (w->unk_F0) {
+    switch (w->state) {
     case 0:
         if (w->minPos.x <= gUnk_0203C3EC->x && gUnk_0203C3EC->x <= w->maxPos.x && w->minPos.y <= gUnk_0203C3EC->y && gUnk_0203C3EC->y <= w->maxPos.y) {
             gUnk_0203C3F0 = 3;
             func_080CCB84(&w->node.unk_00, 0);
-            w->unk_F0++;
+            w->state++;
         }
         break;
     case 1:
         if (func_080C9E4C() <= 2) {
             AnimStart(w->anim, func_080C9E4C(), 0);
             AnimUpdate(w->anim);
-            w->unk_F0++;
+            w->state++;
         }
         break;
     case 2:
@@ -3555,7 +3555,7 @@ void task_poo_piglet_0(PooPigletWork* w) {
     w->x = 0x2A500;
     w->y = 0x21100;
     w->z = 0;
-    w->unk_A8 = 0;
+    w->state = 0;
     w->unk_AC = 0;
     w->palette = 0;
     m = 0;
@@ -3603,13 +3603,13 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         func_0800FDD0(78);
     }
 
-    switch (w->unk_A8) {
+    switch (w->state) {
     case 0:
         func_080CD854((PooAnimWork*)w, 0, 1);
         w->unk_24 = 0;
 
         if (w->unk_AC > 209) {
-            w->unk_A8 = 1;
+            w->state = 1;
             w->unk_B0 = 0;
         } else {
             w->unk_AC++;
@@ -3627,7 +3627,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         w->y += -gSineTable[0x60] * w->unk_B0 >> 8;
 
         if (w->x > 0x2C8FF) {
-            w->unk_A8 = 2;
+            w->state = 2;
             w->unk_AC = 0;
         }
         break;
@@ -3636,7 +3636,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         w->unk_24 = 1;
 
         if (w->unk_AC > 39) {
-            w->unk_A8 = 3;
+            w->state = 3;
             w->unk_AC = 0;
         } else {
             w->unk_AC++;
@@ -3647,7 +3647,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         w->unk_24 = 1;
 
         if (w->unk_AC > 29) {
-            w->unk_A8 = 4;
+            w->state = 4;
             w->unk_AC = 0;
         } else {
             w->unk_AC++;
@@ -3658,7 +3658,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         w->unk_24 = 1;
 
         if (w->unk_AC > 29) {
-            w->unk_A8 = 5;
+            w->state = 5;
             w->unk_AC = 0;
         } else {
             w->unk_AC++;
@@ -3671,7 +3671,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         if (w->unk_AC <= 59) {
             w->unk_AC++;
         } else {
-            w->unk_A8 = 6;
+            w->state = 6;
             w->unk_B0 = 0;
         }
         break;
@@ -3689,7 +3689,7 @@ u8 task_poo_piglet_1(PooPigletWork* w) {
         if (w->x <= 0x2A500) {
             w->x = 0x2A500;
             w->y = 0x21100;
-            w->unk_A8 = 0;
+            w->state = 0;
             w->unk_AC = 0;
         }
         break;
@@ -4438,12 +4438,12 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
         w->pos.z = 0;
         AnimStart(w->anim, 0, 0);
         w->unk_24 = 0;
-        w->unk_B4 = 3;
+        w->state = 3;
     } else {
         w->pos = *w->srcPos;
         AnimStart(w->anim, 4, 0);
         w->unk_24 = 0;
-        w->unk_B4 = 0;
+        w->state = 0;
     }
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 1);
@@ -4459,11 +4459,11 @@ void task_poo_roo_0(PooRooWork* w, PooPos* p) {
 u8 task_poo_roo_1(PooRooWork* w) {
     s32 t;
 
-    switch (w->unk_B4) {
+    switch (w->state) {
     case 0:
         if (AnimIsFinished(w->anim) != 0) {
             AnimStart(w->anim, 5, 0);
-            w->unk_B4 = 1;
+            w->state = 1;
             w->pos = *w->srcPos;
             w->pos.x -= 0x600;
             w->pos.z += 0x1F00;
@@ -4478,7 +4478,7 @@ u8 task_poo_roo_1(PooRooWork* w) {
 
         if (w->unk_B0 - t < 0 && t >= -0x2100) {
             AnimStart(w->anim, 6, 0);
-            w->unk_B4 = 2;
+            w->state = 2;
             w->unk_AC = 0;
         }
         break;
@@ -4527,7 +4527,7 @@ void task_poo_roo_2(PooRooWork* w) {
     pr = w->unk_24 != 0 ? 0x801 : 0x800;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, pr, -0x1006 - t * 4);
 
-    if (w->unk_B4 != 0) {
+    if (w->state != 0) {
         TaskPoolDraw(&w->tasks);
     }
 }
@@ -5769,7 +5769,7 @@ void task_poo_cabbage_0(PooCabbageWork* w) {
     w->unk_C0 = 0x1CC;
     w->palette = 0;
     AnimInit(w->anim, gUnk_09EF6060, gUnk_09EF602C);
-    w->unk_A4 = 2;
+    w->state = 2;
     AnimStart(w->anim, 2, 1);
     w->gfx = AnimGetGfx(w->anim);
     ColliderInit(w->collider, 10, 8, 16);
@@ -5792,14 +5792,14 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
     memcpy(t, gUnk_096FD850, 30);
     w->unk_CE++;
 
-    switch (w->unk_A4) {
+    switch (w->state) {
     case 2:
         if (gUnk_0203C3D8 != 0 && func_080C76B0(w->collider) != 0) {
             if (IsTaskActive(w->task) != 0) {
                 func_08000DE8(&w->tasks, w->task);
             }
             w->task = TaskCreate(&w->tasks, &gTaskDescPooSpark, &w->x);
-            w->unk_A4 = 3;
+            w->state = 3;
             AnimStart(w->anim, 3, 0);
             m4aSongNumStart(222);
             w->unk_CA = 30;
@@ -5850,7 +5850,7 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
         w->unk_CA--;
 
         if (w->unk_CA == 0) {
-            w->unk_A4 = 4;
+            w->state = 4;
             AnimStart(w->anim, 4, 0);
         }
         break;
@@ -5866,7 +5866,7 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
         }
 
         if (AnimIsFinished(w->anim) != 0) {
-            w->unk_A4 = 1;
+            w->state = 1;
             AnimStart(w->anim, 1, 0);
             func_080D171C();
             w->unk_D2 = 0;
@@ -5933,7 +5933,7 @@ void task_poo_cabbage_2(PooCabbageWork* w) {
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, z);
 
-        if (w->unk_A4 != 4 && w->unk_A4 != 1) {
+        if (w->state != 4 && w->state != 1) {
             TaskPoolUpdate(&w->tasks);
             TaskPoolDraw(&w->tasks);
         }
@@ -6509,7 +6509,7 @@ void task_poo_mapbee_0(PooMapBeeWork* w, PooPos* p) {
     AnimStart(w->anim, 0, 0);
     w->gfx = AnimGetGfx(w->anim);
     w->unk_34 = 1;
-    w->unk_36 = 0;
+    w->state = 0;
     m4aSongNumStart(0x182);
 }
 
@@ -6518,11 +6518,11 @@ u8 task_poo_mapbee_1(PooMapBeeWork* w) {
         return 0;
     }
 
-    switch (w->unk_36) {
+    switch (w->state) {
     case 0:
         if (AnimIsFinished(w->anim) != 0) {
             AnimStart(w->anim, 1, 1);
-            w->unk_36 = 1;
+            w->state = 1;
         }
         break;
     case 1:

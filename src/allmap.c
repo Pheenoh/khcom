@@ -366,10 +366,10 @@ void func_080D3ED0(void) {
 void func_080D3F10(AllmapBarWork* work) {
     work->unk_2C = 1;
 
-    if (work->unk_28 == 0) {
-        work->unk_28 = 4;
+    if (work->state == 0) {
+        work->state = 4;
     } else {
-        work->unk_28 = 3;
+        work->state = 3;
     }
 
     if (work->unk_0C == 0) {
@@ -391,7 +391,7 @@ void task_allmap_bar_0(AllmapBarWork* work) {
     work->tiles2 = LoadObjTiles(gUnk_0976DBDA, 0xC0);
     work->palette = LoadObjPalette(gUnk_0984A1D8, 32);
     work->unk_0C = 16;
-    work->unk_28 = 0;
+    work->state = 0;
     work->y = -0x800;
     work->y2 = 0xA000;
     work->x = -0x8000;
@@ -410,14 +410,14 @@ void func_080D3FD4(AllmapBarWork* work) {
 s32 task_allmap_bar_1(AllmapBarWork* work) {
     s32 i;
 
-    switch (work->unk_28) {
+    switch (work->state) {
     case 0:
         ApproachValue(&work->y, work->unk_14, work->unk_0C);
         ApproachValue(&work->y2, work->unk_1C, work->unk_0C);
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
-            work->unk_28 = 1;
+            work->state = 1;
         }
         break;
     case 1:
@@ -429,7 +429,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
 #else
             LoadBgMap(3, gUnk_0983B298, 0x500);
 #endif
-            work->unk_28 = 2;
+            work->state = 2;
             gUnk_0203C4E0 = 2;
         }
         break;
@@ -438,7 +438,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
         work->unk_0C--;
         if (work->unk_0C == 0) {
             work->unk_0C = 16;
-            work->unk_28 = 4;
+            work->state = 4;
         }
         break;
     case 4:
@@ -488,7 +488,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
 }
 
 void task_allmap_bar_2(AllmapBarWork* work) {
-    if (work->unk_28 == 2) {
+    if (work->state == 2) {
         return;
     }
 #ifdef VERSION_EU

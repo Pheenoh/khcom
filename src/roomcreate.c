@@ -14,7 +14,7 @@ void task_roomcreate_0(RoomCreateWork* work) {
     work->unk_29 = 0;
     work->unk_28 = 0;
     work->unk_26 = 0;
-    work->unk_40 = 0;
+    work->state = 0;
     SetBgPriority(0, 2);
     SetBgPriority(1, 2);
     TaskPoolInit(&work->tasks, 3);
@@ -36,7 +36,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     s16 steps;
     s32 i;
 
-    switch (work->unk_40) {
+    switch (work->state) {
     case 0:
         if (work->unk_26 == 0) {
             gUnk_02039BA0->actor.angle = work->angle + 0x80;
@@ -50,7 +50,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
 
         if (steps <= 1) {
             func_080E0418();
-            work->unk_40 = 1;
+            work->state = 1;
             gUnk_02039BA0->unk_70 &= ~0x80000;
             work->unk_26 = 8;
         } else {
@@ -73,13 +73,13 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
 
         switch (work->unk_29) {
         case 1:
-            work->unk_40 = 2;
+            work->state = 2;
             work->unk_26 = 0;
             func_080E042C();
             SetBgPriority(1, 2);
             break;
         case 2:
-            work->unk_40 = 3;
+            work->state = 3;
             work->unk_26 = 0;
             break;
         }
@@ -106,7 +106,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
 
         if (work->unk_29 == 1) {
             work->unk_26 = 0;
-            work->unk_40 = 4;
+            work->state = 4;
         }
         break;
     case 4:
@@ -120,7 +120,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
 
         if (work->unk_26 > 60) {
             work->unk_26 = 0;
-            work->unk_40 = 6;
+            work->state = 6;
             gUnk_02039BA0->unk_70 &= ~0x100000;
         } else {
             work->unk_26++;
@@ -129,7 +129,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 5:
         if (work->unk_26 > 60) {
             work->unk_26 = 0;
-            work->unk_40 = 6;
+            work->state = 6;
         } else {
             work->unk_26++;
         }

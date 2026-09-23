@@ -76,7 +76,7 @@ typedef struct BtlRaidWork {
     u8 unk_3C;
     u8 unk_3D;
     u8 unk_3E[0x02];
-    u32 unk_40;
+    u32 state;
     s32 unk_44;
     u16 unk_48;
     u8 unk_4A[0x02];

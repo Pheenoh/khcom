@@ -252,7 +252,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     work->y = args->y;
     work->z = args->z;
     work->unk_38 = 100;
-    work->unk_40 = 0;
+    work->state = 0;
     work->unk_44 = 256;
     work->unk_30 = 0x800;
     work->unk_54 = 10;
@@ -292,7 +292,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         break;
     case 6:
         work->unk_4C = 105;
-        work->unk_40 = 3;
+        work->state = 3;
 
         if (work->unk_3C != 0) {
             work->angle = 192;
@@ -304,7 +304,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         break;
     case 7:
         work->unk_4C = 111;
-        work->unk_40 = 4;
+        work->state = 4;
 
         if (work->unk_3C != 0) {
             work->angle = 192;
@@ -358,7 +358,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
     func_0802F284(work->x, work->y, work->z + 0x1800);
 
-    switch (work->unk_40) {
+    switch (work->state) {
     case 4:
         work->x += gSineTable[(u8)work->angle] * 5;
         work->z += -gSineTable[(u8)work->angle + 64] * 5;
@@ -390,7 +390,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         }
 
         if (obj == 0 || work->unk_38 > 180) {
-            work->unk_40 = 5;
+            work->state = 5;
             work->unk_38 = 0;
         } else {
             work->unk_38++;
@@ -422,7 +422,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
         if (hit != 0) {
             if (work->unk_38 > 180) {
-                work->unk_40 = 5;
+                work->state = 5;
                 work->unk_38 = 0;
                 break;
             }
@@ -455,7 +455,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
         if (work->unk_56 & 1) {
             if (func_08011E3C(work->x, work->y, work->z, work->unk_54, work->unk_54, 32) != 0) {
-                work->unk_40 = 2;
+                work->state = 2;
                 work->unk_38 = 0;
                 break;
             }
@@ -479,7 +479,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         switch (ClampBattlePosition(&work->x, &work->y, -20, 0)) {
         case 1:
         case 2:
-            work->unk_40 = 1;
+            work->state = 1;
             work->unk_3A = work->unk_38 >> 2;
             work->unk_34 = work->unk_30;
             break;
@@ -503,7 +503,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         if (work->unk_3A <= 0) {
             work->unk_38 = 100 - work->unk_38;
             func_08019A30();
-            work->unk_40 = 0;
+            work->state = 0;
         } else {
             work->unk_3A--;
         }

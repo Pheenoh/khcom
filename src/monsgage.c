@@ -15,7 +15,7 @@ void task_monsgage_0(MonsgageWork* work) {
     work->gfx = gUnk_08B2556C;
     work->gfx2 = gUnk_08B2557C;
     work->unk_1C = 0;
-    work->unk_20 = 0;
+    work->state = 0;
     work->unk_24 = 1;
 }
 
@@ -25,7 +25,7 @@ s32 task_monsgage_1(MonsgageWork* work) {
             return 0;
         }
 
-        switch (work->unk_20) {
+        switch (work->state) {
         case 0:
             if (work->unk_1C == 0) {
                 work->unk_24 = 1;
@@ -33,7 +33,7 @@ s32 task_monsgage_1(MonsgageWork* work) {
             }
 
             if (work->unk_1C > 120) {
-                work->unk_20 = 1;
+                work->state = 1;
                 work->unk_1C = 0;
             } else {
                 work->unk_1C++;
@@ -62,10 +62,10 @@ s32 task_monsgage_1(MonsgageWork* work) {
                 work->unk_1C = 0;
                 work->unk_0C += 25;
                 if (work->unk_0C <= 255) {
-                    work->unk_20 = 0;
+                    work->state = 0;
                 } else {
                     work->unk_0C = 256;
-                    work->unk_20 = 2;
+                    work->state = 2;
                 }
             } else {
                 work->unk_1C++;
@@ -186,7 +186,7 @@ void eu_0805E9F0(MonsgageWork* work) {
     work->gfx = gUnkEu_08B4FB78;
     work->gfx2 = gUnkEu_08B4FB88;
     work->unk_1C = 0;
-    work->unk_20 = 0;
+    work->state = 0;
     work->unk_24 = 1;
 }
 
@@ -196,7 +196,7 @@ s32 eu_0805EA44(MonsgageWork* work) {
             return 0;
         }
 
-        switch (work->unk_20) {
+        switch (work->state) {
         case 0:
             if (work->unk_1C == 0) {
                 work->unk_24 = 1;
@@ -208,12 +208,12 @@ s32 eu_0805EA44(MonsgageWork* work) {
                 work->unk_0C += 20;
                 if (work->unk_0C > 255) {
                     work->unk_0C = 256;
-                    work->unk_20 = 2;
+                    work->state = 2;
                     work->unk_1C = 0;
                     break;
                 }
             } else if (work->unk_1C > 120) {
-                work->unk_20 = 1;
+                work->state = 1;
                 work->unk_1C = 0;
                 break;
             }
@@ -242,10 +242,10 @@ s32 eu_0805EA44(MonsgageWork* work) {
                 work->unk_1C = 0;
                 work->unk_0C += 20;
                 if (work->unk_0C <= 255) {
-                    work->unk_20 = 0;
+                    work->state = 0;
                 } else {
                     work->unk_0C = 256;
-                    work->unk_20 = 2;
+                    work->state = 2;
                 }
             } else {
                 work->unk_1C++;

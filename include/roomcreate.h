@@ -38,7 +38,7 @@ typedef struct RoomCreateWork {
     u8 unk_29;
     u8 unk_2A[0x02];
     TaskPool tasks;
-    s32 unk_40;
+    s32 state;
 } RoomCreateWork;
 
 

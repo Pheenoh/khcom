@@ -224,21 +224,21 @@ void Hanabira_c_0(EffectWork* w, EventActor* arg) {
     w->vz = -(GetRandom() % 539 + 102);
     AnimInit(&w->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
     AnimStart(&w->anim, GetRandom() & 1, 1);
-    w->unk_49 = 0;
+    w->state = 0;
 }
 
 s32 Hanabira_c_1(EffectWork* w) {
     s32 v;
     s32 r;
 
-    switch (w->unk_49) {
+    switch (w->state) {
     case 0:
         w->x += w->vx;
         w->z += w->vz;
         w->vz += 17;
 
         if (w->vz > 256) {
-            w->unk_49 = 1;
+            w->state = 1;
         }
         break;
     case 1:

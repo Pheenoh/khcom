@@ -13,7 +13,7 @@ typedef struct MonsgageWork {
     void* gfx2;
     s16 unk_1C;
     u8 unk_1E[0x2];
-    u32 unk_20;
+    u32 state;
     u8 unk_24;
     u8 unk_25[0x3];
 } MonsgageWork;

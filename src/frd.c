@@ -87,7 +87,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -170,7 +170,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         target = owner->actor2;
     }
     if (owner->unk_068 & 0x40000000) return 0;
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EB8C, &work->anim, 2, 0, work->tiles);
@@ -181,9 +181,9 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         if (work->unk_14D == 3) func_08045494(body, 0, 8, 8);
         if (func_0804544C(work)) {
             work->unk_14E = 0;
-            if (work->unk_14D == 3) work->unk_148 = 8;
+            if (work->unk_14D == 3) work->state = 8;
             else {
-                work->unk_148 = 1;
+                work->state = 1;
                 m4aSongNumStart(0xB3);
             }
         }
@@ -192,22 +192,22 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         if (work->unk_14E == 0) func_08019068(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
             func_0801D288();
-            if (gBtlWork->unk_068 & 0x800000000ULL) work->unk_148 = 4;
+            if (gBtlWork->unk_068 & 0x800000000ULL) work->state = 4;
             else {
                 u16 spell = GetRandom();
                 spell &= 3;
                 switch (spell) {
                 case 0:
-                    work->unk_148 = 4;
+                    work->state = 4;
                     break;
                 case 1:
-                    work->unk_148 = 5;
+                    work->state = 5;
                     break;
                 case 2:
-                    work->unk_148 = 6;
+                    work->state = 6;
                     break;
                 case 3:
-                    work->unk_148 = 7;
+                    work->state = 7;
                     break;
                 }
             }
@@ -217,22 +217,22 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
     case 2:
         if (work->unk_160 > 0) {
             func_0801D288();
-            if (gBtlWork->unk_068 & 0x800000000ULL) work->unk_148 = 4;
+            if (gBtlWork->unk_068 & 0x800000000ULL) work->state = 4;
             else {
                 u16 spell = GetRandom();
                 spell &= 3;
                 switch (spell) {
                 case 0:
-                    work->unk_148 = 4;
+                    work->state = 4;
                     break;
                 case 1:
-                    work->unk_148 = 5;
+                    work->state = 5;
                     break;
                 case 2:
-                    work->unk_148 = 6;
+                    work->state = 6;
                     break;
                 case 3:
-                    work->unk_148 = 7;
+                    work->state = 7;
                     break;
                 }
             }
@@ -241,7 +241,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         } else {
             if (work->unk_14E == 0) func_08019068(gUnk_0813EB8C, &work->anim, 3, 0, work->tiles);
             if (AnimIsFinished(&work->anim)) {
-                work->unk_148 = 3;
+                work->state = 3;
                 work->unk_14E = 0;
             } else work->unk_14E++;
         }
@@ -291,7 +291,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         }
         if (work->unk_14E > 179) {
             work->unk_14E = 0;
-            work->unk_148 = 3;
+            work->state = 3;
         } else work->unk_14E++;
         break;
     case 4:
@@ -336,7 +336,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             }
             if (work->unk_14E > 40) {
                 if (!func_080128EC()) {
-                    work->unk_148 = 2;
+                    work->state = 2;
                     work->unk_14E = 0;
                     break;
                 }
@@ -387,7 +387,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
             }
             if (work->unk_14E > 40) {
                 if (!func_080128EC()) {
-                    work->unk_148 = 2;
+                    work->state = 2;
                     work->unk_14E = 0;
                     break;
                 }
@@ -434,7 +434,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
         }
         if (work->unk_14E == 60) func_08019050(15,148,0x10000,0x12C00);
         if (work->unk_14E > 40 && !func_080128EC()) {
-            work->unk_148=2;
+            work->state=2;
             func_08019050(15,256,gBtlWork->x2,gBtlWork->y2);
             work->unk_14E=0;
         } else work->unk_14E++;
@@ -495,7 +495,7 @@ u8 task_frd_donald_1(FrdDonaldWork* work) {
                     }
                     if (ally->unk_02C > ally->unk_02E) ally->unk_02C=ally->unk_02E;
                     func_08019190(ally,10);
-                    work->unk_148=2;
+                    work->state=2;
                     func_08019050(15,256,gBtlWork->x2,gBtlWork->y2);
                     work->unk_14E=0;
                     break;
@@ -605,7 +605,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -642,7 +642,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         return 0;
     }
 
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EBFC, &work->anim, 0, 0, work->tiles);
@@ -653,7 +653,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         ClampBattlePosition(&body->x, &body->y, -16, 0);
 
         if (func_080465F0(work)) {
-            work->unk_148 = 1;
+            work->state = 1;
             work->unk_14E = 0;
             m4aSongNumStart(0xB2);
         }
@@ -667,10 +667,10 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
             switch (work->unk_14D) {
             case 0:
             case 1:
-                work->unk_148 = 4;
+                work->state = 4;
                 break;
             case 2:
-                work->unk_148 = 5;
+                work->state = 5;
                 break;
             }
 
@@ -685,7 +685,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         }
 
         if (AnimIsFinished(&work->anim)) {
-            work->unk_148 = 3;
+            work->state = 3;
             work->unk_14E = 0;
         } else {
             work->unk_14E++;
@@ -746,7 +746,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         func_080465F0(work);
 
         if (AnimIsFinished(&work->anim)) {
-            work->unk_148 = 2;
+            work->state = 2;
             work->unk_14E = 0;
         } else {
             work->unk_14E++;
@@ -760,7 +760,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         func_080465F0(work);
 
         if (AnimIsFinished(&work->anim)) {
-            work->unk_148 = 6;
+            work->state = 6;
             work->unk_14E = 0;
         } else {
             work->unk_14E++;
@@ -786,7 +786,7 @@ u8 task_frd_goofy_1(FrdGoofyWork* work) {
         func_080465F0(work);
 
         if (work->unk_14E > 179) {
-            work->unk_148 = 2;
+            work->state = 2;
             work->unk_14E = 0;
         }
 
@@ -869,7 +869,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
 
     if (work->actor->unk_034 & 4) {
@@ -926,7 +926,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 
     func_0801C6D4(&body->x, &body->y, &body->z, &body->unk_010);
 
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (body->unk_034 & 4) {
             t = gBtlWork->unk_0DC - 0x30;
@@ -938,7 +938,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 
         if (work->unk_14E > 20) {
             work->unk_14E = 0;
-            work->unk_148 = 1;
+            work->state = 1;
         } else {
             work->unk_14E++;
         }
@@ -972,7 +972,7 @@ u8 task_frd_ariel_1(FrdArielWork* work) {
 
         if (work->unk_150 <= 0 && AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
-            work->unk_148 = 2;
+            work->state = 2;
         } else {
             work->unk_14E++;
         }
@@ -1119,7 +1119,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -1172,7 +1172,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         target = owner->actor2;
     }
     if (owner->unk_068 & 0x40000000) return 0;
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813EC9C, &work->anim, 1, 0, work->tiles);
@@ -1181,7 +1181,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         body->x += (work->unk_158 - body->x) >> 4;
         ClampBattlePosition(&body->x, &body->y, -16, 0);
         if (func_080474A8(work)) {
-            work->unk_148 = 1;
+            work->state = 1;
             work->unk_14E = 0;
             m4aSongNumStart(0xC1);
         }
@@ -1195,16 +1195,16 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             spell &= 3;
             switch (spell) {
             case 0:
-                work->unk_148 = 4;
+                work->state = 4;
                 break;
             case 1:
-                work->unk_148 = 5;
+                work->state = 5;
                 break;
             case 2:
-                work->unk_148 = 6;
+                work->state = 6;
                 break;
             case 3:
-                work->unk_148 = 7;
+                work->state = 7;
                 break;
             }
             work->unk_14E = 0;
@@ -1212,13 +1212,13 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         break;
     case 2:
         if (work->unk_168 > 0) {
-            work->unk_148 = 8;
+            work->state = 8;
             work->unk_14E = 0;
             work->unk_168--;
         } else {
             if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
             if (AnimIsFinished(&work->anim)) {
-                work->unk_148 = 3;
+                work->state = 3;
                 work->unk_14E = 0;
             } else work->unk_14E++;
         }
@@ -1240,7 +1240,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
     case 8:
         if (work->unk_14E == 0) func_08019068(gUnk_0813EC9C, &work->anim, 4, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
-            work->unk_148 = 9;
+            work->state = 9;
             GetRandom();
             m4aSongNumStart(0xC1);
             work->unk_14E = 0;
@@ -1280,7 +1280,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         if (body->z >= body->unk_010 && work->unk_150 <= 0) {
             work->unk_14E = 0;
             work->unk_160 = 0;
-            work->unk_148 = 10;
+            work->state = 10;
         }
         break;
     case 10:
@@ -1292,16 +1292,16 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             spell &= 3;
             switch (spell) {
             case 0:
-                work->unk_148 = 4;
+                work->state = 4;
                 break;
             case 1:
-                work->unk_148 = 5;
+                work->state = 5;
                 break;
             case 2:
-                work->unk_148 = 6;
+                work->state = 6;
                 break;
             case 3:
-                work->unk_148 = 7;
+                work->state = 7;
                 break;
             }
             work->unk_14E = 0;
@@ -1349,7 +1349,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             }
             if (work->unk_14E > 44) {
                 if (!func_080128EC()) {
-                    work->unk_148 = 2;
+                    work->state = 2;
                     work->unk_14E = 0;
                     break;
                 }
@@ -1401,7 +1401,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             }
             if (work->unk_14E > 44 && !func_080128EC()) {
                 FadeToOriginal(2, 20);
-                work->unk_148 = 2;
+                work->state = 2;
                 work->unk_14E = 0;
             } else work->unk_14E++;
             break;
@@ -1448,7 +1448,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
             }
             if (work->unk_14E > 44) {
                 if (!func_080128EC()) {
-                    work->unk_148 = 2;
+                    work->state = 2;
                     work->unk_14E = 0;
                     break;
                 }
@@ -1498,7 +1498,7 @@ u8 task_frd_jack_1(FrdJackWork* work) {
         }
         if (work->unk_14E == 64) func_08019050(15, 148, 0x10000, 0x12C00);
         if (work->unk_14E > 44 && !func_080128EC()) {
-            work->unk_148 = 2;
+            work->state = 2;
             func_08019050(15, 256, gBtlWork->x2, gBtlWork->y2);
             work->unk_14E = 0;
         } else work->unk_14E++;
@@ -1589,7 +1589,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
     work->unk_150 = 0;
     work->unk_158 = 0;
@@ -1700,7 +1700,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
             body->unk_010 = ground;
         }
     }
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813ECFC, &work->anim, 0, 0, work->tiles);
@@ -1709,7 +1709,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         ApproachValueHalfSteps(&body->x, work->unk_15C, work->unk_150);
         func_08048A68(work);
         if (work->unk_150 <= 0) {
-            work->unk_148 = 3;
+            work->state = 3;
             work->unk_14E = 0;
         } else {
             work->unk_14E++;
@@ -1723,7 +1723,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
-            work->unk_148 = 2;
+            work->state = 2;
         } else {
             work->unk_14E++;
         }
@@ -1754,7 +1754,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
-            work->unk_148 = 4;
+            work->state = 4;
             m4aSongNumStart(0xBF);
         } else {
             work->unk_14E++;
@@ -1807,7 +1807,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         }
         if (work->unk_14E > work->unk_152) {
             work->unk_14E = 0;
-            work->unk_148 = 5;
+            work->state = 5;
         } else {
             work->unk_14E++;
         }
@@ -1819,7 +1819,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         func_08048A68(work);
         if (AnimIsFinished(&work->anim)) {
             work->unk_14E = 0;
-            work->unk_148 = 1;
+            work->state = 1;
             FadeToOriginal(0, 8);
         } else {
             work->unk_14E++;
@@ -1924,7 +1924,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     }
 
     work->unk_14D = args->unk_00;
-    work->unk_148 = 0;
+    work->state = 0;
     work->unk_14E = 0;
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -1973,7 +1973,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         return 0;
     }
     if ((work->unk_14C ? gBtlWork->unk_068 : gUnk_02039B9C->unk_068) & 0x40000000) return 0;
-    switch (work->unk_148) {
+    switch (work->state) {
     case 0:
         if (work->unk_14E == 0) {
             func_08019068(gUnk_0813ED4C, &work->anim, 0, 0, work->tiles);
@@ -1982,7 +1982,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         body->x += (work->unk_158 - body->x) >> 4;
         ClampBattlePosition(&body->x, &body->y, -16, 0);
         if (func_080490FC(work)) {
-            work->unk_148 = 1;
+            work->state = 1;
             work->unk_14E = 0;
             m4aSongNumStart(0xC0);
         }
@@ -1992,7 +1992,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
             func_08019068(gUnk_0813ED4C, &work->anim, 1, 0, work->tiles);
         }
         if (AnimIsFinished(&work->anim)) {
-            work->unk_148 = 3;
+            work->state = 3;
             work->unk_14E = 0;
         } else {
             work->unk_14E++;
@@ -2060,7 +2060,7 @@ u8 task_frd_aladdin_1(FrdAladdinWork* work) {
         ClampBattlePosition(&body->x, &body->y, -16, 0);
         if (work->unk_14E > work->unk_152) {
             work->unk_14E = 0;
-            work->unk_148 = 2;
+            work->state = 2;
         } else {
             work->unk_14E++;
         }
@@ -2194,16 +2194,16 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
 
     switch (work->unk_14D) {
     case 0:
-        work->unk_148 = 1;
+        work->state = 1;
         work->unk_15C = 0xA0;
         break;
     case 1:
-        work->unk_148 = 1;
+        work->state = 1;
         work->unk_15C = 0xA1;
         break;
     case 2:
     default:
-        work->unk_148 = 2;
+        work->state = 2;
         work->unk_15C = 0xA1;
         break;
     }
@@ -2231,7 +2231,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
         return 0;
     }
 
-    switch (work->unk_148) {
+    switch (work->state) {
     case 2:
         if (work->unk_14E == 0) {
             m4aSongNumStart(0xBD);
@@ -2256,7 +2256,7 @@ u8 task_frd_beast_1(FrdBeastWork* work) {
         }
 
         if (func_080497E8(work) && AnimIsFinished(&work->anim)) {
-            work->unk_148 = 1;
+            work->state = 1;
             work->unk_15C = 0xA1;
             work->unk_14E = 0;
             func_0802F1E8();

@@ -213,7 +213,7 @@ void task_chgCardObj_0(ChgCardObjWork* work, ChgCardObjParam* param) {
     work->unk_3C = -y;
     work->unk_00 = 0;
     work->unk_02 = 0;
-    work->unk_04 = 0;
+    work->state = 0;
 }
 
 static inline u8 ChgCardRotation(ChgCardObjWork* work, u8 rotation) {
@@ -236,11 +236,11 @@ u8 task_chgCardObj_1(ChgCardObjWork* work) {
     s32* p10;
     s32* p14;
 
-    switch (work->unk_04) {
+    switch (work->state) {
     case 0:
         if (work->unk_00 >= work->unk_28) {
             work->unk_00 = 0;
-            work->unk_04++;
+            work->state++;
         } else {
             work->unk_00++;
         }
