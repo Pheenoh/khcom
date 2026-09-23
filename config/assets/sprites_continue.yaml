@@ -20,6 +20,12 @@ objects:
   - name: sprites_continue_frames.s
     start: 0x090A6A20
     end: 0x090AA3C4
+  - name: sprites_continue_tiles.s
+    start: 0x0941A418
+    end: 0x0941BEB8
+  - name: sprites_continue_maps.s
+    start: 0x0951CAB8
+    end: 0x0951D2B8
   jp:
   - name: sprites_continue.c
     start: 0x09EC24B0
@@ -27,6 +33,12 @@ objects:
   - name: sprites_continue_frames.s
     start: 0x09061F48
     end: 0x090658EC
+  - name: sprites_continue_tiles.s
+    start: 0x093D2754
+    end: 0x093D4194
+  - name: sprites_continue_maps.s
+    start: 0x094D5594
+    end: 0x094D5D94
   eu:
   - name: sprites_continue.c
     start: 0x09F77254
@@ -34,6 +46,12 @@ objects:
   - name: sprites_continue_frames.s
     start: 0x0919728C
     end: 0x0919AC30
+  - name: sprites_continue_tiles.s
+    start: 0x0954C284
+    end: 0x0954C7B4
+  - name: sprites_continue_maps.s
+    start: 0x095A3D74
+    end: 0x095A3F4C
 entries:
 - name: gUnk_09EEB0C4
   record: SpriteTable
@@ -865,3 +883,27 @@ entries:
   eu:
     address: 0x09199830
     size: 5120
+- name: gUnk_0941A418
+  format: tiles4
+  us:
+    address: 0x0941A418
+    size: 6816
+  jp:
+    address: 0x093D2754
+    size: 6720
+  eu:
+    address: 0x0954C284
+    size: 1328
+    compress: lz77
+- name: gUnk_0951CAB8
+  format: tilemap
+  us:
+    address: 0x0951CAB8
+    size: 2048
+  jp:
+    address: 0x094D5594
+    size: 2048
+  eu:
+    address: 0x095A3D74
+    size: 472
+    compress: lz77

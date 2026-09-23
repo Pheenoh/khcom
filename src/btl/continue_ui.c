@@ -25,12 +25,6 @@ extern u8 gUnk_09614618[];
 extern u8 gUnk_09614658[];
 extern u8 gUnk_096146F8[];
 extern u8 gUnk_09618118[];
-#ifdef VERSION_EU
-extern u8 gUnkEu_095A3D74[];
-#else
-extern u8 gUnk_0941A418[];
-extern u8 gUnk_0951CAB8[];
-#endif
 
 const s32 gUnk_08F7DAFC[2] = {
     0x4000, 0x5600,
@@ -39,14 +33,13 @@ const s32 gUnk_08F7DAFC[2] = {
 const char gTaskNameContinue[] = "Continue";
 
 #ifdef VERSION_EU
-extern u8 gUnkEu_0954C284[];
 extern u8 gUnkEu_0954C7B4[];
 extern u8 gUnkEu_0954D7A0[];
 extern u8 gUnkEu_0954D238[];
 extern u8 gUnkEu_0954CD1C[];
 
 void* gUnkEu_09F5D7E4[5] = {
-    gUnkEu_0954C284,
+    gUnk_0941A418,
     gUnkEu_0954C7B4,
     gUnkEu_0954D7A0,
     gUnkEu_0954D238,
@@ -85,7 +78,7 @@ void func_0806CD60(ContinueWork* p) {
     SetBgPriority(1, 2);
 #ifdef VERSION_EU
     eu_080059D4(0, gUnkEu_09F5D7E4[gLanguage]);
-    eu_080059F4(0, gUnkEu_095A3D74);
+    eu_080059F4(0, gUnk_0951CAB8);
 #else
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);
@@ -152,7 +145,7 @@ void func_0806CF04(ContinueWork* p) {
     SetBgPriority(1, 2);
 #ifdef VERSION_EU
     eu_080059D4(0, gUnkEu_09F5D7E4[gLanguage]);
-    eu_080059F4(0, gUnkEu_095A3D74);
+    eu_080059F4(0, gUnk_0951CAB8);
 #else
     LoadBgTiles(0, gUnk_0941A418, MSG_CONT_BG_TILES);
     LoadBgMap(0, gUnk_0951CAB8, 0x800);

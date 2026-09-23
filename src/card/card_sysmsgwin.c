@@ -59,7 +59,6 @@ extern void* gUnkEu_08890E44[];
 #else
 #define LANGSTR(x) (x)
 #endif
-extern u8 gUnk_096112B8[];
 u8 func_080A470C(UnkStruct_080A3F5C* w, void* a);
 s32 func_080A4910(UnkStruct_080A3F5C* w);
 u8 func_080A4958(UnkStruct_080A3F5C* w, void* a);

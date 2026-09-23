@@ -309,7 +309,6 @@ extern u8 gUnk_090D4180[];
 extern s32 gUnk_09033758[];
 extern u8 gUnk_050001C0[];
 extern u8 gUnk_096148D8[];
-extern u8 gUnk_096112B8[];
 extern u8 gUnk_08F69BE4[];
 extern u8 gUnk_090AA506[];
 extern u8 gUnk_090AB5B2[];

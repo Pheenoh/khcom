@@ -10,7 +10,6 @@
 #ifndef GUARD_MODE_TEST_H
 #define GUARD_MODE_TEST_H
 
-
 #include "msg_types.h"
 
 #include "field_state.h"
@@ -181,8 +180,6 @@ extern EventState* gEventState;
 extern Mode gModeChkbtl;
 extern u8 gUnk_08B24DAA[];
 extern u8 gUnk_090D4DD0[];
-extern u8 gUnk_0941BEB8[];
-extern u8 gUnk_0941DD38[];
 extern u8 gUnk_096148B8[];
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_08F69BE4[];

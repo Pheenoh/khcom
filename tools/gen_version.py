@@ -1791,7 +1791,6 @@ TARGET_ABSENT_SYMBOLS = {
 
 TARGET_ONLY_SYMBOLS = {
     "eu": {
-        "gUnkEu_0954C284": 0x0954C284,
         "gUnkEu_0954C7B4": 0x0954C7B4,
         "gUnkEu_0954CD1C": 0x0954CD1C,
         "gUnkEu_0954D238": 0x0954D238,
@@ -1949,7 +1948,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_099A4238": 0x099A4238,
         "gUnkEu_099A426C": 0x099A426C,
         "gUnkEu_0919B63A": 0x0919B63A,
-        "gUnkEu_095A3D74": 0x095A3D74,
         "gUnkEu_096BF18C": 0x096BF18C,
         "gUnkEu_096C698C": 0x096C698C,
         "gUnkEu_096C598C": 0x096C598C,

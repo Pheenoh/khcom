@@ -29,6 +29,9 @@ objects:
   - name: sprites_msg_maps.s
     start: 0x0951D2B8
     end: 0x0951F2B8
+  - name: sprites_msg_maps_1.s
+    start: 0x096112B8
+    end: 0x09611AB8
   jp:
   - name: sprites_msg.c
     start: 0x09EC3A5C
@@ -45,6 +48,9 @@ objects:
   - name: sprites_msg_maps.s
     start: 0x094D5D94
     end: 0x094D7D94
+  - name: sprites_msg_maps_1.s
+    start: 0x095C9D94
+    end: 0x095CA594
   eu:
   - name: sprites_msg.c
     start: 0x09F77854
@@ -61,6 +67,9 @@ objects:
   - name: sprites_msg_maps.s
     start: 0x0953CB24
     end: 0x0953EB24
+  - name: sprites_msg_maps_1.s
+    start: 0x09544324
+    end: 0x09544B24
 entries:
 - name: gUnk_09EEC670
   record: SpriteTable
@@ -30448,4 +30457,15 @@ entries:
     size: 2048
   eu:
     address: 0x0953E324
+    size: 2048
+- name: gUnk_096112B8
+  format: tilemap
+  us:
+    address: 0x096112B8
+    size: 2048
+  jp:
+    address: 0x095C9D94
+    size: 2048
+  eu:
+    address: 0x09544324
     size: 2048
