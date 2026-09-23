@@ -15,13 +15,6 @@
 #include "main.h"
 #include "engine.h"
 
-extern u8 gUnk_097FFB98[];
-extern u8 gUnk_0984B118[];
-extern u8 gUnk_09848198[];
-extern u8 gUnk_09847C98[];
-extern u8 gUnk_09847798[];
-extern u8 gUnk_09848B98[];
-
 void mode_status_0(void);
 void mode_status_1(void);
 void mode_status_2(void);

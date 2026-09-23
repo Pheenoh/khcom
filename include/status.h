@@ -3,7 +3,6 @@
 #ifndef GUARD_STATUS_H
 #define GUARD_STATUS_H
 
-
 #include "card_label_data.h"
 
 #include "poo_api.h"
@@ -214,29 +213,20 @@ extern s32 gUnk_0203C550;
 
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_097A2CF6[];
-extern u8 gUnk_0984B258[];
 extern u8 gUnk_097A2E16[];
-extern u8 gUnk_0984B278[];
 extern u8 gUnk_097A2DF8[];
-extern u8 gUnk_09848198[];
-extern u8 gUnk_09848698[];
 extern u8 gUnk_097A18EC[];
-extern u8 gUnk_0984B1B8[];
 extern u8 gUnk_097A18CC[];
 extern u8 gUnk_097A1864[];
 extern u8 gUnk_097A1898[];
 extern u8 gUnk_097A24A6[];
-extern u8 gUnk_0984B218[];
 extern u8 gUnk_097A28DA[];
-extern u8 gUnk_0984B238[];
 extern u8 gUnk_09618118[];
 extern u8 gUnk_0891ED26[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_088E33C2[];
-extern u8 gUnk_0984B1D8[];
 extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
-extern u8 gUnk_0984B1F8[];
 
 u8 func_080D7B94(void);
 void func_080D764C(StatusWork* work);

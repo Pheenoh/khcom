@@ -391,7 +391,7 @@ sprites_pooh_tiles_2.s
 sprites_title_tiles.s
 copyright_screen_tiles.s
 sprites_bos4_tiles.s
-asset_gfx_gap_158_at_097FFB98.s
+sprites_status_tiles.s
 copyright_screen_data.s
 event_background_maps_7.s
 sprites_allmap_maps.s
@@ -399,14 +399,14 @@ sprites_pooh_maps.s
 sprites_title_maps.s
 copyright_screen_maps.s
 sprites_bos4_maps.s
-asset_gfx_gap_158_at_09847798.s
+sprites_status_maps.s
 event_background_palettes_5.s
 sprite_palettes_10.s
 sprites_allmap_palettes.s
 sprites_title_palettes.s
 copyright_screen_palettes.s
 sprite_palettes_11.s
-asset_gfx_gap_158_at_09849A98_at_0984B118.s
+sprites_status_palettes.s
 asset_gfx_gap_158_at_0984B458.s
 mode_mapchk.c
 asset_gfx_gap_159.s

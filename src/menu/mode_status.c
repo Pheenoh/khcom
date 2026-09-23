@@ -4,6 +4,7 @@
 #include "mode_status_api.h"
 #include "display.h"
 #include "mode_status.h"
+#include "sprites_status.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_097D8300[];
