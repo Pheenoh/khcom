@@ -274,7 +274,7 @@ asset_gfx_gap_42.s
 card_print.c
 sprites_number_plus.c
 sprites_card_pictures.c
-card_lookup_data_96ac.c
+card_lookup_data.c
 card_localized_09EE9C90_data.c
 sprites_premire_chance.c
 sprites_card_1.c
