@@ -912,7 +912,7 @@ u8 task_status_meswindow_1(StatusMeswindowWork* work) {
                     work->unk_20 = func_080D8F04(work->unk_14);
                     func_08000DE8(&work->pool, work->unk_14);
                 }
-                work->unk_14 = func_080D8EB4(work, func_080D85F8(work->unk_18), work->unk_20, 88, 98);
+                work->unk_14 = CreateStockMesDispTask(work, func_080D85F8(work->unk_18), work->unk_20, 88, 98);
                 func_0800FD68(work->unk_18);
             }
             TaskPoolUpdate(&work->pool);
@@ -954,7 +954,7 @@ void task_status_message_3(StatusMessageWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-s32 func_080D8AA4(void* pool, s16 x, s16 y, void* p) {
+s32 CreateStatusMessageTask(void* pool, s16 x, s16 y, void* p) {
     StatusMessageParam param;
 
     param.x = x;
@@ -1040,7 +1040,7 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     work->tiles = func_080D85C0(work->unk_42);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     TaskPoolInit(&work->tasks, 1);
-    work->unk_38 = (void*)func_080D8AA4(&work->tasks, work->x + 6, work->y + 16,
+    work->unk_38 = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16,
                                         func_080A2334(work->unk_42, work->unk_40));
     work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
@@ -1068,7 +1068,7 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
     if (changed) {
         m4aSongNumStart(0x67);
         func_08000DE8(&work->tasks, work->unk_38);
-        work->unk_38 = (void*)func_080D8AA4(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
+        work->unk_38 = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
     }
 
     TaskPoolUpdate(&work->tasks);
@@ -1099,7 +1099,7 @@ void stock_mes_disp_3(StockMesDispWork* work) {
     TaskPoolDestroy(&work->tasks);
 }
 
-void* func_080D8EB4(void* pool, u16 b, u8 c, u16 d, s32 e) {
+void* CreateStockMesDispTask(void* pool, u16 b, u8 c, u16 d, s32 e) {
     StatusMesParam p;
 
     p.unk_04_16 = b;

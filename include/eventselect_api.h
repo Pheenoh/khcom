@@ -9,13 +9,13 @@ struct UnkStruct_02039DD0;
 extern struct UnkStruct_02039DD0* gUnk_02039DD0;
 
 void func_08076110(u16 song, s16 x, s16 y);
-void func_08075E60(struct EventTaskHost* h);
-void func_08075E74(struct EventTaskHost* h);
-void func_08075E88(struct EventTaskHost* h);
-void func_08075E9C(struct EventTaskHost* h);
-void func_08075EB0(struct EventTaskHost* h);
-void func_08075EC4(struct EventTaskHost* h);
-void func_08075ED8(struct EventTaskHost* h);
-void func_08075F00(struct EventTaskHost* h);
+void CreateTinkerbellTask(struct EventTaskHost* h);
+void CreateDownTask(struct EventTaskHost* h);
+void CreateSmokeTask(struct EventTaskHost* h);
+void CreateExclamationTask(struct EventTaskHost* h);
+void CreateBalloonTask(struct EventTaskHost* h);
+void CreateQuestionTask(struct EventTaskHost* h);
+void CreateGlowNoseTask(struct EventTaskHost* h);
+void CreateHanabiraTask(struct EventTaskHost* h);
 
 #endif

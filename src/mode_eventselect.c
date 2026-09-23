@@ -652,39 +652,39 @@ void Tinkerbell_3(EffectWork* w) {
     TaskPoolDestroy(&w->tasks);
 }
 
-void func_08075E60(EventTaskHost* h) {
+void CreateTinkerbellTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescTinkerbell, h);
 }
 
-void func_08075E74(EventTaskHost* h) {
+void CreateDownTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescDown, h);
 }
 
-void func_08075E88(EventTaskHost* h) {
+void CreateSmokeTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescSmoke, h);
 }
 
-void func_08075E9C(EventTaskHost* h) {
+void CreateExclamationTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescExclamation, h);
 }
 
-void func_08075EB0(EventTaskHost* h) {
+void CreateBalloonTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescBalloon, h);
 }
 
-void func_08075EC4(EventTaskHost* h) {
+void CreateQuestionTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescQuestion, h);
 }
 
-void func_08075ED8(EventTaskHost* h) {
+void CreateGlowNoseTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescGlowNose, h);
 }
 
-void func_08075EEC(EventTaskHost* h) {
+void CreateGlowNose2Task(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescGlowNose2, h);
 }
 
-void func_08075F00(EventTaskHost* h) {
+void CreateHanabiraTask(EventTaskHost* h) {
     TaskCreate(&h->tasks, &gTaskDescHanabira, h);
 }
 

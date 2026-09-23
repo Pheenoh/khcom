@@ -1751,7 +1751,7 @@ u8 func_0801BCA8(s32 a) {
     }
 }
 
-void func_0801BCC0(s32 a, s32 b, s32 c) {
+void SetBattleActorPosition(s32 a, s32 b, s32 c) {
     gBtlWork->actor->x = a;
     gBtlWork->actor->y = b;
     gBtlWork->actor->z = c;

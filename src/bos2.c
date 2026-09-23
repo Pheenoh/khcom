@@ -123,7 +123,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         func_0801BDD4(&work->body, sub);
         gBtlWork->unk_0D8 = 0xFF00;
         func_0801C298(0, 1);
-        func_0801BCC0(0x23E00, 0x16800, -0x4000);
+        SetBattleActorPosition(0x23E00, 0x16800, -0x4000);
         func_0801C274(0x20600, 0x16800, -0x800);
         TaskCreate(&work->tasks, &gTaskDescBosJfLamp, work);
         TaskCreate(&work->tasks, &gTaskDescBosJfMajin, work);
@@ -2958,7 +2958,7 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         func_0801BDD4(p2, p1);
         gBtlWork->unk_0D8 = v;
         func_0801C298(0, 1);
-        func_0801BCC0(0x6400, 0x16800, 0);
+        SetBattleActorPosition(0x6400, 0x16800, 0);
         func_0801C274(0x2800, 0x16800, 0);
         TaskCreate(&w->tasks, &gTaskDescBosDsdMain, w);
         btl = gBtlWork;

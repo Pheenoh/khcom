@@ -198,7 +198,7 @@ void func_080D42D4(AllmapDoorinfoWork* work);
 void func_080D44D4(AllmapDoorinfoWork* work);
 void func_080D484C(AllmapDoorinfoWork* work);
 void func_080D49EC(AllmapDoorinfoWork* work);
-u8 func_080D4D1C(void);
+u8 IsStockMesDispActive(void);
 s32 func_080D5494(AllmapCursorPos a);
 void func_080D576C(u8 a, u16 b, u16 c);
 void* func_080986FC(u8 a);

@@ -107,7 +107,7 @@ u8 StockInfo_1(u8* work, void* a) {
         work[0x10]--;
     } else {
         m4aSongNumStart(0xCA);
-        func_080D8EB4(&work[0x18], gUnk_0903BFBC[gGameState.progression.unk_80], 0, 0, 0x50);
+        CreateStockMesDispTask(&work[0x18], gUnk_0903BFBC[gGameState.progression.unk_80], 0, 0, 0x50);
         SetTaskUpdate(a, (void*)func_080A22A4);
     }
 

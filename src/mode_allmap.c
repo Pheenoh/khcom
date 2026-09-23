@@ -36,7 +36,7 @@ void mode_allmap_0(s32 a) {
         gUnk_02034E81 = a;
     }
     SetObjPaletteRange(0, 14);
-    func_080D4D44();
+    ClearStockMesDispWork();
     SetBgMode0();
     SetupBg(3, 1, 28, 8);
     SetBgPriority(3, 3);

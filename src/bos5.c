@@ -892,7 +892,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     gBtlWork->unk_0CC = 0xE200;
     gBtlWork->unk_0D0 = 0x15E00;
     gBtlWork->unk_0D4 = 0;
-    func_0801BCC0(0x8200, 0x15E00, 0);
+    SetBattleActorPosition(0x8200, 0x15E00, 0);
     p = work->entries;
 
     for (i = 0; i <= 5; i++) {
@@ -1608,7 +1608,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     gBtlWork->unk_0CC = 0x11000;
     gBtlWork->unk_0D0 = 0x15000;
     gBtlWork->unk_0D4 = 0;
-    func_0801BCC0(0x7800, gBtlWork->unk_0D0, 0);
+    SetBattleActorPosition(0x7800, gBtlWork->unk_0D0, 0);
 
     for (i = 0; i < 1; i++) {
         func_0801B37C(&work->sub[i], &gUnk_099920D8, gBtlWork->unk_0CC,

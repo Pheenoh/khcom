@@ -3469,7 +3469,7 @@ void func_08072C34(EventCharaWork* p) {
         p->unk_03C |= 8;
         break;
     case 37:
-        func_08075E60(p);
+        CreateTinkerbellTask(p);
     case 8:
     case 10:
     case 33:

@@ -1801,7 +1801,7 @@ void task_bos_tm_foot_3(TmFootWork* work) {
     ReleaseObjPalette((void*)work->palette2);
 }
 
-void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a) {
+void CreateBosTmClbTask(void* pool, TmClbArg* p, TmClbSrc* a) {
     p->src = a;
     p->unk_00 = 0;
     p->unk_04 = 1;
@@ -2097,8 +2097,8 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
     work->unk_1F4 = (u32)gfx;
     work->unk_254 = 0;
     TaskPoolInit(&work->tasks, 2);
-    func_080BB1B8(&work->tasks, (TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0]);
-    func_080BB1B8(&work->tasks, (TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1]);
+    CreateBosTmClbTask(&work->tasks, (TmClbArg*)&work->unk_1C8, (TmClbSrc*)&work->unk_1F8[0]);
+    CreateBosTmClbTask(&work->tasks, (TmClbArg*)&work->unk_1E0, (TmClbSrc*)&work->unk_1F8[1]);
     gUnk_0203AC74 = 0;
     gUnk_0203AC64 = 0;
     gUnk_0203AC78 = 0;

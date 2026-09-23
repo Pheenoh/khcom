@@ -254,7 +254,7 @@ void task_allmap_cursor_2(AllmapCursorWork* work) {
     s16 x;
     s16 y;
 
-    if (func_080D4D1C() != 0) {
+    if (IsStockMesDispActive() != 0) {
         return;
     }
 
@@ -474,7 +474,7 @@ s32 task_allmap_bar_1(AllmapBarWork* work) {
             return 0;
         }
 
-        if ((GetKeysPressed() & 2) != 0 && func_080D4D1C() == 0) {
+        if ((GetKeysPressed() & 2) != 0 && IsStockMesDispActive() == 0) {
             m4aSongNumStart(104);
             func_080D3F10(work);
             gUnk_0203C4E0 = 1;
@@ -772,7 +772,7 @@ void task_allmap_pusha_0(AllmapPushaWork* work, AllmapCursorWork* arg) {
 }
 
 s32 task_allmap_pusha_1(AllmapPushaWork* work) {
-    if (func_080D4D1C() == 0 && (GetKeysPressed() & 1) != 0) {
+    if (IsStockMesDispActive() == 0 && (GetKeysPressed() & 1) != 0) {
         m4aSongNumStart(102);
         work->task = TaskCreate(&work->tasks, &gTaskDescAllmapDoorinfo, &work->cursor->pos);
     }
@@ -783,7 +783,7 @@ s32 task_allmap_pusha_1(AllmapPushaWork* work) {
 }
 
 void task_allmap_pusha_2(AllmapPushaWork* work) {
-    if (func_080D4D1C() != 0) {
+    if (IsStockMesDispActive() != 0) {
         TaskPoolDraw(&work->tasks);
     } else {
         work->x = work->cursor->pos.x * 24 - gUnk_0203C540;
@@ -796,17 +796,17 @@ void task_allmap_pusha_3(AllmapPushaWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
-    func_080D4D44();
+    ClearStockMesDispWork();
 }
 
-u8 func_080D4D1C(void) {
+u8 IsStockMesDispActive(void) {
     if (gStockMesDispWork == 0 || IsTaskActive(((AllmapPushaWork*)gStockMesDispWork)->task) == 0) {
         return 0;
     }
     return 1;
 }
 
-void func_080D4D44(void) {
+void ClearStockMesDispWork(void) {
     gStockMesDispWork = 0;
 }
 

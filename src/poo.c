@@ -1170,7 +1170,7 @@ void func_080C9E84(void* pool) {
     u32 i;
 
     for (i = 0; i < 12; i++) {
-        func_080CD550(pool, gUnk_096FCAF4[i].unk_08, gUnk_096FCAF4[i].unk_00, gUnk_096FCAF4[i].unk_04);
+        CreatePooPileTask(pool, gUnk_096FCAF4[i].unk_08, gUnk_096FCAF4[i].unk_00, gUnk_096FCAF4[i].unk_04);
     }
 }
 
@@ -1178,7 +1178,7 @@ u16 func_080C9EAC(void* pool, u16 b) {
     u32 i;
 
     for (i = 0; i < 80; i++) {
-        func_080D1990(pool, gUnk_096FCB84[i].unk_08, gUnk_096FCB84[i].unk_00, gUnk_096FCB84[i].unk_04, b);
+        CreatePooMapobjhitTask(pool, gUnk_096FCB84[i].unk_08, gUnk_096FCB84[i].unk_00, gUnk_096FCB84[i].unk_04, b);
         b++;
     }
     return b;
@@ -3427,7 +3427,7 @@ void task_poo_pile_3(PooPileWork* w) {
     TaskPoolDestroy(&w->tasks);
 }
 
-void func_080CD550(void* pool, u16 b, void* c, void* d) {
+void CreatePooPileTask(void* pool, u16 b, void* c, void* d) {
     s32 t[6];
     PooStumpArgs args;
 
@@ -6099,7 +6099,7 @@ void task_poo_mapobjhit_3(PooObjWork* w) {
     }
 }
 
-void func_080D1990(void* pool, u32 a, s32 x, s32 y, u16 e) {
+void CreatePooMapobjhitTask(void* pool, u32 a, s32 x, s32 y, u16 e) {
     PooMapObjHitArgs args;
 
     args.x = x;

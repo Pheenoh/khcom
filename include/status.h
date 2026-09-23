@@ -262,7 +262,7 @@ void* func_080D85C0(u16 a);
 s32 func_080D85F8(s32 a);
 s16 func_080D885C(StatusScrollcursorWork* work);
 void func_080D8374(void);
-void* func_080D8EB4(void* a, u16 b, u8 c, u16 d, s32 e);
+void* CreateStockMesDispTask(void* a, u16 b, u8 c, u16 d, s32 e);
 u8 func_080D8F04(void* a);
 
 void func_080D78B8(StatusBarWork* work);

@@ -5608,7 +5608,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
         func_0810A4CC(work, zero, 0x11000, 0x17000, -0x800, 3);
     }
     func_0810B7E8(work->unk_2D4[0], &x, &y, &z);
-    func_0801BCC0(x, y, z - 0x400);
+    SetBattleActorPosition(x, y, z - 0x400);
     func_0810A51C(work, (TaskPool*)arg);
     g = gBtlWork;
     g->unk_0CC = work->unk_058;
@@ -7135,7 +7135,7 @@ void task_bos_lst_0(BosLstWork* work, void* pool) {
     func_0801C298(0, 1);
     func_0801C298(1, 1);
     func_0801C298(2, 1);
-    func_0801BCC0(0xCC00, 0x1F000, 0);
+    SetBattleActorPosition(0xCC00, 0x1F000, 0);
     LoadBgMap(1, gUnk_09D34A74, 0x1000);
     LoadBgMap(1, gUnk_09D4DA74, 0x800);
     LoadBgMap(0, gUnk_09D4B274, 0x800);

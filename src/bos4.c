@@ -1881,7 +1881,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
     work->unk_138 = 0;
     work->unk_142 = 0;
     SetBattleBounds(0, 0x200, 0x1A8, 0x1E0);
-    func_0801BCC0(0x10000, 0x1A800, 0);
+    SetBattleActorPosition(0x10000, 0x1A800, 0);
     gBtlWork->unk_0D8 = 0xFF00;
     gUnk_0203C580 = -0x5000;
     func_0801B37C(&work->unk_024, &gUnk_096FE13C, 0x10000, 0x19800, -0x5000);

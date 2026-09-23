@@ -353,7 +353,7 @@ void task_bos_tm_clb_3(TmClbWork* work);
 void func_080BA0E4(BtlObj* p, s32 a, s32 b, s32 c);
 void func_080BA0F8(BtlObj* work);
 void task_bos_tm_body_3(TmBodyWork* work);
-void func_080BB1B8(void* pool, TmClbArg* p, TmClbSrc* a);
+void CreateBosTmClbTask(void* pool, TmClbArg* p, TmClbSrc* a);
 void func_080BB1D8(TmClbArg* p, TmClbSrc* a, s32 b);
 void func_080BB1E8(TmClbArg* p, TmClbSrc* a);
 void func_080BB1F4(TmClbArg* p, TmClbSrc* a, u8 mode);
