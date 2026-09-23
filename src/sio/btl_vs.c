@@ -11,7 +11,7 @@ u16 gUnk_020348E0;
 u16 gUnk_020348E2;
 
 void func_08010548(u16 keys, s32 i) {
-    if (keys & 0x200) {
+    if (keys & L_BUTTON) {
         gUnk_020348CC[i]++;
         gUnk_020348D4[i] = 0;
 
@@ -26,7 +26,7 @@ void func_08010548(u16 keys, s32 i) {
         }
     }
 
-    if (keys & 0x100) {
+    if (keys & R_BUTTON) {
         gUnk_020348D0[i]++;
         gUnk_020348D8[i] = 0;
 
@@ -47,28 +47,28 @@ s32 func_08010600(u16 a, u16 b, s32 i) {
     func_08010548(a, i);
 
     if (gUnk_020348D4[i] == 2) {
-        gUnk_020348DC[i] &= 0xFDFF;
+        gUnk_020348DC[i] &= ~L_BUTTON;
     }
     if (gUnk_020348D8[i] == 2) {
-        gUnk_020348DC[i] &= 0xFEFF;
+        gUnk_020348DC[i] &= ~R_BUTTON;
     }
 
-    if (((b & 0x200) && (a & 0x100)) || ((b & 0x100) && (a & 0x200))) {
-        gUnk_020348DC[i] |= 0x300;
-        ret = 0x300;
+    if (((b & L_BUTTON) && (a & R_BUTTON)) || ((b & R_BUTTON) && (a & L_BUTTON))) {
+        gUnk_020348DC[i] |= (L_BUTTON | R_BUTTON);
+        ret = L_BUTTON | R_BUTTON;
     }
 
-    if (!(gUnk_020348DC[i] & 0x200)) {
+    if (!(gUnk_020348DC[i] & L_BUTTON)) {
         if (gUnk_020348CC[i] == 5 || gUnk_020348D4[i] == 1) {
-            gUnk_020348DC[i] |= 0x200;
-            ret = 0x200;
+            gUnk_020348DC[i] |= L_BUTTON;
+            ret = L_BUTTON;
         }
     }
 
-    if (!(gUnk_020348DC[i] & 0x100)) {
+    if (!(gUnk_020348DC[i] & R_BUTTON)) {
         if (gUnk_020348D0[i] == 5 || gUnk_020348D8[i] == 1) {
-            gUnk_020348DC[i] |= 0x100;
-            ret = 0x100;
+            gUnk_020348DC[i] |= R_BUTTON;
+            ret = R_BUTTON;
         }
     }
     return ret;
@@ -144,10 +144,10 @@ void func_080107D4(void) {
     res = (u16)func_08010600(held, pressed, 1);
 
     switch (res) {
-    case 0x200:
+    case L_BUTTON:
         func_0807E1F4();
         break;
-    case 0x100:
+    case R_BUTTON:
         func_0807E200();
         break;
     }
@@ -272,10 +272,10 @@ void func_08010A24(void) {
     res = (u16)func_08010600(held, pressed, 0);
 
     switch (res) {
-    case 0x200:
+    case L_BUTTON:
         func_08076318();
         break;
-    case 0x100:
+    case R_BUTTON:
         func_08076324();
         break;
     }
