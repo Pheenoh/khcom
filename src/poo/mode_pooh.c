@@ -5,7 +5,6 @@
 #include "gba/keys.h"
 #include "pooh_animation_assets.h"
 #include "sprites_pooh.h"
-#include "sprites_sio2.h"
 
 const char gModeNamePooh[] = "mode_pooh";
 

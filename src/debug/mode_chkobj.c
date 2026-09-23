@@ -19,7 +19,6 @@
 #include "sprites_msg.h"
 #include "sprites_pooh.h"
 #include "sprites_riku.h"
-#include "sprites_sio2.h"
 #include "sprites_smn.h"
 #include "sprites_sora.h"
 

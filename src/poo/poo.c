@@ -13,7 +13,6 @@
 #include "sprites_fld.h"
 #include "sprites_map.h"
 #include "sprites_pooh.h"
-#include "sprites_sio2.h"
 #include "sprites_sora.h"
 
 u8 gUnk_0203C3D8 EWRAM_COMMON(4);

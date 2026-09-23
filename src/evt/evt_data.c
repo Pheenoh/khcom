@@ -9,7 +9,6 @@
 #include "sprites_map.h"
 #include "sprites_map_tasks.h"
 #include "sprites_pooh.h"
-#include "sprites_sio2.h"
 #include "sprites_smn.h"
 #include "sprites_sora.h"
 
