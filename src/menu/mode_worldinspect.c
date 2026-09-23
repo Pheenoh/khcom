@@ -23,23 +23,11 @@
 #include "sprites_bos5.h"
 #include "sprites_worldinspect.h"
 #ifdef VERSION_EU
-extern u8 gUnkEu_09A86E60[];
-extern u8 gUnkEu_09A2D440[];
-extern u8 gUnkEu_09A2E440[];
-extern u8 gUnkEu_09A2F440[];
-extern u8 gUnkEu_09A30440[];
-extern u8 gUnkEu_09A2CC40[];
-extern u8 gUnkEu_09A2DC40[];
-extern u8 gUnkEu_09A2EC40[];
-extern u8 gUnkEu_09A2FC40[];
 extern u8 gUnkEu_099A4CDA[];
 extern u8 gUnkEu_099A51AA[];
 extern u8 gUnkEu_099A563A[];
 extern u8 gUnkEu_099A5ACA[];
 #endif
-
-extern u8 gUnk_09A02EFC[];
-extern u8 gUnk_09A020FC[];
 
 static s16 gUnk_020350F8;
 static s16 gUnk_020350FA;
@@ -61,29 +49,11 @@ extern u8 gUnkEu_099A55FC[];
 extern u8 gUnkEu_099A5A3C[];
 extern u8 gUnkEu_099A5A58[];
 extern u8 gUnkEu_099A5A8C[];
-extern u8 gUnkEu_09A2B040[];
-extern u8 gUnkEu_09A2BE40[];
-extern u8 gUnkEu_09A30C00[];
-extern u8 gUnkEu_09A34400[];
-extern u8 gUnkEu_09A31A00[];
-extern u8 gUnkEu_09A35200[];
-extern u8 gUnkEu_09A32800[];
-extern u8 gUnkEu_09A38C00[];
-extern u8 gUnkEu_09A33600[];
-extern u8 gUnkEu_09A39A00[];
 #endif
 
 extern WorldinspectConn gUnk_099930BC[];
-extern u8 gUnk_099FB53C[];
-extern u8 gUnk_09A324DC[];
-extern u8 gUnk_09A32EDC[];
-extern u8 gUnk_09A333DC[];
-extern u8 gUnk_09A3399C[];
-extern u8 gUnk_09A33E9C[];
 extern u8 gUnk_09A3CE7C[];
 extern u8 gUnk_09A3D07C[];
-extern u8 gUnk_09A3D09C[];
-extern u8 gUnk_09A3D0BC[];
 extern u8 gUnk_0999CFC6[];
 extern u8 gUnk_0999D41A[];
 extern u8 gUnk_0999D8A8[];
@@ -378,9 +348,9 @@ void func_080FF2B8(s16 index) {
     switch (gLanguage) {
     case 0:
         if ((gGameState.flags & 8) == 0) {
-            src = gUnkEu_09A2B040;
+            src = gUnk_09A020FC;
         } else {
-            src = gUnkEu_09A2BE40;
+            src = gUnk_09A02EFC;
         }
         break;
     case 1:
@@ -978,7 +948,7 @@ void mode_worldinspect_1(void) {
         gUnk_020354C2--;
         if (gUnk_020354C2 <= 0) {
 #ifdef VERSION_EU
-            LoadBgMap(0, gUnkEu_09A86E60, 0x500);
+            LoadBgMap(0, gUnk_09A329DC, 0x500);
 #else
             LoadBgMap(0, gUnk_09A329DC, 0x500);
             ReleaseObjPalette(gUnk_0203511C);

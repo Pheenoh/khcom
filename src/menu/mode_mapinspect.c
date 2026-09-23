@@ -10,13 +10,7 @@
 #include "sprites_worldinspect.h"
 #include "sprites_map.h"
 
-extern u8 gUnk_09A3D23C[];
-
 #ifdef VERSION_EU
-extern u8 gUnkEu_09A3D400[];
-extern u8 gUnkEu_09A3E800[];
-extern u8 gUnkEu_09A3FC00[];
-extern u8 gUnkEu_09A41000[];
 extern u8 gUnkEu_08890EC0[];
 extern u8 gUnkEu_08890E1C[];
 extern u8 gUnkEu_08890E44[];

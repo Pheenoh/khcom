@@ -15,9 +15,6 @@
 #include "main.h"
 #include "key.h"
 
-
-extern u8 gUnk_09A329DC[];
-
 typedef struct {
     s16 unk_00;
     s16 unk_02;

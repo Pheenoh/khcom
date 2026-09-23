@@ -1,7 +1,6 @@
 #ifndef GUARD_MODE_WORLDWARP_H
 #define GUARD_MODE_WORLDWARP_H
 
-
 #include "obj.h"
 
 #include "world_types.h"
@@ -26,19 +25,9 @@
 #include "bos4_api.h"
 
 extern u8 gUnk_09617D58[];
-extern u8 gUnk_09A35F1C[];
 
 extern u8 gUnk_09A378DC[];
 
-extern u8 gUnk_09A3D37C[];
-extern u8 gUnk_09A06A7C[];
-extern u8 gUnk_09A35A1C[];
-extern u8 gUnk_09A3641C[];
-extern u8 gUnk_09A3691C[];
-extern u8 gUnk_09A0E33C[];
-extern u8 gUnk_09A0D63C[];
-extern u8 gUnk_09A0FD3C[];
-extern u8 gUnk_09A0F03C[];
 extern u8 gUnk_09A3D57C[];
 extern u8 gUnk_09A3D59C[];
 extern u8 gUnk_09A3D5BC[];

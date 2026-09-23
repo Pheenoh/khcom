@@ -18,10 +18,6 @@ extern u8 gUnkEu_09A4F3C0[];
 extern u8 gUnkEu_09A503C0[];
 extern u8 gUnkEu_09A513C0[];
 extern u8 gUnkEu_09A523C0[];
-extern u8 gUnkEu_09A4CCC0[];
-extern u8 gUnkEu_09A4BFC0[];
-extern u8 gUnkEu_09A4E6C0[];
-extern u8 gUnkEu_09A4D9C0[];
 extern u8 gUnkEu_09A56780[];
 extern u8 gUnkEu_09A53380[];
 extern u8 gUnkEu_09A5CF80[];
@@ -84,9 +80,6 @@ static s32 gUnk_020357B8;
 extern u8 gUnk_0999F400[];
 extern u8 gUnk_0999F416[];
 extern u8 gUnk_0999F44A[];
-extern u8 gUnk_09A35A1C[];
-extern u8 gUnk_09A0D63C[];
-extern u8 gUnk_09A0F03C[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_099AABA4[];
 extern u8 gUnkEu_099AABBA[];
@@ -615,11 +608,11 @@ void mode_worldwarp_0(void) {
     switch (gLanguage) {
     case 0:
         if ((gGameState.flags & 8) == 0) {
-            func_08100670(gGameState.floor, gUnkEu_09A4CCC0, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A4BFC0, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gGameState.floor, gUnk_09A0E33C, (u8*)GetBgCharBase(0) + 0x120);
+            func_08100670(gUnk_020354E8, gUnk_09A0D63C, (u8*)GetBgCharBase(0) + 0x20);
         } else {
-            func_08100670(gGameState.floor, gUnkEu_09A4E6C0, (u8*)GetBgCharBase(0) + 0x120);
-            func_08100670(gUnk_020354E8, gUnkEu_09A4D9C0, (u8*)GetBgCharBase(0) + 0x20);
+            func_08100670(gGameState.floor, gUnk_09A0FD3C, (u8*)GetBgCharBase(0) + 0x120);
+            func_08100670(gUnk_020354E8, gUnk_09A0F03C, (u8*)GetBgCharBase(0) + 0x20);
         }
         break;
     case 1:
