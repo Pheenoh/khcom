@@ -1683,7 +1683,7 @@ void func_0801B994(BtlObj* p) {
 
         if (gBtlWork->unk_10C != 120 && gBtlWork->unk_10C != 124) {
             if (flag != 0) {
-                func_0809B6D0(&gBtlWork->taskPools[0], p->x >> 8, p->y >> 8, p->z >> 8, p->unk_000);
+                CreateHeartlessCardTask(&gBtlWork->taskPools[0], p->x >> 8, p->y >> 8, p->z >> 8, p->unk_000);
             } else {
                 b.x = p->x;
                 b.y = p->y;

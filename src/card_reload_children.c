@@ -444,7 +444,7 @@ void REV_COUNT_3(RevCountWork* w) {
     ReleaseObjPalette(w->palette);
 }
 
-void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d) {
+void CreateREVCOUNTTask(void* pool, u8* a, void* b, u8* c, u8 d) {
     RevCountArgs args;
 
     c[0] = 1;

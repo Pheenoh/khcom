@@ -776,7 +776,7 @@ void func_0809B644(void* pool, s16 x, s16 y, s16 z, u8 idx) {
     }
 }
 
-void func_0809B6D0(void* pool, s16 a, s16 b, s16 c, u16 d) {
+void CreateHeartlessCardTask(void* pool, s16 a, s16 b, s16 c, u16 d) {
     s32 args[4];
     const s32* t;
 

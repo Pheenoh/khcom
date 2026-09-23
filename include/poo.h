@@ -1453,7 +1453,7 @@ void task_poo_gauge_3(PooObjWork* w);
 void task_poo_mapbutterfly_3(PooObjWork* w);
 void task_poo_shadowdodai_3(PooShadowWork* w);
 void task_poo_shadowscale_3(PooScaleWork* w);
-void func_080CC178(void* pool, void* a, s32 b);
+void CreatePooShadowscaleTask(void* pool, void* a, s32 b);
 s32 func_080CD1DC(u32 a);
 s32 func_080CD1F8(u32 a);
 void func_080C89B4(PooWork* w, const PooSpot* b, u16 c);

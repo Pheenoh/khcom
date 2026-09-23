@@ -5513,7 +5513,7 @@ void func_0810A4C4(PcWork* work) {
     work->unk_038 = 0;
 }
 
-void func_0810A4CC(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e) {
+void CreateBosPcFltTask(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e) {
     PcFltInit arg;
 
     arg.unk_00 = e;
@@ -5602,10 +5602,10 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
         func_08109EF8(work, 12);
     }
     if (arg < 0x2000000) {
-        func_0810A4CC(work, zero, 0xB800, 0x13800, -0x800, 0);
-        func_0810A4CC(work, zero, 0x11800, 0x13800, -0x800, 1);
-        func_0810A4CC(work, zero, 0xB000, 0x17000, -0x800, 2);
-        func_0810A4CC(work, zero, 0x11000, 0x17000, -0x800, 3);
+        CreateBosPcFltTask(work, zero, 0xB800, 0x13800, -0x800, 0);
+        CreateBosPcFltTask(work, zero, 0x11800, 0x13800, -0x800, 1);
+        CreateBosPcFltTask(work, zero, 0xB000, 0x17000, -0x800, 2);
+        CreateBosPcFltTask(work, zero, 0x11000, 0x17000, -0x800, 3);
     }
     func_0810B7E8(work->unk_2D4[0], &x, &y, &z);
     SetBattleActorPosition(x, y, z - 0x400);

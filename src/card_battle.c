@@ -541,7 +541,7 @@ void func_08076CB4(UnkStruct_08080268* w) {
     }
     w->unk_9C[2] = w->unk_9C[1] = w->unk_9C[0] = 0;
     func_08076458();
-    func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+    CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
     ListPoolInit(&w->unk_54[0]);
     ListPoolInit(&w->unk_54[1]);
     ListPoolInit(&w->unk_54[2]);
@@ -881,7 +881,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -905,7 +905,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -931,7 +931,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -955,7 +955,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -981,7 +981,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -1005,7 +1005,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();
@@ -1031,7 +1031,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             func_0807682C(w, 0);
 #ifdef VERSION_EU
             if (w->unk_BC[w->unk_B8] == 0) {
-                func_080991CC(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                CreateREVCOUNTTask(w, (u8*)&w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
             }
 #endif
             func_0807BB04();

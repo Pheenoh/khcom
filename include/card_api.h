@@ -58,7 +58,7 @@ void* func_08093C18(u16 a);
 void CreateBossPrizeCardTask(void* a, void* b);
 void func_08098670(struct UnkStruct_08098670* p, u16 a);
 u8 func_080987C0(u16 n);
-void func_080991CC(void* pool, u8* a, void* b, u8* c, u8 d);
+void CreateREVCOUNTTask(void* pool, u8* a, void* b, u8* c, u8 d);
 void func_0809B644(void* pool, s16 x, s16 y, s16 z, u8 idx);
 void func_0809D2B0(u8 a, u8 b, u8 c, u8* s);
 void func_0809D458(u16 x, u16 y, u16 color, s32 value);

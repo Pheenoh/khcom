@@ -230,7 +230,7 @@ void EV_BG_EFFECT_2(void) {
 }
 void EV_BG_EFFECT_3(void) {
 }
-void func_080A2124(u8* work) {
+void CreateEVBGEFFECTTask(u8* work) {
     TaskCreate(&work[0x10], &gTaskDescEVBGEFFECT, work);
 }
 

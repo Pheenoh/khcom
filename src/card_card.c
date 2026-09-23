@@ -469,7 +469,7 @@ void func_080789E4(UnkStruct_08080268* w) {
 
     if (w->unk_B0[z] > 0) {
         if (w->unk_BC[z] == 0) {
-            func_080991CC(w, &w->unk_B8, &w->unk_B0[z], &w->unk_BC[z], 1);
+            CreateREVCOUNTTask(w, &w->unk_B8, &w->unk_B0[z], &w->unk_BC[z], 1);
         }
     }
 
@@ -519,7 +519,7 @@ void func_08078BB4(UnkStruct_08080268* w) {
         z = w->unk_B8;
 
         if (w->unk_BC[z] == 0) {
-            func_080991CC(w, &w->unk_B8, &w->unk_B0[z], &w->unk_BC[z], 1);
+            CreateREVCOUNTTask(w, &w->unk_B8, &w->unk_B0[z], &w->unk_BC[z], 1);
         }
     }
 }
@@ -1943,11 +1943,11 @@ void func_0807AF40(UnkStruct_08080268* w) {
         if (w->unk_BC[w->unk_B8] == 0) {
             if (w->unk_B8 != 0) {
                 if (w->unk_B0[w->unk_B8] > 0) {
-                    func_080991CC(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                    CreateREVCOUNTTask(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
                 }
             } else {
                 if (w->unk_B0[w->unk_B8] > 1) {
-                    func_080991CC(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+                    CreateREVCOUNTTask(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
                 }
             }
         }
@@ -2019,7 +2019,7 @@ void func_0807B16C(UnkStruct_08080268* w) {
         }
 
         if (w->unk_BC[w->unk_B8] == 0 && w->unk_B0[w->unk_B8] > 0) {
-            func_080991CC(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
+            CreateREVCOUNTTask(w, &w->unk_B8, &w->unk_B0[w->unk_B8], &w->unk_BC[w->unk_B8], 1);
         }
     } else {
         gUnk_02034A98 = w->unk_34[w->unk_B8];

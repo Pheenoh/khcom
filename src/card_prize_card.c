@@ -97,7 +97,7 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->unk_FB = 0;
     TaskPoolInit((TaskPool*)w->unk_20, 1);
 }
-u8 func_08095E68(PrizeCardWork* w, void* a) {
+u8 PrizeCard_1(PrizeCardWork* w, void* a) {
     s32 k = 112;
     s16 x;
     s16 y;
@@ -288,7 +288,7 @@ u8 func_08096390(PrizeCardWork* w) {
 
     return 0;
 }
-void func_08096428(PrizeCardWork* w) {
+void PrizeCard_2(PrizeCardWork* w) {
     u16 pal;
     s32 affine;
     void* gfx;
@@ -335,7 +335,7 @@ void func_08096428(PrizeCardWork* w) {
     TaskPoolDraw(w->unk_20);
 }
 
-void func_080965CC(PrizeCardWork* w) {
+void PrizeCard_3(PrizeCardWork* w) {
     FadeSetPaletteExcluded(w->palette2->index + 16, 0);
     FadeSetPaletteExcluded(w->palette->index + 16, 0);
     ColliderUnregister(w->collider);
@@ -391,8 +391,8 @@ const char gTaskName_09EE75D8[] = "PrizeCard";
 TaskDesc gUnk_09EE75D8 = {
     gTaskName_09EE75D8,
     (void (*)(void*, void*))PrizeCard_0,
-    func_08095E68,
-    (void (*)(void*))func_08096428,
-    (void (*)(void*))func_080965CC,
+    PrizeCard_1,
+    (void (*)(void*))PrizeCard_2,
+    (void (*)(void*))PrizeCard_3,
     0x100,
 };

@@ -3842,7 +3842,7 @@ void func_08050EC4(HumWork* work, s32 a) {
     }
 }
 
-void func_08050F10(LaxeneWork* work, s16 a, s16 b) {
+void CreateHumLaxeneKnfTask(LaxeneWork* work, s16 a, s16 b) {
     BtlObj* act = &work->base.actor;
     VixenNdlArgs args;
 
@@ -4134,22 +4134,22 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
 
         switch ((s16)work->base.unk_150) {
         case 28:
-            func_08050F10(w, -38, -11);
+            CreateHumLaxeneKnfTask(w, -38, -11);
             break;
         case 32:
-            func_08050F10(w, -37, -25);
+            CreateHumLaxeneKnfTask(w, -37, -25);
             break;
         case 36:
-            func_08050F10(w, -32, -38);
+            CreateHumLaxeneKnfTask(w, -32, -38);
             break;
         case 44:
-            func_08050F10(w, -36, -18);
+            CreateHumLaxeneKnfTask(w, -36, -18);
             break;
         case 48:
-            func_08050F10(w, -35, -32);
+            CreateHumLaxeneKnfTask(w, -35, -32);
             break;
         case 52:
-            func_08050F10(w, -30, -45);
+            CreateHumLaxeneKnfTask(w, -30, -45);
             break;
         }
 
@@ -4506,13 +4506,13 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
 
         switch ((s16)work->base.unk_150) {
         case 28:
-            func_08050F10(w, -38, -11);
+            CreateHumLaxeneKnfTask(w, -38, -11);
             break;
         case 32:
-            func_08050F10(w, -37, -25);
+            CreateHumLaxeneKnfTask(w, -37, -25);
             break;
         case 36:
-            func_08050F10(w, -32, -38);
+            CreateHumLaxeneKnfTask(w, -32, -38);
             break;
         }
 

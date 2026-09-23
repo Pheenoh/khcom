@@ -2669,7 +2669,7 @@ void task_poo_shadowscale_3(PooScaleWork* w) {
     ReleaseObjPalette(w->palette);
 }
 
-void func_080CC178(void* pool, void* a, s32 b) {
+void CreatePooShadowscaleTask(void* pool, void* a, s32 b) {
     PooBalloonArgs args;
 
     args.unk_00 = a;
@@ -3109,7 +3109,7 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     w->maxPos.x += 0x100;
     w->maxPos.y += 0x100;
     TaskPoolInit(&w->tasks, 1);
-    func_080CC178(&w->tasks, &w->pos, 0xCC);
+    CreatePooShadowscaleTask(&w->tasks, &w->pos, 0xCC);
     w->unk_F0 = 0;
     w->unk_108 = 0;
 }
@@ -3983,7 +3983,7 @@ void task_poo_rabbit_0(PooRabbitWork* w) {
     w->unk_AC = 0;
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 1);
-    func_080CC178(&w->tasks, &w->x, 0x100);
+    CreatePooShadowscaleTask(&w->tasks, &w->x, 0x100);
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
     w->unk_AE = func_080D2E28(w->collider, 0x3B);
     func_080D2E70(w->unk_AE, 0);
@@ -4808,7 +4808,7 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
     w->palette = 0;
     w->gfx = gUnk_09744842;
     TaskPoolInit(&w->tasks, 1);
-    func_080CC178(&w->tasks, &w->unk_0C, 0x66);
+    CreatePooShadowscaleTask(&w->tasks, &w->unk_0C, 0x66);
     gUnk_02034E18 = 0x1E;
     w->unk_20 = -w->unk_14;
 }
@@ -5775,7 +5775,7 @@ void task_poo_cabbage_0(PooCabbageWork* w) {
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
     w->unk_D0 = 1;
     TaskPoolInit(&w->tasks, 2);
-    func_080CC178(&w->tasks, &w->x, 0x80);
+    CreatePooShadowscaleTask(&w->tasks, &w->x, 0x80);
     w->task = 0;
     w->unk_CE = 0;
     w->unk_D1 = 0;
@@ -6726,7 +6726,7 @@ void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w) {
     AnimStart(w->anim, 0, 1);
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 1);
-    func_080CC178(&w->tasks, &w->x, 0x100);
+    CreatePooShadowscaleTask(&w->tasks, &w->x, 0x100);
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
     w->unk_A6 = func_080D2E28(w->collider, 60);
     func_080D2E70(w->unk_A6, 0);

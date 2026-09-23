@@ -204,7 +204,7 @@ void* ColliderGetPool(u32 type);
 void func_08019350(void);
 void func_080197AC(void);
 void func_0801B024(BtlObj* p);
-void func_0809B6D0(void* p, s16 x, s16 y, s16 z, u16 n);
+void CreateHeartlessCardTask(void* p, s16 x, s16 y, s16 z, u16 n);
 void CreatePrizeCardTask(void* p, UnkStruct_0801B8A8* v);
 void func_08012674(void);
 void func_08012908(void);
