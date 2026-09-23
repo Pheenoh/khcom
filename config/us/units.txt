@@ -304,7 +304,6 @@ prize_card_maps.s
 sprites_worldselect_maps.s
 sprites_msg_maps_1.s
 sprite_palettes_4.s
-asset_gfx_gap_43_at_0960F2B8_at_09612C38.s
 sprite_palettes_5.s
 event_background_palettes_2.s
 sprites_evt_palettes.s

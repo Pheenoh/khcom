@@ -2,6 +2,7 @@
 #include "card_def_data.h"
 #include "card_def_assets.h"
 #include "sprites_card_pictures.h"
+#include "sprite_palettes.h"
 
 const CardBack gUnk_08F709B0[5] = {
     {
