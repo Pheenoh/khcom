@@ -104,7 +104,7 @@ typedef struct LstWork {
 
 typedef struct LstLsrTask {
     void* unk_00;
-    struct LstLsrWork* unk_04;
+    struct LstLsrWork* work;
 } LstLsrTask;
 
 typedef struct LstEdgWork {

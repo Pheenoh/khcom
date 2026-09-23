@@ -1938,9 +1938,9 @@ void func_0804D060(AnsemWork* work) {
         *(s32*)&work->unk_1C8 += (-0x1800 - *(s32*)&work->unk_1C8) >> 3;
     }
     *(s32*)&work->unk_1CC += (-0x1200 - *(s32*)&work->unk_1CC) >> 3;
-    work->sub.unk_28 = act->x + *(s32*)&work->unk_1C8;
-    work->sub.unk_2C = act->y;
-    work->sub.unk_30 = act->z + *(s32*)&work->unk_1CC;
+    work->sub.x = act->x + *(s32*)&work->unk_1C8;
+    work->sub.y = act->y;
+    work->sub.z = act->z + *(s32*)&work->unk_1CC;
 }
 
 void task_hum_ansem_0(AnsemWork* work) {
@@ -2171,7 +2171,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             break;
         default:
             w->unk_1D0 += 25;
-            w->sub.unk_30 -= w->unk_1D0;
+            w->sub.z -= w->unk_1D0;
             break;
         }
 
@@ -2188,9 +2188,9 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             func_08019068(gUnk_0813F140, &w->base.sub->anim, 5, 0, w->base.sub->tiles);
         }
         w->unk_1D0 += 25;
-        w->sub.unk_30 -= w->unk_1D0;
+        w->sub.z -= w->unk_1D0;
 
-        if (w->sub.unk_30 < -0x12C00) {
+        if (w->sub.z < -0x12C00) {
             work->base.unk_170 = 23;
             work->base.unk_150 = 0;
             break;
@@ -2203,9 +2203,9 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             func_08019068(gUnk_0813F0D0, &w->base.anim, 0, 1, w->base.tiles);
             func_08019068(gUnk_0813F140, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
             w->unk_1D0 = 0x800;
-            w->sub.unk_28 = x + (d = ((u16)(GetRandom() % 65) << 8) - 0x2000);
-            w->sub.unk_2C = y;
-            w->sub.unk_30 = 0;
+            w->sub.x = x + (d = ((u16)(GetRandom() % 65) << 8) - 0x2000);
+            w->sub.y = y;
+            w->sub.z = 0;
             w->sub.unk_34 |= 4;
             m4aSongNumStart(0x272);
         }
@@ -2218,7 +2218,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             break;
         case 6:
             w->unk_1D0 += 25;
-            w->sub.unk_30 -= w->unk_1D0;
+            w->sub.z -= w->unk_1D0;
             break;
         }
 
@@ -2229,32 +2229,32 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         switch (AnimGetFrame(&w->sub.anim)) {
         case 2:
         case 3:
-            if (func_08011F78(0x141, w->sub.unk_28, w->sub.unk_2C,
-                    w->sub.unk_30 - 0x800, 20, 16, 8)) {
+            if (func_08011F78(0x141, w->sub.x, w->sub.y,
+                    w->sub.z - 0x800, 20, 16, 8)) {
                 m4aSongNumStart(0x261);
             }
             break;
         case 4:
-            if (func_08011F78(0x141, w->sub.unk_28, w->sub.unk_2C,
-                    w->sub.unk_30 - 0x1000, 20, 16, 16)) {
+            if (func_08011F78(0x141, w->sub.x, w->sub.y,
+                    w->sub.z - 0x1000, 20, 16, 16)) {
                 m4aSongNumStart(0x211);
             }
             break;
         case 5:
-            if (func_08011F78(0x141, w->sub.unk_28, w->sub.unk_2C,
-                    w->sub.unk_30 - 0x2000, 20, 16, 32)) {
+            if (func_08011F78(0x141, w->sub.x, w->sub.y,
+                    w->sub.z - 0x2000, 20, 16, 32)) {
                 m4aSongNumStart(0x211);
             }
             break;
         case 6:
-            if (func_08011F78(0x141, w->sub.unk_28, w->sub.unk_2C,
-                    w->sub.unk_30 - 0x3000, 20, 16, 48)) {
+            if (func_08011F78(0x141, w->sub.x, w->sub.y,
+                    w->sub.z - 0x3000, 20, 16, 48)) {
                 m4aSongNumStart(0x211);
             }
             break;
         }
 
-        if (w->sub.unk_30 < -0x12C00) {
+        if (w->sub.z < -0x12C00) {
             w->sub.unk_34 &= ~4;
             work->base.unk_150 = 0;
 
@@ -2275,12 +2275,12 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         }
 
         if (act->unk_034 & 4) {
-            ApproachValueHalfSteps(&w->sub.unk_28, act->x + 0x1800, w->unk_1D6);
+            ApproachValueHalfSteps(&w->sub.x, act->x + 0x1800, w->unk_1D6);
         } else {
-            ApproachValueHalfSteps(&w->sub.unk_28, act->x - 0x1800, w->unk_1D6);
+            ApproachValueHalfSteps(&w->sub.x, act->x - 0x1800, w->unk_1D6);
         }
-        ApproachValueHalfSteps(&w->sub.unk_2C, act->y, w->unk_1D6);
-        ApproachValueHalfSteps(&w->sub.unk_30, act->z, w->unk_1D6);
+        ApproachValueHalfSteps(&w->sub.y, act->y, w->unk_1D6);
+        ApproachValueHalfSteps(&w->sub.z, act->z, w->unk_1D6);
         w->unk_1D6--;
 
         if (w->unk_1D6 <= 0) {
@@ -2314,9 +2314,9 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             }
             *(s32*)&w->unk_1C8 += (0 - *(s32*)&w->unk_1C8) >> 2;
             *(s32*)&w->unk_1CC += (0 - *(s32*)&w->unk_1CC) >> 2;
-            w->sub.unk_28 = act->x + *(s32*)&w->unk_1C8;
-            w->sub.unk_2C = act->y;
-            w->sub.unk_30 = act->z + *(s32*)&w->unk_1CC;
+            w->sub.x = act->x + *(s32*)&w->unk_1C8;
+            w->sub.y = act->y;
+            w->sub.z = act->z + *(s32*)&w->unk_1CC;
         }
 
         if ((s16)work->base.unk_150 == 25) {
@@ -2363,12 +2363,12 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             func_08019068(gUnk_0813F140, &w->base.sub->anim, 8, 1, w->base.sub->tiles);
             w->unk_1C4 = -0xC00;
             w->unk_1D6 = 40;
-            func_080169A0(w->sub.unk_28, w->sub.unk_2C,
-                w->sub.unk_30 - 0x2100, act->unk_034 & 4);
+            func_080169A0(w->sub.x, w->sub.y,
+                w->sub.z - 0x2100, act->unk_034 & 4);
         }
-        a = w->sub.unk_28;
-        b = w->sub.unk_2C;
-        c = w->sub.unk_30;
+        a = w->sub.x;
+        b = w->sub.y;
+        c = w->sub.z;
 
         if (w->unk_1D6 > 0) {
             ApproachValue(&act->x, work->base.unk_15C, w->unk_1D6);
@@ -2385,18 +2385,18 @@ u8 task_hum_ansem_1(AnsemWork* work) {
                 *(s32*)&w->unk_1C8 += (0x2200 - *(s32*)&w->unk_1C8) >> 3;
             }
             *(s32*)&w->unk_1CC += (0 - *(s32*)&w->unk_1CC) >> 3;
-            w->sub.unk_28 = act->x + *(s32*)&w->unk_1C8;
-            w->sub.unk_2C = act->y;
-            w->sub.unk_30 = act->z + *(s32*)&w->unk_1CC;
+            w->sub.x = act->x + *(s32*)&w->unk_1C8;
+            w->sub.y = act->y;
+            w->sub.z = act->z + *(s32*)&w->unk_1CC;
         } else {
             func_0804D060(w);
         }
 
-        if (func_08011F78(0x143, w->sub.unk_28, w->sub.unk_2C,
-                w->sub.unk_30, 32, 16, 32)) {
+        if (func_08011F78(0x143, w->sub.x, w->sub.y,
+                w->sub.z, 32, 16, 32)) {
             m4aSongNumStart(0x221);
         }
-        func_0801475C(w->sub.unk_28 - a, w->sub.unk_2C - b, w->sub.unk_30 - c);
+        func_0801475C(w->sub.x - a, w->sub.y - b, w->sub.z - c);
 
         if (w->unk_1D6 <= 0) {
             w->sub.unk_34 &= ~1;
@@ -2456,7 +2456,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             }
 
             if (w->unk_1D6 > 0) {
-                ApproachValueHalfSteps(&w->sub.unk_30, act->z - 0x3000, w->unk_1D6);
+                ApproachValueHalfSteps(&w->sub.z, act->z - 0x3000, w->unk_1D6);
                 w->unk_1D6--;
             }
             break;
@@ -2466,7 +2466,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
             }
 
             if (w->unk_1D6 > 0) {
-                ApproachValueHalfSteps(&w->sub.unk_30, act->z - 0x1000, w->unk_1D6);
+                ApproachValueHalfSteps(&w->sub.z, act->z - 0x1000, w->unk_1D6);
                 w->unk_1D6--;
             }
             break;
@@ -2671,9 +2671,9 @@ u8 task_hum_hades_1(HadesWork* work) {
             func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 0, 0, w->base.sub->tiles);
             w->sub.unk_34 &= 0xFFFD;
         }
-        w->sub.unk_28 = act->x;
-        w->sub.unk_2C = act->y;
-        w->sub.unk_30 = act->z;
+        w->sub.x = act->x;
+        w->sub.y = act->y;
+        w->sub.z = act->z;
 
         if (AnimGetFrame(&w->sub.anim) == 1 && w->sub.anim.timer == 0) {
             m4aSongNumStart(0x26C);
@@ -2705,9 +2705,9 @@ u8 task_hum_hades_1(HadesWork* work) {
             m4aSongNumStart(252);
             m4aSongNumStart(0x2B5);
         }
-        w->sub.unk_28 = act->x;
-        w->sub.unk_2C = act->y;
-        w->sub.unk_30 = act->z;
+        w->sub.x = act->x;
+        w->sub.y = act->y;
+        w->sub.z = act->z;
 
         if (AnimIsFinished(&w->sub.anim)) {
             work->base.unk_170 = 23;
@@ -2721,34 +2721,34 @@ u8 task_hum_hades_1(HadesWork* work) {
             func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 3, 1, w->base.sub->tiles);
 
             if (act->unk_034 & 4) {
-                w->sub.unk_28 -= 0xA00;
+                w->sub.x -= 0xA00;
             } else {
-                w->sub.unk_28 += 0xA00;
+                w->sub.x += 0xA00;
             }
-            w->sub.unk_30 -= 0x4E00;
+            w->sub.z -= 0x4E00;
             w->unk_1D0 = 0;
             m4aSongNumStart(0x26D);
         }
 
         if (act->unk_034 & 4) {
-            w->sub.unk_28 -= 0x700;
+            w->sub.x -= 0x700;
         } else {
-            w->sub.unk_28 += 0x700;
+            w->sub.x += 0x700;
         }
-        w->sub.unk_2C += (y - w->sub.unk_2C) >> 4;
-        w->sub.unk_30 += w->unk_1D0;
+        w->sub.y += (y - w->sub.y) >> 4;
+        w->sub.z += w->unk_1D0;
         w->unk_1D0 += 89;
 
-        if (w->sub.unk_30 + 0xF00 > 0) {
-            w->sub.unk_30 = -0xF00;
+        if (w->sub.z + 0xF00 > 0) {
+            w->sub.z = -0xF00;
             w->unk_1D0 = -(w->unk_1D0 >> 1);
         }
 
-        if (func_08011F78(0x120, w->sub.unk_28, w->sub.unk_2C, w->sub.unk_30, 16, 16, 16)) {
+        if (func_08011F78(0x120, w->sub.x, w->sub.y, w->sub.z, 16, 16, 16)) {
             m4aSongNumStart(0x22C);
         }
 
-        if (w->sub.unk_28 < (gBtlWork->unk_0DA - 32) << 8 || w->sub.unk_28 > (gBtlWork->unk_0DC + 32) << 8) {
+        if (w->sub.x < (gBtlWork->unk_0DA - 32) << 8 || w->sub.x > (gBtlWork->unk_0DC + 32) << 8) {
             w->sub.unk_34 |= 2;
             func_0804E404((AnsemWork*)w);
             work->base.unk_170 = 0;
@@ -2975,9 +2975,9 @@ u8 task_hum_hades_1(HadesWork* work) {
             }
 #endif
         }
-        w->sub.unk_28 = act->x;
-        w->sub.unk_2C = act->y;
-        w->sub.unk_30 = act->z;
+        w->sub.x = act->x;
+        w->sub.y = act->y;
+        w->sub.z = act->z;
 
         frame = AnimGetFrame(&w->sub.anim);
 
@@ -3017,9 +3017,9 @@ u8 task_hum_hades_1(HadesWork* work) {
             AnimReset(&w->sub.anim);
             func_08019068(gUnk_0813F2CC, &w->base.sub->anim, 4, 0, w->base.sub->tiles);
             w->sub.unk_34 &= 0xFFFD;
-            w->sub.unk_28 = act->x;
-            w->sub.unk_2C = act->y;
-            w->sub.unk_30 = act->z;
+            w->sub.x = act->x;
+            w->sub.y = act->y;
+            w->sub.z = act->z;
             m4aSongNumStart(253);
 #ifdef VERSION_EU
             if (act->btl->unk_0F4 == 8) {
@@ -3696,11 +3696,11 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             w->unk_1D0 &= ~4;
 
             if (act->unk_034 & 4) {
-                w->sub.unk_28 = act->x - 0x4600;
+                w->sub.x = act->x - 0x4600;
             } else {
-                w->sub.unk_28 = act->x + 0x4600;
+                w->sub.x = act->x + 0x4600;
             }
-            w->sub.unk_30 = 0;
+            w->sub.z = 0;
             w->unk_38C = 0;
             m4aSongNumStart(0x119);
         }
@@ -3712,7 +3712,7 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
         case 3:
             w->unk_1D0 |= 2;
             act->y += (y - act->y) >> 2;
-            w->sub.unk_2C = act->y;
+            w->sub.y = act->y;
             break;
         case 4:
             if (work->base.anim.timer == 0) {
@@ -3740,9 +3740,9 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             w->unk_38C += 25;
 
             if (act->unk_034 & 4) {
-                w->sub.unk_28 = w->sub.unk_28 - w->unk_38C;
+                w->sub.x = w->sub.x - w->unk_38C;
             } else {
-                w->sub.unk_28 = w->sub.unk_28 + w->unk_38C;
+                w->sub.x = w->sub.x + w->unk_38C;
             }
 
             switch (AnimGetFrame(&w->sub.anim)) {
@@ -3751,19 +3751,19 @@ u8 task_hum_mahluxia_1(MahluxiaWork* work) {
             case 2:
             case 3:
             case 4:
-                if (func_08011F78(0x13B, w->sub.unk_28, w->sub.unk_2C, w->sub.unk_30, 8, 4, 64)) {
+                if (func_08011F78(0x13B, w->sub.x, w->sub.y, w->sub.z, 8, 4, 64)) {
                     m4aSongNumStart(0x28C);
                 }
                 break;
             default:
-                if (func_08011F78(0x13B, w->sub.unk_28, w->sub.unk_2C, w->sub.unk_30, 16, 4, 20)) {
+                if (func_08011F78(0x13B, w->sub.x, w->sub.y, w->sub.z, 16, 4, 20)) {
                     m4aSongNumStart(0x28C);
                 }
                 break;
             }
 
-            if (w->sub.unk_28 < (gBtlWork->unk_0DA - 32) << 8 ||
-                w->sub.unk_28 > (gBtlWork->unk_0DC + 32) << 8) {
+            if (w->sub.x < (gBtlWork->unk_0DA - 32) << 8 ||
+                w->sub.x > (gBtlWork->unk_0DC + 32) << 8) {
                 func_0801AF08(act);
                 work->base.unk_170 = 0;
                 work->base.unk_150 = 0;
@@ -4688,9 +4688,9 @@ void func_0805273C(AxcelWork* work, HumSub* sub) {
     s32 args[3];
 
     if (GetRandom() % 6 == 0) {
-        args[0] = sub->unk_28 + (GetRandom() % 29 - 14) * 256;
-        args[1] = sub->unk_2C + (GetRandom() % 15 - 7) * 256;
-        args[2] = sub->unk_30;
+        args[0] = sub->x + (GetRandom() % 29 - 14) * 256;
+        args[1] = sub->y + (GetRandom() % 15 - 7) * 256;
+        args[2] = sub->z;
         TaskCreate(&work->tasks, &gTaskDescHumAxcelPtc, args);
     }
 }
@@ -4874,20 +4874,20 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             sub->unk_34 &= ~2;
             m4aSongNumStart(649);
             if (act->unk_034 & 4) {
-                sub->unk_28 = act->x - 0x2000;
+                sub->x = act->x - 0x2000;
             } else {
-                sub->unk_28 = act->x + 0x2000;
+                sub->x = act->x + 0x2000;
             }
-            sub->unk_2C = act->y;
-            sub->unk_30 = act->z - 0x2000;
+            sub->y = act->y;
+            sub->z = act->z - 0x2000;
             func_0800F368(work, 1);
             w->unk_204 = 30;
         }
-        ApproachValue(&sub->unk_28, work->base.unk_15C, w->unk_204);
-        ApproachValue(&sub->unk_2C, work->base.unk_160, w->unk_204);
+        ApproachValue(&sub->x, work->base.unk_15C, w->unk_204);
+        ApproachValue(&sub->y, work->base.unk_160, w->unk_204);
         w->unk_204--;
-        func_0802F284(sub->unk_28, sub->unk_2C, sub->unk_30);
-        if (func_08011F78(302, sub->unk_28, sub->unk_2C, sub->unk_30, 8, 8, 2)) {
+        func_0802F284(sub->x, sub->y, sub->z);
+        if (func_08011F78(302, sub->x, sub->y, sub->z, 8, 8, 2)) {
             m4aSongNumStart(559);
         }
         if ((s16)w->unk_204 == 19) {
@@ -4984,12 +4984,12 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             break;
         }
         act->y += (((gBtlWork->unk_0DE + gBtlWork->unk_0E0 + 32) << 7) - act->y) >> 3;
-        sub->unk_28 = act->x;
-        sub->unk_2C = act->y;
-        sub->unk_30 = act->z;
-        sub2->unk_28 = act->x;
-        sub2->unk_2C = act->y;
-        sub2->unk_30 = act->z;
+        sub->x = act->x;
+        sub->y = act->y;
+        sub->z = act->z;
+        sub2->x = act->x;
+        sub2->y = act->y;
+        sub2->z = act->z;
         if (AnimIsFinished(&work->base.anim)) {
             if (act->unk_02C < act->unk_02E / 2) {
                 work->base.unk_170 = 31;
@@ -5012,16 +5012,16 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             sub->unk_34 |= 4;
             sub2->unk_34 |= 4;
             if (act->unk_034 & 4) {
-                sub->unk_28 = act->x - 0x3700;
-                sub2->unk_28 = act->x - 0x5700;
+                sub->x = act->x - 0x3700;
+                sub2->x = act->x - 0x5700;
             } else {
-                sub->unk_28 = act->x + 0x3700;
-                sub2->unk_28 = act->x + 0x5700;
+                sub->x = act->x + 0x3700;
+                sub2->x = act->x + 0x5700;
             }
-            sub->unk_2C = act->y + 0xA00;
-            sub->unk_30 = act->z - 0x1E00;
-            sub2->unk_2C = act->y - 0xA00;
-            sub2->unk_30 = act->z - 0x1400;
+            sub->y = act->y + 0xA00;
+            sub->z = act->z - 0x1E00;
+            sub2->y = act->y - 0xA00;
+            sub2->z = act->z - 0x1400;
             w->unk_200 = act->z;
         }
         if (act->unk_034 & 4) {
@@ -5031,31 +5031,31 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             s32 d = ((s16)work->base.unk_150 << 9) + 0x5A00;
             t = act->x + d;
         }
-        sub->unk_28 += (t - sub->unk_28) >> 3;
-        sub2->unk_28 += (t - sub2->unk_28) >> 3;
-        sub->unk_2C += (act->y + gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub->unk_2C) >> 2;
-        sub2->unk_2C += (act->y - gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub2->unk_2C) >> 2;
+        sub->x += (t - sub->x) >> 3;
+        sub2->x += (t - sub2->x) >> 3;
+        sub->y += (act->y + gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub->y) >> 2;
+        sub2->y += (act->y - gSineTable[((u16)work->base.unk_150 * 4) & 255] * 55 - sub2->y) >> 2;
         {
             s32* ground = &gBtlWork->unk_138;
             {
-                s32 t = sub->unk_30 + 0x1800;
-                sub->unk_30 += (*ground - t) >> 2;
+                s32 t = sub->z + 0x1800;
+                sub->z += (*ground - t) >> 2;
             }
             {
-                s32 t = sub2->unk_30 + 0x1800;
-                sub2->unk_30 += (*ground - t) >> 3;
+                s32 t = sub2->z + 0x1800;
+                sub2->z += (*ground - t) >> 3;
             }
         }
-        if (func_08011F78(304, sub->unk_28, sub->unk_2C, sub->unk_30, 8, 8, 2)) {
+        if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
             m4aSongNumStart(505);
         }
-        if (func_08011F78(304, sub2->unk_28, sub2->unk_2C, sub2->unk_30, 8, 8, 2)) {
+        if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
             m4aSongNumStart(505);
         }
         func_0805273C(w, sub);
         func_0805273C(w, sub2);
-        if (sub->unk_28 > ((gBtlWork->unk_0DC + 32) << 8) ||
-            sub->unk_28 < ((gBtlWork->unk_0DA - 32) << 8)) {
+        if (sub->x > ((gBtlWork->unk_0DC + 32) << 8) ||
+            sub->x < ((gBtlWork->unk_0DA - 32) << 8)) {
             sub->unk_34 |= 2;
             sub2->unk_34 |= 2;
             work->base.unk_150 = 0;
@@ -5077,16 +5077,16 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             sub->unk_34 |= 4;
             sub2->unk_34 |= 4;
             if (act->unk_034 & 4) {
-                sub->unk_28 = act->x - 0x3700;
-                sub2->unk_28 = act->x - 0x5700;
+                sub->x = act->x - 0x3700;
+                sub2->x = act->x - 0x5700;
             } else {
-                sub->unk_28 = act->x + 0x3700;
-                sub2->unk_28 = act->x + 0x5700;
+                sub->x = act->x + 0x3700;
+                sub2->x = act->x + 0x5700;
             }
-            sub->unk_2C = act->y + 0xA00;
-            sub->unk_30 = act->z - 0x1E00;
-            sub2->unk_2C = act->y - 0xA00;
-            sub2->unk_30 = act->z - 0x1400;
+            sub->y = act->y + 0xA00;
+            sub->z = act->z - 0x1E00;
+            sub2->y = act->y - 0xA00;
+            sub2->z = act->z - 0x1400;
             w->unk_200 = act->z;
             w->unk_204 = 200;
             w->unk_214 = 0x5A00;
@@ -5097,16 +5097,16 @@ u8 task_hum_axcel_1(AxcelWork* work) {
         w->unk_204--;
         dx = gSineTable[angle % 256] * w->unk_214 >> 8;
         dy = -gSineTable[angle % 256 + 64] * w->unk_214 >> 8;
-        sub->unk_28 += (x + dx - sub->unk_28) >> 4;
-        sub->unk_2C += (y + dy - sub->unk_2C) >> 4;
-        sub2->unk_28 += (x - dx - sub2->unk_28) >> 4;
-        sub2->unk_2C += (y - dy - sub2->unk_2C) >> 4;
-        sub->unk_30 += (-0x1800 - sub->unk_30) >> 3;
-        sub2->unk_30 += (-0x1800 - sub2->unk_30) >> 3;
-        if (func_08011F78(304, sub->unk_28, sub->unk_2C, sub->unk_30, 8, 8, 2)) {
+        sub->x += (x + dx - sub->x) >> 4;
+        sub->y += (y + dy - sub->y) >> 4;
+        sub2->x += (x - dx - sub2->x) >> 4;
+        sub2->y += (y - dy - sub2->y) >> 4;
+        sub->z += (-0x1800 - sub->z) >> 3;
+        sub2->z += (-0x1800 - sub2->z) >> 3;
+        if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
             m4aSongNumStart(505);
         }
-        if (func_08011F78(304, sub2->unk_28, sub2->unk_2C, sub2->unk_30, 8, 8, 2)) {
+        if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
             m4aSongNumStart(505);
         }
         func_0805273C(w, sub);
@@ -5124,14 +5124,14 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             w->unk_204 = 20;
         }
         if (act->unk_034 & 4) {
-            ApproachValue(&sub->unk_28, (gBtlWork->unk_0DA - 32) << 8, w->unk_204);
-            ApproachValue(&sub2->unk_28, (gBtlWork->unk_0DA - 32) << 8, w->unk_204);
+            ApproachValue(&sub->x, (gBtlWork->unk_0DA - 32) << 8, w->unk_204);
+            ApproachValue(&sub2->x, (gBtlWork->unk_0DA - 32) << 8, w->unk_204);
         } else {
-            ApproachValue(&sub->unk_28, (gBtlWork->unk_0DC + 32) << 8, w->unk_204);
-            ApproachValue(&sub2->unk_28, (gBtlWork->unk_0DC + 32) << 8, w->unk_204);
+            ApproachValue(&sub->x, (gBtlWork->unk_0DC + 32) << 8, w->unk_204);
+            ApproachValue(&sub2->x, (gBtlWork->unk_0DC + 32) << 8, w->unk_204);
         }
-        ApproachValue(&sub->unk_30, -0x5A00, w->unk_204);
-        ApproachValue(&sub2->unk_30, -0x5A00, w->unk_204);
+        ApproachValue(&sub->z, -0x5A00, w->unk_204);
+        ApproachValue(&sub2->z, -0x5A00, w->unk_204);
         w->unk_204--;
         if ((s16)w->unk_204 <= 0) {
             sub->unk_34 |= 2;
@@ -5151,39 +5151,39 @@ u8 task_hum_axcel_1(AxcelWork* work) {
             sub->unk_34 |= 4;
             sub2->unk_34 |= 4;
             if (act->unk_034 & 4) {
-                sub->unk_28 = act->x - 0x3700;
-                sub2->unk_28 = act->x - 0x5700;
+                sub->x = act->x - 0x3700;
+                sub2->x = act->x - 0x5700;
             } else {
-                sub->unk_28 = act->x + 0x3700;
-                sub2->unk_28 = act->x + 0x5700;
+                sub->x = act->x + 0x3700;
+                sub2->x = act->x + 0x5700;
             }
-            sub->unk_2C = act->y + 0xA00;
-            sub->unk_30 = act->z - 0x1E00;
-            sub2->unk_2C = act->y - 0xA00;
-            sub2->unk_30 = act->z - 0x1400;
+            sub->y = act->y + 0xA00;
+            sub->z = act->z - 0x1E00;
+            sub2->y = act->y - 0xA00;
+            sub2->z = act->z - 0x1400;
             w->unk_200 = act->z;
-            w->unk_234 = GetAngle(sub->unk_28, sub->unk_2C, x, y);
-            w->unk_236 = GetAngle(sub2->unk_28, sub2->unk_2C, x, y);
+            w->unk_234 = GetAngle(sub->x, sub->y, x, y);
+            w->unk_236 = GetAngle(sub2->x, sub2->y, x, y);
         }
-        sub->unk_28 += gSineTable[(u8)w->unk_234] * 6;
-        sub->unk_2C -= gSineTable[(u8)w->unk_234 + 64] * 4;
-        sub2->unk_28 += gSineTable[(u8)w->unk_236] * 6;
-        sub2->unk_2C -= gSineTable[(u8)w->unk_236 + 64] * 4;
-        sub->unk_30 += (-0x1000 - sub->unk_30) >> 3;
-        sub2->unk_30 += (-0x1000 - sub2->unk_30) >> 3;
+        sub->x += gSineTable[(u8)w->unk_234] * 6;
+        sub->y -= gSineTable[(u8)w->unk_234 + 64] * 4;
+        sub2->x += gSineTable[(u8)w->unk_236] * 6;
+        sub2->y -= gSineTable[(u8)w->unk_236 + 64] * 4;
+        sub->z += (-0x1000 - sub->z) >> 3;
+        sub2->z += (-0x1000 - sub2->z) >> 3;
         w->unk_234 += 2;
         w->unk_236 -= 2;
-        if (ClampBattlePosition(&sub->unk_28, &sub->unk_2C, 0, 0)) {
+        if (ClampBattlePosition(&sub->x, &sub->y, 0, 0)) {
             w->unk_234 += 128;
         }
-        if (ClampBattlePosition(&sub2->unk_28, &sub2->unk_2C, 0, 0)) {
+        if (ClampBattlePosition(&sub2->x, &sub2->y, 0, 0)) {
             w->unk_236 += 128;
         }
-        if (func_08011F78(304, sub->unk_28, sub->unk_2C, sub->unk_30, 8, 8, 2)) {
+        if (func_08011F78(304, sub->x, sub->y, sub->z, 8, 8, 2)) {
             m4aSongNumStart(505);
             w->unk_234 += 128;
         }
-        if (func_08011F78(304, sub2->unk_28, sub2->unk_2C, sub2->unk_30, 8, 8, 2)) {
+        if (func_08011F78(304, sub2->x, sub2->y, sub2->z, 8, 8, 2)) {
             m4aSongNumStart(505);
             w->unk_236 += 128;
         }
@@ -5387,10 +5387,10 @@ void func_08054100(AxcelWork* work, HumSub* sub) {
     s32 f;
 
     if ((sub->unk_34 & 2) == 0) {
-        if (sub->unk_30 >= 0) {
+        if (sub->z >= 0) {
             affine = 0;
         } else {
-            scale = 0x100 - (-sub->unk_30) / 128;
+            scale = 0x100 - (-sub->z) / 128;
             if (scale <= 127) {
                 scale = 128;
             }
@@ -5401,7 +5401,7 @@ void func_08054100(AxcelWork* work, HumSub* sub) {
             }
             affine = AllocObjAffine(0, scale, scale, f);
         }
-        WorldToScreen(&x, &y, sub->unk_28, sub->unk_2C, 0);
+        WorldToScreen(&x, &y, sub->x, sub->y, 0);
         DrawSprite(x, y, gUnk_08B22BA8, work->tiles, work->palette, affine, 0x800, 0xFFFE);
     }
 }

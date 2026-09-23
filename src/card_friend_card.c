@@ -77,7 +77,7 @@ void CreateCardNameDisplay(void* a, void* b);
 void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
     u8* p;
 
-    w->unk_1A0 = args[3];
+    w->cardId = args[3];
     w->unk_38 = args[0];
     w->unk_3C = args[1];
     w->unk_40 = args[2];
@@ -120,7 +120,7 @@ void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
 void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
     u8* p;
 
-    w->unk_1A0 = args[3];
+    w->cardId = args[3];
     w->unk_38 = args[0];
     w->unk_3C = args[1];
     w->unk_40 = args[2];
@@ -164,7 +164,7 @@ void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
 void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     u8* p;
 
-    w->unk_1A0 = args->unk_0C;
+    w->cardId = args->unk_0C;
     w->unk_38 = args->unk_00;
     w->unk_3C = args->unk_04;
     w->unk_40 = args->unk_08;
@@ -447,10 +447,10 @@ u8 func_0809AB2C(UnkStruct_0809A02C* w) {
         w->unk_1B4 = -dy;
 
         if (w->unk_1AC < 0x800) {
-            if (w->unk_1A0 >= 655 && w->unk_1A0 <= 659) {
-                gUnk_02039DD4->unk_0BC = w->unk_1A0;
+            if (w->cardId >= 655 && w->cardId <= 659) {
+                gUnk_02039DD4->unk_0BC = w->cardId;
             } else {
-                gUnk_02039DD4->unk_0B8 = w->unk_1A0;
+                gUnk_02039DD4->unk_0B8 = w->cardId;
             }
 
             return 0;
@@ -536,9 +536,9 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
             *(u16*)&w->unk_1B8 = v = 0x100;
             *(u16*)&w->unk_1BA = v;
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->unk_1A0].name));
+            CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->cardId].name));
 #else
-            CreateCardNameDisplay(&w->tasks, gCardDefs[w->unk_1A0].name);
+            CreateCardNameDisplay(&w->tasks, gCardDefs[w->cardId].name);
 #endif
             SetTaskUpdate(a, (void*)func_0809AD60);
             w->unk_1C4 = 0;
@@ -614,7 +614,7 @@ s32 Heartless_card_1(UnkStruct_0809A02C* w, void* a) {
 #ifdef VERSION_EU
         w->unk_1C2 = 10;
 #endif
-        func_08084458(w->unk_1A0);
+        func_08084458(w->cardId);
         WorldToScreen(&x, &y, w->unk_38, w->unk_3C, w->unk_40);
         w->unk_38 = x << 8;
         w->unk_3C = y << 8;
@@ -1028,11 +1028,11 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
 
     CpuSet(&zero0, w, 0x05000024);
     gUnk_0203A9D0 = EwramAlloc(0x2C);
-    w->unk_24 = EwramAlloc(0x4B0);
+    w->slots = EwramAlloc(0x4B0);
     zero1 = 0;
     CpuSet(&zero1, gUnk_0203A9D0, 0x0500000B);
     zero2 = 0;
-    CpuSet(&zero2, w->unk_24, 0x0500012C);
+    CpuSet(&zero2, w->slots, 0x0500012C);
     cards = GetActiveDeck()->cards;
     w->tiles2 = AllocObjTiles(0x120, 0);
     w->palette2 = LoadObjPalette(gUnk_09618CD8, 32);
@@ -1089,10 +1089,10 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
             if (!(gCardCollection[cards[i]] & 0x8000)) {
                 if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A != 3) {
                     if (gCardDefs[gCardCollection[cards[i]] & CARD_ID_MASK].unk_2A != 2) {
-                        w->unk_24[n].unk_00 = gCardCollection[cards[i]] & CARD_ID_MASK;
-                        w->unk_24[n].unk_04 = i;
-                        w->unk_24[n].unk_06 = n;
-                        w->unk_24[n].unk_07 = 0;
+                        w->slots[n].unk_00 = gCardCollection[cards[i]] & CARD_ID_MASK;
+                        w->slots[n].unk_04 = i;
+                        w->slots[n].unk_06 = n;
+                        w->slots[n].unk_07 = 0;
                         n++;
                     }
                 }
@@ -1108,10 +1108,10 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
                 if (!(gCardCollection[cards[j]] & 0x8000)) {
                     if (gCardDefs[gCardCollection[cards[j]] & CARD_ID_MASK].unk_2A != 3) {
                         if (gCardDefs[gCardCollection[cards[j]] & CARD_ID_MASK].unk_2A != 2) {
-                            w->unk_24[n].unk_00 = gCardCollection[cards[j]] & CARD_ID_MASK;
-                            w->unk_24[n].unk_04 = j;
-                            w->unk_24[n].unk_06 = n;
-                            w->unk_24[n].unk_07 = 0;
+                            w->slots[n].unk_00 = gCardCollection[cards[j]] & CARD_ID_MASK;
+                            w->slots[n].unk_04 = j;
+                            w->slots[n].unk_06 = n;
+                            w->slots[n].unk_07 = 0;
                             n++;
                         }
                     }

@@ -95,9 +95,9 @@ typedef struct DsdWork {
 
 typedef struct DsdEnergy1Work {
     DsdWork* dsd;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
@@ -124,9 +124,9 @@ typedef struct DsdEnergy1Work {
 
 typedef struct DsdEnergy2Work {
     DsdWork* dsd;
-    s32 unk_04;
-    s32 unk_08;
-    s32 unk_0C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_10;
     s32 unk_14;
     s32 unk_18;
@@ -368,7 +368,7 @@ typedef struct JfMajinWork {
 } JfMajinWork;
 
 typedef struct JfBorderlineWork {
-    BosPos* unk_000;
+    BosPos* jf;
     u32 tiles;
     u32 palette;
     void* gfx;

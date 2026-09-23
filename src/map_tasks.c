@@ -1718,7 +1718,7 @@ void Task_MapDbg_3(u8* work) {
 }
 
 void func_080F1460(MapGmkJumpWork* w) {
-    if (ColliderIsTouchingType(&w->unk_040, 1) && (w->unk_06E & 2)) {
+    if (ColliderIsTouchingType(&w->collider, 1) && (w->unk_06E & 2)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
         w->update = func_080F14C4;
@@ -1730,7 +1730,7 @@ void func_080F1460(MapGmkJumpWork* w) {
 }
 
 void func_080F14C4(MapGmkJumpWork* w) {
-    if (ColliderIsTouchingType(&w->unk_040, 1)) {
+    if (ColliderIsTouchingType(&w->collider, 1)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
     } else if (gUnk_02039BA0->actor.fieldPosition.z != gUnk_02039BA0->actor.fieldPosition.unk_0C) {
@@ -1786,8 +1786,8 @@ void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     w->unk_0C0 = 0;
     AnimStart(a, 0, 1);
     w->update = func_080F1460;
-    ColliderInit(&w->unk_040, 6, 16, 0);
-    ColliderSetPosition(&w->unk_040, p->unk_00, p->x, p->y);
+    ColliderInit(&w->collider, 6, 16, 0);
+    ColliderSetPosition(&w->collider, p->unk_00, p->x, p->y);
 }
 
 s32 Task_MapGmk_Jump_1(MapGmkJumpWork* w) {
@@ -1796,9 +1796,9 @@ s32 Task_MapGmk_Jump_1(MapGmkJumpWork* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)w)) {
-        ColliderSetDisabled(&w->unk_040, 1);
+        ColliderSetDisabled(&w->collider, 1);
     } else {
-        ColliderSetDisabled(&w->unk_040, 0);
+        ColliderSetDisabled(&w->collider, 0);
     }
 
     if (w->update != 0) {
@@ -1823,7 +1823,7 @@ void Task_MapGmk_Jump_2(MapGmkJumpWork* w) {
 void Task_MapGmk_Jump_3(MapGmkJumpWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    ColliderUnregister(&w->unk_040);
+    ColliderUnregister(&w->collider);
 }
 
 s32 func_080F173C(MapGmkEnmWork* w) {
@@ -3951,7 +3951,7 @@ void func_080F4FB0(MapPrzCardWork* w) {
     if (w->collider[0x2C] != 0) {
         w->unk_0D2 = 1;
         m4aSongNumStart(106);
-        func_08084458(w->unk_0A8);
+        func_08084458(w->cardId);
 
         if (w->unk_0D1 == 0) {
             UnkStruct_080DEE18* e = func_080DEE18(gUnk_0203C590.unk_06);
@@ -4005,7 +4005,7 @@ void func_080F51A0(MapPrzCardWork* w) {
             w->unk_0CE = 0;
             w->timer = 0;
             w->update = func_080F52D4;
-            TaskCreate(&w->tasks, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->unk_0A8].name));
+            TaskCreate(&w->tasks, &gTaskDescMapMsg, LANGSEL(gCardDefs[w->cardId].name));
         }
     }
 
@@ -4081,8 +4081,8 @@ void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     CardBack* q;
 
     gUnk_0203C7AC->unk_00 |= 0x10;
-    w->unk_0A8 = p->unk_14;
-    d = &gCardDefs[w->unk_0A8];
+    w->cardId = p->unk_14;
+    d = &gCardDefs[w->cardId];
     w->tiles = LoadObjTiles(d->tiles, 0x300);
     w->palette = LoadObjPalette(d->palette, 32);
     w->unk_090 = *(UnkStruct_08F70ACC*)&d->unk_1C;
@@ -4154,7 +4154,7 @@ void Task_MapPrzCard_2(MapPrzCardWork* w) {
         affine = AllocObjAffine(w->unk_0CE, w->unk_0B4, w->unk_0B6, 1);
     }
 
-    d = &gCardDefs[w->unk_0A8];
+    d = &gCardDefs[w->cardId];
     DrawSprite(w->x, *(u16*)&w->y - 8, d->gfx, w->tiles, w->palette,
         affine, w->unk_088, w->unk_0BE + 1);
     q = &gUnk_08F709B0[w->unk_090.unk_0E];

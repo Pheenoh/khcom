@@ -164,9 +164,9 @@ typedef struct BoogieMapanimeWork {
 typedef struct UrsulaThunderWork {
     u16 unk_000;
     u8 unk_002[0x2];
-    s32 unk_004;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 x;
+    s32 y;
+    s32 z;
 } UrsulaThunderWork;
 
 void func_080DD69C(s32 a);
@@ -266,7 +266,7 @@ typedef struct UrsulaBubbleWork {
     u16 unk_040;
     u8 unk_042[0x2];
 #ifdef VERSION_EU
-    AnimState unkEu_044;
+    AnimState anim;
 #endif
 } UrsulaBubbleWork;
 

@@ -149,7 +149,7 @@ typedef struct MdDaiWork {
     MdDaiTarget* target;
     s16 unk_07C;
     u16 state;
-    void* unk_080;
+    void* pool;
 } MdDaiWork;
 
 typedef struct MdFireTarget {
@@ -186,7 +186,7 @@ typedef struct MdFireWork {
 } MdFireWork;
 
 typedef struct MdFireArg {
-    void* unk_00;
+    void* pool;
     s16 unk_04;
     u16 unk_06;
     s32 unk_08;

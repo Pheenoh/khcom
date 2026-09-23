@@ -519,7 +519,7 @@ typedef struct MapGmkJumpWork {
     u8 unk_010[0x04];
     u8 unk_014;
     u8 unk_015[0x2B];
-    AnimState unk_040;
+    AnimState collider;
     u8 unk_058[0x08];
     void* unk_060;
     s32 unk_064;
@@ -794,7 +794,7 @@ typedef struct MapPrzCardWork {
     u16 timer;
     void (*update)(struct MapPrzCardWork*);
     UnkStruct_08F70ACC unk_090;
-    u16 unk_0A8;
+    u16 cardId;
     u8 unk_0AA[0x02];
     s32 unk_0AC;
     s32 unk_0B0;

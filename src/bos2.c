@@ -2707,7 +2707,7 @@ u8 func_080C1370(s32 a, s32 b, s32 c) {
 }
 
 void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
-    work->unk_000 = arg;
+    work->jf = arg;
     func_080C1A48(work);
     work->unk_0A8 = 0xA00;
     work->unk_0AC = 0x3600;
@@ -2739,7 +2739,7 @@ void task_bos_jf_borderline_0(JfBorderlineWork* work, BosPos* arg) {
 }
 
 u8 task_bos_jf_borderline_1(JfBorderlineWork* work) {
-    BosPos* p = work->unk_000;
+    BosPos* p = work->jf;
 
     func_080C1A48(work);
     work->unk_098 = p->unk_04 + work->unk_0A4;
@@ -2823,7 +2823,7 @@ void task_bos_jf_borderline_3(JfBorderlineWork* work) {
 }
 
 void func_080C1A48(JfBorderlineWork* work) {
-    JfWork* jf = (JfWork*)work->unk_000;
+    JfWork* jf = (JfWork*)work->jf;
 
     switch (jf->unk_238) {
     case 0:
@@ -4587,9 +4587,9 @@ void task_bos_dsd_circle_3(void) {
 
 void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
     work->dsd = arg;
-    work->unk_04 = 0xBC00;
-    work->unk_08 = 0x16800;
-    work->unk_0C = -0x2400;
+    work->x = 0xBC00;
+    work->y = 0x16800;
+    work->z = -0x2400;
     work->unk_10 = 0;
     work->unk_14 = 0;
     work->unk_18 = 0;
@@ -4612,7 +4612,7 @@ void task_bos_dsd_energy1_0(DsdEnergy1Work* work, void* arg) {
 u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
     switch (work->state) {
     case 0:
-        func_08013EDC(work->unk_04, work->unk_08, work->unk_0C, 0x100);
+        func_08013EDC(work->x, work->y, work->z, 0x100);
         work->state++;
         break;
     case 1:
@@ -4620,7 +4620,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
             break;
         }
 
-        func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_3C, 0);
+        func_08014588(work->x, work->y, work->z, 0x100, work->unk_3C, 0);
         m4aSongNumStart(0x2BD);
         work->state++;
         break;
@@ -4631,7 +4631,7 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
             work->unk_48 = 1;
             work->unk_38 = 0;
             work->unk_36 = 10;
-            work->unk_20 = (gBtlWork->unk_134 - work->unk_08) / 15;
+            work->unk_20 = (gBtlWork->unk_134 - work->y) / 15;
             work->state++;
         }
         break;
@@ -4643,20 +4643,20 @@ u8 task_bos_dsd_energy1_1(DsdEnergy1Work* work) {
         break;
     case 5:
         func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
-        work->unk_04 += work->unk_1C;
-        work->unk_08 += work->unk_20;
-        work->unk_0C += work->unk_24;
+        work->x += work->unk_1C;
+        work->y += work->unk_20;
+        work->z += work->unk_24;
         break;
     }
 
-    if (func_08011F78(0x102, work->unk_04, work->unk_08, work->unk_0C, 16, 16, 16) == 1) {
+    if (func_08011F78(0x102, work->x, work->y, work->z, 16, 16, 16) == 1) {
         func_08014790(0);
         m4aSongNumStart(0x2A1);
         work->unk_48 = 0;
         return 0;
     }
 
-    if (work->unk_0C >= -0x800 || work->unk_04 <= -0x2000 || work->unk_04 > 0x11FFF ||
+    if (work->z >= -0x800 || work->x <= -0x2000 || work->x > 0x11FFF ||
         work->dsd->unk_334 == 8 || work->dsd->unk_334 == 11) {
         func_08014790(0);
         work->unk_48 = 0;
@@ -4674,10 +4674,10 @@ void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
     s16 y;
 
     if (work->unk_48 == 1) {
-        if (work->unk_0C >= 0 && gBtlWork->unk_024 == 0x100) {
+        if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
             affine = 0;
         } else {
-            scale = 0x200 - -work->unk_0C / 128;
+            scale = 0x200 - -work->z / 128;
 
             if (scale <= 0x7F) {
                 scale = 0x80;
@@ -4692,7 +4692,7 @@ void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
             affine = AllocObjAffine(0, scale, scale, flag);
         }
 
-        WorldToScreen(&x, &y, work->unk_04, work->unk_08, 0);
+        WorldToScreen(&x, &y, work->x, work->y, 0);
         DrawSprite(x, y, work->gfx, work->dsd->tiles3, work->dsd->palette4, affine, 0xC00, 0xFFF0);
     }
 }
@@ -4705,9 +4705,9 @@ void func_080C4C54(DsdEnergy1Work* work) {
     work->unk_24 = -gSineTable[work->angle + 0x40] * work->unk_2C >> 8;
     work->unk_2C -= 76;
     work->angle -= 3;
-    work->unk_04 += work->unk_1C;
-    work->unk_08 += work->unk_20;
-    work->unk_0C += work->unk_24;
+    work->x += work->unk_1C;
+    work->y += work->unk_20;
+    work->z += work->unk_24;
     func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
 
     if ((s16)work->unk_38 > 15) {
@@ -4722,7 +4722,7 @@ void func_080C4CCC(DsdEnergy1Work* work) {
 
     if (work->unk_40 > 0) {
         work->unk_40 = 0;
-        work->unk_29 = GetAngle(work->unk_04, work->unk_0C, gBtlWork->unk_130, gBtlWork->unk_138);
+        work->unk_29 = GetAngle(work->x, work->z, gBtlWork->unk_130, gBtlWork->unk_138);
 
         if (work->unk_29 >= work->angle) {
             d = work->unk_29 - work->angle;
@@ -4747,16 +4747,16 @@ void func_080C4CCC(DsdEnergy1Work* work) {
     work->unk_40++;
     work->unk_2C += 25;
     func_0801475C(work->unk_1C, work->unk_20, work->unk_24);
-    work->unk_04 += work->unk_1C;
-    work->unk_08 += work->unk_20;
-    work->unk_0C += work->unk_24;
+    work->x += work->unk_1C;
+    work->y += work->unk_20;
+    work->z += work->unk_24;
 }
 
 void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->dsd = arg;
-    work->unk_04 = 0xBC00;
-    work->unk_08 = 0x16800;
-    work->unk_0C = -0x2C00;
+    work->x = 0xBC00;
+    work->y = 0x16800;
+    work->z = -0x2C00;
     work->state = 0;
     work->unk_2E = 0;
     work->unk_30 = 0;
@@ -4769,7 +4769,7 @@ void task_bos_dsd_energy2_0(DsdEnergy2Work* work, void* arg) {
     work->unk_34 = 0;
     work->unk_3C = 0;
     work->gfx = gUnk_08B22CBC;
-    func_08014588(work->unk_04, work->unk_08, work->unk_0C, work->unk_10, work->unk_32, 0);
+    func_08014588(work->x, work->y, work->z, work->unk_10, work->unk_32, 0);
     m4aSongNumStart(0x2C0);
 
     switch (work->dsd->unk_35A) {
@@ -4796,7 +4796,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         work->unk_14 += 25;
 
         if (work->unk_30 >= work->unk_32) {
-            func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+            func_0802F274(work->x, work->y + work->z);
             work->state++;
         } else {
             work->unk_30++;
@@ -4804,23 +4804,23 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         break;
     case 1:
         func_0801475C(work->unk_20, work->unk_24, work->unk_28);
-        work->unk_04 += work->unk_20;
-        work->unk_08 += work->unk_24;
-        work->unk_0C += work->unk_28;
-        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+        work->x += work->unk_20;
+        work->y += work->unk_24;
+        work->z += work->unk_28;
+        func_0802F274(work->x, work->y + work->z);
 
-        if (work->unk_0C <= -0xF000) {
+        if (work->z <= -0xF000) {
             work->state++;
         }
         break;
     case 2:
-        func_08017F70(work->unk_04, work->unk_08, work->unk_0C, 0x103);
+        func_08017F70(work->x, work->y, work->z, 0x103);
         m4aSongNumStart(0x2C1);
-        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+        func_0802F274(work->x, work->y + work->z);
         work->state++;
         break;
     case 3:
-        func_0802F274(work->unk_04, work->unk_08 + work->unk_0C);
+        func_0802F274(work->x, work->y + work->z);
 
         if (func_080128EC() == 0) {
             work->state++;
@@ -4831,32 +4831,32 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         work->state++;
         break;
     case 5:
-        work->unk_04 = (p = gBtlWork->actor)->x + (-0x4000 + GetRandom() % 0x8001);
+        work->x = (p = gBtlWork->actor)->x + (-0x4000 + GetRandom() % 0x8001);
 
-        if (work->unk_04 < -0xFFF || work->unk_04 > 0x10FFF) {
-            work->unk_04 = p->x;
+        if (work->x < -0xFFF || work->x > 0x10FFF) {
+            work->x = p->x;
         }
 
-        work->unk_08 = gBtlWork->actor->y - 0x2400 + GetRandom() % 0x4001;
-        work->unk_0C = -0xF000;
+        work->y = gBtlWork->actor->y - 0x2400 + GetRandom() % 0x4001;
+        work->z = -0xF000;
         work->unk_28 = 0x600;
-        func_08014588(work->unk_04, work->unk_08, work->unk_0C, 0x100, work->unk_32, 0);
+        func_08014588(work->x, work->y, work->z, 0x100, work->unk_32, 0);
         work->unk_3C = 1;
         work->unk_30 = 0;
         work->state++;
         break;
     case 6:
         func_0801475C(0, 0, work->unk_28);
-        work->unk_0C += work->unk_28;
+        work->z += work->unk_28;
 
-        if (func_08011F78(0x104, work->unk_04, work->unk_08, work->unk_0C, 16, 16, 16) == 1) {
+        if (func_08011F78(0x104, work->x, work->y, work->z, 16, 16, 16) == 1) {
             m4aSongNumStart(0x29E);
             func_08014790(0);
             work->unk_3C = 0;
             work->state = 7;
         }
 
-        if (work->unk_0C >= -0x800) {
+        if (work->z >= -0x800) {
             func_08014790(0);
             m4aSongNumStart(0x2BF);
             work->unk_3C = 0;
@@ -4909,10 +4909,10 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
     s16 y;
 
     if (work->unk_3C == 1) {
-        if (work->unk_0C >= 0 && gBtlWork->unk_024 == 0x100) {
+        if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
             affine = 0;
         } else {
-            scale = 0x200 - -work->unk_0C / 128;
+            scale = 0x200 - -work->z / 128;
 
             if (scale <= 0x7F) {
                 scale = 0x80;
@@ -4927,7 +4927,7 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
             affine = AllocObjAffine(0, scale, scale, flag);
         }
 
-        WorldToScreen(&x, &y, work->unk_04 + 0x100, work->unk_08, 0);
+        WorldToScreen(&x, &y, work->x + 0x100, work->y, 0);
         DrawSprite(x, y, work->gfx, work->dsd->tiles3, work->dsd->palette4, affine, 0xC00, 0xFFF0);
     }
 }

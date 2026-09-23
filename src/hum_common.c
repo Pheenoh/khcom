@@ -59,9 +59,9 @@ void HumSubInit(HumWork* work, HumSub* sub, const HumSubDef* def) {
 
     sub->tiles = AllocObjTiles(def->tileCount * 32, 0);
     sub->palette2 = sub->palette = LoadObjPalette(def->palette, 32);
-    sub->unk_28 = work->actor.x;
-    sub->unk_2C = work->actor.y;
-    sub->unk_30 = work->actor.z;
+    sub->x = work->actor.x;
+    sub->y = work->actor.y;
+    sub->z = work->actor.z;
     sub->unk_34 = 0;
     AnimInit(&sub->anim, 0, 0);
 }

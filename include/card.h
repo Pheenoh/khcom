@@ -292,7 +292,7 @@ typedef struct UnkStruct_0809A02C {
     u8 unk_144[0x2C];
     u8 unk_170;
     u8 unk_171[0x2F];
-    s32 unk_1A0;
+    s32 cardId;
     s32 unk_1A4;
     s32 unk_1A8;
     s32 unk_1AC;
@@ -1083,7 +1083,7 @@ typedef struct PrizeCardWork {
     s32 unk_A8;
     s32 unk_AC;
     u8 unk_B0[0x18];
-    u32 unk_C8;
+    u32 cardId;
     s32 unk_CC;
     s32 unk_D0;
     s32 unk_D4;
@@ -1358,7 +1358,7 @@ typedef struct BossPrizeWork {
     s32 unk_AC;
     s32 unk_B0;
     s32 unk_B4;
-    s32 unk_B8;
+    s32 cardId;
     s32 unk_BC;
     s32 unk_C0;
     s32 unk_C4;
@@ -2453,7 +2453,7 @@ typedef struct UnkStruct_0809BB4C {
     void* tiles4;
     ObjPalette* palette4;
     void* tiles5;
-    CardSlot* unk_24;
+    CardSlot* slots;
     void* gfx;
     void* gfx2;
     u16 unk_30;

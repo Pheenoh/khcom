@@ -544,7 +544,7 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
     CardBack* back;
     u8* p;
 
-    w->unk_B8 = args[8];
+    w->cardId = args[8];
     def = &gCardDefs[args[8]];
     w->tiles = LoadObjTiles(def->tiles, 0x300);
     w->palette = LoadObjPalette(def->palette, 32);
@@ -610,7 +610,7 @@ u8 PrizeBoss_1(BossPrizeWork* w, void* a) {
     if (w->collider[0x2C] != 0) {
         w->unk_ED = 1;
         m4aSongNumStart(106);
-        func_08084458(*(u16*)&w->unk_B8);
+        func_08084458(*(u16*)&w->cardId);
         if (gGameState.flags & 8) {
             _08085D04(gGameState.world);
         }
@@ -741,9 +741,9 @@ u8 func_08099A18(BossPrizeWork* w, void* a) {
             w->unk_E6 = 0;
             SetTaskUpdate(a, (void*)func_08099B60);
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->unk_B8].name));
+            CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->cardId].name));
 #else
-            CreateCardNameDisplay(&w->tasks, gCardDefs[w->unk_B8].name);
+            CreateCardNameDisplay(&w->tasks, gCardDefs[w->cardId].name);
 #endif
         }
     }
@@ -804,7 +804,7 @@ u8 func_08099B60(BossPrizeWork* w, void* a) {
     func_08099928(w);
     w->unk_EC++;
 
-    if ((u32)w->unk_B8 > 0x1C2) {
+    if ((u32)w->cardId > 0x1C2) {
         if (w->unk_EC == 120) {
             w->unk_EC = 0;
             SetTaskUpdate(a, (void*)func_08099C4C);

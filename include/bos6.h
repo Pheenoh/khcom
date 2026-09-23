@@ -332,9 +332,9 @@ typedef struct PcFltWork {
     u32 unk_01C;
     u32 unk_020;
     u32 unk_024;
-    s32 unk_028;
-    s32 unk_02C;
-    s32 unk_030;
+    s32 x;
+    s32 y;
+    s32 z;
     u32 tiles;
     u32 palette;
     PcPos* pos;
@@ -406,9 +406,9 @@ typedef struct BosLstWork {
     s16 unk_026;
     u32 tiles;
     AnimState anim;
-    s32 unk_044;
-    s32 unk_048;
-    s32 unk_04C;
+    s32 x;
+    s32 y;
+    s32 z;
     s32 unk_050;
     s32 unk_054;
     s32 unk_058;

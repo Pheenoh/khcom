@@ -57,13 +57,13 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     u8* q;
 
     args = *p;
-    w->unk_C8 = args.unk_20;
+    w->cardId = args.unk_20;
     def = &gCardDefs[args.unk_20];
     w->tiles = LoadObjTiles(def->tiles, 0x300);
     w->palette = LoadObjPalette(def->palette, 32);
     *(CardStat*)&w->unk_20[0x14] = *(CardStat*)&def->unk_1C;
 
-    if (gCardDefs[w->unk_C8].unk_1E & 12) {
+    if (gCardDefs[w->cardId].unk_1E & 12) {
         back = &gUnk_08F709B0[3];
     } else {
         back = &gUnk_08F709B0[w->unk_20[0x22]];
@@ -134,8 +134,8 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
         w->unk_FC[0] = 1;
         m4aSongNumStart(0x6A);
 
-        if (w->unk_C8 <= 0x1C1) {
-            func_08084458(w->unk_C8);
+        if (w->cardId <= 0x1C1) {
+            func_08084458(w->cardId);
         }
 
         SetTaskUpdate(a, (void*)func_0809612C);
@@ -201,9 +201,9 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
             w->unk_F6 = 0;
             SetTaskUpdate(a, (void*)func_08096288);
 #ifdef VERSION_EU
-            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->unk_C8].name));
+            CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->cardId].name));
 #else
-            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->unk_C8].name);
+            CreateCardNameDisplay(&w->unk_20, gCardDefs[w->cardId].name);
 #endif
         }
     }
@@ -256,7 +256,7 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
     func_08096638(w);
     w->unk_FB++;
 
-    if (w->unk_C8 > 0x1C2) {
+    if (w->cardId > 0x1C2) {
         if (w->unk_FB == 120) {
             w->unk_FB = 0;
             SetTaskUpdate(a, (void*)func_08096390);
@@ -312,7 +312,7 @@ void PrizeCard_2(PrizeCardWork* w) {
         affine = AllocObjAffine(w->unk_F6, w->unk_E0, w->unk_E2, 1);
     }
 
-    def = &gCardDefs[w->unk_C8];
+    def = &gCardDefs[w->cardId];
     DrawSprite(w->x, (u16)w->y2 - 8, def->gfx, w->tiles, w->palette,
                affine, pal, (u16)(w->unk_E4 + 1));
     back = &gUnk_08F709B0[w->unk_20[0x22]];

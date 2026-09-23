@@ -3008,8 +3008,8 @@ u16 func_080DD8A8(UrsulaBubbleWork* work) {
 void task_bos_ursula_bubble_0(UrsulaBubbleWork* work) {
 #ifdef VERSION_EU
     gUnkEu_02035104 = (u32)work;
-    AnimInit(&work->unkEu_044, gUnk_09EF68D8, gUnk_09EF68C0);
-    AnimStart(&work->unkEu_044, 0, 1);
+    AnimInit(&work->anim, gUnk_09EF68D8, gUnk_09EF68C0);
+    AnimStart(&work->anim, 0, 1);
     *(void**)((u8*)gBtlWork + 0x118) =
         AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF68C0, 6), gUnk_097A0DE4);
 #endif
@@ -3037,7 +3037,7 @@ u8 task_bos_ursula_bubble_1(UrsulaBubbleWork* work) {
 
     TaskPoolUpdate(&work->tasks);
 #ifdef VERSION_EU
-    AnimUpdate(&work->unkEu_044);
+    AnimUpdate(&work->anim);
 #endif
 
     for (i = 0; i < work->unk_040; i++) {
@@ -3076,19 +3076,19 @@ void func_080DD9B0(UrsulaBubbleWork* work) {
 
 #ifdef VERSION_EU
 void eu_080DA80C(u16 a, u16 b) {
-    AnimChange(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044, a, b);
+    AnimChange(&((UrsulaBubbleWork*)gUnkEu_02035104)->anim, a, b);
 }
 
 u16 eu_080DA830(void) {
-    return AnimGetId(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+    return AnimGetId(&((UrsulaBubbleWork*)gUnkEu_02035104)->anim);
 }
 
 u8 eu_080DA848(void) {
-    return AnimIsFinished(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+    return AnimIsFinished(&((UrsulaBubbleWork*)gUnkEu_02035104)->anim);
 }
 
 void* eu_080DA860(void) {
-    return AnimGetGfx(&((UrsulaBubbleWork*)gUnkEu_02035104)->unkEu_044);
+    return AnimGetGfx(&((UrsulaBubbleWork*)gUnkEu_02035104)->anim);
 }
 #endif
 
@@ -3240,10 +3240,10 @@ void func_080DDD30(UrsulaBubbleSingleWork* work) {
 void task_bos_ursula_thunder_0(UrsulaThunderWork* work) {
     BtlObj* p = gBtlWork->actor;
 
-    work->unk_004 = p->x;
-    work->unk_008 = p->y;
-    work->unk_00C = p->z - 0x6000;
-    func_08017390(work->unk_004, work->unk_008, work->unk_00C);
+    work->x = p->x;
+    work->y = p->y;
+    work->z = p->z - 0x6000;
+    func_08017390(work->x, work->y, work->z);
     work->unk_000 = 0;
 }
 
@@ -3253,7 +3253,7 @@ u8 task_bos_ursula_thunder_1(UrsulaThunderWork* work) {
             return 0;
         }
 
-        func_080155BC(work->unk_004, work->unk_008, 0, 244);
+        func_080155BC(work->x, work->y, 0, 244);
         work->unk_000 = 1;
     }
 

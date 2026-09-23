@@ -1363,7 +1363,7 @@ u8 func_080FBFA8(MdWork* work) {
 
                     if (func_080128EC() == 0) {
                         work->unk_1B4 &= 0xFFFD;
-                        a.unk_00 = &work->tasks;
+                        a.pool = &work->tasks;
                         a.unk_06 = 0;
                         a.unk_08 = (s32)&work->unk_1B4;
 
@@ -2044,11 +2044,11 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
     work->tiles = (u32)LoadObjTiles(gUnk_099E367C, 0x800);
     AnimInit(&work->anim, gUnk_09EF9BC0, gUnk_09EF9BB0);
     AnimStart(&work->anim, 0, 1);
-    a.unk_00 = 0;
+    a.pool = 0;
     a.unk_04 = arg->unk_04;
     a.unk_08 = arg->unk_08;
 
-    if (arg->unk_00 != 0) {
+    if (arg->pool != 0) {
         if (work->unk_15E <= 2) {
             n = gUnk_09992EF8[work->unk_15E].unk_04;
         } else {
@@ -2057,7 +2057,7 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
 
         for (i = 1; i < n; i++) {
             a.unk_06 = i;
-            TaskCreate(arg->unk_00, &gTaskDescBosMdFire, &a);
+            TaskCreate(arg->pool, &gTaskDescBosMdFire, &a);
         }
     }
 }
@@ -2123,7 +2123,7 @@ void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
 
     gBtlWork->unk_068 |= 0x100000;
     work->target = (MdDaiTarget*)src[1];
-    work->unk_080 = (void*)src[0];
+    work->pool = (void*)src[0];
     work->unk_07C = 0;
     work->state = 0;
     work->x = 0x8000;
@@ -2198,7 +2198,7 @@ s32 task_bos_md_dai_1(MdDaiWork* work) {
             n = GetRandom() % 3 + 3;
 
             for (i = 0; i < n; i++) {
-                TaskCreate(work->unk_080, &gTaskDescBosMdHahen, args);
+                TaskCreate(work->pool, &gTaskDescBosMdHahen, args);
             }
 
             work->unk_07C--;

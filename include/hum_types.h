@@ -12,9 +12,9 @@ typedef struct HumSub {
     void* palette;
     void* palette2;
     AnimState anim;
-    s32 unk_28;
-    s32 unk_2C;
-    s32 unk_30;
+    s32 x;
+    s32 y;
+    s32 z;
     u16 unk_34;
     u16 unk_36;
     void* gfx;

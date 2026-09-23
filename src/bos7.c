@@ -1285,7 +1285,7 @@ void func_081115CC(LstWork* work, Vec3* a, Vec3* b, s32 c, u16 d) {
 void func_08111660(LstLsrTask* t) {
     LstLsrWork* w;
 
-    w = t->unk_04;
+    w = t->work;
     w->state = 0;
     w->unk_010 = 0;
     AnimStart(&w->anim, 4, 0);
