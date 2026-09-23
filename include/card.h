@@ -850,8 +850,8 @@ typedef struct PremiumCardEffectWork {
     s32 unk_38;
     s32 angle;
     s32 unk_40;
-    s32 unk_44;
-    s32 unk_48;
+    s32 vx;
+    s32 vy;
     s32 unk_4C;
     s32 unk_50;
 } PremiumCardEffectWork;

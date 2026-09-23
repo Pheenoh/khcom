@@ -753,7 +753,7 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     e->unk_0D8 = 0;
     e->unk_0E8 = 0;
     e->unk_104 = 0;
-    e->unk_108 = e->unk_10C = 0;
+    e->vx = e->vy = 0;
 
     if (arg->unk_04 != 0) {
         ColliderInit(&e->collider, 1, e->unk_09E, e->unk_09C);
@@ -772,8 +772,8 @@ void task_btl_sora_0(BtlSoraWork* work, BtlTaskArg* arg) {
     work->unk_038 = 0;
     work->unk_03C = 0;
     work->unk_150 = 0;
-    e->unk_108 = 0;
-    e->unk_10C = 0;
+    e->vx = 0;
+    e->vy = 0;
     work->unk_154 = 0;
     work->unk_156 = 0;
     work->unk_15C = 0;
@@ -905,8 +905,8 @@ void func_0801E518(BtlSoraWork* work) {
 
 void func_0801E678(BtlSoraWork* work) {
     work->unk_150 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vx = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vy = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 BtlObj* func_0801E6DC(BtlSoraWork* work) {
@@ -2120,7 +2120,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         AnimReset(&work->anim);
         work->unk_15C = 0;
-        p->unk_108 = p->unk_10C = 0;
+        p->vx = p->vy = 0;
         break;
     case 9:
         switch (work->unk_038) {
@@ -2225,7 +2225,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if (work->unk_038 != 43) {
             work->unk_15A |= 0x80;
             work->unk_15C = 0;
-            p->unk_108 = p->unk_10C = 0;
+            p->vx = p->vy = 0;
             work->unk_038 = 43;
             work->unk_156 = 0;
             work->unk_154 = 0;
@@ -4460,9 +4460,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             gBtlWork->unk_072 = 30;
             p->unk_034 &= ~0x2000;
 
-            if (p->unk_108 > 0) {
+            if (p->vx > 0) {
                 p->unk_034 |= 4;
-            } else if (p->unk_108 < 0) {
+            } else if (p->vx < 0) {
                 p->unk_034 &= ~4;
             }
         } else {
@@ -4532,8 +4532,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             work->anim.frame = 0;
             work->anim.timer = 0;
             work->unk_150 = 1024;
-            p->unk_108 = 0;
-            p->unk_10C = 0;
+            p->vx = 0;
+            p->vy = 0;
             work->unk_156 = 10;
         }
 
@@ -4601,9 +4601,9 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             gBtlWork->unk_072 = 30;
             p->unk_034 &= ~0x2000;
 
-            if (p->unk_108 > 0) {
+            if (p->vx > 0) {
                 p->unk_034 |= 4;
-            } else if (p->unk_108 < 0) {
+            } else if (p->vx < 0) {
                 p->unk_034 &= ~4;
             }
             break;
@@ -4771,14 +4771,14 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
                     e = gBtlWork->actor;
                 }
 
-                if (e->unk_108 != 0 || e->unk_10C != 0) {
+                if (e->vx != 0 || e->vy != 0) {
                     func_08011F68(108, e);
                 }
             } else {
                 e = ListPoolFirst(&gBtlWork->pool);
 
                 while (e != 0) {
-                    if (e->unk_108 != 0 || e->unk_10C != 0) {
+                    if (e->vx != 0 || e->vy != 0) {
                         func_08011F68(108, e);
                     }
 
@@ -5672,8 +5672,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             gBtlWork->unk_068 |= 0x100000;
         } else {
             if (pressed & 0xF0) {
-                p->unk_108 = GetRandom() % 257 - 128;
-                p->unk_10C = GetRandom() % 257 - 128;
+                p->vx = GetRandom() % 257 - 128;
+                p->vy = GetRandom() % 257 - 128;
                 work->unk_154 += 2;
             }
 
@@ -5956,8 +5956,8 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         if (st == 0) {
             m4aSongNumStart(611);
-            p->unk_108 = 0;
-            p->unk_10C = 0;
+            p->vx = 0;
+            p->vy = 0;
             p->unk_034 |= 0x200;
             func_0801DDE4(work, 58, 0);
             work->unk_15C = 256;
@@ -6013,7 +6013,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         break;
     case 35:
         p->unk_034 &= ~0x2000;
-        p->unk_108 = p->unk_10C = 0;
+        p->vx = p->vy = 0;
         work->unk_15C = 0;
         break;
     }
@@ -6038,7 +6038,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_170[0] = 0;
         work->unk_170[1] = 0;
         work->unk_15C = 0;
-        p->unk_108 = p->unk_10C = 0;
+        p->vx = p->vy = 0;
 
         if (work->unk_150 < 0) {
             work->unk_150 = 768;
@@ -6127,35 +6127,35 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         gBtlWork->unk_0F0 = 0;
     }
 
-    if (p->unk_108 > 0) {
-        p->x += p->unk_108;
-        p->unk_108 -= 17;
+    if (p->vx > 0) {
+        p->x += p->vx;
+        p->vx -= 17;
 
-        if (p->unk_108 < 0) {
-            p->unk_108 = 0;
+        if (p->vx < 0) {
+            p->vx = 0;
         }
-    } else if (p->unk_108 < 0) {
-        p->x += p->unk_108;
-        p->unk_108 += 17;
+    } else if (p->vx < 0) {
+        p->x += p->vx;
+        p->vx += 17;
 
-        if (p->unk_108 > 0) {
-            p->unk_108 = 0;
+        if (p->vx > 0) {
+            p->vx = 0;
         }
     }
 
-    if (p->unk_10C > 0) {
-        p->y += p->unk_10C;
-        p->unk_10C -= 17;
+    if (p->vy > 0) {
+        p->y += p->vy;
+        p->vy -= 17;
 
-        if (p->unk_10C < 0) {
-            p->unk_10C = 0;
+        if (p->vy < 0) {
+            p->vy = 0;
         }
-    } else if (p->unk_10C < 0) {
-        p->y += p->unk_10C;
-        p->unk_10C += 17;
+    } else if (p->vy < 0) {
+        p->y += p->vy;
+        p->vy += 17;
 
-        if (p->unk_10C > 0) {
-            p->unk_10C = 0;
+        if (p->vy > 0) {
+            p->vy = 0;
         }
     }
 
@@ -6163,11 +6163,11 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         switch (ClampBattlePosition(&p->x, &p->y, -16, 0)) {
         case 3:
         case 4:
-            p->unk_10C = -(p->unk_10C >> 1);
+            p->vy = -(p->vy >> 1);
             p->btl->unk_068 &= ~8;
             break;
         case 1:
-            p->unk_108 = -(p->unk_108 >> 1);
+            p->vx = -(p->vx >> 1);
 
             if (p->z == 0 && (held & 0x20)) {
                 p->btl->unk_068 |= 8;
@@ -6178,7 +6178,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             work->unk_15A |= 0x200;
             break;
         case 2:
-            p->unk_108 = -(p->unk_108 >> 1);
+            p->vx = -(p->vx >> 1);
 
             if (p->z == 0 && (held & 0x10)) {
                 p->btl->unk_068 |= 8;
@@ -6561,49 +6561,49 @@ void func_080277FC(BtlRikuWork* work, u16 a) {
     if ((a & 0x10) && (a & 0x40)) {
         work->unk_164 = 0x20;
         p->unk_034 &= ~4;
-        p->unk_108 += 25;
-        p->unk_10C -= 12;
+        p->vx += 25;
+        p->vy -= 12;
     } else if ((a & 0x10) && (a & 0x80)) {
         work->unk_164 = 0x60;
         p->unk_034 &= ~4;
-        p->unk_108 += 25;
-        p->unk_10C += 12;
+        p->vx += 25;
+        p->vy += 12;
     } else if ((a & 0x20) && (a & 0x80)) {
         work->unk_164 = 0xA0;
         p->unk_034 |= 4;
-        p->unk_108 -= 25;
-        p->unk_10C += 12;
+        p->vx -= 25;
+        p->vy += 12;
     } else if ((a & 0x20) && (a & 0x40)) {
         work->unk_164 = 0xE0;
         p->unk_034 |= 4;
-        p->unk_108 -= 25;
-        p->unk_10C -= 12;
+        p->vx -= 25;
+        p->vy -= 12;
     } else if (a & 0x40) {
         work->unk_164 = 0;
-        p->unk_10C -= 12;
+        p->vy -= 12;
     } else if (a & 0x10) {
         work->unk_164 = 0x40;
         p->unk_034 &= ~4;
-        p->unk_108 += 25;
+        p->vx += 25;
     } else if (a & 0x80) {
         work->unk_164 = 0x80;
-        p->unk_10C += 12;
+        p->vy += 12;
     } else if (a & 0x20) {
         work->unk_164 = 0xC0;
         p->unk_034 |= 4;
-        p->unk_108 -= 25;
+        p->vx -= 25;
     }
 
-    if (p->unk_108 > 512) {
-        p->unk_108 = 512;
-    } else if (p->unk_108 < -512) {
-        p->unk_108 = -512;
+    if (p->vx > 512) {
+        p->vx = 512;
+    } else if (p->vx < -512) {
+        p->vx = -512;
     }
 
-    if (p->unk_10C > 256) {
-        p->unk_10C = 256;
-    } else if (p->unk_10C < -256) {
-        p->unk_10C = -256;
+    if (p->vy > 256) {
+        p->vy = 256;
+    } else if (p->vy < -256) {
+        p->vy = -256;
     }
 
     if (a & 0xF0) {
@@ -6786,7 +6786,7 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     e->unk_0D8 = 0;
     e->unk_0E8 = 0;
     e->unk_104 = 0;
-    e->unk_108 = e->unk_10C = 0;
+    e->vx = e->vy = 0;
 
     if (arg->unk_04 != 0) {
         ColliderInit(&e->collider, 1, e->unk_09E, e->unk_09C);
@@ -6807,8 +6807,8 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     work->unk_03C = 0;
     work->unk_040 = 0;
     work->unk_154 = 0;
-    e->unk_108 = 0;
-    e->unk_10C = 0;
+    e->vx = 0;
+    e->vy = 0;
     work->unk_158 = 0;
     work->unk_15A = 0;
     work->unk_160 = 0;
@@ -6935,8 +6935,8 @@ void func_080280E0(BtlRikuWork* work) {
 
 void func_08028228(BtlRikuWork* work) {
     work->unk_154 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vx = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vy = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 BtlObj* func_0802828C(BtlRikuWork* work) {
@@ -7499,7 +7499,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
 
             AnimReset(&work->anim);
             work->unk_160 = 0;
-            p->unk_108 = p->unk_10C = 0;
+            p->vx = p->vy = 0;
             break;
         }
         case 9:
@@ -7585,7 +7585,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             if (work->unk_03C != 17) {
                 work->unk_15E |= 0x80;
                 work->unk_160 = 0;
-                p->unk_108 = p->unk_10C = 0;
+                p->vx = p->vy = 0;
                 work->unk_03C = 17;
                 work->unk_15A = 0;
                 work->unk_158 = 0;
@@ -8962,7 +8962,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             m4aSongNumStart(702);
             func_08018970(p->x, p->y, p->z);
             work->unk_15A = 6;
-            p->unk_108 = p->unk_10C = work->unk_160 = 0;
+            p->vx = p->vy = work->unk_160 = 0;
         }
 
         work->unk_154 = 0;
@@ -9049,7 +9049,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             m4aSongNumStart(716);
             func_08018970(p->x, p->y, p->z);
             work->unk_15A = 6;
-            p->unk_108 = p->unk_10C = work->unk_160 = 0;
+            p->vx = p->vy = work->unk_160 = 0;
         }
 
         work->unk_154 = 0;
@@ -9212,8 +9212,8 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             gBtlWork->unk_068 |= 0x100000;
         } else {
             if (pressed & 0xF0) {
-                p->unk_108 = GetRandom() % 257 - 128;
-                p->unk_10C = GetRandom() % 257 - 128;
+                p->vx = GetRandom() % 257 - 128;
+                p->vy = GetRandom() % 257 - 128;
                 work->unk_158 += 2;
             }
 
@@ -10405,9 +10405,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             gBtlWork->unk_072 = 30;
             p->unk_034 &= 0xFFFFFFFFFFFFDFFFLL;
 
-            if (p->unk_108 > 0) {
+            if (p->vx > 0) {
                 p->unk_034 |= 4;
-            } else if (p->unk_108 < 0) {
+            } else if (p->vx < 0) {
                 p->unk_034 &= 0xFFFFFFFFFFFFFFFBLL;
             }
         } else {
@@ -10473,9 +10473,9 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             gBtlWork->unk_072 = 30;
             p->unk_034 &= 0xFFFFFFFFFFFFDFFFLL;
 
-            if (p->unk_108 > 0) {
+            if (p->vx > 0) {
                 p->unk_034 |= 4;
-            } else if (p->unk_108 < 0) {
+            } else if (p->vx < 0) {
                 p->unk_034 &= 0xFFFFFFFFFFFFFFFBLL;
             }
         } else {
@@ -10557,7 +10557,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
     case 14:
         p->unk_034 &= 0xFFFFFFFFFFFFDFFFLL;
 #ifdef VERSION_EU
-        p->unk_108 = p->unk_10C = 0;
+        p->vx = p->vy = 0;
         work->unk_160 = 0;
 #endif
         break;
@@ -10674,46 +10674,46 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         *(s32*)&gBtlWork->unk_0F0 = 0;
     }
 
-    t = p->unk_108;
+    t = p->vx;
 
     if (t > 0) {
         p->x += t;
-        p->unk_108 -= 17;
+        p->vx -= 17;
 
-        if (p->unk_108 < 0) {
-            p->unk_108 = 0;
+        if (p->vx < 0) {
+            p->vx = 0;
         }
     } else if (t < 0) {
         p->x += t;
-        p->unk_108 += 17;
+        p->vx += 17;
 
-        if (p->unk_108 > 0) {
-            p->unk_108 = 0;
+        if (p->vx > 0) {
+            p->vx = 0;
         }
     }
 
-    t2 = p->unk_10C;
+    t2 = p->vy;
 
     if (t2 > 0) {
         p->y += t2;
-        p->unk_10C -= 17;
+        p->vy -= 17;
 
-        if (p->unk_10C < 0) {
-            p->unk_10C = 0;
+        if (p->vy < 0) {
+            p->vy = 0;
         }
     } else if (t2 < 0) {
         p->y += t2;
-        p->unk_10C += 17;
+        p->vy += 17;
 
-        if (p->unk_10C > 0) {
-            p->unk_10C = 0;
+        if (p->vy > 0) {
+            p->vy = 0;
         }
     }
 
     if (!(p->unk_034 & 0x800000)) {
         switch (ClampBattlePosition(&p->x, &p->y, -16, 0)) {
         case 1:
-            p->unk_108 = 0;
+            p->vx = 0;
 
             if (p->z == 0 && (held & 0x20)) {
                 p->btl->unk_068 |= 8;
@@ -10724,7 +10724,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             work->unk_15E |= 0x200;
             break;
         case 2:
-            p->unk_108 = 0;
+            p->vx = 0;
 
             if (p->z == 0 && (held & 0x10)) {
                 p->btl->unk_068 |= 8;
@@ -10736,7 +10736,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             break;
         case 3:
         case 4:
-            p->unk_10C = 0;
+            p->vy = 0;
             p->btl->unk_068 &= ~8LL;
             break;
         default:

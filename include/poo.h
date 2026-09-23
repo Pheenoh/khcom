@@ -488,7 +488,7 @@ typedef struct PooPrizeWork {
     void (*update)(struct PooPrizeWork* w);
     u16 unk_80;
     u16 unk_82;
-    s32 unk_84;
+    s32 vz;
     s32 unk_88;
     u8 angle;
     u8 unk_8D;
@@ -818,7 +818,7 @@ typedef struct PooCabbageWork {
     TaskPool tasks;
     Task* task;
     s32 unk_C0;
-    s32 unk_C4;
+    s32 vz;
     u8 angle;
     u8 unk_C9;
     u16 unk_CA;

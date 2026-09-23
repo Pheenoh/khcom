@@ -121,7 +121,7 @@ typedef struct BtlPrizeWork {
     void* palette;
     void* gfx;
     void* gfx2;
-    s32 unk_20;
+    s32 vz;
     s32 unk_24;
     s16 unk_28;
     u8 unk_2A;
@@ -132,8 +132,8 @@ typedef struct BtlPrizeWork {
     s32 unk_34;
     u16 unk_38;
     s16 unk_3A;
-    s32 unk_3C;
-    s32 unk_40;
+    s32 vx;
+    s32 vy;
     u8 angle;
     u8 unk_45[0x03];
     BtlObj* actor;
@@ -148,7 +148,7 @@ typedef struct BtlPremireWork {
     void* palette;
     void* gfx;
     void* gfx2;
-    s32 unk_20;
+    s32 vz;
     s32 unk_24;
     s16 unk_28;
     u8 unk_2A;
@@ -157,8 +157,8 @@ typedef struct BtlPremireWork {
     u8 unk_2E[0x02];
     s32 unk_30;
     s32 unk_34;
-    s32 unk_38;
-    s32 unk_3C;
+    s32 vx;
+    s32 vy;
     u8 angle;
     u8 unk_41[0x03];
     BtlObj* actor;

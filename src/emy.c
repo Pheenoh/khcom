@@ -1947,8 +1947,8 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
-    work->unk_034 = 0x200;
-    work->unk_030 = -0x34C;
+    work->vx = 0x200;
+    work->vz = -0x34C;
     work->unk_03C = 0;
     work->unk_09C = 1;
     work->unk_09D = 0;
@@ -1960,18 +1960,18 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_02C != 0) {
-            work->x -= work->unk_034;
+            work->x -= work->vx;
         } else {
-            work->x += work->unk_034;
+            work->x += work->vx;
         }
 
         if (ClampBattlePosition(&work->x, &work->y, -0x10, 0) != 0) {
-            work->unk_034 = -work->unk_034;
+            work->vx = -work->vx;
         }
 
         if (work->unk_09D == 0
                 && func_08011E3C(work->x, work->y, work->z, 4, 4, 4)) {
-            work->unk_034 = -(work->unk_034 >> 1);
+            work->vx = -(work->vx >> 1);
             work->unk_09D = 1;
         }
 
@@ -2006,7 +2006,7 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
             }
         } else {
             AnimStart(work->anim, 2, 1);
-            work->unk_030 = -0x3CC;
+            work->vz = -0x3CC;
         }
 
         work->unk_03C++;
@@ -2029,11 +2029,11 @@ u8 task_emy_16_b_1(Emy16bWork* work) {
         break;
     }
 
-    work->z += work->unk_030;
-    work->unk_030 += 0x33;
+    work->z += work->vz;
+    work->vz += 0x33;
 
     if (work->z >= 0) {
-        work->unk_030 = 0;
+        work->vz = 0;
         work->z = 0;
     }
 
@@ -2094,7 +2094,7 @@ void task_emy_16_p_0(Emy16pWork* work, EmySpawn* spawn) {
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
-    work->unk_030 = 0;
+    work->vz = 0;
 }
 
 u8 task_emy_16_p_1(Emy16pWork* work) {
@@ -2116,11 +2116,11 @@ u8 task_emy_16_p_1(Emy16pWork* work) {
         return 0;
     }
 
-    work->z += work->unk_030;
-    work->unk_030 += 0x2E;
+    work->z += work->vz;
+    work->vz += 0x2E;
 
     if (work->z >= 0) {
-        work->unk_030 = -0x400;
+        work->vz = -0x400;
         work->z = 0;
     }
 
@@ -5495,7 +5495,7 @@ void task_emy_83_s_0(Emy83sWork* work, EmySpawn* spawn) {
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
-    work->unk_014 = 0;
+    work->vz = 0;
     work->unk_022 = 0;
 
     if (spawn->unk_12 != 0) {
@@ -5524,8 +5524,8 @@ u8 task_emy_83_s_1(Emy83sWork* work) {
             }
         }
 
-        work->z += work->unk_014;
-        work->unk_014 += 0x14;
+        work->z += work->vz;
+        work->vz += 0x14;
 
         if (work->z < 0) {
             work->unk_022++;

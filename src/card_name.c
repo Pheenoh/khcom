@@ -281,13 +281,13 @@ void func_0809D1B0(PremiumCardEffectWork* w) {
     s32 v;
     s32 d;
 
-    w->unk_44 = w->unk_24 - w->x;
-    w->unk_48 = w->unk_28 - w->y;
-    w->unk_40 = NormalizeVector2D8(&w->unk_44, &w->unk_48);
+    w->vx = w->unk_24 - w->x;
+    w->vy = w->unk_28 - w->y;
+    w->unk_40 = NormalizeVector2D8(&w->vx, &w->vy);
     v = w->unk_4C;
     d = v >> 8;
-    w->x += w->unk_44 * d;
-    w->y += w->unk_48 * d;
+    w->x += w->vx * d;
+    w->y += w->vy * d;
 
     if (w->unk_40 > 0) {
         w->unk_4C = v - 2;

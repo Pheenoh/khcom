@@ -161,14 +161,14 @@ s32 func_080F7E0C(s32 x0, s32 y0, s32 x1, s32 y1) {
 }
 
 void func_080F7E84(GaEntryWork* e) {
-    e->unk_120 += 0x4C;
-    e->z += e->unk_120;
+    e->vz += 0x4C;
+    e->z += e->vz;
     if (e->z > 0) {
-        if (e->unk_120 > 0x500) {
+        if (e->vz > 0x500) {
             m4aSongNumStart(0x26A);
         }
         e->z = 0;
-        e->unk_120 = -e->unk_120 / 2;
+        e->vz = -e->vz / 2;
     }
 
     if (e->unk_164 > 0) {
@@ -288,7 +288,7 @@ void func_080F80FC(GaWork* work, u32 i, s32 c) {
     e->unk_13C = 0;
     e->unk_158 = GetRandom();
     e->unk_11C = 0;
-    e->unk_120 = 0;
+    e->vz = 0;
     e->unk_112 = 0;
     e->unk_15A = 0;
     e->unk_15C = 0;
@@ -1951,7 +1951,7 @@ u8 func_080FAA18(GaWork* work) {
         for (i = 0; i <= 5; i++) {
             e = &work->entries[i];
             if (!(e->unk_15A & 4)) {
-                e->unk_120 = -gSineTable[((GetRandom() % 0x20) & 0xFF) + 0x40] * -3;
+                e->vz = -gSineTable[((GetRandom() % 0x20) & 0xFF) + 0x40] * -3;
                 e->unk_164 = gSineTable[(GetRandom() % 0x100) & 0xFF] * 0x233 >> 8;
                 e->unk_168 = -gSineTable[((GetRandom() % 0x100) & 0xFF) + 0x40] * 0x233 >> 8;
                 e->unk_11C = 1;

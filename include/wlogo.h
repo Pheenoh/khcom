@@ -183,8 +183,8 @@ typedef struct WlogoPooObjWork {
     AnimState anim;
     s32 x;
     s32 y;
-    s32 unk_02C;
-    s32 unk_030;
+    s32 vx;
+    s32 vy;
     s32 unk_034;
     s32 unk_038;
     u16 unk_03C;
@@ -302,8 +302,8 @@ typedef struct WlogoNvlObjArg {
 typedef struct WlogoNvlMovWork {
     s32 x;
     s32 y;
-    s32 unk_008;
-    s32 unk_00C;
+    s32 vx;
+    s32 vy;
     s32 unk_010;
     s32 unk_014;
     u8 unk_018;
@@ -402,8 +402,8 @@ typedef struct WlogoHwtObjWork {
     AnimState anim;
     s32 x;
     s32 y;
-    s32 unk_02C;
-    s32 unk_030;
+    s32 vx;
+    s32 vy;
     s32 unk_034;
     s32 unk_038;
     u16 unk_03C;

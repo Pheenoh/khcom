@@ -31,8 +31,8 @@ void func_0800C778(EmyWork* work, const EmyDef* def, EmyObj* obj) {
     work->angle = 0;
     work->unk_164 = def->unk_08;
     work->unk_168 = 0;
-    actor->unk_108 = 0;
-    actor->unk_10C = 0;
+    actor->vx = 0;
+    actor->vy = 0;
     work->unk_162 = 0;
 
     if (actor->unk_034 & 0x20000) {
@@ -128,8 +128,8 @@ void func_0800CB4C(EmyWork* work) {
 
 void func_0800CB78(EmyWork* work) {
     work->unk_168 = -work->actor.unk_0AC * 3;
-    work->actor.unk_108 = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
-    work->actor.unk_10C = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vx = ((gSineTable[work->actor.angle] << 1) * work->actor.unk_0A8) >> 8;
+    work->actor.vy = ((-gSineTable[work->actor.angle + 0x40] << 1) * work->actor.unk_0A8) >> 8;
 }
 
 
@@ -200,7 +200,7 @@ u8 _0800CBDC(EmyWork* work) {
         if (work->unk_14C != 12) {
             work->unk_14C = 12;
             work->unk_154 = 0;
-            actor->unk_108 = actor->unk_10C = 0;
+            actor->vx = actor->vy = 0;
         }
         break;
     }
@@ -554,8 +554,8 @@ s32 _0800CDF0(EmyWork* work) {
             work->anim.frame = 0;
             work->anim.timer = 0;
             work->unk_168 = 0x400;
-            actor->unk_108 = 0;
-            actor->unk_10C = 0;
+            actor->vx = 0;
+            actor->vy = 0;
             work->unk_156 = 10;
         }
         ApproachValue(&work->unk_180, 64, work->unk_156--);
@@ -600,8 +600,8 @@ s32 _0800CDF0(EmyWork* work) {
             func_08019068(work->def->animDef, &work->anim, 0, 1, work->tiles);
             work->unk_17C = 0x100;
             work->unk_180 = 0x100;
-            actor->unk_108 = 0;
-            actor->unk_10C = 0;
+            actor->vx = 0;
+            actor->vy = 0;
         }
         work->unk_168 = 0;
 
@@ -657,10 +657,10 @@ s32 _0800CDF0(EmyWork* work) {
                 work->unk_154++;
                 break;
             }
-            if (actor->unk_108 != 0) {
+            if (actor->vx != 0) {
                 break;
             }
-            if (actor->unk_10C != 0) {
+            if (actor->vy != 0) {
                 break;
             }
             if (actor->z != actor->unk_010) {
@@ -726,31 +726,31 @@ s32 _0800CDF0(EmyWork* work) {
         }
     }
 
-    if (actor->unk_108 > 0) {
-        actor->x += actor->unk_108;
-        actor->unk_108 -= 17;
-        if (actor->unk_108 < 0) {
-            actor->unk_108 = 0;
+    if (actor->vx > 0) {
+        actor->x += actor->vx;
+        actor->vx -= 17;
+        if (actor->vx < 0) {
+            actor->vx = 0;
         }
-    } else if (actor->unk_108 < 0) {
-        actor->x += actor->unk_108;
-        actor->unk_108 += 17;
-        if (actor->unk_108 > 0) {
-            actor->unk_108 = 0;
+    } else if (actor->vx < 0) {
+        actor->x += actor->vx;
+        actor->vx += 17;
+        if (actor->vx > 0) {
+            actor->vx = 0;
         }
     }
 
-    if (actor->unk_10C > 0) {
-        actor->y += actor->unk_10C;
-        actor->unk_10C -= 17;
-        if (actor->unk_10C < 0) {
-            actor->unk_10C = 0;
+    if (actor->vy > 0) {
+        actor->y += actor->vy;
+        actor->vy -= 17;
+        if (actor->vy < 0) {
+            actor->vy = 0;
         }
-    } else if (actor->unk_10C < 0) {
-        actor->y += actor->unk_10C;
-        actor->unk_10C += 17;
-        if (actor->unk_10C > 0) {
-            actor->unk_10C = 0;
+    } else if (actor->vy < 0) {
+        actor->y += actor->vy;
+        actor->vy += 17;
+        if (actor->vy > 0) {
+            actor->vy = 0;
         }
     }
 
@@ -758,12 +758,12 @@ s32 _0800CDF0(EmyWork* work) {
     case 1:
     case 2:
         work->unk_158 |= 2;
-        actor->unk_108 = -(actor->unk_108 >> 1);
+        actor->vx = -(actor->vx >> 1);
         break;
     case 3:
     case 4:
         work->unk_158 |= 2;
-        actor->unk_10C = -(actor->unk_10C >> 1);
+        actor->vy = -(actor->vy >> 1);
         break;
     default:
         work->unk_158 &= 0xFFFD;

@@ -254,7 +254,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     work->unk_38 = 100;
     work->state = 0;
     work->unk_44 = 256;
-    work->unk_30 = 0x800;
+    work->vx = 0x800;
     work->unk_54 = 10;
     work->unk_56 = 2;
     work->unk_68 = 568;
@@ -445,12 +445,12 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         work->unk_38++;
         break;
     case 0:
-        ApproachValue(&work->unk_30, -0x800, work->unk_38);
+        ApproachValue(&work->vx, -0x800, work->unk_38);
 
         if (work->unk_3C != 0) {
-            work->x = work->x - work->unk_30;
+            work->x = work->x - work->vx;
         } else {
-            work->x = work->x + work->unk_30;
+            work->x = work->x + work->vx;
         }
 
         if (work->unk_56 & 1) {
@@ -481,18 +481,18 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         case 2:
             work->state = 1;
             work->unk_3A = work->unk_38 >> 2;
-            work->unk_34 = work->unk_30;
+            work->unk_34 = work->vx;
             break;
         }
         work->unk_38--;
         break;
     case 1:
-        ApproachValue(&work->unk_30, -work->unk_34, work->unk_3A);
+        ApproachValue(&work->vx, -work->unk_34, work->unk_3A);
 
         if (work->unk_3C != 0) {
-            work->x = work->x - work->unk_30;
+            work->x = work->x - work->vx;
         } else {
-            work->x = work->x + work->unk_30;
+            work->x = work->x + work->vx;
         }
 
         if (func_08011F78(work->unk_4C, work->x, work->y, work->z,

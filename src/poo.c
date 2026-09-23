@@ -5763,7 +5763,7 @@ void task_poo_cabbage_0(PooCabbageWork* w) {
     w->x = 0x98300;
     w->y = 0x4D100;
     w->z = 0;
-    w->unk_C4 = 0x4CC;
+    w->vz = 0x4CC;
     r = GetRandom();
     w->angle = (r & 15) + 88;
     w->unk_C0 = 0x1CC;
@@ -5816,12 +5816,12 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
         } else {
             w->x += gSineTable[w->angle] * w->unk_C0 >> 8;
             w->y += -gSineTable[w->angle + 0x40] * w->unk_C0 >> 8;
-            w->unk_C4 += 51;
-            w->z += w->unk_C4;
+            w->vz += 51;
+            w->z += w->vz;
 
             if (w->z > 0) {
                 w->z = 0;
-                w->unk_C4 = -(w->unk_C4 * 179 >> 8);
+                w->vz = -(w->vz * 179 >> 8);
             }
 
             if (w->unk_D1 != 0) {
@@ -6114,8 +6114,8 @@ void CreatePooMapobjhitTask(void* pool, u32 a, s32 x, s32 y, u16 e) {
 void func_080D19C4(PooPrizeWork* w) {
     u8 v;
 
-    w->unk_84 += 56;
-    w->z += w->unk_84;
+    w->vz += 56;
+    w->z += w->vz;
     w->x += gSineTable[w->angle] * w->unk_88 >> 8;
     w->y += -gSineTable[w->angle + 0x40] * w->unk_88 >> 8;
 
@@ -6127,7 +6127,7 @@ void func_080D19C4(PooPrizeWork* w) {
 
     if (w->z > w->unk_0C) {
         w->z = w->unk_0C;
-        w->unk_84 = -(w->unk_84 * 179 >> 8);
+        w->vz = -(w->vz * 179 >> 8);
         w->unk_88 = w->unk_88 * 212 >> 8;
     }
 
@@ -6218,7 +6218,7 @@ void task_poo_prize_0(PooPrizeWork* w, PoohPrizeArgs* a) {
     w->y = a->y;
     w->z = a->z;
     w->unk_0C = 0;
-    w->unk_84 = -(GetRandom() % 0x301 + 0x200);
+    w->vz = -(GetRandom() % 0x301 + 0x200);
     w->unk_88 = GetRandom() % 155 + 153;
     w->angle = GetRandom();
     w->tiles = LoadObjTiles(gUnk_098A5CF4, 0x160);

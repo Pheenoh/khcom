@@ -667,7 +667,7 @@ typedef struct MapPrizeWork {
     void (*update)(struct MapPrizeWork*);
     u16 unk_80;
     u16 unk_82;
-    s32 unk_84;
+    s32 vz;
     s32 unk_88;
     u8 angle;
     u8 unk_8D;
@@ -921,7 +921,7 @@ typedef struct MapTutorialWork {
     s32 y;
     s32 z;
     s32 unk_00C;
-    s32 unk_010;
+    s32 vz;
     u8 unk_014[0x2C];
     u8 unk_040[0x2C];
     u8 unk_06C;

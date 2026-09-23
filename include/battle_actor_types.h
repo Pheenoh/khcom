@@ -94,8 +94,8 @@ typedef struct BtlObj {
     s32 unk_100;
     s16 unk_104;
     s16 unk_106;
-    s32 unk_108;
-    s32 unk_10C;
+    s32 vx;
+    s32 vy;
 } BtlObj;
 
 typedef char Collider_size[(sizeof(Collider) == 0x5C) ? 1 : -1];

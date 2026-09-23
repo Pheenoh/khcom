@@ -3713,8 +3713,8 @@ void Task_MapGmk06_3(MapGmk06Work* w) {
 }
 
 void func_080F49D0(MapPrizeWork* w) {
-    w->unk_84 += 0x38;
-    w->z += w->unk_84;
+    w->vz += 0x38;
+    w->z += w->vz;
     w->x += gSineTable[w->angle] * w->unk_88 >> 8;
     w->y += -gSineTable[w->angle + 64] * w->unk_88 >> 8;
 
@@ -3726,7 +3726,7 @@ void func_080F49D0(MapPrizeWork* w) {
 
     if (w->z > w->unk_0C) {
         w->z = w->unk_0C;
-        w->unk_84 = -(GetRandom() % 0x181 + 0x180);
+        w->vz = -(GetRandom() % 0x181 + 0x180);
     }
 
     if (w->collider[0x2C] != 0) {
@@ -3811,7 +3811,7 @@ void Task_MapPrize_0(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->z = arg->unk_0C;
     w->unk_0C = 0;
     func_080DFF4C((UnkStruct_080DFF1C*)w);
-    w->unk_84 = -(GetRandom() % 0x301 + 0x200);
+    w->vz = -(GetRandom() % 0x301 + 0x200);
     w->unk_88 = GetRandom() % 155 + 153;
     w->angle = GetRandom();
     w->tiles = LoadObjTiles(gUnk_098A5CF4, 0x160);
@@ -5048,7 +5048,7 @@ void func_080F6DE8(MapTutorialWork* w) {
         w->y -= w->unk_00C;
         w->z = w->unk_00C - 0xA000;
         *(u16*)&w->unk_014[6] = 24;
-        w->unk_010 = 2;
+        w->vz = 2;
         w->tiles = AllocObjTiles(0x400, gUnk_09858B3C);
         w->palette = LoadObjPalette(&gUnk_099910C4[0x220], 32);
         a = &w->anim;
@@ -5067,14 +5067,14 @@ void func_080F6DE8(MapTutorialWork* w) {
 void func_080F6EBC(MapTutorialWork* w) {
     MapTutorialWork* p = w;
 
-    w->unk_010 += 0x38;
-    w->z += w->unk_010;
+    w->vz += 0x38;
+    w->z += w->vz;
 
     if (w->z > w->unk_00C) {
         gUnk_02039BA0->unk_70 &= ~0x1000;
         m4aSongNumStart(0xD7);
         w->z = w->unk_00C;
-        w->unk_010 = 0;
+        w->vz = 0;
         w->unk_0C1 = 0;
         w->update = func_080F6F1C;
     }

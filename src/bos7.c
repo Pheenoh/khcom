@@ -1528,31 +1528,31 @@ void task_bos_lst_fal_0(LstFalWork* work, LstFalArg* arg) {
     work->x = arg->x;
     work->y = arg->y;
     work->z = arg->z;
-    work->unk_010 = (GetRandom() % 0x181 + 0x80) * arg->unk_12;
-    work->unk_014 = GetRandom() % 0xC1 + 0x40;
+    work->vx = (GetRandom() % 0x181 + 0x80) * arg->unk_12;
+    work->vz = GetRandom() % 0xC1 + 0x40;
     work->unk_018 = GetRandom() % 0x81 + 0x80;
 
     switch (arg->unk_00) {
     case 1:
         if ((GetRandom() & 1) != 0) {
-            work->unk_010 = work->unk_010 * 512 >> 8;
-            work->unk_014 = work->unk_014 * 384 >> 8;
+            work->vx = work->vx * 512 >> 8;
+            work->vz = work->vz * 384 >> 8;
             work->unk_018 = GetRandom() % 0x81 + 0x380;
         }
         break;
     case 2:
-        work->unk_014 = GetRandom() % 0x81 + 0x180;
+        work->vz = GetRandom() % 0x81 + 0x180;
         break;
     case 3:
-        work->unk_010 = work->unk_010 * 640 >> 8;
+        work->vx = work->vx * 640 >> 8;
         break;
     case 4:
-        work->unk_010 = (-gSineTable[arg->angle + 0x40] << 8) / 256;
-        work->unk_014 = (gSineTable[arg->angle] << 8) / 256;
+        work->vx = (-gSineTable[arg->angle + 0x40] << 8) / 256;
+        work->vz = (gSineTable[arg->angle] << 8) / 256;
         break;
     case 5:
-        work->unk_010 = GetRandom() % 0x201 - 0x100;
-        work->unk_014 = GetRandom() % 0xC1 + 0xC0;
+        work->vx = GetRandom() % 0x201 - 0x100;
+        work->vz = GetRandom() % 0xC1 + 0xC0;
         work->unk_018 = GetRandom() % 0x381 + 0x80;
         break;
     }
@@ -1560,8 +1560,8 @@ void task_bos_lst_fal_0(LstFalWork* work, LstFalArg* arg) {
     switch (anim) {
     case 4:
     case 5:
-        work->unk_010 = work->unk_010 * 320 >> 8;
-        work->unk_014 = work->unk_014 * 320 >> 8;
+        work->vx = work->vx * 320 >> 8;
+        work->vz = work->vz * 320 >> 8;
         break;
     }
 
@@ -1580,8 +1580,8 @@ u8 task_bos_lst_fal_1(LstFalWork* work) {
     s32 d;
 
     result = 1;
-    work->x += work->unk_010;
-    work->z += work->unk_014;
+    work->x += work->vx;
+    work->z += work->vz;
 
     if (work->unk_000 != 4) {
         if (work->unk_018 > 0) {
@@ -1854,8 +1854,8 @@ void task_bos_lst_snp_0(LstSnpWork* work, LstSnpArg* arg) {
     work->x = arg->x;
     work->y = arg->y;
     work->z = arg->z;
-    work->unk_010 = (GetRandom() % 0x181 + 0x80) * arg->unk_0C;
-    work->unk_014 = -(GetRandom() % 0x201 + 0x400);
+    work->vx = (GetRandom() % 0x181 + 0x80) * arg->unk_0C;
+    work->vz = -(GetRandom() % 0x201 + 0x400);
     work->tiles = (u32)LoadObjTiles(gUnk_09CD0E34, 0x240);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     m4aSongNumStart(0x2C3);
@@ -1870,9 +1870,9 @@ u8 task_bos_lst_snp_1(LstSnpWork* work) {
 
     result = 1;
     work->unk_000 += 8;
-    work->x += work->unk_010;
-    work->z += work->unk_014;
-    work->unk_014 += 64;
+    work->x += work->vx;
+    work->z += work->vz;
+    work->vz += 64;
     WorldToScreen(&x, &y, work->x, work->y, work->z);
 
     if (y > 192) {

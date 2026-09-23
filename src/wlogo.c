@@ -245,8 +245,8 @@ void task_wlogo_hwt_obj_0(WlogoHwtObjWork* work, s32 arg) {
     work->gfx = AnimGetGfx(&work->anim);
     work->x = gUnk_096194D0[work->unk_04A].x;
     work->y = gUnk_096194D0[work->unk_04A].y;
-    work->unk_02C = gUnk_09619530[work->unk_04A][0].unk_04;
-    work->unk_030 = gUnk_09619530[work->unk_04A][0].unk_08;
+    work->vx = gUnk_09619530[work->unk_04A][0].unk_04;
+    work->vy = gUnk_09619530[work->unk_04A][0].unk_08;
     work->unk_034 = gUnk_09619530[work->unk_04A][0].unk_0C;
     work->unk_038 = gUnk_09619530[work->unk_04A][0].unk_10;
     work->unk_044 = gUnk_096194D0[work->unk_04A].unk_08;
@@ -256,10 +256,10 @@ void task_wlogo_hwt_obj_0(WlogoHwtObjWork* work, s32 arg) {
 }
 
 u8 task_wlogo_hwt_obj_1(WlogoHwtObjWork* work) {
-    work->x += work->unk_02C;
-    work->y += work->unk_030;
-    work->unk_02C += work->unk_034;
-    work->unk_030 += work->unk_038;
+    work->x += work->vx;
+    work->y += work->vy;
+    work->vx += work->unk_034;
+    work->vy += work->unk_038;
 
     if (++work->unk_03E >= gUnk_09619530[work->unk_04A][work->unk_03C].unk_00) {
         work->unk_03E = 0;
@@ -268,8 +268,8 @@ u8 task_wlogo_hwt_obj_1(WlogoHwtObjWork* work) {
             return 0;
         }
         work->unk_03C++;
-        work->unk_02C = gUnk_09619530[work->unk_04A][work->unk_03C].unk_04;
-        work->unk_030 = gUnk_09619530[work->unk_04A][work->unk_03C].unk_08;
+        work->vx = gUnk_09619530[work->unk_04A][work->unk_03C].unk_04;
+        work->vy = gUnk_09619530[work->unk_04A][work->unk_03C].unk_08;
         work->unk_034 = gUnk_09619530[work->unk_04A][work->unk_03C].unk_0C;
         work->unk_038 = gUnk_09619530[work->unk_04A][work->unk_03C].unk_10;
     }
@@ -590,8 +590,8 @@ void task_wlogo_nvl_mov_0(WlogoNvlMovWork* work) {
     work->unk_01C = 0;
     work->x = 0x4E00;
     work->y = 0x5D00;
-    work->unk_008 = gUnk_096198D4[0].unk_04;
-    work->unk_00C = gUnk_096198D4[0].unk_08;
+    work->vx = gUnk_096198D4[0].unk_04;
+    work->vy = gUnk_096198D4[0].unk_08;
     work->unk_010 = gUnk_096198D4[0].unk_0C;
     work->unk_014 = gUnk_096198D4[0].unk_10;
     work->unk_01E = 0;
@@ -611,10 +611,10 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
     WlogoNvlObjArg arg;
 
     if (work->unk_018 == 0) {
-        work->x += work->unk_008;
-        work->y += work->unk_00C;
-        work->unk_008 += work->unk_010;
-        work->unk_00C += work->unk_014;
+        work->x += work->vx;
+        work->y += work->vy;
+        work->vx += work->unk_010;
+        work->vy += work->unk_014;
 
         if (++work->unk_01A >= gUnk_096198D4[work->unk_01C].unk_00) {
             work->unk_01A = 0;
@@ -624,8 +624,8 @@ u8 task_wlogo_nvl_mov_1(WlogoNvlMovWork* work) {
                 work->unk_018++;
             }
             work->unk_01C++;
-            work->unk_008 = gUnk_096198D4[work->unk_01C].unk_04;
-            work->unk_00C = gUnk_096198D4[work->unk_01C].unk_08;
+            work->vx = gUnk_096198D4[work->unk_01C].unk_04;
+            work->vy = gUnk_096198D4[work->unk_01C].unk_08;
             work->unk_010 = gUnk_096198D4[work->unk_01C].unk_0C;
             work->unk_014 = gUnk_096198D4[work->unk_01C].unk_10;
         }
@@ -1406,8 +1406,8 @@ void task_wlogo_poo_obj_0(WlogoPooObjWork* work, s32 arg) {
     work->palette = LoadObjPalette(gUnk_096FAE64, 0x20);
     work->x = 0x8200;
     work->y = 0x4000;
-    work->unk_02C = gUnk_09619A04[work->unk_041][0].unk_04;
-    work->unk_030 = gUnk_09619A04[work->unk_041][0].unk_08;
+    work->vx = gUnk_09619A04[work->unk_041][0].unk_04;
+    work->vy = gUnk_09619A04[work->unk_041][0].unk_08;
     work->unk_034 = gUnk_09619A04[work->unk_041][0].unk_0C;
     work->unk_038 = gUnk_09619A04[work->unk_041][0].unk_10;
     work->unk_03C = 0;
@@ -1421,10 +1421,10 @@ void task_wlogo_poo_obj_0(WlogoPooObjWork* work, s32 arg) {
 }
 
 u8 task_wlogo_poo_obj_1(WlogoPooObjWork* work) {
-    work->x += work->unk_02C;
-    work->y += work->unk_030;
-    work->unk_02C += work->unk_034;
-    work->unk_030 += work->unk_038;
+    work->x += work->vx;
+    work->y += work->vy;
+    work->vx += work->unk_034;
+    work->vy += work->unk_038;
     work->gfx = AnimUpdate(&work->anim);
 
     if (work->unk_040 != 0) {
@@ -1433,8 +1433,8 @@ u8 task_wlogo_poo_obj_1(WlogoPooObjWork* work) {
         }
     } else if (work->unk_03E == gUnk_09619A04[work->unk_041][work->unk_03C].unk_00) {
         work->unk_03E = 0;
-        work->unk_02C = gUnk_09619A04[work->unk_041][work->unk_03C].unk_04;
-        work->unk_030 = gUnk_09619A04[work->unk_041][work->unk_03C].unk_08;
+        work->vx = gUnk_09619A04[work->unk_041][work->unk_03C].unk_04;
+        work->vy = gUnk_09619A04[work->unk_041][work->unk_03C].unk_08;
         work->unk_034 = gUnk_09619A04[work->unk_041][work->unk_03C].unk_0C;
         work->unk_038 = gUnk_09619A04[work->unk_041][work->unk_03C].unk_10;
         work->unk_03C++;

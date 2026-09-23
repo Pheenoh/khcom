@@ -123,7 +123,7 @@ typedef struct SmnTinkeffWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_2C;
+    s32 vz;
 } SmnTinkeffWork;
 
 typedef struct SmnSimbaWork {

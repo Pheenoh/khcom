@@ -166,7 +166,7 @@ typedef struct LexTmhWork {
     s32 state;
     s32 unk_34;
     s32 unk_38;
-    s32 unk_3C;
+    s32 vz;
     void* tiles2;
     void* palette2;
     u8 unk_48;
@@ -191,8 +191,8 @@ typedef struct MahluxiaFlwWork {
     void* palette;
     AnimState anim;
     u8 unk_24[0x04];
-    s32 unk_28;
-    s32 unk_2C;
+    s32 vz;
+    s32 vx;
     s32 x;
     s32 y;
     s32 z;
@@ -229,7 +229,7 @@ typedef struct LaxeneKnfWork {
     s32 unk_34;
     s32 unk_38;
     s32 state;
-    s32 unk_40;
+    s32 vx;
 } LaxeneKnfWork;
 
 typedef struct LaxeneWork {
@@ -389,7 +389,7 @@ typedef struct HookBombWork {
     s32 z;
     u8 unk_2C;
     u8 unk_2D[0x03];
-    s32 unk_30;
+    s32 vz;
     u8 angle;
     u8 unk_35[0x03];
     s32 unk_38;
@@ -411,9 +411,9 @@ typedef struct LexRockSub {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_10;
-    s32 unk_14;
-    s32 unk_18;
+    s32 vz;
+    s32 vx;
+    s32 vy;
 } LexRockSub;
 
 typedef struct LexRockWork {

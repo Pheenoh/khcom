@@ -1370,7 +1370,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
-    work->unk_20 = -(GetRandom() % 897 + 768);
+    work->vz = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
     work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
@@ -1453,14 +1453,14 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->unk_30 = 0;
     work->unk_34 = 0x100;
     gBtlWork->unk_0B0++;
-    work->unk_3C = (gSineTable[angle] * spd) >> 8;
-    work->unk_40 = (-gSineTable[angle + 64] * spd) >> 8;
+    work->vx = (gSineTable[angle] * spd) >> 8;
+    work->vy = (-gSineTable[angle + 64] * spd) >> 8;
 
-    if (abs(work->unk_3C) <= 50) {
-        if (work->unk_3C < 0) {
-            work->unk_3C = -(GetRandom() % 78 + 51);
+    if (abs(work->vx) <= 50) {
+        if (work->vx < 0) {
+            work->vx = -(GetRandom() % 78 + 51);
         } else {
-            work->unk_3C = GetRandom() % 78 + 51;
+            work->vx = GetRandom() % 78 + 51;
         }
     }
 
@@ -1492,28 +1492,28 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
                 gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
-            work->z += work->unk_20;
-            vz = work->unk_20 - 15;
-            work->unk_20 = vz + gBtlWork->unk_12C;
+            work->z += work->vz;
+            vz = work->vz - 15;
+            work->vz = vz + gBtlWork->unk_12C;
 
             switch (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
-                work->unk_3C = -work->unk_3C;
+                work->vx = -work->vx;
                 break;
             case 3:
             case 4:
-                work->unk_40 = -work->unk_40;
+                work->vy = -work->vy;
                 break;
             }
 
-            work->x += work->unk_3C;
-            work->y += work->unk_40;
+            work->x += work->vx;
+            work->y += work->vy;
 
             if (work->z > work->unk_0C) {
                 work->unk_2C &= ~2;
                 work->z = work->unk_0C;
-                work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
+                work->vz = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
                 work->unk_2C |= 2;
             }
@@ -1704,7 +1704,7 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
         gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
     }
 
-    work->unk_20 = -(GetRandom() % 897 + 768);
+    work->vz = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
     work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
@@ -1724,8 +1724,8 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->unk_30 = 0;
     work->unk_34 = 0x100;
     gBtlWork->unk_0B0++;
-    work->unk_38 = (gSineTable[angle] * spd) >> 8;
-    work->unk_3C = (-gSineTable[angle + 64] * spd) >> 8;
+    work->vx = (gSineTable[angle] * spd) >> 8;
+    work->vy = (-gSineTable[angle + 64] * spd) >> 8;
     work->actor = gBtlWork->actor;
 }
 
@@ -1748,28 +1748,28 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
                 gBtlWork->boundsCallback(&work->x, &work->y, &work->z, &work->unk_0C);
             }
 
-            work->z += work->unk_20;
-            vz = work->unk_20 - 15;
-            work->unk_20 = vz + gBtlWork->unk_12C;
+            work->z += work->vz;
+            vz = work->vz - 15;
+            work->vz = vz + gBtlWork->unk_12C;
 
             switch (ClampBattlePosition(&work->x, &work->y, 0, 0)) {
             case 1:
             case 2:
-                work->unk_38 = -work->unk_38;
+                work->vx = -work->vx;
                 break;
             case 3:
             case 4:
-                work->unk_3C = -work->unk_3C;
+                work->vy = -work->vy;
                 break;
             }
 
-            work->x += work->unk_38;
-            work->y += work->unk_3C;
+            work->x += work->vx;
+            work->y += work->vy;
 
             if (work->z > work->unk_0C) {
                 work->unk_2C &= ~2;
                 work->z = work->unk_0C;
-                work->unk_20 = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
+                work->vz = -((work->unk_24 >> 1) + GetRandom() % (work->unk_24 - (work->unk_24 >> 1) + 1));
             } else {
                 work->unk_2C |= 2;
             }

@@ -208,7 +208,7 @@ typedef struct DsdItaWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_06C;
+    s32 vz;
     s32 unk_070;
     s16 unk_074;
     u16 unk_076;
@@ -304,9 +304,9 @@ typedef struct JfRockWork {
     s32 unk_13C;
     s32 unk_140;
     s32 unk_144;
-    s32 unk_148;
-    s32 unk_14C;
-    s32 unk_150;
+    s32 vx;
+    s32 vy;
+    s32 vz;
     s32 unk_154;
     s16 unk_158;
     u8 unk_15A;

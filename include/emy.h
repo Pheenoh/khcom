@@ -85,8 +85,8 @@ typedef struct Emy16bWork {
     s32 z;
     u8 unk_02C;
     u8 unk_02D[0x03];
-    s32 unk_030;
-    s32 unk_034;
+    s32 vz;
+    s32 vx;
     u32 state;
     s16 unk_03C;
     u8 unk_03E[0x02];
@@ -108,7 +108,7 @@ typedef struct Emy16pWork {
     s32 z;
     u8 unk_02C;
     u8 unk_02D[0x03];
-    s32 unk_030;
+    s32 vz;
 } Emy16pWork;
 
 typedef struct Emy18Work {
@@ -219,7 +219,7 @@ typedef struct Emy83sWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_014;
+    s32 vz;
     s32 unk_018;
     s32 unk_01C;
     u16 unk_020;

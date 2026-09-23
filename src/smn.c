@@ -1192,7 +1192,7 @@ void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args) {
     work->x = args->x + GetTinkEffectOffset();
     work->y = args->y + GetTinkEffectOffset();
     work->z = args->z;
-    work->unk_2C = (u16)(GetRandom() % 0xE8) + 0x4C;
+    work->vz = (u16)(GetRandom() % 0xE8) + 0x4C;
     work->tiles = LoadObjTiles(gUnk_088A5D7A, 0x200);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
     AnimInit(&work->anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
@@ -1211,7 +1211,7 @@ void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args) {
 }
 
 u8 task_smn_tinkeff_1(SmnTinkeffWork* work) {
-    work->z += work->unk_2C;
+    work->z += work->vz;
 
     if (AnimIsFinished(&work->anim)) {
         return 0;

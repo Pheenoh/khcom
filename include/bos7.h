@@ -219,8 +219,8 @@ typedef struct LstFalWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_010;
-    s32 unk_014;
+    s32 vx;
+    s32 vz;
     s32 unk_018;
     u16* unk_01C;
     u32 tiles;
@@ -235,8 +235,8 @@ typedef struct LstSnpWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_010;
-    s32 unk_014;
+    s32 vx;
+    s32 vz;
     u32 tiles;
     u32 palette;
     u32 anim;

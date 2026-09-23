@@ -1784,7 +1784,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
     work->timer = 0;
     work->unk_4A = 0;
     work->unk_50 = GetRandom() % 0x201 + 0x14C;
-    work->unk_30 = -(GetRandom() % 0x201 + 0x100);
+    work->vz = -(GetRandom() % 0x201 + 0x100);
 
     switch (work->unk_4E) {
     case 0:
@@ -1820,8 +1820,8 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
     case 0:
         work->x += gSineTable[work->angle] * work->unk_50 >> 8;
         work->y += -gSineTable[work->angle + 64] * work->unk_50 >> 8;
-        work->z += work->unk_30;
-        work->unk_30 += 64;
+        work->z += work->vz;
+        work->vz += 64;
 
         if (work->z > 0) {
             work->z = 0;
@@ -1831,7 +1831,7 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
                 work->unk_38 = 1;
                 break;
             }
-            work->unk_30 = -(GetRandom() % 0x301 + 0x200);
+            work->vz = -(GetRandom() % 0x301 + 0x200);
 
             if (work->unk_4E == 0) {
                 work->angle = GetAngle(work->x, work->y,
@@ -1857,12 +1857,12 @@ u8 task_hum_hook_bomb_1(HookBombWork* work) {
         if (work->timer <= 17) {
             work->x += gSineTable[work->angle] * work->unk_50 >> 8;
             work->y += -gSineTable[work->angle + 64] * work->unk_50 >> 8;
-            work->z += work->unk_30;
-            work->unk_30 += 64;
+            work->z += work->vz;
+            work->vz += 64;
 
             if (work->z > 0) {
                 work->z = 0;
-                work->unk_30 = -(GetRandom() % 0x301 + 0x200);
+                work->vz = -(GetRandom() % 0x301 + 0x200);
                 work->angle = GetAngle(work->x, work->y,
                     gBtlWork->unk_130, gBtlWork->unk_134);
             }
@@ -4579,7 +4579,7 @@ void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
     work->unk_30 = gBtlWork->actor->x;
     work->unk_34 = gBtlWork->actor->y;
     work->unk_38 = gBtlWork->actor->z;
-    work->unk_40 = GetRandom() % 897 + 0x800;
+    work->vx = GetRandom() % 897 + 0x800;
     m4aSongNumStart(0x2A4);
 }
 
@@ -4603,9 +4603,9 @@ u8 task_hum_laxene_knf_1(LaxeneKnfWork* work) {
             func_08013994(work->x, work->y, work->z + 0x1000);
         } else {
             if (work->unk_2C != 0) {
-                work->x = work->x - work->unk_40;
+                work->x = work->x - work->vx;
             } else {
-                work->x = work->x + work->unk_40;
+                work->x = work->x + work->vx;
             }
             work->timer++;
         }
@@ -4811,7 +4811,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
                 w->unk_20C = work->base.unk_168 = 0x100;
                 w->unk_210 = work->base.unk_16C = 0x100;
 #endif
-                act->unk_108 = act->unk_10C = 0;
+                act->vx = act->vy = 0;
                 work->base.unk_158 = 0;
                 act->unk_0E2 = 30;
                 work->base.unk_150 = 6;
@@ -6630,7 +6630,7 @@ u8 task_hum_lexceus_1(LexceusWork* work) {
         work->base.unk_150++;
         break;
     case 1:
-        act->unk_108 = act->unk_10C = 0;
+        act->vx = act->vy = 0;
         work->base.unk_158 = 0;
 
         if ((s16)work->base.unk_150 > 5) {
@@ -7026,7 +7026,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->state = 0;
     work->unk_4A = 0;
     work->unk_2D = 0;
-    work->unk_3C = -0x980;
+    work->vz = -0x980;
     work->tiles2 = LoadObjTiles(gUnk_08B22BBC, 0x100);
     work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
     m4aSongNumStart(0x2B1);
@@ -7045,8 +7045,8 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
     case 0:
         work->x += (work->unk_34 - work->x) >> 4;
         work->y += (work->unk_38 - work->y) >> 4;
-        work->z += work->unk_3C;
-        work->unk_3C += 64;
+        work->z += work->vz;
+        work->vz += 64;
 
         if (func_08011F78(0x146, work->x, work->y, work->z, 16, 12, 16)) {
             m4aSongNumStart(0x2B3);
@@ -7062,7 +7062,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
         break;
     case 1:
         if (work->unk_4A == 0) {
-            work->unk_3C = -work->unk_3C >> 1;
+            work->vz = -work->vz >> 1;
 
             if (gBtlWork->unk_130 < work->x) {
                 work->unk_48 = 1;
@@ -7082,8 +7082,8 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
             work->x += 0x400;
         }
         work->y += (gBtlWork->unk_134 - work->y) >> 4;
-        work->z += work->unk_3C;
-        work->unk_3C += 64;
+        work->z += work->vz;
+        work->vz += 64;
 
         if (func_08011F78(0x146, work->x, work->y, work->z, 16, 12, 16)) {
             m4aSongNumStart(0x2B3);
@@ -7091,7 +7091,7 @@ u8 task_hum_lex_tmh_1(LexTmhWork* work) {
 
         if (work->z >= 0) {
             m4aSongNumStart(0x2B2);
-            work->unk_3C = -work->unk_3C >> 1;
+            work->vz = -work->vz >> 1;
             work->z = 0;
         }
         work->unk_4A++;
@@ -7281,20 +7281,20 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
             AnimStart(&work->anim[i], GetRandom() % 5 + 2, 3);
 
             if (work->unk_160 != 0) {
-                e->unk_14 = -(GetRandom() % 0x501 + 0x300);
+                e->vx = -(GetRandom() % 0x501 + 0x300);
             } else {
-                e->unk_14 = GetRandom() % 0x501 + 0x300;
+                e->vx = GetRandom() % 0x501 + 0x300;
             }
-            e->unk_18 = GetRandom() % 0x801 - 0x400;
+            e->vy = GetRandom() % 0x801 - 0x400;
             e->x = work->x + ((GetRandom() % 17 - 8) << 8);
             e->y = work->y + ((GetRandom() % 17 - 8) << 8);
             e->z = work->z + ((GetRandom() % 17 - 8) << 8);
             e->unk_00 = 0;
 
             if (GetRandom() % 2) {
-                e->unk_10 = -(GetRandom() % 0x701 + 0x100);
+                e->vz = -(GetRandom() % 0x701 + 0x100);
             } else {
-                e->unk_10 = GetRandom() % 1 + 0x300;
+                e->vz = GetRandom() % 1 + 0x300;
             }
         }
         work->state++;
@@ -7306,25 +7306,25 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
 
             for (i = 0; i < 12; i++) {
                 e = &work->sub[i];
-                e->x += e->unk_14;
-                e->y += e->unk_18;
-                e->z += e->unk_10;
-                e->unk_10 += 64;
+                e->x += e->vx;
+                e->y += e->vy;
+                e->z += e->vz;
+                e->vz += 64;
 
                 if (e->z > 0) {
                     e->z = 0;
-                    e->unk_10 = -(e->unk_10 >> 1);
+                    e->vz = -(e->vz >> 1);
                 }
                 v = ClampBattlePosition(&e->x, &e->y, 0, 0);
 
                 switch (v) {
                 case 3:
                 case 4:
-                    e->unk_18 = -e->unk_18;
+                    e->vy = -e->vy;
                     break;
                 case 1:
                 case 2:
-                    e->unk_14 = -e->unk_14;
+                    e->vx = -e->vx;
                     break;
                 }
 
@@ -7419,8 +7419,8 @@ void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
-    work->unk_2C = GetRandom() % 717 - 358;
-    work->unk_28 = -(GetRandom() % 539 + 102);
+    work->vx = GetRandom() % 717 - 358;
+    work->vz = -(GetRandom() % 539 + 102);
     AnimInit(&work->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
     AnimStart(&work->anim, GetRandom() & 1, 1);
 }
@@ -7428,24 +7428,24 @@ void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
 u8 task_hum_mahluxia_flw_1(MahluxiaFlwWork* work) {
     switch (work->state) {
     case 0:
-        work->x += work->unk_2C;
-        work->z += work->unk_28;
-        work->unk_28 += 17;
-        if (work->unk_28 > 0x1CC) {
+        work->x += work->vx;
+        work->z += work->vz;
+        work->vz += 17;
+        if (work->vz > 0x1CC) {
             work->state = 1;
         }
         break;
     case 1:
-        work->x += work->unk_2C;
-        work->z += work->unk_28;
-        work->unk_28 -= 12;
-        if (work->unk_28 < 0) {
-            work->unk_28 = GetRandom() % 181 + 204;
+        work->x += work->vx;
+        work->z += work->vz;
+        work->vz -= 12;
+        if (work->vz < 0) {
+            work->vz = GetRandom() % 181 + 204;
 
-            if (work->unk_2C > 0) {
-                work->unk_2C = -(GetRandom() % 257 + 128);
+            if (work->vx > 0) {
+                work->vx = -(GetRandom() % 257 + 128);
             } else {
-                work->unk_2C = GetRandom() % 257 + 128;
+                work->vx = GetRandom() % 257 + 128;
             }
         }
 

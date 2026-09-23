@@ -69,7 +69,7 @@ typedef struct BtlRaidWork {
     s32 x;
     s32 y;
     s32 z;
-    s32 unk_30;
+    s32 vx;
     s32 unk_34;
     s16 unk_38;
     s16 unk_3A;

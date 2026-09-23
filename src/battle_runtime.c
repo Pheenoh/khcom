@@ -1494,8 +1494,8 @@ void func_0801B37C(BtlObj* p, const EmyKind* d, s32 x, s32 y, s32 z) {
     p->unk_0F0 = gBtlWork->actor->x;
     p->unk_0F4 = gBtlWork->actor->y;
     p->unk_0F8 = gBtlWork->actor->z;
-    p->unk_108 = 0;
-    p->unk_10C = 0;
+    p->vx = 0;
+    p->vy = 0;
     p->unk_104 = 0;
 
     switch (v) {

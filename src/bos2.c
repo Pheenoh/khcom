@@ -2379,9 +2379,9 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_13C = 0;
     work->unk_140 = 0;
     work->unk_144 = 0;
-    work->unk_148 = 0;
-    work->unk_14C = 0;
-    work->unk_150 = 0;
+    work->vx = 0;
+    work->vy = 0;
+    work->vz = 0;
     work->unk_154 = 0;
     work->unk_028 = 0;
     work->unk_02A = 0;
@@ -2484,9 +2484,9 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             work->unk_13C = (b = gBtlWork->actor)->x;
             work->unk_140 = b->y;
             work->unk_144 = b->z;
-            work->unk_148 = (work->unk_13C - work->x) / 40;
-            work->unk_14C = (work->unk_140 - work->y) / 40;
-            work->unk_150 = 0;
+            work->vx = (work->unk_13C - work->x) / 40;
+            work->vy = (work->unk_140 - work->y) / 40;
+            work->vz = 0;
             work->unk_154 = (work->unk_144 - work->z) / 820;
             work->state++;
         }
@@ -2555,10 +2555,10 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
             LoadObjPaletteBank(((u16*)work->palette)[3] + 2, gUnk_096FB604 + (work->unk_028 << 5));
         }
 
-        work->x += work->unk_148;
-        work->y += work->unk_14C;
-        work->z += work->unk_150;
-        work->unk_150 += work->unk_154;
+        work->x += work->vx;
+        work->y += work->vy;
+        work->z += work->vz;
+        work->vz += work->unk_154;
 
         if (work->unk_15E == 7) {
             work->unk_17C = 0;
@@ -4208,7 +4208,7 @@ void task_bos_dsd_ita_0(DsdItaWork* work, void* arg) {
     work->x = 0x12C00;
     work->y = 0x17C00;
     work->z = -0x7800;
-    work->unk_06C = 0x100;
+    work->vz = 0x100;
     work->unk_070 = 0x19;
     work->unk_07C = 0;
     work->unk_07E = 0;
@@ -4256,8 +4256,8 @@ u8 task_bos_dsd_ita_1(DsdItaWork* work) {
         break;
     case 3:
         if (work->z < 0) {
-            work->z += work->unk_06C;
-            work->unk_06C += work->unk_070;
+            work->z += work->vz;
+            work->vz += work->unk_070;
         } else {
             work->z = 0;
         }
