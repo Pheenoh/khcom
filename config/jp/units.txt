@@ -296,11 +296,11 @@ sprites_continue_maps.s
 sprites_msg_maps.s
 sprites_level_up_maps_2.s
 event_background_maps_2.s
-asset_gfx_gap_43_at_0953C2B8.s
+event_background_maps_8.s
 event_background_maps_3.s
-asset_gfx_gap_43_at_09567AB8.s
+event_background_maps_9.s
 event_background_maps_4.s
-asset_gfx_gap_43_at_09601AB8.s
+event_background_maps_10.s
 event_background_maps_5.s
 prize_card_maps.s
 sprites_worldselect_maps.s
@@ -309,7 +309,7 @@ sprite_palettes_4.s
 asset_gfx_gap_43_at_0960F2B8_at_09612C38.s
 sprite_palettes_5.s
 event_background_palettes_2.s
-asset_gfx_gap_43_at_09615F78.s
+sprites_evt_palettes.s
 event_background_palettes_3.s
 sprite_palettes_6.s
 asset_gfx_gap_43_at_09617C58.s
