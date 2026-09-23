@@ -3596,7 +3596,7 @@ u8 func_080E5E44(void) {
 
 void func_080E5EAC(MapEnmWork* p) {
     gGameState.flags |= 2;
-    ColliderSetDisabled(p->unk_48, 1);
+    ColliderSetDisabled(p->collider, 1);
     gUnk_0203C7AC->unk_00 |= 2;
     gUnk_02039BA0->unk_70 |= 0x80;
     p->unk_04 |= 4;
@@ -3614,12 +3614,12 @@ void func_080E5EAC(MapEnmWork* p) {
 
 void func_080E5F50(MapEnmWork* p) {
     if (p->unk_74 != 0) {
-        if ((gUnk_0203C7AC->unk_00 & 4) == 0 && ColliderIsTouchingType(p->unk_48, 1)) {
+        if ((gUnk_0203C7AC->unk_00 & 4) == 0 && ColliderIsTouchingType(p->collider, 1)) {
             func_080E5EAC(p);
             return;
         }
 
-        if (ColliderIsTouchingType(p->unk_48, 6)) {
+        if (ColliderIsTouchingType(p->collider, 6)) {
             p->unk_08.unk_00 += p->unk_80;
             p->unk_08.x += p->unk_84;
         }
@@ -3831,12 +3831,12 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
     if (d->unk_14 & 8) {
         p->unk_04 |= 2;
-        ColliderInit(&p->unk_48, 11, d->unk_0C, d->unk_0A);
+        ColliderInit(&p->collider, 11, d->unk_0C, d->unk_0A);
     } else {
-        ColliderInit(&p->unk_48, 3, d->unk_0C, d->unk_0A);
+        ColliderInit(&p->collider, 3, d->unk_0C, d->unk_0A);
     }
-    ColliderSetPosition(&p->unk_48, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
-    ColliderSetDisabled(&p->unk_48, 1);
+    ColliderSetPosition(&p->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetDisabled(&p->collider, 1);
     func_080E5CD4(p);
 }
 
@@ -3890,7 +3890,7 @@ void func_080E657C(MapEnmWork* p) {
     }
     gUnk_02034F40--;
     gUnk_02034F41 -= p->unk_00->unk_08;
-    ColliderUnregister(p->unk_48);
+    ColliderUnregister(p->collider);
     ReleaseObjTiles(p->tiles);
     ReleaseObjPalette(p->palette);
     TaskPoolDestroy(p->unk_E4);
@@ -7866,13 +7866,13 @@ void Task_MapFix_0(MapFixWork* w, UnkStruct_09EF8370* p) {
     TaskPoolInit(&w->tasks, 2);
     v.unk_00 = p->unk_38;
     v.unk_04 = p->unk_3C;
-    v.unk_14 = 45;
+    v.angle = 45;
     TaskCreate(&w->tasks, &gTaskDescMapStair, &v);
 
     if (p->unk_40 != 0 || p->unk_44 != 0) {
         v.unk_00 = p->unk_40;
         v.unk_04 = p->unk_44;
-        v.unk_14 = 173;
+        v.angle = 173;
         TaskCreate(&w->tasks, &gTaskDescMapStair, &v);
     }
 

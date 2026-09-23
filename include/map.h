@@ -213,7 +213,7 @@ typedef struct UnkStruct_080EF4BC {
     s32 unk_08;
     s32 unk_0C;
     s32 unk_10;
-    u8 unk_14;
+    u8 angle;
     u8 unk_15[0x03];
     u8 unk_18[0x28];
 } UnkStruct_080EF4BC;
@@ -250,7 +250,7 @@ typedef struct MapEnmWork {
     u8 unk_20[0x22];
     u16 unk_42;
     s32 unk_44;
-    u8 unk_48[0x2C];
+    u8 collider[0x2C];
     u8 unk_74;
     u8 unk_75[0x0B];
     s32 unk_80;
@@ -548,7 +548,7 @@ typedef struct MapGmkTutorialWork {
     u8 unk_015[0x05];
     u16 unk_01A;
     u8 unk_01C[0x24];
-    u8 unk_040[0x2E];
+    u8 collider[0x2E];
     u16 unk_06E;
     u8 unk_070[0x04];
     s32 unk_074;
@@ -626,7 +626,7 @@ typedef struct MapGmk00Work {
     UnkStruct_0203C7B8* unk_000;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x2E];
+    u8 collider[0x2E];
     u16 unk_072;
     u8 unk_074[0x2C];
     AnimState anim;
@@ -669,7 +669,7 @@ typedef struct MapPrizeWork {
     u16 unk_82;
     s32 unk_84;
     s32 unk_88;
-    u8 unk_8C;
+    u8 angle;
     u8 unk_8D;
     u8 unk_8E[0x02];
     s32 unk_90;
@@ -682,7 +682,7 @@ typedef struct MapGmkGp8Work {
     MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x2E];
+    u8 collider[0x2E];
     u16 unk_072;
     u8 unk_074[0x2C];
     AnimState anim;
@@ -701,7 +701,7 @@ typedef struct MapGmkGp08Work {
     MapCell* cell;
     UnkStruct_080DFF1C unk_004;
     u8 unk_014[0x30];
-    u8 unk_044[0x2E];
+    u8 collider[0x2E];
     u16 unk_072;
     u8 unk_074[0x2C];
     AnimState anim;

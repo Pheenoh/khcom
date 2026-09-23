@@ -237,7 +237,7 @@ s32 func_080EF3A0(MapEnmWork* p) {
     if (p->unk_08.unk_00 < gUnk_02039BA0->x - 0x1800 || p->unk_08.unk_00 > gUnk_02039BA0->x + 0x10800 ||
         q->x + q->y < gUnk_02039BA0->y - 0x800 || q->x + q->y > gUnk_02039BA0->y + 0xC000) {
         p->update = 0;
-        ColliderSetDisabled(p->unk_48, 1);
+        ColliderSetDisabled(p->collider, 1);
         return 1;
     }
     return 0;
@@ -250,8 +250,8 @@ void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
         b /= 5;
         c /= 5;
     }
-    p->unk_08.unk_00 += gSineTable[q->unk_14] * q->unk_10 >> 8;
-    q->unk_04 += -gSineTable[q->unk_14 + 64] * q->unk_10 >> 8;
+    p->unk_08.unk_00 += gSineTable[q->angle] * q->unk_10 >> 8;
+    q->unk_04 += -gSineTable[q->angle + 64] * q->unk_10 >> 8;
     q->unk_10 += b;
     if (q->unk_10 > c) {
         q->unk_10 = c;
@@ -265,7 +265,7 @@ void func_080EF478(MapEnmWork* p, s32 b, s32 c) {
         p->unk_08.unk_00 = b;
         q->x = c;
         p->update = func_080EF84C;
-        ColliderSetDisabled(p->unk_48, 1);
+        ColliderSetDisabled(p->collider, 1);
     }
 }
 
@@ -277,10 +277,10 @@ s32 func_080EF4BC(MapEnmWork* p) {
         return 0;
     }
     ang = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
-    if (abs(GetAngleDiff(ang, q->unk_14)) > 0x18) {
+    if (abs(GetAngleDiff(ang, q->angle)) > 0x18) {
         return 0;
     }
-    q->unk_14 = ang;
+    q->angle = ang;
     return 1;
 }
 
@@ -297,7 +297,7 @@ void func_080EF508(MapEnmWork* p) {
             p->update = func_080EF58C;
         }
         *(u16*)&p->unk_D0 = z = 0;
-        ColliderSetDisabled(p->unk_48, z);
+        ColliderSetDisabled(p->collider, z);
     } else {
         func_080E5DEC(p);
 
@@ -305,7 +305,7 @@ void func_080EF508(MapEnmWork* p) {
             (*(s16*)&p->unk_E0)--;
 
             if (*(s16*)&p->unk_E0 <= 0) {
-                ColliderSetDisabled(p->unk_48, 0);
+                ColliderSetDisabled(p->collider, 0);
             }
         }
     }
@@ -432,7 +432,7 @@ void func_080EF7B8(MapEnmWork* p) {
     y = q->unk_04;
 
     if (p->unk_D0 % 8 == 0) {
-        q->unk_14 = GetAngle(x, y, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(x, y, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
     func_080EF404(p, 25, 0x200);
 
@@ -488,15 +488,15 @@ void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
             p->update = func_080EF8CC;
             func_080E5D6C(p, 1, 0);
             p->gfx = AnimGetGfx(p->anim);
-            ColliderSetDisabled(p->unk_48, 0);
+            ColliderSetDisabled(p->collider, 0);
         } else {
             p->update = func_080EF508;
             func_080E5D6C(p, 0, 0);
             p->gfx = AnimGetGfx(p->anim);
-            ColliderSetDisabled(p->unk_48, 1);
+            ColliderSetDisabled(p->collider, 1);
         }
     } else {
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     }
     *(u16*)&p->unk_D0 = 0;
 }
@@ -517,7 +517,7 @@ s32 Task_MapEnm00_1(MapEnmWork* p) {
         p->update(p);
 
         if (p->update != 0) {
-            ColliderSetPosition(p->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(p->collider, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -612,7 +612,7 @@ void func_080EFC08(MapEnmWork* p) {
     func_080EFA7C((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if (q->unk_08 < gUnk_02039BA0->actor.fieldPosition.z - 0x4000) {
@@ -655,7 +655,7 @@ void func_080EFCF4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -754,12 +754,12 @@ void Task_MapEnm01_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
         p->update = func_080EFE94;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     } else {
         p->update = func_080EFC08;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     }
     w->unk_D0 = 0;
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
@@ -782,7 +782,7 @@ s32 Task_MapEnm01_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -817,7 +817,7 @@ void Task_MapEnm02_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
     p->update = func_080EFFF8;
     func_080E5D6C(p, 0, 1);
     p->gfx = AnimGetGfx(p->anim);
-    ColliderSetDisabled(p->unk_48, 0);
+    ColliderSetDisabled(p->collider, 0);
 }
 
 s32 Task_MapEnm02_1(MapEnmWork* p) {
@@ -833,7 +833,7 @@ s32 Task_MapEnm02_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
-            ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->collider, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -939,7 +939,7 @@ void func_080F02A0(UnkStruct_080F023C* w) {
     func_080F0108(w, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if ((u8)func_080F023C(w, 0x6000) != 0 && q->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
@@ -966,7 +966,7 @@ void func_080F0348(UnkStruct_080F023C* w) {
     tmp = *(UnkStruct_080DFF1C*)v;
 
     if (GetRandom() % 20 != 0) {
-        v->unk_14 = GetAngle(w->unk_08, v->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        v->angle = GetAngle(w->unk_08, v->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if ((u8)func_080F023C(w, 0x6000) != 0 && v->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
@@ -1010,7 +1010,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
     save = *(UnkStruct_080DFF1C*)q;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if ((u8)func_080F01B0(w) != 0) {
@@ -1056,7 +1056,7 @@ s32 Task_MapEnm03_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
-            ColliderSetPosition(w->unk_48, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->collider, q->unk_00, q->x, q->y);
             return 1;
         }
     }
@@ -1151,7 +1151,7 @@ void func_080F07EC(MapEnmWork* p) {
     func_080F0660((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if (q->unk_08 < gUnk_02039BA0->actor.fieldPosition.z - 0x4000) {
@@ -1195,7 +1195,7 @@ void func_080F08E4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->unk_14 = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -1294,12 +1294,12 @@ void Task_MapEnm04_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
         p->update = func_080F0A84;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     } else {
         p->update = func_080F07EC;
         func_080E5D6C(p, 0, 1);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     }
     w->unk_D0 = 0;
     ((UnkStruct_080EFA30*)p)->unk_F8 = 0;
@@ -1322,7 +1322,7 @@ s32 Task_MapEnm04_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -1345,7 +1345,7 @@ void func_080F0BE8(MapEnmWork* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished(p->anim)) {
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
         p->update = func_080F0C68;
     } else {
@@ -1354,7 +1354,7 @@ void func_080F0BE8(MapEnmWork* p) {
             q->unk_E0--;
 
             if (q->unk_E0 <= 0) {
-                ColliderSetDisabled(q->unk_48, 0);
+                ColliderSetDisabled(q->collider, 0);
             }
         }
     }
@@ -1369,7 +1369,7 @@ void func_080F0C68(MapEnmWork* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (GetRandom() % 20 == 0) {
-        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1380,7 +1380,7 @@ void func_080F0C68(MapEnmWork* p) {
         if (p->unk_D0 != 0) {
             p->unk_D0--;
         } else {
-            ColliderSetDisabled(q->unk_48, 1);
+            ColliderSetDisabled(q->collider, 1);
             q->update = func_080F0D00;
         }
     }
@@ -1416,9 +1416,9 @@ void Task_MapEnm05_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
         p->update = func_080F0BE8;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 1);
+        ColliderSetDisabled(p->collider, 1);
     } else {
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     }
     p->unk_D0 = 0;
 }
@@ -1440,7 +1440,7 @@ s32 Task_MapEnm05_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -1463,7 +1463,7 @@ void func_080F0E6C(MapEnmWork* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (AnimIsFinished(p->anim)) {
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
         p->unk_D0 = GetRandom() % 121 + 60;
         p->update = func_080F0EEC;
     } else {
@@ -1472,7 +1472,7 @@ void func_080F0E6C(MapEnmWork* p) {
             q->unk_E0--;
 
             if (q->unk_E0 <= 0) {
-                ColliderSetDisabled(q->unk_48, 0);
+                ColliderSetDisabled(q->collider, 0);
             }
         }
     }
@@ -1487,7 +1487,7 @@ void func_080F0EEC(MapEnmWork* p) {
     TaskPoolUpdate(p->unk_E4);
 
     if (GetRandom() % 20 == 0) {
-        r->unk_14 = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1498,7 +1498,7 @@ void func_080F0EEC(MapEnmWork* p) {
         if (p->unk_D0 != 0) {
             p->unk_D0--;
         } else {
-            ColliderSetDisabled(q->unk_48, 1);
+            ColliderSetDisabled(q->collider, 1);
             q->update = func_080F0F84;
         }
     }
@@ -1534,9 +1534,9 @@ void Task_MapEnm06_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
         p->update = func_080F0E6C;
         func_080E5D6C(p, 0, 0);
         p->gfx = AnimGetGfx(p->anim);
-        ColliderSetDisabled(p->unk_48, 1);
+        ColliderSetDisabled(p->collider, 1);
     } else {
-        ColliderSetDisabled(p->unk_48, 0);
+        ColliderSetDisabled(p->collider, 0);
     }
     p->unk_D0 = 0;
 }
@@ -1558,7 +1558,7 @@ s32 Task_MapEnm06_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->unk_48, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
             return 1;
         }
     }
@@ -1999,8 +1999,8 @@ void Task_MapGmk_Tutorial_0(MapGmkTutorialWork* w) {
     w->palette = LoadObjPalette(&gUnk_099910C4[0x140], 32);
     w->tiles = AllocSpriteFrameTiles(0x400);
     UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994BF64);
-    ColliderInit(&w->unk_040, 6, 16, 0);
-    ColliderSetPosition(&w->unk_040, w->x, w->y, w->z);
+    ColliderInit(&w->collider, 6, 16, 0);
+    ColliderSetPosition(&w->collider, w->x, w->y, w->z);
     w->unk_0A8 = 0;
     w->update = func_080F1978;
     TaskPoolInit(&w->tasks, 2);
@@ -2038,7 +2038,7 @@ void Task_MapGmk_Tutorial_2(MapGmkTutorialWork* w) {
 void Task_MapGmk_Tutorial_3(MapGmkTutorialWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    ColliderUnregister(w->unk_040);
+    ColliderUnregister(w->collider);
     TaskPoolDestroy(&w->tasks);
 }
 
@@ -2794,7 +2794,7 @@ s32 func_080F3050(MapGmkGp8Work* w) {
 
     w->gfx = AnimUpdate(a);
 
-    if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
+    if (ColliderIsTouchingType(w->collider, 1) != 0) {
         if (w->unk_072 & 2) {
             if (!(w->cell->unk_00 & 2)) {
                 w->cell->unk_00 |= 2;
@@ -2811,7 +2811,7 @@ s32 func_080F3050(MapGmkGp8Work* w) {
 s32 func_080F30C4(MapGmkGp8Work* w) {
     w->gfx = AnimUpdate(&w->anim);
 
-    if (ColliderIsTouchingType(w->unk_044, 1) == 0) {
+    if (ColliderIsTouchingType(w->collider, 1) == 0) {
         AnimStart(&w->anim, 2, 0);
         w->unk_0C4 = func_080F3108;
     }
@@ -2847,8 +2847,8 @@ void Task_MapGmk_GP07_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, d->tiles);
-    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C4 = func_080F3050;
 }
 
@@ -2858,9 +2858,9 @@ u8 Task_MapGmk_GP07_1(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        ColliderSetDisabled(w->unk_044, 1);
+        ColliderSetDisabled(w->collider, 1);
     } else {
-        ColliderSetDisabled(w->unk_044, 0);
+        ColliderSetDisabled(w->collider, 0);
     }
 
     if (w->unk_0C4 != 0) {
@@ -2939,8 +2939,8 @@ void Task_MapGmk_GP08_0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
-    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C8 = d->unk_20;
     w->unk_0CA = 0;
     w->unk_0CC = func_080F32F4;
@@ -2952,9 +2952,9 @@ u8 Task_MapGmk_GP08_1(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        ColliderSetDisabled(w->unk_044, 1);
+        ColliderSetDisabled(w->collider, 1);
     } else {
-        ColliderSetDisabled(w->unk_044, 0);
+        ColliderSetDisabled(w->collider, 0);
     }
 
     if (w->unk_0CC != 0) {
@@ -2983,7 +2983,7 @@ void Task_MapGmk_GP08_2(MapGmkGp8Work* w) {
 void Task_MapGmk_GP08_3(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    ColliderUnregister(w->unk_044);
+    ColliderUnregister(w->collider);
 }
 
 s32 func_080F35C0(MapGmkGp8Work* w) {
@@ -2991,7 +2991,7 @@ s32 func_080F35C0(MapGmkGp8Work* w) {
 
     w->unk_0C4 = AnimUpdate(a);
 
-    if (ColliderIsTouchingType(w->unk_044, 1) != 0) {
+    if (ColliderIsTouchingType(w->collider, 1) != 0) {
         if (w->unk_072 & 2) {
             if (!(w->cell->unk_00 & 2)) {
                 w->cell->unk_00 |= 2;
@@ -3018,7 +3018,7 @@ s32 func_080F3638(MapGmkGp8Work* w) {
 }
 
 s32 func_080F3674(MapGmkGp8Work* w) {
-    if (ColliderIsTouchingType(w->unk_044, 1) == 0) {
+    if (ColliderIsTouchingType(w->collider, 1) == 0) {
         w->unk_0CC = func_080F35C0;
     }
     return 1;
@@ -3039,8 +3039,8 @@ void Task_MapGmk_GP09_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(&w->anim, d->anims, d->gfxTable);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
-    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
     w->unk_0C8 = 0;
     w->unk_0CC = func_080F35C0;
 }
@@ -3051,9 +3051,9 @@ u8 Task_MapGmk_GP09_1(MapGmkGp8Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)&w->unk_004)) {
-        ColliderSetDisabled(w->unk_044, 1);
+        ColliderSetDisabled(w->collider, 1);
     } else {
-        ColliderSetDisabled(w->unk_044, 0);
+        ColliderSetDisabled(w->collider, 0);
     }
 
     if (w->unk_0CC != 0) {
@@ -3082,7 +3082,7 @@ void Task_MapGmk_GP09_2(MapGmkGp8Work* w) {
 void Task_MapGmk_GP09_3(MapGmkGp8Work* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    ColliderUnregister(w->unk_044);
+    ColliderUnregister(w->collider);
 }
 
 void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
@@ -3102,11 +3102,11 @@ void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     AnimInit(a, d->anims, d->gfxTable);
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
-    ColliderInit(&w->unk_044, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->unk_044, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
+    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
 
     if (func_080E8374((UnkStruct_080E8374*)e) != 0) {
-        ColliderSetDisabled(&w->unk_044, 1);
+        ColliderSetDisabled(&w->collider, 1);
     }
     w->unk_0C4 = d->unk_1C;
     w->unk_0C9 = 0;
@@ -3123,9 +3123,9 @@ u8 Task_MapGmk00_1(MapGmk00Work* w) {
     }
 
     if (func_080E8374((UnkStruct_080E8374*)q) != 0) {
-        ColliderSetDisabled(&w->unk_044, 1);
+        ColliderSetDisabled(&w->collider, 1);
     } else {
-        ColliderSetDisabled(&w->unk_044, 0);
+        ColliderSetDisabled(&w->collider, 0);
     }
 
     if (!(w->unk_000->unk_00 & 2)) {
@@ -3715,11 +3715,11 @@ void Task_MapGmk06_3(MapGmk06Work* w) {
 void func_080F49D0(MapPrizeWork* w) {
     w->unk_84 += 0x38;
     w->z += w->unk_84;
-    w->x += gSineTable[w->unk_8C] * w->unk_88 >> 8;
-    w->y += -gSineTable[w->unk_8C + 64] * w->unk_88 >> 8;
+    w->x += gSineTable[w->angle] * w->unk_88 >> 8;
+    w->y += -gSineTable[w->angle + 64] * w->unk_88 >> 8;
 
     if (func_080DFBDC((UnkStruct_080DFF1C*)w) != 0) {
-        w->unk_8C = w->unk_8C + (100 + GetRandom() % 57);
+        w->angle = w->angle + (100 + GetRandom() % 57);
     } else {
         w->unk_0C = func_080DFF1C((UnkStruct_080DFF1C*)w);
     }
@@ -3757,7 +3757,7 @@ void func_080F49D0(MapPrizeWork* w) {
 
         w->update = func_080F4BA0;
         w->unk_82 = 0;
-        w->unk_8C = GetAngle(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, w->x, w->y);
+        w->angle = GetAngle(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, w->x, w->y);
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
@@ -3786,12 +3786,12 @@ void func_080F4BA0(MapPrizeWork* w) {
     s32 s;
     FieldState* g = gUnk_02039BA0;
 
-    s = gSineTable[w->unk_8C] * 32;
+    s = gSineTable[w->angle] * 32;
     x = g->actor.fieldPosition.x + (s * w->unk_90 >> 8);
-    s = -gSineTable[w->unk_8C + 64] * 22;
+    s = -gSineTable[w->angle + 64] * 22;
     y = g->actor.fieldPosition.y + (s * w->unk_90 >> 8);
     z = g->actor.fieldPosition.z - (w->unk_82 / 2 << 8);
-    w->unk_8C += w->unk_8D;
+    w->angle += w->unk_8D;
     w->x += (x - w->x) >> 2;
     w->y += (y - w->y) >> 2;
     w->z += (z - w->z) >> 2;
@@ -3813,7 +3813,7 @@ void Task_MapPrize_0(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     func_080DFF4C((UnkStruct_080DFF1C*)w);
     w->unk_84 = -(GetRandom() % 0x301 + 0x200);
     w->unk_88 = GetRandom() % 155 + 153;
-    w->unk_8C = GetRandom();
+    w->angle = GetRandom();
     w->tiles = LoadObjTiles(gUnk_098A5CF4, 0x160);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
     w->unk_80 = arg->unk_14;
@@ -5343,7 +5343,7 @@ void func_080F75E4(MapStairWork* w) {
 void Task_MapStair_0(MapStairWork* w, UnkStruct_080EF4BC* arg) {
     s32 y;
 
-    w->unk_14 = arg->unk_14;
+    w->unk_14 = arg->angle;
     w->unk_00 = arg->unk_00;
     y = arg->unk_04;
     w->unk_0C = 0;
