@@ -113,6 +113,7 @@ tools:
             - src/evt
             - src/fld
             - src/frd
+            - src/lockon
             - src/monsgage
             - src/ms
             - src/poo

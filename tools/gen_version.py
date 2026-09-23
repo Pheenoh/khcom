@@ -3263,7 +3263,7 @@ TARGET_DATA_ADDR = {
         ("btl4.c", ".rodata"): 0x088964d0,
         ("tutorial.c", ".rodata"): 0x08896514,
         ("mode_test.c", ".rodata"): 0x08896644,
-        ("mode_test_support.c", ".rodata"): 0x08f7f15c,
+        ("lockon.c", ".rodata"): 0x08f7f15c,
         ("msg_portrait_data.c", ".rodata"): 0x090cb778,
         ("card_help_data.c", ".rodata"): 0x090d15a0,
         ("mode_wlogo.c", ".rodata"): 0x095da8ac,
