@@ -279,7 +279,6 @@ void func_0809E7A4(void) {
 }
 extern u8 gUnk_090950F4[];
 extern u8 gUnk_09091D36[];
-extern u8 gUnk_095112B8[];
 extern u16* gUnk_09EE78D4[];
 extern u16* gUnk_09EE78F0[];
 extern void* gUnk_09EE7914[];
@@ -297,10 +296,8 @@ extern u8 gUnkEu_091759BA[];
 #endif
 u8 func_0809F390(LevelUpWork* w, void* a);
 extern const void* gUnk_09EE790C[];
-extern u8 gUnk_093FF8F8[];
 extern u8 gUnk_09614018[];
 extern u8 gUnk_09614098[];
-extern u8 gUnk_0950F2B8[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_094D53C4[];
 extern u8 gUnkEu_094D6BC4[];

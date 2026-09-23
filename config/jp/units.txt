@@ -270,6 +270,8 @@ sprites_map_frames_1.s
 sprites_worldselect_frames.s
 sprites_map_frames_2.s
 asset_gfx_gap_43_at_093F4478.s
+sprites_level_up_tiles.s
+asset_gfx_gap_43_at_09402F78.s
 event_background_tiles_2.s
 asset_gfx_gap_43_at_09468FF8.s
 event_background_tiles_3.s
@@ -280,6 +282,9 @@ event_background_tiles_5.s
 asset_gfx_gap_43_at_094F4238.s
 event_background_tiles_6.s
 asset_gfx_gap_43_at_09501378.s
+sprites_level_up_maps_1.s
+asset_gfx_gap_43_at_09512AB8.s
+sprites_level_up_maps_2.s
 event_background_maps_2.s
 asset_gfx_gap_43_at_0953C2B8.s
 event_background_maps_3.s

@@ -335,11 +335,17 @@ sprites_map_frames_1.s
 sprites_worldselect_frames.s
 sprites_map_frames_2.s
 asset_gfx_gap_43_at_093F4478.s
+sprites_level_up_tiles.s
+asset_gfx_gap_43_at_093F4478_at_094D53C4.s
+asset_gfx_gap_43_at_09402F78.s
 asset_gfx_gap_43_at_09468FF8.s
 asset_gfx_gap_43_at_0948A918.s
 asset_gfx_gap_43_at_094EABF8.s
 asset_gfx_gap_43_at_094F4238.s
 asset_gfx_gap_43_at_09501378.s
+sprites_level_up_maps_1.s
+asset_gfx_gap_43_at_09512AB8.s
+sprites_level_up_maps_2.s
 asset_gfx_gap_43_at_0960F2B8.s
 sprite_palettes_5.s
 asset_gfx_gap_43_at_0960F2B8_at_09612C38.s
