@@ -71,19 +71,19 @@ void eu_08060C8C(UnkModeTestWork* work, UnkModeTestArgs* args) {
     body = &work->body;
     if (args->side != 0) {
         work->side = 1;
-        gBtlWork->unk_068 |= 0x200000;
+        gBtlWork->flags |= 0x200000;
         work->actor = gBtlWork->actor;
         work->tiles = gBtlWork->tiles2;
     } else {
         work->side = args->side;
-        gUnk_02039B9C->unk_068 |= 0x200000;
+        gUnk_02039B9C->flags |= 0x200000;
         work->actor = gUnk_02039B9C->actor;
         work->tiles = gBtlWork->tiles2;
     }
     work->card = args->card;
     work->counter = 0;
     work->velocity = 0;
-    if (work->actor->unk_034 & 4) {
+    if (work->actor->flags & 4) {
         body->x = (gBtlWork->unk_0DC + 48) * 256;
         body->flags = 4;
     } else {
@@ -110,7 +110,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
 
     body = &work->body;
     battle = work->side != 0 ? gBtlWork : gUnk_02039B9C;
-    if (battle->unk_068 & 0x40000000) {
+    if (battle->flags & 0x40000000) {
         return 0;
     }
     func_0802F284(body->x, body->y, body->z);
@@ -186,7 +186,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
     case 2:
         func_08019068(gUnkEu_08896524, &work->anim, 6, 0, work->tiles);
         if (AnimIsFinished(&work->anim)) {
-            if (work->actor->unk_034 & 4) body->flags |= 4;
+            if (work->actor->flags & 4) body->flags |= 4;
             else body->flags &= ~4ULL;
             if ((u16)(GetRandom() % 200u) == 0) work->state = 5;
         }
@@ -198,7 +198,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
         break;
     case 5:
         func_08019068(gUnkEu_08896524, &work->anim, 9, 0, work->tiles);
-        if (work->actor->unk_034 & 4) body->flags |= 4;
+        if (work->actor->flags & 4) body->flags |= 4;
         else body->flags &= ~4ULL;
         body->x = work->actor->x;
         body->y = work->actor->y + 0x800;
@@ -213,7 +213,7 @@ u8 eu_08060DF8(UnkModeTestWork* work) {
         break;
     case 6: {
         s32 frame;
-        if (work->actor->unk_034 & 4) body->flags |= 4;
+        if (work->actor->flags & 4) body->flags |= 4;
         else body->flags &= ~4ULL;
         body->x = work->actor->x;
         body->y = work->actor->y + 0x800;
@@ -309,7 +309,7 @@ void eu_08061698(UnkModeTestWork* work) {
 
     ColliderUnregister(work->body.particles);
     battle = work->side != 0 ? gBtlWork : gUnk_02039B9C;
-    battle->unk_068 &= 0xFFFFFFFFFFDFFFFF;
+    battle->flags &= 0xFFFFFFFFFFDFFFFF;
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }

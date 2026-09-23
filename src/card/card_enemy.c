@@ -196,14 +196,14 @@ void func_08090530(u8* work) {
 }
 
 u8 func_08090550(CardDisplayWork* p, void* a) {
-    if (gBtlWork->unk_068 & 0x20) {
+    if (gBtlWork->flags & 0x20) {
         p->unk_9C = 8;
         p->unk_9E = 8;
         gUnk_02039DD4->unk_0D0 = 0;
         gUnk_02039DD4->unk_0C2 = 0;
-        gBtlWork->unk_068 &= ~0x20;
-        gBtlWork->unk_068 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x10000000;
+        gBtlWork->flags &= ~0x20;
+        gBtlWork->flags &= ~0x80;
+        gBtlWork->flags &= ~0x10000000;
         SetTaskUpdate(a, (void*)func_08090940);
     } else if (p->unk_78 & 0x200000) {
         p->unk_A0 -= 4;
@@ -226,7 +226,7 @@ u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
         p->unk_9C--;
     }
 
-    if (gBtlWork->unk_068 & 0x80) {
+    if (gBtlWork->flags & 0x80) {
         if (p->unk_78 & 0x2000) {
             if ((s16)p->unk_9C == 0) {
                 SetTaskUpdate(a, (void*)func_08090550);
@@ -348,7 +348,7 @@ u8 func_080909A4(CardDisplayWork* p) {
         p->unk_78 &= ~0x800;
         func_0807C39C(p);
         p->unk_78 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x10000000;
+        gBtlWork->flags &= ~0x10000000;
         return 0;
     }
 
@@ -453,8 +453,8 @@ u8 func_08090C3C(CardDisplayWork* p, void* a) {
     }
 
     if (p->unk_A1 == 5) {
-        if (!(gBtlWork->unk_068 & 0x80) && p->unk_9F == 0) {
-            gBtlWork->unk_068 |= 0x80;
+        if (!(gBtlWork->flags & 0x80) && p->unk_9F == 0) {
+            gBtlWork->flags |= 0x80;
         }
 
         if (p->unk_78 & 0x8000) {
@@ -510,7 +510,7 @@ u8 func_08090DB0(CardDisplayWork* p, void* a) {
         p->unk_78 &= ~0x800;
         func_0807C39C(p);
         p->unk_78 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x10000000;
+        gBtlWork->flags &= ~0x10000000;
         return 0;
     }
 
@@ -702,18 +702,18 @@ void func_08091234(u16 arg) {
     args.unk_0C = gUnk_02034AB4;
     args.unk_0E = 0;
     p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->tasks, &gUnk_09EE4B58, &args))[1];
-    gBtlWork->unk_068 |= 0x10000000;
+    gBtlWork->flags |= 0x10000000;
     gUnk_02039DD4->unk_0E0 = 1;
 
-    if ((gBtlWork->unk_068 & 0x80) == 0) {
+    if ((gBtlWork->flags & 0x80) == 0) {
         p->unk_78 |= 0x2000;
         gUnk_02039DD4->unk_000[0] = p;
         gUnk_02039DD4->unk_0C2 = p->unk_A5;
         gUnk_02039DD4->unk_0D0 = 1;
         gBtlWork->unk_0A4 = 0;
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-    } else if ((gBtlWork->unk_068 & 0x20) == 0) {
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x80;
+    } else if ((gBtlWork->flags & 0x20) == 0) {
 #ifdef VERSION_EU
         if ((s16)gUnk_02039DD4->unk_0C2 <= p->unk_A5 || p->unk_A5 == 0) {
 #else
@@ -771,7 +771,7 @@ void func_08091234(u16 arg) {
             }
 
             if (found == 0) {
-                gBtlWork->unk_068 |= 0x800000;
+                gBtlWork->flags |= 0x800000;
 
                 for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
@@ -785,9 +785,9 @@ void func_08091234(u16 arg) {
                     }
 
                     m4aSongNumStart(203);
-                    gBtlWork->unk_068 |= 0x400;
-                    gBtlWork->unk_068 |= 0x80;
-                    gBtlWork->unk_068 &= ~0x20;
+                    gBtlWork->flags |= 0x400;
+                    gBtlWork->flags |= 0x80;
+                    gBtlWork->flags &= ~0x20;
                     gUnk_02039DD4->unk_000[0] = p;
 
                     if (gBtlWork->unk_0F4 == 48) {
@@ -813,9 +813,9 @@ void func_08091234(u16 arg) {
                     func_0807BA54();
                 } else {
                     m4aSongNumStart(204);
-                    gBtlWork->unk_068 &= ~0x80;
-                    gBtlWork->unk_068 &= ~0x20;
-                    gBtlWork->unk_068 &= ~0x400;
+                    gBtlWork->flags &= ~0x80;
+                    gBtlWork->flags &= ~0x20;
+                    gBtlWork->flags &= ~0x400;
                     gBtlWork->unk_0A4 = 0;
                 }
             }
@@ -877,7 +877,7 @@ void func_08091234(u16 arg) {
             }
 
             if (flag == 0) {
-                gBtlWork->unk_068 |= 0x800000;
+                gBtlWork->flags |= 0x800000;
 
                 for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
                     gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
@@ -891,9 +891,9 @@ void func_08091234(u16 arg) {
                     }
 
                     m4aSongNumStart(203);
-                    gBtlWork->unk_068 |= 0x400;
-                    gBtlWork->unk_068 |= 0x80;
-                    gBtlWork->unk_068 &= ~0x20;
+                    gBtlWork->flags |= 0x400;
+                    gBtlWork->flags |= 0x80;
+                    gBtlWork->flags &= ~0x20;
                     gUnk_02039DD4->unk_000[0] = p;
 #ifdef VERSION_EU
 
@@ -923,9 +923,9 @@ void func_08091234(u16 arg) {
                     func_0807BA54();
                 } else {
                     m4aSongNumStart(204);
-                    gBtlWork->unk_068 &= ~0x80;
-                    gBtlWork->unk_068 &= ~0x20;
-                    gBtlWork->unk_068 &= ~0x400;
+                    gBtlWork->flags &= ~0x80;
+                    gBtlWork->flags &= ~0x20;
+                    gBtlWork->flags &= ~0x400;
                     gBtlWork->unk_0A4 = 0;
                 }
             }
@@ -946,17 +946,17 @@ void func_080917C8(u16 a, u8 b) {
     arg.unk_0C = b;
     arg.unk_0E = 0;
     p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->tasks, &gUnk_09EE4B70, &arg))[1];
-    gBtlWork->unk_068 |= 0x10000000;
+    gBtlWork->flags |= 0x10000000;
 
-    if ((gBtlWork->unk_068 & 0x80) == 0) {
+    if ((gBtlWork->flags & 0x80) == 0) {
         p->unk_78 |= 0x2000;
         gUnk_02039DD4->unk_000[0] = p;
         gUnk_02039DD4->unk_0C2 = p->cardDef->unk_20;
         gUnk_02039DD4->unk_0D0 = 1;
         gBtlWork->unk_0A4 = 0;
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-    } else if ((gBtlWork->unk_068 & 0x20) == 0) {
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x80;
+    } else if ((gBtlWork->flags & 0x20) == 0) {
         if (gUnk_02039DD4->unk_0CC != 2) {
             if ((s16)gUnk_02039DD4->unk_0C2 < p->cardDef->unk_20) {
                 for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
@@ -964,9 +964,9 @@ void func_080917C8(u16 a, u8 b) {
                 }
 
                 m4aSongNumStart(0xCB);
-                gBtlWork->unk_068 |= 0x800000;
-                gBtlWork->unk_068 |= 0x400;
-                gBtlWork->unk_068 |= 0x80;
+                gBtlWork->flags |= 0x800000;
+                gBtlWork->flags |= 0x400;
+                gBtlWork->flags |= 0x80;
                 gUnk_02039DD4->unk_000[0] = p;
                 gUnk_02039DD4->unk_0C2 = p->cardDef->unk_20;
                 gUnk_02039DD4->unk_0D0 = 1;
@@ -991,17 +991,17 @@ void func_08091978(u16 a, u8 b) {
     arg.unk_0C = b;
     arg.unk_0E = 0;
     p = ((CardDisplayWork**)TaskCreate(&gUnk_02039DD4->tasks, &gUnk_09EE4B88, &arg))[1];
-    gBtlWork->unk_068 |= 0x10000000;
+    gBtlWork->flags |= 0x10000000;
 
-    if ((gBtlWork->unk_068 & 0x80) == 0) {
+    if ((gBtlWork->flags & 0x80) == 0) {
         p->unk_78 |= 0x2000;
         gUnk_02039DD4->unk_000[0] = p;
         gUnk_02039DD4->unk_0C2 = p->cardDef->unk_20;
         gUnk_02039DD4->unk_0D0 = 1;
         gBtlWork->unk_0A4 = 0;
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-    } else if (gBtlWork->unk_068 & 0x20) {
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x80;
+    } else if (gBtlWork->flags & 0x20) {
         if (gBtlWork->unk_0F4 == 2) {
             if ((s16)gUnk_02039DD4->unk_0C2 < p->cardDef->unk_20) {
                 for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
@@ -1009,9 +1009,9 @@ void func_08091978(u16 a, u8 b) {
                 }
 
                 m4aSongNumStart(0xCB);
-                gBtlWork->unk_068 |= 0x800000;
-                gBtlWork->unk_068 |= 0x400;
-                gBtlWork->unk_068 |= 0x80;
+                gBtlWork->flags |= 0x800000;
+                gBtlWork->flags |= 0x400;
+                gBtlWork->flags |= 0x80;
                 gUnk_02039DD4->unk_000[0] = p;
                 gUnk_02039DD4->unk_0C2 = p->cardDef->unk_20;
                 gUnk_02039DD4->unk_0D0 = 1;

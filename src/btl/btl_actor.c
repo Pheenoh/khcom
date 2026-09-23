@@ -80,7 +80,7 @@ void func_0800EFE8(Actor* work) {
     WorldToScreen(&x, &y, c->x, c->y, c->z);
 
     if (work->unk_168 == 0x100 && work->unk_16C == 0x100) {
-        if (c->unk_034 & 4) {
+        if (c->flags & 4) {
             sy = gBtlWork->unk_024;
             sx = sy;
         } else {
@@ -94,7 +94,7 @@ void func_0800EFE8(Actor* work) {
             }
         }
     } else {
-        if (c->unk_034 & 4) {
+        if (c->flags & 4) {
             sx = (gBtlWork->unk_024 * work->unk_168 >> 8);
             g = gBtlWork->unk_024;
             sy = g * work->unk_16C >> 8;
@@ -140,7 +140,7 @@ void func_0800F230(void) {
     u8 keys;
     u16 t;
 
-    if (gUnk_02039B9C->unk_068 & 0x1000000) {
+    if (gUnk_02039B9C->flags & 0x1000000) {
         return;
     }
     t = gUnk_02039B9C->unk_1CC;
@@ -168,23 +168,23 @@ void func_0800F230(void) {
         func_0807E260();
     }
 
-    if (c->unk_034 & 0x200) {
+    if (c->flags & 0x200) {
         return;
     }
 
-    if (gBtlWork->unk_068 & 0x40) {
+    if (gBtlWork->flags & 0x40) {
         return;
     }
 
-    if (gBtlWork->unk_068 & 0x10000000) {
+    if (gBtlWork->flags & 0x10000000) {
         return;
     }
 
-    if (gBtlWork->unk_068 & 0x800000) {
+    if (gBtlWork->flags & 0x800000) {
         return;
     }
 
-    if (c->unk_034 & 2) {
+    if (c->flags & 2) {
         return;
     }
 
@@ -212,19 +212,19 @@ void eu_08013190(void) {
 
     keys = gBtlWork->unk_0EF;
     gBtlWork->unk_0EF = 0;
-    if (c->unk_034 & 0x200) {
+    if (c->flags & 0x200) {
         return;
     }
-    if (gBtlWork->unk_068 & 0x40) {
+    if (gBtlWork->flags & 0x40) {
         return;
     }
-    if (gBtlWork->unk_068 & 0x10000000) {
+    if (gBtlWork->flags & 0x10000000) {
         return;
     }
-    if (gBtlWork->unk_068 & 0x800000) {
+    if (gBtlWork->flags & 0x800000) {
         return;
     }
-    if (c->unk_034 & 2) {
+    if (c->flags & 2) {
         return;
     }
     if (keys & 0x20) {
@@ -334,7 +334,7 @@ u8 func_0800F504(Actor* p, s16 a, u16 b, u16 r) {
         return 0;
     }
 
-    if (o->unk_034 & 4) {
+    if (o->flags & 4) {
         t = v0 - (a << 8);
         bb = b << 8;
 
@@ -367,7 +367,7 @@ u8 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
     s32 count;
     s32 n;
 
-    if (gBtlWork->unk_068 & 0x40) {
+    if (gBtlWork->flags & 0x40) {
         return 0;
     }
     if ((s16)gUnk_02039B9C->unk_1CC > 0) {
@@ -443,7 +443,7 @@ u8 func_0800F5A4(Actor* work, u16 interval, u16 offset, u16 width, u16 depth) {
         }
         return 0;
     }
-    if (gBtlWork->unk_068 & 0x20000000) {
+    if (gBtlWork->flags & 0x20000000) {
         if (func_0800F440(work, (s16)offset, width, depth)) {
             if (func_08081848() <= value || value == 0) {
                 gBtlWork->unk_0EF |= 0x20;
@@ -461,8 +461,8 @@ s32 _0800F84C(Actor* work) {
     s32 id = func_080ABA80(buf);
 
     if (id == 145) {
-        if (!(gUnk_02039B9C->unk_068 & 2)) {
-            gUnk_02039B9C->unk_068 |= 2;
+        if (!(gUnk_02039B9C->flags & 2)) {
+            gUnk_02039B9C->flags |= 2;
             gUnk_02039B9C->unk_0B2 = 0;
         }
         id = buf[gUnk_02039B9C->unk_0B2];

@@ -27,7 +27,7 @@ const char gTaskNameBtlBadstatus[] = "task_btl_badstatus";
 void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     s32 i;
 
-    gBtlWork->unk_068 |= 0x2000000;
+    gBtlWork->flags |= 0x2000000;
     work->flags = 0;
     work->list = list;
     work->entry = list->entries[0];
@@ -52,7 +52,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
     s32 y;
     s32 z;
 
-    if (gBtlWork->unk_068 & 0x0100000000000000) {
+    if (gBtlWork->flags & 0x0100000000000000) {
         return 0;
     }
 
@@ -94,7 +94,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
                 work->y = obj->y;
                 work->z = 0;
 
-                if (obj->unk_034 & 4) {
+                if (obj->flags & 4) {
                     if (GetRandom() % 5 != 0) {
                         work->flags |= 1;
                     } else {
@@ -130,7 +130,7 @@ u8 task_btl_form_1(BtlFormWork* work) {
 }
 
 void task_btl_form_3(void) {
-    gBtlWork->unk_068 &= ~0x2000000;
+    gBtlWork->flags &= ~0x2000000;
 }
 
 void task_btl_born_0(BtlBornWork* work, BtlBornArgs* args) {
@@ -324,7 +324,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
 BtlObj* func_08040458(BtlRaidWork* work) {
     BtlObj* obj;
 
-    if (gBtlWork->unk_068 & 0x4000) {
+    if (gBtlWork->flags & 0x4000) {
         if (work->unk_3D != 0) {
             obj = gUnk_02039B9C->actor;
         } else {
@@ -352,7 +352,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
     s32 y;
     s32 z;
 
-    if ((work->unk_3D != 0 ? gBtlWork : gUnk_02039B9C)->unk_068 & 0x40000000) {
+    if ((work->unk_3D != 0 ? gBtlWork : gUnk_02039B9C)->flags & 0x40000000) {
         return 0;
     }
 
@@ -383,7 +383,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 8) != 0) {
                 m4aSongNumStart(work->unk_68);
 
-                if (obj->unk_034 & 2) {
+                if (obj->flags & 2) {
                     work->unk_3A = 20;
                 }
             }
@@ -685,7 +685,7 @@ BtlObj* func_08040C8C(BtlAiWork* work) {
     BtlObj* p;
     s16 count;
 
-    if (gBtlWork->unk_068 & 0x4000) {
+    if (gBtlWork->flags & 0x4000) {
         if (work->unk_163 != 0) {
             p = gUnk_02039B9C->actor;
         } else {
@@ -703,7 +703,7 @@ BtlObj* func_08040C8C(BtlAiWork* work) {
     p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
-        if (!(p->unk_034 & 0x01000000)) {
+        if (!(p->flags & 0x01000000)) {
             list[count] = p;
             count++;
             if (count > 9) {
@@ -728,7 +728,7 @@ BtlObj* func_08040D54(BtlAiWork* work) {
     s16 count;
     s32 d;
 
-    if (gBtlWork->unk_068 & 0x4000) {
+    if (gBtlWork->flags & 0x4000) {
         if (work->unk_163 != 0) {
             p = gUnk_02039B9C->actor;
         } else {
@@ -746,7 +746,7 @@ BtlObj* func_08040D54(BtlAiWork* work) {
     p = ListPoolFirst(&gBtlWork->pool);
 
     while (p != 0) {
-        if (!(p->unk_034 & 0x01000000)) {
+        if (!(p->flags & 0x01000000)) {
             d = work->unk_044 - p->z;
             if (d >= 0 ? d <= 0x3000 : p->z - work->unk_044 <= 0x3000) {
                 list[count] = p;

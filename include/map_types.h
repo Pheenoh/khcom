@@ -32,7 +32,7 @@ typedef struct UnkStruct_080DFB7C {
 } UnkStruct_080DFB7C;
 
 typedef struct UnkStruct_0203C7AC {
-    u32 unk_00;
+    u32 flags;
     u16 unk_04;
     u16 unk_06;
     u16 unk_08;
@@ -52,7 +52,7 @@ typedef struct UnkStruct_0203C7AC {
     s32 unk_24;
     s32 unk_28;
     s32 unk_2C;
-    u8 unk_30[0x14];
+    u8 tasks[0x14];
 } UnkStruct_0203C7AC;
 
 typedef struct MapCell {

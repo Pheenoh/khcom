@@ -369,7 +369,7 @@ u8 func_08032268(FldWork* work, void* task) {
     s32 flags;
 
     act = &gUnk_02039BA0->actor;
-    flags = gUnk_02039BA0->unk_70;
+    flags = gUnk_02039BA0->flags;
 
     if (flags & 0x100000) {
         func_08031F98(work, 12, 0);
@@ -379,7 +379,7 @@ u8 func_08032268(FldWork* work, void* task) {
         func_08031F98(work, 0, 1);
     }
 
-    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
         FadeSetPaletteExcluded(work->palette->index + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
@@ -681,7 +681,7 @@ u8 func_080324DC(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 2;
         } else if (work->unk_98 > 6) {
-            gUnk_02039BA0->unk_70 &= ~0x800000;
+            gUnk_02039BA0->flags &= ~0x800000;
             work->unk_A4 &= ~4;
             work->unk_94 = 0;
             work->unk_98 = 0;
@@ -752,7 +752,7 @@ u8 func_080324DC(FldWork* work, void* task) {
     work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->tasks);
 
-    if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
+    if ((gUnk_02039BA0->flags & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08032268);
         TaskPoolUpdate(work->tasks);
@@ -1391,7 +1391,7 @@ u8 func_0803366C(FldWork* work, void* task) {
     work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->tasks);
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08032268);
     }
@@ -1426,7 +1426,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         case 2:
         case 3:
         case 4:
-            gUnk_02039BA0->unk_70 |= 0x800000;
+            gUnk_02039BA0->flags |= 0x800000;
         case 5:
             SetTaskUpdate(task, (u32)func_080324DC);
             gUnk_02039BA0->unk_68 = 0;
@@ -1464,7 +1464,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         }
 
         return 1;
-    } else if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
+    } else if ((gUnk_02039BA0->flags & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08032268);
         TaskPoolUpdate(work->tasks);
@@ -1474,11 +1474,11 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         sy = act->fieldPosition.y;
 
         if (work->unk_94 <= 1) {
-            if ((gUnk_02039BA0->unk_70 & 0x4000) == 0) {
+            if ((gUnk_02039BA0->flags & 0x4000) == 0) {
                 func_08031F60(act);
             }
 
-            if ((gUnk_02039BA0->unk_70 & 0x4000) == 0 && (GetKeysHeld() & DPAD_ANY) != 0) {
+            if ((gUnk_02039BA0->flags & 0x4000) == 0 && (GetKeysHeld() & DPAD_ANY) != 0) {
                 act->unk_10 += 128;
                 func_08031F98(work, 2, 1);
 
@@ -1510,7 +1510,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
 
             if ((GetKeysPressed() & B_BUTTON) != 0) {
                 gUnk_02039BA0->unk_68 = 0;
-                gUnk_02039BA0->unk_70 |= 0x800000;
+                gUnk_02039BA0->flags |= 0x800000;
                 work->unk_98 = 0;
                 work->unk_94 = 2;
                 SetTaskUpdate(task, (u32)func_080324DC);
@@ -1566,7 +1566,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
             } else {
                 if (func_08031EC4(&act->fieldPosition) != 0) {
                     FadeSetPaletteExcluded(work->palette->index + 16, 1);
-                    gUnk_02039BA0->unk_70 |= 16;
+                    gUnk_02039BA0->flags |= 16;
                     return 1;
                 }
 
@@ -1671,7 +1671,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
             work->unk_A0 = 0;
             work->unk_98 = 0;
             gUnk_02039BA0->unk_68 = 0;
-            gUnk_02039BA0->unk_70 |= 0x800000;
+            gUnk_02039BA0->flags |= 0x800000;
             work->unk_94 = 4;
             SetTaskUpdate(task, (u32)func_080324DC);
         } else if (z != act->fieldPosition.unk_0C) {
@@ -2068,7 +2068,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
     s32 flags;
 
     act = &gUnk_02039BA0->actor;
-    flags = gUnk_02039BA0->unk_70;
+    flags = gUnk_02039BA0->flags;
 
     if (flags & 0x100000) {
         func_0803473C(work, 12, 0);
@@ -2078,7 +2078,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         func_0803473C(work, 0, 1);
     }
 
-    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
         FadeSetPaletteExcluded(work->palette->index + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
@@ -2380,7 +2380,7 @@ u8 func_08034C88(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 2;
         } else if (work->unk_98 > 6) {
-            gUnk_02039BA0->unk_70 &= ~0x800000;
+            gUnk_02039BA0->flags &= ~0x800000;
             work->unk_A4 &= ~4;
             work->unk_94 = 0;
             work->unk_98 = 0;
@@ -2451,7 +2451,7 @@ u8 func_08034C88(FldWork* work, void* task) {
     work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->tasks);
 
-    if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
+    if ((gUnk_02039BA0->flags & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08034A0C);
     }
@@ -3084,7 +3084,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
     work->gfx = AnimUpdate(work->anim);
     TaskPoolUpdate(work->tasks);
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08034A0C);
         TaskPoolUpdate(work->tasks);
@@ -3157,7 +3157,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         }
 
         return 1;
-    } else if ((gUnk_02039BA0->unk_70 & 0x40000) != 0) {
+    } else if ((gUnk_02039BA0->flags & 0x40000) != 0) {
         work->unk_98 = 0;
         SetTaskUpdate(task, (u32)func_08034A0C);
         TaskPoolUpdate(work->tasks);
@@ -3167,11 +3167,11 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         sy = act->fieldPosition.y;
 
         if (work->unk_94 <= 1) {
-            if ((gUnk_02039BA0->unk_70 & 0x4000) == 0) {
+            if ((gUnk_02039BA0->flags & 0x4000) == 0) {
                 func_08034704(act);
             }
 
-            if ((gUnk_02039BA0->unk_70 & 0x4000) == 0 && (GetKeysHeld() & DPAD_ANY) != 0) {
+            if ((gUnk_02039BA0->flags & 0x4000) == 0 && (GetKeysHeld() & DPAD_ANY) != 0) {
                 act->unk_10 += 128;
                 func_0803473C(work, 2, 1);
 
@@ -3202,7 +3202,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             act->fieldPosition.y += -gSineTable[act->angle + 64] * act->unk_10 >> 8;
 
             if ((GetKeysPressed() & B_BUTTON) != 0) {
-                gUnk_02039BA0->unk_70 |= 0x800000;
+                gUnk_02039BA0->flags |= 0x800000;
                 gUnk_02039BA0->unk_68 = 0;
                 work->unk_98 = 0;
                 work->unk_94 = 2;
@@ -3259,7 +3259,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             } else {
                 if (func_08034668(&act->fieldPosition) != 0) {
                     FadeSetPaletteExcluded(work->palette->index + 16, 1);
-                    gUnk_02039BA0->unk_70 |= 16;
+                    gUnk_02039BA0->flags |= 16;
                     return 1;
                 }
 
@@ -3364,7 +3364,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             work->unk_A0 = 0;
             work->unk_98 = 0;
             gUnk_02039BA0->unk_68 = 0;
-            gUnk_02039BA0->unk_70 |= 0x800000;
+            gUnk_02039BA0->flags |= 0x800000;
             work->unk_94 = 4;
             SetTaskUpdate(task, (u32)func_08034C88);
         } else if (z != act->fieldPosition.unk_0C) {

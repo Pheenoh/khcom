@@ -5663,7 +5663,7 @@ u8 func_0810A914(PcWork* work, s32 arg) {
     func_08109EF8(work, 0);
     work->unk_004 -= 1;
     if (work->unk_004 < 0) {
-        if ((gBtlWork->unk_068 & 0x20000000) == 0) {
+        if ((gBtlWork->flags & 0x20000000) == 0) {
             func_0801BCD4(&work->unk_054);
             u = work->unk_2E8;
             work->unk_004 = ((u >> 6) + 6) * 60;
@@ -5671,7 +5671,7 @@ u8 func_0810A914(PcWork* work, s32 arg) {
             work->unk_004 = 4;
         }
     } else if (work->unk_004 % (work->unk_2E8 >> 4) == 0) {
-        if (gBtlWork->unk_068 & 0x20000000) {
+        if (gBtlWork->flags & 0x20000000) {
             t = (((s32)work->unk_2E8 * 5) >> 3) + 96;
             if (GetRandom() >> 7 > t) {
                 func_0801BCD4(&work->unk_054);
@@ -5915,7 +5915,7 @@ u8 func_0810AF44(PcWork* work, s32 arg) {
         work->palette2 = 0;
         func_0801C2DC(p, 1);
         func_0801C2DC(&work->unk_164, 1);
-        gBtlWork->unk_068 |= 0x100000;
+        gBtlWork->flags |= 0x100000;
         work->unk_2EB = 255;
         work->unk_2F4 = 0x34BC0;
         func_08109EF8(work, 11);
@@ -5973,16 +5973,16 @@ u8 task_bos_pc_1(PcWork* work, s32 arg) {
     }
     if (work->unk_2F4 > 0) {
         func_0810BF24((u8**)work->unk_2E4, 1);
-        gBtlWork->unk_068 |= 0x100000;
+        gBtlWork->flags |= 0x100000;
         if (work->unk_2F4 < 0x34BBF) {
             work->unk_2F4 -= 1;
         }
     } else {
         func_0810BF24((u8**)work->unk_2E4, 0);
-        gBtlWork->unk_068 &= ~0x100000;
+        gBtlWork->flags &= ~0x100000;
     }
     pos = gBtlWork->actor;
-    if ((pos->unk_034 & 0x800000) == 0) {
+    if ((pos->flags & 0x800000) == 0) {
         if (pos->x > work->unk_01C) {
             pos->x = work->unk_01C;
         }
@@ -6265,7 +6265,7 @@ void task_bos_pc_fld_2(PcFldWork* work) {
     func_0810B4F4((u8*)work);
     pos = gBtlWork->actor;
     if (pos->z >= -0x100) {
-        if ((pos->unk_034 & 0x80) == 0) {
+        if ((pos->flags & 0x80) == 0) {
             if (work->tiles != 0) {
                 if (work->palette != 0) {
                     x = 0x17000;
@@ -6485,7 +6485,7 @@ void func_0810BA74(PcFltWork* work) {
 void func_0810BAE4(PcFltWork* work) {
     s32 f;
 
-    if ((gBtlWork->unk_068 & 0x20000000) || (gBtlWork->unk_068 & 0x40) ||
+    if ((gBtlWork->flags & 0x20000000) || (gBtlWork->flags & 0x40) ||
         work->pos->y > 0) {
         f = -1;
     } else {
@@ -6695,8 +6695,8 @@ u8 task_bos_pc_acd_1(PcAcdWork* work) {
     anim = &work->anim;
     AnimUpdate(anim);
     if (gBtlWork->actor->z >= 0) {
-        if ((gBtlWork->unk_068 & 0x20000000) == 0 ||
-            (gBtlWork->unk_068 & 0x200000) == 0) {
+        if ((gBtlWork->flags & 0x20000000) == 0 ||
+            (gBtlWork->flags & 0x200000) == 0) {
             if (work->unk_00C < 0 || AnimIsFinished(anim) == 1) {
                 v = 0;
                 if (work->unk_018 == 1) {
@@ -6725,7 +6725,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
 
     gp = &gBtlWork;
     pos = (*gp)->actor;
-    pos->unk_034 &= ~0x2000000;
+    pos->flags &= ~0x2000000;
     ox = 0;
     oy = 0;
     flt = work->flt;
@@ -6740,7 +6740,7 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         tbl = (u8*)gUnk_09EFAB68;
         ofs = (AnimGetGfxIndex(&work->anim) + 5) * 4;
         gfx = *(void**)((u32)tbl + ofs);
-        if ((*gp)->actor->unk_034 & 4) {
+        if ((*gp)->actor->flags & 4) {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
         } else {
             WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
@@ -6748,19 +6748,19 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
         DrawSprite(sx, sy, gfx, (void*)work->tiles, (void*)work->palette, 0, GetBattleSpritePriorityFlags(work->unk_010),
                    (u16)((-0x1004 - ((work->unk_010 >> 8) << 2)) | 3));
     } else if (pos->z >= 0) {
-        if (((*gp)->unk_068 & 0x20000000) && ((*gp)->unk_068 & 0x200000)) {
+        if (((*gp)->flags & 0x20000000) && ((*gp)->flags & 0x200000)) {
             return;
         }
         anim = &work->anim;
         if (AnimGetId(anim) == 1) {
-            (*gp)->actor->unk_034 |= 0x2000000;
-            if ((*gp)->actor->unk_034 & 0x80) {
+            (*gp)->actor->flags |= 0x2000000;
+            if ((*gp)->actor->flags & 0x80) {
                 return;
             }
             tbl = (u8*)gUnk_09EFAB68;
             ofs = (AnimGetGfxIndex(anim) + 5) * 4;
             gfx = *(void**)((u32)tbl + ofs);
-            if ((*gp)->actor->unk_034 & 4) {
+            if ((*gp)->actor->flags & 4) {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x600, work->unk_010 - oy, 0);
             } else {
                 WorldToScreen(&sx, &sy, work->unk_00C - ox + 0x200, work->unk_010 - oy, 0);
@@ -6989,7 +6989,7 @@ void func_0810C754(BosLstWork* work) {
 
     t = work->unk_07C;
     work->unk_07C = t - 0x100;
-    if (gBtlWork->unk_068 & 0x20000000) {
+    if (gBtlWork->flags & 0x20000000) {
         work->unk_07C = t - 0x200;
     }
     if (work->unk_012 > 0) {
@@ -7177,7 +7177,7 @@ void func_0810CC68(BosLstWork* work) {
         func_0810C754(work);
         if (work->unk_07C < 0) {
             work->unk_07C = 0x400;
-            if (!(gBtlWork->unk_068 & 0x20000000)) {
+            if (!(gBtlWork->flags & 0x20000000)) {
                 func_0810C2E0(work);
             }
         }
@@ -7196,7 +7196,7 @@ void func_0810CD00(BosLstWork* work) {
     func_0810C754(work);
     if (work->unk_07C < 0) {
         work->unk_07C = 0x400;
-        if (((*pp)->unk_068 & 0x20000000) == 0) {
+        if (((*pp)->flags & 0x20000000) == 0) {
             work->unk_084 = -0x1200;
             work->unk_088 = (*pp)->actor->x - ((work->unk_012 * 5) << 10);
             if (work->unk_088 > 0x14000) {
@@ -7236,7 +7236,7 @@ void func_0810CE1C(BosLstWork* work) {
     func_0810C754(work);
     if (work->unk_07C < 0) {
         work->unk_07C = 0x400;
-        if (!(gBtlWork->unk_068 & 0x20000000)) {
+        if (!(gBtlWork->flags & 0x20000000)) {
             func_0810C2E0(work);
         }
     }
@@ -7267,7 +7267,7 @@ void func_0810CEC8(BosLstWork* work) {
         func_0810C754(work);
         if (work->unk_07C < 0) {
             work->unk_07C = 0x400;
-            if ((gBtlWork->unk_068 & 0x20000000) == 0) {
+            if ((gBtlWork->flags & 0x20000000) == 0) {
                 work->unk_00A += 1;
                 work->unk_0AA += 1;
                 work->unk_0A8 = 0;
@@ -7581,7 +7581,7 @@ void func_0810D4F8(BosLstWork* work) {
                     break;
                 }
 #endif
-                if ((gBtlWork->unk_068 & 0x20000000) == 0) {
+                if ((gBtlWork->flags & 0x20000000) == 0) {
                     func_0810C2E0(work);
                     work->unk_0C0 = 0;
                 }
@@ -7669,7 +7669,7 @@ void func_0810D77C(BosLstWork* work) {
                 work->lstTasks[i] = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosLstBit, &s);
             }
         }
-        if ((gBtlWork->unk_068 & 0x2000000000000) == 0) {
+        if ((gBtlWork->flags & 0x2000000000000) == 0) {
             work->unk_06E += 1;
         }
         found = 0;
@@ -7710,7 +7710,7 @@ void func_0810D77C(BosLstWork* work) {
             work->unk_0DC = 0;
         }
         if (work->unk_06E > 0x4AF ||
-            (work->unk_0D4 == 1 && (gBtlWork->unk_068 & 0x2000000000000) == 0 &&
+            (work->unk_0D4 == 1 && (gBtlWork->flags & 0x2000000000000) == 0 &&
              gBtlWork->actor->z > work->z + work->unk_058 + 0x1800)) {
             func_0810D478(work);
             work->unk_0D6 += 1;
@@ -8578,7 +8578,7 @@ u8 func_0810EBA0(BosLstWork* work) {
             FadeStartIn(2, 60);
             FadeLock();
             m4aSongNumStart(0x2CF);
-            gBtlWork->unk_068 |= 0x400000;
+            gBtlWork->flags |= 0x400000;
             work->unk_002 = 1;
             work->unk_00A += 1;
             work->unk_068 = 0;
@@ -8770,13 +8770,13 @@ u8 task_bos_lst_1(BosLstWork* work) {
     *(s32*)&work->unk_018 = (work->unk_110 * 255) / work->unk_112;
     gp = &gBtlWork;
     pos = (*gp)->actor;
-    pos->unk_034 |= 0x2000000;
+    pos->flags |= 0x2000000;
     (*gp)->unk_0D8 = -16;
     if (work->unk_0D4 == 1) {
         y = func_0810D70C(work);
         p2 = (*gp)->actor;
         p2->y = y;
-        if (((*gp)->unk_068 & 0x2000000000000) == 0) {
+        if (((*gp)->flags & 0x2000000000000) == 0) {
             t = (work->unk_0DC * 70) >> 8;
             v = p2->x + t * work->unk_012;
             p2->x = v;

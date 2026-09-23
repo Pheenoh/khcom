@@ -657,9 +657,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         }
 
 #ifdef VERSION_EU
-        ((BtlObj*)p)->unk_034 &= ~0x100;
+        ((BtlObj*)p)->flags &= ~0x100;
 #else
-        ((BtlObj*)p)->unk_034 &= ~0x80;
+        ((BtlObj*)p)->flags &= ~0x80;
 #endif
         func_080D9B6C(work);
         work->unk_150 += 51;
@@ -686,7 +686,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
             if (work->unk_150 >= -25) {
                 func_080DA42C(work);
                 work->state = 4;
-                ((BtlObj*)p)->unk_034 |= 0x100;
+                ((BtlObj*)p)->flags |= 0x100;
 
                 if (work->unk_170 == 0) {
                     func_0801AF08(p);
@@ -697,9 +697,9 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
         break;
     case 0:
 #ifdef VERSION_EU
-        ((BtlObj*)p)->unk_034 &= ~0x100;
+        ((BtlObj*)p)->flags &= ~0x100;
 #else
-        ((BtlObj*)p)->unk_034 &= ~0x80;
+        ((BtlObj*)p)->flags &= ~0x80;
 #endif
 
         if ((s16)work->timer == 0 && work->unk_170 == 0) {
@@ -2188,9 +2188,9 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
         break;
     case 0:
         if (work->unk_028 > gBtlWork->actor->x) {
-            p->unk_034 |= 4;
+            p->flags |= 4;
         } else {
-            p->unk_034 &= ~4ULL;
+            p->flags &= ~4ULL;
         }
         if (!func_080DC528()) {
             if (func_080DBA14(work)) {
@@ -2215,7 +2215,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
             func_080DBC00(work);
         } else {
             if (!func_080DBC68(work)) {
-                p->unk_034 ^= 4;
+                p->flags ^= 4;
             }
             if (func_080DC5E8() == 2 && p->x > 0x6800 && p->x < 0x19800) {
                 if (((p->x - gBtlWork->actor->x) >= 0 ? p->x - gBtlWork->actor->x : -(p->x - gBtlWork->actor->x)) < 0x6800 && func_080DBA14(work)) {
@@ -2223,7 +2223,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                     work->state = 0;
                 }
             }
-            if ((!(p->unk_034 & 4) && p->x == 0x6800) || ((p->unk_034 & 4) && p->x == 0x19800)) {
+            if ((!(p->flags & 4) && p->x == 0x6800) || ((p->flags & 4) && p->x == 0x19800)) {
                 work->state = 0;
             }
         }

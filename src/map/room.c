@@ -31,7 +31,7 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
 }
 
 u8 task_room_name_1(RoomNameWork* work) {
-    if (gUnk_02039BA0->unk_70 & 0x42000) {
+    if (gUnk_02039BA0->flags & 0x42000) {
         return 0;
     }
 

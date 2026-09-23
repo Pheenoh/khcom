@@ -137,12 +137,12 @@ void mode_jiminy_0(void) {
         e = gUnk_08155554;
         e += 14;
         func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
-        gJiminyWork->unk_CAC = 2;
+        gJiminyWork->flags = 2;
     } else {
         gJiminyWork->unk_D2C = 0;
         e = gUnk_08155554;
         func_0805A95C(3, e->count, e->names, e->flags, e->children, 0x80, 0x40, 0x18);
-        gJiminyWork->unk_CAC = 3;
+        gJiminyWork->flags = 3;
     }
 }
 
@@ -185,8 +185,8 @@ void mode_jiminy_1(void) {
         break;
     case 2:
         if (gJiminyWork->unk_048 == 0) {
-            c = gJiminyWork->unk_CAC | 2;
-            gJiminyWork->unk_CAC = c & 0xFFFB;
+            c = gJiminyWork->flags | 2;
+            gJiminyWork->flags = c & 0xFFFB;
             gJiminyWork->unk_04A = 16;
             LoadBgMap(1, gUnk_08F61B84, 0x800);
         }
@@ -339,7 +339,7 @@ void mode_jiminy_1(void) {
     gBldCnt = 0xF10;
     SetBlendAlpha(t, 16 - t);
 
-    if (gJiminyWork->unk_CAC & 1) {
+    if (gJiminyWork->flags & 1) {
         EnableBg(2);
         func_080658B8(gJiminyWork->unk_C70);
         DrawSprite(0x23, 0x76, AnimUpdate(&gJiminyWork->anim), gJiminyWork->tiles3,
@@ -400,7 +400,7 @@ void mode_jiminy_1(void) {
         }
     }
 
-    if (gJiminyWork->unk_CAC & 2) {
+    if (gJiminyWork->flags & 2) {
 #ifdef VERSION_EU
         switch (gLanguage) {
         case 0:
@@ -492,18 +492,18 @@ void mode_jiminy_1(void) {
     }
 
     if (gJiminyWork->unk_000 == 7) {
-        if (gJiminyWork->unk_CAC & 8) {
+        if (gJiminyWork->flags & 8) {
             DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3),
                 gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
-        if (gJiminyWork->unk_CAC & 0x10) {
+        if (gJiminyWork->flags & 0x10) {
             DrawSprite(gJiminyWork->x2, gJiminyWork->y2 + ((gJiminyWork->unk_D3E >> 3) & 3),
                 gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
         }
 
         if (FadeIsActive() == 0) {
-            if (gJiminyWork->unk_CAC & 4) {
+            if (gJiminyWork->flags & 4) {
                 if (gJiminyWork->unk_CC0 <= 0) {
                     DrawSprite(gJiminyWork->x4 >> 8, gJiminyWork->y5 >> 8,
                         AnimUpdate(&gJiminyWork->anim2), gJiminyWork->tiles4,
@@ -954,14 +954,14 @@ void func_0805BAE4(void) {
         SetBlendAlpha(0, 16);
     case 9:
         if (gJiminyWork->unk_C72 > 0) {
-            gJiminyWork->unk_CAC |= 8;
+            gJiminyWork->flags |= 8;
         } else {
-            gJiminyWork->unk_CAC &= ~8;
+            gJiminyWork->flags &= ~8;
         }
         if (gJiminyWork->unk_C78 < gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
-            gJiminyWork->unk_CAC |= 0x10;
+            gJiminyWork->flags |= 0x10;
         } else {
-            gJiminyWork->unk_CAC &= ~0x10;
+            gJiminyWork->flags &= ~0x10;
         }
         if (FadeIsActive() != 0) {
             break;
@@ -1028,11 +1028,11 @@ void func_0805BAE4(void) {
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
             &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
     }
-    if (gJiminyWork->unk_CAC & 8) {
+    if (gJiminyWork->flags & 8) {
         DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,
             gUnk_08C6A51C, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
     }
-    if (gJiminyWork->unk_CAC & 0x10) {
+    if (gJiminyWork->flags & 0x10) {
         DrawSprite(gJiminyWork->x2, gJiminyWork->y2 + ((gJiminyWork->unk_D3E >> 3) & 3),
             gUnk_08C6A526, gJiminyWork->tiles5, gJiminyWork->palette6, 0, 0, 0);
     }

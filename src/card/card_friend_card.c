@@ -308,7 +308,7 @@ s32 Friend_card_1(UnkStruct_0809A02C* w, void* a) {
     w->unk_1C2 = -0x1004 - (w->unk_3C >> 8) * 4;
     TaskPoolUpdate(&w->tasks);
 
-    if (gBtlWork->unk_068 & 0x800000000) {
+    if (gBtlWork->flags & 0x800000000) {
         return 1;
     }
 

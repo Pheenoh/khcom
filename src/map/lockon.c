@@ -56,7 +56,7 @@ u8 task_lockon_1(LockonWork* w) {
     i = 0;
     o = ListPoolFirst(&gUnk_02039BA0->actor.pool);
 
-    if (gUnk_02039BA0->unk_70 & 1) {
+    if (gUnk_02039BA0->flags & 1) {
         gUnk_02039BA0->unk_68 = 0;
         return 1;
     }
@@ -71,7 +71,7 @@ u8 task_lockon_1(LockonWork* w) {
     py = gUnk_02039BA0->actor.fieldPosition.y;
     count = 0;
 
-    if ((gUnk_02039BA0->unk_70 & 2) == 0) {
+    if ((gUnk_02039BA0->flags & 2) == 0) {
         while (o != 0) {
             ox = o->x;
             oy = o->y;
@@ -142,7 +142,7 @@ void task_lockon_2(LockonWork* w) {
         u8 counter;
     } x2, y2;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         return;
     }
 
@@ -249,7 +249,7 @@ s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list) {
 void func_0805F66C(LockonWork* w) {
     s8 i;
 
-    if ((gUnk_02039BA0->unk_70 & 2) == 0) {
+    if ((gUnk_02039BA0->flags & 2) == 0) {
         w->unk_2D = -1;
 
         for (i = 0; i < 8; i++) {

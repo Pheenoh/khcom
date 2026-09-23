@@ -78,10 +78,10 @@ extern u8 gUnkEu_08B54E50[];
 void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor) {
     work->actor = actor;
 
-    if (actor->unk_034 & 0x80000) {
+    if (actor->flags & 0x80000) {
         work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
         work->gfx = gUnk_08B22CBC;
-    } else if (actor->unk_034 & 0x20000) {
+    } else if (actor->flags & 0x20000) {
         work->tiles = LoadObjTiles(gUnk_08B22EFE, 0x140);
         work->gfx = gUnk_08B22EE4;
     } else {
@@ -103,7 +103,7 @@ void task_btl_shadow_2(BtlShadowWork* work) {
     s32 aff;
 
     if (actor->unk_0CC != 0) {
-        if (!(actor->unk_034 & 0x0000000402000000)) {
+        if (!(actor->flags & 0x0000000402000000)) {
             anim = GetBattleSpritePriorityFlags(actor->y);
 
             if (actor->z >= 0 && gBtlWork->unk_024 == 0x100) {
@@ -270,7 +270,7 @@ s32 task_btl_hpply_1(BtlHpplyWork* work) {
         return 0;
     }
 
-    if (gBtlWork->unk_068 & 0x2000) {
+    if (gBtlWork->flags & 0x2000) {
         return 0;
     }
 
@@ -537,7 +537,7 @@ s32 task_btl_hpenm_1(BtlHpenmWork* work) {
         return 0;
     }
 
-    if (gBtlWork->unk_068 & 0x800) {
+    if (gBtlWork->flags & 0x800) {
         actor = gUnk_02039B9C->actor;
         work->unk_14 = 1;
     } else {
@@ -916,14 +916,14 @@ void task_btl_pause_0(BtlPauseWork* work) {
     work->unk_10 = 0;
     work->unk_24 = 0;
     work->unk_26 = 0;
-    gBtlWork->unk_068 |= 0x04000000;
+    gBtlWork->flags |= 0x04000000;
 }
 
 s32 task_btl_pause_1(BtlPauseWork* work) {
     s32 paused;
 
     if (GetKeysPressed() & 8) {
-        if (!(gBtlWork->unk_068 & 0x04000000)) {
+        if (!(gBtlWork->flags & 0x04000000)) {
             gBtlWork->unk_070 = gBtlWork->unk_070 == 0 ? 1 : 0;
         }
     }
@@ -1289,11 +1289,11 @@ void task_btl_escape_0(BtlEscapeWork* work) {
 }
 
 s32 task_btl_escape_1(BtlEscapeWork* work) {
-    if (gBtlWork->unk_068 & 0x0100000000000000) {
+    if (gBtlWork->flags & 0x0100000000000000) {
         return 0;
     }
 
-    if (!(gBtlWork->unk_068 & 8)) {
+    if (!(gBtlWork->flags & 8)) {
         if (work->unk_22 != 0) {
             work->unk_1C = 0;
             work->unk_22 = 0;
@@ -1309,8 +1309,8 @@ s32 task_btl_escape_1(BtlEscapeWork* work) {
 
             if (work->unk_1C >= work->unk_18) {
                 gGameState.flags |= 0x40;
-                gBtlWork->unk_068 |= 0x10;
-                gBtlWork->unk_068 |= 0x0000000200000000;
+                gBtlWork->flags |= 0x10;
+                gBtlWork->flags |= 0x0000000200000000;
                 work->unk_22 = 0;
             } else {
                 work->unk_1C += 256;
@@ -1333,7 +1333,7 @@ void task_btl_escape_2(BtlEscapeWork* work) {
     }
 
     actor = gBtlWork->actor;
-    if (actor->unk_034 & 4) {
+    if (actor->flags & 4) {
         WorldToScreen(&x, &y, actor->x - 768, actor->y, actor->z - 10240);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, 0, 0, 2);
     } else {
@@ -1482,7 +1482,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
     u64 f;
     u64 bit;
 
-    if (gBtlWork->unk_068 & 0x2000) {
+    if (gBtlWork->flags & 0x2000) {
         return 0;
     }
 
@@ -1521,7 +1521,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
 
         if (work->flags & 16) {
             hit = 0;
-            f = gBtlWork->unk_068;
+            f = gBtlWork->flags;
 
             if (f & 0x4000) {
                 d1 = DIST(work->x, gBtlWork->actor->x);
@@ -1606,7 +1606,7 @@ s32 task_btl_prize_1(BtlPrizeWork* work) {
             if (hit) {
                 m4aSongNumStart(0x6B);
 
-                if (gBtlWork->unk_068 & 0x4000) {
+                if (gBtlWork->flags & 0x4000) {
                     work->actor->unk_02C += work->unk_3A;
 
                     if (work->actor->unk_02C > work->actor->unk_02E) {
@@ -1738,7 +1738,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
     s32 tz;
     u64 f;
 
-    if (gBtlWork->unk_068 & 0x2000) {
+    if (gBtlWork->flags & 0x2000) {
         return 0;
     }
 
@@ -1777,7 +1777,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
 
         if (work->flags & 16) {
             hit = 0;
-            f = gBtlWork->unk_068;
+            f = gBtlWork->flags;
 
             if (f & 0x4000) {
                 if (f & 0x1000) {
@@ -1847,7 +1847,7 @@ s32 task_btl_premire_1(BtlPremireWork* work) {
 
             if (hit) {
                 m4aSongNumStart(0x6B);
-                gBtlWork->unk_068 |= 0x0008000000000000;
+                gBtlWork->flags |= 0x0008000000000000;
                 work->unk_28 = 0;
                 work->unk_30 = 1;
                 work->unk_28 = 0;

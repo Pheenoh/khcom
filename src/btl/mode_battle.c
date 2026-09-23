@@ -268,12 +268,12 @@ void mode_battle_0(u32 mode) {
 
     switch (mode) {
     case 0x94 ... 0x9C:
-        gBtlWork->unk_068 |= 4;
+        gBtlWork->flags |= 4;
         break;
     case 0xB2 ... 0xB8:
-        gBtlWork->unk_068 |= 0x800000000;
+        gBtlWork->flags |= 0x800000000;
     case 0x9D ... 0xB1:
-        gBtlWork->unk_068 |= 0x800;
+        gBtlWork->flags |= 0x800;
         p = &gUnk_02039B9C;
         *p = EwramAlloc(sizeof(BtlWork));
         zero = 0;
@@ -281,7 +281,7 @@ void mode_battle_0(u32 mode) {
         break;
     }
 
-    if (gBtlWork->unk_068 & 4) {
+    if (gBtlWork->flags & 4) {
         SetBgMode1();
 
         switch (mode) {
@@ -334,7 +334,7 @@ void mode_battle_0(u32 mode) {
             SetBgOverflow(2, 0);
             break;
         }
-    } else if (gBtlWork->unk_068 & 0x800000000) {
+    } else if (gBtlWork->flags & 0x800000000) {
         m4aSongNumStart(4);
         gBtlWork->unk_1C4 = 3;
         gBtlWork->unk_1C6 = 2;
@@ -345,7 +345,7 @@ void mode_battle_0(u32 mode) {
         SetBgPriority(gBtlWork->unk_1C4, 0);
         SetBgOverflow(gBtlWork->unk_1C6, 1);
         SetBgOverflow(gBtlWork->unk_1C4, 0);
-    } else if (gBtlWork->unk_068 & 0x800) {
+    } else if (gBtlWork->flags & 0x800) {
         gBtlWork->unk_1C4 = 2;
         gBtlWork->unk_1C6 = 3;
 
@@ -449,8 +449,8 @@ void mode_battle_0(u32 mode) {
         TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, 0);
     }
 
-    if (gBtlWork->unk_068 & 4) {
-        gBtlWork->unk_068 |= 0x400000000;
+    if (gBtlWork->flags & 4) {
+        gBtlWork->flags |= 0x400000000;
 
         switch (mode) {
         case 0x9A:
@@ -506,7 +506,7 @@ void mode_battle_0(u32 mode) {
             gBtlWork->unk_0B3 = 10;
             break;
         }
-    } else if (gBtlWork->unk_068 & 0x800000000) {
+    } else if (gBtlWork->flags & 0x800000000) {
         SetBattleBounds(0x68, 0x198, 0x160, 0x1A2);
 
         if (mode == 0xB2) {
@@ -519,8 +519,8 @@ void mode_battle_0(u32 mode) {
 
         gGameState.unk_00D = 11;
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
-    } else if (gBtlWork->unk_068 & 0x800) {
-        gBtlWork->unk_068 |= 0x400000000;
+    } else if (gBtlWork->flags & 0x800) {
+        gBtlWork->flags |= 0x400000000;
 
         switch (mode) {
         case 0x9E:
@@ -587,13 +587,13 @@ void mode_battle_0(u32 mode) {
         TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBtlMap, 0);
 
         if (mode == 0x79) {
-            gBtlWork->unk_068 |= 0x400000000;
+            gBtlWork->flags |= 0x400000000;
             gGameState.flags |= 0x400;
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescMonsgage, 0);
         }
     }
 
-    if (!(gBtlWork->unk_068 & 0x800000000)) {
+    if (!(gBtlWork->flags & 0x800000000)) {
         TaskCreate(&gBtlWork->taskPools[2], &gTaskDescBtlPause, 0);
     }
 
@@ -619,21 +619,21 @@ void mode_battle_1(void) {
                 gBtlWork->unk_072--;
             }
 
-            if (!(gBtlWork->unk_068 & 0x200000000000000)) {
+            if (!(gBtlWork->flags & 0x200000000000000)) {
                 func_08012824();
             }
 
             ColliderUpdateAll();
             TaskPoolDraw(&gBtlWork->taskPools[1]);
 
-            if (gBtlWork->unk_068 & 0x800000) {
-                gBtlWork->unk_068 &= ~0x800000;
+            if (gBtlWork->flags & 0x800000) {
+                gBtlWork->flags &= ~0x800000;
             }
 
             UpdatePlayTime();
         }
 
-        if (!(gBtlWork->unk_068 & 0x2000)) {
+        if (!(gBtlWork->flags & 0x2000)) {
             TaskPoolDraw(&gBtlWork->taskPools[0]);
         }
     }
@@ -647,7 +647,7 @@ void mode_battle_2(void) {
     TaskPoolDestroy(&gBtlWork->taskPools[0]);
     func_0801C104();
 
-    if (gBtlWork->unk_068 & 0x800) {
+    if (gBtlWork->flags & 0x800) {
         EwramFree(gUnk_02039B9C);
     }
 

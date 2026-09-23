@@ -32,7 +32,7 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
         return;
     }
 
-    if (obj->unk_034 & 0x402000000) {
+    if (obj->flags & 0x402000000) {
         return;
     }
 

@@ -273,7 +273,7 @@ u8 eu_0806C974(EventSeqWork* work) {
     gUnk_02039DC8->unk_54 = q->unk_08;
     gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
     gUnk_02039DC8->unk_4C = gUnk_02039DC8->unk_54 - 0x5000;
-    gUnk_02039DC8->unk_64 = 0;
+    gUnk_02039DC8->flags = 0;
     gUnk_02039DC8->unk_6C = 0;
     gUnk_02039DC8->unk_7C = 0;
     gUnk_02039DC8->unk_87 = 0;
@@ -387,7 +387,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     gUnk_02039DC8->unk_54 = q->unk_08;
     gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
     gUnk_02039DC8->unk_4C = gUnk_02039DC8->unk_54 - 0x5000;
-    gUnk_02039DC8->unk_64 = 0;
+    gUnk_02039DC8->flags = 0;
     gUnk_02039DC8->unk_6C = 0;
     gUnk_02039DC8->unk_7C = 0;
     gUnk_02039DC8->unk_87 = 0;
@@ -519,7 +519,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     }
 
     if (p->unk_38 == p->seqDef->unk_24) {
-        gUnk_02039DC8->unk_64 |= 2;
+        gUnk_02039DC8->flags |= 2;
     } else {
         s32 t = p->seqDef->keyframes->unk_14 & 0xFF0;
 
@@ -538,7 +538,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
     }
 
-    if ((gUnk_02039DC8->unk_64 & 3) == 2) {
+    if ((gUnk_02039DC8->flags & 3) == 2) {
         gUnk_02039DC8->unk_6C++;
     }
 
@@ -626,7 +626,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         BtlWorkInit();
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
-        gBtlWork->unk_068 = 0;
+        gBtlWork->flags = 0;
         p->unk_1B3 = 1;
         gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
         gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
@@ -652,7 +652,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 0);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -669,7 +669,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         SetBgPriority(2, 0);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -694,7 +694,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -714,7 +714,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -741,7 +741,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         BtlWorkInit();
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
-        gBtlWork->unk_068 = 0;
+        gBtlWork->flags = 0;
         p->unk_1B3 = 1;
         gBtlWork->x = 0x12C00;
         gBtlWork->y = 0x16800;
@@ -771,7 +771,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -788,7 +788,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -805,7 +805,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork = EwramAlloc(464);
         BtlWorkInit();
         gBtlWork->actor = (BtlObj*)p->unk_054;
-        gBtlWork->unk_068 = 4;
+        gBtlWork->flags = 4;
         TaskPoolInit(&gBtlWork->taskPools[0], 32);
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
@@ -861,8 +861,8 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     }
 
     if (p->keyframes[p->unk_1A0].unk_18 & 0x200) {
-        gUnk_02039DC8->unk_64 |= 1;
-        gUnk_02039DC8->unk_64 |= 4;
+        gUnk_02039DC8->flags |= 1;
+        gUnk_02039DC8->flags |= 4;
         p->unk_19C = 0;
         SetTaskUpdate(a, (void*)func_080700D4);
     }
@@ -1045,7 +1045,7 @@ void func_0806E7A8(EventCharaWork* p) {
         t = ListPoolFirst(&gBtlWork->pool);
 
         if (t != NULL) {
-            t->unk_034 |= 2;
+            t->flags |= 2;
         }
     }
 
@@ -3790,7 +3790,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     p->unk_29 = text;
                     p->unk_2A = text;
                     p->unk_27++;
-                    gUnk_02039DC8->unk_64 &= ~1;
+                    gUnk_02039DC8->flags &= ~1;
                     p->face.unk_08 = 1;
                     SetTaskUpdate(a, (void*)func_08072EAC);
                 }
@@ -3823,8 +3823,8 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     } else {
         p->unk_1E = 0;
 
-        if ((gUnk_02039DC8->unk_64 & 4) == 0) {
-            gUnk_02039DC8->unk_64 &= ~1;
+        if ((gUnk_02039DC8->flags & 4) == 0) {
+            gUnk_02039DC8->flags &= ~1;
         }
         gUnk_02039DC8->unk_7C = 0;
 
@@ -3922,7 +3922,7 @@ void func_080736F8(MsgWinWork* p) {
 
     if (gUnk_02039DC8->unk_6C >= e->unk_16) {
         if (p->unk_2A == 0) {
-            gUnk_02039DC8->unk_64 |= 1;
+            gUnk_02039DC8->flags |= 1;
             p->unk_2A = 1;
             p->unk_1E = 8;
 
@@ -4747,7 +4747,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
         }
     }
 
-    if (gUnk_02039DC8->unk_64 & 4) {
+    if (gUnk_02039DC8->flags & 4) {
         SetTaskUpdate(task, (u32)_08074EC8);
     }
 

@@ -14,14 +14,14 @@ void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
 s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
     BtlObj* obj;
 
-    if (!(gBtlWork->unk_068 & 0x100000)) {
+    if (!(gBtlWork->flags & 0x100000)) {
         obj = work->actor;
         if (obj->z >= 0) {
             work->unk_08 = 1;
 
             if (work->timer <= 0) {
                 if (work->unk_02 % 60 == 0) {
-                    obj->unk_034 |= 0x20000000;
+                    obj->flags |= 0x20000000;
                 }
                 work->unk_02++;
             } else {
@@ -34,7 +34,7 @@ s32 task_pc_acddmg_1(PcAcdDmgWork* work) {
                 work->timer = 0;
             }
 
-            if (!(gBtlWork->unk_068 & 0x8000)) {
+            if (!(gBtlWork->flags & 0x8000)) {
                 work->timer = 0x28;
             }
         }
@@ -46,7 +46,7 @@ void func_08049E70(PcCharaWork* work, s16 a, s32 b) {
     PcCharaWork* w = work;
     BtlObj* obj = (BtlObj*)work->unk_040;
 
-    if (obj->unk_034 & 4) {
+    if (obj->flags & 4) {
         work->unk_15C = obj->x - (a << 8);
     } else {
         work->unk_15C = obj->x + (a << 8);
@@ -86,10 +86,10 @@ s32 func_08049F50(PcCharaWork* work) {
         func_0800F368(work, 1);
 
         if (func_0800F504(work, 0x100, 0x100, 0x100)) {
-            if (gBtlWork->unk_068 & 0x8000) {
+            if (gBtlWork->flags & 0x8000) {
                 func_08049E70(work, -0x63, 0x280);
             } else if (GetRandom() & 1) {
-                if (obj->unk_034 & 4) {
+                if (obj->flags & 4) {
                     func_08049EE4(work, x + 0x2800, y);
                 } else {
                     func_08049EE4(work, x - 0x2800, y);

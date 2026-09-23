@@ -505,12 +505,12 @@ void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 s32 Task_MapEnm00_1(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080EF88C) {
+    if ((gUnk_0203C7AC->flags & 4) && p->update != func_080EF88C) {
         return 1;
     }
 
@@ -770,12 +770,12 @@ s32 Task_MapEnm01_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080EFE54) {
+    if ((gUnk_0203C7AC->flags & 4) && p->update != func_080EFE54) {
         return 1;
     }
 
@@ -806,8 +806,8 @@ void func_080EFFF8(MapEnmWork* p) {
 
     if (func_080E02E0(&p->unk_08, p->unk_C8, p->unk_CA)) {
         m4aSongNumStart(0x75);
-        gUnk_0203C7AC->unk_00 |= 0x80;
-        gUnk_0203C7AC->unk_00 |= 4;
+        gUnk_0203C7AC->flags |= 0x80;
+        gUnk_0203C7AC->flags |= 4;
         func_080E5EAC(p);
     }
     func_080E5F50(p);
@@ -825,7 +825,7 @@ s32 Task_MapEnm02_1(MapEnmWork* p) {
     MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1048,7 +1048,7 @@ s32 Task_MapEnm03_1(MapEnmWork* p) {
     MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1310,12 +1310,12 @@ s32 Task_MapEnm04_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0A44) {
+    if ((gUnk_0203C7AC->flags & 4) && p->update != func_080F0A44) {
         return 1;
     }
 
@@ -1428,12 +1428,12 @@ s32 Task_MapEnm05_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0D40) {
+    if ((gUnk_0203C7AC->flags & 4) && p->update != func_080F0D40) {
         return 1;
     }
 
@@ -1546,12 +1546,12 @@ s32 Task_MapEnm06_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
 
-    if ((gUnk_0203C7AC->unk_00 & 4) && p->update != func_080F0FC4) {
+    if ((gUnk_0203C7AC->flags & 4) && p->update != func_080F0FC4) {
         return 1;
     }
 
@@ -1833,8 +1833,8 @@ s32 func_080F173C(MapGmkEnmWork* w) {
         ApproachValue(&w->unk_000.y, w->unk_06C, w->unk_070);
         w->unk_070--;
     } else {
-        gUnk_0203C7AC->unk_00 |= 2;
-        gUnk_02039BA0->unk_70 |= 0x80;
+        gUnk_0203C7AC->flags |= 2;
+        gUnk_02039BA0->flags |= 0x80;
         gUnk_0203C7AC->unk_0E = func_080E5E44();
         w->unk_064 = 0;
     }
@@ -1941,12 +1941,12 @@ void Task_MapGmk_Dmy_3(u8* work) {
 
 u8 func_080F1978(MapGmkTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 0, 8) != 0) {
-        if ((gUnk_02039BA0->unk_70 & 0x800000) == 0 && gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+        if ((gUnk_02039BA0->flags & 0x800000) == 0 && gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
             TaskPool* pool = &w->tasks;
 
             TaskCreate(pool, &gTaskDescMapSpark, w);
             m4aSongNumStart(0xDC);
-            gUnk_0203C7AC->unk_00 |= 0x80;
+            gUnk_0203C7AC->flags |= 0x80;
             gUnk_02039BA0->unk_68 = (s32)w;
             gUnk_0203C7AC->unk_14 = (s32)w;
             w->update = func_080F1A10;
@@ -1967,8 +1967,8 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
         w->update = func_080F1A84;
     }
 
-    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
+        gUnk_0203C7AC->flags &= ~0x80;
         FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 0);
         w->update = func_080F1978;
     }
@@ -1976,7 +1976,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 }
 
 u8 func_080F1A84(MapGmkTutorialWork* w) {
-    if (gUnk_02039BA0->unk_70 & 0x200000) {
+    if (gUnk_02039BA0->flags & 0x200000) {
         UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
         w->update = func_080F1ACC;
@@ -2009,7 +2009,7 @@ void Task_MapGmk_Tutorial_0(MapGmkTutorialWork* w) {
 
 s32 Task_MapGmk_Tutorial_1(MapGmkTutorialWork* w) {
     if (w->unk_0A8 != 0 && (w->unk_06E & 2) && w->unk_074 == 1) {
-        gUnk_0203C7AC->unk_00 |= 0x200;
+        gUnk_0203C7AC->flags |= 0x200;
     }
 
     if (w->update != 0) {
@@ -2047,8 +2047,8 @@ u8 func_080F1C64(MapGmkSpiderWork* w) {
     AnimState* a = &w->anim;
 
     if (AnimIsFinished(a)) {
-        gUnk_0203C7AC->unk_00 |= 2;
-        gUnk_02039BA0->unk_70 |= 0x80;
+        gUnk_0203C7AC->flags |= 2;
+        gUnk_02039BA0->flags |= 0x80;
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 125;
         w->update = 0;
     } else {
@@ -2120,14 +2120,14 @@ s32 func_080F1E28(MapGmkGpWork* w) {
 
     if (func_080E02E0(p, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
 
         if (!(w->cell->unk_00 & 2)) {
             w->cell->unk_00 |= 2;
             func_080E84DC(p);
         }
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         w->timer = 20;
         w->update = func_080F1EA0;
     }
@@ -2138,7 +2138,7 @@ s32 func_080F1EA0(MapGmkGpWork* w) {
     if (w->timer != 0) {
         w->timer--;
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->update = func_080F1E28;
     }
     return 1;
@@ -2215,9 +2215,9 @@ u8 func_080F207C(MapGmkGp1Work* w) {
         w->gfx = AnimUpdate(&w->anim);
     } else {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
         func_080E84DC(&w->unk_004);
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         w->cell->unk_00 |= 1;
         ColliderSetDisabled(&w->collider, 1);
         AnimStart(&w->anim, 1, 0);
@@ -2232,7 +2232,7 @@ s32 func_080F2130(MapGmkGp1Work* w) {
     if (!AnimIsFinished(a)) {
         w->gfx = AnimUpdate(a);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->unk_0C6 = 0;
         w->update = 0;
     }
@@ -2303,7 +2303,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
         MapCell* e;
 
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
         e = w->cell;
 
         if ((e->unk_00 & 2) == 0) {
@@ -2311,7 +2311,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
             func_080E84DC(q);
         }
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         AnimStart(&w->anim, 1, 0);
         w->update = func_080F238C;
     }
@@ -2322,7 +2322,7 @@ u8 func_080F238C(MapGmkGpWork* w) {
     if (AnimIsFinished(&w->anim) == 0) {
         w->gfx = AnimUpdate(&w->anim);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         AnimStart(&w->anim, 0, 0);
         w->gfx = AnimGetGfx(&w->anim);
         w->update = func_080F230C;
@@ -2396,8 +2396,8 @@ u8 func_080F2594(MapGmkGpWork* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        gUnk_0203C7AC->flags |= 0x80;
         AnimStart(&w->anim, 1, 0);
         w->update = func_080F25FC;
     }
@@ -2426,7 +2426,7 @@ u8 func_080F2654(MapGmkGpWork* w) {
     if (AnimIsFinished(&w->anim) == 0) {
         w->gfx = AnimUpdate(&w->anim);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         AnimStart(&w->anim, 0, 0);
         w->gfx = AnimGetGfx(&w->anim);
         w->update = func_080F2594;
@@ -2503,10 +2503,10 @@ u8 func_080F285C(MapGmkGpWork* w) {
 
     if ((w->cell->unk_00 & 2) == 0 && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
         func_080E84DC(q);
         w->cell->unk_00 |= 2;
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         AnimStart(a, 1, 1);
         w->timer = 20;
         w->update = func_080F28F4;
@@ -2520,7 +2520,7 @@ s32 func_080F28F4(MapGmkGpWork* w) {
     if (w->timer != 0) {
         w->timer--;
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->update = 0;
     }
     return 1;
@@ -2595,10 +2595,10 @@ s32 func_080F2AF4(MapGmkGpWork* w) {
 
     if (!(w->cell->unk_00 & 2) && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
         func_080E84DC(q);
         w->cell->unk_00 |= 2;
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         AnimStart(&w->anim, 1, 0);
         w->update = func_080F2B78;
     }
@@ -2611,7 +2611,7 @@ s32 func_080F2B78(MapGmkGpWork* w) {
     if (!AnimIsFinished(a)) {
         w->gfx = AnimUpdate(a);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         AnimStart(a, 2, 0);
         w->gfx = AnimGetGfx(a);
         w->update = 0;
@@ -2691,14 +2691,14 @@ u8 func_080F2D90(MapGmkGpWork* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
 
         if ((w->cell->unk_00 & 2) == 0) {
             w->cell->unk_00 |= 2;
             func_080E84DC(q);
         }
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
 
         if (w->cell->unk_00 & 4) {
             w->cell->unk_00 &= ~4;
@@ -2720,7 +2720,7 @@ s32 func_080F2E4C(MapGmkGpWork* w) {
     if (w->timer != 0) {
         w->timer--;
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->update = func_080F2D90;
     }
     return 1;
@@ -2895,14 +2895,14 @@ s32 func_080F32F4(MapGmkGp8Work* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(*(u16*)&w->unk_0C8);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
 
         if (!(w->cell->unk_00 & 2)) {
             w->cell->unk_00 |= 2;
             func_080E84DC(q);
         }
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         a = &w->anim;
         AnimStart(a, 1, 0);
         w->unk_0C4 = AnimGetGfx(a);
@@ -2918,7 +2918,7 @@ s32 func_080F3384(MapGmkGp8Work* w) {
     if (!AnimIsFinished(a)) {
         w->unk_0C4 = AnimUpdate(a);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->unk_0CA = 0;
         w->unk_0CC = func_080F32F4;
     }
@@ -3170,7 +3170,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
     if (func_080E02E0(&w->unk_004, 8, 8)) {
         AnimState* a;
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         m4aSongNumStart(0xD0);
         a = &w->anim;
         AnimStart(a, 1, 1);
@@ -3185,12 +3185,12 @@ u8 func_080F3ADC(MapGmk01Work* w) {
     UnkStruct_080DFF1C* q = &w->unk_004;
 
     if (w->unk_000->unk_00 & 8) {
-        gUnk_0203C7AC->unk_00 |= 4;
+        gUnk_0203C7AC->flags |= 4;
         w->unk_000->unk_00 |= 2;
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkEnm, q);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapGmkEnm, q);
         w->update = 0;
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x20;
+        gUnk_0203C7AC->flags &= ~0x20;
         func_080E9078(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, gUnk_02039BA0->actor.fieldPosition.z);
         func_080DEE18(gUnk_0203C590.unk_06)->unk_00 |= 0x10;
         w->unk_000->unk_00 |= 2;
@@ -3207,7 +3207,7 @@ s32 func_080F3B84(MapGmk01Work* w) {
             w->timer--;
         }
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->update = 0;
     }
     return 1;
@@ -3231,7 +3231,7 @@ void func_080F3BC4(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
         w->gfx = AnimGetGfx(a);
         w->update = 0;
     } else {
-        gUnk_0203C7AC->unk_00 |= 0x20;
+        gUnk_0203C7AC->flags |= 0x20;
         AnimStart(a, 0, 1);
         w->gfx = AnimGetGfx(a);
         w->update = func_080F3A74;
@@ -3304,16 +3304,16 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
 
         if (r <= 1499) {
             m4aSongNumStart(0x90);
-            TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
-            gUnk_0203C7AC->unk_00 |= 0x80;
-            gUnk_0203C7AC->unk_00 |= 4;
+            TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
+            gUnk_0203C7AC->flags |= 0x80;
+            gUnk_0203C7AC->flags |= 4;
             w->unk_000->unk_00 |= 1;
-            TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapGmkSpider, w->unk_000);
+            TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapGmkSpider, w->unk_000);
             return 0;
         }
 
         m4aSongNumStart(0x90);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, p);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
 
         if (r <= 5999) {
             if ((u8)func_080E8FB8(0, p->unk_00, p->x, p->y) != 1) {
@@ -3323,7 +3323,7 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
             func_080F3D58(p);
         }
 
-        gUnk_0203C7AC->unk_00 |= 0x80;
+        gUnk_0203C7AC->flags |= 0x80;
         w->unk_000->unk_00 |= 1;
         ColliderSetDisabled(&w->collider, 1);
         AnimStart(&w->anim, 1, 0);
@@ -3345,7 +3345,7 @@ s32 func_080F3F6C(MapGmkBarrelWork* w) {
     if (!AnimIsFinished(a)) {
         w->gfx = AnimUpdate(a);
     } else {
-        gUnk_0203C7AC->unk_00 &= ~0x80;
+        gUnk_0203C7AC->flags &= ~0x80;
         w->unk_0C4 = 0;
         w->update = 0;
     }
@@ -3409,24 +3409,24 @@ void Task_MapGmk_Barrel_3(MapGmkGpWork* w) {
 }
 
 void func_080F4140(MapGmk04Work* w) {
-    if ((gUnk_0203C7AC->unk_00 & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
+    if ((gUnk_0203C7AC->flags & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
         m4aSongNumStart(0x66);
-        gUnk_02039BA0->unk_70 |= 0x1000;
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSave, 0);
+        gUnk_02039BA0->flags |= 0x1000;
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSave, 0);
         w->update = 0;
     }
 }
 
 void func_080F41A4(MapGmk04Work* w) {
-    u32 state = gUnk_0203C7AC->unk_00;
+    u32 state = gUnk_0203C7AC->flags;
 
     if (state & 0x4000) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x69);
         w->update = func_080F4258;
     } else if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
-        gUnk_0203C7AC->unk_00 = state | 0x4000;
+        gUnk_02039BA0->flags |= 0x1000;
+        gUnk_0203C7AC->flags = state | 0x4000;
         func_080A411C(&w->tasks, 0, 0x67);
         w->update = func_080F4224;
     }
@@ -3434,15 +3434,15 @@ void func_080F41A4(MapGmk04Work* w) {
 
 void func_080F4224(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSave, 0);
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSave, 0);
         w->update = 0;
     }
 }
 
 void func_080F4258(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
-        gUnk_0203C7AC->unk_00 &= ~0x4000;
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_0203C7AC->flags &= ~0x4000;
+        gUnk_02039BA0->flags &= ~0x1000;
         gGameState.progression.unk_82 |= 0x10;
         w->update = func_080F4140;
     }
@@ -3518,7 +3518,7 @@ void Task_MapGmk04_3(MapGmk04Work* w) {
 
 void func_080F445C(MapGmk05Work* w) {
     if (w->unk_0C8 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
         m4aSongNumStart(0xCF);
@@ -3620,14 +3620,14 @@ void Task_MapGmk05_3(MapGmk05Work* w) {
 
 void func_080F46FC(MapGmk06Work* w) {
     if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004 && (gGameState.progression.unk_82 & 0x100) == 0) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
-        gUnk_0203C7AC->unk_00 |= 0x4000;
+        gUnk_02039BA0->flags |= 0x1000;
+        gUnk_0203C7AC->flags |= 0x4000;
         func_080A411C(&w->tasks, 0, 0x84);
         gUnk_02039BA0->unk_6C = 30;
         w->update = func_080F47DC;
     } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
         m4aSongNumStart(0x66);
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
         w->update = func_080F47B4;
@@ -3643,8 +3643,8 @@ void func_080F47B4(MapGmk06Work* w) {
 
 void func_080F47DC(MapGmk06Work* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
-        gUnk_0203C7AC->unk_00 &= ~0x4000;
+        gUnk_02039BA0->flags &= ~0x1000;
+        gUnk_0203C7AC->flags &= ~0x4000;
         gGameState.progression.unk_82 |= 0x100;
         w->update = func_080F46FC;
     } else {
@@ -4081,7 +4081,7 @@ void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     CardDef* d;
     CardBack* q;
 
-    gUnk_0203C7AC->unk_00 |= 0x10;
+    gUnk_0203C7AC->flags |= 0x10;
     w->cardId = p->unk_14;
     d = &gCardDefs[w->cardId];
     w->tiles = LoadObjTiles(d->tiles, 0x300);
@@ -4195,7 +4195,7 @@ void Task_MapPrzCard_3(MapPrzCardWork* w) {
     ReleaseObjPalette(w->palette2);
     ReleaseObjPalette(w->palette3);
     TaskPoolDestroy(&w->tasks);
-    gUnk_0203C7AC->unk_00 &= ~0x10;
+    gUnk_0203C7AC->flags &= ~0x10;
 }
 
 void func_080F5800(MapPrzStockWork* w) {
@@ -4211,8 +4211,8 @@ void func_080F5820(MapPrzStockWork* w) {
 
 void Task_MapPrzStock_0(MapPrzStockWork* w, u16* a) {
     w->unk_00 = a;
-    gUnk_02039BA0->unk_70 |= 0x1000;
-    gUnk_02039BA0->unk_70 |= 0x80;
+    gUnk_02039BA0->flags |= 0x1000;
+    gUnk_02039BA0->flags |= 0x80;
     w->update = func_080F5800;
     TaskPoolInit(&w->tasks, 1);
 }
@@ -4236,8 +4236,8 @@ void Task_MapPrzStock_2(MapPrzStockWork* w) {
 
 void Task_MapPrzStock_3(MapPrzStockWork* w) {
     TaskPoolDestroy(&w->tasks);
-    gUnk_02039BA0->unk_70 &= ~0x1000;
-    gUnk_02039BA0->unk_70 &= ~0x80;
+    gUnk_02039BA0->flags &= ~0x1000;
+    gUnk_02039BA0->flags &= ~0x80;
 }
 
 void func_080F58C4(MapMsgWork* w, void* text) {
@@ -4262,7 +4262,7 @@ void func_080F596C(MapMsgWork* w) {
 }
 
 void func_080F59A0(MapMsgWork* w) {
-    if ((gUnk_02039BA0->unk_70 & 0x40000) == 0) {
+    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
         DisableBg(0);
     }
 
@@ -4373,7 +4373,7 @@ void Task_MapTalk_3(MapTalkWork* w) {
 
 void func_080F5C60(MapDonaldWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
             func_080A411C(&w->tasks, 0, 24);
@@ -4387,7 +4387,7 @@ void func_080F5C60(MapDonaldWork* w) {
 
 void func_080F5CDC(MapDonaldWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         w->update = func_080F5C60;
     }
 }
@@ -4488,7 +4488,7 @@ void Task_MapDonald_3(MapFrdWork* w) {
 
 void func_080F5F88(MapGoofyWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
             func_080A411C(&w->tasks, 0, 49);
@@ -4502,7 +4502,7 @@ void func_080F5F88(MapGoofyWork* w) {
 
 void func_080F6004(MapGoofyWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         w->update = func_080F5F88;
     }
 }
@@ -4603,7 +4603,7 @@ void Task_MapGoofy_3(MapFrdWork* w) {
 
 void func_080F62B0(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
 
         if (gUnk_0203C590.unk_00 == 27) {
             func_080A411C(&w->tasks, 0, 0x33);
@@ -4616,7 +4616,7 @@ void func_080F62B0(MapNamineWork* w) {
 
 void func_080F6314(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         w->update = func_080F62B0;
     }
 }
@@ -4728,7 +4728,7 @@ void Task_MapNamine_3(MapNamineWork* w) {
 
 void func_080F65EC(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         func_080A411C(&w->unk_0C4, 0, 0x34);
         w->update = func_080F6634;
     }
@@ -4736,7 +4736,7 @@ void func_080F65EC(MapNamineWork* w) {
 
 void func_080F6634(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         w->update = func_080F65EC;
     }
 }
@@ -4760,7 +4760,7 @@ void func_080F6668(MapNamineWork* w) {
     if (dx <= 0x8000 && dy <= 0x8000) {
         if (Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
             FadeStartOut(0, 16);
-            gUnk_02039BA0->unk_70 |= 0x1000;
+            gUnk_02039BA0->flags |= 0x1000;
             w->update = func_080F66E0;
         }
     }
@@ -4912,7 +4912,7 @@ void Task_MapNiseriku_3(MapMickeyWork* w) {
 
 void func_080F6A60(MapMickeyWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
 
         switch (gUnk_0203C590.unk_00) {
         case 20:
@@ -4933,7 +4933,7 @@ void func_080F6A60(MapMickeyWork* w) {
 
 void func_080F6AD8(MapMickeyWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         w->update = func_080F6A60;
     }
 }
@@ -5018,21 +5018,21 @@ void Task_MapMickey_3(MapFrdWork* w) {
 }
 
 void func_080F6D40(void) {
-    gUnk_02039BA0->unk_70 |= 0x80;
+    gUnk_02039BA0->flags |= 0x80;
     gUnk_0203C7AC->unk_0E = 10;
-    gUnk_0203C7AC->unk_00 &= ~0x4000;
-    gUnk_0203C7AC->unk_00 |= 2;
+    gUnk_0203C7AC->flags &= ~0x4000;
+    gUnk_0203C7AC->flags |= 2;
 }
 
 void func_080F6D70(MapTutorialWork* w) {
     u32 flags;
 
     if (gUnk_02039BA0->unk_68 == 0) {
-        flags = gUnk_02039BA0->unk_70;
+        flags = gUnk_02039BA0->flags;
 
-        if (!(flags & 0x2000) && !(gUnk_0203C7AC->unk_00 & 0x2000) && (gGameState.progression.unk_82 & 0x10)) {
-            gUnk_0203C7AC->unk_00 |= 0x4000;
-            gUnk_02039BA0->unk_70 = flags | 0x1000;
+        if (!(flags & 0x2000) && !(gUnk_0203C7AC->flags & 0x2000) && (gGameState.progression.unk_82 & 0x10)) {
+            gUnk_0203C7AC->flags |= 0x4000;
+            gUnk_02039BA0->flags = flags | 0x1000;
             func_080A411C(&w->tasks, 0, 0x6A);
             w->update = func_080F6DE8;
         }
@@ -5072,7 +5072,7 @@ void func_080F6EBC(MapTutorialWork* w) {
     w->z += w->vz;
 
     if (w->z > w->unk_00C) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         m4aSongNumStart(0xD7);
         w->z = w->unk_00C;
         w->vz = 0;
@@ -5085,8 +5085,8 @@ void func_080F6EBC(MapTutorialWork* w) {
 void func_080F6F1C(MapTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 8)) {
         m4aSongNumStart(0x90);
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
-        gUnk_0203C7AC->unk_00 &= ~0x20;
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, w);
+        gUnk_0203C7AC->flags &= ~0x20;
         func_080E8FB8(0, w->x, w->y, w->z);
         AnimStart(&w->anim, 1, 0);
         w->update = func_080F6F90;
@@ -5103,9 +5103,9 @@ void func_080F6F90(MapTutorialWork* w) {
 }
 
 void func_080F6FC4(MapTutorialWork* w) {
-    if ((gUnk_0203C7AC->unk_00 & 0x10) == 0) {
+    if ((gUnk_0203C7AC->flags & 0x10) == 0) {
         gGameState.progression.unk_82 |= 0x2000;
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x6B);
         w->update = func_080F7024;
     }
@@ -5158,7 +5158,7 @@ void func_080F7160(MapTutorialWork* w) {
     w->gfx = AnimUpdate(&w->anim);
 
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
+        gUnk_02039BA0->flags &= ~0x1000;
         ColliderSetDisabled(w->unk_040, 0);
         w->update = func_080F71AC;
     }
@@ -5170,15 +5170,15 @@ void func_080F71AC(MapTutorialWork* w) {
     w->gfx = AnimUpdate(a);
 
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 16)) {
-        gUnk_0203C7AC->unk_00 |= 0x80;
-        gUnk_0203C7AC->unk_00 |= 4;
-        TaskCreate(gUnk_02039BA0->unk_78, &gTaskDescMapSpark, w);
+        gUnk_0203C7AC->flags |= 0x80;
+        gUnk_0203C7AC->flags |= 4;
+        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, w);
         m4aSongNumStart(0x75);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
         SetObjTileSource(w->tiles, gUnk_08963BAC);
         w->update = func_080F7284;
     } else if (w->unk_06C != 0) {
-        if (!(gUnk_0203C7AC->unk_00 & 4) && w->unk_074 == 1) {
+        if (!(gUnk_0203C7AC->flags & 4) && w->unk_074 == 1) {
             ColliderSetDisabled(w->unk_040, 1);
             func_080F6D40();
         } else {
@@ -5205,7 +5205,7 @@ void Task_MapTutorial_0(MapTutorialWork* w) {
 
     TaskPoolInit(&w->tasks, 1);
     TaskPoolInit(&w->tasks2, 1);
-    gUnk_0203C7AC->unk_00 |= 0x20;
+    gUnk_0203C7AC->flags |= 0x20;
     w->tiles = 0;
     w->palette = 0;
     w->unk_0C2 = 0;
@@ -5216,7 +5216,7 @@ void Task_MapTutorial_0(MapTutorialWork* w) {
         w->unk_0C0 = 0;
         w->update = func_080F6D70;
     } else {
-        gUnk_02039BA0->unk_70 |= 0x1000;
+        gUnk_02039BA0->flags |= 0x1000;
         TaskCreate(&w->tasks2, &gTaskDescFldShadow, w);
         w->unk_0C0 = 1;
         w->unk_0C1 = 1;
@@ -5301,9 +5301,9 @@ void func_080F74E8(UnkStruct_080DFF1C* p) {
     if ((u8)func_080F7488(p, 0x800) != 0) {
         if (gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
-                gUnk_0203C7AC->unk_00 |= 0x100;
+                gUnk_0203C7AC->flags |= 0x100;
             } else {
-                gUnk_0203C7AC->unk_00 |= 0x400;
+                gUnk_0203C7AC->flags |= 0x400;
             }
         }
     }
@@ -5315,9 +5315,9 @@ void func_080F753C(UnkStruct_080DFF1C* p) {
     if ((u8)func_080F7488(p, k) != 0) {
         if (gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
-                gUnk_0203C7AC->unk_00 |= k;
+                gUnk_0203C7AC->flags |= k;
             } else {
-                gUnk_0203C7AC->unk_00 |= 0x200;
+                gUnk_0203C7AC->flags |= 0x200;
             }
         }
     }
@@ -5325,8 +5325,8 @@ void func_080F753C(UnkStruct_080DFF1C* p) {
 
 void func_080F7594(MapStairWork* w) {
     if ((u8)func_080F7488((UnkStruct_080DFF1C*)w, 0x3000) != 0) {
-        gUnk_02039BA0->unk_70 |= 0x1000;
-        gUnk_0203C7AC->unk_00 |= 0x4000;
+        gUnk_02039BA0->flags |= 0x1000;
+        gUnk_0203C7AC->flags |= 0x4000;
         func_080A411C(&w->tasks, 0, 0xA7);
         w->update = func_080F75E4;
     }
@@ -5334,8 +5334,8 @@ void func_080F7594(MapStairWork* w) {
 
 void func_080F75E4(MapStairWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->unk_70 &= ~0x1000;
-        gUnk_0203C7AC->unk_00 &= ~0x4000;
+        gUnk_02039BA0->flags &= ~0x1000;
+        gUnk_0203C7AC->flags &= ~0x4000;
         gGameState.progression.unk_82 |= 0x400;
         w->update = func_080F74E8;
     }
@@ -5439,7 +5439,7 @@ s32 Task_MapDmg_1(u8* work) {
     if (work[9] == 0) {
         work[8] = 0;
     } else {
-        if (gUnk_0203C7AC->unk_20 != 0 || (gUnk_0203C7AC->unk_00 & 4)) {
+        if (gUnk_0203C7AC->unk_20 != 0 || (gUnk_0203C7AC->flags & 4)) {
             *(u16*)&work[0xA] = 20;
         }
 
@@ -5501,8 +5501,8 @@ void* func_080F7AB4(void) {
 }
 
 void Task_MapFloor_0(MapFloorWork* w) {
-    gUnk_02039BA0->unk_70 |= 0x1000;
-    gUnk_02039BA0->unk_70 |= 0x80;
+    gUnk_02039BA0->flags |= 0x1000;
+    gUnk_02039BA0->flags |= 0x80;
     w->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
     w->palette = LoadObjPalette(gUnk_099910C4, 32);
     w->gfx = gUnk_09EF8DA4[0];
@@ -5541,8 +5541,8 @@ void Task_MapFloor_3(MapFloorWork* w) {
 #else
     FreeTextSlots(w->unk_18, 40);
 #endif
-    gUnk_02039BA0->unk_70 &= ~0x80;
-    gUnk_02039BA0->unk_70 &= ~0x1000;
+    gUnk_02039BA0->flags &= ~0x80;
+    gUnk_02039BA0->flags &= ~0x1000;
 }
 
 const UnkStruct_080E7D80 gUnk_0984C158 = {

@@ -1084,9 +1084,9 @@ void func_080C640C(CharaObjParam2* param) {
     gCharaObj->unk_10 = param->unk_04;
     gCharaObj->unk_24 = param->unk_08;
     gCharaObj->unk_28 = param->unk_0C;
-    gCharaObj->unk_00 = param->unk_10;
-    gCharaObj->unk_04 = param->unk_14;
-    gCharaObj->unk_08 = param->unk_18;
+    gCharaObj->x = param->unk_10;
+    gCharaObj->y = param->unk_14;
+    gCharaObj->z = param->unk_18;
     gCharaObj->unk_3A = 0;
     gCharaObj->unk_3C = -76;
     gCharaObj->unk_40 = 0;
@@ -1123,7 +1123,7 @@ u8 func_080C64A4(void) {
         break;
     case 2:
         CpuSet((void*)0x05000000, gCharaObj->unk_46, 0x200);
-        func_080149BC(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+        func_080149BC(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
         m4aSongNumStart(0x228);
         gCharaObj->unk_44++;
         break;
@@ -1210,10 +1210,10 @@ u8 func_080C64A4(void) {
         }
         break;
     case 12:
-        func_08014B30(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
-        prize.x = gCharaObj->unk_00;
-        prize.y = gCharaObj->unk_04;
-        prize.z = gCharaObj->unk_08;
+        func_08014B30(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
+        prize.x = gCharaObj->x;
+        prize.y = gCharaObj->y;
+        prize.z = gCharaObj->z;
         CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &prize);
         func_0801B918((void*)gCharaObj->unk_104C);
         gCharaObj->unk_44++;
@@ -1282,9 +1282,9 @@ void func_080C6894(CharaObjParam* param) {
     gCharaObj->unk_30 = param->unk_24;
     gCharaObj->unk_34 = param->unk_28;
     gCharaObj->unk_38 = param->unk_2C;
-    gCharaObj->unk_00 = param->unk_30;
-    gCharaObj->unk_04 = param->unk_34;
-    gCharaObj->unk_08 = param->unk_38;
+    gCharaObj->x = param->unk_30;
+    gCharaObj->y = param->unk_34;
+    gCharaObj->z = param->unk_38;
     gCharaObj->unk_3A = 0;
     gCharaObj->unk_3C = -76;
     gCharaObj->unk_40 = 0;
@@ -1336,7 +1336,7 @@ u8 func_080C69B4(void) {
         }
         break;
     case 2:
-        func_080149BC(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+        func_080149BC(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
         m4aSongNumStart(0x228);
         for (i = 0; i < 32; i++) {
             SetPaletteBankFadeEnabled(i, gCharaObj->unk_1050[i]);
@@ -1461,13 +1461,13 @@ u8 func_080C69B4(void) {
         }
         break;
     case 14:
-        prize.x = gCharaObj->unk_00;
-        prize.y = gCharaObj->unk_04;
-        prize.z = gCharaObj->unk_08;
+        prize.x = gCharaObj->x;
+        prize.y = gCharaObj->y;
+        prize.z = gCharaObj->z;
         CreateBossPrizeCardTask(&gBtlWork->taskPools[0], &prize);
         func_0801B918((void*)gCharaObj->unk_104C);
         if ((gCharaObj->unk_1090 & 1) == 0) {
-            func_08014B30(gCharaObj->unk_00, gCharaObj->unk_04 + gCharaObj->unk_08 - 0x1000);
+            func_08014B30(gCharaObj->x, gCharaObj->y + gCharaObj->z - 0x1000);
             gCharaObj->unk_42 = 0;
             gCharaObj->unk_44++;
         } else {

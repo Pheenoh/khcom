@@ -522,7 +522,7 @@ void func_08076CB4(UnkStruct_08080268* w) {
         w->unk_44[i] = 0;
     }
     w->unk_C4[1] = 0;
-    if (gBtlWork->unk_068 & 0x800000000LL) {
+    if (gBtlWork->flags & 0x800000000LL) {
         w->unk_A8[0] = gUnk_09041FA0.unk_DC + 15;
         w->unk_B0[0] = gUnk_09041FA0.unk_DC + 1;
         w->unk_A8[3] = w->unk_B0[3] = 0;
@@ -606,8 +606,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     BtlObj* actor;
 
     if (gBtlWork->unk_0A0 == 4) {
-        if (gBtlWork->unk_068 & 0x1000000) {
-            gBtlWork->unk_068 &= ~0x1000000;
+        if (gBtlWork->flags & 0x1000000) {
+            gBtlWork->flags &= ~0x1000000;
         }
         return 0;
     }
@@ -641,7 +641,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 func_0807682C(w, 0);
                 func_0807BB04();
             } else {
-                gBtlWork->unk_068 |= 0x80000000LL;
+                gBtlWork->flags |= 0x80000000LL;
                 func_0807A620(w);
                 if (gBtlWork->unk_0F4 != 25) {
                     func_0807B378(w);
@@ -741,7 +741,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                 if (gGameState.flags & 8) {
                     func_0807A620(w);
                     gUnk_02034A98 = 0;
-                    gBtlWork->unk_068 |= 0x80000000LL;
+                    gBtlWork->flags |= 0x80000000LL;
                     w->unk_B0[w->unk_B8] = 0;
                     w->unk_C0[w->unk_B8] = 1;
                 }
@@ -752,7 +752,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             gUnk_02034A9C = 0;
             if (w->unk_B9 != 0) {
                 func_0807ABC8(w);
-            } else if (!(gBtlWork->unk_068 & 0x80)) {
+            } else if (!(gBtlWork->flags & 0x80)) {
                 m4aSongNumStart(105);
             }
             w->unk_C4[4] = 1;
@@ -812,7 +812,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
 #endif
                 gUnk_02034A98 = 0;
             }
-            gBtlWork->unk_068 |= 0x80000000LL;
+            gBtlWork->flags |= 0x80000000LL;
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
             m4aSongNumStart(202);
@@ -837,7 +837,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
-            gBtlWork->unk_068 |= 0x80000000LL;
+            gBtlWork->flags |= 0x80000000LL;
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
             break;
@@ -858,7 +858,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
-            gBtlWork->unk_068 |= 0x80000000LL;
+            gBtlWork->flags |= 0x80000000LL;
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
             break;
@@ -1055,7 +1055,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (FadeGetAmount() == 0) {
                 FadeFromAmount(2, 16, 20);
             }
-            gBtlWork->unk_068 |= 0x80000000LL;
+            gBtlWork->flags |= 0x80000000LL;
             w->unk_B0[0] = 0;
             w->unk_C0[0] = 1;
             break;
@@ -1064,7 +1064,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             break;
         }
         if (gUnk_02039DD4->unk_0B8 != 950 && w->unk_C4[4] == 0 && w->unk_C0[w->unk_B8] == 0) {
-            gBtlWork->unk_068 |= 0x20000000000LL;
+            gBtlWork->flags |= 0x20000000000LL;
             func_08078BB4(w);
         }
         if (gUnk_02039DD4->unk_0BC != 950 && w->unk_C4[4] == 0 && w->unk_C0[w->unk_B8] == 0) {
@@ -1101,7 +1101,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             if (actor->unk_02C > 3) {
                 actor->unk_02C -= 2;
             }
-            gBtlWork->unk_068 |= 0x80000000LL;
+            gBtlWork->flags |= 0x80000000LL;
             if (gBtlWork->unk_0F4 != 25) {
                 func_0807B378(w);
                 if (gBtlWork->unk_0F4 == 10) {
@@ -1114,7 +1114,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         }
         if (w->unk_C4[1] == 0 && func_080782AC(w->unk_28, w->unk_B9) != 0) {
             data = gUnk_09033FD0;
-            if (!(gBtlWork->unk_068 & 0x4000)) {
+            if (!(gBtlWork->flags & 0x4000)) {
                 result = func_080AC5E8(w->unk_28, w->unk_B9, w->unk_BA, &data, flag);
             } else {
                 result = func_080AD144(w->unk_28, w->unk_B9, w->unk_BA, &data, flag, 0);
@@ -1199,8 +1199,8 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     TaskPoolUpdate(&gUnk_02039DD4->tasks);
     gUnk_02039DD4->unk_0D3 = w->unk_B9;
     w->unk_C4[4] = 0;
-    if (gBtlWork->unk_068 & 0x80000000000000LL) {
-        gBtlWork->unk_068 &= ~0x80000000000000LL;
+    if (gBtlWork->flags & 0x80000000000000LL) {
+        gBtlWork->flags &= ~0x80000000000000LL;
         w->unk_C4[1] = 0;
     }
     return 1;
@@ -1261,8 +1261,8 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
     b = 255;
 
     if (gBtlWork->unk_0A0 == 4) {
-        if (gUnk_02039B9C->unk_068 & 0x1000000) {
-            gUnk_02039B9C->unk_068 &= ~0x1000000;
+        if (gUnk_02039B9C->flags & 0x1000000) {
+            gUnk_02039B9C->flags &= ~0x1000000;
         }
 
         m4aSongNumStop(145);
@@ -1350,8 +1350,8 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
                 e->unk_78 |= 0x800;
             }
 
-            gBtlWork->unk_068 &= ~0x80000000LL;
-            gBtlWork->unk_068 &= ~0x100;
+            gBtlWork->flags &= ~0x80000000LL;
+            gBtlWork->flags &= ~0x100;
             w->unk_C4[0] = 0;
             m4aSongNumStop(145);
             gUnk_02034A9C = 0;

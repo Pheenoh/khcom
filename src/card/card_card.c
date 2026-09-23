@@ -93,10 +93,10 @@ u8 func_080782AC(CardDisplayWork** p, u8 n) {
 }
 
 void func_080782EC(void) {
-    gBtlWork->unk_068 &= ~0x80;
-    gBtlWork->unk_068 &= ~0x100;
-    gBtlWork->unk_068 &= ~0x200;
-    gBtlWork->unk_068 &= ~0x400;
+    gBtlWork->flags &= ~0x80;
+    gBtlWork->flags &= ~0x100;
+    gBtlWork->flags &= ~0x200;
+    gBtlWork->flags &= ~0x400;
 }
 
 void func_08078330(CardSlot* slots, s32 deckIndex) {
@@ -396,7 +396,7 @@ void func_08078914(UnkStruct_08078754* w, u8 n) {
                 w->slots[n][i].unk_06 = 0;
             }
 
-            if (!(gBtlWork->unk_068 & 0x800000000000)) {
+            if (!(gBtlWork->flags & 0x800000000000)) {
                 if (w->slots[n][i].unk_09 == 1) {
                     w->slots[n][i].unk_0A = 0;
                     w->slots[n][i].unk_09 = 0;
@@ -709,7 +709,7 @@ void func_08078FFC(UnkStruct_08080268* w, u8 b) {
 }
 
 void func_080791C0(UnkStruct_08080268* w) {
-    if (gBtlWork->unk_068 & 0x4800) {
+    if (gBtlWork->flags & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 == 0x30) {
             if (gUnk_02034A98->unk_A5 != 0) {
                 gUnk_02034A98->unk_A5 -= gUnk_02039DD4->unk_0C2;
@@ -724,7 +724,7 @@ void func_08079218(UnkStruct_08080268* w) {
     u8 dmg = gUnk_02039DD4->unk_0C2;
     u8 i;
 
-    if (gBtlWork->unk_068 & 0x4800) {
+    if (gBtlWork->flags & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 == 0x30) {
             if (w->unk_BA != 0) {
                 for (i = 0; i < w->unk_B9; i++) {
@@ -811,7 +811,7 @@ void func_080792F4(UnkStruct_08080268* w) {
 
     skip = 0;
 
-    if (gBtlWork->unk_068 & 0x4800) {
+    if (gBtlWork->flags & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 == 2 && gUnk_02039DD4->unk_000[0]->cardDef->unk_2A == 0 &&
             gUnk_02039DD4->unk_0E2 == 0) {
             skip = 1;
@@ -855,7 +855,7 @@ void func_080792F4(UnkStruct_08080268* w) {
         gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
     }
 
-    gBtlWork->unk_068 |= 0x800000;
+    gBtlWork->flags |= 0x800000;
 
     if ((s16)gUnk_02039DD4->unk_0C2 != n) {
         if (n == 0) {
@@ -871,9 +871,9 @@ void func_080792F4(UnkStruct_08080268* w) {
         }
 
         m4aSongNumStart(0x213);
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 &= ~0x20;
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x80;
+        gBtlWork->flags &= ~0x20;
         gUnk_02034A98->unk_78 |= 0x2000;
         func_080791C0(w);
         gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
@@ -881,15 +881,15 @@ void func_080792F4(UnkStruct_08080268* w) {
         gUnk_02039DD4->unk_0C2 = gUnk_02034A98->unk_A5;
         gBtlWork->unk_0A4 = 1;
 
-        if (!(gGameState.flags & 0x100) && func_0807BA54() != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+        if (!(gGameState.flags & 0x100) && func_0807BA54() != 0 && !(gBtlWork->flags & 0x800000000000)) {
             gUnk_02039DD4->unk_0EE = 1;
         }
     } else {
         func_080791C0(w);
         gBtlWork->unk_1CA = 0;
-        gBtlWork->unk_068 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x20;
-        gBtlWork->unk_068 &= ~0x400;
+        gBtlWork->flags &= ~0x80;
+        gBtlWork->flags &= ~0x20;
+        gBtlWork->flags &= ~0x400;
         m4aSongNumStart(204);
         gBtlWork->unk_0A4 = 1;
         gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
@@ -912,7 +912,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
     u64 flags;
 
     b = gUnk_02039B84;
-    flags = b->unk_068;
+    flags = b->flags;
     if ((flags & 0x80) == 0) {
         gUnk_02039DD4->unk_000[0] = gUnk_02034A98;
         if (b->unk_0F4 == 1) {
@@ -943,9 +943,9 @@ s32 func_08079600(UnkStruct_08080268* w) {
         gUnk_02039DD4->unk_0D0 = 1;
         gUnk_02034A98->unk_78 |= 0x2000;
         gBtlWork->unk_0A4 = 1;
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 |= 0x8000000;
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x80;
+        gBtlWork->flags |= 0x8000000;
     } else {
         if (b->unk_0A4 == 1) {
             return 1;
@@ -955,7 +955,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
         } else {
             func_080792F4(w);
         }
-        gBtlWork->unk_068 |= 0x8000000;
+        gBtlWork->flags |= 0x8000000;
     }
     w->unk_B0[w->unk_B8]--;
     if (w->unk_B0[w->unk_B8] == 1) {
@@ -1069,7 +1069,7 @@ s32 func_08079600(UnkStruct_08080268* w) {
     if (gBtlWork->unk_0F4 == 40 && (gUnk_02034A98->unk_78 & 0x100000) && w->unk_B0[w->unk_B8] == 1) {
         func_0807A620(w);
         gUnk_02034A98 = 0;
-        gBtlWork->unk_068 |= 0x80000000;
+        gBtlWork->flags |= 0x80000000;
         w->unk_B0[0] = 0;
         w->unk_C0[0] = 1;
         m4aSongNumStart(202);
@@ -1225,7 +1225,7 @@ s32 func_08079ECC(UnkStruct_08080268* w) {
         return 1;
     }
 
-    gBtlWork->unk_068 |= 0x20000000000000;
+    gBtlWork->flags |= 0x20000000000000;
     m4aSongNumStart(120);
     gUnk_02034A98->slot->unk_0A = 1;
     gUnk_02034A98->unk_A1 = 11;
@@ -1536,7 +1536,7 @@ void func_0807A6C8(UnkStruct_08080268* w) {
         }
     }
 
-    gBtlWork->unk_068 &= ~0x20;
+    gBtlWork->flags &= ~0x20;
     gUnk_02039DD4->unk_0EA = 1;
     w->unk_C9 = 0;
 }
@@ -1559,7 +1559,7 @@ void func_0807A75C(UnkStruct_08080268* w) {
     }
 
     gUnk_02039DD4->unk_0CC = 0;
-    gBtlWork->unk_068 |= 0x20;
+    gBtlWork->flags |= 0x20;
     gUnk_02039DD4->unk_0EA = 0;
     gUnk_02039DD4->unk_0E3 = 0;
     w->unk_C9 = 1;
@@ -1593,7 +1593,7 @@ void func_0807A80C(UnkStruct_08080268* w) {
 
     skip = 0;
 
-    if (gBtlWork->unk_068 & 0x4800) {
+    if (gBtlWork->flags & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 == 2 && gUnk_02039DD4->unk_000[0]->cardDef->unk_2A == 0 &&
             gUnk_02039DD4->unk_0E2 == 0) {
             skip = 1;
@@ -1637,7 +1637,7 @@ void func_0807A80C(UnkStruct_08080268* w) {
         gUnk_02039DD4->unk_000[i]->unk_78 |= 0x200000;
     }
 
-    gBtlWork->unk_068 |= 0x800000;
+    gBtlWork->flags |= 0x800000;
 
     if ((s16)gUnk_02039DD4->unk_0C2 != n) {
         if (n == 0) {
@@ -1654,24 +1654,24 @@ void func_0807A80C(UnkStruct_08080268* w) {
             }
         }
 
-        if (!(gGameState.flags & 0x100) && func_0807BA54() != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+        if (!(gGameState.flags & 0x100) && func_0807BA54() != 0 && !(gBtlWork->flags & 0x800000000000)) {
             gUnk_02039DD4->unk_0EE = 1;
         }
 
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x8000000;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 &= ~0x20;
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x8000000;
+        gBtlWork->flags |= 0x80;
+        gBtlWork->flags &= ~0x20;
         func_08079218(w);
 
 #ifndef VERSION_EU
-        if (!(gBtlWork->unk_068 & 0x4000)) {
+        if (!(gBtlWork->flags & 0x4000)) {
             r = func_080AC5E8(&w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag);
         } else {
             r = func_080AD144(&w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag, 0);
         }
 
-        if ((u16)r == 52 && (gBtlWork->unk_068 & 0x4800)) {
+        if ((u16)r == 52 && (gBtlWork->flags & 0x4800)) {
             for (i = 0; i < gUnk_02039DD4->unk_0D0; i++) {
                 if (gUnk_02039DD4->unk_000[i]->slot->unk_08 == 1) {
                     gUnk_02039DD4->unk_000[i]->slot->unk_0A = 1;
@@ -1710,13 +1710,13 @@ void func_0807A80C(UnkStruct_08080268* w) {
         m4aSongNumStart(0x213);
 
 #ifdef VERSION_EU
-        if (!(gBtlWork->unk_068 & 0x4000)) {
+        if (!(gBtlWork->flags & 0x4000)) {
             r = func_080AC5E8(&w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag);
         } else {
             r = func_080AD144(&w->unk_28, w->unk_B9, w->unk_BA, &arr, &flag, 0);
         }
 
-        if ((u16)r == 52 && (gBtlWork->unk_068 & 0x4800)) {
+        if ((u16)r == 52 && (gBtlWork->flags & 0x4800)) {
             for (i = 0; i < previousCount; i++) {
                 if (previous[i]->slot->unk_08 == 1) {
                     previous[i]->slot->unk_0A = 1;
@@ -1731,9 +1731,9 @@ void func_0807A80C(UnkStruct_08080268* w) {
     gBtlWork->unk_1CA = 0;
     func_08079218(w);
     m4aSongNumStart(204);
-    gBtlWork->unk_068 &= ~0x80;
-    gBtlWork->unk_068 &= ~0x20;
-    gBtlWork->unk_068 &= ~0x400;
+    gBtlWork->flags &= ~0x80;
+    gBtlWork->flags &= ~0x20;
+    gBtlWork->flags &= ~0x400;
     gUnk_02039DD4->unk_0E1 = 0;
     gBtlWork->unk_0A4 = 1;
 }
@@ -1758,7 +1758,7 @@ void func_0807ABC8(UnkStruct_08080268* w) {
     gUnk_02039DD4->unk_0C0 = 0;
     gUnk_02039DD4->unk_0E3 = 0;
     w->unk_C4[1] = 0;
-    flags = gBtlWork->unk_068;
+    flags = gBtlWork->flags;
 
     if ((flags & 0x80) == 0) {
         gUnk_02039DD4->unk_0D0 = w->unk_B9;
@@ -1778,9 +1778,9 @@ void func_0807ABC8(UnkStruct_08080268* w) {
 
         gUnk_02039DD4->unk_0C2 = w->unk_BA;
         gBtlWork->unk_0A4 = 1;
-        gBtlWork->unk_068 |= 0x80;
-        gBtlWork->unk_068 |= 0x400;
-        gBtlWork->unk_068 |= 0x8000000;
+        gBtlWork->flags |= 0x80;
+        gBtlWork->flags |= 0x400;
+        gBtlWork->flags |= 0x8000000;
         gUnk_02039DD4->unk_0E1 = 1;
     } else {
         if (gBtlWork->unk_0A4 == 1) {
@@ -1789,10 +1789,10 @@ void func_0807ABC8(UnkStruct_08080268* w) {
 
         if ((flags & 0x20) == 0) {
             func_0807A80C(w);
-            gBtlWork->unk_068 |= 0x8000000;
+            gBtlWork->flags |= 0x8000000;
         } else {
             func_0807A80C(w);
-            gBtlWork->unk_068 |= 0x8000000;
+            gBtlWork->flags |= 0x8000000;
         }
     }
 
@@ -1896,8 +1896,8 @@ void func_0807AF40(UnkStruct_08080268* w) {
 
     m4aSongNumStart(103);
 
-    if (gBtlWork->unk_068 & 0x1000000) {
-        gBtlWork->unk_068 &= ~0x1000000;
+    if (gBtlWork->flags & 0x1000000) {
+        gBtlWork->flags &= ~0x1000000;
     }
 
     w->unk_BC[w->unk_B8] = 0;
@@ -1969,8 +1969,8 @@ void func_0807B16C(UnkStruct_08080268* w) {
 
     m4aSongNumStart(103);
 
-    if (gBtlWork->unk_068 & 0x1000000) {
-        gBtlWork->unk_068 &= ~0x1000000;
+    if (gBtlWork->flags & 0x1000000) {
+        gBtlWork->flags &= ~0x1000000;
     }
 
     w->unk_BC[w->unk_B8] = 0;
@@ -2131,7 +2131,7 @@ void func_0807B478(CardDisplayWork* w) {
     u16* q;
     u16* q2;
 
-    if (gBtlWork->unk_068 & 0x4800) {
+    if (gBtlWork->flags & 0x4800) {
         if (gUnk_02039B9C->unk_0F4 != 41) {
             gBtlWork->unk_0F4 = gUnk_02039DD4->unk_0CC;
         } else {
@@ -2143,8 +2143,8 @@ void func_0807B478(CardDisplayWork* w) {
 
         if (*p == 41) {
 #ifdef VERSION_EU
-            if (gUnk_02039B9C->unk_0F4 == 47 && (gBtlWork->unk_068 & 0x40)) {
-                gUnk_02039B9C->unk_068 &= ~2;
+            if (gUnk_02039B9C->unk_0F4 == 47 && (gBtlWork->flags & 0x40)) {
+                gUnk_02039B9C->flags &= ~2;
             }
 #endif
             gUnk_02039DD4->unk_0CE = 0;
@@ -2440,7 +2440,7 @@ void func_0807B9EC(UnkStruct_08078754* w) {
 
 u8 func_0807BA54(void) {
     if (gGameState.flags & 8) {
-        if (!(gBtlWork->unk_068 & 0x800000000000)) {
+        if (!(gBtlWork->flags & 0x800000000000)) {
             gBtlWork->unk_1C8 += (s8)gBtlWork->unk_1CA;
         } else if ((s8)gBtlWork->unk_1CA < 0) {
             gBtlWork->unk_1C8 += (s8)gBtlWork->unk_1CA;
@@ -2453,7 +2453,7 @@ u8 func_0807BA54(void) {
         }
     }
 
-    if (gBtlWork->unk_1C8 > 29 && !(gBtlWork->unk_068 & 0x800000000000)) {
+    if (gBtlWork->unk_1C8 > 29 && !(gBtlWork->flags & 0x800000000000)) {
         return 1;
     }
 
@@ -2799,14 +2799,14 @@ void func_0807C39C(CardDisplayWork* p) {
 }
 
 u8 func_0807C3E8(CardDisplayWork* p, void* a) {
-    if (gBtlWork->unk_068 & 0x20) {
+    if (gBtlWork->flags & 0x20) {
         p->unk_9C = 8;
         p->unk_9E = 8;
         gUnk_02039DD4->unk_0D0 = 0;
         gUnk_02039DD4->unk_0C2 = 0;
-        gBtlWork->unk_068 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x20;
-        gBtlWork->unk_068 &= ~0x8000000;
+        gBtlWork->flags &= ~0x80;
+        gBtlWork->flags &= ~0x20;
+        gBtlWork->flags &= ~0x8000000;
 
         if (p->cardDef->unk_2A == 0) {
             func_0807E184();
@@ -2834,7 +2834,7 @@ u8 func_0807C4BC(CardDisplayWork* p, void* a) {
         p->unk_9C |= 0xFFFF;
     }
 
-    if (gBtlWork->unk_068 & 0x80) {
+    if (gBtlWork->flags & 0x80) {
         if (p->unk_78 & 0x2000) {
             if ((s16)p->unk_9C == 0) {
                 SetTaskUpdate(a, (void*)func_0807C3E8);
@@ -2897,18 +2897,18 @@ u8 func_0807C5D8(CardDisplayWork* w, void* a) {
         gUnk_02039DD4->unk_0E1 = 0;
         SetTaskUpdate(a, (void*)func_0807D3A0);
     }
-    if (gBtlWork->unk_068 & 0x20) {
+    if (gBtlWork->flags & 0x20) {
         w->unk_9C = 8;
         w->unk_9E = 8;
         gUnk_02039DD4->unk_0D0--;
         gUnk_02039DD4->unk_0C2 = 0;
         if (gUnk_02039DD4->unk_0D0 == 0) {
-            gBtlWork->unk_068 &= ~0x20;
-            gBtlWork->unk_068 &= ~0x80;
+            gBtlWork->flags &= ~0x20;
+            gBtlWork->flags &= ~0x80;
             func_0807E158();
         }
         gUnk_02039DD4->unk_0E1 = 0;
-        gBtlWork->unk_068 &= ~0x8000000;
+        gBtlWork->flags &= ~0x8000000;
         SetTaskUpdate(a, (void*)func_0807CE04);
     }
     return 1;
@@ -3256,7 +3256,7 @@ u8 func_0807CE9C(CardDisplayWork* p) {
     if (func_0807CE68(p)) {
         p->unk_78 &= ~0x800;
         func_0807C39C(p);
-        gBtlWork->unk_068 &= ~0x8000000;
+        gBtlWork->flags &= ~0x8000000;
         p->unk_78 &= ~0x80;
         return 0;
     }
@@ -3296,7 +3296,7 @@ u8 func_0807CFA8(CardDisplayWork* p, void* a) {
 
     func_0807D0F4(p);
 
-    if (gBtlWork->unk_068 & 0x80) {
+    if (gBtlWork->flags & 0x80) {
         if (p->unk_78 & 0x2000) {
             if ((s16)p->unk_9C == 0) {
                 SetTaskUpdate(a, (void*)func_0807C5D8);
@@ -3462,7 +3462,7 @@ u8 func_0807D3A0(CardDisplayWork* p, void* a) {
         p->unk_78 &= ~0x800;
         func_0807C39C(p);
         p->unk_78 &= ~0x80;
-        gBtlWork->unk_068 &= ~0x8000000;
+        gBtlWork->flags &= ~0x8000000;
         return 0;
     }
 
@@ -3542,7 +3542,7 @@ u8 func_0807D584(CardDisplayWork* p, void* a) {
         FadeStartOut(7, 1);
         m4aSongNumStart(0x26B);
         FadeLock();
-        gBtlWork->unk_068 |= 0x200000000000000;
+        gBtlWork->flags |= 0x200000000000000;
         SetTaskUpdate(a, (void*)func_0807D68C);
     }
 
@@ -3599,13 +3599,13 @@ u8 func_0807D7B0(CardDisplayWork* p) {
     if ((s16)gBtlWork->unk_072 == 0) {
         FadeStartIn(7, 8);
         FadeLock();
-        gBtlWork->unk_068 &= ~0x200000000000000;
+        gBtlWork->flags &= ~0x200000000000000;
 
         if (p->cardDef->unk_24 == 140) {
             func_0801C1A0(0);
         }
 
-        gBtlWork->unk_068 &= ~0x20000000000000;
+        gBtlWork->flags &= ~0x20000000000000;
         return 0;
     }
 
@@ -3819,8 +3819,8 @@ void card_reload_3(CardDisplayWork* p) {
     func_0807C39C(p);
     EwramFree(p->unk_20);
 
-    if (gBtlWork->unk_068 & 0x1000000) {
-        gBtlWork->unk_068 &= ~0x1000000;
+    if (gBtlWork->flags & 0x1000000) {
+        gBtlWork->flags &= ~0x1000000;
     }
 }
 void func_0807DD70(u8* p, void* a) {
@@ -3856,9 +3856,9 @@ void func_0807DE10(CardDisplayWork* p) {
     if ((p->unk_78 & 0x44) == 0x44) {
         if (v == 1) {
             if (*(s8*)&w[0x65] == 2) {
-                if (!(gBtlWork->unk_068 & 0x1000000)) {
+                if (!(gBtlWork->flags & 0x1000000)) {
                     m4aSongNumStart(200);
-                    gBtlWork->unk_068 |= 0x1000000;
+                    gBtlWork->flags |= 0x1000000;
                 }
 
                 if (gUnk_02039DD4->unk_108[0] == 0) {
@@ -3897,10 +3897,10 @@ void func_0807DE10(CardDisplayWork* p) {
             func_0807DDCC(p->unk_20, p);
             w[0x65] = 0;
             m4aSongNumStop(200);
-            gBtlWork->unk_068 &= ~0x1000000;
+            gBtlWork->flags &= ~0x1000000;
         }
     } else {
-        gBtlWork->unk_068 &= ~0x1000000;
+        gBtlWork->flags &= ~0x1000000;
     }
 
     if ((s16)gUnk_02039DD4->unk_0FC < 0) {
@@ -3918,7 +3918,7 @@ void func_0807DE10(CardDisplayWork* p) {
             FadeFromAmount(2, 16, 20);
         }
 
-        gBtlWork->unk_068 &= ~0x1000000;
+        gBtlWork->flags &= ~0x1000000;
     }
 }
 

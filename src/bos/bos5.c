@@ -1119,7 +1119,7 @@ u8 func_080FBAB8(MdWork* work) {
             func_080FBA14(work, 0);
         }
 
-        if (gBtlWork->unk_068 & 0x100000) {
+        if (gBtlWork->flags & 0x100000) {
             work->unk_016 = ((GetRandom() & 3) + (GetRandom() & 3)) / 2 * 20 + 60;
         } else if (work->sub[0].unk_02C * 10 / work->sub[0].unk_02E > 4) {
             work->unk_016 = (GetRandom() % 5 + GetRandom() % 5) / 2 * 30 + 30;
@@ -1584,7 +1584,7 @@ void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
     TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMdMap, (void*)&gUnk_099920E8);
-    gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;
+    gBtlWork->flags &= 0xFFFFFFFFFFEFFFFF;
     work->unk_000 = 0;
     work->unk_004 = 0;
     work->unk_014 = 0;
@@ -1861,7 +1861,7 @@ void func_080FCC14(MdFireWork* work) {
     case 3:
     case 8:
         if (GetRandom() % 100 <= 49) {
-            if ((gBtlWork->unk_068 & 0x100000) == 0) {
+            if ((gBtlWork->flags & 0x100000) == 0) {
                 _0801C1F8(0, e->unk_004, e->unk_008, e->unk_00C);
             }
         }
@@ -1955,7 +1955,7 @@ u8 func_080FCCB4(MdFireWork* work) {
                 work->unk_008--;
             } else if (ColliderIsTouchingType(work->sub.unk_040, 1) != 0) {
                 m4aSongNumStart(0x2CA);
-                gBtlWork->actor->unk_034 |= 0x20000000;
+                gBtlWork->actor->flags |= 0x20000000;
                 work->unk_008 = 60;
             }
             break;
@@ -2121,7 +2121,7 @@ void task_bos_md_fire_3(MdFireWork* work) {
 void task_bos_md_dai_0(MdDaiWork* work, s32* src) {
     u8* p;
 
-    gBtlWork->unk_068 |= 0x100000;
+    gBtlWork->flags |= 0x100000;
     work->target = (MdDaiTarget*)src[1];
     work->pool = (void*)src[0];
     work->unk_07C = 0;
@@ -2246,7 +2246,7 @@ void task_bos_md_dai_3(MdDaiWork* work) {
     ColliderUnregister(&work->collider);
     ReleaseObjPalette((void*)work->palette);
     ReleaseObjTiles((void*)work->tiles);
-    gBtlWork->unk_068 &= 0xFFFFFFFFFFEFFFFF;
+    gBtlWork->flags &= 0xFFFFFFFFFFEFFFFF;
 }
 
 void task_bos_md_hahen_0(MdHahenWork* work, s32* src) {

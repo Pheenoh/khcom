@@ -2361,15 +2361,15 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
             if ((s8)p->unk_65 == 2) {
                 switch (w->unk_40) {
                 case 1:
-                    if ((gBtlWork->unk_068 & 0x1000000) == 0) {
+                    if ((gBtlWork->flags & 0x1000000) == 0) {
                         m4aSongNumStart(200);
-                        gBtlWork->unk_068 |= 0x1000000;
+                        gBtlWork->flags |= 0x1000000;
                     }
                     break;
                 case 2:
-                    if ((gUnk_02039B9C->unk_068 & 0x1000000) == 0) {
+                    if ((gUnk_02039B9C->flags & 0x1000000) == 0) {
                         m4aSongNumStart(200);
-                        gUnk_02039B9C->unk_068 |= 0x1000000;
+                        gUnk_02039B9C->flags |= 0x1000000;
                     }
                     break;
                 }
@@ -2460,10 +2460,10 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
 
             switch (w->unk_40) {
             case 1:
-                gBtlWork->unk_068 &= ~0x1000000;
+                gBtlWork->flags &= ~0x1000000;
                 break;
             case 2:
-                gUnk_02039B9C->unk_068 &= ~0x1000000;
+                gUnk_02039B9C->flags &= ~0x1000000;
                 break;
             }
 
@@ -2510,10 +2510,10 @@ u8 Reload_Gage_1(ReloadGageWork* w, void* a) {
 
         switch (w->unk_40) {
         case 1:
-            gBtlWork->unk_068 &= ~0x1000000;
+            gBtlWork->flags &= ~0x1000000;
             break;
         case 2:
-            gUnk_02039B9C->unk_068 &= ~0x1000000;
+            gUnk_02039B9C->flags &= ~0x1000000;
             break;
         }
     }
@@ -2587,7 +2587,7 @@ void Reload_Gage_3(CardDisplayWork* p) {
 
     switch (*(s32*)&p->unk_40[0]) {
     case 1:
-        gBtlWork->unk_068 &= ~0x1000000;
+        gBtlWork->flags &= ~0x1000000;
 
         switch (gBtlWork->unk_0F4) {
         case 9:
@@ -2602,7 +2602,7 @@ void Reload_Gage_3(CardDisplayWork* p) {
         }
         break;
     case 2:
-        gUnk_02039B9C->unk_068 &= ~0x1000000;
+        gUnk_02039B9C->flags &= ~0x1000000;
 
         switch (gUnk_02039B9C->unk_0F4) {
         case 9:

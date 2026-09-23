@@ -13,10 +13,10 @@ void HumInit(HumWork* work, const HumDef* def) {
     actor->unk_0D0 = 0;
     actor->unk_0D2 = 0;
     actor->unk_0B2 = 1;
-    actor->unk_034 |= 0x40000000000000;
+    actor->flags |= 0x40000000000000;
 
     if (gBtlWork->actor->x < actor->x) {
-        actor->unk_034 |= 4;
+        actor->flags |= 4;
     }
 
     work->unk_000 = def;
@@ -47,7 +47,7 @@ void HumInit(HumWork* work, const HumDef* def) {
     gUnk_02039B9C->actor = actor;
     gBtlWork->actor3 = actor;
     actor->btl = gUnk_02039B9C;
-    actor->unk_034 |= 0x24000000000;
+    actor->flags |= 0x24000000000;
 }
 
 void HumSubInit(HumWork* work, HumSub* sub, const HumSubDef* def) {
@@ -104,7 +104,7 @@ s32 _0800E434(HumWork* work) {
     switch (r) {
     case 5:
         work->flags |= 4;
-        gUnk_02039B9C->unk_068 &= ~0x40000000;
+        gUnk_02039B9C->flags &= ~0x40000000;
         work->unk_17E = 0;
         work->unk_150 = 0;
         AnimReset(&work->anim);
@@ -195,15 +195,15 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_150 = 0;
 
             if (actor->x < x) {
-                if (actor->unk_034 & 4) {
+                if (actor->flags & 4) {
                     if (GetRandom() % 3 == 0) {
-                        actor->unk_034 &= ~4;
+                        actor->flags &= ~4;
                     }
                 }
             } else {
-                if (!(actor->unk_034 & 4)) {
+                if (!(actor->flags & 4)) {
                     if (GetRandom() % 3 == 0) {
-                        actor->unk_034 |= 4;
+                        actor->flags |= 4;
                     }
                 }
             }
@@ -222,7 +222,7 @@ s32 func_0800E5F0(HumWork* work) {
         if (work->unk_150 == 0) {
             AnimReset(&work->anim);
             ColliderSetDisabled(&actor->collider, 1);
-            actor->unk_034 |= 0x100;
+            actor->flags |= 0x100;
             work->anim.frame = 0;
             work->anim.timer = 0;
             work->unk_158 = 0x400;
@@ -259,7 +259,7 @@ s32 func_0800E5F0(HumWork* work) {
         ApproachValueHalfSteps(&work->unk_16C, 0x100, work->unk_152--);
 
         if (work->unk_152 <= 0) {
-            actor->unk_034 &= ~0x100;
+            actor->flags &= ~0x100;
             func_0801AF08(actor);
             work->unk_170 = 0;
             work->unk_150 = 0;
@@ -273,8 +273,8 @@ s32 func_0800E5F0(HumWork* work) {
             work->unk_150++;
         }
         if (AnimIsFinished(&work->anim)) {
-            actor->unk_034 &= ~0x80;
-            actor->unk_034 &= ~0x2000;
+            actor->flags &= ~0x80;
+            actor->flags &= ~0x2000;
         }
         if (GetRandom() % 3 == 0) {
             actor->unk_0EC -= 6;
@@ -401,7 +401,7 @@ s32 func_0800E5F0(HumWork* work) {
             FadeStartIn(2, 60);
             FadeLock();
             m4aSongNumStart(0x20F);
-            gBtlWork->unk_068 |= 0x400000;
+            gBtlWork->flags |= 0x400000;
             func_0801B008();
             func_0801B918(actor);
             arg.x = actor->x;

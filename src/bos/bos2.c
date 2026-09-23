@@ -98,7 +98,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
         func_0801B37C(&work->body, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
-        work->body.unk_034 |= 4;
+        work->body.flags |= 4;
         TaskCreate(&work->tasks, &gTaskDescBosJfMajin, work);
     } else {
         work->unk_220 = 0x29600;
@@ -106,18 +106,18 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_228 = -0xB400;
         sub = &work->sub;
         func_0801B37C(sub, gUnk_0961A668, work->unk_220, work->unk_224, work->unk_228);
-        sub->unk_034 |= 0x400;
-        sub->unk_034 |= 0x200000000000;
-        sub->unk_034 &= ~4;
+        sub->flags |= 0x400;
+        sub->flags |= 0x200000000000;
+        sub->flags &= ~4;
         sub->unk_024 = v2;
         work->sub.unk_0A2 = 4;
         work->unk_22C = 0x2A200;
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
         func_0801B37C(&work->body, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
-        work->body.unk_034 |= 4;
-        work->body.unk_034 |= 0x8000;
-        work->body.unk_034 |= 0x100000000;
+        work->body.flags |= 4;
+        work->body.flags |= 0x8000;
+        work->body.flags |= 0x100000000;
         work->body.unk_09E = 32;
         work->body.unk_0A0 = 40;
         work->body.unk_09C = 28;
@@ -208,8 +208,8 @@ u8 task_bos_jf_1(JfWork* work) {
         work->unk_238 = 11;
         work->unk_24C |= 4;
 
-        if (gBtlWork->unk_068 & 0x40) {
-            gBtlWork->unk_068 |= 0x400000;
+        if (gBtlWork->flags & 0x40) {
+            gBtlWork->flags |= 0x400000;
         }
     }
 
@@ -259,7 +259,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
     v1 = -((gUnk_0203ACC4 + 1) << 11);
     v2 = -((gUnk_0203ACD4 + 1) << 11);
     v3 = -((gUnk_0203ACC0 + 1) << 11);
-    gBtlWork->actor->unk_034 &= ~0x2000000;
+    gBtlWork->actor->flags &= ~0x2000000;
 
     if (gUnk_0203ACC4 > gUnk_0203ACD4) {
         lo = 0x1F600;
@@ -278,7 +278,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v2) {
                     *out = v2;
                     if (x > hi - 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v3;
                     *p = hi;
@@ -288,7 +288,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v1) {
                     *out = v1;
                     if (x > lo - 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = lo;
@@ -304,7 +304,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v1) {
                     *out = v1;
                     if (x > lo - 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = lo;
@@ -319,7 +319,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v3) {
                     *out = v3;
                     if (x < hi + 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = hi;
@@ -338,7 +338,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
             if (*a <= v1) {
                 *out = v1;
                 if (x > lo - 0x1000)
-                    gBtlWork->actor->unk_034 |= 0x2000000;
+                    gBtlWork->actor->flags |= 0x2000000;
             } else {
                 *out = v2;
                 *p = lo;
@@ -366,7 +366,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
             if (*a <= v2) {
                 *out = v2;
                 if ((x < lo + 0x1000) || (x > hi - 0x1000))
-                    gBtlWork->actor->unk_034 |= 0x2000000;
+                    gBtlWork->actor->flags |= 0x2000000;
             } else {
                 if (x <= 0x205FF) {
                     *out = v1;
@@ -392,7 +392,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v2) {
                     *out = v2;
                     if (x < lo + 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v1;
                     *p = lo;
@@ -402,7 +402,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
                 if (*a <= v3) {
                     *out = v3;
                     if (x < hi + 0x1000)
-                        gBtlWork->actor->unk_034 |= 0x2000000;
+                        gBtlWork->actor->flags |= 0x2000000;
                 } else {
                     *out = v2;
                     *p = hi;
@@ -421,7 +421,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
             if (*a <= v2) {
                 *out = v2;
                 if (x < lo + 0x1000)
-                    gBtlWork->actor->unk_034 |= 0x2000000;
+                    gBtlWork->actor->flags |= 0x2000000;
             } else {
                 *out = v1;
                 *p = lo;
@@ -442,7 +442,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
             if (*a <= v2) {
                 *out = v2;
                 if (x > hi - 0x1000)
-                    gBtlWork->actor->unk_034 |= 0x2000000;
+                    gBtlWork->actor->flags |= 0x2000000;
             } else {
                 *out = v3;
                 *p = hi;
@@ -461,7 +461,7 @@ u8 func_080BD4A8(s32* p, s32* b, s32* a, s32* out) {
             if (*a <= v3) {
                 *out = v3;
                 if (x < hi + 0x1000)
-                    gBtlWork->actor->unk_034 |= 0x2000000;
+                    gBtlWork->actor->flags |= 0x2000000;
             } else {
                 *out = v2;
                 *p = hi;
@@ -706,9 +706,9 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             d = (s16)((work->unk_38 >> 8) - (sub->x >> 8));
 
             if (d > 0) {
-                sub->unk_034 &= ~4;
+                sub->flags &= ~4;
             } else if (d < 0) {
-                sub->unk_034 |= 4;
+                sub->flags |= 4;
             }
 
             work->unk_2E = 200;
@@ -729,9 +729,9 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             d = (s16)((gBtlWork->actor->x >> 8) - (sub->x >> 8));
 
             if (d > 0) {
-                sub->unk_034 &= ~4;
+                sub->flags &= ~4;
             } else if (d < 0) {
-                sub->unk_034 |= 4;
+                sub->flags |= 4;
             }
 
             work->unk_34++;
@@ -747,7 +747,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
         break;
     case 2:
         if (work->unk_34 == 0) {
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 work->unk_38 = 0x27800;
             } else {
                 work->unk_38 = 0x19400;
@@ -756,9 +756,9 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             d = (s16)((work->unk_38 >> 8) - (sub->x >> 8));
 
             if (d > 0) {
-                sub->unk_034 &= ~4;
+                sub->flags &= ~4;
             } else if (d < 0) {
-                sub->unk_034 |= 4;
+                sub->flags |= 4;
             }
 
             work->unk_2E = 200;
@@ -780,9 +780,9 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
             d = (s16)((gBtlWork->actor->x >> 8) - (sub->x >> 8));
 
             if (d > 0) {
-                sub->unk_034 &= ~4;
+                sub->flags &= ~4;
             } else if (d < 0) {
-                sub->unk_034 |= 4;
+                sub->flags |= 4;
             }
 
             work->unk_34++;
@@ -799,7 +799,7 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
     case 4:
         if (work->unk_34 == 0) {
             work->unk_2E = 20;
-            sub->unk_034 |= 4;
+            sub->flags |= 4;
             work->unk_28 = -204;
             work->unk_34++;
         } else {
@@ -808,12 +808,12 @@ u8 task_bos_jf_lamp_1(JfLampWork* work) {
                 work->unk_2E--;
             } else {
                 if (sub->x <= 0x19400) {
-                    sub->unk_034 &= ~4;
+                    sub->flags &= ~4;
                     work->unk_28 = 204;
                 }
 
                 if (sub->x > 0x277FF) {
-                    sub->unk_034 |= 4;
+                    sub->flags |= 4;
                     work->unk_28 = -204;
                 }
 
@@ -864,7 +864,7 @@ void task_bos_jf_lamp_2(JfLampWork* work) {
 
     mode = GetBattleSpritePriorityFlags(sub->y);
 
-    if (sub->unk_034 & 4) {
+    if (sub->flags & 4) {
         mode &= 0xFFFE;
     } else {
         mode |= 1;
@@ -898,7 +898,7 @@ s32 func_080BE278(JfLampWork* work) {
     s16 v;
     s32 r;
 
-    if (work->jf->body.unk_034 & 4) {
+    if (work->jf->body.flags & 4) {
         switch (gUnk_0203B4E4) {
         case 5:
         case 6:
@@ -1154,7 +1154,7 @@ void task_bos_jf_majin_2(JfMajinWork* work) {
                   ((gBtlWork->unk_004 - (jf->body.y + jf->body.z)) >> 8) + 294);
 
     if (work->unk_2C == 1) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             pal = GetBattleSpritePriorityFlags(jf->body.y);
         } else {
             pal = GetBattleSpritePriorityFlags(jf->body.y);
@@ -1192,7 +1192,7 @@ s32 func_080BE910(void) {
 s32 func_080BE940(JfMajinWork* work) {
     s32 v;
 
-    if (work->jf->body.unk_034 & 4) {
+    if (work->jf->body.flags & 4) {
         v = gBtlWork->actor->x;
 
         if (v < 0x1EA00) {
@@ -1223,7 +1223,7 @@ void func_080BE9A0(JfMajinWork* work) {
     JfWork* jf = work->jf;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 8;
             work->unk_5C = 8;
         } else {
@@ -1267,7 +1267,7 @@ void func_080BEAE8(JfMajinWork* work) {
     JfWork* jf = work->jf;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 0;
         } else {
             jf->unk_248 = 7;
@@ -1285,7 +1285,7 @@ void func_080BEAE8(JfMajinWork* work) {
             if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
                 jf->unk_24A = 0;
 
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     work->jf->unk_248++;
 
                     if (work->jf->unk_248 > 7) {
@@ -1312,7 +1312,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 21) {
-                jf->body.unk_034 |= 0x1000000;
+                jf->body.flags |= 0x1000000;
             }
             break;
         case 1:
@@ -1322,12 +1322,12 @@ void func_080BEAE8(JfMajinWork* work) {
                 work->unk_46 = 0;
                 work->jf->unk_24A = 0;
 
-                if (jf->body.unk_034 & 4) {
-                    jf->body.unk_034 &= ~4;
+                if (jf->body.flags & 4) {
+                    jf->body.flags &= ~4;
                     jf->body.x = 0x16A00;
                     work->jf->unk_248 = 3;
                 } else {
-                    jf->body.unk_034 |= 4;
+                    jf->body.flags |= 4;
                     jf->body.x = 0x2A200;
                     work->jf->unk_248 = 3;
                 }
@@ -1341,7 +1341,7 @@ void func_080BEAE8(JfMajinWork* work) {
             if (jf->unk_24A >= gUnk_0961A6A8[jf->unk_248]) {
                 jf->unk_24A = 0;
 
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     work->jf->unk_248++;
 
                     if (work->jf->unk_248 > 7) {
@@ -1368,7 +1368,7 @@ void func_080BEAE8(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 22) {
-                jf->body.unk_034 &= ~0x1000000;
+                jf->body.flags &= ~0x1000000;
             }
             break;
         default:
@@ -1383,7 +1383,7 @@ void func_080BEDF4(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 0;
             work->unk_5C = 14;
         } else {
@@ -1403,7 +1403,7 @@ void func_080BEDF4(JfMajinWork* work) {
             if (work->jf->unk_24A >= gUnk_0961A6A8[work->jf->unk_248]) {
                 work->jf->unk_24A = 0;
 
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     work->jf->unk_248++;
 
                     if (work->jf->unk_248 > 7) {
@@ -1430,11 +1430,11 @@ void func_080BEDF4(JfMajinWork* work) {
             }
 
             if (work->unk_46 == 23) {
-                jf->body.unk_034 |= 0x1000000;
+                jf->body.flags |= 0x1000000;
             }
             break;
         case 1:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 work->jf->unk_248 = 14;
                 work->z = -0x2000 - ((gUnk_0203ACC0 + 1) << 11);
             } else {
@@ -1454,7 +1454,7 @@ void func_080BEDF4(JfMajinWork* work) {
                 work->unk_44--;
 
                 if (work->unk_44 == 30) {
-                    jf->body.unk_034 &= ~0x1000000;
+                    jf->body.flags &= ~0x1000000;
                 }
             } else {
                 work->unk_48++;
@@ -1466,7 +1466,7 @@ void func_080BEDF4(JfMajinWork* work) {
                 work->jf->unk_248++;
 
                 if (work->jf->unk_248 > work->unk_5C + 4) {
-                    if (jf->body.unk_034 & 4) {
+                    if (jf->body.flags & 4) {
                         work->jf->unk_248 = 8;
                     } else {
                         work->jf->unk_248 = 28;
@@ -1509,7 +1509,7 @@ void func_080BF160(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 19;
             work->jf->unk_24A = 0;
             work->unk_5C = 19;
@@ -1580,7 +1580,7 @@ void func_080BF160(JfMajinWork* work) {
             work->jf->unk_24A++;
             break;
         case 3:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 func_080147D8(jf->body.x - 0x3000, jf->body.y + jf->body.z + 0x1800);
                 func_08011F78(0xE8, jf->body.x - 0x3000, jf->body.y, jf->body.z + 0x1800, 30, 30, 30);
             } else {
@@ -1602,7 +1602,7 @@ void func_080BF160(JfMajinWork* work) {
             if (work->unk_46 > 20) {
                 work->unk_46 = 0;
 
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     work->x = 0x2A200;
                 } else {
                     work->x = 0x16A00;
@@ -1637,7 +1637,7 @@ void func_080BF4F4(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 25;
             work->jf->unk_24A = 0;
             work->unk_5C = 25;
@@ -1668,7 +1668,7 @@ void func_080BF4F4(JfMajinWork* work) {
             }
             break;
         case 1:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 jf->body.x += 0x100;
             } else {
                 jf->body.x -= 0x100;
@@ -1694,7 +1694,7 @@ void func_080BF4F4(JfMajinWork* work) {
             }
             break;
         case 3:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 func_08016C40(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100, 0x133, 160, 45);
             } else {
                 func_08016C40(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100, 0x133, 96, 45);
@@ -1708,14 +1708,14 @@ void func_080BF4F4(JfMajinWork* work) {
         case 4:
             jf->body.x = (work->x - 0x100) + (work->unk_44++ % 2) * 0x200;
 
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 func_08014780(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
             } else {
                 func_08014780(jf->body.x + 0x1A00, jf->body.y, jf->body.z - 0x3100);
             }
 
             if (work->unk_46 > 10 && work->unk_46 % 10 == 9) {
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     func_08011F78(0xE9, jf->body.x - 0x6400, jf->body.y + 0xA00, jf->body.z + 0x2000, 20, 20, 20);
                 } else {
                     func_08011F78(0xE9, jf->body.x + 0x6400, jf->body.y + 0xA00, jf->body.z + 0x2000, 20, 20, 20);
@@ -1755,7 +1755,7 @@ void func_080BF8C4(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 25;
             work->jf->unk_24A = 0;
             work->unk_5C = 25;
@@ -1791,7 +1791,7 @@ void func_080BF8C4(JfMajinWork* work) {
             }
             break;
         case 1:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 jf->body.x += 0x100;
             } else {
                 jf->body.x -= 0x100;
@@ -1817,7 +1817,7 @@ void func_080BF8C4(JfMajinWork* work) {
             }
             break;
         case 3:
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 work->unk_49 = 148;
                 work->unk_4C = 0x100;
                 func_08016C40(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100, 0x100, work->unk_49, 45);
@@ -1838,7 +1838,7 @@ void func_080BF8C4(JfMajinWork* work) {
         case 4:
             work->unk_44++;
 
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 jf->body.x = (work->x - 0x100) + (work->unk_44 % 2) * 0x200;
                 func_08014780(jf->body.x - 0x1A00, jf->body.y, jf->body.z - 0x3100);
 
@@ -1863,7 +1863,7 @@ void func_080BF8C4(JfMajinWork* work) {
             }
 
             if (work->unk_46 >= 11 && work->unk_46 <= 50) {
-                if (jf->body.unk_034 & 4) {
+                if (jf->body.flags & 4) {
                     func_08011F78(0xEA, jf->body.x - 0x3200 - work->unk_4A * 3 * 512, jf->body.y + 0xA00, jf->body.z + 0x2C00, 20, 20, 20);
                 } else {
                     func_08011F78(0xEA, jf->body.x + 0x3200 + work->unk_4A * 3 * 512, jf->body.y + 0xA00, jf->body.z + 0x2C00, 20, 20, 20);
@@ -1908,7 +1908,7 @@ void func_080BFDD8(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->body.x = 0x2A200;
             jf->unk_248 = 8;
         } else {
@@ -1923,14 +1923,14 @@ void func_080BFDD8(JfMajinWork* work) {
         work->unk_3C = 0;
         work->unk_2C = 1;
         work->unk_6A = 0;
-        jf->body.unk_034 &= ~0x1000000;
+        jf->body.flags &= ~0x1000000;
         func_08019190(&jf->body, 9);
         work->jf->unk_244++;
     } else if (jf->unk_244 > 60) {
         func_0801AF08(q);
         work->jf->unk_244 = 0;
 
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->jf->unk_248 = 8;
         } else {
             work->jf->unk_248 = 28;
@@ -1948,7 +1948,7 @@ void func_080BFEF0(JfMajinWork* work) {
     BtlObj* q = &jf->sub;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->body.x = 0x2A200;
             jf->unk_248 = 8;
         } else {
@@ -1963,13 +1963,13 @@ void func_080BFEF0(JfMajinWork* work) {
         work->unk_3C = 0;
         work->unk_2C = 1;
         work->unk_6A = 0;
-        jf->body.unk_034 &= ~0x1000000;
+        jf->body.flags &= ~0x1000000;
         work->jf->unk_244++;
     } else {
         func_0801AF08(q);
         work->jf->unk_244 = 0;
 
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->jf->unk_248 = 8;
         } else {
             work->jf->unk_248 = 28;
@@ -1987,7 +1987,7 @@ void func_080BFFF8(JfMajinWork* work) {
     s32 v;
 
     if (jf->unk_244 == 0) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 8;
             v = 0x2A200;
         } else {
@@ -2027,7 +2027,7 @@ void func_080BFFF8(JfMajinWork* work) {
             break;
         }
 
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             func_08014AAC(jf->body.x - 0x800, jf->body.y + jf->body.z - 0x800);
         } else {
             func_08014AAC(jf->body.x + 0x800, jf->body.y + jf->body.z - 0x800);
@@ -2126,7 +2126,7 @@ void func_080C02AC(JfMajinWork* work) {
 
     switch (jf->unk_244) {
     case 0:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             jf->unk_248 = 8;
             work->unk_5C = 8;
         } else {
@@ -2387,7 +2387,7 @@ void task_bos_jf_rock_0(JfRockWork* work, JfWork* arg) {
     work->unk_02A = 0;
     work->unk_194 = 0;
 
-    if (arg->body.unk_034 & 4) {
+    if (arg->body.flags & 4) {
         work->x2 = arg->body.x + 0x2000;
         work->y2 = arg->body.y + 0xA00;
         work->z2 = arg->body.z - 0x1900;
@@ -2517,7 +2517,7 @@ u8 task_bos_jf_rock_1(JfRockWork* work) {
         if (work->unk_15E > 3) {
             work->unk_15E = 0;
 
-            if (jf->body.unk_034 & 4) {
+            if (jf->body.flags & 4) {
                 work->x2 = jf->body.x + 0x1000;
                 work->y2 = jf->body.y + 0xA00;
                 work->z2 = jf->body.z - 0x1000;
@@ -2633,7 +2633,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     s16 y;
 
     if (work->unk_15A == 1) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             if (work->x <= 0x259FF) {
                 pal = GetBattleSpritePriorityFlags(work->y);
                 prio = 0xFD00;
@@ -2654,7 +2654,7 @@ void task_bos_jf_rock_2(JfRockWork* work) {
     }
 
     if (work->unk_17C == 1) {
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             pal = 0x400;
         } else {
             pal = 0x400;
@@ -2833,14 +2833,14 @@ void func_080C1A48(JfBorderlineWork* work) {
     case 9:
     case 10:
     case 11:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->unk_0A4 = -0x500;
         } else {
             work->unk_0A4 = 0x500;
         }
         break;
     case 3:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->unk_0A4 = -0x100;
         } else {
             work->unk_0A4 = 0x100;
@@ -2848,7 +2848,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         break;
     case 4:
     case 5:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->unk_0A4 = 0x1000;
         } else {
             work->unk_0A4 = -0x1000;
@@ -2856,7 +2856,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         break;
     case 1:
     case 2:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->unk_0A4 = -0xA00;
         } else {
             work->unk_0A4 = 0xA00;
@@ -2865,7 +2865,7 @@ void func_080C1A48(JfBorderlineWork* work) {
         work->unk_0B5 = 1;
         return;
     default:
-        if (jf->body.unk_034 & 4) {
+        if (jf->body.flags & 4) {
             work->unk_0A4 = -0x500;
         } else {
             work->unk_0A4 = 0x500;
@@ -2936,19 +2936,19 @@ void task_bos_dsd_0(DsdWork* work, void* arg) {
         work->unk_348 = -0x6400;
         w = work;
         func_0801B37C(w, &gUnk_0961A7B0, work->unk_340, work->unk_344, work->unk_348);
-        w->body[0].unk_034 |= 0x1000000;
-        w->body[0].unk_034 |= 4;
+        w->body[0].flags |= 0x1000000;
+        w->body[0].flags |= 4;
         p1 = &w->body[1];
         func_0801B37C(p1, &gUnk_0961A7B0, 0xDC00, 0x16800, -0x8C00);
-        p1->unk_034 |= 4;
-        p1->unk_034 |= 0x400;
+        p1->flags |= 4;
+        p1->flags |= 0x400;
         p1->unk_0A2 = v;
         p1->unk_09E = 16;
         p1->unk_0A0 = 16;
         p1->unk_09C = 16;
         p2 = &w->body[2];
         func_0801B37C(p2, &gUnk_0961A7B0, 0x9000, 0x16800, v);
-        p2->unk_034 |= 0x003C000001000004ULL;
+        p2->flags |= 0x003C000001000004ULL;
         p2->unk_0A2 = v;
         p2->unk_09E = 16;
         p2->unk_0A0 = 16;
@@ -2981,7 +2981,7 @@ u8 task_bos_dsd_1(DsdWork* work) {
     switch (func_0801ADAC(b)) {
     case 5:
         work->unk_334 = 2;
-        b->unk_034 |= 0x1000000;
+        b->flags |= 0x1000000;
         work->unk_350 = 0;
         break;
     case 1:
@@ -3327,7 +3327,7 @@ void func_080C297C(DsdMainWork* work, s32 x, s32 y, s32 z) {
     FadeToAmount(0, 0x14, 8);
     func_08018B04(x - 0x1400, y, z - 0xA00, 0x100);
     m4aSongNumStart(0x2D1);
-    q->unk_034 |= 0x01000000;
+    q->flags |= 0x01000000;
 }
 
 void func_080C29F4(DsdMainWork* work) {
@@ -3336,7 +3336,7 @@ void func_080C29F4(DsdMainWork* work) {
     FadeToOriginal(0, 8);
     FadeSetPaletteExcluded(0, 1);
     FadeSetPaletteExcluded(19, 1);
-    q->unk_034 &= ~0x1000000;
+    q->flags &= ~0x1000000;
 }
 
 void func_080C2A2C(DsdMainWork* work) {
@@ -3409,7 +3409,7 @@ void func_080C2A2C(DsdMainWork* work) {
             break;
         }
 
-        q->unk_034 &= ~0x1000000;
+        q->flags &= ~0x1000000;
         break;
     }
 }
@@ -3612,7 +3612,7 @@ void func_080C2FD8(DsdMainWork* work) {
         b->x = 0x7600;
         b->y = 0x16800;
         b->z = 0;
-        b->unk_034 &= ~0x1000000;
+        b->flags &= ~0x1000000;
         func_0802F1E8();
         m4aSongNumStart(0x2B9);
         func_0801801C(0x7800, 0x16800, 0, 0x100);
@@ -3661,7 +3661,7 @@ void func_080C2FD8(DsdMainWork* work) {
         break;
     case 5:
         func_080C213C(8, 0x80);
-        b->unk_034 |= 0x1000000;
+        b->flags |= 0x1000000;
         ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350++;
         break;
@@ -3713,7 +3713,7 @@ void func_080C3188(DsdMainWork* work) {
         b->x = 0x9000;
         b->y = 0x16800;
         b->z = 0;
-        b->unk_034 &= ~0x1000000;
+        b->flags &= ~0x1000000;
         work->dsd->unk_350++;
         break;
     case 3:
@@ -3739,7 +3739,7 @@ void func_080C3188(DsdMainWork* work) {
         work->unk_00A = 27;
         work->dsd->unk_356 = 0;
         work->unk_006 = 0;
-        b->unk_034 |= 0x1000000;
+        b->flags |= 0x1000000;
         work->dsd->unk_350++;
         break;
     case 5:
@@ -3768,7 +3768,7 @@ void func_080C3188(DsdMainWork* work) {
 
         while (e != 0) {
             if (e->unk_000 == 0) {
-                e->unk_034 |= 0x40;
+                e->flags |= 0x40;
                 m4aSongNumStart(0x227);
             }
 
@@ -3954,13 +3954,13 @@ void func_080C386C(DsdMainWork* work) {
 
     if (d->unk_330 == 2 || d->unk_330 == 3) {
         func_0801AF08(a);
-        b->unk_034 |= 0x1000000;
+        b->flags |= 0x1000000;
         ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350 = 0;
         work->dsd->unk_334 = 0;
     } else if (d->unk_350 > 60) {
         func_0801AF08(a);
-        b->unk_034 |= 0x1000000;
+        b->flags |= 0x1000000;
         ColliderSetDisabled(&b->collider, 1);
         work->dsd->unk_350 = 0;
         work->dsd->unk_334 = 0;
@@ -3983,7 +3983,7 @@ void func_080C3928(DsdMainWork* work) {
 
         while (e != 0) {
             if (e->unk_000 == 0) {
-                e->unk_034 |= 0x40;
+                e->flags |= 0x40;
                 m4aSongNumStart(0x227);
             }
 

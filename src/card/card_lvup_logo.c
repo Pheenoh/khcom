@@ -121,7 +121,7 @@ u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool) {
 
     gUnk_02034AF8 = 0;
 
-    if (gBtlWork->unk_068 & 0x20000) {
+    if (gBtlWork->flags & 0x20000) {
         return 0;
     }
 
@@ -130,7 +130,7 @@ u8 func_080A1B4C(UnkStruct_080A1B4C* p, void* pool) {
     args.unk_08 = 0;
     args.unk_0C = p;
     TaskCreate(pool, &gTaskDescLVUPEFFECT, &args);
-    gBtlWork->unk_068 |= 0x20000;
+    gBtlWork->flags |= 0x20000;
     return 1;
 }
 

@@ -437,7 +437,7 @@ u8 task_bos_tm_1(TmWork* w) {
     gUnk_0203AB3C = gBtlWork->actor->z >> 8;
     gUnk_0203AB48 = gBtlWork->unk_0D0 >> 8;
 
-    if ((gBtlWork->unk_068 & 0x20000000) && w->unk_2C != 13) {
+    if ((gBtlWork->flags & 0x20000000) && w->unk_2C != 13) {
         if (gBtlWork->actor->unk_01C <= -0x2D00) {
             gBtlWork->unk_0D8 = -10;
         } else {
@@ -485,8 +485,8 @@ void func_080B8334(BtlObj* p, s16 a, s16 b, s16 c) {
     p->unk_09E = 14;
     p->unk_0A0 = 40;
     p->unk_09C = 28;
-    p->unk_034 |= 0x400;
-    p->unk_034 |= 4;
+    p->flags |= 0x400;
+    p->flags |= 4;
 }
 
 void func_080B83A4(BtlObj* p, s16 a, s16 b, s16 c) {
@@ -931,9 +931,9 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
     }
 
     if (b->tm->unk_08 < 0x8E00 || b->tm->unk_08 > 0x16F00) {
-        a->unk_034 |= 0x100;
+        a->flags |= 0x100;
     } else {
-        a->unk_034 &= ~0x100;
+        a->flags &= ~0x100;
     }
 
     switch (func_0801ADAC(a)) {
@@ -1083,7 +1083,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             func_080B89B0(work);
             if (work->tm->unk_08 <= 0x8E00) {
                 work->tm->flags &= ~0x20;
-                work->body2.unk_034 &= ~4;
+                work->body2.flags &= ~4;
                 work->tm->unk_2C = 5;
                 work->tm->unk_3C = 5;
                 func_080B8324(work);
@@ -1119,7 +1119,7 @@ u8 task_bos_tm_body_1(TmBodyWork* work) {
             func_080B89B0(work);
             if (work->tm->unk_08 > 0x16EFF) {
                 work->tm->flags |= 0x20;
-                work->body2.unk_034 |= 4;
+                work->body2.flags |= 4;
                 work->tm->unk_2C = 7;
                 work->tm->unk_3C = 7;
                 func_080B8324(work);

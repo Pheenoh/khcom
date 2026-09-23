@@ -548,7 +548,7 @@ s32 func_080DF548(u8 a) {
     u8* p;
     u8* q;
 
-    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->flags < 0) {
         return 0;
     }
 
@@ -943,7 +943,7 @@ MapCell* func_080DFB8C(s32 x, s32 y) {
     s16 a = x / 0x2000;
     s16 b = y / 0x1000;
 
-    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->flags < 0) {
         return func_080E58F8(a, b);
     }
 
@@ -966,7 +966,7 @@ u8 func_080DFBDC(UnkStruct_080DFF1C* p) {
 }
 
 u8 func_080DFC24(void) {
-    if (gUnk_0203C7AC->unk_00 & 0x100) {
+    if (gUnk_0203C7AC->flags & 0x100) {
         if (gUnk_0203C590.unk_04 != 0) {
             return 2;
         }
@@ -983,7 +983,7 @@ u8 func_080DFC24(void) {
 }
 
 void func_080DFC7C(void) {
-    gUnk_0203C7AC->unk_00 &= ~0x100;
+    gUnk_0203C7AC->flags &= ~0x100;
 }
 
 u8 func_080DFC94(UnkStruct_080DFF1C* p, s32 x, s32 y) {
@@ -1017,7 +1017,7 @@ u8 func_080DFCDC(UnkStruct_080DFF1C* p) {
     UnkStruct_080DFB7C* e;
     u8 r = 0;
 
-    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
+    if ((s32)gUnk_0203C7AC->flags < 0) {
         return 0;
     }
 
@@ -1051,8 +1051,8 @@ u8 func_080DFD84(UnkStruct_080DFF1C* p) {
     u16 b;
     UnkStruct_080DFB7C* e;
 
-    if ((s32)gUnk_0203C7AC->unk_00 < 0) {
-        return (u32)gUnk_0203C7AC->unk_00 >> 9 & 1;
+    if ((s32)gUnk_0203C7AC->flags < 0) {
+        return (u32)gUnk_0203C7AC->flags >> 9 & 1;
     }
 
     if (p->y != p->z) {

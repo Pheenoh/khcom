@@ -108,7 +108,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     SetBattleBounds(128, 368, 576, 632);
     func_0801B37C(&work->actor, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
     work->actor.unk_010 = -0x2000;
-    work->actor.unk_034 |= 4;
+    work->actor.flags |= 4;
     func_0801C2DC(&work->actor, 1);
     work->unk_150 = 0;
     work->unk_154 = 0;
@@ -300,17 +300,17 @@ u8 task_bos_boogie_1(BoogieWork* work) {
         if ((random & 255) == 0 && work->unk_174 == 0) {
             work->unk_000 = 0;
             work->timer = 0;
-        } else if (a->unk_034 & 4) {
+        } else if (a->flags & 4) {
             a->x -= 256;
             if (a->x <= 0xA000) {
                 a->x = 0xA000;
-                a->unk_034 &= ~4ULL;
+                a->flags &= ~4ULL;
             }
         } else {
             a->x += 256;
             if (a->x >= 0x15000) {
                 a->x = 0x15000;
-                a->unk_034 |= 4;
+                a->flags |= 4;
             }
         }
         break;
@@ -426,7 +426,7 @@ void task_bos_boogie_2(BoogieWork* work) {
     a = &work->actor;
     f = GetBattleSpritePriorityFlags(a->y);
 
-    if (!(a->unk_034 & 4)) {
+    if (!(a->flags & 4)) {
         f |= 1;
     }
 
@@ -454,7 +454,7 @@ void func_080D9A14(void) {
     t = ListPoolFirst(&gBtlWork->pool);
     while (t != 0) {
         if (t->unk_000 != 39) {
-            t->unk_034 |= 0x40;
+            t->flags |= 0x40;
             t->unk_024 = 0;
         }
         t = ListPoolNext(&t->node);

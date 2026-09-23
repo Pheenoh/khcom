@@ -57,8 +57,8 @@ s32 task_monsgage_1(MonsgageWork* work) {
                 }
             }
 
-            if (gBtlWork->unk_068 & 0x10000) {
-                gBtlWork->unk_068 &= ~0x10000;
+            if (gBtlWork->flags & 0x10000) {
+                gBtlWork->flags &= ~0x10000;
                 work->unk_1C = 0;
                 work->unk_0C += 25;
                 if (work->unk_0C <= 255) {
@@ -75,8 +75,8 @@ s32 task_monsgage_1(MonsgageWork* work) {
             if (work->unk_1C == 0) {
                 work->gfx2 = gUnk_08B25590;
                 work->gfx = gUnk_08B2559A;
-                gBtlWork->unk_068 |= 0x0100000000000000;
-                gBtlWork->unk_068 |= 0x100000;
+                gBtlWork->flags |= 0x0100000000000000;
+                gBtlWork->flags |= 0x100000;
             }
 
             if (work->unk_1C % 8 < 4) {
@@ -86,7 +86,7 @@ s32 task_monsgage_1(MonsgageWork* work) {
             }
 
             if (work->unk_1C > 99 && gBtlWork->unk_0EE == 0) {
-                gBtlWork->unk_068 |= 0x200000000;
+                gBtlWork->flags |= 0x200000000;
             }
             work->unk_1C++;
             break;
@@ -203,8 +203,8 @@ s32 eu_0805EA44(MonsgageWork* work) {
                 work->gfx2 = gUnkEu_08B4FB88;
             }
 
-            if (gBtlWork->unk_068 & 0x10000) {
-                gBtlWork->unk_068 &= ~0x10000;
+            if (gBtlWork->flags & 0x10000) {
+                gBtlWork->flags &= ~0x10000;
                 work->unk_0C += 20;
                 if (work->unk_0C > 255) {
                     work->unk_0C = 256;
@@ -237,8 +237,8 @@ s32 eu_0805EA44(MonsgageWork* work) {
                 }
             }
 
-            if (gBtlWork->unk_068 & 0x10000) {
-                gBtlWork->unk_068 &= ~0x10000;
+            if (gBtlWork->flags & 0x10000) {
+                gBtlWork->flags &= ~0x10000;
                 work->unk_1C = 0;
                 work->unk_0C += 20;
                 if (work->unk_0C <= 255) {
@@ -255,8 +255,8 @@ s32 eu_0805EA44(MonsgageWork* work) {
             if (work->unk_1C == 0) {
                 work->gfx2 = gUnkEu_08B4FB9C;
                 work->gfx = gUnkEu_08B4FBA6;
-                gBtlWork->unk_068 |= 0x0100000000000000;
-                gBtlWork->unk_068 |= 0x100000;
+                gBtlWork->flags |= 0x0100000000000000;
+                gBtlWork->flags |= 0x100000;
             }
 
             if (work->unk_1C % 8 < 4) {
@@ -266,7 +266,7 @@ s32 eu_0805EA44(MonsgageWork* work) {
             }
 
             if (work->unk_1C > 99 && gBtlWork->unk_0EE == 0) {
-                gBtlWork->unk_068 |= 0x200000000;
+                gBtlWork->flags |= 0x200000000;
             }
             work->unk_1C++;
             break;

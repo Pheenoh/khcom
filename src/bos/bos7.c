@@ -277,9 +277,9 @@ u8 task_bos_lst_fld_1(LstFldWork* work) {
     default:
         a = (gBtlWork->x2 - gBtlWork->x) >> 3;
 
-        if (gBtlWork->unk_068 & 0x2000000000000) {
+        if (gBtlWork->flags & 0x2000000000000) {
             b = (gBtlWork->y2 - gBtlWork->y) >> 3;
-        } else if (gBtlWork->unk_068 & 0x200000) {
+        } else if (gBtlWork->flags & 0x200000) {
             if (gBtlWork->actor->z < -0xA000) {
                 b = (gBtlWork->actor->y + gBtlWork->actor->z -
                       gBtlWork->y) >> 3;
@@ -935,7 +935,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
         break;
     case 1:
         if (work->unk_006 == 0) {
-            if (gBtlWork->unk_068 & 0x2000000000000) {
+            if (gBtlWork->flags & 0x2000000000000) {
                 work->unk_050 = (GetRandom() % 113 << 8) + 0xC000;
 #ifndef VERSION_EU
                 work->unk_054 = gBtlWork->actor->y;
@@ -952,7 +952,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
             AnimChange(&work->anim, gUnk_09EF9EA4[work->unk_000].unk_00, 1);
         }
 
-        if (!(gBtlWork->unk_068 & 0x2000000000000)) {
+        if (!(gBtlWork->flags & 0x2000000000000)) {
             if (gBtlWork->actor->z > -0xC000) {
                 work->unk_058 = -0x6000;
             } else {
@@ -1095,7 +1095,7 @@ u8 task_bos_lst_bit_1(LstState* work) {
     WorldToScreen(&x1, &y1, work->unk_028 + work->unk_034, work->unk_02C + work->unk_038,
                   work->unk_030 + work->unk_03C);
 
-    if (gBtlWork->unk_068 & 0x2000000000000) {
+    if (gBtlWork->flags & 0x2000000000000) {
         WorldToScreen(&x2, &y2, work->unk_068, work->unk_06C, work->unk_070);
         work->angle += 2;
     } else {

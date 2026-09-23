@@ -234,7 +234,7 @@ void func_0805A95C(s16 a, s16 b, u16** c, const u16* d, const u16* e, s16 f, s16
     gJiminyWork->x2 = f + 56;
     gJiminyWork->y = g - 10;
     gJiminyWork->y2 = g + h * (a - 1) + 12;
-    gJiminyWork->unk_CAC = (gJiminyWork->unk_CAC & 0xFFE5) | 4;
+    gJiminyWork->flags = (gJiminyWork->flags & 0xFFE5) | 4;
     gJiminyWork->unk_C70 = 0;
     func_0805A4D8(gJiminyWork->unk_CAE - 24, gJiminyWork->unk_CB0 - 4,
         gJiminyWork->unk_CB2);
@@ -260,16 +260,16 @@ u8 func_0805AA9C(void) {
     }
 
     if (gJiminyWork->unk_C74 < gJiminyWork->unk_C72) {
-        gJiminyWork->unk_CAC |= 8;
+        gJiminyWork->flags |= 8;
     } else {
-        gJiminyWork->unk_CAC &= 0xFFF7;
+        gJiminyWork->flags &= 0xFFF7;
     }
 
     if (gJiminyWork->unk_C78 - gJiminyWork->unk_C74 <
         gJiminyWork->unk_C76 - gJiminyWork->unk_C72) {
-        gJiminyWork->unk_CAC |= 0x10;
+        gJiminyWork->flags |= 0x10;
     } else {
-        gJiminyWork->unk_CAC &= 0xFFEF;
+        gJiminyWork->flags &= 0xFFEF;
     }
 
     if (gJiminyWork->unk_CC0 <= 0) {

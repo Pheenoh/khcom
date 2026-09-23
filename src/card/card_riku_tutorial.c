@@ -144,7 +144,7 @@ s32 func_080ABA80(s32* out) {
 #endif
         gUnk_02039DD4->unk_0DD = 1;
 
-        if ((gGameState.flags & 8) && gBtlWork->unk_0A4 == 1 && !(gBtlWork->unk_068 & 0x800000000000)) {
+        if ((gGameState.flags & 8) && gBtlWork->unk_0A4 == 1 && !(gBtlWork->flags & 0x800000000000)) {
             if (gUnk_02039DD4->unk_0EE == 1 || gBtlWork->unk_1C8 > 29) {
                 gUnk_02039DD4->unk_0EE = 0;
                 return 46;
@@ -307,7 +307,7 @@ s32 func_080ABCA4(s32* out, void* b) {
 #endif
         gUnk_02039DD4->unk_0DD = 1;
 
-        if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+        if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->flags & 0x800000000000)) {
             if (gUnk_02039DD4->unk_0EE == 1 || gBtlWork->unk_1C8 > 29) {
                 gUnk_02039DD4->unk_0EE = 0;
                 return 46;
@@ -764,7 +764,7 @@ s32 func_080AC5E8(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
         v[i] = (*(i + g->unk_000))->cardDef->unk_28;
     }
 
-    if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+    if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->flags & 0x800000000000)) {
         if (gUnk_02039DD4->unk_0EE == 1 || (s16)gBtlWork->unk_1C8 > 29) {
             gUnk_02039DD4->unk_0EE = 0;
             return 108;
@@ -915,7 +915,7 @@ s32 func_080AC5E8(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
         }
         break;
     case 0xE95A5695:
-        if (gBtlWork->unk_068 & 0x800000000000) {
+        if (gBtlWork->flags & 0x800000000000) {
             if ((u16)(kind - 5) <= 10) {
                 return 82;
             }
@@ -1130,7 +1130,7 @@ s32 func_080AD144(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
         v[i] = (*(i + g->unk_000))->cardDef->unk_28;
     }
 
-    if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->unk_068 & 0x800000000000)) {
+    if ((gGameState.flags & 8) && gBtlWork->unk_0A4 != 0 && !(gBtlWork->flags & 0x800000000000)) {
         if (gUnk_02039DD4->unk_0EE == 1 || (s16)gBtlWork->unk_1C8 > 29) {
             gUnk_02039DD4->unk_0EE = 0;
             return 108;
@@ -1281,7 +1281,7 @@ s32 func_080AD144(UnkStruct_02039DD4* g, u8 count, u8 kind, UnkStruct_080ABA80* 
         }
         break;
     case 0xE95A5695:
-        if (gBtlWork->unk_068 & 0x800000000000) {
+        if (gBtlWork->flags & 0x800000000000) {
             if ((u16)(kind - 5) <= 10) {
                 return 82;
             }

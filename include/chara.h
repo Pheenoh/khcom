@@ -100,9 +100,9 @@ typedef struct CharaObjParam2 {
 } CharaObjParam2;
 
 typedef struct CharaObj {
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
+    u32 x;
+    u32 y;
+    u32 z;
     u32 unk_0C;
     u16 unk_10;
     u8 unk_12[0x02];

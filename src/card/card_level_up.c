@@ -141,7 +141,7 @@ void Level_Up_0(LevelUpWork* w) {
         AnimInit(&w->anim2, gUnk_09EDF38C, gUnk_09EDF374);
         AnimStart(&w->anim2, 0, 1);
     }
-    if (gBtlWork->unk_068 & 0x2000) {
+    if (gBtlWork->flags & 0x2000) {
         w->x7 = 0x1C400;
         w->y6 = 0x5000;
     } else {
@@ -149,7 +149,7 @@ void Level_Up_0(LevelUpWork* w) {
         w->y6 = y << 8;
     }
     w->gfx = AnimGetGfx(&w->anim2);
-    if (!(gBtlWork->unk_068 & 4)) {
+    if (!(gBtlWork->flags & 4)) {
         w->unk_7C6 = 0;
         gDispCnt = (gDispCnt & 0xFFF8) | 1;
         gBg1Cnt &= 0xFF7F;
@@ -1982,8 +1982,8 @@ void LVUP_EFFECT_3(u8* work) {
     ReleaseObjPalette(*(void**)&work[0x04]);
     TaskPoolDestroy(&work[0x98]);
 
-    if (gBtlWork->unk_068 & 0x20000) {
-        gBtlWork->unk_068 &= ~0x20000;
+    if (gBtlWork->flags & 0x20000) {
+        gBtlWork->flags &= ~0x20000;
     }
 }
 

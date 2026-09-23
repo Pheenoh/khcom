@@ -167,7 +167,7 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
         w->unk_F9++;
     }
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         return 0;
     }
 
@@ -225,7 +225,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
     w->y2 = w->unk_AC >> 8;
     func_08096638(w);
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         return 0;
     }
 
@@ -268,7 +268,7 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 
     TaskPoolUpdate(&w->unk_20);
 
-    if (gUnk_02039BA0->unk_70 & 0x40000) {
+    if (gUnk_02039BA0->flags & 0x40000) {
         return 0;
     }
 
@@ -284,7 +284,7 @@ u8 func_08096390(PrizeCardWork* w) {
     w->unk_E0 -= 10;
     w->unk_E2 -= 10;
 
-    if (w->unk_E0 > 10 && !(gUnk_02039BA0->unk_70 & 0x40000)) {
+    if (w->unk_E0 > 10 && !(gUnk_02039BA0->flags & 0x40000)) {
         return 1;
     }
 

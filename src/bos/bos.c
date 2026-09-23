@@ -98,7 +98,7 @@ void task_bos_shadow_2(BosShadowWork* work) {
         size = 0xB3;
     }
 
-    if (work->actor->unk_034 & 0x20000) {
+    if (work->actor->flags & 0x20000) {
         size += 0x100;
         flip = 1;
     }

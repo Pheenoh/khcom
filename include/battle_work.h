@@ -22,7 +22,7 @@ typedef struct BtlWork {
     s32 unk_024;
     s32 unk_028;
     TaskPool taskPools[3];
-    u64 unk_068;
+    u64 flags;
     u8 unk_070;
     u8 unk_071;
     s16 unk_072;
@@ -44,7 +44,7 @@ typedef struct BtlWork {
     u8 unk_0B5[0x03];
     s32 x3;
     s32 y3;
-    s32 unk_0C0;
+    s32 z3;
     s16 unk_0C4;
     s16 unk_0C6;
     s16 unk_0C8;

@@ -9,8 +9,8 @@ void task_roomcreate_0(RoomCreateWork* work) {
     FldActor* act;
 
     func_08093C04();
-    gUnk_02039BA0->unk_70 |= 0x40000;
-    gUnk_02039BA0->unk_70 |= 2;
+    gUnk_02039BA0->flags |= 0x40000;
+    gUnk_02039BA0->flags |= 2;
     work->unk_29 = 0;
     work->unk_28 = 0;
     work->unk_26 = 0;
@@ -41,7 +41,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         if (work->unk_26 == 0) {
             gUnk_02039BA0->actor.angle = work->angle + 0x80;
             TaskCreate(&work->tasks, &gTaskDescSpotLight, &work->unk_28);
-            gUnk_02039BA0->unk_70 |= 0x80000;
+            gUnk_02039BA0->flags |= 0x80000;
         }
         steps = 30 - work->unk_26;
         ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->unk_18, steps);
@@ -51,7 +51,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         if (steps <= 1) {
             func_080E0418();
             work->state = 1;
-            gUnk_02039BA0->unk_70 &= ~0x80000;
+            gUnk_02039BA0->flags &= ~0x80000;
             work->unk_26 = 8;
         } else {
             func_080E0298((gUnk_02039BA0->actor.fieldPosition.x + work->x2) / 2,
@@ -86,7 +86,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 3:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->unk_70 |= 0x100000;
+            gUnk_02039BA0->flags |= 0x100000;
             DisableBg(2);
             DisableBg(3);
             FadeStartIn(0, 1);
@@ -115,13 +115,13 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         }
 
         if (work->unk_26 == 40) {
-            gUnk_02039BA0->unk_70 |= 0x200000;
+            gUnk_02039BA0->flags |= 0x200000;
         }
 
         if (work->unk_26 > 60) {
             work->unk_26 = 0;
             work->state = 6;
-            gUnk_02039BA0->unk_70 &= ~0x100000;
+            gUnk_02039BA0->flags &= ~0x100000;
         } else {
             work->unk_26++;
         }
@@ -137,7 +137,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 2:
         if (work->unk_26 == 0) {
             work->unk_28 = 1;
-            gUnk_02039BA0->unk_70 |= 0x80000;
+            gUnk_02039BA0->flags |= 0x80000;
         }
         steps = 30 - work->unk_26;
         ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x, steps);
@@ -146,8 +146,8 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
 
         if (steps <= 1) {
             gUnk_02039BA0->actor.angle = work->unk_25;
-            gUnk_02039BA0->unk_70 &= ~0x40000;
-            gUnk_02039BA0->unk_70 &= ~2;
+            gUnk_02039BA0->flags &= ~0x40000;
+            gUnk_02039BA0->flags &= ~2;
             DisableBg(0);
             SetBgPriority(1, 1);
             return 0;
@@ -158,7 +158,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 6:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->unk_70 |= 0x80000;
+            gUnk_02039BA0->flags |= 0x80000;
         }
         steps = 40 - work->unk_26;
         ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x2, steps);
@@ -166,7 +166,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->z2, steps);
 
         if (func_080DFD84(&gUnk_02039BA0->actor.fieldPosition)) {
-            gUnk_02039BA0->unk_70 |= 0x10;
+            gUnk_02039BA0->flags |= 0x10;
         }
         break;
     case 7:

@@ -49,7 +49,7 @@ typedef struct EventState {
     s32 x;
     s32 y;
     s32 unk_60;
-    u32 unk_64;
+    u32 flags;
     s16 unk_68;
     s16 unk_6A;
     u16 unk_6C;

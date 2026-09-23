@@ -42,7 +42,7 @@ void mode_vsbattle_0(u32 mode) {
         arg.unk_04 = 0;
         arg.unk_00 = 1;
         TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBtlSora, &arg);
-        gBtlWork->unk_068 |= 0x1000;
+        gBtlWork->flags |= 0x1000;
     } else {
         arg2.unk_04 = 0;
         arg2.unk_00 = 0;
@@ -73,8 +73,8 @@ void mode_vsbattle_1(void) {
         ColliderUpdateAll();
         TaskPoolDraw(&gBtlWork->taskPools[1]);
 
-        if (gBtlWork->unk_068 & 0x800000) {
-            gBtlWork->unk_068 &= ~0x800000;
+        if (gBtlWork->flags & 0x800000) {
+            gBtlWork->flags &= ~0x800000;
         }
     }
 
