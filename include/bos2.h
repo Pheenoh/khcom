@@ -22,7 +22,6 @@ extern s16 gUnk_09EF2A42[12];
 
 extern void* gUnk_09EF275C[2][15];
 
-
 #include "background_actor_assets.h"
 
 #include "boss_jafar_types.h"
@@ -396,38 +395,20 @@ typedef struct JfBorderlineWork {
 
 typedef char JfWork_size[(sizeof(JfWork) == 0x26C) ? 1 : -1];
 
-extern u8 gUnk_096FB744[];
 extern const EmyKind gUnk_0961A7B0;
 extern const s16 gUnk_0961A89E[9];
 extern const s16 gUnk_0961A8B0[10];
-extern u8 gUnk_096C5C64[];
-extern u8 gUnk_096FB484[];
 extern const s16 gUnk_0961A7D0[47];
 extern const s8 gUnk_0961A82E[10];
 extern u32 gFrameCounter;
 
-extern u8 gUnk_09665C04[];
-extern u8 gUnk_096CAC64[];
-extern u8 gUnk_096983E4[];
 extern u8 gUnk_096FB8C4[];
-extern u8 gUnk_096A2F04[];
 extern u8 gUnk_096FB8E4[];
-extern u8 gUnk_096869A4[];
 extern u8 gUnk_096FB864[];
 extern u8 gUnk_096FB884[];
 extern const s8 gUnk_0961A894[10];
 extern u8 gUnk_096FB904[];
-extern u8 gUnk_09682AA4[];
-extern u8 gUnk_096FB5A4[];
-extern u8 gUnk_096FB584[];
-extern u8 gUnk_09685DA4[];
-extern u8 gUnk_096FB604[];
 extern u8 gUnk_06010000[];
-extern u8 gUnk_0965DC04[];
-extern u8 gUnk_096FB404[];
-extern u8 gUnk_096C4C64[];
-extern u8 gUnk_096C5464[];
-extern u8 gUnk_096C6464[];
 extern u8 gUnk_0961A668[];
 
 extern u8 gUnk_08F69BC4[];

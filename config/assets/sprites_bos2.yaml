@@ -20,6 +20,15 @@ objects:
   - name: sprites_bos2_frames.s
     start: 0x0962EC5C
     end: 0x096300C4
+  - name: sprites_bos2_tiles.s
+    start: 0x0965DC04
+    end: 0x096ACA44
+  - name: sprites_bos2_maps.s
+    start: 0x096C0464
+    end: 0x096F5464
+  - name: sprites_bos2_palettes.s
+    start: 0x096FB404
+    end: 0x096FB864
   jp:
   - name: sprites_bos2.c
     start: 0x09ECAE34
@@ -27,6 +36,15 @@ objects:
   - name: sprites_bos2_frames.s
     start: 0x095E7438
     end: 0x095E88A0
+  - name: sprites_bos2_tiles.s
+    start: 0x096163E0
+    end: 0x09665220
+  - name: sprites_bos2_maps.s
+    start: 0x09678C40
+    end: 0x096ADC40
+  - name: sprites_bos2_palettes.s
+    start: 0x096B3BE0
+    end: 0x096B4040
   eu:
   - name: sprites_bos2.c
     start: 0x09F7ED3C
@@ -34,6 +52,15 @@ objects:
   - name: sprites_bos2_frames.s
     start: 0x095F8BE4
     end: 0x095FA04C
+  - name: sprites_bos2_tiles.s
+    start: 0x09627B8C
+    end: 0x096769CC
+  - name: sprites_bos2_maps.s
+    start: 0x0968818C
+    end: 0x096BD18C
+  - name: sprites_bos2_palettes.s
+    start: 0x096C892C
+    end: 0x096C8D8C
 entries:
 - name: gUnk_09EF3A48
   record: SpriteTable
@@ -2549,3 +2576,1732 @@ entries:
     address: 0x095E8894
   eu:
     address: 0x095FA040
+- name: gUnk_0965DC04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x0965DC04
+    size: 32768
+  jp:
+    address: 0x096163E0
+    size: 32768
+  eu:
+    address: 0x09627B8C
+    size: 32768
+- name: gUnk_09665C04
+  format: tiles4
+  width: 8
+  us:
+    address: 0x09665C04
+    size: 9984
+  jp:
+    address: 0x0961E3E0
+    size: 9984
+  eu:
+    address: 0x0962FB8C
+    size: 9984
+- name: gUnk_09668304
+  format: tiles4
+  us:
+    address: 0x09668304
+    size: 3680
+  jp:
+    address: 0x09620AE0
+    size: 3680
+  eu:
+    address: 0x0963228C
+    size: 3680
+- name: gUnk_09669164
+  format: tiles4
+  width: 16
+  us:
+    address: 0x09669164
+    size: 3584
+  jp:
+    address: 0x09621940
+    size: 3584
+  eu:
+    address: 0x096330EC
+    size: 3584
+- name: gUnk_09669F64
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09669F64
+    size: 3648
+  jp:
+    address: 0x09622740
+    size: 3648
+  eu:
+    address: 0x09633EEC
+    size: 3648
+- name: gUnk_0966ADA4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0966ADA4
+    size: 3520
+  jp:
+    address: 0x09623580
+    size: 3520
+  eu:
+    address: 0x09634D2C
+    size: 3520
+- name: gUnk_0966BB64
+  format: tiles4
+  us:
+    address: 0x0966BB64
+    size: 3552
+  jp:
+    address: 0x09624340
+    size: 3552
+  eu:
+    address: 0x09635AEC
+    size: 3552
+- name: gUnk_0966C944
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0966C944
+    size: 4480
+  jp:
+    address: 0x09625120
+    size: 4480
+  eu:
+    address: 0x096368CC
+    size: 4480
+- name: gUnk_0966DAC4
+  format: tiles4
+  us:
+    address: 0x0966DAC4
+    size: 4320
+  jp:
+    address: 0x096262A0
+    size: 4320
+  eu:
+    address: 0x09637A4C
+    size: 4320
+- name: gUnk_0966EBA4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0966EBA4
+    size: 3904
+  jp:
+    address: 0x09627380
+    size: 3904
+  eu:
+    address: 0x09638B2C
+    size: 3904
+- name: gUnk_0966FAE4
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0966FAE4
+    size: 4480
+  jp:
+    address: 0x096282C0
+    size: 4480
+  eu:
+    address: 0x09639A6C
+    size: 4480
+- name: gUnk_09670C64
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09670C64
+    size: 4480
+  jp:
+    address: 0x09629440
+    size: 4480
+  eu:
+    address: 0x0963ABEC
+    size: 4480
+- name: gUnk_09671DE4
+  format: tiles4
+  width: 8
+  us:
+    address: 0x09671DE4
+    size: 3840
+  jp:
+    address: 0x0962A5C0
+    size: 3840
+  eu:
+    address: 0x0963BD6C
+    size: 3840
+- name: gUnk_09672CE4
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09672CE4
+    size: 3200
+  jp:
+    address: 0x0962B4C0
+    size: 3200
+  eu:
+    address: 0x0963CC6C
+    size: 3200
+- name: gUnk_09673964
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09673964
+    size: 3904
+  jp:
+    address: 0x0962C140
+    size: 3904
+  eu:
+    address: 0x0963D8EC
+    size: 3904
+- name: gUnk_096748A4
+  format: tiles4
+  width: 4
+  us:
+    address: 0x096748A4
+    size: 4480
+  jp:
+    address: 0x0962D080
+    size: 4480
+  eu:
+    address: 0x0963E82C
+    size: 4480
+- name: gUnk_09675A24
+  format: tiles4
+  us:
+    address: 0x09675A24
+    size: 3936
+  jp:
+    address: 0x0962E200
+    size: 3936
+  eu:
+    address: 0x0963F9AC
+    size: 3936
+- name: gUnk_09676984
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09676984
+    size: 3200
+  jp:
+    address: 0x0962F160
+    size: 3200
+  eu:
+    address: 0x0964090C
+    size: 3200
+- name: gUnk_09677604
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09677604
+    size: 3776
+  jp:
+    address: 0x0962FDE0
+    size: 3776
+  eu:
+    address: 0x0964158C
+    size: 3776
+- name: gUnk_096784C4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x096784C4
+    size: 4288
+  jp:
+    address: 0x09630CA0
+    size: 4288
+  eu:
+    address: 0x0964244C
+    size: 4288
+- name: gUnk_09679584
+  format: tiles4
+  us:
+    address: 0x09679584
+    size: 4576
+  jp:
+    address: 0x09631D60
+    size: 4576
+  eu:
+    address: 0x0964350C
+    size: 4576
+- name: gUnk_0967A764
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0967A764
+    size: 4544
+  jp:
+    address: 0x09632F40
+    size: 4544
+  eu:
+    address: 0x096446EC
+    size: 4544
+- name: gUnk_0967B924
+  format: tiles4
+  us:
+    address: 0x0967B924
+    size: 4448
+  jp:
+    address: 0x09634100
+    size: 4448
+  eu:
+    address: 0x096458AC
+    size: 4448
+- name: gUnk_0967CA84
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0967CA84
+    size: 4480
+  jp:
+    address: 0x09635260
+    size: 4480
+  eu:
+    address: 0x09646A0C
+    size: 4480
+- name: gUnk_0967DC04
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0967DC04
+    size: 4480
+  jp:
+    address: 0x096363E0
+    size: 4480
+  eu:
+    address: 0x09647B8C
+    size: 4480
+- name: gUnk_0967ED84
+  format: tiles4
+  width: 4
+  us:
+    address: 0x0967ED84
+    size: 4480
+  jp:
+    address: 0x09637560
+    size: 4480
+  eu:
+    address: 0x09648D0C
+    size: 4480
+- name: gUnk_0967FF04
+  format: tiles4
+  us:
+    address: 0x0967FF04
+    size: 3872
+  jp:
+    address: 0x096386E0
+    size: 3872
+  eu:
+    address: 0x09649E8C
+    size: 3872
+- name: gUnk_09680E24
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09680E24
+    size: 3648
+  jp:
+    address: 0x09639600
+    size: 3648
+  eu:
+    address: 0x0964ADAC
+    size: 3648
+- name: gUnk_09681C64
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09681C64
+    size: 3648
+  jp:
+    address: 0x0963A440
+    size: 3648
+  eu:
+    address: 0x0964BBEC
+    size: 3648
+- name: gUnk_09682AA4
+  format: tiles4
+  width: 8
+  us:
+    address: 0x09682AA4
+    size: 13056
+  jp:
+    address: 0x0963B280
+    size: 13056
+  eu:
+    address: 0x0964CA2C
+    size: 13056
+- name: gUnk_09685DA4
+  format: tiles4
+  width: 32
+  us:
+    address: 0x09685DA4
+    size: 3072
+  jp:
+    address: 0x0963E580
+    size: 3072
+  eu:
+    address: 0x0964FD2C
+    size: 3072
+- name: gUnk_096869A4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x096869A4
+    size: 2880
+  jp:
+    address: 0x0963F180
+    size: 2880
+  eu:
+    address: 0x0965092C
+    size: 2880
+- name: gUnk_096874E4
+  format: tiles4
+  width: 32
+  us:
+    address: 0x096874E4
+    size: 32768
+  jp:
+    address: 0x0963FCC0
+    size: 32768
+  eu:
+    address: 0x0965146C
+    size: 32768
+- name: gUnk_0968F4E4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x0968F4E4
+    size: 9152
+  jp:
+    address: 0x09647CC0
+    size: 9152
+  eu:
+    address: 0x0965946C
+    size: 9152
+- name: gUnk_096918A4
+  format: tiles4
+  width: 2
+  us:
+    address: 0x096918A4
+    size: 9152
+  jp:
+    address: 0x0964A080
+    size: 9152
+  eu:
+    address: 0x0965B82C
+    size: 9152
+- name: gUnk_09693C64
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09693C64
+    size: 9152
+  jp:
+    address: 0x0964C440
+    size: 9152
+  eu:
+    address: 0x0965DBEC
+    size: 9152
+- name: gUnk_09696024
+  format: tiles4
+  width: 2
+  us:
+    address: 0x09696024
+    size: 9152
+  jp:
+    address: 0x0964E800
+    size: 9152
+  eu:
+    address: 0x0965FFAC
+    size: 9152
+- name: gUnk_096983E4
+  format: tiles4
+  us:
+    address: 0x096983E4
+    size: 4768
+  jp:
+    address: 0x09650BC0
+    size: 4768
+  eu:
+    address: 0x0966236C
+    size: 4768
+- name: gUnk_09699684
+  format: tiles4
+  width: 4
+  us:
+    address: 0x09699684
+    size: 22656
+  jp:
+    address: 0x09651E60
+    size: 22656
+  eu:
+    address: 0x0966360C
+    size: 22656
+- name: gUnk_0969EF04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x0969EF04
+    size: 4096
+  jp:
+    address: 0x096576E0
+    size: 4096
+  eu:
+    address: 0x09668E8C
+    size: 4096
+- name: gUnk_0969FF04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x0969FF04
+    size: 4096
+  jp:
+    address: 0x096586E0
+    size: 4096
+  eu:
+    address: 0x09669E8C
+    size: 4096
+- name: gUnk_096A0F04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x096A0F04
+    size: 4096
+  jp:
+    address: 0x096596E0
+    size: 4096
+  eu:
+    address: 0x0966AE8C
+    size: 4096
+- name: gUnk_096A1F04
+  format: tiles4
+  width: 32
+  us:
+    address: 0x096A1F04
+    size: 4096
+  jp:
+    address: 0x0965A6E0
+    size: 4096
+  eu:
+    address: 0x0966BE8C
+    size: 4096
+- name: gUnk_096A2F04
+  format: tiles4
+  width: 2
+  us:
+    address: 0x096A2F04
+    size: 4160
+  jp:
+    address: 0x0965B6E0
+    size: 4160
+  eu:
+    address: 0x0966CE8C
+    size: 4160
+- name: gUnk_096A3F44
+  format: tiles4
+  us:
+    address: 0x096A3F44
+    size: 19552
+  jp:
+    address: 0x0965C720
+    size: 19552
+  eu:
+    address: 0x0966DECC
+    size: 19552
+- name: gUnk_096A8BA4
+  format: tiles4
+  us:
+    address: 0x096A8BA4
+    size: 16032
+  jp:
+    address: 0x09661380
+    size: 16032
+  eu:
+    address: 0x09672B2C
+    size: 16032
+- name: gUnk_096C0464
+  format: raw
+  us:
+    address: 0x096C0464
+    size: 18432
+  jp:
+    address: 0x09678C40
+    size: 18432
+    symbol: gUnkJp_09678C40
+  eu:
+    address: 0x0968818C
+    size: 18432
+    symbol: gUnkEu_0968818C
+- name: gUnk_096C4C64
+  format: tilemap
+  us:
+    address: 0x096C4C64
+    size: 2048
+  jp:
+    address: 0x0967D440
+    size: 2048
+  eu:
+    address: 0x0968C98C
+    size: 2048
+- name: gUnk_096C5464
+  format: tilemap
+  us:
+    address: 0x096C5464
+    size: 2048
+  jp:
+    address: 0x0967DC40
+    size: 2048
+  eu:
+    address: 0x0968D18C
+    size: 2048
+- name: gUnk_096C5C64
+  format: tilemap
+  us:
+    address: 0x096C5C64
+    size: 2048
+  jp:
+    address: 0x0967E440
+    size: 2048
+  eu:
+    address: 0x0968D98C
+    size: 2048
+- name: gUnk_096C6464
+  format: tilemap
+  us:
+    address: 0x096C6464
+    size: 2048
+  jp:
+    address: 0x0967EC40
+    size: 2048
+  eu:
+    address: 0x0968E18C
+    size: 2048
+- name: gUnk_096C6C64
+  format: tilemap
+  us:
+    address: 0x096C6C64
+    size: 2048
+  jp:
+    address: 0x0967F440
+    size: 2048
+  eu:
+    address: 0x0968E98C
+    size: 2048
+- name: gUnk_096C7464
+  format: tilemap
+  us:
+    address: 0x096C7464
+    size: 2048
+  jp:
+    address: 0x0967FC40
+    size: 2048
+  eu:
+    address: 0x0968F18C
+    size: 2048
+- name: gUnk_096C7C64
+  format: tilemap
+  us:
+    address: 0x096C7C64
+    size: 2048
+  jp:
+    address: 0x09680440
+    size: 2048
+  eu:
+    address: 0x0968F98C
+    size: 2048
+- name: gUnk_096C8464
+  format: tilemap
+  us:
+    address: 0x096C8464
+    size: 2048
+  jp:
+    address: 0x09680C40
+    size: 2048
+  eu:
+    address: 0x0969018C
+    size: 2048
+- name: gUnk_096C8C64
+  format: tilemap
+  us:
+    address: 0x096C8C64
+    size: 2048
+  jp:
+    address: 0x09681440
+    size: 2048
+  eu:
+    address: 0x0969098C
+    size: 2048
+- name: gUnk_096C9464
+  format: tilemap
+  us:
+    address: 0x096C9464
+    size: 2048
+  jp:
+    address: 0x09681C40
+    size: 2048
+  eu:
+    address: 0x0969118C
+    size: 2048
+- name: gUnk_096C9C64
+  format: tilemap
+  us:
+    address: 0x096C9C64
+    size: 2048
+  jp:
+    address: 0x09682440
+    size: 2048
+  eu:
+    address: 0x0969198C
+    size: 2048
+- name: gUnk_096CA464
+  format: tilemap
+  us:
+    address: 0x096CA464
+    size: 2048
+  jp:
+    address: 0x09682C40
+    size: 2048
+  eu:
+    address: 0x0969218C
+    size: 2048
+- name: gUnk_096CAC64
+  format: tilemap
+  us:
+    address: 0x096CAC64
+    size: 2048
+  jp:
+    address: 0x09683440
+    size: 2048
+  eu:
+    address: 0x0969298C
+    size: 2048
+- name: gUnk_096CB464
+  format: tilemap
+  us:
+    address: 0x096CB464
+    size: 2048
+  jp:
+    address: 0x09683C40
+    size: 2048
+  eu:
+    address: 0x0969318C
+    size: 2048
+- name: gUnk_096CBC64
+  format: tilemap
+  us:
+    address: 0x096CBC64
+    size: 2048
+  jp:
+    address: 0x09684440
+    size: 2048
+  eu:
+    address: 0x0969398C
+    size: 2048
+- name: gUnk_096CC464
+  format: tilemap
+  us:
+    address: 0x096CC464
+    size: 2048
+  jp:
+    address: 0x09684C40
+    size: 2048
+  eu:
+    address: 0x0969418C
+    size: 2048
+- name: gUnk_096CCC64
+  format: tilemap
+  us:
+    address: 0x096CCC64
+    size: 2048
+  jp:
+    address: 0x09685440
+    size: 2048
+  eu:
+    address: 0x0969498C
+    size: 2048
+- name: gUnk_096CD464
+  format: tilemap
+  us:
+    address: 0x096CD464
+    size: 2048
+  jp:
+    address: 0x09685C40
+    size: 2048
+  eu:
+    address: 0x0969518C
+    size: 2048
+- name: gUnk_096CDC64
+  format: tilemap
+  us:
+    address: 0x096CDC64
+    size: 2048
+  jp:
+    address: 0x09686440
+    size: 2048
+  eu:
+    address: 0x0969598C
+    size: 2048
+- name: gUnk_096CE464
+  format: tilemap
+  us:
+    address: 0x096CE464
+    size: 2048
+  jp:
+    address: 0x09686C40
+    size: 2048
+  eu:
+    address: 0x0969618C
+    size: 2048
+- name: gUnk_096CEC64
+  format: tilemap
+  us:
+    address: 0x096CEC64
+    size: 2048
+  jp:
+    address: 0x09687440
+    size: 2048
+  eu:
+    address: 0x0969698C
+    size: 2048
+- name: gUnk_096CF464
+  format: tilemap
+  us:
+    address: 0x096CF464
+    size: 2048
+  jp:
+    address: 0x09687C40
+    size: 2048
+  eu:
+    address: 0x0969718C
+    size: 2048
+- name: gUnk_096CFC64
+  format: tilemap
+  us:
+    address: 0x096CFC64
+    size: 2048
+  jp:
+    address: 0x09688440
+    size: 2048
+  eu:
+    address: 0x0969798C
+    size: 2048
+- name: gUnk_096D0464
+  format: tilemap
+  us:
+    address: 0x096D0464
+    size: 2048
+  jp:
+    address: 0x09688C40
+    size: 2048
+  eu:
+    address: 0x0969818C
+    size: 2048
+- name: gUnk_096D0C64
+  format: tilemap
+  us:
+    address: 0x096D0C64
+    size: 2048
+  jp:
+    address: 0x09689440
+    size: 2048
+  eu:
+    address: 0x0969898C
+    size: 2048
+- name: gUnk_096D1464
+  format: tilemap
+  us:
+    address: 0x096D1464
+    size: 2048
+  jp:
+    address: 0x09689C40
+    size: 2048
+  eu:
+    address: 0x0969918C
+    size: 2048
+- name: gUnk_096D1C64
+  format: tilemap
+  us:
+    address: 0x096D1C64
+    size: 2048
+  jp:
+    address: 0x0968A440
+    size: 2048
+  eu:
+    address: 0x0969998C
+    size: 2048
+- name: gUnk_096D2464
+  format: tilemap
+  us:
+    address: 0x096D2464
+    size: 2048
+  jp:
+    address: 0x0968AC40
+    size: 2048
+  eu:
+    address: 0x0969A18C
+    size: 2048
+- name: gUnk_096D2C64
+  format: tilemap
+  us:
+    address: 0x096D2C64
+    size: 2048
+  jp:
+    address: 0x0968B440
+    size: 2048
+  eu:
+    address: 0x0969A98C
+    size: 2048
+- name: gUnk_096D3464
+  format: tilemap
+  us:
+    address: 0x096D3464
+    size: 2048
+  jp:
+    address: 0x0968BC40
+    size: 2048
+  eu:
+    address: 0x0969B18C
+    size: 2048
+- name: gUnk_096D3C64
+  format: tilemap
+  us:
+    address: 0x096D3C64
+    size: 2048
+  jp:
+    address: 0x0968C440
+    size: 2048
+  eu:
+    address: 0x0969B98C
+    size: 2048
+- name: gUnk_096D4464
+  format: tilemap
+  us:
+    address: 0x096D4464
+    size: 2048
+  jp:
+    address: 0x0968CC40
+    size: 2048
+  eu:
+    address: 0x0969C18C
+    size: 2048
+- name: gUnk_096D4C64
+  format: tilemap
+  us:
+    address: 0x096D4C64
+    size: 2048
+  jp:
+    address: 0x0968D440
+    size: 2048
+  eu:
+    address: 0x0969C98C
+    size: 2048
+- name: gUnk_096D5464
+  format: tilemap
+  us:
+    address: 0x096D5464
+    size: 2048
+  jp:
+    address: 0x0968DC40
+    size: 2048
+  eu:
+    address: 0x0969D18C
+    size: 2048
+- name: gUnk_096D5C64
+  format: tilemap
+  us:
+    address: 0x096D5C64
+    size: 2048
+  jp:
+    address: 0x0968E440
+    size: 2048
+  eu:
+    address: 0x0969D98C
+    size: 2048
+- name: gUnk_096D6464
+  format: tilemap
+  us:
+    address: 0x096D6464
+    size: 2048
+  jp:
+    address: 0x0968EC40
+    size: 2048
+  eu:
+    address: 0x0969E18C
+    size: 2048
+- name: gUnk_096D6C64
+  format: tilemap
+  us:
+    address: 0x096D6C64
+    size: 2048
+  jp:
+    address: 0x0968F440
+    size: 2048
+  eu:
+    address: 0x0969E98C
+    size: 2048
+- name: gUnk_096D7464
+  format: tilemap
+  us:
+    address: 0x096D7464
+    size: 2048
+  jp:
+    address: 0x0968FC40
+    size: 2048
+  eu:
+    address: 0x0969F18C
+    size: 2048
+- name: gUnk_096D7C64
+  format: tilemap
+  us:
+    address: 0x096D7C64
+    size: 2048
+  jp:
+    address: 0x09690440
+    size: 2048
+  eu:
+    address: 0x0969F98C
+    size: 2048
+- name: gUnk_096D8464
+  format: tilemap
+  us:
+    address: 0x096D8464
+    size: 2048
+  jp:
+    address: 0x09690C40
+    size: 2048
+  eu:
+    address: 0x096A018C
+    size: 2048
+- name: gUnk_096D8C64
+  format: tilemap
+  us:
+    address: 0x096D8C64
+    size: 2048
+  jp:
+    address: 0x09691440
+    size: 2048
+  eu:
+    address: 0x096A098C
+    size: 2048
+- name: gUnk_096D9464
+  format: tilemap
+  us:
+    address: 0x096D9464
+    size: 2048
+  jp:
+    address: 0x09691C40
+    size: 2048
+  eu:
+    address: 0x096A118C
+    size: 2048
+- name: gUnk_096D9C64
+  format: tilemap
+  us:
+    address: 0x096D9C64
+    size: 2048
+  jp:
+    address: 0x09692440
+    size: 2048
+  eu:
+    address: 0x096A198C
+    size: 2048
+- name: gUnk_096DA464
+  format: tilemap
+  us:
+    address: 0x096DA464
+    size: 2048
+  jp:
+    address: 0x09692C40
+    size: 2048
+  eu:
+    address: 0x096A218C
+    size: 2048
+- name: gUnk_096DAC64
+  format: tilemap
+  us:
+    address: 0x096DAC64
+    size: 2048
+  jp:
+    address: 0x09693440
+    size: 2048
+  eu:
+    address: 0x096A298C
+    size: 2048
+- name: gUnk_096DB464
+  format: tilemap
+  us:
+    address: 0x096DB464
+    size: 2048
+  jp:
+    address: 0x09693C40
+    size: 2048
+  eu:
+    address: 0x096A318C
+    size: 2048
+- name: gUnk_096DBC64
+  format: tilemap
+  us:
+    address: 0x096DBC64
+    size: 2048
+  jp:
+    address: 0x09694440
+    size: 2048
+  eu:
+    address: 0x096A398C
+    size: 2048
+- name: gUnk_096DC464
+  format: tilemap
+  us:
+    address: 0x096DC464
+    size: 2048
+  jp:
+    address: 0x09694C40
+    size: 2048
+  eu:
+    address: 0x096A418C
+    size: 2048
+- name: gUnk_096DCC64
+  format: tilemap
+  us:
+    address: 0x096DCC64
+    size: 2048
+  jp:
+    address: 0x09695440
+    size: 2048
+  eu:
+    address: 0x096A498C
+    size: 2048
+- name: gUnk_096DD464
+  format: tilemap
+  us:
+    address: 0x096DD464
+    size: 2048
+  jp:
+    address: 0x09695C40
+    size: 2048
+  eu:
+    address: 0x096A518C
+    size: 2048
+- name: gUnk_096DDC64
+  format: tilemap
+  us:
+    address: 0x096DDC64
+    size: 2048
+  jp:
+    address: 0x09696440
+    size: 2048
+  eu:
+    address: 0x096A598C
+    size: 2048
+- name: gUnk_096DE464
+  format: tilemap
+  us:
+    address: 0x096DE464
+    size: 2048
+  jp:
+    address: 0x09696C40
+    size: 2048
+  eu:
+    address: 0x096A618C
+    size: 2048
+- name: gUnk_096DEC64
+  format: tilemap
+  us:
+    address: 0x096DEC64
+    size: 2048
+  jp:
+    address: 0x09697440
+    size: 2048
+  eu:
+    address: 0x096A698C
+    size: 2048
+- name: gUnk_096DF464
+  format: tilemap
+  us:
+    address: 0x096DF464
+    size: 2048
+  jp:
+    address: 0x09697C40
+    size: 2048
+  eu:
+    address: 0x096A718C
+    size: 2048
+- name: gUnk_096DFC64
+  format: tilemap
+  us:
+    address: 0x096DFC64
+    size: 2048
+  jp:
+    address: 0x09698440
+    size: 2048
+  eu:
+    address: 0x096A798C
+    size: 2048
+- name: gUnk_096E0464
+  format: tilemap
+  us:
+    address: 0x096E0464
+    size: 2048
+  jp:
+    address: 0x09698C40
+    size: 2048
+  eu:
+    address: 0x096A818C
+    size: 2048
+- name: gUnk_096E0C64
+  format: tilemap
+  us:
+    address: 0x096E0C64
+    size: 2048
+  jp:
+    address: 0x09699440
+    size: 2048
+  eu:
+    address: 0x096A898C
+    size: 2048
+- name: gUnk_096E1464
+  format: tilemap
+  us:
+    address: 0x096E1464
+    size: 2048
+  jp:
+    address: 0x09699C40
+    size: 2048
+  eu:
+    address: 0x096A918C
+    size: 2048
+- name: gUnk_096E1C64
+  format: tilemap
+  us:
+    address: 0x096E1C64
+    size: 2048
+  jp:
+    address: 0x0969A440
+    size: 2048
+  eu:
+    address: 0x096A998C
+    size: 2048
+- name: gUnk_096E2464
+  format: tilemap
+  us:
+    address: 0x096E2464
+    size: 2048
+  jp:
+    address: 0x0969AC40
+    size: 2048
+  eu:
+    address: 0x096AA18C
+    size: 2048
+- name: gBossMapBlockUs_096E2C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E2C64
+    size: 2048
+  jp:
+    address: 0x0969B440
+    size: 2048
+    symbol: gBossMapBlockJp_0969B440
+  eu:
+    address: 0x096AA98C
+    size: 2048
+    symbol: gBossMapBlockEu_096AA98C
+- name: gBossMapBlockUs_096E3464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E3464
+    size: 2048
+  jp:
+    address: 0x0969BC40
+    size: 2048
+    symbol: gBossMapBlockJp_0969BC40
+  eu:
+    address: 0x096AB18C
+    size: 2048
+    symbol: gBossMapBlockEu_096AB18C
+- name: gUnk_096E3C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E3C64
+    size: 2048
+  jp:
+    address: 0x0969C440
+    size: 2048
+  eu:
+    address: 0x096AB98C
+    size: 2048
+- name: gUnk_096E4464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E4464
+    size: 2048
+  jp:
+    address: 0x0969CC40
+    size: 2048
+  eu:
+    address: 0x096AC18C
+    size: 2048
+- name: gUnk_096E4C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E4C64
+    size: 2048
+  jp:
+    address: 0x0969D440
+    size: 2048
+  eu:
+    address: 0x096AC98C
+    size: 2048
+- name: gUnk_096E5464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E5464
+    size: 2048
+  jp:
+    address: 0x0969DC40
+    size: 2048
+  eu:
+    address: 0x096AD18C
+    size: 2048
+- name: gUnk_096E5C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E5C64
+    size: 2048
+  jp:
+    address: 0x0969E440
+    size: 2048
+  eu:
+    address: 0x096AD98C
+    size: 2048
+- name: gUnk_096E6464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E6464
+    size: 2048
+  jp:
+    address: 0x0969EC40
+    size: 2048
+  eu:
+    address: 0x096AE18C
+    size: 2048
+- name: gUnk_096E6C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E6C64
+    size: 2048
+  jp:
+    address: 0x0969F440
+    size: 2048
+  eu:
+    address: 0x096AE98C
+    size: 2048
+- name: gUnk_096E7464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E7464
+    size: 2048
+  jp:
+    address: 0x0969FC40
+    size: 2048
+  eu:
+    address: 0x096AF18C
+    size: 2048
+- name: gUnk_096E7C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E7C64
+    size: 2048
+  jp:
+    address: 0x096A0440
+    size: 2048
+  eu:
+    address: 0x096AF98C
+    size: 2048
+- name: gUnk_096E8464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E8464
+    size: 2048
+  jp:
+    address: 0x096A0C40
+    size: 2048
+  eu:
+    address: 0x096B018C
+    size: 2048
+- name: gUnk_096E8C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E8C64
+    size: 2048
+  jp:
+    address: 0x096A1440
+    size: 2048
+  eu:
+    address: 0x096B098C
+    size: 2048
+- name: gUnk_096E9464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E9464
+    size: 2048
+  jp:
+    address: 0x096A1C40
+    size: 2048
+  eu:
+    address: 0x096B118C
+    size: 2048
+- name: gUnk_096E9C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096E9C64
+    size: 2048
+  jp:
+    address: 0x096A2440
+    size: 2048
+  eu:
+    address: 0x096B198C
+    size: 2048
+- name: gUnk_096EA464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EA464
+    size: 2048
+  jp:
+    address: 0x096A2C40
+    size: 2048
+  eu:
+    address: 0x096B218C
+    size: 2048
+- name: gUnk_096EAC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EAC64
+    size: 2048
+  jp:
+    address: 0x096A3440
+    size: 2048
+  eu:
+    address: 0x096B298C
+    size: 2048
+- name: gUnk_096EB464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EB464
+    size: 2048
+  jp:
+    address: 0x096A3C40
+    size: 2048
+  eu:
+    address: 0x096B318C
+    size: 2048
+- name: gUnk_096EBC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EBC64
+    size: 2048
+  jp:
+    address: 0x096A4440
+    size: 2048
+  eu:
+    address: 0x096B398C
+    size: 2048
+- name: gUnk_096EC464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EC464
+    size: 2048
+  jp:
+    address: 0x096A4C40
+    size: 2048
+  eu:
+    address: 0x096B418C
+    size: 2048
+- name: gUnk_096ECC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096ECC64
+    size: 2048
+  jp:
+    address: 0x096A5440
+    size: 2048
+  eu:
+    address: 0x096B498C
+    size: 2048
+- name: gUnk_096ED464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096ED464
+    size: 2048
+  jp:
+    address: 0x096A5C40
+    size: 2048
+  eu:
+    address: 0x096B518C
+    size: 2048
+- name: gUnk_096EDC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EDC64
+    size: 2048
+  jp:
+    address: 0x096A6440
+    size: 2048
+  eu:
+    address: 0x096B598C
+    size: 2048
+- name: gUnk_096EE464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EE464
+    size: 2048
+  jp:
+    address: 0x096A6C40
+    size: 2048
+  eu:
+    address: 0x096B618C
+    size: 2048
+- name: gUnk_096EEC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EEC64
+    size: 2048
+  jp:
+    address: 0x096A7440
+    size: 2048
+  eu:
+    address: 0x096B698C
+    size: 2048
+- name: gUnk_096EF464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EF464
+    size: 2048
+  jp:
+    address: 0x096A7C40
+    size: 2048
+  eu:
+    address: 0x096B718C
+    size: 2048
+- name: gUnk_096EFC64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096EFC64
+    size: 2048
+  jp:
+    address: 0x096A8440
+    size: 2048
+  eu:
+    address: 0x096B798C
+    size: 2048
+- name: gUnk_096F0464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F0464
+    size: 2048
+  jp:
+    address: 0x096A8C40
+    size: 2048
+  eu:
+    address: 0x096B818C
+    size: 2048
+- name: gUnk_096F0C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F0C64
+    size: 2048
+  jp:
+    address: 0x096A9440
+    size: 2048
+  eu:
+    address: 0x096B898C
+    size: 2048
+- name: gUnk_096F1464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F1464
+    size: 2048
+  jp:
+    address: 0x096A9C40
+    size: 2048
+  eu:
+    address: 0x096B918C
+    size: 2048
+- name: gUnk_096F1C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F1C64
+    size: 2048
+  jp:
+    address: 0x096AA440
+    size: 2048
+  eu:
+    address: 0x096B998C
+    size: 2048
+- name: gUnk_096F2464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F2464
+    size: 2048
+  jp:
+    address: 0x096AAC40
+    size: 2048
+  eu:
+    address: 0x096BA18C
+    size: 2048
+- name: gUnk_096F2C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F2C64
+    size: 2048
+  jp:
+    address: 0x096AB440
+    size: 2048
+  eu:
+    address: 0x096BA98C
+    size: 2048
+- name: gUnk_096F3464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F3464
+    size: 2048
+  jp:
+    address: 0x096ABC40
+    size: 2048
+  eu:
+    address: 0x096BB18C
+    size: 2048
+- name: gUnk_096F3C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F3C64
+    size: 2048
+  jp:
+    address: 0x096AC440
+    size: 2048
+  eu:
+    address: 0x096BB98C
+    size: 2048
+- name: gUnk_096F4464
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F4464
+    size: 2048
+  jp:
+    address: 0x096ACC40
+    size: 2048
+  eu:
+    address: 0x096BC18C
+    size: 2048
+- name: gUnk_096F4C64
+  format: tilemap
+  declare: false
+  us:
+    address: 0x096F4C64
+    size: 2048
+  jp:
+    address: 0x096AD440
+    size: 2048
+  eu:
+    address: 0x096BC98C
+    size: 2048
+- name: gUnk_096FB404
+  format: palette
+  us:
+    address: 0x096FB404
+    size: 128
+  jp:
+    address: 0x096B3BE0
+    size: 128
+  eu:
+    address: 0x096C892C
+    size: 128
+- name: gUnk_096FB484
+  format: palette
+  us:
+    address: 0x096FB484
+    size: 256
+  jp:
+    address: 0x096B3C60
+    size: 256
+  eu:
+    address: 0x096C89AC
+    size: 256
+- name: gUnk_096FB584
+  format: palette
+  us:
+    address: 0x096FB584
+    size: 32
+  jp:
+    address: 0x096B3D60
+    size: 32
+  eu:
+    address: 0x096C8AAC
+    size: 32
+- name: gUnk_096FB5A4
+  format: palette
+  us:
+    address: 0x096FB5A4
+    size: 96
+  jp:
+    address: 0x096B3D80
+    size: 96
+  eu:
+    address: 0x096C8ACC
+    size: 96
+- name: gUnk_096FB604
+  format: palette
+  us:
+    address: 0x096FB604
+    size: 320
+  jp:
+    address: 0x096B3DE0
+    size: 320
+  eu:
+    address: 0x096C8B2C
+    size: 320
+- name: gUnk_096FB744
+  format: palette
+  us:
+    address: 0x096FB744
+    size: 288
+  jp:
+    address: 0x096B3F20
+    size: 288
+  eu:
+    address: 0x096C8C6C
+    size: 288

@@ -7,7 +7,7 @@
 #include "battle_bounds.h"
 #include "boss_map_block_assets.h"
 #include "background_actor_assets.h"
-#include "boss_jafar_assets.h"
+#include "mode_battle_data.h"
 #include "sprites_bos2.h"
 #include "sprites_btl.h"
 

@@ -3,18 +3,6 @@
 
 #include "mode_battle_data.h"
 
-extern u8 gUnk_096874E4[];
-extern u8 gUnk_0968F4E4[];
-extern u8 gUnk_096918A4[];
-extern u8 gUnk_09693C64[];
-extern u8 gUnk_09696024[];
-extern u8 gUnk_09699684[];
-extern u8 gUnk_0969EF04[];
-extern u8 gUnk_0969FF04[];
-extern u8 gUnk_096A0F04[];
-extern u8 gUnk_096A1F04[];
-extern u8 gUnk_096A3F44[];
-extern u8 gUnk_096A8BA4[];
 extern const u16 gUnk_096E3C64[1024];
 extern const u16 gUnk_096E4464[1024];
 extern const u16 gUnk_096E4C64[1024];
