@@ -7,7 +7,7 @@
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode_sio_api.h"
-#include "mode_sio2_api.h"
+#include "mode_pooh_api.h"
 #include "m4a_song.h"
 #include "pallet.h"
 #include "sio_api.h"

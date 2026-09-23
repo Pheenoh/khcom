@@ -312,7 +312,7 @@ sprite_palettes_8.s
 asset_gfx_gap_87_at_0961A9FD_at_096FB2A4.s
 sprite_palettes_9.s
 asset_gfx_gap_87_at_0961A9FD_at_096FB2A4_at_096FBF24.s
-mode_sio2.c
+mode_pooh.c
 asset_gfx_gap_88.s
 poo_096FC05C_data.c
 poo.c

@@ -5209,7 +5209,7 @@ tables:
   pointer_offsets: [0]
 - name: pooh_animation_definitions
   layer: 0
-  provenance: 'mode_sio2.c func_080C7FEC has explicit action cases and direction helpers: C7CC8/C7D60 select 0..4, C7DF8 selects 0..7, C7E98 selects 0..1, and C7F18 selects 1/3. The canonical 4048[][5] row stride and C7CC8 row0..4 prove 5x5 records; the direction lookup normal outputs cover columns0..4 and its sentinel preserves the cached direction selection. Single-action branches become scalar objects. The fifth physical3FF8 record is a separate neutral scalar4038, not an asserted used array entry. All scalar bytes and complete record layouts match across US/JP/EU.'
+  provenance: 'mode_pooh.c func_080C7FEC has explicit action cases and direction helpers: C7CC8/C7D60 select 0..4, C7DF8 selects 0..7, C7E98 selects 0..1, and C7F18 selects 1/3. The canonical 4048[][5] row stride and C7CC8 row0..4 prove 5x5 records; the direction lookup normal outputs cover columns0..4 and its sentinel preserves the cached direction selection. Single-action branches become scalar objects. The fifth physical3FF8 record is a separate neutral scalar4038, not an asserted used array entry. All scalar bytes and complete record layouts match across US/JP/EU.'
   us: '0x09EF3C98'
   targets:
     jp: '0x9ecb084'
@@ -5579,7 +5579,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF5824
   layer: 1
-  provenance: mode_sio2.c independently bounded PoohAnim definitions at09EF3C98..41D8 contain this gfx/animation pair with animation selector1; corresponding descriptor pointer slots independently prove the regional bases. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: mode_pooh.c independently bounded PoohAnim definitions at09EF3C98..41D8 contain this gfx/animation pair with animation selector1; corresponding descriptor pointer slots independently prove the regional bases. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef5824'
   targets:
     jp: '0x9eccc10'
@@ -14273,7 +14273,7 @@ tables:
   pointer_offsets: [0, 8, 16]
   provenance: Three resource pointer/size fields in independently consumer-bounded StaffRollScene arrays. Regional coordinates outside this24-byte field group remain native; each complete typed load payload is byte-identical by scene index.
 - name: pooh_map_bg_096FC6E0
-  provenance: 'PooSpot motion tables use five direction groups chosen by func_080C7D60 for states17/18. Mode_sio2 selects independently owned AnimDef arrays09EF3CE8/09EF3D38: all five first-state animations have10 frames and second-state counts are14,15,15,15,14 in every region. func_080C89B4 indexes direction*11 or direction*16 plus AnimGetFrame+1, proving fixed native group strides and bounded used rows. The complete55/80-record arrays preserve their real initial/unused slots without claiming every slot is read; they meet independently rooted next arrays. func_080C8A50 copies exactly4 PooPoint records, ending at the owned task_poo_pooh string. func_080D1078 copies exactly18 PooSpot records, ending at gUnk_096FD850. PooMapBgDesc is a24-byte scalar consumed directly by task_poo_map_0 and ending at the separately rooted spawn table. All scalar/coordinate bytes match across regions. Its three existing tile/palette targets match each native record and every raw payload compares byte-identically; declarations are reused from event_background_assets.h. No pixels, palettes or animation-frame assets are converted to C.'
+  provenance: 'PooSpot motion tables use five direction groups chosen by func_080C7D60 for states17/18. mode_pooh.c selects independently owned AnimDef arrays09EF3CE8/09EF3D38: all five first-state animations have10 frames and second-state counts are14,15,15,15,14 in every region. func_080C89B4 indexes direction*11 or direction*16 plus AnimGetFrame+1, proving fixed native group strides and bounded used rows. The complete55/80-record arrays preserve their real initial/unused slots without claiming every slot is read; they meet independently rooted next arrays. func_080C8A50 copies exactly4 PooPoint records, ending at the owned task_poo_pooh string. func_080D1078 copies exactly18 PooSpot records, ending at gUnk_096FD850. PooMapBgDesc is a24-byte scalar consumed directly by task_poo_map_0 and ending at the separately rooted spawn table. All scalar/coordinate bytes match across regions. Its three existing tile/palette targets match each native record and every raw payload compares byte-identically; declarations are reused from event_background_assets.h. No pixels, palettes or animation-frame assets are converted to C.'
   us: '0x96fc6e0'
   targets:
     jp: '0x96b4ebc'

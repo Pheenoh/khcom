@@ -14,7 +14,7 @@
 
 #include "prize_types.h"
 
-#include "mode_sio2_api.h"
+#include "mode_pooh_api.h"
 
 #include "player_progression.h"
 

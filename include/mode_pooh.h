@@ -1,6 +1,6 @@
 #include "registration_data.h"
-#ifndef GUARD_MODE_SIO2_H
-#define GUARD_MODE_SIO2_H
+#ifndef GUARD_MODE_POOH_H
+#define GUARD_MODE_POOH_H
 
 
 #include "chara_types.h"
@@ -9,7 +9,7 @@
 
 #include "card_api.h"
 #include "msg_api.h"
-#include "mode_sio2_api.h"
+#include "mode_pooh_api.h"
 
 #include "mode_test_api.h"
 
@@ -114,4 +114,4 @@ u8 func_080C7F4C(u8 a);
 u8 func_080C7F94(PoohWork* w);
 void func_080C8428(PoohWork* w, u32 b);
 
-#endif /* GUARD_MODE_SIO2_H */
+#endif /* GUARD_MODE_POOH_H */

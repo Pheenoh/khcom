@@ -7,7 +7,7 @@
 #include "card_api.h"
 
 #include "title_api.h"
-#include "mode_sio2_api.h"
+#include "mode_pooh_api.h"
 
 #include "save_api.h"
 

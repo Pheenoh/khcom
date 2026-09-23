@@ -1,5 +1,5 @@
-#ifndef GUARD_MODE_SIO2_API_H
-#define GUARD_MODE_SIO2_API_H
+#ifndef GUARD_MODE_POOH_API_H
+#define GUARD_MODE_POOH_API_H
 
 #include "types.h"
 

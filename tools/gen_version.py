@@ -3267,7 +3267,7 @@ TARGET_DATA_ADDR = {
         ("msg_portrait_data.c", ".rodata"): 0x090cb778,
         ("card_help_data.c", ".rodata"): 0x090d15a0,
         ("mode_wlogo.c", ".rodata"): 0x095da8ac,
-        ("mode_sio2.c", ".rodata"): 0x096c934c,
+        ("mode_pooh.c", ".rodata"): 0x096c934c,
         ("mode_mapinspect.c", ".rodata"): 0x09999a50,
         ("ms.c", ".rodata"): 0x09999a74,
         ("mode_backupstat.c", ".rodata"): 0x09999a88,
