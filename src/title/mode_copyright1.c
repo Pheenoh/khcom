@@ -1,5 +1,6 @@
 #include "registration_data.h"
 #include "mode_copyright1.h"
+#include "copyright_screens.h"
 
 #ifndef VERSION_JP
 u8 gUnk_02034ED4 __attribute__((aligned(4)));

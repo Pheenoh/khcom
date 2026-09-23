@@ -1,5 +1,6 @@
 #include "registration_data.h"
 #include "mode_copyright2.h"
+#include "copyright_screens.h"
 
 u16 gUnk_02034EDC __attribute__((aligned(4)));
 
