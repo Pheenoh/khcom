@@ -20,6 +20,7 @@ GBAGFX = ROOT / "tools" / "gbagfx" / "gbagfx"
 VERSIONS = ("us", "jp", "eu")
 SOURCE_EXT = {"tiles4": "png", "tiles8": "png", "palette": "pal", "tilemap": "bin", "raw": "bin"}
 BINARY_EXT = {"tiles4": "4bpp", "tiles8": "8bpp", "palette": "gbapal", "tilemap": "bin", "raw": "bin"}
+ASM_KINDS = ("sprite", "anim")
 
 
 class ManifestError(Exception):
@@ -50,10 +51,28 @@ class Manifest:
     def symbol(self, entry, version):
         return entry[version].get("symbol", entry.get("symbol", entry["name"]))
 
+    def kind(self, entry):
+        if "record" not in entry:
+            return None
+        return self.types[entry["record"]].get("kind", "struct")
+
+    def data(self, entry, version, key):
+        return entry[version].get(key, entry.get(key))
+
     def size(self, entry, version):
-        if "record" in entry:
+        kind = self.kind(entry)
+        if kind is None:
+            return entry[version]["size"]
+        if kind == "struct":
             return record_size(self.types[entry["record"]], version)
-        return entry[version]["size"]
+        if kind == "table":
+            return 4 * len(self.data(entry, version, "items"))
+        if kind == "sprite":
+            count = len(self.data(entry, version, "oam"))
+            return 2 + 6 * count + (2 if count else 0)
+        if kind == "anim":
+            return 6 + 4 * len(self.data(entry, version, "frames"))
+        raise ManifestError(f"{self.group}: unknown record kind {kind}")
 
     def fields(self, entry, version):
         fields = dict(entry.get("fields", {}))
@@ -80,15 +99,24 @@ class Manifest:
             members = sorted(found[obj["name"]], key=lambda e: e[version]["address"])
             position = obj["start"]
             for entry in members:
+                position = aligned(position, entry)
                 if entry[version]["address"] != position:
                     raise ManifestError(f"{self.group}: {obj['name']} has a gap before {entry['name']} at {position:#x} in {version}")
                 position += self.size(entry, version)
-            if position != obj["end"]:
+                kind = self.kind(entry)
+                if obj["name"].endswith(".s") and kind in ("struct", "table"):
+                    raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not a C object")
+                if obj["name"].endswith(".c") and kind in ASM_KINDS:
+                    raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not an assembler object")
+            if not position <= obj["end"] < position + 4:
                 raise ManifestError(f"{self.group}: {obj['name']} ends at {position:#x}, not {obj['end']:#x}, in {version}")
-            if obj["name"].endswith(".s") and any("record" in e for e in members):
-                raise ManifestError(f"{self.group}: {obj['name']} holds records but is not a C object")
             found[obj["name"]] = members
         return found
+
+
+def aligned(position, entry):
+    align = entry.get("align", 1)
+    return (position + align - 1) // align * align
 
 
 def scalar_size(ctype):
@@ -111,6 +139,16 @@ def record_size(rtype, version):
 
 def load_manifests(directory=MANIFEST_DIR):
     return [Manifest(path) for path in sorted(Path(directory).glob("*.yaml"))]
+
+
+def entry_lookup(manifests):
+    lookup = {}
+    for manifest in manifests:
+        for entry in manifest.entries:
+            if entry["name"] in lookup:
+                raise ManifestError(f"{manifest.group}: {entry['name']} is also an entry of {lookup[entry['name']].group}")
+            lookup[entry["name"]] = manifest
+    return lookup
 
 
 def plan(version, manifests=None):
@@ -214,8 +252,9 @@ def decode_one(manifest, entry, version, data, tmp, palette_bytes):
     return png.read_bytes()
 
 
-def decode(manifest, version, rom, rom_base=0x08000000):
+def decode(manifest, version, rom, rom_base=0x08000000, lookup=None):
     written = checked = 0
+    palettes = {name: owner.by_name[name] for name, owner in lookup.items()} if lookup else manifest.by_name
 
     def rom_bytes(entry):
         address, size = entry[version]["address"], entry[version]["size"]
@@ -232,7 +271,7 @@ def decode(manifest, version, rom, rom_base=0x08000000):
             if "record" in entry or version not in entry:
                 continue
             data = rom_bytes(entry)
-            palette = manifest.by_name.get(entry.get("palette"))
+            palette = palettes.get(entry.get("palette"))
             palette_bytes = rom_bytes(palette) if palette is not None and version in palette else b""
             decoded = decode_one(manifest, entry, version, data, tmp, palette_bytes)
             source = manifest.source(entry, version)
@@ -276,18 +315,20 @@ def emit_c(manifest, version, members, out_path, all_manifests):
     defined = {manifest.symbol(e, version) for e in members}
     referenced = set()
     for entry in members:
-        if "record" not in entry:
-            continue
-        rtype = manifest.types[entry["record"]]
-        fields = manifest.fields(entry, version)
-        for field in rtype["fields"]:
-            if version not in field_versions(field) or not field["type"].endswith("*"):
-                continue
-            value = fields[field["name"]]
-            if value not in (0, None):
-                referenced.add(resolve(value))
+        kind = manifest.kind(entry)
+        if kind == "table":
+            referenced.update(resolve(item) for item in manifest.data(entry, version, "items"))
+        elif kind == "struct":
+            rtype = manifest.types[entry["record"]]
+            fields = manifest.fields(entry, version)
+            for field in rtype["fields"]:
+                if version not in field_versions(field) or not field["type"].endswith("*"):
+                    continue
+                value = fields[field["name"]]
+                if value not in (0, None):
+                    referenced.add(resolve(value))
     lines = []
-    headers = sorted({manifest.types[e["record"]]["header"] for e in members if "record" in e})
+    headers = sorted({manifest.types[e["record"]].get("header") for e in members if "record" in e} - {None}) or ["types.h"]
     for header in headers:
         lines.append(f'#include "{header}"')
     lines.append("")
@@ -303,7 +344,18 @@ def emit_c(manifest, version, members, out_path, all_manifests):
         lines.append("")
     for entry in members:
         symbol = manifest.symbol(entry, version)
-        if "record" in entry:
+        kind = manifest.kind(entry)
+        if kind == "table":
+            ctype = manifest.types[entry["record"]]["type"]
+            items = [f"({ctype}){resolve(item)}" for item in manifest.data(entry, version, "items")]
+            if manifest.data(entry, version, "scalar"):
+                lines.append(f"{ctype} {symbol} = {items[0]};")
+            else:
+                lines.append(f"{ctype} {symbol}[{len(items)}] = {{")
+                for item in items:
+                    lines.append(f"    {item},")
+                lines.append("};")
+        elif kind == "struct":
             rtype = manifest.types[entry["record"]]
             fields = manifest.fields(entry, version)
             lines.append(f"const {entry['record']} {symbol} = {{")
@@ -327,25 +379,56 @@ def emit_c(manifest, version, members, out_path, all_manifests):
     write_if_changed(out_path, "\n".join(lines).rstrip("\n") + "\n")
 
 
-def emit_s(manifest, version, members, out_path, tmp):
+def words(values):
+    return ", ".join(str(v) for v in values)
+
+
+def emit_s(manifest, version, members, out_path, tmp, obj):
     lines = ["\t.section .rodata"]
+    position = obj["start"]
+    if position % 4 == 0:
+        lines.append("\t.balign 4")
+    elif position % 2 == 0:
+        lines.append("\t.balign 2")
     for entry in members:
         symbol = manifest.symbol(entry, version)
-        binary = ROOT / "build" / version / "gen" / manifest.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
-        data = encode(manifest, entry, version, tmp)
-        binary.parent.mkdir(parents=True, exist_ok=True)
-        write_if_changed(binary, data)
+        pad = aligned(position, entry) - position
+        if pad:
+            lines.append(f"\t.byte {words([0] * pad)}")
+            position += pad
         lines.append(f"\t.global {symbol}")
         lines.append(f"{symbol}:")
-        lines.append(f'\t.incbin "{binary.relative_to(ROOT).as_posix()}"')
+        kind = manifest.kind(entry)
+        if kind == "sprite":
+            oam = manifest.data(entry, version, "oam")
+            lines.append(f"\t.hword {len(oam)}")
+            for attrs in oam:
+                lines.append(f"\t.hword {words(attrs)}")
+            if oam:
+                lines.append("\t.hword 0")
+        elif kind == "anim":
+            fields = manifest.fields(entry, version)
+            frames = manifest.data(entry, version, "frames")
+            lines.append(f"\t.hword {fields['unk_00']}, {fields['unk_02']}, {len(frames)}")
+            for frame in frames:
+                lines.append(f"\t.hword {words(frame)}")
+        else:
+            binary = ROOT / "build" / version / "gen" / manifest.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
+            data = encode(manifest, entry, version, tmp)
+            binary.parent.mkdir(parents=True, exist_ok=True)
+            write_if_changed(binary, data)
+            lines.append(f'\t.incbin "{binary.relative_to(ROOT).as_posix()}"')
+        position += manifest.size(entry, version)
+    if obj["end"] > position:
+        lines.append(f"\t.byte {words([0] * (obj['end'] - position))}")
     write_if_changed(out_path, "\n".join(lines) + "\n")
 
 
 def emit_header(manifest, version, members_by_object, out_path):
     guard = "GUARD_GEN_" + manifest.group.upper() + "_H"
     lines = [f"#ifndef {guard}", f"#define {guard}", ""]
-    headers = sorted({manifest.types[e["record"]]["header"] for members in members_by_object.values()
-                      for e in members if "record" in e})
+    headers = sorted({manifest.types[e["record"]].get("header") for members in members_by_object.values()
+                      for e in members if "record" in e} - {None})
     if not headers:
         headers = ["types.h"]
     for header in headers:
@@ -353,9 +436,22 @@ def emit_header(manifest, version, members_by_object, out_path):
     lines.append("")
     for name, members in members_by_object.items():
         for entry in members:
+            if entry.get("declare") is False:
+                continue
             symbol = manifest.symbol(entry, version)
-            if "record" in entry:
+            kind = manifest.kind(entry)
+            if kind == "table":
+                ctype = manifest.types[entry["record"]]["type"]
+                if manifest.data(entry, version, "scalar"):
+                    lines.append(f"extern {ctype} {symbol};")
+                else:
+                    lines.append(f"extern {ctype} {symbol}[{len(manifest.data(entry, version, 'items'))}];")
+            elif kind == "struct":
                 lines.append(f"extern const {entry['record']} {symbol};")
+            elif kind == "anim":
+                lines.append(f"extern {entry['record']} {symbol};")
+            elif kind == "sprite":
+                lines.append(f"extern u8 {symbol}[];")
             elif name.endswith(".s"):
                 lines.append(f"extern u8 {symbol}[{entry[version]['size']}];")
     lines += ["", "#endif"]
@@ -394,13 +490,14 @@ def generate(version, manifest_path, all_manifests=None):
     check_symbols(manifest, version, members_by_object)
     gen = ROOT / "build" / version / "gen"
     gen.mkdir(parents=True, exist_ok=True)
+    objects = {obj["name"]: obj for obj in manifest.objects.get(version, [])}
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = Path(tmpdir)
         for name, members in members_by_object.items():
             if name.endswith(".c"):
                 emit_c(manifest, version, members, gen / name, all_manifests)
             else:
-                emit_s(manifest, version, members, gen / name, tmp)
+                emit_s(manifest, version, members, gen / name, tmp, objects[name])
     emit_header(manifest, version, members_by_object, gen / f"{manifest.group}.h")
 
 

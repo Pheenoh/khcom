@@ -93,12 +93,6 @@ parser.add_argument(
     default="slice",
     help="asset_gfx path: baserom slice (default) or MovieOpen demux/remux built pack (us/jp/eu)",
 )
-parser.add_argument(
-    "--asset-gfx-gap-195-mode",
-    choices=("slice", "built"),
-    default="slice",
-    help="asset_gfx_gap_195 path: baserom slice (default) or leaf-patched built mega (gap_195 palettes via gbagfx)",
-)
 args = parser.parse_args()
 
 legacy_assembler = Path("tools/legacy/bin/arm-elf-as")
@@ -115,7 +109,6 @@ code, sha1 = VERSIONS[version]
 prefix = args.binutils_prefix
 raw_as_flags = software_fp_flags(f"{prefix}as")
 asset_gfx_mode = args.asset_gfx_mode
-asset_gfx_gap_195_mode = args.asset_gfx_gap_195_mode
 
 build_dir = f"build/{version}"
 name = f"com_{version}"
@@ -150,7 +143,7 @@ except ManifestError as error:
 units_file = Path(f"config/{version}/units.txt")
 listed = {line.split()[0] for line in units_file.read_text().splitlines() if line.strip() and not line.startswith("#")}
 groups = {group_name: group for group_name, group in groups.items()
-          if any(unit_name in listed for unit_name in group["objects"])}
+          if not group["objects"] or any(unit_name in listed for unit_name in group["objects"])}
 generated = {}
 for group_name, group in groups.items():
     for unit_name, unit in group["objects"].items():
@@ -208,20 +201,6 @@ asset_gfx_extract = {
     "eu": "assets/eu/084B423C-0883F2D0.bin",
 }[version]
 asset_gfx_manifest = f"config/asset_gfx_{version}.yaml"
-asset_gfx_gap_195_build = f"{build_dir}/assets/asset_gfx_gap_195.bin"
-asset_gfx_gap_195_asm = f"{build_dir}/asm/asset_gfx_gap_195.s"
-asset_gfx_gap_195_unit = "asset_gfx_gap_195.s"
-asset_gfx_gap_195_sym = {
-    "us": "data_0999389C",
-    "jp": "data_099483B0",
-    "eu": "data_09999B58",
-}[version]
-asset_gfx_gap_195_extract = {
-    "us": "assets/us/0999389C-09A3DF34.bin",
-    "jp": "assets/jp/099483B0-099F29BC.bin",
-    "eu": "assets/eu/09999B58-09A9B9F8.bin",
-}[version]
-asset_gfx_gap_195_manifest = f"config/asset_gfx_gap_195_{version}.yaml"
 if asset_gfx_mode == "built":
     Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
     Path(asset_gfx_asm).write_text(
@@ -234,22 +213,6 @@ if asset_gfx_mode == "built":
     for src, obj, flags in units:
         if src is not None and src.name == asset_gfx_unit:
             rewritten.append((Path(asset_gfx_asm), obj, flags))
-        else:
-            rewritten.append((src, obj, flags))
-    units = rewritten
-
-if asset_gfx_gap_195_mode == "built":
-    Path(f"{build_dir}/asm").mkdir(parents=True, exist_ok=True)
-    Path(asset_gfx_gap_195_asm).write_text(
-        "\t.section .rodata\n"
-        f"\t.global {asset_gfx_gap_195_sym}\n"
-        f"{asset_gfx_gap_195_sym}:\n"
-        f'\t.incbin "{asset_gfx_gap_195_build}"\n'
-    )
-    rewritten = []
-    for src, obj, flags in units:
-        if src is not None and src.name == asset_gfx_gap_195_unit:
-            rewritten.append((Path(asset_gfx_gap_195_asm), obj, flags))
         else:
             rewritten.append((src, obj, flags))
     units = rewritten
@@ -274,7 +237,7 @@ for src, obj, flags in units:
         deps += [rel(groups[group_name]["header"])]
         if rule == "as":
             deps += [f"{build_dir}/gen/{group_name}/{entry['name']}.{BINARY_EXT[entry['format']]}"
-                     for entry in unit["members"]]
+                     for entry in unit["members"] if "format" in entry]
         else:
             deps += headers + generated_headers + ["tools/legacy/bin/arm-elf-as"]
         edges.append((obj, rule, src, deps, variables))
@@ -306,21 +269,6 @@ if asset_gfx_mode == "built":
         p for p in list(missing_assets)
         if p.startswith("assets/") and Path(p).name == Path(asset_gfx_extract).name
     )
-if asset_gfx_gap_195_mode == "built":
-    patched = []
-    for obj, rule, src, deps, variables in edges:
-        if obj.endswith("/asset_gfx_gap_195.o"):
-            deps = [d for d in deps if not d.startswith("assets/")]
-            if asset_gfx_gap_195_build not in deps:
-                deps.append(asset_gfx_gap_195_build)
-            if asset_gfx_gap_195_asm not in deps:
-                deps.append(asset_gfx_gap_195_asm)
-        patched.append((obj, rule, src, deps, variables))
-    edges = patched
-    missing_assets.difference_update(
-        p for p in list(missing_assets)
-        if p.startswith("assets/") and Path(p).name == Path(asset_gfx_gap_195_extract).name
-    )
 
 if any(dep.startswith("assets/") for edge in edges for dep in edge[3]) and not Path(assets_stamp).exists():
     missing_assets.add(assets_stamp)
@@ -333,15 +281,11 @@ if missing_extract:
 allowed_build_assets = set()
 if asset_gfx_mode == "built":
     allowed_build_assets.add(asset_gfx_build)
-if asset_gfx_gap_195_mode == "built":
-    allowed_build_assets.add(asset_gfx_gap_195_build)
 pending_uncovered = [p for p in pending_build_assets if p not in allowed_build_assets]
 if pending_uncovered:
     first = pending_uncovered[0]
     sys.exit(
-        f"error: build asset {first} is missing; use --asset-gfx-mode=built "
-        f"and/or --asset-gfx-gap-195-mode=built "
-        f"and/or --asset-gfx-gap-87-mode=built or extract slice assets"
+        f"error: build asset {first} is missing; use --asset-gfx-mode=built or extract slice assets"
     )
 
 objs_linked = [obj for _src, obj, _flags in units]
@@ -453,12 +397,6 @@ with out.open("w") as f:
             command=f"python3 tools/gfx/asset_gfx_pack.py --mode built --version {version} && test -f $out",
             description="ASSET_GFX $out",
         )
-    if asset_gfx_gap_195_mode == "built":
-        n.rule(
-            "asset_gfx_gap_195_pack",
-            command=f"python3 tools/gfx/asset_gfx_gap_195_pack.py --mode built --version {version} && test -f $out",
-            description="ASSET_GFX_GAP_195 $out",
-        )
     n.newline()
 
     for path, member, obj in archives:
@@ -475,18 +413,6 @@ with out.open("w") as f:
                 asset_gfx_manifest,
                 f"config/asset_inventory_{version}_gfx.yaml",
                 asset_gfx_extract,
-            ],
-        )
-    if asset_gfx_gap_195_mode == "built":
-        n.build(
-            asset_gfx_gap_195_build,
-            "asset_gfx_gap_195_pack",
-            implicit=[
-                "tools/gfx/asset_gfx_gap_195_pack.py",
-                "tools/gfx/asset_gfx_gap_195_layout.py",
-                asset_gfx_gap_195_manifest,
-                f"config/asset_inventory_{version}_gfx_gap_195.yaml",
-                asset_gfx_gap_195_extract,
             ],
         )
     manifests = sorted(rel(group["manifest"].path) for group in groups.values())

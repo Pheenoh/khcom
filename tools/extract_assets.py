@@ -207,8 +207,10 @@ def decode(root, version, rom):
     root = Path(root)
     checked = written = 0
     try:
-        for manifest in assetgen.load_manifests(root / "config" / "assets"):
-            done, wrote = assetgen.decode(manifest, version, rom)
+        manifests = assetgen.load_manifests(root / "config" / "assets")
+        lookup = assetgen.entry_lookup(manifests)
+        for manifest in manifests:
+            done, wrote = assetgen.decode(manifest, version, rom, lookup=lookup)
             checked += done
             written += wrote
     except (assetgen.ManifestError, subprocess.CalledProcessError) as error:
