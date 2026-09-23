@@ -8590,12 +8590,12 @@ s32 func_080EDA90(MapMenuWork* w) {
     case 0:
         if (gGameState.flags & 8) {
             if (gGameState.progression.unk_82 & 0x800) {
-                ModeRequest(&gModeDeck, 0);
+                ModeRequest(&gUnk_09EE2704, 0);
             } else {
                 ModeRequest(&gModeRikuDeckTutorial, 0);
             }
         } else {
-            ModeRequest(&gModeDeck, 0);
+            ModeRequest(&gUnk_09EE2704, 0);
         }
         break;
     case 1:

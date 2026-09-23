@@ -199,7 +199,7 @@ u8 menu_1(MenuWork* w) {
             if (FadeIsActive() == 0) {
                 if (w->unk_11 != 2) {
                     if (w->unk_11 == 9) {
-                        ModeRequest(&gModeDeck, 0);
+                        ModeRequest(&gUnk_09EE2704, 0);
                     }
                 } else {
                     ModeRequest(&gModeAllmap, 0);
@@ -241,6 +241,6 @@ void menu_3(MenuWork* w) {
 
 const char gModeNameDeck[] = "Mode_Deck";
 const char gTaskNameMenu[] = "menu";
-Mode gModeDeck = { gModeNameDeck, (void (*)(s32))func_08060A74, func_08060AD8, func_08060BAC };
+Mode gUnk_09EE2704 = { gModeNameDeck, (void (*)(s32))func_08060A74, func_08060AD8, func_08060BAC };
 
 TaskDesc gUnk_09EE2714 = { gTaskNameMenu, (void (*)(void*, void*))menu_0, menu_1, (void (*)(void*))menu_2, (void (*)(void*))menu_3, sizeof(MenuWork) };

@@ -13,6 +13,6 @@ typedef struct MenuWork {
     u8 unk_12[0x02];
 } MenuWork;
 
-extern Mode gModeDeck;
+extern Mode gUnk_09EE2704;
 
 #endif

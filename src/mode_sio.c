@@ -895,7 +895,7 @@ void func_080AFCD4(void) {
             gSioBtlOptionWork->unk_002 = 9;
             break;
         case 1:
-            ModeRequest(&gModeDeck, 0);
+            ModeRequest(&gUnk_09EE2704, 0);
             break;
         case 2:
             gSioBtlOptionWork->unk_1E0 = 0;
@@ -984,7 +984,7 @@ void func_080AFCD4(void) {
                 gSioBtlOptionWork->unk_002 = 9;
                 break;
             case 1:
-                ModeRequest(&gModeDeck, 0);
+                ModeRequest(&gUnk_09EE2704, 0);
                 break;
             case 2:
                 gSioBtlOptionWork->unk_1E0 = 0;
