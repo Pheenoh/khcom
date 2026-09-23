@@ -61,7 +61,7 @@ extern u8 gUnkJp_0900974C[];
 extern u8 gUnkEu_090CF64D[];
 #endif
 void CardName_0(CardNameWork* w) {
-    UnkStruct_0809C534* q = gUnk_0203A9D0->selectedCard;
+    UnkStruct_0809C534* q = gCardListWork->selectedCard;
     UnkStruct_080038C8* pal;
     s32 v;
     s16 t;
@@ -197,7 +197,7 @@ void func_0809CE88(PremiumCardEffectWork* w, s16* a) {
     w->y = 0;
     w->unk_38 = 0;
     w->unk_50 = -(GetRandom() % 0x81 + 0x200);
-    gUnk_0203A9D0->effectCount++;
+    gCardListWork->effectCount++;
 }
 
 void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
@@ -218,7 +218,7 @@ void func_0809CF64(PremiumCardEffectWork* w, s16* a) {
     w->unk_38 = 0;
     w->unk_50 = -(GetRandom() % 0x81 + 0x200);
     func_0809D124(w);
-    gUnk_0203A9D0->effectCount++;
+    gCardListWork->effectCount++;
 }
 
 s32 func_0809D040(PremiumCardEffectWork* w) {
@@ -260,7 +260,7 @@ void func_0809D0CC(PremiumCardEffectWork* w) {
 void func_0809D0FC(PremiumCardEffectWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    gUnk_0203A9D0->effectCount--;
+    gCardListWork->effectCount--;
 }
 
 void func_0809D124(PremiumCardEffectWork* w) {

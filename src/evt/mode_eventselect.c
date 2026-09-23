@@ -272,9 +272,9 @@ void Hanabira_c_2(EffectWork* w) {
     s32 y;
     s32 t;
 
-    x = (w->x >> 8) - (gUnk_02039DC8->x >> 8);
+    x = (w->x >> 8) - (gEventState->x >> 8);
     t = w->y >> 8;
-    y = t + (w->z >> 8) - (gUnk_02039DC8->y >> 8);
+    y = t + (w->z >> 8) - (gEventState->y >> 8);
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, (u16)(-0x1004 - t * 4));
 }
 
@@ -370,9 +370,9 @@ void EffectDrawObj(EffectWork* w) {
         pr &= 0xFFFE;
     }
 
-    DrawSprite((w->x >> 8) - (gUnk_02039DC8->x >> 8),
+    DrawSprite((w->x >> 8) - (gEventState->x >> 8),
                (y = (w->y >> 8) + gUnk_0903380C[w->actor->unk_26][0]) -
-                   (gUnk_02039DC8->y >> 8),
+                   (gEventState->y >> 8),
                w->gfx, w->tiles, w->palette, 0, pr, 50);
 }
 
@@ -439,7 +439,7 @@ void func_080758D0(EffectWork* w, EventActor* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 0;
     w->unk_46 = 0;
-    gUnk_02039DC8->unk_86++;
+    gEventState->unk_86++;
 }
 
 s32 func_080759B0(EffectWork* w) {
@@ -463,8 +463,8 @@ void func_080759E0(EffectWork* w) {
         pr &= 0xFFFE;
     }
 
-    DrawSprite((w->x >> 8) - (gUnk_02039DC8->x >> 8),
-               ((w->y + w->z2) >> 8) - (gUnk_02039DC8->y >> 8),
+    DrawSprite((w->x >> 8) - (gEventState->x >> 8),
+               ((w->y + w->z2) >> 8) - (gEventState->y >> 8),
                w->gfx, w->tiles, w->palette, 0, pr,
                (u16)(-0x1004 - (w->y >> 8) * 4));
 }
@@ -472,7 +472,7 @@ void func_080759E0(EffectWork* w) {
 void func_08075A54(EffectWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    gUnk_02039DC8->unk_86--;
+    gEventState->unk_86--;
 }
 
 void GlowNose_0(EffectWork* w, EventActor* arg) {
@@ -611,8 +611,8 @@ s32 down_2(EffectWork* w) {
     s = w->down;
 
     for (i = 0; i < 8; i++) {
-        DrawSprite((s->unk_00[i] >> 8) - (gUnk_02039DC8->x >> 8),
-                   (s->unk_20[i] >> 8) - (gUnk_02039DC8->y >> 8), 0,
+        DrawSprite((s->unk_00[i] >> 8) - (gEventState->x >> 8),
+                   (s->unk_20[i] >> 8) - (gEventState->y >> 8), 0,
                    w->tiles, w->palette, 0, pr, 50);
     }
 }
@@ -625,7 +625,7 @@ void down_3(EffectWork* w) {
 
 void Tinkerbell_0(EffectWork* w, void* arg) {
     w->actor = arg;
-    gUnk_02039DC8->unk_86 = 0;
+    gEventState->unk_86 = 0;
     w->unk_44 = 0;
     TaskPoolInit(&w->tasks, 8);
 }
@@ -634,7 +634,7 @@ s32 Tinkerbell_1(EffectWork* w) {
     w->unk_44++;
 
     if (w->unk_44 == 5) {
-        if (gUnk_02039DC8->unk_86 <= 3) {
+        if (gEventState->unk_86 <= 3) {
             TaskCreate(&w->tasks, &gUnk_09EE484C, w->actor);
         }
 
@@ -720,7 +720,7 @@ s32 EV_SOUND_1(EvSoundWork* w) {
 
     p = &w->soundCues[w->unk_05];
 
-    if (gUnk_02039DC8->unk_6C == p->unk_02) {
+    if (gEventState->unk_6C == p->unk_02) {
         if (p->unk_00 != 0xFFFF) {
             if ((p->flags & 4) == 0) {
                 m4aSongNumStartOrContinue(p->unk_00);
@@ -867,7 +867,7 @@ void Event_Debug_0(u8* work) {
 }
 
 s32 Event_Debug_1(u8* work) {
-    work[0x28] = FormatSmallFontDecimal(gUnk_02039DC8->unk_6C, &work[0x08]);
+    work[0x28] = FormatSmallFontDecimal(gEventState->unk_6C, &work[0x08]);
     return 1;
 }
 

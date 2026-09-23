@@ -6,7 +6,7 @@
 #include "types.h"
 #include "engine.h"
 
-const s32 gUnk_08121694[32] = {
+const s32 gBrightenSteps[32] = {
        0,    8,   16,   24,   33,   41,   49,   57,   66,   74,   82,   90,
       99,  107,  115,  123,  132,  140,  148,  156,  165,  173,  181,  189,
      198,  206,  214,  222,  231,  239,  247,  256,
@@ -147,9 +147,9 @@ u16* BrightenPalette(u16* src, u16* dst, u16 size, u16 amount) {
         s32 gv = g << 8;
         s32 bv = b << 8;
 
-        rv += amount * gUnk_08121694[r];
-        gv += amount * gUnk_08121694[g];
-        bv += amount * gUnk_08121694[b];
+        rv += amount * gBrightenSteps[r];
+        gv += amount * gBrightenSteps[g];
+        bv += amount * gBrightenSteps[b];
 
         if (rv > 0x1F00) {
             rv = 0x1F00;

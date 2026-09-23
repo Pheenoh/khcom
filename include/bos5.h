@@ -368,7 +368,7 @@ void mode_worldselect_2(void);
 void func_080FE89C(void);
 
 void func_080FE900(void);
-extern const MdMapData gUnk_099920E8;
+extern const MdMapData gMdMapData;
 extern u8 gUnk_099D42FC[];
 extern u8 gUnk_099AC97C[];
 extern u8 gUnk_099B497C[];

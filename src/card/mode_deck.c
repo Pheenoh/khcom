@@ -61,9 +61,9 @@ void func_08060BAC(void) {
     TaskPoolDestroy(&gUnk_02034A30);
 }
 void menu_0(MenuWork* w) {
-    gUnk_02039BA0->flags |= 0x1000;
-    gUnk_02039BA0->flags |= 0x80;
-    gUnk_02039BA0->flags |= 0x2000;
+    gFieldState->flags |= 0x1000;
+    gFieldState->flags |= 0x80;
+    gFieldState->flags |= 0x2000;
     w->x = 0xF000;
     w->y = 0x4800;
     w->unk_11 = 0;
@@ -233,9 +233,9 @@ void menu_2(MenuWork* w) {
 void menu_3(MenuWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    gUnk_02039BA0->flags &= ~0x1000;
-    gUnk_02039BA0->flags &= ~0x80;
-    gUnk_02039BA0->flags &= ~0x2000;
+    gFieldState->flags &= ~0x1000;
+    gFieldState->flags &= ~0x80;
+    gFieldState->flags &= ~0x2000;
 }
 
 

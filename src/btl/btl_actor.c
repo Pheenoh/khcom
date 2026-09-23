@@ -4,7 +4,7 @@
 #include "romcri_backgrounds.h"
 
 BtlWork* gUnk_02039B9C EWRAM_COMMON(4);
-FieldState* gUnk_02039BA0 EWRAM_COMMON(4);
+FieldState* gFieldState EWRAM_COMMON(4);
 
 const u8 gUnk_08133E54[8] = { 0, 1, 2, 3, 4, 3, 2, 1 };
 

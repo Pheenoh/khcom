@@ -857,12 +857,12 @@ s32 func_08012188(BtlObj* p, s16 h, s32 c) {
 }
 
 void func_080121D4(FldObj* p) {
-    ListNodeInit(&p->node, &gUnk_02039BA0->actor.pool, p);
-    ListPoolAppend(&p->node, &gUnk_02039BA0->actor.pool);
+    ListNodeInit(&p->node, &gFieldState->actor.pool, p);
+    ListPoolAppend(&p->node, &gFieldState->actor.pool);
 }
 
 void func_080121FC(FldObj* p) {
-    ListPoolRemove(&p->node, &gUnk_02039BA0->actor.pool);
+    ListPoolRemove(&p->node, &gFieldState->actor.pool);
 }
 
 void func_08012214(void) {

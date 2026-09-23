@@ -99,7 +99,7 @@ const u16 gUnkEu_09999A50[5] = {2752, 2816, 2816, 2816, 2816};
 
 const u16 gUnk_099937A0[4] = {2, 1, 3, 4};
 
-MapCardInventoryEntry* gUnk_02035E28;
+MapCardInventoryEntry* gMapCardInventoryEntries;
 s16 gUnk_02035E2C;
 s16 gUnk_02035E2E;
 u16 gUnk_02035E30[4] __attribute__((aligned(8)));
@@ -191,7 +191,7 @@ s16 func_0810714C(void) {
 }
 
 MapCardInventoryEntry* func_0810718C(void) {
-    return &gUnk_02035E28[func_0810714C()];
+    return &gMapCardInventoryEntries[func_0810714C()];
 }
 
 void func_081071AC(void) {
@@ -261,11 +261,11 @@ void func_08107280(void) {
             }
 
             if (k < b) {
-                idx = gUnk_02035E28[a + k].cardIndex;
+                idx = gMapCardInventoryEntries[a + k].cardIndex;
                 gUnk_02035EA0[i][j] = LoadObjPalette(gUnk_09EE4C80[idx].palette2, 32);
                 gUnk_02035ED0[i][j] = LoadObjTiles(gUnk_09EE4C80[idx].tiles2, gUnk_09EE4C80[idx].tilesSize2);
                 gUnk_02035F00[i][j] = *gUnk_09EE4C80[idx].sprites2;
-                gUnk_02035F30[i][j] = gUnk_02035E28[a + k].category == 3;
+                gUnk_02035F30[i][j] = gMapCardInventoryEntries[a + k].category == 3;
             } else {
                 gUnk_02035EA0[i][j] = 0;
                 gUnk_02035ED0[i][j] = 0;
@@ -498,7 +498,7 @@ void func_08107A74(MapCardInventoryEntry* p) {
     dma[2];
     zero = 0;
     dma[0] = (u32)&zero;
-    q = &gUnk_02035E28[26];
+    q = &gMapCardInventoryEntries[26];
     dma[1] = (u32)q;
     dma[2] = 0x8100000E;
     dma[2];
@@ -546,12 +546,12 @@ void func_08107B84(void) {
     zero = 0;
     dma = (vu32*)0x040000D4;
     dma[0] = (u32)&zero;
-    dma[1] = (u32)gUnk_02035E28;
+    dma[1] = (u32)gMapCardInventoryEntries;
     dma[2] = 0x8100017A;
     dma[2];
 
     for (i = 0; i <= 26; i++) {
-        gUnk_02035E28[i].cardType = 27;
+        gMapCardInventoryEntries[i].cardType = 27;
     }
     a = 0;
     gUnk_02035E48 = 0;
@@ -576,16 +576,16 @@ void func_08107B84(void) {
                             s32 index = a;
 
                             counts[j] += n;
-                            gUnk_02035E28[index].cardType = u;
-                            gUnk_02035E28[index].cardIndex = k * 10;
-                            gUnk_02035E28[index].category = j;
-                            gUnk_02035E28[index].countsByValue[i] = n;
+                            gMapCardInventoryEntries[index].cardType = u;
+                            gMapCardInventoryEntries[index].cardIndex = k * 10;
+                            gMapCardInventoryEntries[index].category = j;
+                            gMapCardInventoryEntries[index].countsByValue[i] = n;
                         }
                     }
                 }
             }
 
-            if (gUnk_02035E28[a].cardType <= 26) {
+            if (gMapCardInventoryEntries[a].cardType <= 26) {
                 a++;
             }
         }
@@ -1053,7 +1053,7 @@ void mode_mapinspect_0(void) {
     s16 v;
     u16 length;
 
-    gUnk_02035E28 = EwramAlloc(0x2F4);
+    gMapCardInventoryEntries = EwramAlloc(0x2F4);
     SpriteReset();
     FadeStartIn(0, 16);
     SetBgMode0();
@@ -1381,7 +1381,7 @@ void mode_mapinspect_2(void) {
         EwramFree(gUnk_02035FBC[i]);
     }
 
-    EwramFree(gUnk_02035E28);
+    EwramFree(gMapCardInventoryEntries);
 }
 
 const char gModeNameMapinspect[] = "mode_mapinspect";

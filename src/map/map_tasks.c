@@ -235,8 +235,8 @@ const char gTaskNameMapGmk00[] = "Task_MapGmk00";
 s32 func_080EF3A0(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
-    if (p->unk_08.unk_00 < gUnk_02039BA0->x - 0x1800 || p->unk_08.unk_00 > gUnk_02039BA0->x + 0x10800 ||
-        q->x + q->y < gUnk_02039BA0->y - 0x800 || q->x + q->y > gUnk_02039BA0->y + 0xC000) {
+    if (p->unk_08.unk_00 < gFieldState->x - 0x1800 || p->unk_08.unk_00 > gFieldState->x + 0x10800 ||
+        q->x + q->y < gFieldState->y - 0x800 || q->x + q->y > gFieldState->y + 0xC000) {
         p->update = 0;
         ColliderSetDisabled(p->collider, 1);
         return 1;
@@ -274,10 +274,10 @@ s32 func_080EF4BC(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
     u8 ang;
 
-    if (gUnk_02039BA0->actor.fieldPosition.unk_0C != q->unk_0C) {
+    if (gFieldState->actor.fieldPosition.unk_0C != q->unk_0C) {
         return 0;
     }
-    ang = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+    ang = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     if (abs(GetAngleDiff(ang, q->angle)) > 0x18) {
         return 0;
     }
@@ -433,7 +433,7 @@ void func_080EF7B8(MapEnmWork* p) {
     y = q->unk_04;
 
     if (p->unk_D0 % 8 == 0) {
-        q->angle = GetAngle(x, y, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(x, y, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
     func_080EF404(p, 25, 0x200);
 
@@ -505,7 +505,7 @@ void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 s32 Task_MapEnm00_1(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -534,7 +534,7 @@ void Task_MapEnm00_3(MapEnmWork* p) {
 }
 
 void func_080EFA30(UnkStruct_080EFA30* p) {
-    if (p->unk_08 < gUnk_02039BA0->x - 0x1800 || p->unk_08 > gUnk_02039BA0->x + 0x10800) {
+    if (p->unk_08 < gFieldState->x - 0x1800 || p->unk_08 > gFieldState->x + 0x10800) {
         if (p->unk_F8 != 0) {
             p->unk_CC = 0;
         }
@@ -576,13 +576,13 @@ void func_080EFB24(UnkStruct_080F023C* w, u8 a) {
     s32 t4;
 
     if (a != 0) {
-        w->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        w->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
-        w->unk_DC = gUnk_02039BA0->actor.fieldPosition.z - 0x1000;
+        w->unk_D4 = gFieldState->actor.fieldPosition.x;
+        w->unk_D8 = gFieldState->actor.fieldPosition.y;
+        w->unk_DC = gFieldState->actor.fieldPosition.z - 0x1000;
     } else {
-        w->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        w->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
-        w->unk_DC = gUnk_02039BA0->actor.fieldPosition.z;
+        w->unk_D4 = gFieldState->actor.fieldPosition.x;
+        w->unk_D8 = gFieldState->actor.fieldPosition.y;
+        w->unk_DC = gFieldState->actor.fieldPosition.z;
 
         if (GetRandom() % 2) {
             t1 = GetRandom() % 65 * 256;
@@ -613,10 +613,10 @@ void func_080EFC08(MapEnmWork* p) {
     func_080EFA7C((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
-    if (q->unk_08 < gUnk_02039BA0->actor.fieldPosition.z - 0x4000) {
+    if (q->unk_08 < gFieldState->actor.fieldPosition.z - 0x4000) {
         func_080EFB24((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
@@ -656,7 +656,7 @@ void func_080EFCF4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -770,7 +770,7 @@ s32 Task_MapEnm01_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -825,7 +825,7 @@ s32 Task_MapEnm02_1(MapEnmWork* p) {
     MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -916,13 +916,13 @@ s32 func_080F023C(UnkStruct_080F023C* p, s32 lim) {
     s32 dx;
     s32 dy;
 
-    dx = p->unk_F8 - gUnk_02039BA0->actor.fieldPosition.x;
+    dx = p->unk_F8 - gFieldState->actor.fieldPosition.x;
     if (dx < 0) {
-        dx = gUnk_02039BA0->actor.fieldPosition.x - p->unk_F8;
+        dx = gFieldState->actor.fieldPosition.x - p->unk_F8;
     }
-    dy = p->unk_FC - gUnk_02039BA0->actor.fieldPosition.y;
+    dy = p->unk_FC - gFieldState->actor.fieldPosition.y;
     if (dy < 0) {
-        dy = gUnk_02039BA0->actor.fieldPosition.y - p->unk_FC;
+        dy = gFieldState->actor.fieldPosition.y - p->unk_FC;
     }
 
     if (dx > 0x8000 || dy > 0x8000) {
@@ -940,13 +940,13 @@ void func_080F02A0(UnkStruct_080F023C* w) {
     func_080F0108(w, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->angle = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(w->unk_08, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
-    if ((u8)func_080F023C(w, 0x6000) != 0 && q->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
-        w->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        w->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
-        w->unk_DC = gUnk_02039BA0->actor.fieldPosition.unk_0C - 0x1000;
+    if ((u8)func_080F023C(w, 0x6000) != 0 && q->unk_0C == gFieldState->actor.fieldPosition.unk_0C) {
+        w->unk_D4 = gFieldState->actor.fieldPosition.x;
+        w->unk_D8 = gFieldState->actor.fieldPosition.y;
+        w->unk_DC = gFieldState->actor.fieldPosition.unk_0C - 0x1000;
         w->timer = 0;
         q->unk_10 = 0;
         w->update = func_080F0348;
@@ -967,12 +967,12 @@ void func_080F0348(UnkStruct_080F023C* w) {
     tmp = *(UnkStruct_080DFF1C*)v;
 
     if (GetRandom() % 20 != 0) {
-        v->angle = GetAngle(w->unk_08, v->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        v->angle = GetAngle(w->unk_08, v->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
-    if ((u8)func_080F023C(w, 0x6000) != 0 && v->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
-        w->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        w->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
+    if ((u8)func_080F023C(w, 0x6000) != 0 && v->unk_0C == gFieldState->actor.fieldPosition.unk_0C) {
+        w->unk_D4 = gFieldState->actor.fieldPosition.x;
+        w->unk_D8 = gFieldState->actor.fieldPosition.y;
     }
 
     if ((u8)func_080F01B0(q) != 0) {
@@ -1011,7 +1011,7 @@ void func_080F0470(UnkStruct_080F023C* w) {
     save = *(UnkStruct_080DFF1C*)q;
 
     if (GetRandom() % 20 != 0) {
-        q->angle = GetAngle(w->unk_08, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(w->unk_08, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if ((u8)func_080F01B0(w) != 0) {
@@ -1048,7 +1048,7 @@ s32 Task_MapEnm03_1(MapEnmWork* p) {
     MapEnmWork* w = p;
     UnkStruct_080DFF1C* q = &w->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1073,7 +1073,7 @@ void Task_MapEnm03_3(MapEnmWork* p) {
 }
 
 void func_080F0614(UnkStruct_080EFA30* p) {
-    if (p->unk_08 < gUnk_02039BA0->x - 0x1800 || p->unk_08 > gUnk_02039BA0->x + 0x10800) {
+    if (p->unk_08 < gFieldState->x - 0x1800 || p->unk_08 > gFieldState->x + 0x10800) {
         if (p->unk_F8 != 0) {
             p->unk_CC = 0;
         }
@@ -1110,13 +1110,13 @@ void func_080F0660(UnkStruct_080F023C* p, u8 a) {
 
 void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
     if (flag) {
-        p->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        p->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
-        p->unk_DC = gUnk_02039BA0->actor.fieldPosition.z - 0x1000;
+        p->unk_D4 = gFieldState->actor.fieldPosition.x;
+        p->unk_D8 = gFieldState->actor.fieldPosition.y;
+        p->unk_DC = gFieldState->actor.fieldPosition.z - 0x1000;
     } else {
-        p->unk_D4 = gUnk_02039BA0->actor.fieldPosition.x;
-        p->unk_D8 = gUnk_02039BA0->actor.fieldPosition.y;
-        p->unk_DC = gUnk_02039BA0->actor.fieldPosition.z;
+        p->unk_D4 = gFieldState->actor.fieldPosition.x;
+        p->unk_D8 = gFieldState->actor.fieldPosition.y;
+        p->unk_DC = gFieldState->actor.fieldPosition.z;
 
         if (GetRandom() % 2) {
             s32 t = GetRandom() % 65 * 256 + 0x2000;
@@ -1152,10 +1152,10 @@ void func_080F07EC(MapEnmWork* p) {
     func_080F0660((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
-    if (q->unk_08 < gUnk_02039BA0->actor.fieldPosition.z - 0x4000) {
+    if (q->unk_08 < gFieldState->actor.fieldPosition.z - 0x4000) {
         func_080F0708((UnkStruct_080F023C*)p, 0);
         p->unk_D0 = 0;
         q->unk_10 = 0;
@@ -1196,7 +1196,7 @@ void func_080F08E4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -1310,7 +1310,7 @@ s32 Task_MapEnm04_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1370,7 +1370,7 @@ void func_080F0C68(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (GetRandom() % 20 == 0) {
-        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1428,7 +1428,7 @@ s32 Task_MapEnm05_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1488,7 +1488,7 @@ void func_080F0EEC(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (GetRandom() % 20 == 0) {
-        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1546,7 +1546,7 @@ s32 Task_MapEnm06_1(MapEnmWork* p) {
     MapEnmWork* q = p;
     UnkStruct_080DFF1C* pos = &p->unk_08;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
         return 0;
     }
@@ -1734,7 +1734,7 @@ void func_080F14C4(MapGmkJumpWork* w) {
     if (ColliderIsTouchingType(&w->collider, 1)) {
         gUnk_0203C7AC->unk_1C = w->unk_0C4;
         gUnk_0203C7AC->unk_18 = w->unk_014;
-    } else if (gUnk_02039BA0->actor.fieldPosition.z != gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+    } else if (gFieldState->actor.fieldPosition.z != gFieldState->actor.fieldPosition.unk_0C) {
         w->update = func_080F1544;
         w->unk_0C0 = 2;
         AnimStart(&w->anim, 2, 1);
@@ -1814,9 +1814,9 @@ void Task_MapGmk_Jump_2(MapGmkJumpWork* w) {
     s16 x;
     s16 y;
 
-    x = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_000 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004 >> 8;
-    y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_008 >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
 }
@@ -1834,7 +1834,7 @@ s32 func_080F173C(MapGmkEnmWork* w) {
         w->unk_070--;
     } else {
         gUnk_0203C7AC->flags |= 2;
-        gUnk_02039BA0->flags |= 0x80;
+        gFieldState->flags |= 0x80;
         gUnk_0203C7AC->unk_0E = func_080E5E44();
         w->unk_064 = 0;
     }
@@ -1876,7 +1876,7 @@ void Task_MapGmk_Enm_0(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_064 = func_080F173C;
     f = 0;
 
-    if (gUnk_02039BA0->actor.fieldPosition.x >= e->unk_00) {
+    if (gFieldState->actor.fieldPosition.x >= e->unk_00) {
         f = 1;
     }
     w->unk_068 = f;
@@ -1908,9 +1908,9 @@ void Task_MapGmk_Enm_2(u8* work) {
     if (t) {
         flags = 0x801;
     }
-    x = (*(s32*)&work[0] >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (*(s32*)&work[0] >> 8) - (gFieldState->x >> 8);
     k = *(s32*)&work[4] >> 8;
-    y = k + (*(s32*)&work[8] >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (*(s32*)&work[8] >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, *(void**)&work[0x60], *(void**)&work[0x58], *(void**)&work[0x5C], 0, flags, -0x1004 - k * 4);
 }
 
@@ -1941,13 +1941,13 @@ void Task_MapGmk_Dmy_3(u8* work) {
 
 u8 func_080F1978(MapGmkTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 0, 8) != 0) {
-        if ((gUnk_02039BA0->flags & 0x800000) == 0 && gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+        if ((gFieldState->flags & 0x800000) == 0 && gFieldState->actor.fieldPosition.z == gFieldState->actor.fieldPosition.unk_0C) {
             TaskPool* pool = &w->tasks;
 
             TaskCreate(pool, &gTaskDescMapSpark, w);
             m4aSongNumStart(0xDC);
             gUnk_0203C7AC->flags |= 0x80;
-            gUnk_02039BA0->unk_68 = (s32)w;
+            gFieldState->unk_68 = (s32)w;
             gUnk_0203C7AC->unk_14 = (s32)w;
             w->update = func_080F1A10;
             gUnk_0203C7AC->unk_0F = 0;
@@ -1967,7 +1967,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
         w->update = func_080F1A84;
     }
 
-    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
+    if ((gFieldState->flags & 0x40000) == 0) {
         gUnk_0203C7AC->flags &= ~0x80;
         FadeSetPaletteExcluded(*(u16*)&w->palette[6] + 16, 0);
         w->update = func_080F1978;
@@ -1976,7 +1976,7 @@ u8 func_080F1A10(MapGmkTutorialWork* w) {
 }
 
 u8 func_080F1A84(MapGmkTutorialWork* w) {
-    if (gUnk_02039BA0->flags & 0x200000) {
+    if (gFieldState->flags & 0x200000) {
         UpdateSpriteFrameTiles(w->tiles, gUnk_098A94A0, gUnk_0994C364);
         w->unk_0A8 = 1;
         w->update = func_080F1ACC;
@@ -2028,9 +2028,9 @@ void Task_MapGmk_Tutorial_2(MapGmkTutorialWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->x >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->x >> 8) - (gFieldState->x >> 8);
     k = w->y >> 8;
-    y = k + (w->z >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->z >> 8) - (gFieldState->y >> 8);
     v = -0xFE4 - k * 4;
     DrawSprite(x, y, 0, w->tiles, w->palette, 0, 0x800, v);
     TaskPoolDraw(&w->tasks);
@@ -2048,7 +2048,7 @@ u8 func_080F1C64(MapGmkSpiderWork* w) {
 
     if (AnimIsFinished(a)) {
         gUnk_0203C7AC->flags |= 2;
-        gUnk_02039BA0->flags |= 0x80;
+        gFieldState->flags |= 0x80;
         gUnk_0203C7AC->unk_0E = GetRandom() % 3 + 125;
         w->update = 0;
     } else {
@@ -2071,7 +2071,7 @@ void Task_MapGmk_Spider_0(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     w->update = func_080F1C64;
     v = 0;
 
-    if (gUnk_02039BA0->actor.fieldPosition.x >= w->unk_000) {
+    if (gFieldState->actor.fieldPosition.x >= w->unk_000) {
         v = 1;
     }
     w->unk_0C4 = v;
@@ -2103,9 +2103,9 @@ void Task_MapGmk_Spider_2(MapGmkSpiderWork* w) {
         flags = 0x801;
     }
 
-    x = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_000 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004 >> 8;
-    y = k + (w->unk_008 >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_008 >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, flags, v);
 }
@@ -2120,7 +2120,7 @@ s32 func_080F1E28(MapGmkGpWork* w) {
 
     if (func_080E02E0(p, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
 
         if (!(w->cell->unk_00 & 2)) {
             w->cell->unk_00 |= 2;
@@ -2189,9 +2189,9 @@ void Task_MapGmk_GP00_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2215,7 +2215,7 @@ u8 func_080F207C(MapGmkGp1Work* w) {
         w->gfx = AnimUpdate(&w->anim);
     } else {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
         func_080E84DC(&w->unk_004);
         gUnk_0203C7AC->flags |= 0x80;
         w->cell->unk_00 |= 1;
@@ -2282,9 +2282,9 @@ void Task_MapGmk_GP01_2(MapGmkGp1Work* w) {
     s32 y;
 
     if (w->unk_0C6 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
         k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -2303,7 +2303,7 @@ u8 func_080F230C(MapGmkGpWork* w) {
         MapCell* e;
 
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
         e = w->cell;
 
         if ((e->unk_00 & 2) == 0) {
@@ -2378,9 +2378,9 @@ void Task_MapGmk_GP02_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2396,7 +2396,7 @@ u8 func_080F2594(MapGmkGpWork* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
         gUnk_0203C7AC->flags |= 0x80;
         AnimStart(&w->anim, 1, 0);
         w->update = func_080F25FC;
@@ -2482,9 +2482,9 @@ void Task_MapGmk_GP03_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2503,7 +2503,7 @@ u8 func_080F285C(MapGmkGpWork* w) {
 
     if ((w->cell->unk_00 & 2) == 0 && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
         func_080E84DC(q);
         w->cell->unk_00 |= 2;
         gUnk_0203C7AC->flags |= 0x80;
@@ -2577,9 +2577,9 @@ void Task_MapGmk_GP04_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2595,7 +2595,7 @@ s32 func_080F2AF4(MapGmkGpWork* w) {
 
     if (!(w->cell->unk_00 & 2) && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
         func_080E84DC(q);
         w->cell->unk_00 |= 2;
         gUnk_0203C7AC->flags |= 0x80;
@@ -2670,9 +2670,9 @@ void Task_MapGmk_GP05_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2691,7 +2691,7 @@ u8 func_080F2D90(MapGmkGpWork* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
 
         if ((w->cell->unk_00 & 2) == 0) {
             w->cell->unk_00 |= 2;
@@ -2777,9 +2777,9 @@ void Task_MapGmk_GP06_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2876,9 +2876,9 @@ void Task_MapGmk_GP07_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2895,7 +2895,7 @@ s32 func_080F32F4(MapGmkGp8Work* w) {
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(*(u16*)&w->unk_0C8);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, q);
 
         if (!(w->cell->unk_00 & 2)) {
             w->cell->unk_00 |= 2;
@@ -2970,9 +2970,9 @@ void Task_MapGmk_GP08_2(MapGmkGp8Work* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 
@@ -3069,9 +3069,9 @@ void Task_MapGmk_GP09_2(MapGmkGp8Work* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 
@@ -3152,9 +3152,9 @@ void Task_MapGmk00_2(MapGmk00Work* w) {
     s32 y;
 
     if (w->unk_0C8 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
         k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -3187,11 +3187,11 @@ u8 func_080F3ADC(MapGmk01Work* w) {
     if (w->unk_000->unk_00 & 8) {
         gUnk_0203C7AC->flags |= 4;
         w->unk_000->unk_00 |= 2;
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapGmkEnm, q);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapGmkEnm, q);
         w->update = 0;
     } else {
         gUnk_0203C7AC->flags &= ~0x20;
-        func_080E9078(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, gUnk_02039BA0->actor.fieldPosition.z);
+        func_080E9078(gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y, gFieldState->actor.fieldPosition.z);
         func_080DEE18(gUnk_0203C590.unk_06)->unk_00 |= 0x10;
         w->unk_000->unk_00 |= 2;
         w->timer = 20;
@@ -3258,9 +3258,9 @@ void Task_MapGmk01_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3304,16 +3304,16 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
 
         if (r <= 1499) {
             m4aSongNumStart(0x90);
-            TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
+            TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
             gUnk_0203C7AC->flags |= 0x80;
             gUnk_0203C7AC->flags |= 4;
             w->unk_000->unk_00 |= 1;
-            TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapGmkSpider, w->unk_000);
+            TaskCreate(gFieldState->tasks, &gTaskDescMapGmkSpider, w->unk_000);
             return 0;
         }
 
         m4aSongNumStart(0x90);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, p);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
 
         if (r <= 5999) {
             if ((u8)func_080E8FB8(0, p->unk_00, p->x, p->y) != 1) {
@@ -3394,9 +3394,9 @@ void Task_MapGmk_Barrel_2(MapGmkBarrelWork* w) {
     s32 y;
 
     if (w->unk_0C4 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
         k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -3411,8 +3411,8 @@ void Task_MapGmk_Barrel_3(MapGmkGpWork* w) {
 void func_080F4140(MapGmk04Work* w) {
     if ((gUnk_0203C7AC->flags & 0x4000) == 0 && (u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
         m4aSongNumStart(0x66);
-        gUnk_02039BA0->flags |= 0x1000;
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSave, 0);
+        gFieldState->flags |= 0x1000;
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSave, 0);
         w->update = 0;
     }
 }
@@ -3421,11 +3421,11 @@ void func_080F41A4(MapGmk04Work* w) {
     u32 state = gUnk_0203C7AC->flags;
 
     if (state & 0x4000) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x69);
         w->update = func_080F4258;
-    } else if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004) {
-        gUnk_02039BA0->flags |= 0x1000;
+    } else if (gFieldState->unk_68 == (s32)&w->unk_004) {
+        gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags = state | 0x4000;
         func_080A411C(&w->tasks, 0, 0x67);
         w->update = func_080F4224;
@@ -3434,7 +3434,7 @@ void func_080F41A4(MapGmk04Work* w) {
 
 void func_080F4224(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSave, 0);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSave, 0);
         w->update = 0;
     }
 }
@@ -3442,7 +3442,7 @@ void func_080F4224(MapGmk04Work* w) {
 void func_080F4258(MapGmk04Work* w) {
     if (func_080A42C8() == 0) {
         gUnk_0203C7AC->flags &= ~0x4000;
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         gGameState.progression.unk_82 |= 0x10;
         w->update = func_080F4140;
     }
@@ -3501,9 +3501,9 @@ void Task_MapGmk04_2(MapGmk04Work* w) {
     s32 y;
 
     TaskPoolDraw(&w->tasks);
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = p->x >> 8;
-    y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (p->y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3518,7 +3518,7 @@ void Task_MapGmk04_3(MapGmk04Work* w) {
 
 void func_080F445C(MapGmk05Work* w) {
     if (w->unk_0C8 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
         m4aSongNumStart(0xCF);
@@ -3597,8 +3597,8 @@ void Task_MapGmk05_2(MapGmk05Work* w) {
 
     k = p->x >> 8;
     v = -0x1004 - k * 4;
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
-    y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
+    y = k + (p->y >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
     ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
@@ -3619,15 +3619,15 @@ void Task_MapGmk05_3(MapGmk05Work* w) {
 }
 
 void func_080F46FC(MapGmk06Work* w) {
-    if (gUnk_02039BA0->unk_68 == (s32)&w->unk_004 && (gGameState.progression.unk_82 & 0x100) == 0) {
-        gUnk_02039BA0->flags |= 0x1000;
+    if (gFieldState->unk_68 == (s32)&w->unk_004 && (gGameState.progression.unk_82 & 0x100) == 0) {
+        gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags |= 0x4000;
         func_080A411C(&w->tasks, 0, 0x84);
-        gUnk_02039BA0->unk_6C = 30;
+        gFieldState->unk_6C = 30;
         w->update = func_080F47DC;
     } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & 1)) {
         m4aSongNumStart(0x66);
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         func_0801CB0C();
         FadeStartOut(0, 16);
         w->update = func_080F47B4;
@@ -3643,12 +3643,12 @@ void func_080F47B4(MapGmk06Work* w) {
 
 void func_080F47DC(MapGmk06Work* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         gUnk_0203C7AC->flags &= ~0x4000;
         gGameState.progression.unk_82 |= 0x100;
         w->update = func_080F46FC;
     } else {
-        gUnk_02039BA0->unk_6C = 30;
+        gFieldState->unk_6C = 30;
     }
 }
 
@@ -3698,9 +3698,9 @@ void Task_MapGmk06_2(MapGmk06Work* w) {
     s32 y;
 
     TaskPoolDraw(&w->tasks);
-    x = (w->unk_004.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
     k = p->x >> 8;
-    y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+    y = k + (p->y >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3758,7 +3758,7 @@ void func_080F49D0(MapPrizeWork* w) {
 
         w->update = func_080F4BA0;
         w->unk_82 = 0;
-        w->angle = GetAngle(gUnk_02039BA0->actor.fieldPosition.x, gUnk_02039BA0->actor.fieldPosition.y, w->x, w->y);
+        w->angle = GetAngle(gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y, w->x, w->y);
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
@@ -3785,7 +3785,7 @@ void func_080F4BA0(MapPrizeWork* w) {
     s32 y;
     s32 z;
     s32 s;
-    FieldState* g = gUnk_02039BA0;
+    FieldState* g = gFieldState;
 
     s = gSineTable[w->angle] * 32;
     x = g->actor.fieldPosition.x + (s * w->unk_90 >> 8);
@@ -3872,8 +3872,8 @@ void Task_MapPrize_2(MapPrizeWork* w) {
     s32 aff;
 
     if (w->unk_96 != 0) {
-        x = (w->x >> 8) - (gUnk_02039BA0->x >> 8);
-        y = (w->y >> 8) + (w->z >> 8) - (gUnk_02039BA0->y >> 8);
+        x = (w->x >> 8) - (gFieldState->x >> 8);
+        y = (w->y >> 8) + (w->z >> 8) - (gFieldState->y >> 8);
 
         if (w->unk_90 != 0x100) {
             aff = AllocObjAffine(0, w->unk_90, w->unk_90, 0);
@@ -3884,7 +3884,7 @@ void Task_MapPrize_2(MapPrizeWork* w) {
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, aff, 0x800, -0x1004 - (w->y >> 8) * 4);
 
         if (w->unk_97 == 0) {
-            DrawSprite(x, (w->y >> 8) + (w->unk_0C >> 8) - (gUnk_02039BA0->y >> 8), w->gfx2, w->tiles, w->palette, aff, 0x800, 0xFFFF);
+            DrawSprite(x, (w->y >> 8) + (w->unk_0C >> 8) - (gFieldState->y >> 8), w->gfx2, w->tiles, w->palette, aff, 0x800, 0xFFFF);
         }
     }
 }
@@ -3962,8 +3962,8 @@ void func_080F4FB0(MapPrzCardWork* w) {
             }
         }
 
-        nx = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
-        ny = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->y >> 8);
+        nx = (w->unk_000 >> 8) - (gFieldState->x >> 8);
+        ny = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gFieldState->y >> 8);
         w->unk_000 = (s16)nx << 8;
         w->unk_004 = (s16)ny << 8;
         ColliderSetDisabled(&w->collider, 1);
@@ -3972,8 +3972,8 @@ void func_080F4FB0(MapPrzCardWork* w) {
         w->unk_088 = 0;
         w->update = func_080F51A0;
     } else {
-        w->x = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
-        w->y = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gUnk_02039BA0->y >> 8);
+        w->x = (w->unk_000 >> 8) - (gFieldState->x >> 8);
+        w->y = (w->unk_004 >> 8) + (w->unk_008 >> 8) - (gFieldState->y >> 8);
         w->unk_0BE = -0x1004 - (w->unk_004 >> 8) * 4;
         func_080F4EE4(w);
         w->unk_0D0 += 2;
@@ -4065,8 +4065,8 @@ void func_080F534C(MapPrzCardWork* w) {
     s32 y;
 
     w->unk_0CE += 32;
-    x = (gUnk_02039BA0->actor.fieldPosition.x >> 8) - (gUnk_02039BA0->x >> 8);
-    y = (gUnk_02039BA0->actor.fieldPosition.y >> 8) + (gUnk_02039BA0->actor.fieldPosition.z >> 8) - (gUnk_02039BA0->y >> 8);
+    x = (gFieldState->actor.fieldPosition.x >> 8) - (gFieldState->x >> 8);
+    y = (gFieldState->actor.fieldPosition.y >> 8) + (gFieldState->actor.fieldPosition.z >> 8) - (gFieldState->y >> 8);
     w->x += ((s16)x - w->x) >> 3;
     w->y += ((s16)y - w->y) >> 3;
     w->unk_0B4 -= 10;
@@ -4169,8 +4169,8 @@ void Task_MapPrzCard_2(MapPrzCardWork* w) {
     }
 
     if (w->unk_0D2 == 0) {
-        x = (w->unk_000 >> 8) - (gUnk_02039BA0->x >> 8);
-        y = (w->unk_004 >> 8) + (w->unk_00C >> 8) - (gUnk_02039BA0->y >> 8);
+        x = (w->unk_000 >> 8) - (gFieldState->x >> 8);
+        y = (w->unk_004 >> 8) + (w->unk_00C >> 8) - (gFieldState->y >> 8);
         s = 204 - ((w->unk_00C - w->unk_008) >> 7);
 
         if (s <= 2) {
@@ -4211,8 +4211,8 @@ void func_080F5820(MapPrzStockWork* w) {
 
 void Task_MapPrzStock_0(MapPrzStockWork* w, u16* a) {
     w->unk_00 = a;
-    gUnk_02039BA0->flags |= 0x1000;
-    gUnk_02039BA0->flags |= 0x80;
+    gFieldState->flags |= 0x1000;
+    gFieldState->flags |= 0x80;
     w->update = func_080F5800;
     TaskPoolInit(&w->tasks, 1);
 }
@@ -4236,8 +4236,8 @@ void Task_MapPrzStock_2(MapPrzStockWork* w) {
 
 void Task_MapPrzStock_3(MapPrzStockWork* w) {
     TaskPoolDestroy(&w->tasks);
-    gUnk_02039BA0->flags &= ~0x1000;
-    gUnk_02039BA0->flags &= ~0x80;
+    gFieldState->flags &= ~0x1000;
+    gFieldState->flags &= ~0x80;
 }
 
 void func_080F58C4(MapMsgWork* w, void* text) {
@@ -4262,7 +4262,7 @@ void func_080F596C(MapMsgWork* w) {
 }
 
 void func_080F59A0(MapMsgWork* w) {
-    if ((gUnk_02039BA0->flags & 0x40000) == 0) {
+    if ((gFieldState->flags & 0x40000) == 0) {
         DisableBg(0);
     }
 
@@ -4317,8 +4317,8 @@ void Task_MapSpark_2(MapSparkWork* w) {
         h = 0x2000;
     }
 
-    x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
-    y = (p->unk_04 >> 8) + ((p->unk_08 - h) >> 8) - (gUnk_02039BA0->y >> 8);
+    x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
+    y = (p->unk_04 >> 8) + ((p->unk_08 - h) >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
@@ -4342,7 +4342,7 @@ s32 func_080F5B68(MapTalkWork* w) {
 
     AnimUpdate(anim);
 
-    if (gUnk_02039BA0->actor.fieldPosition.x < *p) {
+    if (gFieldState->actor.fieldPosition.x < *p) {
         w->unk_28 = 0;
         AnimStart(anim, 0, 1);
     } else {
@@ -4358,11 +4358,11 @@ void Task_MapTalk_2(MapTalkWork* w) {
     u16 y;
 
     if (w->unk_28 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8) - 16;
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8) - 16;
     } else {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8) + 16;
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8) + 16;
     }
-    y = (p->unk_04 >> 8) + ((p->unk_08 - (p->unk_1A << 8)) >> 8) - (gUnk_02039BA0->y >> 8);
+    y = (p->unk_04 >> 8) + ((p->unk_08 - (p->unk_1A << 8)) >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x400, 0x50);
 }
 
@@ -4373,7 +4373,7 @@ void Task_MapTalk_3(MapTalkWork* w) {
 
 void func_080F5C60(MapDonaldWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
             func_080A411C(&w->tasks, 0, 24);
@@ -4387,7 +4387,7 @@ void func_080F5C60(MapDonaldWork* w) {
 
 void func_080F5CDC(MapDonaldWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         w->update = func_080F5C60;
     }
 }
@@ -4462,9 +4462,9 @@ void Task_MapDonald_2(MapDonaldWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
         k = p->x >> 8;
-        y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (p->y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
         ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
@@ -4488,7 +4488,7 @@ void Task_MapDonald_3(MapFrdWork* w) {
 
 void func_080F5F88(MapGoofyWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
             func_080A411C(&w->tasks, 0, 49);
@@ -4502,7 +4502,7 @@ void func_080F5F88(MapGoofyWork* w) {
 
 void func_080F6004(MapGoofyWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         w->update = func_080F5F88;
     }
 }
@@ -4577,9 +4577,9 @@ void Task_MapGoofy_2(MapGoofyWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
         k = p->x >> 8;
-        y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (p->y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
         ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
@@ -4603,7 +4603,7 @@ void Task_MapGoofy_3(MapFrdWork* w) {
 
 void func_080F62B0(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
 
         if (gUnk_0203C590.unk_00 == 27) {
             func_080A411C(&w->tasks, 0, 0x33);
@@ -4616,7 +4616,7 @@ void func_080F62B0(MapNamineWork* w) {
 
 void func_080F6314(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         w->update = func_080F62B0;
     }
 }
@@ -4698,9 +4698,9 @@ void Task_MapNamine_2(MapNamineWork* w) {
     s16 y;
 
     if (w->unk_0C2 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
         k = p->x >> 8;
-        y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (p->y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, w->unk_0C4, v);
         ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
@@ -4728,7 +4728,7 @@ void Task_MapNamine_3(MapNamineWork* w) {
 
 void func_080F65EC(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         func_080A411C(&w->unk_0C4, 0, 0x34);
         w->update = func_080F6634;
     }
@@ -4736,7 +4736,7 @@ void func_080F65EC(MapNamineWork* w) {
 
 void func_080F6634(MapNamineWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         w->update = func_080F65EC;
     }
 }
@@ -4745,22 +4745,22 @@ void func_080F6668(MapNamineWork* w) {
     s32 dx;
     s32 dy;
 
-    dx = w->unk_000 - gUnk_02039BA0->actor.fieldPosition.x;
+    dx = w->unk_000 - gFieldState->actor.fieldPosition.x;
 
     if (dx < 0) {
-        dx = gUnk_02039BA0->actor.fieldPosition.x - w->unk_000;
+        dx = gFieldState->actor.fieldPosition.x - w->unk_000;
     }
 
-    dy = w->unk_004 - gUnk_02039BA0->actor.fieldPosition.y;
+    dy = w->unk_004 - gFieldState->actor.fieldPosition.y;
 
     if (dy < 0) {
-        dy = gUnk_02039BA0->actor.fieldPosition.y - w->unk_004;
+        dy = gFieldState->actor.fieldPosition.y - w->unk_004;
     }
 
     if (dx <= 0x8000 && dy <= 0x8000) {
         if (Sqrt8((dx * dx >> 8) + (dy * dy >> 8)) < 0x3000) {
             FadeStartOut(0, 16);
-            gUnk_02039BA0->flags |= 0x1000;
+            gFieldState->flags |= 0x1000;
             w->update = func_080F66E0;
         }
     }
@@ -4882,9 +4882,9 @@ void Task_MapNiseriku_2(MapNiserikuWork* w) {
     s16 y;
 
     if (w->unk_0C2 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
         k = p->x >> 8;
-        y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (p->y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
         ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
@@ -4912,7 +4912,7 @@ void Task_MapNiseriku_3(MapMickeyWork* w) {
 
 void func_080F6A60(MapMickeyWork* w) {
     if (w->unk_0C0 != 0 && (GetKeysPressed() & 1)) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
 
         switch (gUnk_0203C590.unk_00) {
         case 20:
@@ -4933,7 +4933,7 @@ void func_080F6A60(MapMickeyWork* w) {
 
 void func_080F6AD8(MapMickeyWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         w->update = func_080F6A60;
     }
 }
@@ -4993,9 +4993,9 @@ void Task_MapMickey_2(MapMickeyWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
         k = p->x >> 8;
-        y = k + (p->y >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (p->y >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, w->unk_0C2, v);
         ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
@@ -5018,7 +5018,7 @@ void Task_MapMickey_3(MapFrdWork* w) {
 }
 
 void func_080F6D40(void) {
-    gUnk_02039BA0->flags |= 0x80;
+    gFieldState->flags |= 0x80;
     gUnk_0203C7AC->unk_0E = 10;
     gUnk_0203C7AC->flags &= ~0x4000;
     gUnk_0203C7AC->flags |= 2;
@@ -5027,12 +5027,12 @@ void func_080F6D40(void) {
 void func_080F6D70(MapTutorialWork* w) {
     u32 flags;
 
-    if (gUnk_02039BA0->unk_68 == 0) {
-        flags = gUnk_02039BA0->flags;
+    if (gFieldState->unk_68 == 0) {
+        flags = gFieldState->flags;
 
         if (!(flags & 0x2000) && !(gUnk_0203C7AC->flags & 0x2000) && (gGameState.progression.unk_82 & 0x10)) {
             gUnk_0203C7AC->flags |= 0x4000;
-            gUnk_02039BA0->flags = flags | 0x1000;
+            gFieldState->flags = flags | 0x1000;
             func_080A411C(&w->tasks, 0, 0x6A);
             w->update = func_080F6DE8;
         }
@@ -5072,7 +5072,7 @@ void func_080F6EBC(MapTutorialWork* w) {
     w->z += w->vz;
 
     if (w->z > w->unk_00C) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         m4aSongNumStart(0xD7);
         w->z = w->unk_00C;
         w->vz = 0;
@@ -5085,7 +5085,7 @@ void func_080F6EBC(MapTutorialWork* w) {
 void func_080F6F1C(MapTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 8)) {
         m4aSongNumStart(0x90);
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, w);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, w);
         gUnk_0203C7AC->flags &= ~0x20;
         func_080E8FB8(0, w->x, w->y, w->z);
         AnimStart(&w->anim, 1, 0);
@@ -5105,7 +5105,7 @@ void func_080F6F90(MapTutorialWork* w) {
 void func_080F6FC4(MapTutorialWork* w) {
     if ((gUnk_0203C7AC->flags & 0x10) == 0) {
         gGameState.progression.unk_82 |= 0x2000;
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         func_080A411C(&w->tasks, 0, 0x6B);
         w->update = func_080F7024;
     }
@@ -5124,7 +5124,7 @@ void func_080F7024(MapTutorialWork* w) {
         *(u16*)&w->unk_014[6] = 16;
         v = 0;
 
-        if (gUnk_02039BA0->actor.fieldPosition.x > w->x) {
+        if (gFieldState->actor.fieldPosition.x > w->x) {
             v = 1;
         }
         w->unk_0C2 = v;
@@ -5158,7 +5158,7 @@ void func_080F7160(MapTutorialWork* w) {
     w->gfx = AnimUpdate(&w->anim);
 
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         ColliderSetDisabled(w->unk_040, 0);
         w->update = func_080F71AC;
     }
@@ -5172,7 +5172,7 @@ void func_080F71AC(MapTutorialWork* w) {
     if (func_080E02E0((UnkStruct_080DFF1C*)w, 8, 16)) {
         gUnk_0203C7AC->flags |= 0x80;
         gUnk_0203C7AC->flags |= 4;
-        TaskCreate(gUnk_02039BA0->tasks, &gTaskDescMapSpark, w);
+        TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, w);
         m4aSongNumStart(0x75);
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
         SetObjTileSource(w->tiles, gUnk_08963BAC);
@@ -5216,7 +5216,7 @@ void Task_MapTutorial_0(MapTutorialWork* w) {
         w->unk_0C0 = 0;
         w->update = func_080F6D70;
     } else {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         TaskCreate(&w->tasks2, &gTaskDescFldShadow, w);
         w->unk_0C0 = 1;
         w->unk_0C1 = 1;
@@ -5249,9 +5249,9 @@ void Task_MapTutorial_2(MapTutorialWork* w) {
     TaskPoolDraw(&w->tasks);
 
     if (w->unk_0C0 != 0) {
-        x = (w->x >> 8) - (gUnk_02039BA0->x >> 8);
+        x = (w->x >> 8) - (gFieldState->x >> 8);
         k = w->y >> 8;
-        y = k + (w->z >> 8) - (gUnk_02039BA0->y >> 8);
+        y = k + (w->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         t = w->unk_0C2;
         flags = 0x800;
@@ -5282,13 +5282,13 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     s32 dx;
     s32 dy;
 
-    dx = p->unk_00 - gUnk_02039BA0->actor.fieldPosition.x;
+    dx = p->unk_00 - gFieldState->actor.fieldPosition.x;
     if (dx < 0) {
-        dx = gUnk_02039BA0->actor.fieldPosition.x - p->unk_00;
+        dx = gFieldState->actor.fieldPosition.x - p->unk_00;
     }
-    dy = p->x - gUnk_02039BA0->actor.fieldPosition.y;
+    dy = p->x - gFieldState->actor.fieldPosition.y;
     if (dy < 0) {
-        dy = gUnk_02039BA0->actor.fieldPosition.y - p->x;
+        dy = gFieldState->actor.fieldPosition.y - p->x;
     }
 
     if (dx > 0x8000 || dy > 0x8000) {
@@ -5299,7 +5299,7 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
 
 void func_080F74E8(UnkStruct_080DFF1C* p) {
     if ((u8)func_080F7488(p, 0x800) != 0) {
-        if (gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+        if (gFieldState->actor.fieldPosition.z == gFieldState->actor.fieldPosition.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
                 gUnk_0203C7AC->flags |= 0x100;
             } else {
@@ -5313,7 +5313,7 @@ void func_080F753C(UnkStruct_080DFF1C* p) {
     s32 k = 0x800;
 
     if ((u8)func_080F7488(p, k) != 0) {
-        if (gUnk_02039BA0->actor.fieldPosition.z == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+        if (gFieldState->actor.fieldPosition.z == gFieldState->actor.fieldPosition.unk_0C) {
             if (gUnk_0203C590.unk_06 == 0xFE) {
                 gUnk_0203C7AC->flags |= k;
             } else {
@@ -5325,7 +5325,7 @@ void func_080F753C(UnkStruct_080DFF1C* p) {
 
 void func_080F7594(MapStairWork* w) {
     if ((u8)func_080F7488((UnkStruct_080DFF1C*)w, 0x3000) != 0) {
-        gUnk_02039BA0->flags |= 0x1000;
+        gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags |= 0x4000;
         func_080A411C(&w->tasks, 0, 0xA7);
         w->update = func_080F75E4;
@@ -5334,7 +5334,7 @@ void func_080F7594(MapStairWork* w) {
 
 void func_080F75E4(MapStairWork* w) {
     if (func_080A42C8() == 0) {
-        gUnk_02039BA0->flags &= ~0x1000;
+        gFieldState->flags &= ~0x1000;
         gUnk_0203C7AC->flags &= ~0x4000;
         gGameState.progression.unk_82 |= 0x400;
         w->update = func_080F74E8;
@@ -5385,8 +5385,8 @@ void Task_MapStair_2(MapStairWork* w) {
     TaskPoolDraw(&w->tasks);
 
     if (w->unk_48 == 1) {
-        x = (w->unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
-        y = (w->unk_04 >> 8) + (w->unk_08 >> 8) - (gUnk_02039BA0->y >> 8);
+        x = (w->unk_00 >> 8) - (gFieldState->x >> 8);
+        y = (w->unk_04 >> 8) + (w->unk_08 >> 8) - (gFieldState->y >> 8);
         DrawSprite(x, y, gUnk_08B1E9A6, w->tiles, w->palette, 0, 0x800, 0x101);
     }
 }
@@ -5415,8 +5415,8 @@ void Task_MapFaint_2(MapFaintWork* w) {
     u16 x;
     u16 y;
 
-    x = (e->unk_00.unk_00 >> 8) - (gUnk_02039BA0->x >> 8);
-    y = (e->unk_00.x >> 8) + ((e->unk_00.y - ((s16)e->unk_1A + 8) * 0x100) >> 8) - (gUnk_02039BA0->y >> 8);
+    x = (e->unk_00.unk_00 >> 8) - (gFieldState->x >> 8);
+    y = (e->unk_00.x >> 8) + ((e->unk_00.y - ((s16)e->unk_1A + 8) * 0x100) >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, -0x1005 - (e->unk_00.x >> 8) * 4);
 }
 
@@ -5460,24 +5460,24 @@ void Task_MapDmg_2(u8* work) {
         return;
     }
 
-    x = ((gUnk_0203C7AC->unk_24 - 0x1400) >> 8) - (gUnk_02039BA0->x >> 8);
-    y = ((gUnk_0203C7AC->unk_28 - 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gUnk_02039BA0->y >> 8);
+    x = ((gUnk_0203C7AC->unk_24 - 0x1400) >> 8) - (gFieldState->x >> 8);
+    y = ((gUnk_0203C7AC->unk_28 - 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, gUnk_08B1E974, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 
-    x = ((gUnk_0203C7AC->unk_24 + 0x1400) >> 8) - (gUnk_02039BA0->x >> 8);
-    y = ((gUnk_0203C7AC->unk_28 - 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gUnk_02039BA0->y >> 8);
+    x = ((gUnk_0203C7AC->unk_24 + 0x1400) >> 8) - (gFieldState->x >> 8);
+    y = ((gUnk_0203C7AC->unk_28 - 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, gUnk_08B1E97E, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 
-    x = ((gUnk_0203C7AC->unk_24 - 0x1400) >> 8) - (gUnk_02039BA0->x >> 8);
-    y = ((gUnk_0203C7AC->unk_28 + 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gUnk_02039BA0->y >> 8);
+    x = ((gUnk_0203C7AC->unk_24 - 0x1400) >> 8) - (gFieldState->x >> 8);
+    y = ((gUnk_0203C7AC->unk_28 + 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, gUnk_08B1E992, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 
-    x = ((gUnk_0203C7AC->unk_24 + 0x1400) >> 8) - (gUnk_02039BA0->x >> 8);
-    y = ((gUnk_0203C7AC->unk_28 + 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gUnk_02039BA0->y >> 8);
+    x = ((gUnk_0203C7AC->unk_24 + 0x1400) >> 8) - (gFieldState->x >> 8);
+    y = ((gUnk_0203C7AC->unk_28 + 0x1400) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, gUnk_08B1E988, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 
-    x = ((gUnk_0203C7AC->unk_24) >> 8) - (gUnk_02039BA0->x >> 8);
-    y = ((gUnk_0203C7AC->unk_28) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gUnk_02039BA0->y >> 8);
+    x = ((gUnk_0203C7AC->unk_24) >> 8) - (gFieldState->x >> 8);
+    y = ((gUnk_0203C7AC->unk_28) >> 8) + (gUnk_0203C7AC->unk_2C >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, gUnk_08B1E9A6, *(void**)&work[4], *(void**)&work[0], 0, 0x800, 0x101);
 }
 
@@ -5501,8 +5501,8 @@ void* func_080F7AB4(void) {
 }
 
 void Task_MapFloor_0(MapFloorWork* w) {
-    gUnk_02039BA0->flags |= 0x1000;
-    gUnk_02039BA0->flags |= 0x80;
+    gFieldState->flags |= 0x1000;
+    gFieldState->flags |= 0x80;
     w->tiles = LoadObjTiles(gUnk_0993AF64, 0x800);
     w->palette = LoadObjPalette(gUnk_099910C4, 32);
     w->gfx = gUnk_09EF8DA4[0];
@@ -5541,8 +5541,8 @@ void Task_MapFloor_3(MapFloorWork* w) {
 #else
     FreeTextSlots(w->unk_18, 40);
 #endif
-    gUnk_02039BA0->flags &= ~0x80;
-    gUnk_02039BA0->flags &= ~0x1000;
+    gFieldState->flags &= ~0x80;
+    gFieldState->flags &= ~0x1000;
 }
 
 const UnkStruct_080E7D80 gUnk_0984C158 = {

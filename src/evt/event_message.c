@@ -91,7 +91,7 @@ const char gTaskNameMsgwaitYesno[] = "msgwait_yesno";
 
 const char gTaskNameView[] = "view";
 
-EventScanlineScroll* gUnk_02039DCC EWRAM_COMMON(4);
+EventScanlineScroll* gEventScanlineScroll EWRAM_COMMON(4);
 
 void event_seq_0(EventSeqWork* work, u8* a) {
 #ifdef VERSION_EU
@@ -106,7 +106,7 @@ void event_seq_0(EventSeqWork* work, u8* a) {
     work->seqDef = gUnk_09EE3FB4[work->unk_2C];
     work->unk_30 = 0;
     work->unk_31 = 0;
-    gUnk_02039DC8->unk_8A = 0;
+    gEventState->unk_8A = 0;
     work->unk_2F = 0;
     work->unk_32 = 0;
 #ifdef VERSION_EU
@@ -116,19 +116,19 @@ void event_seq_0(EventSeqWork* work, u8* a) {
     work->unk_3C = 0;
 #endif
 
-    if (gUnk_02039DC8 != NULL) {
-        gUnk_02039DC8->unk_7A = 1;
-        gUnk_02039DC8->unk_7B = 0;
-        gUnk_02039DC8->unk_78 = 0;
-        gUnk_02039DC8->unk_79 = 0;
-        gUnk_02039DC8->unk_7F = 0;
-        gUnk_02039DC8->unk_68 = 0;
-        gUnk_02039DC8->unk_6A = 0;
-        gUnk_02039DC8->unk_80 = 0;
-        gUnk_02039DC8->unk_82 = 0;
-        gUnk_02039DC8->unk_84 = 0;
-        gUnk_02039DC8->unk_85 = 0;
-        gUnk_02039DC8->unk_83 = 0;
+    if (gEventState != NULL) {
+        gEventState->unk_7A = 1;
+        gEventState->unk_7B = 0;
+        gEventState->unk_78 = 0;
+        gEventState->unk_79 = 0;
+        gEventState->unk_7F = 0;
+        gEventState->unk_68 = 0;
+        gEventState->unk_6A = 0;
+        gEventState->unk_80 = 0;
+        gEventState->unk_82 = 0;
+        gEventState->unk_84 = 0;
+        gEventState->unk_85 = 0;
+        gEventState->unk_83 = 0;
 #ifndef VERSION_EU
         RequestDma3Clear(GetBgCharBase(1), 0x8000);
 #endif
@@ -220,7 +220,7 @@ u8 eu_0806C7C8(EventSeqWork* work) {
                 SetBgMapBlocks(2, u->maps2, u->mapWidth, u->mapHeight);
             }
             RedrawBgMapAt(2, 0, 0);
-            gUnk_02039DC8->unk_78 = 1;
+            gEventState->unk_78 = 1;
         } else {
             DisableBg(2);
         }
@@ -244,11 +244,11 @@ u8 eu_0806C848(EventSeqWork* work) {
                 gBldCnt = 0x1844;
                 (*(volatile u16*)&gBldAlpha) = 0x050E;
                 SetBgPriority(2, 1);
-                gUnk_02039DC8->unk_6E = 0x1D42;
-                gUnk_02039DC8->unk_70 = 0x050E;
+                gEventState->unk_6E = 0x1D42;
+                gEventState->unk_70 = 0x050E;
             } else {
-                gUnk_02039DC8->unk_6E = 0;
-                gUnk_02039DC8->unk_70 = 0;
+                gEventState->unk_6E = 0;
+                gEventState->unk_70 = 0;
             }
             if (u->unk_2E[0] == 2 || u->unk_2E[0] == 3) {
                 work->unk_3C = 1;
@@ -258,7 +258,7 @@ u8 eu_0806C848(EventSeqWork* work) {
                 SetBgMapBlocks(1, u->maps3, u->mapWidth, u->mapHeight);
             }
             RedrawBgMapAt(1, 0, 0);
-            gUnk_02039DC8->unk_79 = 1;
+            gEventState->unk_79 = 1;
         } else {
             DisableBg(1);
         }
@@ -269,28 +269,28 @@ u8 eu_0806C974(EventSeqWork* work) {
     EventBackgroundDef* u = gUnk_09EE3CA0[work->unk_2C];
     const EventCameraKeyframe* q = work->seqDef->keyframes;
     u16 i;
-    gUnk_02039DC8->unk_50 = q->unk_04;
-    gUnk_02039DC8->unk_54 = q->unk_08;
-    gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
-    gUnk_02039DC8->unk_4C = gUnk_02039DC8->unk_54 - 0x5000;
-    gUnk_02039DC8->flags = 0;
-    gUnk_02039DC8->unk_6C = 0;
-    gUnk_02039DC8->unk_7C = 0;
-    gUnk_02039DC8->unk_87 = 0;
-    gUnk_02039DC8->unk_81 = 0;
-    gUnk_02039DC8->unk_88 = 0;
-    gUnk_02039DC8->unk_89 = 0;
-    gUnk_02039DC8->unk_7D = 0;
-    gUnk_02039DC8->unk_7E = 0;
-    gUnk_02039DC8->unk_60 = 0;
+    gEventState->unk_50 = q->unk_04;
+    gEventState->unk_54 = q->unk_08;
+    gEventState->unk_48 = gEventState->unk_50 - 0x7800;
+    gEventState->unk_4C = gEventState->unk_54 - 0x5000;
+    gEventState->flags = 0;
+    gEventState->unk_6C = 0;
+    gEventState->unk_7C = 0;
+    gEventState->unk_87 = 0;
+    gEventState->unk_81 = 0;
+    gEventState->unk_88 = 0;
+    gEventState->unk_89 = 0;
+    gEventState->unk_7D = 0;
+    gEventState->unk_7E = 0;
+    gEventState->unk_60 = 0;
     if (u->unk_20 != 5) {
-        gUnk_02039DC8->unk_44 = u->unk_20;
+        gEventState->unk_44 = u->unk_20;
         work->unk_3D = 1;
     } else {
-        gUnk_02039DC8->unk_44 = u->unk_20;
+        gEventState->unk_44 = u->unk_20;
     }
     for (i = 0; i < 16; i++) {
-        gUnk_02039DC8->unk_00[i] = NULL;
+        gEventState->unk_00[i] = NULL;
     }
     return 1;
 }
@@ -356,7 +356,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
             if (u->maps2 != NULL) {
                 SetBgMapBlocks(2, u->maps2, u->mapWidth, u->mapHeight);
                 RedrawBgMapAt(2, 0, 0);
-                gUnk_02039DC8->unk_78 = 1;
+                gEventState->unk_78 = 1;
             } else {
                 DisableBg(2);
             }
@@ -366,16 +366,16 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
                     gBldCnt = 0x1844;
                     (*(volatile u16*)&gBldAlpha) = 0x050E;
                     SetBgPriority(2, 1);
-                    gUnk_02039DC8->unk_6E = 0x1D42;
-                    gUnk_02039DC8->unk_70 = 0x050E;
+                    gEventState->unk_6E = 0x1D42;
+                    gEventState->unk_70 = 0x050E;
                 } else {
-                    gUnk_02039DC8->unk_6E = 0;
-                    gUnk_02039DC8->unk_70 = 0;
+                    gEventState->unk_6E = 0;
+                    gEventState->unk_70 = 0;
                 }
 
                 SetBgMapBlocks(1, u->maps3, u->mapWidth, u->mapHeight);
                 RedrawBgMapAt(1, 0, 0);
-                gUnk_02039DC8->unk_79 = 1;
+                gEventState->unk_79 = 1;
             } else {
                 DisableBg(1);
             }
@@ -383,33 +383,33 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
     }
 
     q = work->seqDef->keyframes;
-    gUnk_02039DC8->unk_50 = q->unk_04;
-    gUnk_02039DC8->unk_54 = q->unk_08;
-    gUnk_02039DC8->unk_48 = gUnk_02039DC8->unk_50 - 0x7800;
-    gUnk_02039DC8->unk_4C = gUnk_02039DC8->unk_54 - 0x5000;
-    gUnk_02039DC8->flags = 0;
-    gUnk_02039DC8->unk_6C = 0;
-    gUnk_02039DC8->unk_7C = 0;
-    gUnk_02039DC8->unk_87 = 0;
-    gUnk_02039DC8->unk_81 = 0;
-    gUnk_02039DC8->unk_88 = 0;
-    gUnk_02039DC8->unk_89 = 0;
-    gUnk_02039DC8->unk_7D = 0;
-    gUnk_02039DC8->unk_7E = 0;
-    gUnk_02039DC8->unk_60 = 0;
+    gEventState->unk_50 = q->unk_04;
+    gEventState->unk_54 = q->unk_08;
+    gEventState->unk_48 = gEventState->unk_50 - 0x7800;
+    gEventState->unk_4C = gEventState->unk_54 - 0x5000;
+    gEventState->flags = 0;
+    gEventState->unk_6C = 0;
+    gEventState->unk_7C = 0;
+    gEventState->unk_87 = 0;
+    gEventState->unk_81 = 0;
+    gEventState->unk_88 = 0;
+    gEventState->unk_89 = 0;
+    gEventState->unk_7D = 0;
+    gEventState->unk_7E = 0;
+    gEventState->unk_60 = 0;
 
     if (u->unk_20 != 5) {
-        gUnk_02039DC8->unk_44 = u->unk_20;
+        gEventState->unk_44 = u->unk_20;
         flag = 1;
     } else {
-        gUnk_02039DC8->unk_44 = 5;
+        gEventState->unk_44 = 5;
     }
 
     i = 0;
     t = work->seqDef;
 
     while (i < 16) {
-        gUnk_02039DC8->unk_00[i] = NULL;
+        gEventState->unk_00[i] = NULL;
         i++;
     }
 
@@ -428,7 +428,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
 
         if (arg.unk_02 > 94) {
             work->unk_32 = 1;
-            gUnk_02039DC8->unk_60 = arg.unk_02;
+            gEventState->unk_60 = arg.unk_02;
         }
 
         TaskCreate(&work->tasks, &gTaskDescEventChara, &arg);
@@ -477,7 +477,7 @@ u8 func_0806D808(void) {
     if (r != 0) {
         v = 1;
     } else {
-        gUnk_02039DC8->unk_7A = 0;
+        gEventState->unk_7A = 0;
         m4aMPlayAllStop();
         v = 0;
     }
@@ -487,7 +487,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     EventSequenceDef* t;
     u8 i;
 
-    if (gUnk_02039DC8 == NULL) {
+    if (gEventState == NULL) {
         return 0;
     }
 
@@ -498,17 +498,17 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         case 84:
             break;
         default:
-            gUnk_02039DC8->unk_8A++;
+            gEventState->unk_8A++;
             break;
         }
     } else {
-        gUnk_02039DC8->unk_8A = 0;
+        gEventState->unk_8A = 0;
     }
 
-    if (gUnk_02039DC8->unk_8A > 64 || gUnk_02039DC8->unk_83 == 1) {
-        gUnk_02039DC8->unk_8A = 64;
+    if (gEventState->unk_8A > 64 || gEventState->unk_83 == 1) {
+        gEventState->unk_8A = 64;
         p->unk_2F = 1;
-        gUnk_02039DC8->unk_82 = 1;
+        gEventState->unk_82 = 1;
         FadeStartOut(0, 64);
         SetTaskUpdate(a, (u32)func_0806D808);
 
@@ -519,7 +519,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     }
 
     if (p->timer == p->seqDef->unk_24) {
-        gUnk_02039DC8->flags |= 2;
+        gEventState->flags |= 2;
     } else {
         s32 t = p->seqDef->keyframes->unk_14 & 0xFF0;
 
@@ -534,22 +534,22 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
     TaskPoolUpdate(&p->tasks2);
 
     if (p->unk_32 != 0) {
-        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_000 = gEventState->unk_48;
+        gBtlWork->unk_004 = gEventState->unk_4C;
     }
 
-    if ((gUnk_02039DC8->flags & 3) == 2) {
-        gUnk_02039DC8->unk_6C++;
+    if ((gEventState->flags & 3) == 2) {
+        gEventState->unk_6C++;
     }
 
     t = gUnk_09EE3FB4[p->unk_2C];
 
-    if (gUnk_02039DC8->unk_6C >= t->unk_18 && p->unk_2F == 0 && FadeIsActive() == 0) {
-        if (gUnk_02039DC8->unk_7F == 0) {
+    if (gEventState->unk_6C >= t->unk_18 && p->unk_2F == 0 && FadeIsActive() == 0) {
+        if (gEventState->unk_7F == 0) {
             FadeStartOut(0, 64);
         }
         p->unk_2F = 1;
-        gUnk_02039DC8->unk_82 = 1;
+        gEventState->unk_82 = 1;
     }
 
     if (p->unk_2F == 1) {
@@ -558,7 +558,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         }
 
         if (FadeIsActive() == 0) {
-            gUnk_02039DC8->unk_7A = 0;
+            gEventState->unk_7A = 0;
             return 0;
         }
     }
@@ -618,7 +618,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
     p->unk_1B0 = 0;
     p->unk_1B6 = 1;
     p->unk_1B8 = 0;
-    gUnk_02039DC8->unk_00[p->unk_027] = (Ent08074EC8*)p->unk_028;
+    gEventState->unk_00[p->unk_027] = (Ent08074EC8*)p->unk_028;
 
     switch (p->unk_026) {
     case 95:
@@ -628,13 +628,13 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         gBtlWork->flags = 0;
         p->unk_1B3 = 1;
-        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
+        gBtlWork->unk_000 = gEventState->unk_48;
+        gBtlWork->unk_004 = gEventState->unk_4C;
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         gBtlWork->unk_028 = 0x100;
-        gBtlWork->x = gUnk_02039DC8->unk_48;
-        gBtlWork->y = gUnk_02039DC8->unk_4C;
+        gBtlWork->x = gEventState->unk_48;
+        gBtlWork->y = gEventState->unk_4C;
         gBtlWork->x2 = 0x10000;
         gBtlWork->y2 = 0x14000;
         gBtlWork->unk_01C = 0x10000;
@@ -660,7 +660,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, NULL);
+        gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, NULL);
         break;
     case 97:
         gBtlWork = EwramAlloc(464);
@@ -677,14 +677,14 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, &p->tasks);
+        gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, &p->tasks);
         p->unk_1B4 = 0;
-        gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
-        gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
-        gUnk_02039DC8->unk_50 = gBtlWork->x;
-        gUnk_02039DC8->unk_54 = gBtlWork->y;
-        gUnk_02039DC8->x = v0;
-        gUnk_02039DC8->y = v1;
+        gEventState->unk_48 = v0 = gBtlWork->unk_000;
+        gEventState->unk_4C = v1 = gBtlWork->unk_004;
+        gEventState->unk_50 = gBtlWork->x;
+        gEventState->unk_54 = gBtlWork->y;
+        gEventState->x = v0;
+        gEventState->y = v1;
         break;
     case 100:
         SetBgSize(1, 0x4000);
@@ -702,7 +702,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_024 = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 368, 480, 512);
-        gUnk_02039DC8->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosLst, &p->tasks);
+        gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosLst, &p->tasks);
         break;
     case 101:
         SetupBg(0, 0, 24, 0);
@@ -749,12 +749,12 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         gBtlWork->unk_004 = 0x16800;
         gBtlWork->x2 = 0x12C00;
         gBtlWork->y2 = 0x16800;
-        gUnk_02039DC8->unk_48 = gBtlWork->x - 0x7800;
-        gUnk_02039DC8->unk_4C = gBtlWork->y - 0x5000;
-        gUnk_02039DC8->unk_50 = gBtlWork->x;
-        gUnk_02039DC8->unk_54 = gBtlWork->y;
-        gUnk_02039DC8->unk_68 = 0;
-        gUnk_02039DC8->unk_6A = 0;
+        gEventState->unk_48 = gBtlWork->x - 0x7800;
+        gEventState->unk_4C = gBtlWork->y - 0x5000;
+        gEventState->unk_50 = gBtlWork->x;
+        gEventState->unk_54 = gBtlWork->y;
+        gEventState->unk_68 = 0;
+        gEventState->unk_6A = 0;
         p->unk_02C = p->keyframes->unk_08;
         p->unk_030 = p->keyframes->unk_0C;
         p->unk_034 = p->keyframes->unk_10;
@@ -861,8 +861,8 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     }
 
     if (p->keyframes[p->unk_1A0].unk_18 & 0x200) {
-        gUnk_02039DC8->flags |= 1;
-        gUnk_02039DC8->flags |= 4;
+        gEventState->flags |= 1;
+        gEventState->flags |= 4;
         p->unk_19C = 0;
         SetTaskUpdate(a, (void*)func_080700D4);
     }
@@ -871,30 +871,30 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     if (p->unk_1B3 != 0) {
         switch (p->unk_026) {
         case 0x62:
-            gUnk_02039DC8->x = gUnk_02039DC8->unk_48 = gBtlWork->x2;
-            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C = gBtlWork->y2;
+            gEventState->x = gEventState->unk_48 = gBtlWork->x2;
+            gEventState->y = gEventState->unk_4C = gBtlWork->y2;
             TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x63:
             gBtlWork->unk_004 = gBtlWork->y;
-            gBtlWork->x2 = gUnk_02039DC8->unk_48;
-            gBtlWork->y2 = gUnk_02039DC8->unk_4C;
-            gUnk_02039DC8->x = gUnk_02039DC8->unk_48;
-            gUnk_02039DC8->y = gUnk_02039DC8->unk_4C;
+            gBtlWork->x2 = gEventState->unk_48;
+            gBtlWork->y2 = gEventState->unk_4C;
+            gEventState->x = gEventState->unk_48;
+            gEventState->y = gEventState->unk_4C;
             TaskPoolUpdate(&gBtlWork->taskPools[0]);
             TaskPoolUpdate(&gBtlWork->taskPools[1]);
             break;
         case 0x65:
-            gUnk_02039DC8->unk_48 = v0 = gBtlWork->unk_000;
-            gUnk_02039DC8->unk_4C = v1 = gBtlWork->unk_004;
-            gUnk_02039DC8->unk_50 = gBtlWork->x;
-            gUnk_02039DC8->unk_54 = gBtlWork->y;
-            gUnk_02039DC8->x = v0;
-            gUnk_02039DC8->y = v1;
+            gEventState->unk_48 = v0 = gBtlWork->unk_000;
+            gEventState->unk_4C = v1 = gBtlWork->unk_004;
+            gEventState->unk_50 = gBtlWork->x;
+            gEventState->unk_54 = gBtlWork->y;
+            gEventState->x = v0;
+            gEventState->y = v1;
             break;
         case 0x61:
-            gBtlWork->x2 = gUnk_02039DC8->unk_50;
-            gBtlWork->y2 = gUnk_02039DC8->unk_54;
+            gBtlWork->x2 = gEventState->unk_50;
+            gBtlWork->y2 = gEventState->unk_54;
             break;
         case 0x67:
             break;
@@ -923,7 +923,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
     return 1;
 }
 static inline s16 GetEventCharaScreenX(EventCharaWork* p) {
-    return (p->unk_180 >> 8) - (gUnk_02039DC8->x >> 8);
+    return (p->unk_180 >> 8) - (gEventState->x >> 8);
 }
 
 void event_chara_2(EventCharaWork* p) {
@@ -959,7 +959,7 @@ void event_chara_2(EventCharaWork* p) {
             h |= 1;
         }
         x = GetEventCharaScreenX(p);
-        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].spriteYOffset - (gUnk_02039DC8->y >> 8);
+        y = (p->unk_184 >> 8) + gUnk_0903380C[p->unk_026].spriteYOffset - (gEventState->y >> 8);
         DrawSprite(x, y, p->gfx, p->tiles, p->palette, 0, h, 50);
     }
     p->unk_034 = save;
@@ -977,7 +977,7 @@ u8 func_0806E570(EventCharaWork* p) {
     const EventCharaKeyframe* e = &p->keyframes[p->unk_1A0];
     u16 v;
 
-    if (p->keyframes[p->unk_1A0].unk_04 > gUnk_02039DC8->unk_6C) {
+    if (p->keyframes[p->unk_1A0].unk_04 > gEventState->unk_6C) {
         return 0;
     }
 
@@ -986,7 +986,7 @@ u8 func_0806E570(EventCharaWork* p) {
     }
 
     p->unk_1A0++;
-    p->unk_1A4 = p->keyframes[p->unk_1A0].unk_04 - gUnk_02039DC8->unk_6C;
+    p->unk_1A4 = p->keyframes[p->unk_1A0].unk_04 - gEventState->unk_6C;
     p->unk_17C = p->keyframes[p->unk_1A0].unk_00;
 
     if ((p->keyframes[p->unk_1A0].unk_18 & 0x4000) != 0) {
@@ -1028,11 +1028,11 @@ u8 func_0806E570(EventCharaWork* p) {
     }
 
     if (p->keyframes[p->unk_1A0].unk_00 == 0x3AF) {
-        func_0810B350(gUnk_02039DC8->unk_00[16]);
+        func_0810B350(gEventState->unk_00[16]);
     }
 
     if (p->keyframes[p->unk_1A0].unk_00 == 0x3AB) {
-        func_0810C2C4(gUnk_02039DC8->unk_00[16]);
+        func_0810C2C4(gEventState->unk_00[16]);
     }
 
     return 0;
@@ -1118,8 +1118,8 @@ u8 func_0806EA28(EventCharaWork* p, void* a) {
     u16 y;
     u8 t;
 
-    x = (p->unk_02C >> 8) - (gUnk_02039DC8->x >> 8);
-    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->y >> 8);
+    x = (p->unk_02C >> 8) - (gEventState->x >> 8);
+    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gEventState->y >> 8);
     t = func_0806E570(p);
     func_0806E7A8(p);
     func_08070AD4(p);
@@ -2421,8 +2421,8 @@ s32 func_08070AD4(EventCharaWork* p) {
     u16 x;
     u16 y;
 
-    x = (p->unk_02C >> 8) - (gUnk_02039DC8->x >> 8);
-    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gUnk_02039DC8->y >> 8);
+    x = (p->unk_02C >> 8) - (gEventState->x >> 8);
+    y = (p->unk_030 >> 8) + (p->unk_034 >> 8) - (gEventState->y >> 8);
 
     switch (p->keyframes[p->unk_1A0].unk_00) {
     case 0x2EB:
@@ -3284,8 +3284,8 @@ void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
+    x = (a->unk_2C >> 8) - (gEventState->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gEventState->y >> 8);
 
     switch (kind) {
     case 0:
@@ -3307,7 +3307,7 @@ void func_08072918(Actor0806180C* a, u8 kind, u8 flag) {
         }
         break;
     case 2:
-        if ((a->unk_24 == 0x4B && gUnk_02039DC8->unk_6C > 0x2BC) || (a->unk_24 == 0x36 && gUnk_02039DC8->unk_6C <= 0x4F)) {
+        if ((a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) || (a->unk_24 == 0x36 && gEventState->unk_6C <= 0x4F)) {
             if (flag != 0) {
                 m4aSongNumStart(0x388);
                 func_08076110(0x388, x, y);
@@ -3349,8 +3349,8 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
+    x = (a->unk_2C >> 8) - (gEventState->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gEventState->y >> 8);
 
     switch (kind) {
     case 0:
@@ -3372,7 +3372,7 @@ void func_08072A64(Actor0806180C* a, u8 kind, u8 flag) {
         }
         break;
     case 2:
-        if (a->unk_24 == 0x4B && gUnk_02039DC8->unk_6C > 0x2BC) {
+        if (a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) {
             if (flag == 0) {
                 m4aSongNumStart(0x391);
                 func_08076110(0x391, x, y);
@@ -3406,8 +3406,8 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
     u16 x;
     u16 y;
 
-    x = (a->unk_2C >> 8) - (gUnk_02039DC8->x >> 8);
-    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gUnk_02039DC8->y >> 8);
+    x = (a->unk_2C >> 8) - (gEventState->x >> 8);
+    y = (a->unk_30 >> 8) + (a->unk_34 >> 8) - (gEventState->y >> 8);
 
     switch (kind) {
     case 0:
@@ -3429,7 +3429,7 @@ void func_08072B4C(Actor0806180C* a, u8 kind, u8 flag) {
         }
         break;
     case 2:
-        if (a->unk_24 == 0x4B && gUnk_02039DC8->unk_6C > 0x2BC) {
+        if (a->unk_24 == 0x4B && gEventState->unk_6C > 0x2BC) {
             if (flag == 0) {
                 m4aSongNumStart(0x393);
                 func_08076110(0x393, x, y);
@@ -3536,9 +3536,9 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     p->unk_2B = 0;
     p->unk_18 = 0;
     p->unk_40 = 0;
-    gUnk_02039DC8->unk_81 = 0;
-    gUnk_02039DC8->unk_7D = 0;
-    gUnk_02039DC8->unk_8B = 0;
+    gEventState->unk_81 = 0;
+    gEventState->unk_7D = 0;
+    gEventState->unk_8B = 0;
     TaskPoolInit(p, 2);
     func_08073E0C(p, &p->face, p->script->unk_00, p->script->unk_04, p->script->unk_08);
 }
@@ -3547,7 +3547,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
     const MessageScriptEntry* e;
 
     if (p->unk_29 == 0) {
-        if (gUnk_02039DC8->unk_80 == 0) {
+        if (gEventState->unk_80 == 0) {
             func_08073508(p);
         }
     } else {
@@ -3555,11 +3555,11 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
     }
 
     if (p->unk_2A != 0) {
-        gUnk_02039DC8->unk_87 = p->unk_20;
+        gEventState->unk_87 = p->unk_20;
 
-        if (gUnk_02039DC8->unk_7C != 0) {
-            if (gUnk_02039DC8->unk_89 != 0) {
-                gUnk_02039DC8->unk_89--;
+        if (gEventState->unk_7C != 0) {
+            if (gEventState->unk_89 != 0) {
+                gEventState->unk_89--;
             } else {
                 e = &p->script[p->unk_27];
 
@@ -3574,7 +3574,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     if ((e->flags & 0x80) != 0) {
                         FadeSetPaletteExcluded(15, 1);
                     }
-                    gUnk_02039DC8->unk_81 = 1;
+                    gEventState->unk_81 = 1;
 
                     switch (e->unk_08) {
                     case 0:
@@ -3596,7 +3596,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     }
                     _08073E6C(&p->face);
                     SetTaskUpdate(a, (void*)func_08073294);
-                    gUnk_02039DC8->unk_8B = 1;
+                    gEventState->unk_8B = 1;
                 } else {
                     LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
                     LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
@@ -3604,13 +3604,13 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     RedrawBgMapAt(p->unk_38, p->unk_18, 0);
                     SetTaskUpdate(a, (void*)func_08073294);
                     _08073E6C(&p->face);
-                    gUnk_02039DC8->unk_81 = 1;
+                    gEventState->unk_81 = 1;
 
                     if (p->palette != NULL) {
                         ReleaseObjPalette(p->palette);
                         p->palette = NULL;
                     }
-                    gUnk_02039DC8->unk_8B = 0;
+                    gEventState->unk_8B = 0;
                 }
             }
         } else {
@@ -3627,7 +3627,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             if ((e->flags & 0x80) != 0) {
                 FadeSetPaletteExcluded(15, 1);
             }
-            gUnk_02039DC8->unk_81 = 1;
+            gEventState->unk_81 = 1;
 
             switch (e->unk_08) {
             case 0:
@@ -3649,7 +3649,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             }
             _08073E6C(&p->face);
             SetTaskUpdate(a, (void*)func_08073294);
-            gUnk_02039DC8->unk_8B = 1;
+            gEventState->unk_8B = 1;
         } else {
             LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
             LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
@@ -3657,18 +3657,18 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             RedrawBgMapAt(p->unk_38, p->unk_18, 0);
             SetTaskUpdate(a, (void*)func_08073294);
             _08073E6C(&p->face);
-            gUnk_02039DC8->unk_81 = 1;
+            gEventState->unk_81 = 1;
 
             if (p->palette != NULL) {
                 ReleaseObjPalette(p->palette);
                 p->palette = NULL;
             }
-            gUnk_02039DC8->unk_8B = 0;
+            gEventState->unk_8B = 0;
         }
         }
     }
 
-    if (gUnk_02039DC8->unk_82 == 1) {
+    if (gEventState->unk_82 == 1) {
         FadeSetPaletteExcluded(p->unk_1C + 16, 0);
         FadeSetPaletteExcluded(14, 0);
     } else {
@@ -3680,7 +3680,7 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
 }
 u8 func_08073170(MsgWinWork* p, void* a) {
     if (p->unk_29 == 0) {
-        if (gUnk_02039DC8->unk_80 == 0) {
+        if (gEventState->unk_80 == 0) {
             func_08073508(p);
         }
     } else {
@@ -3688,24 +3688,24 @@ u8 func_08073170(MsgWinWork* p, void* a) {
     }
 
     if (p->unk_2A != 0) {
-        gUnk_02039DC8->unk_87 = p->unk_20;
+        gEventState->unk_87 = p->unk_20;
 
-        if (gUnk_02039DC8->unk_7C != 0) {
-            if (gUnk_02039DC8->unk_89 != 0) {
-                gUnk_02039DC8->unk_89--;
+        if (gEventState->unk_7C != 0) {
+            if (gEventState->unk_89 != 0) {
+                gEventState->unk_89--;
             } else {
                 SetTaskUpdate(a, (void*)func_08073294);
                 _08073E6C(&p->face);
-                gUnk_02039DC8->unk_81 = 1;
+                gEventState->unk_81 = 1;
             }
         } else {
             SetTaskUpdate(a, (void*)func_08073294);
             _08073E6C(&p->face);
-            gUnk_02039DC8->unk_81 = 1;
+            gEventState->unk_81 = 1;
         }
     }
 
-    if (gUnk_02039DC8->unk_82 == 1) {
+    if (gEventState->unk_82 == 1) {
         FadeSetPaletteExcluded(p->unk_1C + 16, 0);
         FadeSetPaletteExcluded(14, 0);
     } else {
@@ -3747,7 +3747,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
         p->unk_1E = 0;
 
         if ((e->flags & 0xF) == 0) {
-            gUnk_02039DC8->unk_7B = 1;
+            gEventState->unk_7B = 1;
         }
         SetTaskUpdate(a, (void*)func_08073318);
     }
@@ -3767,7 +3767,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
         }
     }
 
-    if (p->unk_2B == 1 && gUnk_02039DC8->unk_7D == 0) {
+    if (p->unk_2B == 1 && gEventState->unk_7D == 0) {
         s32 text = p->unk_40;
         if (text != 0) {
             p->unk_1E = 0;
@@ -3783,14 +3783,14 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     p->unk_1E = 8;
                     func_08073E74(&p->face);
                     SetTaskUpdate(a, (void*)func_0807344C);
-                    gUnk_02039DC8->unk_81 = text;
+                    gEventState->unk_81 = text;
                     p->face.unk_08 = text;
                 } else {
                     p->unk_1E = text;
                     p->unk_29 = text;
                     p->unk_2A = text;
                     p->unk_27++;
-                    gUnk_02039DC8->flags &= ~1;
+                    gEventState->flags &= ~1;
                     p->face.unk_08 = 1;
                     SetTaskUpdate(a, (void*)func_08072EAC);
                 }
@@ -3798,7 +3798,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                 p->unk_1E = 8;
                 func_08073E74(&p->face);
                 SetTaskUpdate(a, (void*)func_0807344C);
-                gUnk_02039DC8->unk_81 = text;
+                gEventState->unk_81 = text;
                 p->face.unk_08 = text;
             }
         }
@@ -3823,10 +3823,10 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
     } else {
         p->unk_1E = 0;
 
-        if ((gUnk_02039DC8->flags & 4) == 0) {
-            gUnk_02039DC8->flags &= ~1;
+        if ((gEventState->flags & 4) == 0) {
+            gEventState->flags &= ~1;
         }
-        gUnk_02039DC8->unk_7C = 0;
+        gEventState->unk_7C = 0;
 
         if ((e->flags & 0x8000) == 0) {
             p->unk_2A = 0;
@@ -3891,7 +3891,7 @@ void func_0807361C(MsgWinWork* p) {
             p->unk_24++;
             m4aSongNumStart(0x74);
         } else {
-            gUnk_02039DC8->unk_7B = 0;
+            gEventState->unk_7B = 0;
 
             if (p->unk_2B == 0) {
                 if ((p->script[p->unk_27].flags & 0x8000) == 0) {
@@ -3920,18 +3920,18 @@ void func_0807361C(MsgWinWork* p) {
 void func_080736F8(MsgWinWork* p) {
     const MessageScriptEntry* e = &p->script[p->unk_27];
 
-    if (gUnk_02039DC8->unk_6C >= e->unk_16) {
+    if (gEventState->unk_6C >= e->unk_16) {
         if (p->unk_2A == 0) {
-            gUnk_02039DC8->flags |= 1;
+            gEventState->flags |= 1;
             p->unk_2A = 1;
             p->unk_1E = 8;
 
             if ((e->flags & 0x10) != 0) {
-                gUnk_02039DC8->unk_7C = 1;
-                gUnk_02039DC8->unk_88 = e->unk_00;
-                gUnk_02039DC8->unk_89 = 32;
+                gEventState->unk_7C = 1;
+                gEventState->unk_88 = e->unk_00;
+                gEventState->unk_89 = 32;
             } else {
-                gUnk_02039DC8->unk_7C = 0;
+                gEventState->unk_7C = 0;
             }
         }
     }
@@ -4028,7 +4028,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
         break;
     }
 
-    if (gUnk_02039DC8->unk_7B == 1) {
+    if (gEventState->unk_7B == 1) {
         if (p->unk_32 == 0) {
             if (anim != NULL && anim[p->face->expressionId].unk_10 > 1) {
                 AnimStart(p->anim, 1, anim[p->face->expressionId].unk_11);
@@ -4046,7 +4046,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
         }
     }
 
-    if (gUnk_02039DC8->unk_82 == 1) {
+    if (gEventState->unk_82 == 1) {
         FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 0);
     } else {
         FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
@@ -4227,7 +4227,7 @@ void msgwait_0(MsgWaitWork* p, u8* arg) {
     AnimInit(p->unk_DC, gUnk_09EEFD38, gUnk_09EEFCAC);
     AnimStart(p->unk_DC, 2, 1);
     p->timer = 0;
-    gUnk_02039DC8->unk_7D = 1;
+    gEventState->unk_7D = 1;
 }
 u8 msgwait_1(MsgWaitWork* p, void* a) {
     p->gfx = AnimUpdate(p->unk_DC);
@@ -4236,7 +4236,7 @@ u8 msgwait_1(MsgWaitWork* p, void* a) {
         AnimStart(p->unk_DC, 3, 1);
 
         if (p->unk_103 == 4) {
-            gUnk_02039DC8->unk_7D = 0;
+            gEventState->unk_7D = 0;
             m4aSongNumStart(0x66);
             return 0;
         } else {
@@ -4254,20 +4254,20 @@ u8 func_08073F78(MsgWaitWork* p) {
     if (p->timer <= 15) {
         r = 1;
     } else {
-        gUnk_02039DC8->unk_7D = 0;
+        gEventState->unk_7D = 0;
         r = 0;
     }
     return r;
 }
 void msgwait_2(MsgWaitWork* p) {
-    u8 v = gUnk_02039DC8->unk_8B;
+    u8 v = gEventState->unk_8B;
 
     if (v != 0) {
-        DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx,
+        DrawSprite(120, gUnk_09033D08[gEventState->unk_87][1] >> 8, p->gfx,
                    p->tiles, p->palette, 0, 0, 0);
     } else {
-        DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8,
-                   gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles,
+        DrawSprite(gUnk_09033D08[gEventState->unk_87][0] >> 8,
+                   gUnk_09033D08[gEventState->unk_87][1] >> 8, p->gfx, p->tiles,
                    p->palette, 0, 0, 0);
     }
 }
@@ -4311,9 +4311,9 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->unk_100 = 1;
     p->y = gUnk_09033D28[1];
     p->unk_102 = 0;
-    gUnk_02039DC8->unk_7D = 1;
-    gUnk_02039DC8->unk_85 = 1;
-    gUnk_02039DC8->unk_84 = 0;
+    gEventState->unk_7D = 1;
+    gEventState->unk_85 = 1;
+    gEventState->unk_84 = 0;
     p->unk_104 = 0;
 }
 u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
@@ -4335,27 +4335,27 @@ u8 func_0807420C(MsgWaitYesNoWork* p, void* a) {
     case 1:
     case 8:
         if (p->unk_100 == 0) {
-            gUnk_02039DC8->unk_84 = 1;
+            gEventState->unk_84 = 1;
         } else {
-            gUnk_02039DC8->unk_84 = 0;
+            gEventState->unk_84 = 0;
 
-            if (gUnk_02039DC8->unk_74 == 68) {
-                gUnk_02039DC8->unk_83 = 1;
-                gUnk_02039DC8->unk_8A = 255;
+            if (gEventState->unk_74 == 68) {
+                gEventState->unk_83 = 1;
+                gEventState->unk_8A = 255;
             }
         }
         m4aSongNumStart(102);
-        gUnk_02039DC8->unk_7D = 0;
+        gEventState->unk_7D = 0;
         return 0;
     case 2:
-        gUnk_02039DC8->unk_84 = 0;
+        gEventState->unk_84 = 0;
 
-        if (gUnk_02039DC8->unk_74 == 68) {
-            gUnk_02039DC8->unk_83 = 1;
-            gUnk_02039DC8->unk_8A = 255;
+        if (gEventState->unk_74 == 68) {
+            gEventState->unk_83 = 1;
+            gEventState->unk_8A = 255;
         }
         m4aSongNumStart(102);
-        gUnk_02039DC8->unk_7D = 0;
+        gEventState->unk_7D = 0;
         return 0;
     }
 
@@ -4380,10 +4380,10 @@ u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
 void msgwait_yesno_2(MsgWaitYesNoWork* p) {
     switch (p->unk_104) {
     case 0:
-        if (gUnk_02039DC8->unk_8B != 0) {
-            DrawSprite(120, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
+        if (gEventState->unk_8B != 0) {
+            DrawSprite(120, gUnk_09033D08[gEventState->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
         } else {
-            DrawSprite(gUnk_09033D08[gUnk_02039DC8->unk_87][0] >> 8, gUnk_09033D08[gUnk_02039DC8->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
+            DrawSprite(gUnk_09033D08[gEventState->unk_87][0] >> 8, gUnk_09033D08[gEventState->unk_87][1] >> 8, p->gfx, p->tiles, p->palette, 0, 0, 0);
         }
         break;
     case 1:
@@ -4410,9 +4410,9 @@ void func_08074504(void) {
     v = (v + 1) % 228;
 
     if (v < 160) {
-        if (gUnk_02039DCC->enabled == 1) {
-            *(vu16*)0x04000018 = gUnk_02039DCC->scrollX[v];
-            *(vu16*)0x0400001C = gUnk_02039DCC->scrollX[v];
+        if (gEventScanlineScroll->enabled == 1) {
+            *(vu16*)0x04000018 = gEventScanlineScroll->scrollX[v];
+            *(vu16*)0x0400001C = gEventScanlineScroll->scrollX[v];
         }
     }
 }
@@ -4426,7 +4426,7 @@ void view_0(EventCameraWork* p, u8* arg) {
     const EventCameraKeyframe* q;
     u8 n;
 
-    gUnk_02039DCC = (EventScanlineScroll*)p->unk_18;
+    gEventScanlineScroll = (EventScanlineScroll*)p->unk_18;
     p->wavePhase = 0;
     p->waveEnabled = 0;
     p->unk_08 = arg[0];
@@ -4442,36 +4442,36 @@ void view_0(EventCameraWork* p, u8* arg) {
 
     if (q->unk_10 != 255) {
         n = func_08074E40(p);
-        q = (EventCameraKeyframe*)gUnk_02039DC8->unk_00[n];
+        q = (EventCameraKeyframe*)gEventState->unk_00[n];
         p->unk_00 = q->unk_04;
         p->unk_04 = q->unk_08;
     } else {
         p->unk_00 = q->unk_04;
         p->unk_04 = q->unk_08;
     }
-    gUnk_02039DC8->unk_48 = p->unk_00 - 0x7800;
-    gUnk_02039DC8->unk_4C = p->unk_04 - 0x5000;
-    gUnk_02039DC8->unk_50 = p->unk_00;
-    gUnk_02039DC8->unk_54 = p->unk_04;
-    gUnk_02039DC8->unk_68 = 0;
-    gUnk_02039DC8->unk_6A = 0;
+    gEventState->unk_48 = p->unk_00 - 0x7800;
+    gEventState->unk_4C = p->unk_04 - 0x5000;
+    gEventState->unk_50 = p->unk_00;
+    gEventState->unk_54 = p->unk_04;
+    gEventState->unk_68 = 0;
+    gEventState->unk_6A = 0;
 
     if (u != NULL) {
         if (u->unk_24 != 0) {
-            SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+            SetBgAffine(2, 0, 0x100, 0x100, gEventState->unk_50, gEventState->unk_54);
         } else {
             if (p->unk_08 == 77) {
-                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
+                ScrollBgMapTo(3, (gEventState->unk_48 >> 8) + 8 + gEventState->unk_68, (gEventState->unk_4C >> 8) + 40);
             } else {
-                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(3, (gEventState->unk_48 >> 8) + gEventState->unk_68, gEventState->unk_4C >> 8);
             }
 
-            if (gUnk_02039DC8->unk_78 != 0) {
-                ScrollBgMapTo(2, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+            if (gEventState->unk_78 != 0) {
+                ScrollBgMapTo(2, (gEventState->unk_48 >> 8) + gEventState->unk_68, gEventState->unk_4C >> 8);
             }
 
-            if (gUnk_02039DC8->unk_79 != 0) {
-                ScrollBgMapTo(1, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+            if (gEventState->unk_79 != 0) {
+                ScrollBgMapTo(1, (gEventState->unk_48 >> 8) + gEventState->unk_68, gEventState->unk_4C >> 8);
             }
         }
     }
@@ -4497,18 +4497,18 @@ u8 view_1(EventCameraWork* p, u8* task) {
     Ent08074EC8* q;
     u8 n;
 
-    if (gUnk_02039DC8->unk_60 == 98) {
+    if (gEventState->unk_60 == 98) {
         return 1;
     }
 
-    if (gUnk_02039DC8->unk_60 == 101) {
+    if (gEventState->unk_60 == 101) {
         return 1;
     }
 
-    if (gUnk_02039DC8->unk_7C == 0) {
+    if (gEventState->unk_7C == 0) {
         e = &p->keyframes[p->unk_09];
 
-        if (gUnk_02039DC8->unk_6C >= *(u16*)&e->unk_00 && !(e->unk_14 & 0x8000)) {
+        if (gEventState->unk_6C >= *(u16*)&e->unk_00 && !(e->unk_14 & 0x8000)) {
             p->unk_09++;
             e = &p->keyframes[p->unk_09];
             p->unk_15 = 0;
@@ -4534,7 +4534,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
                 p->unk_04 = e->unk_08;
             } else {
                 n = func_08074E40(p);
-                q = gUnk_02039DC8->unk_00[n];
+                q = gEventState->unk_00[n];
                 p->unk_00 = q->unk_04;
                 p->unk_04 = q->unk_08 + q->unk_0C + e->unk_0C;
             }
@@ -4549,7 +4549,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
                     m4aSongNumStart(0x14F);
                 }
 
-                gUnk_02039DC8->unk_7F = 0;
+                gEventState->unk_7F = 0;
                 p->unk_15 = 1;
             }
         }
@@ -4558,7 +4558,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
             if (p->unk_15 == 0) {
                 func_080746D8();
                 FadeStartOut(1, e->unk_18);
-                gUnk_02039DC8->unk_7F = 1;
+                gEventState->unk_7F = 1;
                 p->unk_15 = 1;
 
                 if (e->unk_14 & 0x8000) {
@@ -4571,7 +4571,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
             if (p->unk_15 == 0) {
                 func_080746D8();
                 FadeStartOut(0, e->unk_18);
-                gUnk_02039DC8->unk_7F = 1;
+                gEventState->unk_7F = 1;
                 p->unk_15 = 1;
             }
         }
@@ -4579,7 +4579,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
         if (e->unk_14 & 0x80) {
             if (p->unk_15 == 0) {
                 FadeStartIn(1, e->unk_18);
-                gUnk_02039DC8->unk_7F = 0;
+                gEventState->unk_7F = 0;
                 p->unk_15 = 1;
             }
         }
@@ -4588,7 +4588,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
             if (p->unk_15 == 0) {
                 func_080746D8();
                 FadeStartIn(0, e->unk_18);
-                gUnk_02039DC8->unk_7F = 0;
+                gEventState->unk_7F = 0;
                 p->unk_15 = 1;
             }
         }
@@ -4626,21 +4626,21 @@ u8 view_1(EventCameraWork* p, u8* task) {
         }
 
         if (e->unk_14 & 0x2000) {
-            gUnk_02039DC8->unk_68 = GetRandom() % 4;
-            gUnk_02039DC8->unk_6A = GetRandom() % 4;
+            gEventState->unk_68 = GetRandom() % 4;
+            gEventState->unk_6A = GetRandom() % 4;
         } else if (e->unk_14 & 0x400) {
-            gUnk_02039DC8->unk_68 = GetRandom() % 8;
-            gUnk_02039DC8->unk_6A = GetRandom() % 8;
+            gEventState->unk_68 = GetRandom() % 8;
+            gEventState->unk_6A = GetRandom() % 8;
         } else if (e->unk_14 & 0x800) {
-            gUnk_02039DC8->unk_68 = GetRandom() % 16;
-            gUnk_02039DC8->unk_6A = GetRandom() % 16;
+            gEventState->unk_68 = GetRandom() % 16;
+            gEventState->unk_6A = GetRandom() % 16;
         } else if (e->unk_14 & 0x1000) {
-            gUnk_02039DC8->unk_68 = 0;
-            gUnk_02039DC8->unk_6A = gSineTable[(p->angle >> 3) & 0xFF] >> 5;
+            gEventState->unk_68 = 0;
+            gEventState->unk_6A = gSineTable[(p->angle >> 3) & 0xFF] >> 5;
             p->angle += 4;
         } else {
-            gUnk_02039DC8->unk_68 = 0;
-            gUnk_02039DC8->unk_6A = 0;
+            gEventState->unk_68 = 0;
+            gEventState->unk_6A = 0;
         }
 
         if (p->unk_14 != 0) {
@@ -4651,108 +4651,108 @@ u8 view_1(EventCameraWork* p, u8* task) {
 
         if (u != NULL) {
             if (u->unk_24 != 0) {
-                SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+                SetBgAffine(2, 0, 0x100, 0x100, gEventState->unk_50, gEventState->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    ScrollBgMapTo(3, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
+                    ScrollBgMapTo(3, (gEventState->x >> 8) + 8, (gEventState->y >> 8) + 40);
                 } else {
-                    ScrollBgMapTo(3, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                    ScrollBgMapTo(3, gEventState->x >> 8, gEventState->y >> 8);
                 }
 
-                if (gUnk_02039DC8->unk_78 != 0) {
-                    ScrollBgMapTo(2, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                if (gEventState->unk_78 != 0) {
+                    ScrollBgMapTo(2, gEventState->x >> 8, gEventState->y >> 8);
                 }
 
-                if (gUnk_02039DC8->unk_79 != 0) {
-                    ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                if (gEventState->unk_79 != 0) {
+                    ScrollBgMapTo(1, gEventState->x >> 8, gEventState->y >> 8);
                 }
             }
         } else {
             switch (p->unk_08) {
             case 77:
             case 78:
-                gBtlWork->unk_000 = gUnk_02039DC8->x;
-                gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->x = gUnk_02039DC8->x;
-                gBtlWork->y = gUnk_02039DC8->y;
-                gBtlWork->x2 = gUnk_02039DC8->x;
-                gBtlWork->y2 = gUnk_02039DC8->y;
-                ScrollBgMapTo(0, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
-                ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                gBtlWork->unk_000 = gEventState->x;
+                gBtlWork->unk_004 = gEventState->y;
+                gBtlWork->x = gEventState->x;
+                gBtlWork->y = gEventState->y;
+                gBtlWork->x2 = gEventState->x;
+                gBtlWork->y2 = gEventState->y;
+                ScrollBgMapTo(0, (gEventState->x >> 8) + 8, (gEventState->y >> 8) + 40);
+                ScrollBgMapTo(1, gEventState->x >> 8, gEventState->y >> 8);
                 break;
             case 105:
-                gBtlWork->unk_000 = gUnk_02039DC8->x;
-                gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->x = gUnk_02039DC8->x;
-                gBtlWork->y = gUnk_02039DC8->y;
-                gBtlWork->x2 = gUnk_02039DC8->x;
-                gBtlWork->y2 = gUnk_02039DC8->y;
-                ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                gBtlWork->unk_000 = gEventState->x;
+                gBtlWork->unk_004 = gEventState->y;
+                gBtlWork->x = gEventState->x;
+                gBtlWork->y = gEventState->y;
+                gBtlWork->x2 = gEventState->x;
+                gBtlWork->y2 = gEventState->y;
+                ScrollBgMapTo(0, gEventState->x >> 8, gEventState->y >> 8);
                 break;
             case MSG_VIEW_ID_B4:
                 break;
             default:
-                gBtlWork->unk_000 = gUnk_02039DC8->x;
-                gBtlWork->unk_004 = gUnk_02039DC8->y;
-                gBtlWork->x = gUnk_02039DC8->x;
-                gBtlWork->y = gUnk_02039DC8->y;
-                gBtlWork->x2 = gUnk_02039DC8->x;
-                gBtlWork->y2 = gUnk_02039DC8->y;
-                ScrollBgMapTo(0, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
-                ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                gBtlWork->unk_000 = gEventState->x;
+                gBtlWork->unk_004 = gEventState->y;
+                gBtlWork->x = gEventState->x;
+                gBtlWork->y = gEventState->y;
+                gBtlWork->x2 = gEventState->x;
+                gBtlWork->y2 = gEventState->y;
+                ScrollBgMapTo(0, gEventState->x >> 8, gEventState->y >> 8);
+                ScrollBgMapTo(1, gEventState->x >> 8, gEventState->y >> 8);
                 break;
             }
         }
     } else {
-        n = func_08074E88(p, gUnk_02039DC8->unk_88);
-        p->unk_00 = gUnk_02039DC8->unk_00[n]->unk_04;
+        n = func_08074E88(p, gEventState->unk_88);
+        p->unk_00 = gEventState->unk_00[n]->unk_04;
 
-        switch (gUnk_02039DC8->unk_87) {
+        switch (gEventState->unk_87) {
         case 0:
         case 2:
-            p->unk_04 = gUnk_02039DC8->unk_00[n]->unk_08 + gUnk_02039DC8->unk_00[n]->unk_0C + gUnk_09033758[n];
+            p->unk_04 = gEventState->unk_00[n]->unk_08 + gEventState->unk_00[n]->unk_0C + gUnk_09033758[n];
             break;
         case 1:
         case 3:
-            p->unk_04 = gUnk_02039DC8->unk_00[n]->unk_08 + gUnk_02039DC8->unk_00[n]->unk_0C;
+            p->unk_04 = gEventState->unk_00[n]->unk_08 + gEventState->unk_00[n]->unk_0C;
             break;
         }
 
-        p->unk_10 = gUnk_02039DC8->unk_89;
+        p->unk_10 = gEventState->unk_89;
         func_08074DC4(p);
 
         if (u != NULL) {
             if (u->unk_24 != 0) {
-                SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+                SetBgAffine(2, 0, 0x100, 0x100, gEventState->unk_50, gEventState->unk_54);
             } else {
                 if (p->unk_08 == 77) {
-                    ScrollBgMapTo(3, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
+                    ScrollBgMapTo(3, (gEventState->x >> 8) + 8, (gEventState->y >> 8) + 40);
                 } else {
-                    ScrollBgMapTo(3, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                    ScrollBgMapTo(3, gEventState->x >> 8, gEventState->y >> 8);
                 }
 
-                if (gUnk_02039DC8->unk_78 != 0) {
-                    ScrollBgMapTo(2, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                if (gEventState->unk_78 != 0) {
+                    ScrollBgMapTo(2, gEventState->x >> 8, gEventState->y >> 8);
                 }
 
-                if (gUnk_02039DC8->unk_79 != 0) {
-                    ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+                if (gEventState->unk_79 != 0) {
+                    ScrollBgMapTo(1, gEventState->x >> 8, gEventState->y >> 8);
                 }
             }
         } else {
-            gBtlWork->unk_000 = gUnk_02039DC8->x;
-            gBtlWork->unk_004 = gUnk_02039DC8->y;
-            ScrollBgMapTo(0, (gUnk_02039DC8->x >> 8) + 8, (gUnk_02039DC8->y >> 8) + 40);
-            ScrollBgMapTo(1, gUnk_02039DC8->x >> 8, gUnk_02039DC8->y >> 8);
+            gBtlWork->unk_000 = gEventState->x;
+            gBtlWork->unk_004 = gEventState->y;
+            ScrollBgMapTo(0, (gEventState->x >> 8) + 8, (gEventState->y >> 8) + 40);
+            ScrollBgMapTo(1, gEventState->x >> 8, gEventState->y >> 8);
         }
     }
 
-    if (gUnk_02039DC8->flags & 4) {
+    if (gEventState->flags & 4) {
         SetTaskUpdate(task, (u32)_08074EC8);
     }
 
     if (u != NULL && (u->flags & 1)) {
-        func_080CA368(3, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+        func_080CA368(3, gEventState->unk_48 >> 8, gEventState->unk_4C >> 8);
     }
 
     func_08075010(p);
@@ -4764,8 +4764,8 @@ void view_3(void) {
 }
 
 void func_08074D00(EventCameraWork* p) {
-    gUnk_02039DC8->unk_50 = p->unk_00;
-    gUnk_02039DC8->unk_54 = p->unk_04;
+    gEventState->unk_50 = p->unk_00;
+    gEventState->unk_54 = p->unk_04;
 }
 
 void func_08074D14(EventCameraWork* a) {
@@ -4774,18 +4774,18 @@ void func_08074D14(EventCameraWork* a) {
     s32 y;
 
     func_08074D00(a);
-    x = gUnk_02039DC8->unk_50 - 0x7800;
-    y = gUnk_02039DC8->unk_54 - 0x5000;
+    x = gEventState->unk_50 - 0x7800;
+    y = gEventState->unk_54 - 0x5000;
     e = &a->keyframes[a->unk_09];
     if (e->unk_14 & 0x2C00) {
-        gUnk_02039DC8->unk_48 = x;
-        gUnk_02039DC8->unk_4C = y;
+        gEventState->unk_48 = x;
+        gEventState->unk_4C = y;
     } else {
-        gUnk_02039DC8->unk_48 += (x - gUnk_02039DC8->unk_48) >> 3;
-        gUnk_02039DC8->unk_4C += (y - gUnk_02039DC8->unk_4C) >> 3;
+        gEventState->unk_48 += (x - gEventState->unk_48) >> 3;
+        gEventState->unk_4C += (y - gEventState->unk_4C) >> 3;
     }
-    gUnk_02039DC8->x = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
-    gUnk_02039DC8->y = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
+    gEventState->x = gEventState->unk_48 + (gEventState->unk_68 << 8);
+    gEventState->y = gEventState->unk_4C + (gEventState->unk_6A << 8);
 }
 
 void func_08074D98(EventCameraWork* a) {
@@ -4793,10 +4793,10 @@ void func_08074D98(EventCameraWork* a) {
     s32 y;
 
     func_08074D00(a);
-    x = gUnk_02039DC8->unk_50 - 0x7800;
-    y = gUnk_02039DC8->unk_54 - 0x5000;
-    gUnk_02039DC8->unk_48 = x;
-    gUnk_02039DC8->unk_4C = y;
+    x = gEventState->unk_50 - 0x7800;
+    y = gEventState->unk_54 - 0x5000;
+    gEventState->unk_48 = x;
+    gEventState->unk_4C = y;
 }
 
 void func_08074DC4(EventCameraWork* a) {
@@ -4804,19 +4804,19 @@ void func_08074DC4(EventCameraWork* a) {
     s32 y;
 
     func_08074D00(a);
-    x = gUnk_02039DC8->unk_50 - 0x7800;
-    y = gUnk_02039DC8->unk_54 - 0x5000;
+    x = gEventState->unk_50 - 0x7800;
+    y = gEventState->unk_54 - 0x5000;
 
     if (a->unk_10 != 0) {
-        ApproachValue(&gUnk_02039DC8->unk_48, x, a->unk_10);
-        ApproachValue(&gUnk_02039DC8->unk_4C, y, a->unk_10);
+        ApproachValue(&gEventState->unk_48, x, a->unk_10);
+        ApproachValue(&gEventState->unk_4C, y, a->unk_10);
         a->unk_10--;
     } else {
-        gUnk_02039DC8->unk_48 = x;
-        gUnk_02039DC8->unk_4C = y;
+        gEventState->unk_48 = x;
+        gEventState->unk_4C = y;
     }
-    gUnk_02039DC8->x = gUnk_02039DC8->unk_48 + (gUnk_02039DC8->unk_68 << 8);
-    gUnk_02039DC8->y = gUnk_02039DC8->unk_4C + (gUnk_02039DC8->unk_6A << 8);
+    gEventState->x = gEventState->unk_48 + (gEventState->unk_68 << 8);
+    gEventState->y = gEventState->unk_4C + (gEventState->unk_6A << 8);
 }
 
 u8 func_08074E40(EventCameraWork* p) {
@@ -4855,37 +4855,37 @@ u8 _08074EC8(EventCameraWork* p) {
 
     n = func_08074E88(p, 0);
     t = gUnk_09EE3CA0[p->unk_08];
-    q = gUnk_02039DC8->unk_00[n];
+    q = gEventState->unk_00[n];
     p->unk_00 = q->unk_04;
     p->unk_04 = q->unk_08 + q->unk_0C;
 
     if (t != NULL) {
         if (t->unk_24 != 0) {
             func_08074D98(p);
-            SetBgAffine(2, 0, 0x100, 0x100, gUnk_02039DC8->unk_50, gUnk_02039DC8->unk_54);
+            SetBgAffine(2, 0, 0x100, 0x100, gEventState->unk_50, gEventState->unk_54);
         } else {
             func_08074D14(p);
 
             if (p->unk_08 == 77) {
-                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + 8 + gUnk_02039DC8->unk_68, (gUnk_02039DC8->unk_4C >> 8) + 40);
+                ScrollBgMapTo(3, (gEventState->unk_48 >> 8) + 8 + gEventState->unk_68, (gEventState->unk_4C >> 8) + 40);
             } else {
-                ScrollBgMapTo(3, (gUnk_02039DC8->unk_48 >> 8) + gUnk_02039DC8->unk_68, gUnk_02039DC8->unk_4C >> 8);
+                ScrollBgMapTo(3, (gEventState->unk_48 >> 8) + gEventState->unk_68, gEventState->unk_4C >> 8);
             }
 
-            if (gUnk_02039DC8->unk_78 != 0) {
-                ScrollBgMapTo(2, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+            if (gEventState->unk_78 != 0) {
+                ScrollBgMapTo(2, gEventState->unk_48 >> 8, gEventState->unk_4C >> 8);
             }
 
-            if (gUnk_02039DC8->unk_79 != 0) {
-                ScrollBgMapTo(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+            if (gEventState->unk_79 != 0) {
+                ScrollBgMapTo(1, gEventState->unk_48 >> 8, gEventState->unk_4C >> 8);
             }
         }
     } else {
         func_08074D14(p);
-        gBtlWork->unk_000 = gUnk_02039DC8->unk_48;
-        gBtlWork->unk_004 = gUnk_02039DC8->unk_4C;
-        ScrollBgMapTo(0, (gUnk_02039DC8->unk_48 >> 8) + 8, (gUnk_02039DC8->unk_4C >> 8) + 40);
-        ScrollBgMapTo(1, gUnk_02039DC8->unk_48 >> 8, gUnk_02039DC8->unk_4C >> 8);
+        gBtlWork->unk_000 = gEventState->unk_48;
+        gBtlWork->unk_004 = gEventState->unk_4C;
+        ScrollBgMapTo(0, (gEventState->unk_48 >> 8) + 8, (gEventState->unk_4C >> 8) + 40);
+        ScrollBgMapTo(1, gEventState->unk_48 >> 8, gEventState->unk_4C >> 8);
     }
     return 1;
 }
@@ -4896,7 +4896,7 @@ void func_08075010(EventCameraWork* p) {
 
     if (p->waveEnabled == 1) {
         for (i = 0; i < 160; i++) {
-            p->scanlineScrollX[i] = (gUnk_02039DC8->x >> 8) + (v = (u8)gSineTable[((i + p->wavePhase) * 2) & 0xFF]) / 32;
+            p->scanlineScrollX[i] = (gEventState->x >> 8) + (v = (u8)gSineTable[((i + p->wavePhase) * 2) & 0xFF]) / 32;
         }
         p->wavePhase++;
     }

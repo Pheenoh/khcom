@@ -2797,10 +2797,10 @@ extern u16 gCardCollection[999];
 extern Deck* gUnk_0203A850;
 extern void* gUnk_0203A854;
 extern u16 gCardCount;
-extern CardUiSpriteState gUnk_0203A860;
-extern MapCardUiResources gUnk_0203A890;
+extern CardUiSpriteState gCardUiSpriteState;
+extern MapCardUiResources gMapCardUiResources;
 extern u8 gUnk_0203A8C0[270];
-extern struct CardListWork* gUnk_0203A9D0;
+extern struct CardListWork* gCardListWork;
 extern u8 gUnk_0203A9D4;
 extern u8 gUnk_0203A9D8;
 #ifndef VERSION_EU

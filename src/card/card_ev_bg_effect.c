@@ -42,7 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 
-extern u8* gUnk_02039DC8;
+extern u8* gEventState;
 u8 func_080A2024(u8* work, void* a);
 void func_080A1E4C(u8* work);
 
@@ -56,14 +56,14 @@ void func_080A1DAC(EventBgEffectWork* w) {
     LoadBgTiles(0, d->tiles, d->tilesSize);
     LoadBgPalette(0, d->palette, d->paletteSize);
     LoadBgMap(0, d->maps[0], 0x800);
-    SetBgScroll(0, (u16)((*(s32*)&gUnk_02039DC8[0x58] >> 8) - (e->unk_04 >> 8)), (u16)((*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (e->unk_08 >> 8)));
+    SetBgScroll(0, (u16)((*(s32*)&gEventState[0x58] >> 8) - (e->unk_04 >> 8)), (u16)((*(s32*)&gEventState[0x5C] >> 8) - (e->unk_08 >> 8)));
 
     if (d->frames != 0) {
         w->unk_15 = 1;
     }
 
     SetBgBlend(0, 16, 16);
-    gUnk_02039DC8[0x80] = 1;
+    gEventState[0x80] = 1;
     w->unk_0E = w->unk_0C = w->unk_16 = 0;
 }
 
@@ -138,7 +138,7 @@ u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a) {
         return 0;
     }
 
-    if (*(u16*)e[w->unk_14].unk_00 <= *(u16*)&gUnk_02039DC8[0x6C] && !(*(u16*)e[w->unk_14].flags & 0x8000)) {
+    if (*(u16*)e[w->unk_14].unk_00 <= *(u16*)&gEventState[0x6C] && !(*(u16*)e[w->unk_14].flags & 0x8000)) {
         w->unk_14++;
         cur = &e[w->unk_14];
 
@@ -161,9 +161,9 @@ u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a) {
 
         if (*(u16*)cur->flags & 2) {
             func_080A1E4C((u8*)w);
-            gUnk_02039DC8[0x80] = 0;
-            gBldCnt = *(u16*)&gUnk_02039DC8[0x6E];
-            gBldAlpha = *(u16*)&gUnk_02039DC8[0x70];
+            gEventState[0x80] = 0;
+            gBldCnt = *(u16*)&gEventState[0x6E];
+            gBldAlpha = *(u16*)&gEventState[0x70];
         }
     }
 
@@ -184,8 +184,8 @@ u8 func_080A2024(u8* work, void* a) {
     u8* p;
 
     p = *(u8**)&work[0] + work[0x14] * 16;
-    SetBgScroll(0, (u16)((*(s32*)&gUnk_02039DC8[0x58] >> 8) - (*(s32*)&p[4] >> 8)),
-                (u16)((*(s32*)&gUnk_02039DC8[0x5C] >> 8) - (*(s32*)&p[8] >> 8)));
+    SetBgScroll(0, (u16)((*(s32*)&gEventState[0x58] >> 8) - (*(s32*)&p[4] >> 8)),
+                (u16)((*(s32*)&gEventState[0x5C] >> 8) - (*(s32*)&p[8] >> 8)));
 
     if (func_080A207C(work) == 0) {
         SetTaskUpdate(a, (void*)EV_BG_EFFECT_1);

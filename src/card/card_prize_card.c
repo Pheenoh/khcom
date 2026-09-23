@@ -139,8 +139,8 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
         }
 
         SetTaskUpdate(a, (void*)func_0809612C);
-        x = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
-        y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->y >> 8);
+        x = (w->unk_A8 >> 8) - (gFieldState->x >> 8);
+        y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gFieldState->y >> 8);
         w->unk_A8 = x << 8;
         w->unk_AC = y << 8;
         ColliderSetDisabled(&w->collider[0], 1);
@@ -151,10 +151,10 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
     }
 
     ColliderSetPosition(&w->collider[0], w->unk_A8, w->unk_AC, *(s32*)&w->unk_B0[0]);
-    w->x = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
-    w->y2 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gUnk_02039BA0->y >> 8);
-    w->x2 = (w->unk_A8 >> 8) - (gUnk_02039BA0->x >> 8);
-    w->y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gUnk_02039BA0->y >> 8);
+    w->x = (w->unk_A8 >> 8) - (gFieldState->x >> 8);
+    w->y2 = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gFieldState->y >> 8);
+    w->x2 = (w->unk_A8 >> 8) - (gFieldState->x >> 8);
+    w->y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[4] >> 8) - (gFieldState->y >> 8);
     w->unk_E4 = -0x1004 - (w->unk_AC >> 8) * 4;
     func_08096638(w);
     w->unk_F8 += 2;
@@ -167,7 +167,7 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
         w->unk_F9++;
     }
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         return 0;
     }
 
@@ -225,7 +225,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
     w->y2 = w->unk_AC >> 8;
     func_08096638(w);
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         return 0;
     }
 
@@ -268,7 +268,7 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 
     TaskPoolUpdate(&w->unk_20);
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         return 0;
     }
 
@@ -276,15 +276,15 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
 }
 u8 func_08096390(PrizeCardWork* w) {
     w->unk_F6 += 32;
-    w->unk_EA = (gUnk_02039BA0->actor.fieldPosition.x >> 8) - (gUnk_02039BA0->x >> 8);
-    w->unk_EC = (gUnk_02039BA0->actor.fieldPosition.y >> 8) + (gUnk_02039BA0->actor.fieldPosition.z >> 8) -
-                (gUnk_02039BA0->y >> 8);
+    w->unk_EA = (gFieldState->actor.fieldPosition.x >> 8) - (gFieldState->x >> 8);
+    w->unk_EC = (gFieldState->actor.fieldPosition.y >> 8) + (gFieldState->actor.fieldPosition.z >> 8) -
+                (gFieldState->y >> 8);
     w->x += (w->unk_EA - w->x) >> 3;
     w->y2 += (w->unk_EC - w->y2) >> 3;
     w->unk_E0 -= 10;
     w->unk_E2 -= 10;
 
-    if (w->unk_E0 > 10 && !(gUnk_02039BA0->flags & 0x40000)) {
+    if (w->unk_E0 > 10 && !(gFieldState->flags & 0x40000)) {
         return 1;
     }
 

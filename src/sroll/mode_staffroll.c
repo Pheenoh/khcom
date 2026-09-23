@@ -16,7 +16,7 @@ extern u8 gUnkEu_09DD81A0[];
 extern u8 gUnkEu_09DD89A0[];
 #endif
 
-StaffRollWork* gUnk_02036020;
+StaffRollWork* gStaffRollWork;
 
 void func_081125BC(StaffRollWork* w) {
     w->unk_078 = 0;
@@ -241,7 +241,7 @@ void mode_StaffRoll_0(void) {
     StaffRollWork* w;
     StaffRollWork** p;
 
-    p = &gUnk_02036020;
+    p = &gStaffRollWork;
     w = EwramAlloc(0x418);
     *p = w;
     SetBackdropColor(0, 0, 0);
@@ -1283,7 +1283,7 @@ void mode_StaffRoll_1(void) {
     StaffRollWork* w;
     u16 tmp;
 
-    w = gUnk_02036020;
+    w = gStaffRollWork;
     w->unk_004 = 0;
     w->flags = 0;
 
@@ -1670,13 +1670,13 @@ void mode_StaffRoll_1(void) {
 void mode_StaffRoll_2(void) {
     StaffRollWork* w;
 
-    w = gUnk_02036020;
+    w = gStaffRollWork;
     ReleaseObjPalette((void*)w->palette);
     TaskPoolDestroy(w->tasks);
 
-    if (gUnk_02036020 != 0) {
+    if (gStaffRollWork != 0) {
         EwramFree(w);
-        gUnk_02036020 = 0;
+        gStaffRollWork = 0;
     }
 }
 

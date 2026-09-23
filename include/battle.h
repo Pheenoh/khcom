@@ -180,7 +180,7 @@ typedef struct BattleAttackDef {
 extern s32 gUnk_02039DC0;
 extern u8 gUnk_08F69BC4[];
 
-extern FieldTransitionWork* gUnk_020348C8;
+extern FieldTransitionWork* gFieldTransitionWork;
 extern u16 gUnk_020348CC[2];
 extern u16 gUnk_020348D0[2];
 extern u16 gUnk_020348D4[2];
@@ -188,7 +188,7 @@ extern u16 gUnk_020348D8[2];
 extern u16 gUnk_020348DC[2];
 extern u16 gUnk_020348E0;
 extern u16 gUnk_020348E2;
-extern BgFx* gUnk_02034928;
+extern BgFx* gBgFx;
 
 void* ColliderGetPool(u32 type);
 void func_08019350(void);

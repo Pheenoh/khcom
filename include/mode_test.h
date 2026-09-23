@@ -176,7 +176,7 @@ extern u8* gUnk_09EE26FC;
 extern u8* gUnk_09EE2700;
 
 extern s32* gUnk_02039DC4;
-extern EventState* gUnk_02039DC8;
+extern EventState* gEventState;
 
 extern Mode gModeChkbtl;
 extern u8 gUnk_08B24DAA[];

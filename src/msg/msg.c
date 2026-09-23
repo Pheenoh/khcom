@@ -24,11 +24,11 @@ extern u8 gUnkEu_0919B63A[];
 #define LANGSTR(x) (x)
 #endif
 
-static SpriteTextLine* gUnk_02034A80;
+static SpriteTextLine* gSpriteTextLines;
 static TextGlyphSprite* gUnk_02034A84;
 static TextGlyphSprite* gUnk_02034A88;
 #ifndef VERSION_EU
-static BgTextLine* gUnk_02034A8C;
+static BgTextLine* gBgTextLines;
 #endif
 static u8 gUnk_02034A90;
 static u8 gUnk_02034A91;
@@ -665,17 +665,17 @@ void func_08062D64(void) {
     u8 i;
     u8 j;
 
-    gUnk_02034A80 = EwramAlloc(0xF78);
+    gSpriteTextLines = EwramAlloc(0xF78);
     gUnk_02034A90 = 0;
 
     for (i = 0; i < 45; i++) {
-        gUnk_02034A80[i].x = 0;
-        gUnk_02034A80[i].y = 0;
-        gUnk_02034A80[i].palette = 0;
-        gUnk_02034A80[i].length = 0;
+        gSpriteTextLines[i].x = 0;
+        gSpriteTextLines[i].y = 0;
+        gSpriteTextLines[i].palette = 0;
+        gSpriteTextLines[i].length = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A80[i].glyphTiles[j] = 0;
+            gSpriteTextLines[i].glyphTiles[j] = 0;
         }
     }
 }
@@ -690,24 +690,24 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
         return;
     }
 
-    if (gUnk_02034A80 == NULL) {
+    if (gSpriteTextLines == NULL) {
         return;
     }
 
-    gUnk_02034A80[gUnk_02034A90].x = x;
-    gUnk_02034A80[gUnk_02034A90].y = y;
-    gUnk_02034A80[gUnk_02034A90].font = 0;
+    gSpriteTextLines[gUnk_02034A90].x = x;
+    gSpriteTextLines[gUnk_02034A90].y = y;
+    gSpriteTextLines[gUnk_02034A90].font = 0;
     len = func_0809D280(s);
 
     if (len > 15) {
         len = 16;
     }
-    gUnk_02034A80[gUnk_02034A90].length = len;
+    gSpriteTextLines[gUnk_02034A90].length = len;
 
     for (i = 0; i < len; i++) {
         s16 c;
 
-        gUnk_02034A80[gUnk_02034A90].glyphTiles[i] = (u32)AllocSpriteFrameTiles(32);
+        gSpriteTextLines[gUnk_02034A90].glyphTiles[i] = (u32)AllocSpriteFrameTiles(32);
         c = s[i];
 
         if ((u8)(c - 48) <= 9) {
@@ -753,9 +753,9 @@ void func_08062DC8(s32 x, s32 y, u8* s) {
         if (s[i] == 37) {
             idx = 44;
         }
-        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].glyphTiles[i], gUnk_09EEC538[idx], gUnk_090D4180);
+        UpdateSpriteFrameTiles((void*)gSpriteTextLines[gUnk_02034A90].glyphTiles[i], gUnk_09EEC538[idx], gUnk_090D4180);
     }
-    gUnk_02034A80[gUnk_02034A90].palette = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
+    gSpriteTextLines[gUnk_02034A90].palette = (u32)LoadObjPalette(gUnk_08F69BE4, 32);
     gUnk_02034A90++;
 }
 #ifndef VERSION_EU
@@ -771,19 +771,19 @@ void func_08062F18(s32 x, s32 y, u8* s) {
         return;
     }
 
-    if (gUnk_02034A80 == NULL) {
+    if (gSpriteTextLines == NULL) {
         return;
     }
 
-    gUnk_02034A80[gUnk_02034A90].x = x;
-    gUnk_02034A80[gUnk_02034A90].y = y;
-    gUnk_02034A80[gUnk_02034A90].font = 1;
+    gSpriteTextLines[gUnk_02034A90].x = x;
+    gSpriteTextLines[gUnk_02034A90].y = y;
+    gSpriteTextLines[gUnk_02034A90].font = 1;
     len = func_0809D280(s);
 
     if (len > 15) {
         len = 16;
     }
-    gUnk_02034A80[gUnk_02034A90].length = len;
+    gSpriteTextLines[gUnk_02034A90].length = len;
 
     for (i = 0, k = 0; i < len; i++) {
         s32 c = s[i];
@@ -795,11 +795,11 @@ void func_08062F18(s32 x, s32 y, u8* s) {
         if ((u8)(c - 65) <= 25) {
             idx = c - 52;
         }
-        gUnk_02034A80[gUnk_02034A90].glyphTiles[k] = (u32)AllocSpriteFrameTiles(128);
-        UpdateSpriteFrameTiles((void*)gUnk_02034A80[gUnk_02034A90].glyphTiles[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
+        gSpriteTextLines[gUnk_02034A90].glyphTiles[k] = (u32)AllocSpriteFrameTiles(128);
+        UpdateSpriteFrameTiles((void*)gSpriteTextLines[gUnk_02034A90].glyphTiles[k], gUnk_09EEB204[idx], gUnk_090AB5B2);
         k++;
     }
-    gUnk_02034A80[gUnk_02034A90].palette = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
+    gSpriteTextLines[gUnk_02034A90].palette = (u32)LoadObjPalette(&gUnk_096147B8[0x40], 32);
     gUnk_02034A90++;
 }
 #endif
@@ -872,7 +872,7 @@ void func_080634C4(void) {
     step = 8;
 
     for (i = 0; i < gUnk_02034A90; i++) {
-        switch (gUnk_02034A80[i].font) {
+        switch (gSpriteTextLines[i].font) {
         case 0:
             step = 8;
             break;
@@ -881,14 +881,14 @@ void func_080634C4(void) {
             break;
         }
 
-        x = gUnk_02034A80[i].x;
-        y = gUnk_02034A80[i].y;
+        x = gSpriteTextLines[i].x;
+        y = gSpriteTextLines[i].y;
 
-        for (j = 0; j < gUnk_02034A80[i].length; j++) {
-            DrawSprite((x >> 8) + j * step, y >> 8, NULL, (void*)gUnk_02034A80[i].glyphTiles[j], (void*)gUnk_02034A80[i].palette, 0, 0, 50);
-            ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
+        for (j = 0; j < gSpriteTextLines[i].length; j++) {
+            DrawSprite((x >> 8) + j * step, y >> 8, NULL, (void*)gSpriteTextLines[i].glyphTiles[j], (void*)gSpriteTextLines[i].palette, 0, 0, 50);
+            ReleaseObjTiles((void*)gSpriteTextLines[i].glyphTiles[j]);
         }
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
+        ReleaseObjPalette((u8*)gSpriteTextLines[i].palette);
     }
     gUnk_02034A90 = 0;
 }
@@ -898,12 +898,12 @@ void func_080635C4(void) {
     u8 j;
 
     for (i = 0; i < gUnk_02034A90; i++) {
-        gUnk_02034A80[i].x = 0;
-        gUnk_02034A80[i].y = 0;
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
+        gSpriteTextLines[i].x = 0;
+        gSpriteTextLines[i].y = 0;
+        ReleaseObjPalette((u8*)gSpriteTextLines[i].palette);
 
-        for (j = 0; j < gUnk_02034A80[i].length; j++) {
-            ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
+        for (j = 0; j < gSpriteTextLines[i].length; j++) {
+            ReleaseObjTiles((void*)gSpriteTextLines[i].glyphTiles[j]);
         }
     }
     gUnk_02034A90 = 0;
@@ -911,44 +911,44 @@ void func_080635C4(void) {
 void func_08063658(void) {
     func_080635C4();
 
-    if (gUnk_02034A80 != NULL) {
-        EwramFree(gUnk_02034A80);
+    if (gSpriteTextLines != NULL) {
+        EwramFree(gSpriteTextLines);
     }
-    gUnk_02034A80 = NULL;
+    gSpriteTextLines = NULL;
 }
 #ifndef VERSION_EU
 void* func_08063678(s32 a) {
     u8 i;
     u8 j;
 
-    gUnk_02034A80 = EwramAlloc(0x840);
+    gSpriteTextLines = EwramAlloc(0x840);
     gUnk_02034A90 = 0;
 
     for (i = 0; i < 24; i++) {
-        gUnk_02034A80[i].x = 0;
-        gUnk_02034A80[i].y = 0;
-        gUnk_02034A80[i].palette = 0;
-        gUnk_02034A80[i].length = 0;
-        gUnk_02034A80[i].unk_52 = 0;
-        gUnk_02034A80[i].unk_53 = 0;
+        gSpriteTextLines[i].x = 0;
+        gSpriteTextLines[i].y = 0;
+        gSpriteTextLines[i].palette = 0;
+        gSpriteTextLines[i].length = 0;
+        gSpriteTextLines[i].unk_52 = 0;
+        gSpriteTextLines[i].unk_53 = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A80[i].glyphTiles[j] = 0;
+            gSpriteTextLines[i].glyphTiles[j] = 0;
         }
 
         switch (a) {
         case 0:
-            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614718, 32);
+            gSpriteTextLines[i].palette = (u32)LoadObjPalette(gUnk_09614718, 32);
             break;
         case 1:
-            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614738, 32);
+            gSpriteTextLines[i].palette = (u32)LoadObjPalette(gUnk_09614738, 32);
             break;
         case 2:
-            gUnk_02034A80[i].palette = (u32)LoadObjPalette(gUnk_09614758, 32);
+            gSpriteTextLines[i].palette = (u32)LoadObjPalette(gUnk_09614758, 32);
             break;
         }
     }
-    return (void*)gUnk_02034A80->palette;
+    return (void*)gSpriteTextLines->palette;
 }
 #endif
 #ifndef VERSION_EU
@@ -971,16 +971,16 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         return;
     }
 
-    if (gUnk_02034A80 == NULL) {
+    if (gSpriteTextLines == NULL) {
         return;
     }
 
-    gUnk_02034A80[slot].x = x;
-    gUnk_02034A80[slot].y = y;
-    gUnk_02034A80[slot].font = 1;
-    gUnk_02034A80[slot].unk_52 = 1;
-    gUnk_02034A80[slot].unk_53 = i;
-    gUnk_02034A80[slot].unk_54 = a;
+    gSpriteTextLines[slot].x = x;
+    gSpriteTextLines[slot].y = y;
+    gSpriteTextLines[slot].font = 1;
+    gSpriteTextLines[slot].unk_52 = 1;
+    gSpriteTextLines[slot].unk_53 = i;
+    gSpriteTextLines[slot].unk_54 = a;
 
     while (*s != 0) {
         u16 v;
@@ -1340,17 +1340,17 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
             break;
         }
 
-        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
+        if (gSpriteTextLines[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gSpriteTextLines[slot].glyphTiles[j]);
         }
         g = ((u16*)gUnk_09EEB204[g])[3];
 
         switch (kind) {
         case 0:
-            gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[g * 32], 128);
+            gSpriteTextLines[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[g * 32], 128);
             break;
         case 1:
-            gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090B3FBE[g * 32], 128);
+            gSpriteTextLines[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090B3FBE[g * 32], 128);
             break;
         }
         j++;
@@ -1358,12 +1358,12 @@ void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
     }
 
     for (j = i; j < 16; j++) {
-        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
-            gUnk_02034A80[slot].glyphTiles[j] = 0;
+        if (gSpriteTextLines[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gSpriteTextLines[slot].glyphTiles[j]);
+            gSpriteTextLines[slot].glyphTiles[j] = 0;
         }
     }
-    gUnk_02034A80[slot].length = i;
+    gSpriteTextLines[slot].length = i;
 }
 #endif
 #ifndef VERSION_EU
@@ -1393,15 +1393,15 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
         return;
     }
 
-    if (gUnk_02034A80 == NULL) {
+    if (gSpriteTextLines == NULL) {
         return;
     }
 
-    gUnk_02034A80[slot].x = x;
-    gUnk_02034A80[slot].y = y;
-    gUnk_02034A80[slot].font = 2;
-    gUnk_02034A80[slot].unk_52 = 1;
-    gUnk_02034A80[slot].unk_54 = a;
+    gSpriteTextLines[slot].x = x;
+    gSpriteTextLines[slot].y = y;
+    gSpriteTextLines[slot].font = 2;
+    gSpriteTextLines[slot].unk_52 = 1;
+    gSpriteTextLines[slot].unk_54 = a;
     len = func_0809D280(s);
 
     if (len > 15) {
@@ -1425,23 +1425,23 @@ void func_08063F60(s32 x, s32 y, u8* s, u8 slot, u8 a) {
             idx = (u8)(s[i] + 196);
         }
 
-        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
+        if (gSpriteTextLines[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gSpriteTextLines[slot].glyphTiles[j]);
         }
         idx = ((u8*)gUnk_09EEB204[idx])[6];
-        gUnk_02034A80[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[idx * 32], 128);
+        gSpriteTextLines[slot].glyphTiles[j] = (u32)LoadObjTiles(&gUnk_090AB5B2[idx * 32], 128);
         j++;
     }
 
     len = count;
 
     for (j = len; j < 16; j++) {
-        if (gUnk_02034A80[slot].glyphTiles[j] != 0) {
-            ReleaseObjTiles((void*)gUnk_02034A80[slot].glyphTiles[j]);
-            gUnk_02034A80[slot].glyphTiles[j] = 0;
+        if (gSpriteTextLines[slot].glyphTiles[j] != 0) {
+            ReleaseObjTiles((void*)gSpriteTextLines[slot].glyphTiles[j]);
+            gSpriteTextLines[slot].glyphTiles[j] = 0;
         }
     }
-    gUnk_02034A80[slot].length = len;
+    gSpriteTextLines[slot].length = len;
 }
 #endif
 #ifndef VERSION_EU
@@ -1454,25 +1454,25 @@ void func_080640E0(void) {
     u8 dx;
 
     for (i = 0; i < 24; i++) {
-        if (gUnk_02034A80[i].unk_52 != 1) {
+        if (gSpriteTextLines[i].unk_52 != 1) {
             continue;
         }
 
-        if (gUnk_02034A80[i].unk_54 == 0) {
-            g = (void*)gUnk_02034A80[i].palette;
+        if (gSpriteTextLines[i].unk_54 == 0) {
+            g = (void*)gSpriteTextLines[i].palette;
         } else {
-            g = (void*)gUnk_02034A80[i].unk_4C;
+            g = (void*)gSpriteTextLines[i].unk_4C;
         }
-        x = gUnk_02034A80[i].x;
-        y = gUnk_02034A80[i].y;
+        x = gSpriteTextLines[i].x;
+        y = gSpriteTextLines[i].y;
         dx = 0;
 
-        for (j = 0; j < gUnk_02034A80[i].length; j++) {
-            DrawSprite((x >> 8) + dx, y >> 8, gUnk_09EEB204[0], (void*)gUnk_02034A80[i].glyphTiles[j], g, 0, 0, 50);
+        for (j = 0; j < gSpriteTextLines[i].length; j++) {
+            DrawSprite((x >> 8) + dx, y >> 8, gUnk_09EEB204[0], (void*)gSpriteTextLines[i].glyphTiles[j], g, 0, 0, 50);
 
-            if (gUnk_02034A80[i].font == 1) {
+            if (gSpriteTextLines[i].font == 1) {
                 dx += 10;
-            } else if (gUnk_02034A80[i].font == 2) {
+            } else if (gSpriteTextLines[i].font == 2) {
                 dx += 10;
             }
         }
@@ -1482,16 +1482,16 @@ void func_080640E0(void) {
 
 #ifndef VERSION_EU
 void func_080641CC(u8 i) {
-    gUnk_02034A80[i].unk_52 = 0;
+    gSpriteTextLines[i].unk_52 = 0;
 }
 void func_080641E8(u8 i) {
-    if (gUnk_02034A80[i].length != 0) {
-        gUnk_02034A80[i].unk_52 = 1;
+    if (gSpriteTextLines[i].length != 0) {
+        gSpriteTextLines[i].unk_52 = 1;
     }
 }
 void func_0806420C(void* a, void* b, u8 i) {
-    gUnk_02034A80[i].x = a;
-    gUnk_02034A80[i].y = b;
+    gSpriteTextLines[i].x = a;
+    gSpriteTextLines[i].y = b;
 }
 #endif
 #ifndef VERSION_EU
@@ -1501,15 +1501,15 @@ void func_0806422C(void) {
 
     for (i = 0; i < 24; i++) {
         for (j = 0; j < 16; j++) {
-            if (gUnk_02034A80[i].glyphTiles[j] != 0) {
-                ReleaseObjTiles((void*)gUnk_02034A80[i].glyphTiles[j]);
+            if (gSpriteTextLines[i].glyphTiles[j] != 0) {
+                ReleaseObjTiles((void*)gSpriteTextLines[i].glyphTiles[j]);
             }
         }
-        FadeSetPaletteExcluded(((ObjPalette*)gUnk_02034A80[i].palette)->index, 0);
-        ReleaseObjPalette((u8*)gUnk_02034A80[i].palette);
+        FadeSetPaletteExcluded(((ObjPalette*)gSpriteTextLines[i].palette)->index, 0);
+        ReleaseObjPalette((u8*)gSpriteTextLines[i].palette);
     }
-    EwramFree(gUnk_02034A80);
-    gUnk_02034A80 = NULL;
+    EwramFree(gSpriteTextLines);
+    gSpriteTextLines = NULL;
 }
 #endif
 #ifndef VERSION_EU
@@ -1519,18 +1519,18 @@ void func_080642A8(u8 bg) {
 
     GetBgCharBase(bg);
     GetBgScreenBase(bg);
-    gUnk_02034A8C = EwramAlloc(400);
+    gBgTextLines = EwramAlloc(400);
 
     for (i = 0; i < 10; i++) {
-        gUnk_02034A8C[i].x = 0;
-        gUnk_02034A8C[i].y = 0;
-        gUnk_02034A8C[i].length = 0;
-        gUnk_02034A8C[i].bg = bg;
-        gUnk_02034A8C[i].glyphHeight = 16;
-        gUnk_02034A8C[i].dirty = 0;
+        gBgTextLines[i].x = 0;
+        gBgTextLines[i].y = 0;
+        gBgTextLines[i].length = 0;
+        gBgTextLines[i].bg = bg;
+        gBgTextLines[i].glyphHeight = 16;
+        gBgTextLines[i].dirty = 0;
 
         for (j = 0; j < 16; j++) {
-            gUnk_02034A8C[i].glyphs[j] = 0;
+            gBgTextLines[i].glyphs[j] = 0;
         }
     }
 
@@ -1568,15 +1568,15 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
         return;
     }
 
-    if (gUnk_02034A8C == NULL) {
+    if (gBgTextLines == NULL) {
         return;
     }
 
-    gUnk_02034A8C[e].x = a;
-    gUnk_02034A8C[e].y = b;
-    gUnk_02034A8C[e].glyphHeight = c;
-    gUnk_02034A8C[e].dirty = 1;
-    gUnk_02034A8C[e].paletteIndex = f;
+    gBgTextLines[e].x = a;
+    gBgTextLines[e].y = b;
+    gBgTextLines[e].glyphHeight = c;
+    gBgTextLines[e].dirty = 1;
+    gBgTextLines[e].paletteIndex = f;
 
     while (*s != 0) {
         w = *(u16*)s;
@@ -1652,11 +1652,11 @@ void func_080643D4(u8 a, u8 b, u8 c, u8* s, u8 e, u8 f) {
             }
         }
 
-        gUnk_02034A8C[e].glyphs[j] = glyph;
+        gBgTextLines[e].glyphs[j] = glyph;
         j++;
         i++;
     }
-    gUnk_02034A8C[e].length = i;
+    gBgTextLines[e].length = i;
 
     if (gUnk_02034A91 == 0) {
         QueueVTransCallback(func_08064624);
@@ -1685,23 +1685,23 @@ void func_08064624(void) {
     u32 pix;
     u16 tile;
     for (n = 0; n < 10; n++) {
-        if (gUnk_02034A8C[n].dirty != 1) {
+        if (gBgTextLines[n].dirty != 1) {
             continue;
         }
-        gUnk_02034A8C[n].dirty = 0;
+        gBgTextLines[n].dirty = 0;
 
-        for (k = 0; k < gUnk_02034A8C[n].length; k++) {
-            glyph = gUnk_02034A8C[n].glyphs[k];
-            pal = gUnk_02034A8C[n].paletteIndex;
-            h = gUnk_02034A8C[n].glyphHeight;
+        for (k = 0; k < gBgTextLines[n].length; k++) {
+            glyph = gBgTextLines[n].glyphs[k];
+            pal = gBgTextLines[n].paletteIndex;
+            h = gBgTextLines[n].glyphHeight;
 
             if (h > 8) {
-                tx = (k * 12 + gUnk_02034A8C[n].x) >> 3;
-                ty = gUnk_02034A8C[n].y >> 3;
-                sx = k * 12 + gUnk_02034A8C[n].x - tx * 8;
-                sy = gUnk_02034A8C[n].y - ty * 8;
-                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].bg) + (tx + 1) * 32 + ty * 1024;
-                screen = GetBgScreenBase(gUnk_02034A8C[n].bg);
+                tx = (k * 12 + gBgTextLines[n].x) >> 3;
+                ty = gBgTextLines[n].y >> 3;
+                sx = k * 12 + gBgTextLines[n].x - tx * 8;
+                sy = gBgTextLines[n].y - ty * 8;
+                dst = (u8*)GetBgCharBase(gBgTextLines[n].bg) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gBgTextLines[n].bg);
                 tile = ((u16*)gUnk_09EEB204[glyph])[3];
                 src = (u16*)&gUnk_090AB5B2[tile * 32];
                 p = dst;
@@ -1811,12 +1811,12 @@ void func_08064624(void) {
                     }
                 }
             } else {
-                tx = (k * 8 + gUnk_02034A8C[n].x) >> 3;
-                ty = gUnk_02034A8C[n].y >> 3;
-                sx = k * 8 + gUnk_02034A8C[n].x - tx * 8;
-                sy = gUnk_02034A8C[n].y - ty * 8;
-                dst = (u8*)GetBgCharBase(gUnk_02034A8C[n].bg) + (tx + 1) * 32 + ty * 1024;
-                screen = GetBgScreenBase(gUnk_02034A8C[n].bg);
+                tx = (k * 8 + gBgTextLines[n].x) >> 3;
+                ty = gBgTextLines[n].y >> 3;
+                sx = k * 8 + gBgTextLines[n].x - tx * 8;
+                sy = gBgTextLines[n].y - ty * 8;
+                dst = (u8*)GetBgCharBase(gBgTextLines[n].bg) + (tx + 1) * 32 + ty * 1024;
+                screen = GetBgScreenBase(gBgTextLines[n].bg);
                 tile = ((u16*)gUnk_09EEB188[glyph])[3];
                 src = (u16*)&gUnk_090AA506[tile * 32];
                 p = dst;
@@ -1874,8 +1874,8 @@ void func_08064624(void) {
 #endif
 #ifndef VERSION_EU
 void func_08064B68(void) {
-    EwramFree(gUnk_02034A8C);
-    gUnk_02034A8C = NULL;
+    EwramFree(gBgTextLines);
+    gBgTextLines = NULL;
 }
 #endif
 u16 func_08064B80(s32 a) {

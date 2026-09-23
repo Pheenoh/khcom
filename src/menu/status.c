@@ -50,7 +50,7 @@ const char gTaskNameStatusMessage[] = "task_status_message";
 
 const char gTaskNameStatusFriend[] = "task_status_friend";
 
-const StatusFriendTable gUnk_096FDE24 = {{
+const StatusFriendTable gStatusFriendTable = {{
     {2, 240},
     {1, 250},
     {4, 330},
@@ -1001,7 +1001,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
     u16 limit;
     const void* source;
 
-    source = &gUnk_096FDE24;
+    source = &gStatusFriendTable;
     table = *(const StatusFriendTable*)source;
 
     data = &gGameState;

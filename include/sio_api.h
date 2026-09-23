@@ -23,7 +23,7 @@ extern u32 gSioStatus;
 extern u8 gUnk_02039824;
 extern u32 gSioPlayerId;
 extern u8 gUnk_0203982C;
-extern SioWork gUnk_02039830;
+extern SioWork gSioWork;
 extern u16 gUnk_02039B58[4];
 extern u8 gUnk_02039B60;
 extern u16 gUnk_02039B68[4];

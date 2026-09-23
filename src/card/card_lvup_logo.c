@@ -49,7 +49,7 @@ extern u8 gUnkEu_0917063A[];
 extern u8 gUnkEu_09170202[];
 extern u8 gUnkEu_0916FDCA[];
 #endif
-extern u8* gUnk_02039DC8;
+extern u8* gEventState;
 void func_080A1554(u8* work);
 
 void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
@@ -208,7 +208,7 @@ void Ev_mapObj_2(EventMapObjectWork* w) {
 
     for (i = 0; i < q->placementCount; i++) {
         e = &entries[i];
-        DrawSprite(e->x - (*(s32*)&gUnk_02039DC8[0x58] >> 8), e->y - (*(s32*)&gUnk_02039DC8[0x5C] >> 8), q->sprites[e->spriteIndex], w->tiles[e->spriteIndex], w->palettes[e->spriteIndex], 0, 0x800, (u16)(-0x1004 - e->y * 4));
+        DrawSprite(e->x - (*(s32*)&gEventState[0x58] >> 8), e->y - (*(s32*)&gEventState[0x5C] >> 8), q->sprites[e->spriteIndex], w->tiles[e->spriteIndex], w->palettes[e->spriteIndex], 0, 0x800, (u16)(-0x1004 - e->y * 4));
     }
 }
 

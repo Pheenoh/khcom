@@ -9,8 +9,8 @@ void task_roomcreate_0(RoomCreateWork* work) {
     FldActor* act;
 
     func_08093C04();
-    gUnk_02039BA0->flags |= 0x40000;
-    gUnk_02039BA0->flags |= 2;
+    gFieldState->flags |= 0x40000;
+    gFieldState->flags |= 2;
     work->unk_29 = 0;
     work->unk_28 = 0;
     work->unk_26 = 0;
@@ -18,10 +18,10 @@ void task_roomcreate_0(RoomCreateWork* work) {
     SetBgPriority(0, 2);
     SetBgPriority(1, 2);
     TaskPoolInit(&work->tasks, 3);
-    work->x = gUnk_02039BA0->actor.fieldPosition.x;
-    work->y = gUnk_02039BA0->actor.fieldPosition.y;
-    work->z = gUnk_02039BA0->actor.fieldPosition.z;
-    act = gUnk_02039BA0->unk_68;
+    work->x = gFieldState->actor.fieldPosition.x;
+    work->y = gFieldState->actor.fieldPosition.y;
+    work->z = gFieldState->actor.fieldPosition.z;
+    act = gFieldState->unk_68;
     work->x2 = act->fieldPosition.x;
     work->y2 = act->fieldPosition.y;
     work->z2 = act->fieldPosition.z;
@@ -29,7 +29,7 @@ void task_roomcreate_0(RoomCreateWork* work) {
     work->unk_18 = work->x2 + gSineTable[work->angle] * 50;
     work->unk_1C = work->y2 + -gSineTable[work->angle + 0x40] * 50;
     work->unk_20 = work->z2;
-    work->unk_25 = gUnk_02039BA0->actor.angle;
+    work->unk_25 = gFieldState->actor.angle;
 }
 
 u8 task_roomcreate_1(RoomCreateWork* work) {
@@ -39,30 +39,30 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     switch (work->state) {
     case 0:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->actor.angle = work->angle + 0x80;
+            gFieldState->actor.angle = work->angle + 0x80;
             TaskCreate(&work->tasks, &gTaskDescSpotLight, &work->unk_28);
-            gUnk_02039BA0->flags |= 0x80000;
+            gFieldState->flags |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->unk_18, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->unk_1C, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->unk_20, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.x, work->unk_18, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.y, work->unk_1C, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.z, work->unk_20, steps);
 
         if (steps <= 1) {
             func_080E0418();
             work->state = 1;
-            gUnk_02039BA0->flags &= ~0x80000;
+            gFieldState->flags &= ~0x80000;
             work->unk_26 = 8;
         } else {
-            func_080E0298((gUnk_02039BA0->actor.fieldPosition.x + work->x2) / 2,
-                          (gUnk_02039BA0->actor.fieldPosition.y + gUnk_02039BA0->actor.fieldPosition.z + work->y2 + work->z2) / 2);
+            func_080E0298((gFieldState->actor.fieldPosition.x + work->x2) / 2,
+                          (gFieldState->actor.fieldPosition.y + gFieldState->actor.fieldPosition.z + work->y2 + work->z2) / 2);
             work->unk_26++;
         }
         break;
     case 1:
         if (work->unk_26 > 0) {
-            ApproachValue(&gUnk_02039BA0->x, gUnk_02039BA0->x2 - 0x7800, work->unk_26);
-            ApproachValue(&gUnk_02039BA0->y, gUnk_02039BA0->y2 - 0x6000, work->unk_26);
+            ApproachValue(&gFieldState->x, gFieldState->x2 - 0x7800, work->unk_26);
+            ApproachValue(&gFieldState->y, gFieldState->y2 - 0x6000, work->unk_26);
             work->unk_26--;
         } else if (work->unk_26 == 0) {
             m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFF, 0x80);
@@ -86,7 +86,7 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         break;
     case 3:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->flags |= 0x100000;
+            gFieldState->flags |= 0x100000;
             DisableBg(2);
             DisableBg(3);
             FadeStartIn(0, 1);
@@ -115,13 +115,13 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
         }
 
         if (work->unk_26 == 40) {
-            gUnk_02039BA0->flags |= 0x200000;
+            gFieldState->flags |= 0x200000;
         }
 
         if (work->unk_26 > 60) {
             work->unk_26 = 0;
             work->state = 6;
-            gUnk_02039BA0->flags &= ~0x100000;
+            gFieldState->flags &= ~0x100000;
         } else {
             work->unk_26++;
         }
@@ -137,36 +137,36 @@ u8 task_roomcreate_1(RoomCreateWork* work) {
     case 2:
         if (work->unk_26 == 0) {
             work->unk_28 = 1;
-            gUnk_02039BA0->flags |= 0x80000;
+            gFieldState->flags |= 0x80000;
         }
         steps = 30 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->y, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->z, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.x, work->x, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.y, work->y, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.z, work->z, steps);
 
         if (steps <= 1) {
-            gUnk_02039BA0->actor.angle = work->unk_25;
-            gUnk_02039BA0->flags &= ~0x40000;
-            gUnk_02039BA0->flags &= ~2;
+            gFieldState->actor.angle = work->unk_25;
+            gFieldState->flags &= ~0x40000;
+            gFieldState->flags &= ~2;
             DisableBg(0);
             SetBgPriority(1, 1);
             return 0;
         }
         work->unk_26++;
-        func_080E0298((gUnk_02039BA0->actor.fieldPosition.x + work->x2) / 2,
-                      (gUnk_02039BA0->actor.fieldPosition.y + gUnk_02039BA0->actor.fieldPosition.z + work->y2 + work->z2) / 2);
+        func_080E0298((gFieldState->actor.fieldPosition.x + work->x2) / 2,
+                      (gFieldState->actor.fieldPosition.y + gFieldState->actor.fieldPosition.z + work->y2 + work->z2) / 2);
         break;
     case 6:
         if (work->unk_26 == 0) {
-            gUnk_02039BA0->flags |= 0x80000;
+            gFieldState->flags |= 0x80000;
         }
         steps = 40 - work->unk_26;
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.x, work->x2, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.y, work->y2, steps);
-        ApproachValue(&gUnk_02039BA0->actor.fieldPosition.z, work->z2, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.x, work->x2, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.y, work->y2, steps);
+        ApproachValue(&gFieldState->actor.fieldPosition.z, work->z2, steps);
 
-        if (func_080DFD84(&gUnk_02039BA0->actor.fieldPosition)) {
-            gUnk_02039BA0->flags |= 0x10;
+        if (func_080DFD84(&gFieldState->actor.fieldPosition)) {
+            gFieldState->flags |= 0x10;
         }
         break;
     case 7:

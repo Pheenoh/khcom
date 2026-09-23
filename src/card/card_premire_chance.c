@@ -75,8 +75,8 @@ void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
 
     w->unk_50 = 0;
     func_0809C9A4((UnkStruct_0809C9A4*)w);
-    ListNodeInit(&w->node, &gUnk_0203A9D0->cards, w);
-    ListPoolAppend(&w->node, &gUnk_0203A9D0->cards);
+    ListNodeInit(&w->node, &gCardListWork->cards, w);
+    ListPoolAppend(&w->node, &gCardListWork->cards);
     w->unk_55 = 0;
     w->unk_6C = 0x100;
     w->unk_6E = 0x100;
@@ -113,12 +113,12 @@ u8 func_0809C620(u8* work, void* a) {
     }
 
     if ((s8)work[0x52] == 3) {
-        gUnk_0203A9D0->selectedCard = (UnkStruct_0809C534*)work;
+        gCardListWork->selectedCard = (UnkStruct_0809C534*)work;
     }
 
     switch (work[0x55]) {
     case 2:
-        gUnk_0203A9D0->unk_29 = 0;
+        gCardListWork->unk_29 = 0;
         work[0x53] = 8;
         fn = func_0809CB0C;
         SetTaskUpdate(a, fn);

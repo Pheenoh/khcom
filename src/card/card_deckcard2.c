@@ -137,7 +137,7 @@ void DeckCard2_2(DeckCard2Work* n) {
         DrawSprite(n->x >> 8, n->y >> 8, n->cardDef->gfx2, n->tiles, n->palette, 0, 0, 0x33);
 
         if (n->unk_4D != 0) {
-            DrawSprite(n->x >> 8, n->y >> 8, gUnk_0203A860.gfx, gUnk_0203A860.tiles, gUnk_0203A860.palette, 0, 0, 0x28);
+            DrawSprite(n->x >> 8, n->y >> 8, gCardUiSpriteState.gfx, gCardUiSpriteState.tiles, gCardUiSpriteState.palette, 0, 0, 0x28);
         }
     }
 

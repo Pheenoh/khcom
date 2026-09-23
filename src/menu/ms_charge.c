@@ -60,7 +60,7 @@ void* gUnkEu_09F84FE4[5] = {
 };
 #endif
 
-static MsCard* gUnk_02035C10;
+static MsCard* gMsCards;
 static s16 gUnk_02035C14;
 static s16 gUnk_02035C16;
 static s16 gUnk_02035C18;
@@ -160,7 +160,7 @@ s16 func_08104AEC(void) {
 }
 
 MsCard* func_08104B2C(void) {
-    return gUnk_02035C10 + func_08104AEC();
+    return gMsCards + func_08104AEC();
 }
 
 void func_08104B48(void) {
@@ -205,11 +205,11 @@ void func_08104BBC(void) {
             }
 
             if (idx < limit) {
-                defIdx = gUnk_02035C10[a + idx].cardId;
+                defIdx = gMsCards[a + idx].cardId;
                 gUnk_02035CE8[i][k] = LoadObjPalette(gCardDefs[defIdx].palette2, 0x20);
                 gUnk_02035D18[i][k] = LoadObjTiles(gCardDefs[defIdx].tiles2, 0x100);
                 gUnk_02035D48[i][k] = gCardDefs[defIdx].gfx2;
-                gUnk_02035D78[i][k] = gUnk_02035C10[a + idx].unk_2E;
+                gUnk_02035D78[i][k] = gMsCards[a + idx].unk_2E;
             } else {
                 gUnk_02035CE8[i][k] = 0;
                 gUnk_02035D18[i][k] = 0;
@@ -282,7 +282,7 @@ u16 func_08104ED8(u16 index) {
     MsCard* card;
     u16 id;
 
-    card = &gUnk_02035C10[index];
+    card = &gMsCards[index];
     if (card->unk_00 != 0x8F) {
         id = card->unk_06[func_08104EB4()][1];
         return GetCardMooglePointValue(card->unk_2E != 0 ? id | 0x8000 : id);
@@ -482,7 +482,7 @@ void func_081054D0(MsCard* card) {
     p = &zero;
     *p = 0;
     dma[0] = (u32)p;
-    last = &gUnk_02035C10[285];
+    last = &gMsCards[285];
     dma[1] = (u32)last;
     dma[2] = 0x8100001A;
     dma[2];
@@ -516,7 +516,7 @@ s32 func_081055E8(u16 id, u8 flag, s16 count) {
     s16 i;
 
     for (i = 0; i < count; i++) {
-        if (gUnk_02035C10[i].unk_00 == id && gUnk_02035C10[i].unk_2E == flag) {
+        if (gMsCards[i].unk_00 == id && gMsCards[i].unk_2E == flag) {
             return i;
         }
     }
@@ -545,14 +545,14 @@ void func_0810563C(void) {
     *p = 0;
     dma = (vu32*)0x040000D4;
     dma[0] = (u32)p;
-    dma[1] = (u32)gUnk_02035C10;
+    dma[1] = (u32)gMsCards;
     dma[2] = 0x81001D0C;
     dma[2];
 
     for (n = 0; n <= 285; n++) {
-        gUnk_02035C10[n].unk_00 = 0x8F;
-        gUnk_02035C10[n].cardId = 0x3B6;
-        gUnk_02035C10[n].unk_2E = 0;
+        gMsCards[n].unk_00 = 0x8F;
+        gMsCards[n].cardId = 0x3B6;
+        gMsCards[n].unk_2E = 0;
     }
     a = func_08084BAC();
     gUnk_02035C3C = a;
@@ -578,22 +578,22 @@ void func_0810563C(void) {
             gUnk_02035C30[j]++;
             gUnk_02035C3A++;
             if ((idx = func_081055E8(kind, prem, n)) >= 0) {
-                gUnk_02035C10[idx].unk_06[raw = gCardDefs[id].unk_20][0]++;
-                gUnk_02035C10[idx].unk_06[raw][1] = id;
+                gMsCards[idx].unk_06[raw = gCardDefs[id].unk_20][0]++;
+                gMsCards[idx].unk_06[raw][1] = id;
             } else {
-                gUnk_02035C10[n].unk_00 = kind;
-                gUnk_02035C10[n].cardId = gCardDefs[id].unk_28;
-                gUnk_02035C10[n].unk_04 = j;
+                gMsCards[n].unk_00 = kind;
+                gMsCards[n].cardId = gCardDefs[id].unk_28;
+                gMsCards[n].unk_04 = j;
                 raw = gCardDefs[id].unk_20;
-                gUnk_02035C10[n].unk_06[raw][0]++;
-                gUnk_02035C10[n].unk_06[raw][1] = id;
-                gUnk_02035C10[n].unk_2E = prem;
+                gMsCards[n].unk_06[raw][0]++;
+                gMsCards[n].unk_06[raw][1] = id;
+                gMsCards[n].unk_2E = prem;
                 sortKey = 0x01000000;
 
                 if (prem != 0) {
                     sortKey = 0x03000000;
                 }
-                gUnk_02035C10[n].unk_30 = (sortKey << (gUnk_02035C10[n].unk_04 * 2)) | gUnk_02035C10[n].cardId;
+                gMsCards[n].unk_30 = (sortKey << (gMsCards[n].unk_04 * 2)) | gMsCards[n].cardId;
                 gUnk_02035C28[j]++;
                 n++;
             }
@@ -605,16 +605,16 @@ void func_0810563C(void) {
     }
 
     for (i = 1; i < n; i++) {
-        tmp = gUnk_02035C10[i];
+        tmp = gMsCards[i];
 
         for (j = i - 1; j >= 0; j--) {
-            if (gUnk_02035C10[j].unk_30 > tmp.unk_30) {
-                gUnk_02035C10[j + 1] = gUnk_02035C10[j];
+            if (gMsCards[j].unk_30 > tmp.unk_30) {
+                gMsCards[j + 1] = gMsCards[j];
             } else {
                 break;
             }
         }
-        gUnk_02035C10[j + 1] = tmp;
+        gMsCards[j + 1] = tmp;
     }
 }
 
@@ -1064,7 +1064,7 @@ void mode_ms_charge_0(void) {
     u16 length;
 
     {
-        MsCard** dst = &gUnk_02035C10;
+        MsCard** dst = &gMsCards;
         *dst = EwramAlloc(0x3A18);
     }
     SpriteReset();
@@ -1419,7 +1419,7 @@ void mode_ms_charge_2(void) {
     EwramFree(gUnk_02035DFC);
     FreeTextSlots(gUnk_02035E04, gUnk_02035E0A);
     EwramFree(gUnk_02035E04);
-    EwramFree(gUnk_02035C10);
+    EwramFree(gMsCards);
 }
 
 const char gModeNameMsCharge[] = "mode_ms_charge";

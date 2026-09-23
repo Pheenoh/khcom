@@ -54,10 +54,10 @@ u8 task_lockon_1(LockonWork* w) {
     s32 oy;
 
     i = 0;
-    o = ListPoolFirst(&gUnk_02039BA0->actor.pool);
+    o = ListPoolFirst(&gFieldState->actor.pool);
 
-    if (gUnk_02039BA0->flags & 1) {
-        gUnk_02039BA0->unk_68 = 0;
+    if (gFieldState->flags & 1) {
+        gFieldState->unk_68 = 0;
         return 1;
     }
 
@@ -67,18 +67,18 @@ u8 task_lockon_1(LockonWork* w) {
         w->unk_30 = 0;
     }
 
-    px = gUnk_02039BA0->actor.fieldPosition.x;
-    py = gUnk_02039BA0->actor.fieldPosition.y;
+    px = gFieldState->actor.fieldPosition.x;
+    py = gFieldState->actor.fieldPosition.y;
     count = 0;
 
-    if ((gUnk_02039BA0->flags & 2) == 0) {
+    if ((gFieldState->flags & 2) == 0) {
         while (o != 0) {
             ox = o->x;
             oy = o->y;
             dx = px - ox;
             dy = py - oy;
 
-            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gUnk_02039BA0->actor.fieldPosition.unk_0C) {
+            if (VectorLength2D(dx, dy) <= 0x3000 && (dx > -0x8000 && dx < 0x8000) && (dy > -0x8000 && dy < 0x8000) && o->unk_0C == gFieldState->actor.fieldPosition.unk_0C) {
                 if (o->unk_30 == 3) {
                     gUnk_02039DC4[0] = o->x;
                     gUnk_02039DC4[1] = o->y;
@@ -102,7 +102,7 @@ u8 task_lockon_1(LockonWork* w) {
             nsel = 0;
 
             for (i = 0; i < w->unk_2C; i++) {
-                if (func_0805F6B4(gUnk_02039BA0->actor.angle, px, py, w->unk_0C[i])) {
+                if (func_0805F6B4(gFieldState->actor.angle, px, py, w->unk_0C[i])) {
                     w->unk_2D = i;
                     list[nsel++] = i;
                 }
@@ -115,9 +115,9 @@ u8 task_lockon_1(LockonWork* w) {
     }
 
     if (w->unk_2D >= 0) {
-        gUnk_02039BA0->unk_68 = w->unk_0C[w->unk_2D];
+        gFieldState->unk_68 = w->unk_0C[w->unk_2D];
     } else {
-        gUnk_02039BA0->unk_68 = 0;
+        gFieldState->unk_68 = 0;
         w->unk_30 = 0;
     }
 
@@ -142,7 +142,7 @@ void task_lockon_2(LockonWork* w) {
         u8 counter;
     } x2, y2;
 
-    if (gUnk_02039BA0->flags & 0x40000) {
+    if (gFieldState->flags & 0x40000) {
         return;
     }
 
@@ -152,9 +152,9 @@ void task_lockon_2(LockonWork* w) {
         return;
     }
 
-    x = (obj->x >> 8) - (gUnk_02039BA0->x >> 8);
+    x = (obj->x >> 8) - (gFieldState->x >> 8);
     x2.coord = x + 12;
-    y = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A;
+    y = (obj->y >> 8) + (obj->z >> 8) - (gFieldState->y >> 8) - obj->unk_1A;
     y2.coord = y - 8;
 
     CLAMP_LABEL(x2.coord, x + 60, 240, 192);
@@ -166,7 +166,7 @@ void task_lockon_2(LockonWork* w) {
         w->unk_2F = 0;
     }
 
-    if (gUnk_02039BA0->unk_68 == 0) {
+    if (gFieldState->unk_68 == 0) {
         return;
     }
 
@@ -177,13 +177,13 @@ void task_lockon_2(LockonWork* w) {
 #ifdef VERSION_EU
     {
         FldObj* obj = w->unk_0C[w->unk_2D];
-        s32 projectedY = (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8);
+        s32 projectedY = (obj->y >> 8) + (obj->z >> 8) - (gFieldState->y >> 8);
 
-        DrawSprite((obj->x >> 8) - (gUnk_02039BA0->x >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
+        DrawSprite((obj->x >> 8) - (gFieldState->x >> 8), projectedY - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0x400, (u16)(-0x100E - (((s16)projectedY >> 8) << 2)));
     }
 #else
     obj = w->unk_0C[w->unk_2D];
-    DrawSprite((obj->x >> 8) - (gUnk_02039BA0->x >> 8), (obj->y >> 8) + (obj->z >> 8) - (gUnk_02039BA0->y >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->y >> 8) << 2)));
+    DrawSprite((obj->x >> 8) - (gFieldState->x >> 8), (obj->y >> 8) + (obj->z >> 8) - (gFieldState->y >> 8) - obj->unk_1A + 40, w->gfx, w->tiles, w->palette, 0, 0, (u16)(-0x100E - ((w->unk_0C[w->unk_2D]->y >> 8) << 2)));
 #endif
 }
 
@@ -192,7 +192,7 @@ void task_lockon_2(LockonWork* w) {
 void task_lockon_3(LockonWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
-    gUnk_02039BA0->unk_68 = 0;
+    gFieldState->unk_68 = 0;
     EwramFree(gUnk_02039DC4);
     gUnk_02039DC4 = 0;
 }
@@ -249,7 +249,7 @@ s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list) {
 void func_0805F66C(LockonWork* w) {
     s8 i;
 
-    if ((gUnk_02039BA0->flags & 2) == 0) {
+    if ((gFieldState->flags & 2) == 0) {
         w->unk_2D = -1;
 
         for (i = 0; i < 8; i++) {
@@ -291,8 +291,8 @@ u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d) {
 
 void func_0805F728(s32* x, s32* y) {
     if (gUnk_02039DC4 != 0) {
-        *x = (gUnk_02039DC4[0] >> 8) - (gUnk_02039BA0->x >> 8);
-        *y = (gUnk_02039DC4[1] >> 8) + (gUnk_02039DC4[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
+        *x = (gUnk_02039DC4[0] >> 8) - (gFieldState->x >> 8);
+        *y = (gUnk_02039DC4[1] >> 8) + (gUnk_02039DC4[2] >> 8) - (gFieldState->y >> 8) - 24;
     } else {
         *x = 0;
         *y = 0;

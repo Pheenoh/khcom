@@ -18,7 +18,7 @@ void Event_0(s32 arg) {
     EvtArg cfg;
     EventBackgroundDef* e;
 
-    gUnk_02039DC8 = EwramAlloc(0x8C);
+    gEventState = EwramAlloc(0x8C);
     e = gUnk_09EE3CA0[arg & 0x7FFF];
     gBldCnt = 0;
     gBldAlpha = 0;
@@ -66,7 +66,7 @@ void Event_0(s32 arg) {
     }
 
     cfg.unk_00 = arg;
-    gUnk_02039DC8->unk_74 = arg & 0x7FFF;
+    gEventState->unk_74 = arg & 0x7FFF;
 
     if (arg & 0x8000) {
         cfg.unk_08 = 0;
@@ -84,7 +84,7 @@ void Event_0(s32 arg) {
     gUnk_02034A7C = 0;
 }
 void func_0806119C(void) {
-    if (gUnk_02039DC8 == 0) {
+    if (gEventState == 0) {
         ModeRequest(&gModeEventselect, 0);
     }
 
@@ -96,7 +96,7 @@ void func_0806119C(void) {
 
     TaskPoolDraw(&gUnk_02034A60);
 
-    if (gUnk_02039DC8->unk_7A == 0) {
+    if (gEventState->unk_7A == 0) {
         if (gUnk_02034A7C == 0) {
             func_08061824();
             gUnk_02034A7C = 1;
@@ -119,7 +119,7 @@ void func_08061248(void) {
     UpdatePlayTime();
     TaskPoolUpdate(&gUnk_02034A60);
     TaskPoolDraw(&gUnk_02034A60);
-    if (gUnk_02039DC8->unk_7A != 0) {
+    if (gEventState->unk_7A != 0) {
         return;
     }
     if (gUnk_02034A7C == 0) {
@@ -142,8 +142,8 @@ void func_08061248(void) {
     func_0806250C();
     func_080629F8();
     func_08062D20();
-    if (gUnk_02039DC8->unk_85 != 0) {
-        if (gUnk_02039DC8->unk_84 == 0) {
+    if (gEventState->unk_85 != 0) {
+        if (gEventState->unk_84 == 0) {
             if (func_080629CC() == 0) {
                 func_080DF380();
                 func_080E04EC();
@@ -296,8 +296,8 @@ void func_08061248(void) {
 
 void Event_2(void) {
     TaskPoolDestroy(&gUnk_02034A60);
-    EwramFree(gUnk_02039DC8);
-    gUnk_02039DC8 = 0;
+    EwramFree(gEventState);
+    gEventState = 0;
 }
 
 

@@ -51,7 +51,7 @@ u8 gUnk_02034ACC;
 
 u32 gUnk_02034AD0;
 
-MapCardUiResources gUnk_0203A890 EWRAM_COMMON(16);
+MapCardUiResources gMapCardUiResources EWRAM_COMMON(16);
 
 u8 gUnk_0203A8C0[270] EWRAM_COMMON(16);
 
@@ -178,11 +178,11 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
         w->palette = LoadObjPalette(gUnk_09618D38, 32);
         FadeSetPaletteExcluded((u16)(w->palette->index + 16), 1);
     }
-    gUnk_0203A890.tiles = AllocObjTiles(0x280, 0);
-    SetObjTileSource(gUnk_0203A890.tiles, gUnk_0908B1B4);
-    AnimInit(&gUnk_0203A890.anim, gUnk_09EEA164, gUnk_09EEA148);
-    AnimStart(&gUnk_0203A890.anim, 0, 1);
-    gUnk_0203A890.gfx = AnimGetGfx(&gUnk_0203A890.anim);
+    gMapCardUiResources.tiles = AllocObjTiles(0x280, 0);
+    SetObjTileSource(gMapCardUiResources.tiles, gUnk_0908B1B4);
+    AnimInit(&gMapCardUiResources.anim, gUnk_09EEA164, gUnk_09EEA148);
+    AnimStart(&gMapCardUiResources.anim, 0, 1);
+    gMapCardUiResources.gfx = AnimGetGfx(&gMapCardUiResources.anim);
     w->tiles = AllocObjTiles(0x3C0, 0);
     *(void**)w->unk_040 = LoadObjPalette(gUnk_09618D18, 32);
     SetObjTileSource(w->tiles, gUnk_093F47E4);
@@ -207,15 +207,15 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     func_080933D8(w->unk_2E0);
     func_0809332C(w);
 #ifdef VERSION_EU
-    gUnk_0203A890.extraTiles = LoadObjTiles(gUnkEu_09F6FF30[gLanguage], gUnkEu_090CED64[gLanguage]);
+    gMapCardUiResources.extraTiles = LoadObjTiles(gUnkEu_09F6FF30[gLanguage], gUnkEu_090CED64[gLanguage]);
 #else
-    gUnk_0203A890.extraTiles = LoadObjTiles(gUnk_093F6734, 0x360);
+    gMapCardUiResources.extraTiles = LoadObjTiles(gUnk_093F6734, 0x360);
 #endif
-    gUnk_0203A890.palette = *(void**)&w->unk_040[8];
+    gMapCardUiResources.palette = *(void**)&w->unk_040[8];
 #ifdef VERSION_EU
-    gUnk_0203A890.sprites = gUnkEu_09F6FF44[gLanguage];
+    gMapCardUiResources.sprites = gUnkEu_09F6FF44[gLanguage];
 #else
-    gUnk_0203A890.sprites = gUnk_09EF11F8;
+    gMapCardUiResources.sprites = gUnk_09EF11F8;
 #endif
     *(void**)&w->unk_040[0x1A0] = LoadObjTiles(gUnk_093F5C40, 32);
     w->unk_284 = 0;
@@ -593,7 +593,7 @@ u8 func_0809254C(MapSelectWork* w, void* a) {
 
     *(void**)&w->unk_278 = AnimUpdate((AnimState*)&w->unk_1F8[0x18]);
     w->gfx = AnimUpdate((AnimState*)w->unk_1F8);
-    gUnk_0203A890.gfx = AnimUpdate(&gUnk_0203A890.anim);
+    gMapCardUiResources.gfx = AnimUpdate(&gMapCardUiResources.anim);
     TaskPoolUpdate(&w->tasks);
     func_08093F5C((u8*)w);
     SetObjMosaicSize(w->unk_299, w->unk_29A);
@@ -774,7 +774,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
     }
     *(void**)w->unk_278 = AnimUpdate((AnimState*)&w->unk_1F8[0x18]);
     w->gfx = AnimUpdate((AnimState*)w->unk_1F8);
-    gUnk_0203A890.gfx = AnimUpdate(&gUnk_0203A890.anim);
+    gMapCardUiResources.gfx = AnimUpdate(&gMapCardUiResources.anim);
     TaskPoolUpdate(&w->tasks);
     return 1;
 }
@@ -827,13 +827,13 @@ void MapSelect_2(MapSelectWork* w) {
         case 0:
             break;
         case 2:
-            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gUnk_0203A890.sprites[3], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gMapCardUiResources.sprites[3], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 0, 20);
             break;
         case 3:
-            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gUnk_0203A890.sprites[7], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gMapCardUiResources.sprites[7], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 0, 20);
             break;
         case 1:
-            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gUnk_0203A890.sprites[5], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 0, 20);
+            DrawSprite((s16)((w->card->x >> 8) + 4), (s16)((w->card->y >> 8) - 32), gMapCardUiResources.sprites[5], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 0, 20);
             break;
         case 4:
             break;
@@ -895,8 +895,8 @@ void MapSelect_3(MapSelectWork* w) {
     ReleaseObjPalette(*(void**)&w->unk_040[0x18C]);
     *w->unk_294 = 1;
     ReleaseObjTiles(*(void**)&w->unk_040[0x1A0]);
-    ReleaseObjTiles(gUnk_0203A890.tiles);
-    ReleaseObjTiles(gUnk_0203A890.extraTiles);
+    ReleaseObjTiles(gMapCardUiResources.tiles);
+    ReleaseObjTiles(gMapCardUiResources.extraTiles);
 }
 void func_0809332C(MapSelectWork* w) {
     MapcardArgs args;
@@ -2031,8 +2031,8 @@ void func_080949A0(MapcardWork* w) {
     s32 dy;
     s32* p = func_080E04E0();
 
-    dx = (p[0] >> 8) - (gUnk_02039BA0->x >> 8);
-    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
+    dx = (p[0] >> 8) - (gFieldState->x >> 8);
+    dy = (p[1] >> 8) + (p[2] >> 8) - (gFieldState->y >> 8) - 24;
     v[0] = dx * 256 - w->x;
     v[1] = dy * 256 - w->y;
     w->unk_64 = NormalizeVector2D8(&v[0], &v[1]);
@@ -2055,8 +2055,8 @@ u8 func_08094A18(MapcardWork* w, void* a) {
     u16 f;
 
     p = func_080E04E0();
-    dx = (p[0] >> 8) - (gUnk_02039BA0->x >> 8);
-    dy = (p[1] >> 8) + (p[2] >> 8) - (gUnk_02039BA0->y >> 8) - 24;
+    dx = (p[0] >> 8) - (gFieldState->x >> 8);
+    dy = (p[1] >> 8) + (p[2] >> 8) - (gFieldState->y >> 8) - 24;
 
     if (w->unk_60 < 0) {
         x = (dx << 8) - w->x;
@@ -2125,7 +2125,7 @@ void Mapcard_2(MapcardWork* w) {
             }
 
             if (gUnk_09EE4C80[w->unk_20].backIndex == 4) {
-                DrawSprite(w->x >> 8, y, gUnk_0203A890.gfx, gUnk_0203A890.tiles, *(void**)&w->unk_10[4], aff, 0,
+                DrawSprite(w->x >> 8, y, gMapCardUiResources.gfx, gMapCardUiResources.tiles, *(void**)&w->unk_10[4], aff, 0,
                            (u16)(w->unk_6A - 2));
             }
 

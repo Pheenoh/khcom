@@ -295,7 +295,7 @@ typedef struct TextGlyphSprite {
     u8 unk_16[2];
 } TextGlyphSprite;
 
-extern EventState* gUnk_02039DC8;
+extern EventState* gEventState;
 extern u8 gUnk_08F69BA4[];
 extern u8 gUnk_09320796[];
 extern u32 gFrameCounter;

@@ -34,7 +34,7 @@ const RoomTableEntry gRoomTableEntries[6] = {
 #endif
 };
 
-const BosMapConfig gUnk_0999202C =
+const BosMapConfig gBosMapConfig =
 #if defined(VERSION_US)
 {gRoomAssetUs_099A899C, 16352, 0, gRoomAssetUs_09A3C75C, 320, 0, {gRoomAssetUs_09A1E0DC, gRoomAssetUs_09A1F0DC, gRoomAssetUs_09A1E8DC, gRoomAssetUs_09A1F8DC}}
 #elif defined(VERSION_JP)

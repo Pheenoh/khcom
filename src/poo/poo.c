@@ -31,9 +31,9 @@ s32 gUnk_0203C408 EWRAM_COMMON(4);
 u16 gUnk_0203C40C EWRAM_COMMON(4);
 struct PooNode* gUnk_0203C410 EWRAM_COMMON(4);
 void* gUnk_0203C414 EWRAM_COMMON(4);
-PooActor gUnk_0203C420 EWRAM_COMMON(16);
+PooActor gPooActor EWRAM_COMMON(16);
 u8* gStockMesDispWork EWRAM_COMMON(4);
-PooState gUnk_0203C470 EWRAM_COMMON(16);
+PooState gPooState EWRAM_COMMON(16);
 void* gUnk_0203C4B4 EWRAM_COMMON(4);
 
 extern AnimDef gUnk_09EF4C88[5];
@@ -45,7 +45,7 @@ extern u8* gUnkEu_09F800B8[5];
 
 PooWork* gPooWork;
 u32 gUnk_02034DAC;
-PooSpawnArgs gUnk_02034DB0;
+PooSpawnArgs gPooSpawnArgs;
 u32 gUnk_02034DC4;
 PooPos gUnk_02034DC8;
 s32 gUnk_02034DD8;
@@ -61,7 +61,7 @@ ListPool gUnk_02034DF8;
 PooPos gUnk_02034E08;
 u16 gUnk_02034E18;
 u32 gUnk_02034E1C;
-PooCamera* gUnk_02034E20;
+PooCamera* gPooCamera;
 u16 gUnk_02034E24;
 u16 gUnk_02034E26;
 u16 gUnk_02034E28;
@@ -390,7 +390,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if (func_080C8404(&w->pos, &gUnk_0203C420) > 0x1B00) {
+        if (func_080C8404(&w->pos, &gPooActor) > 0x1B00) {
             func_080C84E0(w, 0);
         }
         break;
@@ -693,7 +693,7 @@ void func_080C8C40(PooWork* w, PooNode* n) {
             break;
         }
 
-        if ((u8)func_080CFE34(&gUnk_0203C420.pos) != 0) {
+        if ((u8)func_080CFE34(&gPooActor.pos) != 0) {
             break;
         }
         w->angle = w->unk_FB + 128;
@@ -754,13 +754,13 @@ void func_080C8C40(PooWork* w, PooNode* n) {
         break;
     case 7:
         if (w->unk_E8 != 0) {
-            w->unk_40 = gUnk_0203C420.pos.x;
-            w->unk_44 = gUnk_0203C420.pos.y;
+            w->unk_40 = gPooActor.pos.x;
+            w->unk_44 = gPooActor.pos.y;
             func_080C8B60((PooMover*)w, 76, 1);
             break;
         }
-        w->unk_40 = gUnk_0203C420.pos.x;
-        w->unk_44 = gUnk_0203C420.pos.y;
+        w->unk_40 = gPooActor.pos.x;
+        w->unk_44 = gPooActor.pos.y;
         w->angle = GetAngle(w->pos.x, w->pos.y, w->unk_40, w->unk_44);
         w->unk_48 = -0x130;
         w->unk_3C = 237;
@@ -991,13 +991,13 @@ void task_poo_pooh_2(PooWork* w) {
         if (gUnk_02034DAC == 21 && w->unk_A8 == 1 && w->unk_F6 != 0) {
             p = func_080D06BC() - 3;
         } else if ((u8)func_080D0210(gUnk_0203C3EC->x, gUnk_0203C3EC->y) == 83 || (u8)func_080D0210(gUnk_0203C3EC->x, gUnk_0203C3EC->y) == 173) {
-            if (gUnk_0203C3EC->y < gUnk_0203C420.pos.y) {
+            if (gUnk_0203C3EC->y < gPooActor.pos.y) {
                 p = func_080D06C8() + 5;
             } else {
                 p = func_080D06C8() + 1;
             }
         } else {
-            if (gUnk_0203C3EC->y < gUnk_0203C420.pos.y) {
+            if (gUnk_0203C3EC->y < gPooActor.pos.y) {
                 p = func_080D06BC() - 2;
             } else {
                 p = func_080D06BC() - 6;
@@ -1008,7 +1008,7 @@ void task_poo_pooh_2(PooWork* w) {
     } else if (w->unk_E8 != 0) {
         p = -0x1008 - (w->unk_94 >> 8) * 4;
 
-        if (w->pos.y >= gUnk_0203C420.pos.y) {
+        if (w->pos.y >= gPooActor.pos.y) {
             p -= 2;
         } else {
             p += 2;
@@ -1193,9 +1193,9 @@ u16 func_080C9EFC(void* pool, u16 b) {
         gUnk_02034DC8.z = 0;
 
         if (gPooSpawns[i].desc == &gTaskDescPooTanpopo || gPooSpawns[i].desc == &gTaskDescPooLeaf) {
-            gUnk_02034DB0.pos = gUnk_02034DC8;
-            gUnk_02034DB0.unk_10 = b;
-            TaskCreate(pool, gPooSpawns[i].desc, &gUnk_02034DB0);
+            gPooSpawnArgs.pos = gUnk_02034DC8;
+            gPooSpawnArgs.unk_10 = b;
+            TaskCreate(pool, gPooSpawns[i].desc, &gPooSpawnArgs);
             b++;
         } else {
             TaskCreate(pool, gPooSpawns[i].desc, &gUnk_02034DC8);
@@ -1260,8 +1260,8 @@ void task_poo_map_0(PooMapWork* w) {
     gUnk_02034DE4 = gUnk_0203C408;
     gUnk_0203C40C = (gUnk_0203C3FC >> 8) - 120;
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
-    gUnk_02039BA0->x = gUnk_0203C40C << 8;
-    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
+    gFieldState->x = gUnk_0203C40C << 8;
+    gFieldState->y = gUnk_0203C3F8 << 8;
     w->unk_00 = gUnk_096FC6E0.mapWidth;
     w->unk_01 = gUnk_096FC6E0.mapHeight;
     TaskPoolInit(&w->tasks, 178);
@@ -1343,8 +1343,8 @@ void func_080CA270(PooMapWork* w) {
     gUnk_0203C40C += tx >> 8;
     gUnk_0203C3F8 += ty >> 8;
     gUnk_0203C3F8 += func_0802F268() >> 8;
-    gUnk_02039BA0->x = gUnk_0203C40C << 8;
-    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
+    gFieldState->x = gUnk_0203C40C << 8;
+    gFieldState->y = gUnk_0203C3F8 << 8;
 }
 
 void func_080CA35C(void) {
@@ -1524,8 +1524,8 @@ void func_080CA6A8(s32 a, s32 b) {
     }
     gUnk_0203C40C = (gUnk_0203C3FC >> 8) - 120;
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
-    gUnk_02039BA0->x = gUnk_0203C40C << 8;
-    gUnk_02039BA0->y = gUnk_0203C3F8 << 8;
+    gFieldState->x = gUnk_0203C40C << 8;
+    gFieldState->y = gUnk_0203C3F8 << 8;
     ScrollBgMapTo(3, gUnk_0203C40C, gUnk_0203C3F8);
     ScrollBgMapTo(1, gUnk_0203C40C, gUnk_0203C3F8);
     ScrollBgMapTo(2, gUnk_0203C40C, gUnk_0203C3F8);
@@ -1627,7 +1627,7 @@ s32 func_080CAA14(PooSoraWork* w) {
     PooPos* p;
     s32 v;
 
-    p = &gUnk_0203C420.pos;
+    p = &gPooActor.pos;
 
     if ((w->unk_66 & 1) != 0) {
         if (p->unk_0C < w->unk_78) {
@@ -1647,7 +1647,7 @@ void func_080CAA50(PooSoraWork* w, s32 b, u16 c) {
     const PooAnimDesc* e;
     s32 d;
 
-    switch (gUnk_0203C420.angle) {
+    switch (gPooActor.angle) {
     case 0x2D:
         d = 4;
         w->flags |= 2;
@@ -1720,7 +1720,7 @@ void func_080CAB24(PooActor* p) {
 }
 
 void task_poo_sora_0(PooSoraWork* w) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
 
     gUnk_0203C414 = w->unk_38;
     gUnk_0203C410 = &w->node;
@@ -1744,7 +1744,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     w->gfx = AnimGetGfx((AnimState*)w->unk_08);
     w->animDesc = (const PooAnimDesc*)gUnk_096FD2C4;
     TaskPoolInit(&w->tasks, 2);
-    gUnk_02039BA0 = EwramAlloc(0xE8);
+    gFieldState = EwramAlloc(0xE8);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, a);
     func_080CCB90(&w->node, 1, a);
     ColliderInit(w->unk_38, 1, 18, 48);
@@ -1752,7 +1752,7 @@ void task_poo_sora_0(PooSoraWork* w) {
 }
 
 u8 func_080CAD08(PooSoraWork* w, u8* t) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
     PooPos p;
     s32 z;
     s32 sx;
@@ -1958,7 +1958,7 @@ u8 func_080CAD08(PooSoraWork* w, u8* t) {
 }
 
 u8 func_080CB1BC(PooSoraWork* w, u8* t) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
     s32 sx;
     s32 sy;
 
@@ -2144,7 +2144,7 @@ u8 func_080CB1BC(PooSoraWork* w, u8* t) {
 }
 
 u8 func_080CB5A8(PooSoraWork* w, u8* t) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
     s32 x;
     s32 y;
     u16 keys;
@@ -2187,7 +2187,7 @@ u8 func_080CB5A8(PooSoraWork* w, u8* t) {
 }
 
 u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
     s32 z;
     s32 sx;
     s32 sy;
@@ -2290,7 +2290,7 @@ u8 task_poo_sora_1(PooSoraWork* w, u8* t) {
 }
 
 void task_poo_sora_2(PooSoraWork* w) {
-    PooActor* a = &gUnk_0203C420;
+    PooActor* a = &gPooActor;
     s32 prio;
     s32 c;
     s32 ac;
@@ -2336,12 +2336,12 @@ void task_poo_sora_2(PooSoraWork* w) {
 }
 
 void task_poo_sora_3(PooSoraWork* w) {
-    func_080D2D0C(&gUnk_0203C420.pos);
+    func_080D2D0C(&gPooActor.pos);
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette);
     ColliderUnregister(w->unk_38);
     TaskPoolDestroy(&w->tasks);
-    EwramFree(gUnk_02039BA0);
+    EwramFree(gFieldState);
     func_080CCBD4(&w->node);
 }
 
@@ -4363,7 +4363,7 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
         if (d != 0) {
             z = -0x1008 - (w->unk_80 >> 8) * 4;
 
-            if (w->y >= gUnk_0203C420.pos.y) {
+            if (w->y >= gPooActor.pos.y) {
                 z -= 2;
             } else {
                 z += 2;
@@ -5039,8 +5039,8 @@ s32 func_080CFE34(PooPos* p) {
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
-    x = p->x - gUnk_02034E20->pos.x;
-    y = p->y - gUnk_02034E20->pos.y;
+    x = p->x - gPooCamera->pos.x;
+    y = p->y - gPooCamera->pos.y;
     if (y + x < -0x1A00) {
         return 0;
     }
@@ -5069,8 +5069,8 @@ s32 func_080CFEA0(PooPos* p) {
     if (func_080D2D50(6) != 0) {
         k = 0x2100;
     }
-    x = p->x - gUnk_02034E20->pos.x;
-    y = p->y - gUnk_02034E20->pos.y;
+    x = p->x - gPooCamera->pos.x;
+    y = p->y - gPooCamera->pos.y;
     if (y + x < -0x1A00) {
         return 0;
     }
@@ -5090,32 +5090,32 @@ s32 func_080CFEA0(PooPos* p) {
 }
 
 u8 func_080CFF0C(void) {
-    if (gUnk_0203C420.pos.z < 0) {
+    if (gPooActor.pos.z < 0) {
         return 0;
     }
-    return func_080CFE34(&gUnk_0203C420.pos);
+    return func_080CFE34(&gPooActor.pos);
 }
 
 u8 func_080CFF30(void) {
-    if (gUnk_0203C420.pos.z < -0x2000) {
+    if (gPooActor.pos.z < -0x2000) {
         return 0;
     }
-    return func_080CFE34(&gUnk_0203C420.pos);
+    return func_080CFE34(&gPooActor.pos);
 }
 
 void func_080CFF58(u32* a, u32* b, u16 c) {
     s32 d;
     s32 e;
 
-    d = *a - gUnk_02034E20->pos.x;
+    d = *a - gPooCamera->pos.x;
     if (d < -0x600) {
         d = -0x600;
     } else if (d > 0xA00) {
         d = 0xA00;
     }
     e = d / 2 - 0x300;
-    ApproachValue(a, d + gUnk_02034E20->pos.x, c);
-    ApproachValue(b, e + gUnk_02034E20->pos.y, c);
+    ApproachValue(a, d + gPooCamera->pos.x, c);
+    ApproachValue(b, e + gPooCamera->pos.y, c);
 }
 
 void func_080CFFC0(s32* a, s32* b) {
@@ -5164,8 +5164,8 @@ void func_080D0084(u32* a, u32* b, u16 c) {
     s32 x;
     s32 y;
 
-    x = *a - gUnk_02034E20->pos.x;
-    y = *b - gUnk_02034E20->pos.y;
+    x = *a - gPooCamera->pos.x;
+    y = *b - gPooCamera->pos.y;
 
     if (x < -0xB00 && y < -0xD00) {
         func_080CFFC0(&x, &y);
@@ -5200,16 +5200,16 @@ void func_080D0084(u32* a, u32* b, u16 c) {
             func_080CFFF0(&x, &y);
         }
     }
-    ApproachValue(a, x + gUnk_02034E20->pos.x, c);
-    ApproachValue(b, y + gUnk_02034E20->pos.y, c);
+    ApproachValue(a, x + gPooCamera->pos.x, c);
+    ApproachValue(b, y + gPooCamera->pos.y, c);
 }
 
 s32 func_080D01BC(s32 x, s32 y) {
     s32 dx;
     s32 dy;
 
-    dx = x - gUnk_02034E20->pos.x;
-    dy = y - gUnk_02034E20->pos.y;
+    dx = x - gPooCamera->pos.x;
+    dy = y - gPooCamera->pos.y;
     if (dx < -0xB00 && dy < -0xD00) {
         return 0x53;
     }
@@ -5228,8 +5228,8 @@ s32 func_080D0210(s32 a, s32 b) {
     s32 x;
     s32 y;
 
-    x = a - gUnk_02034E20->pos.x;
-    y = b - gUnk_02034E20->pos.y;
+    x = a - gPooCamera->pos.x;
+    y = b - gPooCamera->pos.y;
     if (x < -0x3D00 || x > 0x4300 || y < -0x1F00 || y > 0x3800) {
         return 0;
     }
@@ -5249,7 +5249,7 @@ s32 func_080D0210(s32 a, s32 b) {
 }
 
 void task_poo_wagon_0(PooCamera* w) {
-    gUnk_02034E20 = w;
+    gPooCamera = w;
     w->pos.x = 0x2AE00;
     w->pos.y = 0x17700;
     w->pos.z = 0;
@@ -5276,7 +5276,7 @@ u8 task_poo_wagon_1(PooCamera* w) {
     if (func_080CFF0C() != 0) {
         if (w->pos.y == w->pos2.y) {
             w->pos.y += 0x100;
-            gUnk_0203C420.pos.y += 0x100;
+            gPooActor.pos.y += 0x100;
 
             if (w->unk_3C != 0) {
                 gUnk_0203C3EC->y += 0x100;
@@ -5285,7 +5285,7 @@ u8 task_poo_wagon_1(PooCamera* w) {
     } else if (func_080D2D50(6) == 0) {
         if (w->pos.y != w->pos2.y) {
             w->pos.y -= 0x100;
-            gUnk_0203C420.pos.y -= 0x100;
+            gPooActor.pos.y -= 0x100;
 
             if (w->unk_3C != 0) {
                 gUnk_0203C3EC->y -= 0x100;
@@ -5314,7 +5314,7 @@ u8 task_poo_wagon_1(PooCamera* w) {
                 t = w->pos.y - 0xC00;
                 d = w->pos2.y - t;
                 w->pos.y += d;
-                gUnk_0203C420.pos.y += d;
+                gPooActor.pos.y += d;
                 gUnk_0203C3EC->y += d;
                 func_080D2D3C(6);
                 m4aSongNumStart(0x90);
@@ -5371,14 +5371,14 @@ void task_poo_wagon_2(PooCamera* w) {
         gUnk_02034E24 = n - 1;
 
         if (func_080C9DAC() != 0) {
-            if (gUnk_0203C420.pos.y >= gUnk_0203C3EC->y) {
+            if (gPooActor.pos.y >= gUnk_0203C3EC->y) {
                 gUnk_02034E26 += 6;
             } else {
                 gUnk_02034E24 += 0xFFFC;
             }
         }
     } else {
-        d = (u8)func_080D0210(gUnk_0203C420.pos.x, gUnk_0203C420.pos.y);
+        d = (u8)func_080D0210(gPooActor.pos.x, gPooActor.pos.y);
 
         if (d == 0) {
             k = w->pos.y + 0x300;
@@ -6155,7 +6155,7 @@ void func_080D19C4(PooPrizeWork* w) {
 
         w->update = func_080D1B94;
         w->unk_82 = 0;
-        w->angle = GetAngle(gUnk_0203C420.pos.x, gUnk_0203C420.pos.y, w->x, w->y);
+        w->angle = GetAngle(gPooActor.pos.x, gPooActor.pos.y, w->x, w->y);
         w->unk_97 = 1;
         w->unk_96 = 1;
         w->unk_8D = GetRandom() % 6 + 5;
@@ -6191,7 +6191,7 @@ void func_080D1B94(PooPrizeWork* w) {
     s32 s;
     u8 a;
 
-    g = &gUnk_0203C420.pos;
+    g = &gPooActor.pos;
     t = gSineTable;
     a = w->angle;
     tx = g->x + ((t[a] << 5) * w->unk_90 >> 8);
@@ -6826,7 +6826,7 @@ void func_080D2BE0(void) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        gUnk_0203C470.unk_2C[i] = 0;
+        gPooState.unk_2C[i] = 0;
     }
 }
 
@@ -6836,7 +6836,7 @@ void func_080D2BF8(u16 a) {
 
     i = a / 32;
     s = a % 32;
-    gUnk_0203C470.unk_2C[i] |= 1 << s;
+    gPooState.unk_2C[i] |= 1 << s;
 }
 
 u8 func_080D2C1C(u16 a) {
@@ -6845,7 +6845,7 @@ u8 func_080D2C1C(u16 a) {
 
     i = a / 32;
     s = a % 32;
-    if ((gUnk_0203C470.unk_2C[i] & (1 << s)) != 0) {
+    if ((gPooState.unk_2C[i] & (1 << s)) != 0) {
         return 1;
     }
     return 0;
@@ -6853,88 +6853,88 @@ u8 func_080D2C1C(u16 a) {
 
 void func_080D2C48(void) {
     func_080D2BE0();
-    gUnk_0203C470.unk_28 = 0;
-    gUnk_0203C470.unk_3C = 3;
-    gUnk_0203C470.unk_3E = 0x73B;
+    gPooState.unk_28 = 0;
+    gPooState.unk_3C = 3;
+    gPooState.unk_3E = 0x73B;
     gUnk_0203C3E4 = 3;
     gUnk_0203C3E0 = 0x73B;
 }
 
 void func_080D2C78(void) {
-    gUnk_0203C470.unk_24 = 0;
+    gPooState.unk_24 = 0;
     func_080D2C48();
 }
 
 void func_080D2C8C(PooPos* p, s32 b) {
-    gUnk_0203C470.pos = *p;
-    gUnk_0203C470.unk_20 = b;
+    gPooState.pos = *p;
+    gPooState.unk_20 = b;
 }
 
 void func_080D2CA8(PooPos* p, s32* b) {
-    *p = gUnk_0203C470.pos;
-    *b = gUnk_0203C470.unk_20;
+    *p = gPooState.pos;
+    *b = gPooState.unk_20;
 }
 
 void func_080D2CC4(u16 a, u16 b) {
-    gUnk_0203C470.unk_3C = a;
-    gUnk_0203C470.unk_3E = b;
+    gPooState.unk_3C = a;
+    gPooState.unk_3E = b;
 }
 
 void func_080D2CD0(u16* a, u16* b) {
-    *a = gUnk_0203C470.unk_3C;
-    *b = gUnk_0203C470.unk_3E;
+    *a = gPooState.unk_3C;
+    *b = gPooState.unk_3E;
 }
 
 void func_080D2CE0(s16 a, s16 b) {
-    gUnk_0203C470.unk_40 = a;
-    gUnk_0203C470.unk_42 = b;
+    gPooState.unk_40 = a;
+    gPooState.unk_42 = b;
 }
 
 void func_080D2CF4(u16* a, u16* b) {
-    *a = gUnk_0203C470.unk_40;
-    *b = gUnk_0203C470.unk_42;
+    *a = gPooState.unk_40;
+    *b = gPooState.unk_42;
 }
 
 void func_080D2D0C(PooPos* p) {
-    gUnk_0203C470.pos2 = *p;
+    gPooState.pos2 = *p;
 }
 
 void func_080D2D24(PooPos* p) {
-    *p = gUnk_0203C470.pos2;
+    *p = gPooState.pos2;
 }
 
 void func_080D2D3C(s32 a) {
-    gUnk_0203C470.unk_28 |= 1 << a;
+    gPooState.unk_28 |= 1 << a;
 }
 
 u8 func_080D2D50(s32 a) {
-    if (((gUnk_0203C470.unk_28 >> a) & 1) != 0) {
+    if (((gPooState.unk_28 >> a) & 1) != 0) {
         return 1;
     }
     return 0;
 }
 
 void func_080D2D6C(s32 a) {
-    gUnk_0203C470.unk_24 |= 1 << a;
+    gPooState.unk_24 |= 1 << a;
 }
 
 void func_080D2D80(s32 a) {
-    gUnk_0203C470.unk_24 &= ~(1 << a);
+    gPooState.unk_24 &= ~(1 << a);
 }
 
 u8 func_080D2D94(s32 a) {
-    if ((gUnk_0203C470.unk_24 & (1 << a)) != 0) {
+    if ((gPooState.unk_24 & (1 << a)) != 0) {
         return 1;
     }
     return 0;
 }
 
 void func_080D2DB0(void* p) {
-    memcpy(p, &gUnk_0203C470, sizeof(gUnk_0203C470));
+    memcpy(p, &gPooState, sizeof(gPooState));
 }
 
 void func_080D2DC4(const void* p) {
-    memcpy(&gUnk_0203C470, p, sizeof(gUnk_0203C470));
+    memcpy(&gPooState, p, sizeof(gPooState));
 }
 
 u8 func_080D2DD8(void) {

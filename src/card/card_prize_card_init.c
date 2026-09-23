@@ -1028,17 +1028,17 @@ void SELMAP_EVKEY_2(u8* work) {
                 case 2:
                     ofs = i * 52;
                     DrawSprite(*(s32*)&(q1 = &work[44])[ofs] >> 8, (*(s32*)&(q2 = &work[48])[ofs] >> 8) + 8,
-                               gUnk_0203A890.sprites[4], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 8, 20);
+                               gMapCardUiResources.sprites[4], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 8, 20);
                     break;
                 case 3:
                     ofs = i * 52;
                     DrawSprite(*(s32*)&(q1 = &work[44])[ofs] >> 8, (*(s32*)&(q2 = &work[48])[ofs] >> 8) + 8,
-                               gUnk_0203A890.sprites[8], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 8, 20);
+                               gMapCardUiResources.sprites[8], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 8, 20);
                     break;
                 case 1:
                     ofs = i * 52;
                     DrawSprite(*(s32*)&(q1 = &work[44])[ofs] >> 8, (*(s32*)&(q2 = &work[48])[ofs] >> 8) + 8,
-                               gUnk_0203A890.sprites[6], gUnk_0203A890.extraTiles, gUnk_0203A890.palette, 0, 8, 20);
+                               gMapCardUiResources.sprites[6], gMapCardUiResources.extraTiles, gMapCardUiResources.palette, 0, 8, 20);
                     break;
                 case 0:
                 case 4:

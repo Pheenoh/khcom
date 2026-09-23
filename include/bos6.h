@@ -649,7 +649,7 @@ extern u8 gUnk_09D69454[];
 void task_bos_lst_2(BosLstWork* work);
 u8 func_0810EBA0(BosLstWork* work);
 
-extern EventState* gUnk_02039DC8;
+extern EventState* gEventState;
 void task_bos_pc_acd_2(PcAcdWork* work);
 
 extern const u16 gUnk_09A4D0EC[48];

@@ -32,6 +32,6 @@ typedef struct FieldState {
 
 typedef char FieldState_size[(sizeof(FieldState) == 0xE8) ? 1 : -1];
 
-extern FieldState* gUnk_02039BA0;
+extern FieldState* gFieldState;
 
 #endif

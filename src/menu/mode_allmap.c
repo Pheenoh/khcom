@@ -9,11 +9,11 @@
 
 const char gModeNameAllmap[] = "mode_allmap";
 
-const AllmapRoomOrder gUnk_096FDB70 = {{
+const AllmapRoomOrder gAllmapRoomOrder = {{
     0, 4, 2, 5, 3, 10, 9, 13, 1, 7, 8, 11, 6, 14, 12, 15,
 }};
 
-const AllmapRoomDirs gUnk_096FDBB0 = {{1, 2, 3, 0}};
+const AllmapRoomDirs gAllmapRoomDirs = {{1, 2, 3, 0}};
 
 u16* gUnk_0203C4C0[8] EWRAM_COMMON(16);
 u32 gUnk_0203C4E0 EWRAM_COMMON(4);
@@ -185,8 +185,8 @@ u8 func_080D358C(u8 a, u8 b) {
 }
 
 s32 func_080D35B0(AllmapRoomWork* work) {
-    AllmapRoomOrder order = gUnk_096FDB70;
-    AllmapRoomDirs dirs = gUnk_096FDBB0;
+    AllmapRoomOrder order = gAllmapRoomOrder;
+    AllmapRoomDirs dirs = gAllmapRoomDirs;
     u32 mask;
     u8 i;
 

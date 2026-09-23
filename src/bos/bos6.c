@@ -5390,8 +5390,8 @@ void func_0810A018(PcWork* work) {
     oy = 0;
 
     if (work->unk_2ED == 1) {
-        ox = gUnk_02039DC8->unk_68;
-        oy = gUnk_02039DC8->unk_6A;
+        ox = gEventState->unk_68;
+        oy = gEventState->unk_6A;
     }
     gfx = work->palette;
 
@@ -6730,8 +6730,8 @@ void task_bos_pc_acd_2(PcAcdWork* work) {
     oy = 0;
     flt = work->flt;
     if (flt->unk_005 == 1) {
-        ox = gUnk_02039DC8->unk_68 << 8;
-        oy = gUnk_02039DC8->unk_6A << 8;
+        ox = gEventState->unk_68 << 8;
+        oy = gEventState->unk_6A << 8;
     }
     work->x = pos->x;
     work->y = pos->y - 0x400;

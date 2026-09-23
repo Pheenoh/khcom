@@ -16,7 +16,7 @@ extern WlogoWonEntry gUnk_09EF167C[];
 extern WlogoWonEntry gUnk_09EF1744[];
 extern s32 gUnk_09EF180C[];
 extern WlogoAgrEntry gWlogoAgrEntries[];
-extern WlogoTtMotion gUnk_09EF1B08;
+extern WlogoTtMotion gWlogoTtMotion;
 extern s16 gUnk_09EF1B68[][3];
 extern s8 gUnk_09EF1C48[];
 extern s8 gUnk_09EF1C50[];
@@ -1545,7 +1545,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
-            work->unk_108 = gUnk_09EF1B08.first[0];
+            work->unk_108 = gWlogoTtMotion.first[0];
             work->unk_100[0] = 1;
             work->state++;
         } else {
@@ -1559,7 +1559,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_004 > 4) {
                 work->unk_004 = 4;
             }
-            work->unk_108 = gUnk_09EF1B08.first[work->unk_004];
+            work->unk_108 = gWlogoTtMotion.first[work->unk_004];
         }
         work->unk_002++;
 
@@ -1579,7 +1579,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
         if (work->unk_002 > 13) {
             work->unk_002 = 0;
             work->unk_004 = 0;
-            work->unk_10C = gUnk_09EF1B08.second[0];
+            work->unk_10C = gWlogoTtMotion.second[0];
             work->unk_100[1] = 1;
             work->state++;
         } else {
@@ -1593,7 +1593,7 @@ u8 task_wlogo_tt_1(WlogoTtWork* work) {
             if (work->unk_004 > 2) {
                 work->unk_004 = 2;
             }
-            work->unk_10C = gUnk_09EF1B08.second[work->unk_004];
+            work->unk_10C = gWlogoTtMotion.second[work->unk_004];
         }
         work->unk_002++;
 
@@ -2475,7 +2475,7 @@ TaskDesc gTaskDescWlogoPooObj = {
     0x44,
 };
 
-WlogoTtMotion gUnk_09EF1B08 =
+WlogoTtMotion gWlogoTtMotion =
 {{128, 25, 128, 204, 256, 0}, {76, 179, 256, 0, 0, 0}}
 ;
 

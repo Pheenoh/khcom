@@ -110,7 +110,7 @@ void task_allmap_room_2(AllmapRoomWork* work) {
         g = 0x800;
         h = -4100 - work->unk_08E * 4;
     } else {
-        if ((gUnk_02039BA0->flags & 0x40000) != 0) {
+        if ((gFieldState->flags & 0x40000) != 0) {
             return;
         }
         x = work->unk_08C;

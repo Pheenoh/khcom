@@ -45,7 +45,7 @@
 #include "sprites_card.h"
 #include "sprites_premire_chance.h"
 
-struct CardListWork* gUnk_0203A9D0 EWRAM_COMMON(4);
+struct CardListWork* gCardListWork EWRAM_COMMON(4);
 
 #ifdef VERSION_EU
 extern void** gUnkEu_09F72BFC[5];
@@ -1027,10 +1027,10 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     u32 zero2;
 
     CpuSet(&zero0, w, 0x05000024);
-    gUnk_0203A9D0 = EwramAlloc(0x2C);
+    gCardListWork = EwramAlloc(0x2C);
     w->slots = EwramAlloc(0x4B0);
     zero1 = 0;
-    CpuSet(&zero1, gUnk_0203A9D0, 0x0500000B);
+    CpuSet(&zero1, gCardListWork, 0x0500000B);
     zero2 = 0;
     CpuSet(&zero2, w->slots, 0x0500012C);
     cards = GetActiveDeck()->cards;
@@ -1128,10 +1128,10 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
 
     w->unk_50 = n;
     TaskPoolInit(&w->tasks, w->unk_50 + 1);
-    ListPoolInit(&gUnk_0203A9D0->cards);
-    gUnk_0203A9D0->selectedCard = 0;
-    gUnk_0203A9D0->effectCount = 0;
-    TaskPoolInit(&gUnk_0203A9D0->effectTasks, 24);
+    ListPoolInit(&gCardListWork->cards);
+    gCardListWork->selectedCard = 0;
+    gCardListWork->effectCount = 0;
+    TaskPoolInit(&gCardListWork->effectTasks, 24);
     func_0809C294((u8*)w);
     w->unk_51 = 10;
     w->unk_52 = 0;
@@ -1163,7 +1163,7 @@ u8 func_0809BE80(u8* work, void* a) {
             work[0x8B] = 16;
             work[0x8C] = 16;
             SetTaskUpdate(a, (void*)func_0809C4B0);
-            n = (UnkStruct_0809C534*)ListPoolFirst(&gUnk_0203A9D0->cards);
+            n = (UnkStruct_0809C534*)ListPoolFirst(&gCardListWork->cards);
 
             while (n != 0) {
                 n->unk_55 |= 0xFF;
@@ -1172,7 +1172,7 @@ u8 func_0809BE80(u8* work, void* a) {
             }
 
             TaskPoolUpdate(&work[0x3C]);
-            TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+            TaskPoolUpdate(&gCardListWork->effectTasks);
             z = 0;
             work[0x87] = 1;
             work[0x85] = z;
@@ -1180,7 +1180,7 @@ u8 func_0809BE80(u8* work, void* a) {
         }
     }
 
-    n = (UnkStruct_0809C534*)ListPoolFirst(&gUnk_0203A9D0->cards);
+    n = (UnkStruct_0809C534*)ListPoolFirst(&gCardListWork->cards);
 
     if (work[0x84] == 0) {
         while (n != 0) {
@@ -1223,7 +1223,7 @@ u8 func_0809BE80(u8* work, void* a) {
     *(void**)&work[0x28] = AnimUpdate(&work[0x54]);
     *(void**)&work[0x2C] = AnimUpdate(&work[0x6C]);
     TaskPoolUpdate(&work[0x3C]);
-    TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+    TaskPoolUpdate(&gCardListWork->effectTasks);
     return 1;
 }
 
@@ -1232,7 +1232,7 @@ u8 func_0809C078(u8* work, void* a) {
     u8* p;
     u8* n;
 
-    n = (u8*)ListPoolFirst(&gUnk_0203A9D0->cards);
+    n = (u8*)ListPoolFirst(&gCardListWork->cards);
 
     if (n != 0 && n[0x55] == 1) {
         SetTaskUpdate(a, (void*)func_0809BE80);
@@ -1252,7 +1252,7 @@ u8 func_0809C078(u8* work, void* a) {
 
     (*p)--;
     TaskPoolUpdate(&work[0x3C]);
-    TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+    TaskPoolUpdate(&gCardListWork->effectTasks);
     return 1;
 }
 
@@ -1274,13 +1274,13 @@ void func_0809C110(u8* work) {
     DrawSprite(120, *(s32*)&work[0x34] >> 8, gUnk_09EEA174[0], *(void**)&work[0x20], *(void**)&work[0x04], 0, 0, 60);
     DrawSprite(120, *(s32*)&work[0x38] >> 8, gUnk_09EEA174[1], *(void**)&work[0x20], *(void**)&work[0x04], 0, 0, 60);
     TaskPoolDraw(&work[0x3C]);
-    TaskPoolDraw(&gUnk_0203A9D0->effectTasks);
+    TaskPoolDraw(&gCardListWork->effectTasks);
 }
 
 void func_0809C1EC(u8* work) {
-    TaskPoolDestroy(&gUnk_0203A9D0->effectTasks);
+    TaskPoolDestroy(&gCardListWork->effectTasks);
     EwramFree(*(void**)&work[0x24]);
-    EwramFree(gUnk_0203A9D0);
+    EwramFree(gCardListWork);
     ReleaseObjTiles(*(void**)&work[0x08]);
     ReleaseObjTiles(*(void**)&work[0x10]);
     ReleaseObjTiles(*(void**)&work[0x18]);
@@ -1313,7 +1313,7 @@ u8 func_0809C2D0(u8* work, void* a) {
     u8 t;
     u8* q;
 
-    n = (u8*)ListPoolFirst(&gUnk_0203A9D0->cards);
+    n = (u8*)ListPoolFirst(&gCardListWork->cards);
     *(void**)&work[0x28] = AnimUpdate(&work[0x54]);
     *(void**)&work[0x2C] = AnimUpdate(&work[0x6C]);
     work[0x51] = 0;
@@ -1363,17 +1363,17 @@ u8 func_0809C2D0(u8* work, void* a) {
     }
 
     TaskPoolUpdate(pool);
-    TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+    TaskPoolUpdate(&gCardListWork->effectTasks);
     return 1;
 }
 
 u8 func_0809C448(u8* work, void* a) {
-    ListPoolFirst(&gUnk_0203A9D0->cards);
+    ListPoolFirst(&gCardListWork->cards);
     BgAnimUpdate();
     *(void**)&work[0x28] = AnimUpdate(&work[0x54]);
     *(void**)&work[0x2C] = AnimUpdate(&work[0x6C]);
     TaskPoolUpdate(&work[0x3C]);
-    TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+    TaskPoolUpdate(&gCardListWork->effectTasks);
 
     if ((GetKeysPressed() & 1)
 #ifdef VERSION_EU
@@ -1417,7 +1417,7 @@ u8 func_0809C4B0(u8* work, void* a) {
 
     (*p)--;
     TaskPoolUpdate(&work[0x3C]);
-    TaskPoolUpdate(&gUnk_0203A9D0->effectTasks);
+    TaskPoolUpdate(&gCardListWork->effectTasks);
     return 1;
 }
 

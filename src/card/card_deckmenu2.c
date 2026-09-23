@@ -48,7 +48,7 @@ u8 gActiveDeck;
 
 u8 gUnk_02034AB1[3];
 
-CardUiSpriteState gUnk_0203A860 EWRAM_COMMON(16);
+CardUiSpriteState gCardUiSpriteState EWRAM_COMMON(16);
 
 u8 func_080892E8(u8* work, void* a);
 #ifdef VERSION_EU
@@ -1044,12 +1044,12 @@ void func_08085FB4(u8* work, void* a) {
     *(void**)&work[0x04] = AllocObjTiles(0x280, 0);
     func_0808E364(work, 0);
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
-    gUnk_0203A860.tiles = AllocObjTiles(0x100, 0);
-    gUnk_0203A860.palette = LoadObjPalette(gUnk_09611AB8, 32);
-    SetObjTileSource(gUnk_0203A860.tiles, gUnk_0908C3CE);
-    AnimInit(&gUnk_0203A860.anim, gUnk_09EEA198, gUnk_09EEA180);
-    AnimStart(&gUnk_0203A860.anim, 0, 1);
-    gUnk_0203A860.gfx = AnimUpdate(&gUnk_0203A860.anim);
+    gCardUiSpriteState.tiles = AllocObjTiles(0x100, 0);
+    gCardUiSpriteState.palette = LoadObjPalette(gUnk_09611AB8, 32);
+    SetObjTileSource(gCardUiSpriteState.tiles, gUnk_0908C3CE);
+    AnimInit(&gCardUiSpriteState.anim, gUnk_09EEA198, gUnk_09EEA180);
+    AnimStart(&gCardUiSpriteState.anim, 0, 1);
+    gCardUiSpriteState.gfx = AnimUpdate(&gCardUiSpriteState.anim);
     *(s32*)&work[0x28] = 0;
     *(s32*)&work[0x1C] = 0;
     *(s32*)&work[0x20] = 0;
@@ -3910,7 +3910,7 @@ void func_0808B3DC(u8* work, u8 flag) {
 }
 
 void func_0808B66C(UnkStruct_0808B66C* w) {
-    gUnk_0203A860.gfx = AnimUpdate(&gUnk_0203A860.anim);
+    gCardUiSpriteState.gfx = AnimUpdate(&gCardUiSpriteState.anim);
     if (w->unk_8C9 == 0) {
         if (w->unk_8B0 != 0) {
             DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 3);
@@ -4126,8 +4126,8 @@ void func_0808C2F0(u8* work) {
     func_0808E2F0((UnkStruct_0808DB04*)work);
     **(u8**)&work[CARDWORK(0x8BC)] = work[CARDWORK(0x8D2)];
     ReleaseObjTiles(*(void**)&work[0x4B8]);
-    ReleaseObjTiles(gUnk_0203A860.tiles);
-    ReleaseObjPalette(gUnk_0203A860.palette);
+    ReleaseObjTiles(gCardUiSpriteState.tiles);
+    ReleaseObjPalette(gCardUiSpriteState.palette);
 }
 
 void func_0808C3DC(u8* work, u8 kind) {

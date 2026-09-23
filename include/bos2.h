@@ -542,7 +542,7 @@ u8 task_bos_dsd_1(DsdWork* work);
 void func_080C3C40(DsdMainWork* work);
 
 extern s16 gUnk_0203AC80;
-extern JfMapArg gUnk_0203AC90;
+extern JfMapArg gJfMapArg;
 extern s16 gUnk_0203ACB0;
 extern s16 gUnk_0203ACB4;
 

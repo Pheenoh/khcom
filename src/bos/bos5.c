@@ -20,7 +20,7 @@ const char gTaskNameBosGa[] = "task_bos_ga";
 
 const EmyKind gUnk_099920D8 = { 37, 1000, 16, 16, 0, 60, 1 };
 
-const MdMapData gUnk_099920E8 = {
+const MdMapData gMdMapData = {
     gUnk_099AC97C, 32768, { 0, 0 }, gUnk_09A3C8BC, 192, { 0, 0 }, { gUnk_09A208DC, gUnk_09A210DC, gUnk_09A218DC, gUnk_09A220DC }
 };
 
@@ -892,7 +892,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
     work->angle = 0;
     work->unk_A4C = 0;
     work->unk_A50 = 60;
-    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, &gUnk_0999202C);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, &gBosMapConfig);
     gBtlWork->unk_0CC = 0xE200;
     gBtlWork->unk_0D0 = 0x15E00;
     gBtlWork->unk_0D4 = 0;
@@ -1583,7 +1583,7 @@ void func_080FC3FC(MdWork* work) {
 void task_bos_md_0(MdWork* work, void* arg) {
     s16 i;
 
-    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMdMap, (void*)&gUnk_099920E8);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMdMap, (void*)&gMdMapData);
     gBtlWork->flags &= 0xFFFFFFFFFFEFFFFF;
     work->unk_000 = 0;
     work->unk_004 = 0;

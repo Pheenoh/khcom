@@ -48,9 +48,9 @@ extern s32 gUnk_0203C408;
 extern u16 gUnk_0203C40C;
 extern struct PooNode* gUnk_0203C410;
 extern void* gUnk_0203C414;
-extern PooActor gUnk_0203C420;
+extern PooActor gPooActor;
 extern u8* gStockMesDispWork;
-extern PooState gUnk_0203C470;
+extern PooState gPooState;
 extern void* gUnk_0203C4B4;
 
 #endif

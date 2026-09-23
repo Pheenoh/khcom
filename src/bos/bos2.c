@@ -16,7 +16,7 @@ extern void* gUnk_09EF2D94[37];
 extern const u16* gUnk_09EF2E68[4];
 
 s16 gUnk_0203AC80 EWRAM_COMMON(8);
-JfMapArg gUnk_0203AC90 EWRAM_COMMON(16);
+JfMapArg gJfMapArg EWRAM_COMMON(16);
 s16 gUnk_0203ACB0 EWRAM_COMMON(4);
 s16 gUnk_0203ACB4 EWRAM_COMMON(4);
 s16 gUnk_0203ACC0 EWRAM_COMMON(16);
@@ -55,20 +55,20 @@ void task_bos_jf_0(JfWork* work, s32 a) {
     gUnk_0203ACC4 = 7;
     gUnk_0203ACD4 = 0;
     gUnk_0203ACC0 = 0;
-    gUnk_0203AC90.tiles = gUnk_0965DC04;
-    gUnk_0203AC90.tilesSize = 0x8000;
-    gUnk_0203AC90.palette = gUnk_096FB404;
-    gUnk_0203AC90.paletteSize = 128;
-    gUnk_0203AC90.maps[0] = gUnk_096C4C64;
-    gUnk_0203AC90.maps[1] = gUnk_096C5464;
-    gUnk_0203AC90.maps[2] = gUnk_0203ACE0;
-    gUnk_0203AC90.maps[3] = gUnk_096C6464;
+    gJfMapArg.tiles = gUnk_0965DC04;
+    gJfMapArg.tilesSize = 0x8000;
+    gJfMapArg.palette = gUnk_096FB404;
+    gJfMapArg.paletteSize = 128;
+    gJfMapArg.maps[0] = gUnk_096C4C64;
+    gJfMapArg.maps[1] = gUnk_096C5464;
+    gJfMapArg.maps[2] = gUnk_0203ACE0;
+    gJfMapArg.maps[3] = gUnk_096C6464;
     TaskPoolInit(&work->tasks, 4);
 
     if (work->flags & 8) {
-        TaskCreate(&work->tasks, &gTaskDescBosJfMap, &gUnk_0203AC90);
+        TaskCreate(&work->tasks, &gTaskDescBosJfMap, &gJfMapArg);
     } else {
-        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosJfMap, &gUnk_0203AC90);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosJfMap, &gJfMapArg);
     }
 
     work->unk_268 = 0;

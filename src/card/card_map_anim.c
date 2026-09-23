@@ -53,12 +53,12 @@ void* gUnk_0203A854 EWRAM_COMMON(4);
 u16 gCardCount EWRAM_COMMON(4);
 
 Deck* sub_08083EFC(void);
-extern u8* gUnk_02039DC8;
+extern u8* gEventState;
 
 void map_anim_0(MapTileAnimationWork* p) {
     u8 i;
 
-    p->definition = gUnk_09EE4A2C[*(s32*)&gUnk_02039DC8[0x44]];
+    p->definition = gUnk_09EE4A2C[*(s32*)&gEventState[0x44]];
 
     if (p->definition != 0) {
         for (i = 0; i < p->definition->trackCount; i++) {
