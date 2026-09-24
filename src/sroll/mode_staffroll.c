@@ -2846,7 +2846,7 @@ const u8 gUnkEu_09AB1F3C[2] = "~";
 
 StaffRollWork* gStaffRollWork;
 
-s32 func_081125B4(s32 x) {
+static s32 Square(s32 x) {
     return x * x;
 }
 
@@ -4510,14 +4510,6 @@ void mode_StaffRoll_2(void) {
         EwramFree(w);
         gStaffRollWork = 0;
     }
-}
-
-s32 func_08114748(s32 x) {
-    return x * x;
-}
-
-s32 func_08114750(s32 x) {
-    return x * x;
 }
 
 Mode gModeStaffRoll = {

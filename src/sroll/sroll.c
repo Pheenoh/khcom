@@ -19,6 +19,14 @@ u32* gUnk_02038090;
 s32 gUnk_02038094;
 s32 gUnk_02038098;
 
+s32 func_08114748(s32 x) {
+    return x * x;
+}
+
+s32 func_08114750(s32 x) {
+    return x * x;
+}
+
 void task_sroll_a_name_0(SrollANameWork* w, SrollANameArg* a) {
     AnimState* anim;
 
