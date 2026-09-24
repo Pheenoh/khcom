@@ -1149,7 +1149,7 @@ extern const u16 gUnk_0903612C[];
 extern const u16 gUnk_090359FC[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
-extern u32 gUnk_09036210[];
+extern const u32 gUnk_09036210[];
 extern s16 gUnk_09036278[];
 extern u8 gUnk_0903628A[];
 extern u8 gUnk_0891ED26[];

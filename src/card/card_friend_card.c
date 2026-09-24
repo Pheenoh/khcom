@@ -46,6 +46,7 @@
 #include "sprites_premire_chance.h"
 #include "sprites_card_pictures.h"
 #include "gba/io_reg.h"
+#include "card_ids.h"
 
 struct CardListWork* gCardListWork EWRAM_COMMON(4);
 
@@ -74,6 +75,17 @@ s16 func_08084458(u16 cardId);
 void ConvertActiveDeckCardToPremium(u16 index);
 Deck* GetActiveDeck(void);
 void CreateCardNameDisplay(void* a, void* b);
+
+const u32 gUnk_09036210[8] = {
+    CARD_ID(CARD_GOOFY, 0),
+    CARD_ID(CARD_DONALD_DUCK, 0),
+    CARD_ID(CARD_ALADDIN, 0),
+    CARD_ID(CARD_ARIEL, 0),
+    CARD_ID(CARD_JACK, 0),
+    CARD_ID(CARD_PETER_PAN, 0),
+    CARD_ID(CARD_THE_BEAST, 0),
+    CARD_ID(CARD_THE_KING, 0),
+};
 
 void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
     u8* p;
