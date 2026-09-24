@@ -2733,7 +2733,6 @@ extern u8* gUnkEu_09F74374[5];
 extern const char gUnkEu_090D1FB0[];
 extern Mode gUnkEu_09F74600;
 #else
-extern const char gUnk_09041F58[];
 extern Mode gUnk_09EE8F20;
 #endif
 

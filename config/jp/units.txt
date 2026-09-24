@@ -183,7 +183,6 @@ card_sysmsgwin.c
 card_worldsel_before.c
 card_deckmenu2_2.c
 card_deckexchange.c
-card_mode_deck_rodata.s
 card_mode_deck.c
 card_mode_deck_tables.s
 card_description_text.s

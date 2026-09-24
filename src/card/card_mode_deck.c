@@ -398,7 +398,7 @@ void func_080AB968(void) {
 
 #ifndef VERSION_EU
 Mode gUnk_09EE8F20 = {
-    gUnk_09041F58,
+    "Mode_Deck",
     (ModeInitFunc)func_080AAF78,
     func_080AAFB4,
     func_080AB008,
