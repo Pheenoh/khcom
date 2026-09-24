@@ -247,10 +247,8 @@ EventBgEffectDef* gUnk_09EE79B4[8] = {
     NULL,
 };
 
-const char gTaskNameEVBGEFFECT[] = "EV_BG_EFFECT";
-
 TaskDesc gTaskDescEVBGEFFECT = {
-    gTaskNameEVBGEFFECT,
+    "EV_BG_EFFECT",
     (TaskInitFunc)EV_BG_EFFECT_0,
     (TaskUpdateFunc)EV_BG_EFFECT_1,
     (TaskFunc)EV_BG_EFFECT_2,

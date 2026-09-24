@@ -2777,10 +2777,8 @@ void** gUnkEu_09F6FF70[5] = {
 };
 #endif
 
-const char gTaskNameMapSelect[] = "MapSelect";
-
 TaskDesc gTaskDescMapSelect = {
-    gTaskNameMapSelect,
+    "MapSelect",
     (TaskInitFunc)MapSelect_0,
     (TaskUpdateFunc)MapSelect_1,
     (TaskFunc)MapSelect_2,
@@ -3082,10 +3080,8 @@ UnkStruct_09EE752C gUnk_09EE752C[7] = {
     { 0, 100, 0, 0 },
 };
 
-const char gTaskNameMapcard[] = "Mapcard";
-
 TaskDesc gTaskDescMapcard = {
-    gTaskNameMapcard,
+    "Mapcard",
     (TaskInitFunc)Mapcard_0,
     (TaskUpdateFunc)Mapcard_1,
     (TaskFunc)Mapcard_2,
@@ -3093,10 +3089,8 @@ TaskDesc gTaskDescMapcard = {
     0x78,
 };
 
-const char gTaskNameReloadGage[] = "Reload Gage";
-
 TaskDesc gTaskDescReloadGage = {
-    gTaskNameReloadGage,
+    "Reload Gage",
     (TaskInitFunc)Reload_Gage_0,
     (TaskUpdateFunc)Reload_Gage_1,
     (TaskFunc)Reload_Gage_2,

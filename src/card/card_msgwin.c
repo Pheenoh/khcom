@@ -2946,10 +2946,8 @@ CardMessageDef gUnk_09EE8008[] = {
 #endif
 };
 
-const char gTaskName_09EE8E18[] = "msgwin";
-
 TaskDesc gUnk_09EE8E18 = {
-    gTaskName_09EE8E18,
+    "msgwin",
     (TaskInitFunc)func_080A33C4,
     (TaskUpdateFunc)func_080A3640,
     (TaskFunc)func_080A3848,

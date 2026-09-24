@@ -216,10 +216,8 @@ void Ev_mapObj_3(u8* work) {
     func_080A1C48(work);
 }
 
-const char gTaskNameLvupLogo[] = "Lvup_Logo";
-
 TaskDesc gTaskDescLvupLogo = {
-    gTaskNameLvupLogo,
+    "Lvup_Logo",
     (TaskInitFunc)Lvup_Logo_0,
     (TaskUpdateFunc)Lvup_Logo_1,
     (TaskFunc)Lvup_Logo_2,
@@ -227,10 +225,8 @@ TaskDesc gTaskDescLvupLogo = {
     0xAC,
 };
 
-const char gTaskNameEvMapObj[] = "Ev_mapObj";
-
 TaskDesc gTaskDescEvMapObj = {
-    gTaskNameEvMapObj,
+    "Ev_mapObj",
     (TaskInitFunc)Ev_mapObj_0,
     (TaskUpdateFunc)Ev_mapObj_1,
     (TaskFunc)Ev_mapObj_2,

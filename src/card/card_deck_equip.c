@@ -406,10 +406,8 @@ void RestoreMapCardInventory(u8* p) {
     }
 }
 
-const char gTaskNameDeckEquip[] = "Deck Equip";
-
 TaskDesc gTaskDescDeckEquip = {
-    gTaskNameDeckEquip,
+    "Deck Equip",
     (TaskInitFunc)Deck_Equip_0,
     (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
@@ -417,10 +415,8 @@ TaskDesc gTaskDescDeckEquip = {
     0x7A8,
 };
 
-const char gTaskNameDeckYesNo[] = "Deck_Yes_No";
-
 TaskDesc gTaskDescDeckYesNo = {
-    gTaskNameDeckYesNo,
+    "Deck_Yes_No",
     (TaskInitFunc)Deck_Yes_No_0,
     (TaskUpdateFunc)func_080A30C0,
     (TaskFunc)func_080A2E14,
@@ -428,10 +424,8 @@ TaskDesc gTaskDescDeckYesNo = {
     0x7A8,
 };
 
-const char gTaskNameDeckClear[] = "Deck_Clear";
-
 TaskDesc gTaskDescDeckClear = {
-    gTaskNameDeckClear,
+    "Deck_Clear",
     (TaskInitFunc)Deck_Clear_0,
     (TaskUpdateFunc)func_080A30C0,
     (TaskFunc)func_080A2E14,
@@ -439,10 +433,8 @@ TaskDesc gTaskDescDeckClear = {
     0x7A8,
 };
 
-const char gTaskNameDeckError[] = "Deck Error";
-
 TaskDesc gUnk_09EE7FA8 = {
-    gTaskNameDeckError,
+    "Deck Error",
     (TaskInitFunc)func_080A2980,
     (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
@@ -451,7 +443,7 @@ TaskDesc gUnk_09EE7FA8 = {
 };
 
 TaskDesc gUnk_09EE7FC0 = {
-    gTaskNameDeckError,
+    "Deck Error",
     (TaskInitFunc)func_080A2A80,
     (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
@@ -460,7 +452,7 @@ TaskDesc gUnk_09EE7FC0 = {
 };
 
 TaskDesc gUnk_09EE7FD8 = {
-    gTaskNameDeckError,
+    "Deck Error",
     (TaskInitFunc)func_080A2BA4,
     (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
@@ -469,7 +461,7 @@ TaskDesc gUnk_09EE7FD8 = {
 };
 
 TaskDesc gUnk_09EE7FF0 = {
-    gTaskNameDeckError,
+    "Deck Error",
     (TaskInitFunc)func_080A2CC4,
     (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,

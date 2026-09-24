@@ -1256,10 +1256,8 @@ const MapTileAnimationDef* gUnk_09EE4A4C = {
     NULL,
 };
 
-const char gTaskNameMapAnim[] = "map_anim";
-
 TaskDesc gTaskDescMapAnim = {
-    gTaskNameMapAnim,
+    "map_anim",
     (TaskInitFunc)map_anim_0,
     (TaskUpdateFunc)map_anim_1,
     (TaskFunc)map_anim_2,

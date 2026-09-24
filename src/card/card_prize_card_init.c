@@ -1419,10 +1419,8 @@ u8 func_080987C0(u16 n) {
     return gUnk_09EE4C80[idx].backIndex;
 }
 
-const char gTaskNamePrizeCardInit[] = "PrizeCardInit";
-
 TaskDesc gTaskDescPrizeCardInit = {
-    gTaskNamePrizeCardInit,
+    "PrizeCardInit",
     (TaskInitFunc)func_08096714,
     (TaskUpdateFunc)PrizeCardInit_1,
     func_08096C20,
@@ -1430,10 +1428,8 @@ TaskDesc gTaskDescPrizeCardInit = {
     0x38,
 };
 
-const char gTaskNamePrizeCardInitBoss[] = "PrizeCardInit_Boss";
-
 TaskDesc gTaskDescPrizeCardInitBoss = {
-    gTaskNamePrizeCardInitBoss,
+    "PrizeCardInit_Boss",
     (TaskInitFunc)func_08096714,
     (TaskUpdateFunc)PrizeCardInit_Boss_1,
     func_08096C20,
@@ -1441,10 +1437,8 @@ TaskDesc gTaskDescPrizeCardInitBoss = {
     0x38,
 };
 
-const char gTaskNameDispCardname[] = "DispCardname";
-
 TaskDesc gTaskDescDispCardname = {
-    gTaskNameDispCardname,
+    "DispCardname",
     (TaskInitFunc)DispCardname_0,
     (TaskUpdateFunc)DispCardname_1,
     (TaskFunc)DispCardname_2,
@@ -1452,10 +1446,8 @@ TaskDesc gTaskDescDispCardname = {
     0x110,
 };
 
-const char gTaskNameVersion[] = "Version";
-
 TaskDesc gTaskDescVersion = {
-    gTaskNameVersion,
+    "Version",
     (TaskInitFunc)Version_0,
     (TaskUpdateFunc)Version_1,
     (TaskFunc)Version_2,
@@ -1463,10 +1455,8 @@ TaskDesc gTaskDescVersion = {
     0x2C,
 };
 
-const char gTaskName_09EE7650[] = "PrizeCard";
-
 TaskDesc gUnk_09EE7650 = {
-    gTaskName_09EE7650,
+    "PrizeCard",
     (TaskInitFunc)func_08096F94,
     (TaskUpdateFunc)func_08097138,
     (TaskFunc)func_08097688,
@@ -1474,10 +1464,8 @@ TaskDesc gUnk_09EE7650 = {
     0xEC,
 };
 
-const char gTaskNameSpotLight[] = "SpotLight";
-
 TaskDesc gTaskDescSpotLight = {
-    gTaskNameSpotLight,
+    "SpotLight",
     (TaskInitFunc)SpotLight_0,
     (TaskUpdateFunc)SpotLight_1,
     (TaskFunc)SpotLight_2,
@@ -1492,10 +1480,8 @@ void* gUnkEu_09F72A50[5] = { gUnk_09EF1220, gUnkEu_09F7C434, gUnkEu_09F7C44C, gU
 void* gUnkEu_09F72A64[5] = { gUnk_093F6ACC, gUnkEu_094C7CCE, gUnkEu_094C9180, gUnkEu_094C8946, gUnkEu_094C8288 };
 #endif
 
-const char gTaskNameSELMAPEVKEY[] = "SELMAP_EVKEY";
-
 TaskDesc gTaskDescSELMAPEVKEY = {
-    gTaskNameSELMAPEVKEY,
+    "SELMAP_EVKEY",
     (TaskInitFunc)SELMAP_EVKEY_0,
     (TaskUpdateFunc)SELMAP_EVKEY_1,
     (TaskFunc)SELMAP_EVKEY_2,

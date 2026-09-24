@@ -3770,10 +3770,8 @@ u8 func_08083B20(UnkStruct_08083B20* w, u8 b) {
 
 void func_08081C98(CardDisplayWork* p);
 
-const char gTaskNameCardBattleRiku[] = "cardbattle";
-
 TaskDesc gTaskDescCardBattleRiku = {
-    gTaskNameCardBattleRiku,
+    "cardbattle",
     (TaskInitFunc)func_0807E8F4,
     (TaskUpdateFunc)func_0807EDEC,
     (TaskFunc)func_0807F99C,
@@ -3781,10 +3779,8 @@ TaskDesc gTaskDescCardBattleRiku = {
     0xCC,
 };
 
-const char gTaskName_09EE49CC[] = "card";
-
 TaskDesc gUnk_09EE49CC = {
-    gTaskName_09EE49CC,
+    "card",
     (TaskInitFunc)func_08081A3C,
     (TaskUpdateFunc)func_08081B70,
     (TaskFunc)func_08081C98,
@@ -3792,10 +3788,8 @@ TaskDesc gUnk_09EE49CC = {
     0xA8,
 };
 
-const char gTaskNameNOCard[] = "NO_Card";
-
 TaskDesc gTaskDescNOCard = {
-    gTaskNameNOCard,
+    "NO_Card",
     (TaskInitFunc)func_08081A3C,
     (TaskUpdateFunc)func_08081B70,
     (TaskFunc)NO_Card_2,
@@ -3803,10 +3797,8 @@ TaskDesc gTaskDescNOCard = {
     0xA8,
 };
 
-const char gTaskNameReloadCard[] = "Reload_Card";
-
 TaskDesc gTaskDescReloadCard = {
-    gTaskNameReloadCard,
+    "Reload_Card",
     (TaskInitFunc)Reload_Card_0,
     (TaskUpdateFunc)Reload_Card_1,
     (TaskFunc)Reload_Card_2,
@@ -3814,10 +3806,8 @@ TaskDesc gTaskDescReloadCard = {
     0xA8,
 };
 
-const char gTaskNameBosscard[] = "Bosscard";
-
 TaskDesc gTaskDescBosscard = {
-    gTaskNameBosscard,
+    "Bosscard",
     (TaskInitFunc)Bosscard_0,
     (TaskUpdateFunc)Bosscard_1,
     (TaskFunc)Bosscard_2,

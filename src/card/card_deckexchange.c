@@ -2002,10 +2002,8 @@ void func_080AAF20(u8* work) {
 #endif
 
 #ifndef VERSION_EU
-const char gTaskNameDeckexchange[] = "deckexchange";
-
 TaskDesc gTaskDescDeckexchange = {
-    gTaskNameDeckexchange,
+    "deckexchange",
     (TaskInitFunc)deckexchange_0,
     (TaskUpdateFunc)deckexchange_1,
     (TaskFunc)deckexchange_2,

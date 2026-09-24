@@ -165,10 +165,8 @@ WorldSelAnim gWorldSelAnims[30] = {
     { 1, 6, { 0, 0 } },
 };
 
-const char gTaskNameWorldSelBefore[] = "WorldSel Before";
-
 TaskDesc gTaskDescWorldSelBefore = {
-    gTaskNameWorldSelBefore,
+    "WorldSel Before",
     (TaskInitFunc)WorldSel_Before_0,
     (TaskUpdateFunc)WorldSel_Before_1,
     (TaskFunc)WorldSel_Before_2,

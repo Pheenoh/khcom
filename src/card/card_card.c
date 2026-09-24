@@ -4127,10 +4127,8 @@ u8 func_0807E34C(void) {
 
 void func_0807BEC0(CardDisplayWork* p);
 
-const char gTaskName_09EE496C[] = "card";
-
 TaskDesc gUnk_09EE496C = {
-    gTaskName_09EE496C,
+    "card",
     (TaskInitFunc)func_0807BC24,
     (TaskUpdateFunc)func_0807BD64,
     (TaskFunc)func_0807BEC0,
@@ -4138,10 +4136,8 @@ TaskDesc gUnk_09EE496C = {
     0xA8,
 };
 
-const char gTaskNameCardNotHave[] = "card_not_have";
-
 TaskDesc gTaskDescCardNotHave = {
-    gTaskNameCardNotHave,
+    "card_not_have",
     (TaskInitFunc)func_0807BC24,
     (TaskUpdateFunc)func_0807BD64,
     (TaskFunc)card_not_have_2,
@@ -4149,10 +4145,8 @@ TaskDesc gTaskDescCardNotHave = {
     0xA8,
 };
 
-const char gTaskNameCardReload[] = "card_reload";
-
 TaskDesc gTaskDescCardReload = {
-    gTaskNameCardReload,
+    "card_reload",
     (TaskInitFunc)card_reload_0,
     (TaskUpdateFunc)card_reload_1,
     (TaskFunc)card_reload_2,

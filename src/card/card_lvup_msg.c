@@ -218,10 +218,8 @@ void Lvup_msg_3(u8* work) {
 #endif
 }
 
-const char gTaskNameLvupMsg[] = "Lvup msg";
-
 TaskDesc gTaskDescLvupMsg = {
-    gTaskNameLvupMsg,
+    "Lvup msg",
     (TaskInitFunc)Lvup_msg_0,
     (TaskUpdateFunc)Lvup_msg_1,
     (TaskFunc)Lvup_msg_2,

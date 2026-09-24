@@ -461,10 +461,8 @@ void* gUnkEu_09F72CB0[5] = { gUnk_093FB954, gUnkEu_094CE490, gUnkEu_094CE820, gU
 void** gUnkEu_09F72CC4[5] = { gUnk_09EF12C8, gUnkEu_09F7C55C, gUnkEu_09F7C57C, gUnkEu_09F7C59C, gUnkEu_09F7C5BC };
 #endif
 
-const char gTaskNameHCEffectName[] = "HCEffectName";
-
 TaskDesc gTaskDescHCEffectName = {
-    gTaskNameHCEffectName,
+    "HCEffectName",
     (TaskInitFunc)HCEffectName_0,
     (TaskUpdateFunc)HCEffectName_1,
     (TaskFunc)HCEffectName_2,
@@ -472,10 +470,8 @@ TaskDesc gTaskDescHCEffectName = {
     0x28,
 };
 
-const char gTaskNameNumberPlus[] = "NumberPlus";
-
 TaskDesc gTaskDescNumberPlus = {
-    gTaskNameNumberPlus,
+    "NumberPlus",
     (TaskInitFunc)NumberPlus_0,
     (TaskUpdateFunc)NumberPlus_1,
     (TaskFunc)NumberPlus_2,

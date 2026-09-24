@@ -1013,10 +1013,8 @@ void* gUnk_09EE7698[4] = {
     gUnk_09099538,
 };
 
-const char gTaskNameReloadChildren[] = "RELOAD_CHILDREN";
-
 TaskDesc gTaskDescReloadChildren = {
-    gTaskNameReloadChildren,
+    "RELOAD_CHILDREN",
     (TaskInitFunc)RELOAD_CHILDREN_0,
     (TaskUpdateFunc)RELOAD_CHILDREN_1,
     (TaskFunc)RELOAD_CHILDREN_2,
@@ -1046,10 +1044,8 @@ AnimHeader** gUnk_09EE76E8 = &gUnk_09EEA97C;
 
 AnimHeader** gUnk_09EE76EC = &gUnk_09EEADD4;
 
-const char gTaskNameREVCOUNT[] = "REV_COUNT";
-
 TaskDesc gTaskDescREVCOUNT = {
-    gTaskNameREVCOUNT,
+    "REV_COUNT",
     (TaskInitFunc)REV_COUNT_0,
     (TaskUpdateFunc)REV_COUNT_1,
     (TaskFunc)REV_COUNT_2,
@@ -1075,10 +1071,8 @@ void** gUnk_09EE7720[3] = {
     gUnk_09EEA308,
 };
 
-const char gTaskNameRELOAD[] = "RELOAD";
-
 TaskDesc gTaskDescRELOAD = {
-    gTaskNameRELOAD,
+    "RELOAD",
     (TaskInitFunc)RELOAD_0,
     (TaskUpdateFunc)RELOAD_1,
     (TaskFunc)RELOAD_2,
@@ -1086,10 +1080,8 @@ TaskDesc gTaskDescRELOAD = {
     0x38,
 };
 
-const char gTaskNamePrizeBoss[] = "PrizeBoss";
-
 TaskDesc gTaskDescPrizeBoss = {
-    gTaskNamePrizeBoss,
+    "PrizeBoss",
     (TaskInitFunc)PrizeBoss_0,
     (TaskUpdateFunc)PrizeBoss_1,
     (TaskFunc)PrizeBoss_2,
@@ -1097,10 +1089,8 @@ TaskDesc gTaskDescPrizeBoss = {
     0xF0,
 };
 
-const char gTaskNameCardEFFECT[] = "Card_EFFECT";
-
 TaskDesc gTaskDescCardEFFECT = {
-    gTaskNameCardEFFECT,
+    "Card_EFFECT",
     (TaskInitFunc)Card_EFFECT_0,
     (TaskUpdateFunc)Card_EFFECT_1,
     (TaskFunc)Card_EFFECT_2,
@@ -1108,10 +1098,8 @@ TaskDesc gTaskDescCardEFFECT = {
     0x4C,
 };
 
-const char gTaskNameScrollbar[] = "scrollbar";
-
 TaskDesc gTaskDescScrollbar = {
-    gTaskNameScrollbar,
+    "scrollbar",
     (TaskInitFunc)scrollbar_0,
     (TaskUpdateFunc)scrollbar_1,
     (TaskFunc)scrollbar_2,

@@ -488,10 +488,8 @@ void func_0809D900(u16 a, u16 b, u16 c, u32 v) {
     func_0809D2B0(a, b, c, s);
 }
 
-const char gTaskNameCardName[] = "CardName";
-
 TaskDesc gTaskDescCardName = {
-    gTaskNameCardName,
+    "CardName",
     (TaskInitFunc)CardName_0,
     (TaskUpdateFunc)CardName_1,
     (TaskFunc)CardName_2,
@@ -503,10 +501,8 @@ TaskDesc gTaskDescCardName = {
 #endif
 };
 
-const char gTaskNamePremireEFFECT[] = "Premire_EFFECT";
-
 TaskDesc gUnk_09EE784C = {
-    gTaskNamePremireEFFECT,
+    "Premire_EFFECT",
     (TaskInitFunc)func_0809CE88,
     (TaskUpdateFunc)func_0809D040,
     (TaskFunc)func_0809D0CC,
@@ -514,10 +510,8 @@ TaskDesc gUnk_09EE784C = {
     0x54,
 };
 
-const char gTaskNamePremireEFFECT2[] = "Premire_EFFECT2";
-
 TaskDesc gTaskDescPremireEFFECT2 = {
-    gTaskNamePremireEFFECT2,
+    "Premire_EFFECT2",
     (TaskInitFunc)func_0809CE88,
     (TaskUpdateFunc)Premire_EFFECT2_1,
     (TaskFunc)func_0809D0CC,
@@ -526,7 +520,7 @@ TaskDesc gTaskDescPremireEFFECT2 = {
 };
 
 TaskDesc gUnk_09EE787C = {
-    gTaskNamePremireEFFECT,
+    "Premire_EFFECT",
     (TaskInitFunc)func_0809CF64,
     (TaskUpdateFunc)func_0809D09C,
     (TaskFunc)func_0809D0CC,

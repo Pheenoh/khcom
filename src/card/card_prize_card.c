@@ -389,10 +389,8 @@ void func_08096700(void* a, void* b) {
     TaskCreate(a, &gUnk_09EE75D8, b);
 }
 
-const char gTaskName_09EE75D8[] = "PrizeCard";
-
 TaskDesc gUnk_09EE75D8 = {
-    gTaskName_09EE75D8,
+    "PrizeCard",
     (TaskInitFunc)PrizeCard_0,
     (TaskUpdateFunc)PrizeCard_1,
     (TaskFunc)PrizeCard_2,

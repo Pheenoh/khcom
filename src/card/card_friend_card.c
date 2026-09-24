@@ -1425,10 +1425,8 @@ u8 func_0809C4B0(u8* work, void* a) {
 struct UnkStruct_0809BB4C;
 void func_0809BB4C(struct UnkStruct_0809BB4C* w);
 
-const char gTaskNameFriendCard[] = "Friend card";
-
 TaskDesc gTaskDescFriendCard = {
-    gTaskNameFriendCard,
+    "Friend card",
     (TaskInitFunc)Friend_card_0,
     (TaskUpdateFunc)Friend_card_1,
     (TaskFunc)func_0809B200,
@@ -1436,10 +1434,8 @@ TaskDesc gTaskDescFriendCard = {
     0x1D4,
 };
 
-const char gTaskNameHeartlessCard[] = "Heartless card";
-
 TaskDesc gTaskDescHeartlessCard = {
-    gTaskNameHeartlessCard,
+    "Heartless card",
     (TaskInitFunc)Heartless_card_0,
     (TaskUpdateFunc)Heartless_card_1,
     (TaskFunc)Heartless_card_2,
@@ -1447,10 +1443,8 @@ TaskDesc gTaskDescHeartlessCard = {
     0x1D4,
 };
 
-const char gTaskNameGimmickCard[] = "Gimmick card";
-
 TaskDesc gTaskDescGimmickCard = {
-    gTaskNameGimmickCard,
+    "Gimmick card",
     (TaskInitFunc)Gimmick_card_0,
     (TaskUpdateFunc)Gimmick_card_1,
     (TaskFunc)func_0809B200,
@@ -1458,10 +1452,8 @@ TaskDesc gTaskDescGimmickCard = {
     0x1D4,
 };
 
-const char gTaskNameStockName[] = "StockName";
-
 TaskDesc gUnk_09EE77D4 = {
-    gTaskNameStockName,
+    "StockName",
     (TaskInitFunc)func_0809B76C,
     (TaskUpdateFunc)func_0809B840,
     (TaskFunc)func_0809B8F0,
@@ -1470,7 +1462,7 @@ TaskDesc gUnk_09EE77D4 = {
 };
 
 TaskDesc gUnk_09EE77EC = {
-    gTaskNameStockName,
+    "StockName",
     (TaskInitFunc)func_0809B920,
     (TaskUpdateFunc)func_0809B9F4,
     (TaskFunc)func_0809BAA4,
@@ -1481,10 +1473,8 @@ TaskDesc gUnk_09EE77EC = {
 void** gUnkEu_09F72BFC[5] = { gUnk_09EEA16C, &gUnkEu_09F75FB4, &gUnkEu_09F75FCC, &gUnkEu_09F75FC4, &gUnkEu_09F75FBC };
 #endif
 
-const char gTaskName_09EE7804[] = "Premire Chance";
-
 TaskDesc gUnk_09EE7804 = {
-    gTaskName_09EE7804,
+    "Premire Chance",
     (TaskInitFunc)func_0809BB4C,
     (TaskUpdateFunc)func_0809C078,
     (TaskFunc)func_0809C110,

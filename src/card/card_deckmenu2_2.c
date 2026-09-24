@@ -1077,10 +1077,8 @@ void** gUnkEu_09F74360[5] = {
 u8* gUnkEu_09F74374[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gUnkEu_094E9CE4, gUnkEu_094E96E4 };
 #endif
 
-const char gTaskName_09EE8EF0[] = "Deckmenu2";
-
 TaskDesc gUnk_09EE8EF0 = {
-    gTaskName_09EE8EF0,
+    "Deckmenu2",
     (TaskInitFunc)func_080A584C,
     (TaskUpdateFunc)func_080A5C9C,
     (TaskFunc)func_080A6500,

@@ -2032,19 +2032,15 @@ void eu_080ABA7C(void) {
 }
 #endif
 
-const char gModeNameRikuBtlTutorial[] = "Mode_riku_btlTutorial";
-
 Mode gModeRikuBtlTutorial = {
-    gModeNameRikuBtlTutorial,
+    "Mode_riku_btlTutorial",
     (ModeInitFunc)func_080AB96C,
     Mode_riku_btlTutorial_1,
     func_080ABA70,
 };
 
-const char gModeNameRikuDeckTutorial[] = "Mode_riku_deckTutorial";
-
 Mode gModeRikuDeckTutorial = {
-    gModeNameRikuDeckTutorial,
+    "Mode_riku_deckTutorial",
     (ModeInitFunc)func_080AB96C,
     Mode_riku_deckTutorial_1,
     func_080ABA70,

@@ -430,10 +430,8 @@ void func_080AEB94(void) {
     gUnk_0203A9E8 = 0;
 }
 
-const char gTaskNamePrint[] = "task_print";
-
 TaskDesc gTaskDescPrint = {
-    gTaskNamePrint,
+    "task_print",
     (TaskInitFunc)task_print_0,
     (TaskUpdateFunc)task_print_1,
     (TaskFunc)task_print_2,

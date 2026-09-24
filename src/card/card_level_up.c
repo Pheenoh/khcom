@@ -2028,10 +2028,8 @@ const void* gUnk_09EE790C[2] = { gUnk_08125E24, gUnk_0950F2B8 };
 
 void* gUnk_09EE7914[3] = { gUnk_095112B8, gUnk_09511AB8, gUnk_095122B8 };
 
-const char gTaskNameLevelUp[] = "Level_Up";
-
 TaskDesc gTaskDescLevelUp = {
-    gTaskNameLevelUp,
+    "Level_Up",
     (TaskInitFunc)Level_Up_0,
     (TaskUpdateFunc)Level_Up_1,
     (TaskFunc)Level_Up_2,
@@ -2060,10 +2058,8 @@ void* gUnk_09EE7938[6] = { gUnkJp_09047EB0, gUnkJp_09047EBA, gUnkJp_09047EC4, gU
 void* gUnk_09EE7938[6] = { gUnkUs_0908C640, gUnkUs_0908C64A, gUnkUs_0908C654, gUnkUs_0908C65E, gUnkUs_0908C668, gUnkUs_0908C672 };
 #endif
 
-const char gTaskNameLVUPEFFECT[] = "LVUP_EFFECT";
-
 TaskDesc gTaskDescLVUPEFFECT = {
-    gTaskNameLVUPEFFECT,
+    "LVUP_EFFECT",
     (TaskInitFunc)LVUP_EFFECT_0,
     (TaskUpdateFunc)LVUP_EFFECT_1,
     (TaskFunc)LVUP_EFFECT_2,

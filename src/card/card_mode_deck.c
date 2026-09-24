@@ -407,10 +407,8 @@ Mode gUnk_09EE8F20 = {
 };
 #endif
 
-const char gTaskNameDarkPoint[] = "DarkPoint";
-
 TaskDesc gTaskDescDarkPoint = {
-    gTaskNameDarkPoint,
+    "DarkPoint",
     (TaskInitFunc)DarkPoint_0,
     (TaskUpdateFunc)DarkPoint_1,
     (TaskFunc)DarkPoint_2,

@@ -211,10 +211,8 @@ u8 func_080901B8(u8* p) {
     return 1;
 }
 
-const char gTaskNameDeckCard2[] = "DeckCard2";
-
 TaskDesc gTaskDescDeckCard2 = {
-    gTaskNameDeckCard2,
+    "DeckCard2",
     (TaskInitFunc)DeckCard2_0,
     (TaskUpdateFunc)DeckCard2_1,
     (TaskFunc)DeckCard2_2,
