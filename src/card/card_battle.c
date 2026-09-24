@@ -44,6 +44,22 @@ u32 gUnk_02034A9C;
 u32 gUnk_02034AA0;
 UnkStruct_02039DD4* gUnk_02039DD4 EWRAM_COMMON(4);
 
+const s32 gUnk_09033FA8[4] = {
+    -0x2000, 0, 0x1000, 0x8000,
+};
+
+const s32 gUnk_09033FB8[4] = {
+    0x2000, 0xE000, 0xA000, 0x6000,
+};
+
+const u16 gUnk_09033FC8[4] = {
+    40, 52, 64, 0,
+};
+
+const UnkStruct_080ABA80 gUnk_09033FD0 = {
+    { -1, -1, -1, -1, -1, -1 },
+};
+
 void func_08076284(void) {
     gUnk_02034AA0 = 14;
 }
@@ -480,7 +496,6 @@ void func_0807682C(UnkStruct_08080268* w, u8 slot) {
     gUnk_02034A98->unk_78 |= 0x804;
 }
 
-extern u16 gUnk_09033FC8[];
 void func_08091B28(void);
 void func_080782EC(void);
 void func_080784BC(void* work, s32 mode);
@@ -567,7 +582,6 @@ s32 func_08076F4C(CardBattleWork* w) {
     return 0;
 }
 
-extern u16 gUnk_09033FC8[];
 void func_0807A620(void* work);
 void func_0807B378(void* work);
 void func_080788CC(void* work, u8 slot);

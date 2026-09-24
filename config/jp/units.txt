@@ -154,7 +154,6 @@ events_134_196.c
 event_name_text.s
 event_message.c
 mode_eventselect.c
-card_battle_rodata.s
 card_battle.c
 card_card_rodata.s
 card_card.c
