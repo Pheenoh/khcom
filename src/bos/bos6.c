@@ -5095,7 +5095,14 @@ const PcShot gPcShots[9] = {
     { 77056, 94464, 16, { 0, 0 }, 512 },
 };
 
-const char gTaskNameBosPc[] = "task_bos_pc";
+TaskDesc gTaskDescBosPc = {
+    "task_bos_pc",
+    (TaskInitFunc)task_bos_pc_0,
+    (TaskUpdateFunc)task_bos_pc_1,
+    (TaskFunc)task_bos_pc_2,
+    (TaskFunc)task_bos_pc_3,
+    0x1F1C,
+};
 
 const s8 gUnk_09A4CA94[33] = {
     4, 4, 4, 4, -4, -4, -4, -4, 3, 3, 3, 3, -3, -3, -3, -3, 2, 2, 2, 2, -2, -2, -2, -2, 1, 1, 1, 1, -1, -1, -1, -1, 0,
@@ -5113,18 +5120,16 @@ const s16 gUnk_09A4CAC4[3] = {
     6, 6, 6,
 };
 
-TaskDesc gTaskDescBosPc = {
-    gTaskNameBosPc,
-    (TaskInitFunc)task_bos_pc_0,
-    (TaskUpdateFunc)task_bos_pc_1,
-    (TaskFunc)task_bos_pc_2,
-    (TaskFunc)task_bos_pc_3,
-    0x1F1C,
-};
-
 const s8* gUnk_09EF9E04[2] = { gUnk_09A4CA94, gUnk_09A4CAB5 };
 
-const char gTaskNameBosPcFld[] = "task_bos_pc_fld";
+TaskDesc gTaskDescBosPcFld = {
+    "task_bos_pc_fld",
+    (TaskInitFunc)task_bos_pc_fld_0,
+    (TaskUpdateFunc)task_bos_pc_fld_1,
+    (TaskFunc)task_bos_pc_fld_2,
+    (TaskFunc)task_bos_pc_fld_3,
+    0x6C,
+};
 
 const s16 gUnk_09A4CADC[256] = {
     0, 6, 12, 18, 25, 31, 37, 43, 49, 56, 62, 68, 74, 80, 86, 92,
@@ -5179,15 +5184,6 @@ const UnkStruct_09A4CEDC gUnk_09A4CEDC[12] = {
     { -16, 1, 24, 12 },
 };
 
-TaskDesc gTaskDescBosPcFld = {
-    gTaskNameBosPcFld,
-    (TaskInitFunc)task_bos_pc_fld_0,
-    (TaskUpdateFunc)task_bos_pc_fld_1,
-    (TaskFunc)task_bos_pc_fld_2,
-    (TaskFunc)task_bos_pc_fld_3,
-    0x6C,
-};
-
 TaskDesc gTaskDescBosPcFlt = {
     "task_bos_pc_flt",
     (TaskInitFunc)task_bos_pc_flt_0,
@@ -5197,7 +5193,14 @@ TaskDesc gTaskDescBosPcFlt = {
     0xB4,
 };
 
-const char gTaskNameBosPcAcd[] = "task_bos_pc_acd";
+TaskDesc gTaskDescBosPcAcd = {
+    "task_bos_pc_acd",
+    (TaskInitFunc)task_bos_pc_acd_0,
+    (TaskUpdateFunc)task_bos_pc_acd_1,
+    (TaskFunc)task_bos_pc_acd_2,
+    (TaskFunc)task_bos_pc_acd_3,
+    0x38,
+};
 
 const EmyKind gBosLstEmyKind = { 40, 256, 8, 8, 0, 128, 0 };
 
@@ -5245,15 +5248,6 @@ void* const gUnk_09A4D194[18][2] = {
     { gUnk_09CCEDB4, gUnk_09D58274 },
     { gUnk_09CCF374, gUnk_09D58A74 },
     { gUnk_09CCFA54, gUnk_09D59274 },
-};
-
-TaskDesc gTaskDescBosPcAcd = {
-    gTaskNameBosPcAcd,
-    (TaskInitFunc)task_bos_pc_acd_0,
-    (TaskUpdateFunc)task_bos_pc_acd_1,
-    (TaskFunc)task_bos_pc_acd_2,
-    (TaskFunc)task_bos_pc_acd_3,
-    0x38,
 };
 
 TaskDesc gTaskDescBosLst = {
