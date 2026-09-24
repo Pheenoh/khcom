@@ -393,7 +393,6 @@ s32 func_08111BF4(s32 x);
 s32 func_08111BFC(s32 x);
 s32 func_08111F3C(s32 x);
 s32 func_08111F44(s32 x);
-s32 func_081125B4(s32 x);
 u8 func_08110668(LstWork* work);
 u8 func_08111A08(LstWork* work);
 u8 func_081115B4(LstWork* work);

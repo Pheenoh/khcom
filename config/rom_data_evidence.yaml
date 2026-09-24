@@ -2119,7 +2119,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFAEF8
   layer: 1
-  provenance: bos7.c task_bos_lst_edg_0 starts0; task_bos_lst_edg_1 starts1 at413. bos7.c task_bos_lst_ctr_0 starts3 at1583; later states select1 and2 at1648/1679. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: bos_lst_edg.c task_bos_lst_edg_0 starts0; task_bos_lst_edg_1 starts1 at413. bos_lst_ctr.c task_bos_lst_ctr_0 starts3 at1583; later states select1 and2 at1648/1679. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efaef8'
   targets:
     jp: '0x9ed2404'
@@ -2149,7 +2149,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFBF40
   layer: 1
-  provenance: bos7.c task_bos_lst_ptl_0 starts0; task_bos_lst_ptl_1 explicitly changes to1 at1360. bos7.c task_bos_lst_snp_0 starts only animation0 at1755; its sole frame refers gfx0. bos7.c task_bos_lst_fal_0 masks GetRandom with7 to index8 u16[2] gUnk_09A4FE64 records; first fields are0,1,2,3,2,3,4,5, proving animation0..5. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: bos_lst_ptl.c task_bos_lst_ptl_0 starts0; task_bos_lst_ptl_1 explicitly changes to1 at1360. bos_lst_snp.c task_bos_lst_snp_0 starts only animation0 at1755; its sole frame refers gfx0. bos_lst_fal.c task_bos_lst_fal_0 masks GetRandom with7 to index8 u16[2] gUnk_09A4FE64 records; first fields are0,1,2,3,2,3,4,5, proving animation0..5. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efbf40'
   targets:
     jp: '0x9ed34b8'
@@ -5659,7 +5659,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EFBEC4
   layer: 1
-  provenance: bos7.c task_bos_lst_lsr_1 explicitly selects animation6 and its draw callback directly uses gfx13. Three further header pointers are separate neutral scalars before independently referenced09EFBF40. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_lst_lsr.c task_bos_lst_lsr_1 explicitly selects animation6 and its draw callback directly uses gfx13. Three further header pointers are separate neutral scalars before independently referenced09EFBF40. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9efbec4'
   targets:
     jp: '0x9ed343c'

@@ -2846,6 +2846,10 @@ const u8 gUnkEu_09AB1F3C[2] = "~";
 
 StaffRollWork* gStaffRollWork;
 
+s32 func_081125B4(s32 x) {
+    return x * x;
+}
+
 void func_081125BC(StaffRollWork* w) {
     w->unk_078 = 0;
     w->unk_07C = 0;

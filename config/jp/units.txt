@@ -468,8 +468,15 @@ bos_pc_fld.c
 bos_pc_flt.c
 bos_pc_acd.c
 bos_lst.c
-bos7_tables.s
-bos7.c
+bos_lst_fld_tables.s
+bos_lst_fld.c
+bos_lst_edg.c
+bos_lst_bit.c
+bos_lst_lsr.c
+bos_lst_ptl.c
+bos_lst_fal.c
+bos_lst_ctr.c
+bos_lst_snp.c
 staff_roll_script_text.s
 mode_staffroll.c
 sprites_staff_roll_tiles_1.s
