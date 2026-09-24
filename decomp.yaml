@@ -137,7 +137,6 @@ tools:
             - src/battle_localized_data
             - src/battle_runtime
             - src/debug_menu_data
-            - src/enemy_tile_counts
             - src/event_background_data
             - src/event_chara_data
             - src/event_index_data

@@ -1,6 +1,16 @@
 #include "display.h"
 #include "mode_vsbattle.h"
 #include "enemy_common.h"
+#include "enemy_tile_counts.h"
+
+u16 gUnk_09EDA4EC[54] = {
+    32, 32, 32, 32, 32, 34, 28, 24, 32,
+    44, 50, 44, 52, 46, 72, 80, 88, 74,
+    76, 43, 86, 86, 88, 72, 74, 106, 110,
+    89, 100, 50, 50, 33, 128, 128, 128, 128,
+    128, 128, 128, 128, 128, 128, 128, 128, 128,
+    128, 80, 80, 128, 128, 128, 128, 128, 128,
+};
 
 void func_0800C778(EmyWork* work, const EmyDef* def, EmyObj* obj) {
     BtlObj* actor = &work->actor;

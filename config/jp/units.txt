@@ -20,7 +20,6 @@ mode_dummy.c
 mode_debflag.c
 mode_vsbattle.c
 formation_data.c
-enemy_tile_counts.c
 emy_common.c
 hum_common.c
 btl_actor.c
@@ -29,7 +28,6 @@ field_transition.c
 btl_vs.c
 btl_collision.c
 evt_data.c
-btl_effect_data.c
 btl_effect.c
 battle_runtime.c
 task.c
