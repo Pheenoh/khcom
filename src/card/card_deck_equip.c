@@ -58,6 +58,14 @@ u8* GetDeckName(u8 index);
 void SetActiveDeckIndex(u8 index);
 u8 GetActiveDeckIndex(void);
 
+#ifdef VERSION_JP
+const u8 gUnk_0903C008[] = "\x82\xf0";
+#elif defined(VERSION_EU)
+const u8 gUnk_0903C008[] = ".";
+#else
+const u16 gUnk_0903C008[2] = { '.', 0 };
+#endif
+
 void Deck_Equip_0(DeckConfirmWork* w, u8* a) {
     w->textSlotCount = 0;
     w->textSlotCount2 = 0;
@@ -77,7 +85,7 @@ void Deck_Equip_0(DeckConfirmWork* w, u8* a) {
     w->tiles = LoadObjTiles(gUnk_093F8C8E, 0xC00);
     w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
 #ifdef VERSION_JP
-    w->textSlotCount3 = LoadTextSlots((u8*)gUnk_0903BFD4 + 0x30, w->textSlots3);
+    w->textSlotCount3 = LoadTextSlots((u16*)gUnk_0903C008, w->textSlots3);
     w->x = (233 - GetTextSlotsWidth(w, w->textSlotCount) - GetTextSlotsWidth(w->textSlots3, w->textSlotCount3)) / 2;
     w->x3 = w->x + GetTextSlotsWidth(w, w->textSlotCount);
     w->y3 = 66;

@@ -2210,6 +2210,7 @@ TARGET_DATA_ADDR = {
         ("card_name.c", ".rodata"): 0x09009748,
         ("card_level_up.c", ".rodata"): 0x0900b438,
         ("card_lvup_msg.c", ".rodata"): 0x0900d480,
+        ("card_deck_equip.c", ".rodata"): 0x0900d48c,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2247,6 +2248,7 @@ TARGET_DATA_ADDR = {
         ("card_deckmenu2.c", ".rodata"): 0x090ce9e0,
         ("card_name.c", ".rodata"): 0x090cf648,
         ("card_level_up.c", ".rodata"): 0x090d1328,
+        ("card_deck_equip.c", ".rodata"): 0x090d1884,
     },
 }
 
