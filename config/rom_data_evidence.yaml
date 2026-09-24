@@ -2149,7 +2149,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFBF40
   layer: 1
-  provenance: bos_lst_ptl.c task_bos_lst_ptl_0 starts0; task_bos_lst_ptl_1 explicitly changes to1 at1360. bos_lst_snp.c task_bos_lst_snp_0 starts only animation0 at1755; its sole frame refers gfx0. bos_lst_fal.c task_bos_lst_fal_0 masks GetRandom with7 to index8 u16[2] gUnk_09A4FE64 records; first fields are0,1,2,3,2,3,4,5, proving animation0..5. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: bos_lst_ptl.c task_bos_lst_ptl_0 starts0; task_bos_lst_ptl_1 explicitly changes to1 at1360. bos_lst_snp.c task_bos_lst_snp_0 starts only animation0 at1755; its sole frame refers gfx0. bos_lst_fal.c task_bos_lst_fal_0 masks GetRandom with7 to index8 u16[2] gBosLstFalAnims records; first fields are0,1,2,3,2,3,4,5, proving animation0..5. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efbf40'
   targets:
     jp: '0x9ed34b8'

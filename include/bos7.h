@@ -327,7 +327,7 @@ typedef struct LstSnpArg {
     s16 unk_0C;
 } LstSnpArg;
 
-extern const LstFalAnim gUnk_09A4FE64[8];
+extern const LstFalAnim gBosLstFalAnims[8];
 extern u8 gUnk_09A4D234[];
 extern u8 gUnk_09A4F2B4[];
 extern const s32 gUnk_09A4FDDC[3];
