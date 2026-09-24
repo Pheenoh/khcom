@@ -340,8 +340,6 @@ extern const char gModeNameSioChgCard[];
 
 #endif
 extern const char gModeNameSioError[];
-extern const char gTaskNameBosJf[];
-extern const char gTaskNameBosJfMap[];
 extern const char gTaskNameBosJfLamp[];
 extern const char gTaskNameBosJfMajin[];
 extern const char gTaskNameBosDsd[];
@@ -349,9 +347,6 @@ extern const char gTaskNameBosDsdMain[];
 extern const char gTaskNameBosDsdMap[];
 extern const char gTaskNameBosDsdIta[];
 extern const char gTaskNameBosDsdRock[];
-extern const char gTaskNameBosDsdCircle[];
-extern const char gTaskNameBosDsdEnergy1[];
-extern const char gTaskNameBosDsdEnergy2[];
 extern const char gTaskNamePooPooh[];
 extern const char gTaskNamePooMap[];
 extern const char gTaskNamePooSora[];

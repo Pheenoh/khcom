@@ -4935,10 +4935,8 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
 void task_bos_dsd_energy2_3(void) {
 }
 
-const char gTaskNameBosJf[] = "task_bos_jf";
-
 TaskDesc gTaskDescBosJf = {
-    gTaskNameBosJf,
+    "task_bos_jf",
     (TaskInitFunc)task_bos_jf_0,
     (TaskUpdateFunc)task_bos_jf_1,
     (TaskFunc)task_bos_jf_2,
@@ -4983,10 +4981,8 @@ void* gUnk_09EF275C[2][15] = {
     },
 };
 
-const char gTaskNameBosJfMap[] = "task_bos_jf_map";
-
 TaskDesc gTaskDescBosJfMap = {
-    gTaskNameBosJfMap,
+    "task_bos_jf_map",
     (TaskInitFunc)task_bos_jf_map_0,
     (TaskUpdateFunc)task_bos_jf_map_1,
     0,
@@ -5208,12 +5204,6 @@ const s16 gUnk_0961A89E[9] = { -97, -98, -98, -94, -92, -88, -82, 0, 0 };
 
 const s16 gUnk_0961A8B0[10] = { 2, 2, 2, 0, 0, 0, -1, 0, 0, 0 };
 
-const char gTaskNameBosDsdCircle[] = "task_bos_dsd_circle";
-
-const char gTaskNameBosDsdEnergy1[] = "task_bos_dsd_energy1";
-
-const char gTaskNameBosDsdEnergy2[] = "task_bos_dsd_energy2";
-
 TaskDesc gTaskDescBosJfRock = {
     gTaskNameBosJfRock,
     (TaskInitFunc)task_bos_jf_rock_0,
@@ -5414,7 +5404,7 @@ TaskDesc gTaskDescBosDsdRock = {
 };
 
 TaskDesc gTaskDescBosDsdCircle = {
-    gTaskNameBosDsdCircle,
+    "task_bos_dsd_circle",
     (TaskInitFunc)task_bos_dsd_circle_0,
     (TaskUpdateFunc)task_bos_dsd_circle_1,
     (TaskFunc)task_bos_dsd_circle_2,
@@ -5423,7 +5413,7 @@ TaskDesc gTaskDescBosDsdCircle = {
 };
 
 TaskDesc gTaskDescBosDsdEnergy1 = {
-    gTaskNameBosDsdEnergy1,
+    "task_bos_dsd_energy1",
     (TaskInitFunc)task_bos_dsd_energy1_0,
     (TaskUpdateFunc)task_bos_dsd_energy1_1,
     (TaskFunc)task_bos_dsd_energy1_2,
@@ -5432,7 +5422,7 @@ TaskDesc gTaskDescBosDsdEnergy1 = {
 };
 
 TaskDesc gTaskDescBosDsdEnergy2 = {
-    gTaskNameBosDsdEnergy2,
+    "task_bos_dsd_energy2",
     (TaskInitFunc)task_bos_dsd_energy2_0,
     (TaskUpdateFunc)task_bos_dsd_energy2_1,
     (TaskFunc)task_bos_dsd_energy2_2,

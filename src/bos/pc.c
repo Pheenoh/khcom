@@ -2,8 +2,6 @@
 #include "pc.h"
 #include "pc_api.h"
 
-const char gTaskNamePcAcddmg[] = "task_pc_acddmg";
-
 void task_pc_acddmg_0(PcAcdDmgWork* work, BtlObj* obj) {
     work->actor = obj;
     work->unk_02 = 0;
@@ -103,4 +101,4 @@ s32 func_08049F50(PcCharaWork* work) {
     return 0;
 }
 
-TaskDesc gTaskDescPcAcddmg = { gTaskNamePcAcddmg, task_pc_acddmg_0, task_pc_acddmg_1, 0, 0, 0xC };
+TaskDesc gTaskDescPcAcddmg = { "task_pc_acddmg", task_pc_acddmg_0, task_pc_acddmg_1, 0, 0, 0xC };

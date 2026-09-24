@@ -80,10 +80,8 @@ void func_080C7024(u16* in) {
     gUnk_0203C3BC = in[1];
 }
 
-const char gTaskNameBosJfShadow[] = "task_bos_jf_shadow";
-
 TaskDesc gTaskDescBosJfShadow = {
-    gTaskNameBosJfShadow,
+    "task_bos_jf_shadow",
     (TaskInitFunc)task_bos_jf_shadow_0,
     (TaskUpdateFunc)task_bos_jf_shadow_1,
     (TaskFunc)task_bos_jf_shadow_2,

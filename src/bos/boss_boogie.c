@@ -478,10 +478,8 @@ u32 GetBoogieDiceState(void) {
     return 11;
 }
 
-const char gTaskNameBosBoogie[] = "task_bos_boogie";
-
 TaskDesc gTaskDescBosBoogie = {
-    gTaskNameBosBoogie,
+    "task_bos_boogie",
     (TaskInitFunc)task_bos_boogie_0,
     (TaskUpdateFunc)task_bos_boogie_1,
     (TaskFunc)task_bos_boogie_2,

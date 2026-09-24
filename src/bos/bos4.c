@@ -67,10 +67,8 @@ TaskDesc gTaskDescBosBoogieDice = {
     0x174,
 };
 
-const char gTaskNameBosBoogieExplosiondice[] = "task_bos_boogie_explosiondice";
-
 TaskDesc gTaskDescBosBoogieExplosiondice = {
-    gTaskNameBosBoogieExplosiondice,
+    "task_bos_boogie_explosiondice",
     (TaskInitFunc)task_bos_boogie_explosiondice_0,
     (TaskUpdateFunc)task_bos_boogie_explosiondice_1,
     (TaskFunc)task_bos_boogie_explosiondice_2,
@@ -78,10 +76,8 @@ TaskDesc gTaskDescBosBoogieExplosiondice = {
     0x160,
 };
 
-const char gTaskNameBosBoogieSaku[] = "task_bos_boogie_saku";
-
 TaskDesc gTaskDescBosBoogieSaku = {
-    gTaskNameBosBoogieSaku,
+    "task_bos_boogie_saku",
     (TaskInitFunc)task_bos_boogie_saku_0,
     (TaskUpdateFunc)task_bos_boogie_saku_1,
     (TaskFunc)task_bos_boogie_saku_2,
@@ -349,10 +345,8 @@ const u16* gUnk_09EF5190[12] = {
 #endif
 };
 
-const char gTaskNameBosUrsula[] = "task_bos_ursula";
-
 TaskDesc gTaskDescBosUrsula = {
-    gTaskNameBosUrsula,
+    "task_bos_ursula",
     (TaskInitFunc)task_bos_ursula_0,
     (TaskUpdateFunc)task_bos_ursula_1,
     (TaskFunc)task_bos_ursula_2,
@@ -360,10 +354,8 @@ TaskDesc gTaskDescBosUrsula = {
     0x164,
 };
 
-const char gTaskNameBosUrsulaMap[] = "task_bos_ursula_map";
-
 TaskDesc gTaskDescBosUrsulaMap = {
-    gTaskNameBosUrsulaMap,
+    "task_bos_ursula_map",
     (TaskInitFunc)task_bos_ursula_map_0,
     (TaskUpdateFunc)task_bos_ursula_map_1,
     0,
@@ -384,10 +376,8 @@ TaskDesc gTaskDescBosUrsulaBorder = {
     0x8,
 };
 
-const char gTaskNameBosUrsulaTako[] = "task_bos_ursula_tako";
-
 TaskDesc gTaskDescBosUrsulaTako = {
-    gTaskNameBosUrsulaTako,
+    "task_bos_ursula_tako",
     (TaskInitFunc)task_bos_ursula_tako_0,
     (TaskUpdateFunc)task_bos_ursula_tako_1,
     (TaskFunc)task_bos_ursula_tako_2,
@@ -426,10 +416,8 @@ TaskDesc gTaskDescBosUrsulaBacktako = {
     0x44,
 };
 
-const char gTaskNameBosUrsulaMapanime[] = "task_bos_ursula_mapanime";
-
 TaskDesc gTaskDescBosUrsulaMapanime = {
-    gTaskNameBosUrsulaMapanime,
+    "task_bos_ursula_mapanime",
     (TaskInitFunc)task_bos_ursula_mapanime_0,
     (TaskUpdateFunc)task_bos_ursula_mapanime_1,
     (TaskFunc)task_bos_ursula_mapanime_2,

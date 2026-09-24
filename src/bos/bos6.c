@@ -5188,10 +5188,8 @@ TaskDesc gTaskDescBosPcFld = {
     0x6C,
 };
 
-const char gTaskNameBosPcFlt[] = "task_bos_pc_flt";
-
 TaskDesc gTaskDescBosPcFlt = {
-    gTaskNameBosPcFlt,
+    "task_bos_pc_flt",
     (TaskInitFunc)task_bos_pc_flt_0,
     (TaskUpdateFunc)task_bos_pc_flt_1,
     (TaskFunc)task_bos_pc_flt_2,
@@ -5258,10 +5256,8 @@ TaskDesc gTaskDescBosPcAcd = {
     0x38,
 };
 
-const char gTaskNameBosLst[] = "task_bos_lst";
-
 TaskDesc gTaskDescBosLst = {
-    gTaskNameBosLst,
+    "task_bos_lst",
     (TaskInitFunc)task_bos_lst_0,
     (TaskUpdateFunc)task_bos_lst_1,
     (TaskFunc)task_bos_lst_2,

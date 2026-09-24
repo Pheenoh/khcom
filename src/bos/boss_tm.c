@@ -272,10 +272,6 @@ const TmAnimFrame gUnk_0961A5D8[5] = {
 
 const u16 gUnk_0961A63C[6] = { 24, 26, 28, 30, 28, 26 };
 
-const char gTaskNameBosTmArm[] = "task_bos_tm_arm";
-
-const char gTaskNameBosTmTbl[] = "task_bos_tm_tbl";
-
 static Task* gBosTmBodyTask;
 static Task* gBosTmArmTask;
 static Task* gBosTmFootTask;
@@ -3030,7 +3026,7 @@ TaskDesc gTaskDescBosTmClb = {
 };
 
 TaskDesc gTaskDescBosTmArm = {
-    gTaskNameBosTmArm,
+    "task_bos_tm_arm",
     (TaskInitFunc)task_bos_tm_arm_0,
     (TaskUpdateFunc)task_bos_tm_arm_1,
     (TaskFunc)task_bos_tm_arm_2,
@@ -3039,7 +3035,7 @@ TaskDesc gTaskDescBosTmArm = {
 };
 
 TaskDesc gTaskDescBosTmTbl = {
-    gTaskNameBosTmTbl,
+    "task_bos_tm_tbl",
     (TaskInitFunc)task_bos_tm_tbl_0,
     (TaskUpdateFunc)task_bos_tm_tbl_1,
     0,

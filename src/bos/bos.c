@@ -2,10 +2,6 @@
 #include "bos.h"
 #include "sprites_btl.h"
 
-const char gTaskNameBosMap[] = "task_bos_map";
-
-const char gTaskNameBosShadow[] = "task_bos_shadow";
-
 void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
     LoadBgTiles(0, cfg->tiles, cfg->tilesSize);
     LoadBgPalette(0, cfg->palette, cfg->paletteSize);
@@ -113,6 +109,6 @@ void task_bos_shadow_3(BosShadowWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-TaskDesc gTaskDescBosMap = { gTaskNameBosMap, task_bos_map_0, task_bos_map_1, 0, 0, 0x4 };
+TaskDesc gTaskDescBosMap = { "task_bos_map", task_bos_map_0, task_bos_map_1, 0, 0, 0x4 };
 
-TaskDesc gTaskDescBosShadow = { gTaskNameBosShadow, task_bos_shadow_0, task_bos_shadow_1, task_bos_shadow_2, task_bos_shadow_3, 0xC };
+TaskDesc gTaskDescBosShadow = { "task_bos_shadow", task_bos_shadow_0, task_bos_shadow_1, task_bos_shadow_2, task_bos_shadow_3, 0xC };
