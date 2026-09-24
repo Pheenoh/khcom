@@ -2714,23 +2714,6 @@ regions:
       - ['0x0815C178', 26]
       - ['0x0815C360', 18]
       - ['0x0815C372', 22]
-    - group: placeholders
-      encoding: utf16le
-      symbol_prefix: gUnk_
-      literals:
-      - ['0x08159D14', 4]
-      - ['0x08159D18', 6]
-      - ['0x08159D1E', 8]
-      - ['0x08159D26', 10]
-      - ['0x08159D30', 12]
-      - ['0x08159D3C', 14]
-      - ['0x08159D4A', 16]
-      - ['0x08159D5A', 18]
-      - ['0x08159D6C', 20]
-      - ['0x08159D80', 22]
-      - ['0x08159D96', 24]
-      - ['0x08159DAE', 26]
-      - ['0x08159DC8', 28]
     named_assets: []
   jp:
     assets:
@@ -4500,23 +4483,6 @@ regions:
       - ['0x0814FAA8', 15]
       - ['0x0814FAB8', 21]
       - ['0x0814FB0C', 11]
-    - group: placeholders
-      encoding: shift_jis
-      symbol_prefix: gUnkJp_
-      literals:
-      - ['0x0814E494', 27]
-      - ['0x0814E4B0', 25]
-      - ['0x0814E4CC', 23]
-      - ['0x0814E4E4', 21]
-      - ['0x0814E4FC', 19]
-      - ['0x0814E510', 17]
-      - ['0x0814E524', 15]
-      - ['0x0814E534', 13]
-      - ['0x0814E544', 11]
-      - ['0x0814E550', 9]
-      - ['0x0814E55C', 7]
-      - ['0x0814E564', 5]
-      - ['0x0814E56C', 3]
     named_assets: []
   eu:
     assets:
@@ -4538,21 +4504,4 @@ regions:
       - ['0x08895476', 7]
       - ['0x0889547D', 7]
       - ['0x08895484', 7]
-    - group: placeholders
-      encoding: singlebyte
-      symbol_prefix: gUnkEu_
-      literals:
-      - ['0x0887F2CC', 2]
-      - ['0x0887F2CE', 3]
-      - ['0x0887F2D1', 4]
-      - ['0x0887F2D5', 5]
-      - ['0x0887F2DA', 6]
-      - ['0x0887F2E0', 7]
-      - ['0x0887F2E7', 8]
-      - ['0x0887F2EF', 9]
-      - ['0x0887F2F8', 10]
-      - ['0x0887F302', 11]
-      - ['0x0887F30D', 12]
-      - ['0x0887F319', 13]
-      - ['0x0887F326', 14]
     named_assets: []

@@ -2121,7 +2121,7 @@ TARGET_DATA_SIZE = {
         ("btl_hud_localized_data.c", ".data"): 0x31C,
         ("actor_localized_data.c", ".data"): 0x124,
         ("card_label_sprite_data.c", ".data"): 0xE74,
-        ("jiminy_records_data.c", ".rodata"): 0x42C4,
+        ("mode_jiminy.c", ".rodata"): 0x4338,
         ("mode_chkobj.c", ".data"): 0x9A90,
         ("mode_sio.c", ".data"): 0x214,
         ("mode_battle.c", ".rodata"): 0x914,
@@ -2226,13 +2226,13 @@ TARGET_DATA_SIZE = {
         ("card_localized_deck_labels_data.c", ".data"): 0x2c,
         ("mode_staffroll.c", ".data"): 0xba0,
         ("jiminy_inline_text_data.c", ".rodata"): 0x1c9,
+        ("mode_jiminy.c", ".rodata"): 0x48a8,
     },
 }
 
 TARGET_DATA_ADDR = {
     "jp": {
         ("jiminy_inline_text_data.c", ".rodata"): 0x0813feb8,
-        ("mode_jiminy.c", ".rodata"): 0x0814e570,
         ("monsgage.c", ".rodata"): 0x0814fc14,
         ("btl4.c", ".rodata"): 0x0814fc24,
         ("tutorial.c", ".rodata"): 0x0814fc68,
@@ -2242,7 +2242,6 @@ TARGET_DATA_ADDR = {
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
         ("jiminy_eu_localized_text_data.c", ".rodata"): 0x0883f2db,
-        ("mode_jiminy.c", ".rodata"): 0x0887f334,
         ("jiminy_inline_text_data.c", ".rodata"): 0x0888e310,
         ("jiminy_eu_localized_name_data.c", ".rodata"): 0x0888e530,
         ("map_text_eu_castle_oblivion_hall_name.c", ".rodata"): 0x088926fc,
@@ -2311,7 +2310,6 @@ TARGET_BLOB_REGIONS = {
     ),
     "eu": (
         (0x0812FB22, "rodata_movie_alignment"),
-        (0x0887F2CC, "jiminy_placeholder_text"),
         (0x0888E4D4, "jiminy_eu_localized_name_data_rodata"),
         (0x08F8EA09, "msg_localized_text"),
         (0x090D1DBF, "card_sysmsgwin_rodata"),

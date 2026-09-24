@@ -2695,19 +2695,19 @@ extern JiminyTextChar gUnk_0815C10E[20];
 extern JiminyTextChar gUnk_0815C178[13];
 extern JiminyTextChar gUnk_0815C360[9];
 extern JiminyTextChar gUnk_0815C372[11];
-extern JiminyTextChar gUnk_08159D14[2];
-extern JiminyTextChar gUnk_08159D18[3];
-extern JiminyTextChar gUnk_08159D1E[4];
-extern JiminyTextChar gUnk_08159D26[5];
-extern JiminyTextChar gUnk_08159D30[6];
-extern JiminyTextChar gUnk_08159D3C[7];
-extern JiminyTextChar gUnk_08159D4A[8];
-extern JiminyTextChar gUnk_08159D5A[9];
-extern JiminyTextChar gUnk_08159D6C[10];
-extern JiminyTextChar gUnk_08159D80[11];
-extern JiminyTextChar gUnk_08159D96[12];
-extern JiminyTextChar gUnk_08159DAE[13];
-extern JiminyTextChar gUnk_08159DC8[14];
+extern const JiminyTextChar gUnk_08159D14[2];
+extern const JiminyTextChar gUnk_08159D18[3];
+extern const JiminyTextChar gUnk_08159D1E[4];
+extern const JiminyTextChar gUnk_08159D26[5];
+extern const JiminyTextChar gUnk_08159D30[6];
+extern const JiminyTextChar gUnk_08159D3C[7];
+extern const JiminyTextChar gUnk_08159D4A[8];
+extern const JiminyTextChar gUnk_08159D5A[9];
+extern const JiminyTextChar gUnk_08159D6C[10];
+extern const JiminyTextChar gUnk_08159D80[11];
+extern const JiminyTextChar gUnk_08159D96[12];
+extern const JiminyTextChar gUnk_08159DAE[13];
+extern const JiminyTextChar gUnk_08159DC8[14];
 
 #elif defined(VERSION_JP)
 
@@ -4469,19 +4469,19 @@ extern JiminyTextChar gUnkJp_0814FAA0[7];
 extern JiminyTextChar gUnkJp_0814FAA8[15];
 extern JiminyTextChar gUnkJp_0814FAB8[21];
 extern JiminyTextChar gUnkJp_0814FB0C[11];
-extern JiminyTextChar gUnkJp_0814E494[27];
-extern JiminyTextChar gUnkJp_0814E4B0[25];
-extern JiminyTextChar gUnkJp_0814E4CC[23];
-extern JiminyTextChar gUnkJp_0814E4E4[21];
-extern JiminyTextChar gUnkJp_0814E4FC[19];
-extern JiminyTextChar gUnkJp_0814E510[17];
-extern JiminyTextChar gUnkJp_0814E524[15];
-extern JiminyTextChar gUnkJp_0814E534[13];
-extern JiminyTextChar gUnkJp_0814E544[11];
-extern JiminyTextChar gUnkJp_0814E550[9];
-extern JiminyTextChar gUnkJp_0814E55C[7];
-extern JiminyTextChar gUnkJp_0814E564[5];
-extern JiminyTextChar gUnkJp_0814E56C[3];
+extern const JiminyTextChar gUnkJp_0814E494[27];
+extern const JiminyTextChar gUnkJp_0814E4B0[25];
+extern const JiminyTextChar gUnkJp_0814E4CC[23];
+extern const JiminyTextChar gUnkJp_0814E4E4[21];
+extern const JiminyTextChar gUnkJp_0814E4FC[19];
+extern const JiminyTextChar gUnkJp_0814E510[17];
+extern const JiminyTextChar gUnkJp_0814E524[15];
+extern const JiminyTextChar gUnkJp_0814E534[13];
+extern const JiminyTextChar gUnkJp_0814E544[11];
+extern const JiminyTextChar gUnkJp_0814E550[9];
+extern const JiminyTextChar gUnkJp_0814E55C[7];
+extern const JiminyTextChar gUnkJp_0814E564[5];
+extern const JiminyTextChar gUnkJp_0814E56C[3];
 
 #elif defined(VERSION_EU)
 

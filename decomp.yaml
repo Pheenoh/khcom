@@ -150,7 +150,6 @@ tools:
             - src/jiminy_data
             - src/jiminy_inline_text_data
             - src/jiminy_list
-            - src/jiminy_records_data
             - src/localized_resource_data
             - src/memory_regions
             - src/moogle_data
