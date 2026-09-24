@@ -73,7 +73,6 @@ const LocalizedText gMapNameEu_088933D4 = { {
     gMapNameTextEu_0889339E,
     gMapNameTextEu_088933AF,
     gMapNameTextEu_088933BF,
-    
 } };
 
 const u8 gMapNameTextEu_088933E8[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'F', 'i', 'r', 's', 't', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -92,7 +91,6 @@ const LocalizedText gMapNameEu_08893480 = { {
     gMapNameTextEu_0889341F,
     gMapNameTextEu_08893440,
     gMapNameTextEu_0889345B,
-    
 } };
 
 const u8 gMapNameTextEu_08893494[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'S', 'e', 'c', 'o', 'n', 'd', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -111,7 +109,6 @@ const LocalizedText gMapNameEu_0889352C = { {
     gMapNameTextEu_088934CC,
     gMapNameTextEu_088934ED,
     gMapNameTextEu_08893508,
-    
 } };
 
 const u8 gMapNameTextEu_08893540[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'T', 'h', 'i', 'r', 'd', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -130,7 +127,6 @@ const LocalizedText gMapNameEu_088935D8 = { {
     gMapNameTextEu_08893577,
     gMapNameTextEu_08893598,
     gMapNameTextEu_088935B3,
-    
 } };
 
 const u8 gMapNameTextEu_088935EC[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'F', 'o', 'u', 'r', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -149,7 +145,6 @@ const LocalizedText gMapNameEu_08893684 = { {
     gMapNameTextEu_08893624,
     gMapNameTextEu_08893645,
     gMapNameTextEu_08893660,
-    
 } };
 
 const u8 gMapNameTextEu_08893698[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'F', 'i', 'f', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -168,7 +163,6 @@ const LocalizedText gMapNameEu_08893730 = { {
     gMapNameTextEu_088936CF,
     gMapNameTextEu_088936F0,
     gMapNameTextEu_0889370B,
-    
 } };
 
 const u8 gMapNameTextEu_08893744[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'S', 'i', 'x', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -187,7 +181,6 @@ const LocalizedText gMapNameEu_088937DC = { {
     gMapNameTextEu_0889377B,
     gMapNameTextEu_0889379C,
     gMapNameTextEu_088937B7,
-    
 } };
 
 const u8 gMapNameTextEu_088937F0[31] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'S', 'e', 'v', 'e', 'n', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -206,7 +199,6 @@ const LocalizedText gMapNameEu_0889388C = { {
     gMapNameTextEu_08893829,
     gMapNameTextEu_0889384A,
     gMapNameTextEu_08893865,
-    
 } };
 
 const u8 gMapNameTextEu_088938A0[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'E', 'i', 'g', 'h', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -225,7 +217,6 @@ const LocalizedText gMapNameEu_08893938 = { {
     gMapNameTextEu_088938D8,
     gMapNameTextEu_088938F9,
     gMapNameTextEu_08893914,
-    
 } };
 
 const u8 gMapNameTextEu_0889394C[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'N', 'i', 'n', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -244,7 +235,6 @@ const LocalizedText gMapNameEu_088939E4 = { {
     gMapNameTextEu_08893983,
     gMapNameTextEu_088939A4,
     gMapNameTextEu_088939BF,
-    
 } };
 
 const u8 gMapNameTextEu_088939F8[29] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'T', 'e', 'n', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -263,7 +253,6 @@ const LocalizedText gMapNameEu_08893A94 = { {
     gMapNameTextEu_08893A30,
     gMapNameTextEu_08893A52,
     gMapNameTextEu_08893A6E,
-    
 } };
 
 const u8 gMapNameTextEu_08893AA8[32] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'E', 'l', 'e', 'v', 'e', 'n', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -282,7 +271,6 @@ const LocalizedText gMapNameEu_08893B48 = { {
     gMapNameTextEu_08893AE3,
     gMapNameTextEu_08893B05,
     gMapNameTextEu_08893B21,
-    
 } };
 
 const u8 gMapNameTextEu_08893B5C[31] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'T', 'w', 'e', 'l', 'f', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -301,7 +289,6 @@ const LocalizedText gMapNameEu_08893BFC = { {
     gMapNameTextEu_08893B96,
     gMapNameTextEu_08893BB8,
     gMapNameTextEu_08893BD4,
-    
 } };
 
 const u8 gMapNameTextEu_08893C10[34] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'T', 'h', 'i', 'r', 't', 'e', 'e', 'n', 't', 'h', ' ', 'F', 'l', 'o', 'o', 'r', 0 };
@@ -320,7 +307,6 @@ const LocalizedText gMapNameEu_08893CB8 = { {
     gMapNameTextEu_08893C4D,
     gMapNameTextEu_08893C6F,
     gMapNameTextEu_08893C8B,
-    
 } };
 
 const u8 gMapNameTextEu_08893CCC[33] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'T', 'w', 'e', 'l', 'v', 'e', 0 };
@@ -339,7 +325,6 @@ const LocalizedText gMapNameEu_08893D78 = { {
     gMapNameTextEu_08893D0A,
     gMapNameTextEu_08893D35,
     gMapNameTextEu_08893D52,
-    
 } };
 
 const u8 gMapNameTextEu_08893D8C[33] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'E', 'l', 'e', 'v', 'e', 'n', 0 };
@@ -358,7 +343,6 @@ const LocalizedText gMapNameEu_08893E38 = { {
     gMapNameTextEu_08893DCA,
     gMapNameTextEu_08893DF5,
     gMapNameTextEu_08893E12,
-    
 } };
 
 const u8 gMapNameTextEu_08893E4C[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'T', 'e', 'n', 0 };
@@ -377,7 +361,6 @@ const LocalizedText gMapNameEu_08893EF4 = { {
     gMapNameTextEu_08893E87,
     gMapNameTextEu_08893EB2,
     gMapNameTextEu_08893ECF,
-    
 } };
 
 const u8 gMapNameTextEu_08893F08[31] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'N', 'i', 'n', 'e', 0 };
@@ -396,7 +379,6 @@ const LocalizedText gMapNameEu_08893FAC = { {
     gMapNameTextEu_08893F43,
     gMapNameTextEu_08893F6D,
     gMapNameTextEu_08893F89,
-    
 } };
 
 const u8 gMapNameTextEu_08893FC0[32] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'E', 'i', 'g', 'h', 't', 0 };
@@ -415,7 +397,6 @@ const LocalizedText gMapNameEu_08894068 = { {
     gMapNameTextEu_08893FFC,
     gMapNameTextEu_08894026,
     gMapNameTextEu_08894042,
-    
 } };
 
 const u8 gMapNameTextEu_0889407C[32] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'S', 'e', 'v', 'e', 'n', 0 };
@@ -434,7 +415,6 @@ const LocalizedText gMapNameEu_08894124 = { {
     gMapNameTextEu_088940B8,
     gMapNameTextEu_088940E2,
     gMapNameTextEu_088940FE,
-    
 } };
 
 const u8 gMapNameTextEu_08894138[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'S', 'i', 'x', 0 };
@@ -453,7 +433,6 @@ const LocalizedText gMapNameEu_088941DC = { {
     gMapNameTextEu_08894172,
     gMapNameTextEu_0889419C,
     gMapNameTextEu_088941B8,
-    
 } };
 
 const u8 gMapNameTextEu_088941F0[31] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'F', 'i', 'v', 'e', 0 };
@@ -472,7 +451,6 @@ const LocalizedText gMapNameEu_08894294 = { {
     gMapNameTextEu_0889422B,
     gMapNameTextEu_08894255,
     gMapNameTextEu_08894271,
-    
 } };
 
 const u8 gMapNameTextEu_088942A8[31] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'F', 'o', 'u', 'r', 0 };
@@ -491,7 +469,6 @@ const LocalizedText gMapNameEu_0889434C = { {
     gMapNameTextEu_088942E3,
     gMapNameTextEu_0889430D,
     gMapNameTextEu_08894329,
-    
 } };
 
 const u8 gMapNameTextEu_08894360[32] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'T', 'h', 'r', 'e', 'e', 0 };
@@ -510,7 +487,6 @@ const LocalizedText gMapNameEu_08894408 = { {
     gMapNameTextEu_0889439C,
     gMapNameTextEu_088943C6,
     gMapNameTextEu_088943E2,
-    
 } };
 
 const u8 gMapNameTextEu_0889441C[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'T', 'w', 'o', 0 };
@@ -529,7 +505,6 @@ const LocalizedText gMapNameEu_088944C0 = { {
     gMapNameTextEu_08894456,
     gMapNameTextEu_08894480,
     gMapNameTextEu_0889449C,
-    
 } };
 
 const u8 gMapNameTextEu_088944D4[30] = { 'C', 'a', 's', 't', 'l', 'e', ' ', 'O', 'b', 'l', 'i', 'v', 'i', 'o', 'n', ',', ' ', 'B', 'a', 's', 'e', 'm', 'e', 'n', 't', ' ', 'O', 'n', 'e', 0 };
@@ -548,7 +523,6 @@ const LocalizedText gMapNameEu_08894578 = { {
     gMapNameTextEu_0889450E,
     gMapNameTextEu_08894538,
     gMapNameTextEu_08894554,
-    
 } };
 
 const JiminyTextChar gUnkEu_0889458C[12] = { 'I', 'n', 'c', 'r', 'e', 'm', 'e', 'n', 't', 'o', 'r', 0 };
