@@ -17,25 +17,3 @@ regions:
       address: '0x814f2e0'
       size: 17
       encoding: shift_jis
-  eu:
-    named_assets:
-    - name: gMapWorldNameTextEu_08892680
-      address: '0x8892680'
-      size: 22
-      encoding: singlebyte
-    - name: gMapWorldNameTextEu_08892696
-      address: '0x8892696'
-      size: 22
-      encoding: singlebyte
-    - name: gMapWorldNameTextEu_088926AC
-      address: '0x88926ac'
-      size: 29
-      encoding: singlebyte
-    - name: gMapWorldNameTextEu_088926C9
-      address: '0x88926c9'
-      size: 23
-      encoding: singlebyte
-    - name: gMapWorldNameTextEu_088926E0
-      address: '0x88926e0'
-      size: 26
-      encoding: singlebyte

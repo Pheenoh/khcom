@@ -11,11 +11,11 @@ extern u16 gMapWorldNameTextUs_0815B57A[22];
 extern u8 gMapWorldNameTextJp_0814F2E0[17];
 #endif
 #ifdef VERSION_EU
-extern u8 gMapWorldNameTextEu_08892680[22];
-extern u8 gMapWorldNameTextEu_08892696[22];
-extern u8 gMapWorldNameTextEu_088926AC[29];
-extern u8 gMapWorldNameTextEu_088926C9[23];
-extern u8 gMapWorldNameTextEu_088926E0[26];
+extern const u8 gMapWorldNameTextEu_08892680[22];
+extern const u8 gMapWorldNameTextEu_08892696[22];
+extern const u8 gMapWorldNameTextEu_088926AC[29];
+extern const u8 gMapWorldNameTextEu_088926C9[23];
+extern const u8 gMapWorldNameTextEu_088926E0[26];
 #endif
 
 #endif

@@ -4493,15 +4493,5 @@ regions:
     - group: names
       encoding: singlebyte
       symbol_prefix: gUnkEu_
-      literals:
-      - ['0x0888E4D4', 17]
-      - ['0x0888E4E5', 20]
-      - ['0x0888E4F9', 17]
-      - ['0x0888E50A', 16]
-      - ['0x0888E51A', 19]
-      - ['0x08895468', 7]
-      - ['0x0889546F', 7]
-      - ['0x08895476', 7]
-      - ['0x0889547D', 7]
-      - ['0x08895484', 7]
+      literals: []
     named_assets: []
