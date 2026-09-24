@@ -404,7 +404,6 @@ map_runtime_rodata.s
 map_runtime.c
 map.c
 map_tasks.c
-map_text_data.c
 room.c
 map_room_index_data.c
 map_fixed_data.c
