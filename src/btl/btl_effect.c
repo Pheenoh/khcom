@@ -299,11 +299,11 @@ BgFx* gBgFx;
 
 void func_08012674(void) {
     if (gBtlWork->flags & 4) {
-        SetBgPriority(gBgFx->unk_00, 0);
+        SetBgPriority(gBgFx->bg, 0);
     } else {
-        SetBgPriority(gBgFx->unk_00, 1);
+        SetBgPriority(gBgFx->bg, 1);
     }
-    SetBgBlend(gBgFx->unk_00, 16, 16);
+    SetBgBlend(gBgFx->bg, 16, 16);
     gBgFx->unk_1C = 0x100;
     gBgFx->unk_20 = 0x100;
     gBgFx->unk_24 = 0;
@@ -359,7 +359,7 @@ void BgFxInit(u16 a, u16 bg) {
     SetBgBlend(bg, 16, 16);
     gBgFx->update = 0;
     gBgFx->unk_38 = 0xFF;
-    gBgFx->unk_00 = bg;
+    gBgFx->bg = bg;
     func_08012674();
     gBgFx->flags = 0;
 }
@@ -374,7 +374,7 @@ void BgFxUpdate(void) {
         gBgFx->flags &= 0xFFFD;
         gBgFx->update = 0;
         BgAnimStop();
-        SetBgBlend(gBgFx->unk_00, 16, 16);
+        SetBgBlend(gBgFx->bg, 16, 16);
     }
 
     if (gBgFx->update != 0) {
@@ -384,9 +384,9 @@ void BgFxUpdate(void) {
             gBtlWork->unk_0D0 = gBgFx->y;
 
             if (gBgFx->flags & 0x10) {
-                SetBgPriority(gBgFx->unk_00, 0);
+                SetBgPriority(gBgFx->bg, 0);
             } else if (gBgFx->flags & 0x20) {
-                SetBgPriority(gBgFx->unk_00, 1);
+                SetBgPriority(gBgFx->bg, 1);
                 gBtlWork->unk_0D8 = 0xFF00;
             } else {
                 gBtlWork->unk_0D8 = 8;
@@ -408,7 +408,7 @@ void func_08012908(void) {
     s16 sy;
 
     if (BgAnimIsStopped()) {
-        SetBgBlend(gBgFx->unk_00, 16, 16);
+        SetBgBlend(gBgFx->bg, 16, 16);
         gBgFx->update = 0;
         gBgFx->flags &= ~2;
 
@@ -442,8 +442,8 @@ void func_08012908(void) {
     if (gBgFx->flags & 4) {
         BgAnimSetTransform(gBgFx->unk_24 + gBtlWork->unk_018, gBgFx->unk_1C, gBgFx->unk_20);
     } else {
-        s32 a = gBgFx->unk_1C * gBtlWork->unk_024 >> 8;
-        s32 b = gBgFx->unk_20 * gBtlWork->unk_024 >> 8;
+        s32 a = gBgFx->unk_1C * gBtlWork->scale >> 8;
+        s32 b = gBgFx->unk_20 * gBtlWork->scale >> 8;
 
         BgAnimSetTransform(gBgFx->unk_24 + gBtlWork->unk_018, a, b);
     }
@@ -487,7 +487,7 @@ void func_08012AAC(u16 a, s32 x, s32 y, s32 z) {
         m4aSongNumStart(SONG_EF_CAREL02);
         break;
     }
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
     gBgFx->update = func_08012908;
 }
@@ -625,7 +625,7 @@ void func_08012E44(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         gBgFx->flags |= 1;
         gBgFx->unk_1C = -0x100;
     }
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
@@ -658,7 +658,7 @@ void func_08012F74(s32 x, s32 y, s32 z, u8 f, s32 unused, s32 w, u16 a) {
         gBgFx->unk_1C = 0x180;
     }
     gBgFx->unk_20 = 0x180;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08013070(void) {
@@ -799,7 +799,7 @@ void func_08013308(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w)
         gBgFx->unk_1C = -0x100;
         gBgFx->flags |= 1;
     }
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -1063,7 +1063,7 @@ void func_08013A68(s32 x, s32 y, s32 z) {
     BgAnimStart(&gUnk_09EDA6C0, sx, sy);
     m4aSongNumStart(SONG_EF_POSION);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08013B00(void) {
@@ -1138,7 +1138,7 @@ void func_08013CB4(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q) {
     gBgFx->unk_48 = q;
     gBgFx->update = func_08013B00;
     gBgFx->unk_26 = a;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -1170,7 +1170,7 @@ void func_08013DB8(s32 x, s32 y, s32 z, s32 s) {
     func_08012674();
     gBgFx->unk_1C = s;
     gBgFx->unk_20 = s;
-    SetBgBlend(gBgFx->unk_00, 0, 16);
+    SetBgBlend(gBgFx->bg, 0, 16);
     gBgFx->x = x;
     gBgFx->y = y;
     gBgFx->z = z;
@@ -1192,7 +1192,7 @@ void func_08013E4C(s32 x, s32 y, s32 z, s32 s) {
     func_08012674();
     gBgFx->unk_1C = s;
     gBgFx->unk_20 = s;
-    SetBgBlend(gBgFx->unk_00, 0, 16);
+    SetBgBlend(gBgFx->bg, 0, 16);
     gBgFx->x = x;
     gBgFx->y = y;
     gBgFx->z = z;
@@ -1234,7 +1234,7 @@ void func_08013F5C(s32 x, s32 y, s32 s, u16 b, u16 c) {
     func_08012674();
     gBgFx->unk_1C = s;
     gBgFx->unk_20 = s;
-    SetBgBlend(gBgFx->unk_00, b, c);
+    SetBgBlend(gBgFx->bg, b, c);
     gBgFx->x = x;
     gBgFx->y = y;
     gBgFx->z = -0x1000;
@@ -1268,7 +1268,7 @@ void func_08014020(s32 x, s32 y, s32 z) {
     gBgFx->update = func_08014000;
     m4aSongNumStart(SONG_EF_TARU_BOMB);
     gBgFx->flags |= 0x10;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -1292,7 +1292,7 @@ void func_080140E0(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA8E8, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -1338,7 +1338,7 @@ void func_080141FC(BtlObj* p) {
     BgAnimStart(&gUnk_09EDA768, sx, sy);
     BgAnimSetLoopStartFrame(4);
     gBgFx->update = func_080141D4;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08014294(void) {
@@ -1398,7 +1398,7 @@ void func_0801435C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     BgAnimStart(&gUnk_09EDA768, sx, sy);
     BgAnimSetLoopStartFrame(4);
     gBgFx->update = func_08014294;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_0801440C(void) {
@@ -1489,7 +1489,7 @@ void func_08014588(s32 x, s32 y, s32 z, s32 w, s32 paramA, s32 paramB) {
     gBgFx->update = func_0801440C;
     gBgFx->unk_0A = a;
     gBgFx->unk_0C = b;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08014654(void) {
@@ -1529,7 +1529,7 @@ void func_080146A8(s32 x, s32 y, s32 z) {
     BgAnimSetLoopStartFrame(0);
     gBgFx->update = func_08014654;
     gBgFx->unk_08 = 0;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -1572,7 +1572,7 @@ void func_080147D8(s32 x, s32 y) {
         return;
     }
     func_08012674();
-    SetBgBlend(gBgFx->unk_00, 5, 16);
+    SetBgBlend(gBgFx->bg, 5, 16);
     gBgFx->x = x;
     gBgFx->y = y;
     WorldToScreen(&sx, &sy, x, y, 0);
@@ -1941,7 +1941,7 @@ void func_080150D8(s32 x, s32 y, s32 z, u8 f) {
     if (f == 0) {
         gBgFx->flags |= 1;
     }
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
     BgAnimSetLoopStartFrame(3);
 }
@@ -1999,7 +1999,7 @@ void func_08015228(s32 x, s32 y, s32 z, s32 s) {
     BgAnimStart(&gUnk_09EDA9F0, sx, sy);
     BgAnimSetLoopStartFrame(0);
     gBgFx->update = func_0801519C;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -2123,7 +2123,7 @@ void func_080154F4(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s, u16 a, s32 t
     gBgFx->unk_26 = 0;
     gBgFx->unk_48 = s;
     gBgFx->unk_3C = t;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
@@ -2149,7 +2149,7 @@ void func_080155BC(s32 x, s32 y, s32 z, s32 w) {
     m4aSongNumStart(SONG_EF_THUND01);
     func_08011F78(w, gBgFx->x, gBgFx->y, gBgFx->z, 16, 16, 256);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08015698(void) {
@@ -2226,7 +2226,7 @@ void func_08015834(u16 a, s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, s32 s) {
     gBgFx->unk_48 = s;
     gBgFx->update = func_08015698;
     gBgFx->unk_26 = a;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_080158E8(void) {
@@ -2368,7 +2368,7 @@ void func_08015B50(u16 a, s32 x, s32 y, s32 z, u8 f, s32 w) {
     BgAnimStart(&gUnk_09EDAA68, sx, sy);
     BgAnimSetLoopStartFrame(0);
     gBgFx->update = func_080158E8;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08015C80(s32 x, s32 y, s32 z) {
@@ -2778,7 +2778,7 @@ void func_080165DC(s32 x, s32 y, s32 z) {
     gBgFx->unk_20 = 89;
     gBgFx->update = func_08016468;
     m4aSongNumStart(SONG_EF_SYNC1);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08016684(s32 x, s32 y, s32 z) {
@@ -2902,7 +2902,7 @@ void func_080168B8(s32 x, s32 y, s32 z, u8 f, s32 w, u16 a) {
     m4aSongNumStart(SONG_EF_UR_BEEM);
     gBgFx->update = func_080167F8;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
@@ -2929,7 +2929,7 @@ void func_080169A0(s32 x, s32 y, s32 z, u8 f) {
     gBgFx->unk_20 = 0x100;
     gBgFx->update = func_0801519C;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -2973,7 +2973,7 @@ void func_08016AF4(s32 x, s32 y, s32 z, u8 f, s32 w) {
     m4aSongNumStart(SONG_EF_AN_WAVE);
     gBgFx->update = func_08016A64;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08016BCC(s32 x, s32 y) {
@@ -3011,7 +3011,7 @@ void func_08016C40(s32 x, s32 y, s32 z, s32 w, u8 f, u16 a) {
     gBgFx->unk_20 = w;
     gBgFx->update = func_0801519C;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08016D00(void) {
@@ -3124,7 +3124,7 @@ void func_08016F2C(s32 x, s32 y, s32 z, s32 p, s32 q, s32 r, u8 f, s32 w) {
         gBgFx->flags |= 1;
         gBgFx->unk_1C = -0x100;
     }
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08017008(s32 x, s32 y, s32 z) {
@@ -3143,7 +3143,7 @@ void func_08017008(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDA858, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_0801709C(void) {
@@ -3232,7 +3232,7 @@ void func_08017260(s32 x, s32 y, s32 z, s32 s) {
     BgAnimStart(&gUnk_09EDA5A0, sx, sy);
     gBgFx->update = func_08012908;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -3253,7 +3253,7 @@ void func_080172F8(s32 x, s32 y, s32 z, s32 s) {
     BgAnimStart(&gUnk_09EDA6F0, sx, sy);
     gBgFx->update = func_08012908;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08017390(s32 x, s32 y, s32 z) {
@@ -3270,7 +3270,7 @@ void func_08017390(s32 x, s32 y, s32 z) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAB88, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
 }
 void func_08017410(void) {
     if (gBgFx->unk_0C > 0) {
@@ -3351,7 +3351,7 @@ void func_08017514(s32 x, s32 y, s32 z, s32 w) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAC00, sx, sy);
     gBgFx->update = func_08017410;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_080175BC(BtlObj* a, BtlObj* b, u8 c, u8 d) {
@@ -3539,7 +3539,7 @@ void func_080179F8(s32 x, s32 y, s32 z, s32 w, u8 f) {
     BgAnimStart(&gUnk_09EDAC18, sx, sy);
     gBgFx->update = func_080177EC;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08017AC0(void) {
@@ -3607,7 +3607,7 @@ void func_08017B74(s32 x, s32 w) {
     SetBlendAlpha(16, 8);
     gBgFx->update = func_08017AC0;
     BgAnimSetLoopStartFrame(0);
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08017C54(void) {
@@ -3732,7 +3732,7 @@ void func_08017F70(s32 x, s32 y, s32 z, s32 w) {
     gBgFx->unk_0A = BgAnimGetDuration(BgAnimGetCurrent());
     gBgFx->flags |= 0x20;
     gBgFx->update = func_08017EF4;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -3755,7 +3755,7 @@ void func_0801801C(s32 x, s32 y, s32 z, s32 w) {
     gBgFx->unk_0A = BgAnimGetDuration(BgAnimGetCurrent());
     gBgFx->flags |= 0x20;
     gBgFx->update = func_08017EF4;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -3814,7 +3814,7 @@ void func_08018184(s32 x, s32 y, s32 z, s32 w) {
     gBgFx->flags |= 0x10;
     m4aSongNumStart(SONG_EF_MARL_HANABIRA);
     gBgFx->update = func_080180C8;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08018240(void) {
@@ -3901,7 +3901,7 @@ void func_0801836C(s32 x, s32 y, s32 z, s32 w, s32 v) {
     BgAnimStart(&gUnk_09EDACD8, sx, sy);
     gBgFx->unk_26 = 0;
     gBgFx->update = func_08018240;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -3949,7 +3949,7 @@ void func_0801853C(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDACF0, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_080185D0(void) {
@@ -4045,7 +4045,7 @@ void func_08018724(s32 x, s32 y, s32 z, u8 f, s32 v) {
     }
     BgAnimSetLoopStartFrame(3);
     gBgFx->update = func_080185D0;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -4093,7 +4093,7 @@ void func_080188E4(u16 a, s32 x, s32 y, s32 z, s32 w) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAD20, sx, sy);
     gBgFx->update = func_0801884C;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 
@@ -4128,7 +4128,7 @@ void func_080189DC(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAD68, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08018A70(s32 x, s32 y, s32 z, s32 s) {
@@ -4147,7 +4147,7 @@ void func_08018A70(s32 x, s32 y, s32 z, s32 s) {
     WorldToScreen(&sx, &sy, x, y, z);
     BgAnimStart(&gUnk_09EDAD68, sx, sy);
     gBgFx->update = func_08012908;
-    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+    FadeToAmount(0, gBtlWork->fadeAmount, 8);
     gBgFx->flags |= 8;
 }
 void func_08018B04(s32 x, s32 y, s32 z, s32 s) {

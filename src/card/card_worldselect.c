@@ -1891,7 +1891,7 @@ void Mapcard_0(MapcardWork* w, MapcardArgs* a) {
     w->angle = 0;
     w->unk_6F = 16;
     w->unk_70 = 0;
-    w->unk_68 = 0x100;
+    w->scale = 0x100;
     w->unk_71 = 0;
     w->unk_72 = 0;
     w->unk_74 = gUnk_09EE4C80[w->unk_20].unk_22;
@@ -2033,7 +2033,7 @@ void func_080949A0(MapcardWork* w) {
     w->unk_60 = 0x300;
     w->unk_5C = 25;
     w->angle = 0;
-    w->unk_68 = 0x100;
+    w->scale = 0x100;
 }
 
 u8 func_08094A18(MapcardWork* w, void* a) {
@@ -2113,7 +2113,7 @@ void Mapcard_2(MapcardWork* w) {
             aff = 0;
 
             if (w->unk_6C & 0x40) {
-                aff = AllocObjAffine(w->angle, (s16)w->unk_68, (s16)w->unk_68, 1);
+                aff = AllocObjAffine(w->angle, (s16)w->scale, (s16)w->scale, 1);
             }
 
             if (gUnk_09EE4C80[w->unk_20].backIndex == 4) {

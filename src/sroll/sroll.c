@@ -128,7 +128,7 @@ void func_081149B8(SrollBCharWork* w) {
 
     def = w->sub->def;
     gfx = def->gfx;
-    AnimChangeWithTables(&w->anim, def->unk_0C, def->unk_0E, gfx->anims, gfx->gfxTable);
+    AnimChangeWithTables(&w->anim, def->animId, def->unk_0E, gfx->anims, gfx->gfxTable);
     SetObjTileSource(w->tiles, gfx->tiles);
     w->sub->flags &= 0xFFFE;
 }
@@ -213,7 +213,7 @@ void task_sroll_b_char_2(SrollBCharWork* w) {
         y = (sub->y + sub->unk_0C) >> 8;
         gfx = AnimGetGfx(&w->anim);
         DrawSprite(x, y, gfx, w->tiles, w->palette,
-                   AllocObjAffine(sub->unk_28, sub->unk_20, sub->unk_24, 1), sub->unk_16, 0xFF0);
+                   AllocObjAffine(sub->angle, sub->scaleX, sub->scaleY, 1), sub->unk_16, 0xFF0);
         TaskPoolDraw(&w->tasks);
     }
 }
@@ -245,7 +245,7 @@ void task_sroll_b_logo_0(SrollBLogoWork* w, SrollBLogoArg* a) {
 #endif
     anim = &w->anim;
     AnimInit(anim, gUnk_09EFAF6C, gUnk_09EFAF60);
-    AnimStart(anim, a->unk_10, 0);
+    AnimStart(anim, a->animId, 0);
 
     for (i = 0; i < 2; i++) {
         FadeSetPaletteExcluded((w->palette->index + i) % 16 + 16, 1);

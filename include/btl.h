@@ -94,7 +94,7 @@ typedef struct RikuAttackDef {
     u16 unk_06;
     const s32* attackIds;
     u16 unk_0C;
-    u16 unk_0E;
+    u16 song;
     s32 unk_10;
     u16 flags;
     u16 unk_16;

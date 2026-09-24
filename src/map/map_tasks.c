@@ -3789,16 +3789,16 @@ void func_080F4BA0(MapPrizeWork* w) {
     FieldState* g = gFieldState;
 
     s = gSineTable[w->angle] * 32;
-    x = g->actor.fieldPosition.x + (s * w->unk_90 >> 8);
+    x = g->actor.fieldPosition.x + (s * w->scale >> 8);
     s = -gSineTable[w->angle + 64] * 22;
-    y = g->actor.fieldPosition.y + (s * w->unk_90 >> 8);
+    y = g->actor.fieldPosition.y + (s * w->scale >> 8);
     z = g->actor.fieldPosition.z - (w->unk_82 / 2 << 8);
     w->angle += w->unk_8D;
     w->x += (x - w->x) >> 2;
     w->y += (y - w->y) >> 2;
     w->z += (z - w->z) >> 2;
     w->unk_0C = func_080DFE7C(w->x, w->y, w->z);
-    w->unk_90 -= 2;
+    w->scale -= 2;
 
     if (w->unk_82 > 60) {
         w->update = 0;
@@ -3845,7 +3845,7 @@ void Task_MapPrize_0(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->unk_96 = 1;
     w->unk_82 = 0;
     w->update = func_080F49D0;
-    w->unk_90 = 0x100;
+    w->scale = 0x100;
     ColliderInit(&w->collider, 5, 16, 50);
     ColliderSetPosition(&w->collider, w->x, w->y, w->z);
     ColliderSetDisabled(&w->collider, 1);
@@ -3876,8 +3876,8 @@ void Task_MapPrize_2(MapPrizeWork* w) {
         x = (w->x >> 8) - (gFieldState->x >> 8);
         y = (w->y >> 8) + (w->z >> 8) - (gFieldState->y >> 8);
 
-        if (w->unk_90 != 0x100) {
-            aff = AllocObjAffine(0, w->unk_90, w->unk_90, 0);
+        if (w->scale != 0x100) {
+            aff = AllocObjAffine(0, w->scale, w->scale, 0);
         } else {
             aff = 0;
         }
@@ -3897,14 +3897,14 @@ void Task_MapPrize_3(MapPrizeWork* w) {
 }
 
 void func_080F4EE4(MapPrzCardWork* work) {
-    work->unk_0B4 = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
-    work->unk_0B6 = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
+    work->scaleX = -gSineTable[((work->unk_0D0 + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
+    work->scaleY = -gSineTable[((work->unk_0CF + 0x80) & 0xFF) + 0x40] * work->unk_0CC >> 8;
 
-    if ((u16)(work->unk_0B4 + 2) <= 4) {
-        work->unk_0B4 = 2;
+    if ((u16)(work->scaleX + 2) <= 4) {
+        work->scaleX = 2;
     }
-    if ((u16)(work->unk_0B6 + 2) <= 4) {
-        work->unk_0B6 = 2;
+    if ((u16)(work->scaleY + 2) <= 4) {
+        work->scaleY = 2;
     }
 }
 
@@ -4070,10 +4070,10 @@ void func_080F534C(MapPrzCardWork* w) {
     y = (gFieldState->actor.fieldPosition.y >> 8) + (gFieldState->actor.fieldPosition.z >> 8) - (gFieldState->y >> 8);
     w->x += ((s16)x - w->x) >> 3;
     w->y += ((s16)y - w->y) >> 3;
-    w->unk_0B4 -= 10;
-    w->unk_0B6 -= 10;
+    w->scaleX -= 10;
+    w->scaleY -= 10;
 
-    if (w->unk_0B4 <= 10) {
+    if (w->scaleX <= 10) {
         w->update = 0;
     }
 }
@@ -4102,8 +4102,8 @@ void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     w->unk_0AC = -(GetRandom() % 129 + 0x300);
     w->unk_0B0 = GetRandom() % 129 + 128;
     w->unk_0B8 = GetRandom();
-    w->unk_0B4 = 128;
-    w->unk_0B6 = 128;
+    w->scaleX = 128;
+    w->scaleY = 128;
     w->unk_0CC = 128;
     w->unk_0CE = 24;
     w->unk_0CF = 0;
@@ -4150,10 +4150,10 @@ void Task_MapPrzCard_2(MapPrzCardWork* w) {
     s16 y;
     s16 s;
 
-    if (*(s32*)&w->unk_0B4 == 0x01000100 && w->unk_0CE == 0) {
+    if (*(s32*)&w->scaleX == 0x01000100 && w->unk_0CE == 0) {
         affine = 0;
     } else {
-        affine = AllocObjAffine(w->unk_0CE, w->unk_0B4, w->unk_0B6, 1);
+        affine = AllocObjAffine(w->unk_0CE, w->scaleX, w->scaleY, 1);
     }
 
     d = &gCardDefs[w->cardId];

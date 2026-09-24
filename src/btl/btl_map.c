@@ -29,7 +29,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 0xB1:
 #ifdef VERSION_EU
@@ -43,7 +43,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F00384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 0xA0:
 #ifdef VERSION_EU
@@ -57,7 +57,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFD384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 0x9E:
 #ifdef VERSION_EU
@@ -71,7 +71,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFC384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 9;
+            gBtlWork->fadeAmount = 9;
             break;
         case 0x9F:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
@@ -81,7 +81,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 0xAC:
         case 0xAF:
@@ -96,7 +96,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFF384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 0xA5:
 #ifdef VERSION_EU
@@ -110,7 +110,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08F01384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 20;
+            gBtlWork->fadeAmount = 20;
             break;
         default:
 #ifdef VERSION_EU
@@ -124,7 +124,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFE384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 20;
+            gBtlWork->fadeAmount = 20;
             break;
         }
     } else if (gBtlWork->unk_10C == 0x78) {
@@ -135,7 +135,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
         LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
 #endif
-        gBtlWork->unk_0B3 = 10;
+        gBtlWork->fadeAmount = 10;
     } else {
         switch (gGameState.unk_00D) {
         case 1:
@@ -146,7 +146,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF2384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 2:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C80824, 0x4000);
@@ -156,7 +156,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF1384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 3:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C90824, 0x4000);
@@ -166,7 +166,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF5384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 4:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C88824, 0x4000);
@@ -176,7 +176,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF3384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 5:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C8C824, 0x4000);
@@ -186,7 +186,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF4384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 7:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C94824, 0x4000);
@@ -196,7 +196,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF6384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 8:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C98824, 0x3EC0);
@@ -206,7 +206,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF7384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 9:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C9C6E4, 0x4000);
@@ -216,7 +216,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF8384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 10:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA06E4, 0x4000);
@@ -226,7 +226,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF9384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 11:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C78824, 0x4000);
@@ -236,7 +236,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EEF384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 12:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA86E4, 0x4000);
@@ -246,7 +246,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFB384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 20;
+            gBtlWork->fadeAmount = 20;
             break;
         case 13:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08CA46E4, 0x4000);
@@ -256,7 +256,7 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EFA384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         default:
             LoadBgTiles(gBtlWork->unk_1C6, gUnk_08C7C824, 0x4000);
@@ -266,11 +266,11 @@ void task_btl_map_0(BtlMapWork* work) {
 #else
             LoadBgMap(gBtlWork->unk_1C6, gUnk_08EF0384, 0x1000);
 #endif
-            gBtlWork->unk_0B3 = 11;
+            gBtlWork->fadeAmount = 11;
             break;
         }
     }
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x10000;
     gBtlWork->y = 0x16000;
@@ -287,8 +287,8 @@ void task_btl_map_0(BtlMapWork* work) {
     work->unk_08 = gBtlWork->unk_0DE << 8;
     work->unk_0C = (gBtlWork->unk_0E0 + 0x20) << 8;
     func_0802F1C8();
-    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->unk_024,
-                gBtlWork->unk_024, gBtlWork->unk_000,
+    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->scale,
+                gBtlWork->scale, gBtlWork->unk_000,
                 gBtlWork->unk_004 + 0x2800);
 }
 
@@ -351,7 +351,7 @@ s32 task_btl_map_1(BtlMapWork* work) {
     func_0802F208();
 
     if (gBtlWork->unk_01A > 0) {
-        ApproachValueHalfSteps(&gBtlWork->unk_024, gBtlWork->unk_028, gBtlWork->unk_01A);
+        ApproachValueHalfSteps(&gBtlWork->scale, gBtlWork->unk_028, gBtlWork->unk_01A);
         ApproachValueHalfSteps(&gBtlWork->x, gBtlWork->unk_01C, gBtlWork->unk_01A);
         ApproachValueHalfSteps(&gBtlWork->y, gBtlWork->unk_020, gBtlWork->unk_01A);
 
@@ -367,7 +367,7 @@ s32 task_btl_map_1(BtlMapWork* work) {
             ApproachValueHalfSteps(&work->unk_0C, 0x1E800, gBtlWork->unk_01A);
         }
         gBtlWork->unk_01A--;
-    } else if (gBtlWork->unk_024 == 0x100) {
+    } else if (gBtlWork->scale == 0x100) {
         dx = (gBtlWork->x2 - gBtlWork->x) >> 3;
         dy = (gBtlWork->y2 - gBtlWork->y) >> 3;
 
@@ -403,8 +403,8 @@ s32 task_btl_map_1(BtlMapWork* work) {
     } else if (gBtlWork->unk_004 + 0x5000 > work->unk_0C) {
         gBtlWork->unk_004 = work->unk_0C - 0x5000;
     }
-    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->unk_024,
-                  gBtlWork->unk_024, gBtlWork->unk_000,
+    SetBgAffine(gBtlWork->unk_1C6, gBtlWork->unk_018, gBtlWork->scale,
+                  gBtlWork->scale, gBtlWork->unk_000,
                   gBtlWork->unk_004 + 0x2800);
     return 1;
 }

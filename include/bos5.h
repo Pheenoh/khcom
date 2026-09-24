@@ -164,7 +164,7 @@ typedef struct MdFireWork {
     u32 palette2;
     u32 tiles;
     AnimState anim;
-    u32 unk_030;
+    u32 scale;
     s16 unk_034;
     u8 unk_036[0x2];
     MdSub sub;

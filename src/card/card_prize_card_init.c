@@ -479,8 +479,8 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args) {
     w->unk_B4 = -(GetRandom() % 129 + 0x300);
     w->unk_B8 = GetRandom() % 129 + 0x80;
     w->unk_DC = GetRandom() % 256;
-    w->unk_C8 = 0x80;
-    w->unk_CA = 0x80;
+    w->scaleX = 0x80;
+    w->scaleY = 0x80;
     w->unk_DA = 0x80;
     w->unk_DF = 0;
     w->unk_E0 = 0;
@@ -677,10 +677,10 @@ u8 func_08097600(UnkStruct_08096F94* w) {
     WorldToScreen(&w->x3, &w->y3, gBtlWork->actor->x, gBtlWork->actor->y, gBtlWork->actor->z);
     w->x += (w->x3 - w->x) >> 3;
     w->y2 += (w->y3 - w->y2) >> 3;
-    w->unk_C8 -= 10;
-    w->unk_CA -= 10;
+    w->scaleX -= 10;
+    w->scaleY -= 10;
 
-    if (w->unk_C8 <= 10) {
+    if (w->scaleX <= 10) {
         return 0;
     }
 
@@ -695,10 +695,10 @@ void func_08097688(UnkStruct_08096F94* w) {
 
     pal = w->unk_E5 == 0 ? GetBattleSpritePriorityFlags(w->unk_A4) : 0;
 
-    if (w->unk_C8 == 0x100 && w->unk_DE == 0) {
+    if (w->scaleX == 0x100 && w->unk_DE == 0) {
         affine = 0;
     } else {
-        affine = AllocObjAffine(w->unk_DE, w->unk_C8, w->unk_CA, 1);
+        affine = AllocObjAffine(w->unk_DE, w->scaleX, w->scaleY, 1);
     }
 
     DrawSprite(w->x, (u16)w->y2 - 8,
@@ -756,15 +756,15 @@ void func_08097834(PrizeCardWork* w) {
 }
 
 void func_080978B0(UnkStruct_08096F94* w) {
-    w->unk_C8 = (-gSineTable[((w->unk_E0 + 0x80) & 0xFF) + 0x40] * w->unk_DA) >> 8;
-    w->unk_CA = (-gSineTable[((w->unk_DF + 0x80) & 0xFF) + 0x40] * w->unk_DA) >> 8;
+    w->scaleX = (-gSineTable[((w->unk_E0 + 0x80) & 0xFF) + 0x40] * w->unk_DA) >> 8;
+    w->scaleY = (-gSineTable[((w->unk_DF + 0x80) & 0xFF) + 0x40] * w->unk_DA) >> 8;
 
-    if ((u16)(w->unk_C8 + 2) <= 4) {
-        w->unk_C8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_CA + 2) <= 4) {
-        w->unk_CA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 }
 #ifndef VERSION_EU

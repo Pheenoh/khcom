@@ -546,7 +546,7 @@ void task_bos_jf_map_0(JfMapWork* work, JfMapArg* arg) {
     func_080BDAAC();
     LoadBgTiles(0, arg->tiles, arg->tilesSize);
     LoadBgPalette(0, arg->palette, arg->paletteSize);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x23E00;
     gBtlWork->y = 0x12800;
@@ -2033,7 +2033,7 @@ void func_080BFFF8(JfMajinWork* work) {
             func_08014AAC(jf->body.x + 0x800, jf->body.y + jf->body.z - 0x800);
         }
 
-        FadeToAmount(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->fadeAmount, 8);
         work->unk_48++;
         break;
     case 2:
@@ -4146,7 +4146,7 @@ void task_bos_dsd_map_0(void) {
     LoadBgTiles(0, gUnk_096874E4, 0x8000);
     LoadBgPalette(0, gUnk_096FB744, 0x120);
     SetBgMapBlocks(0, gUnk_09EF2E68, 2, 2);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0xA000;
     gBtlWork->y = 0x13600;
@@ -4308,7 +4308,7 @@ void task_bos_dsd_ita_2(DsdItaWork* work) {
     WorldToScreen(&x, &y, work->x, work->y, work->z);
     DrawSprite(x, y, work->gfx, work->dsd->tiles2, work->dsd->palette2, 0, pal, prio);
 
-    if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
+    if (work->z >= 0 && gBtlWork->scale == 0x100) {
         affine = 0;
     } else {
         scale = 0x100 - -work->z / 128;
@@ -4674,7 +4674,7 @@ void task_bos_dsd_energy1_2(DsdEnergy1Work* work) {
     s16 y;
 
     if (work->unk_48 == 1) {
-        if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
+        if (work->z >= 0 && gBtlWork->scale == 0x100) {
             affine = 0;
         } else {
             scale = 0x200 - -work->z / 128;
@@ -4827,7 +4827,7 @@ u8 task_bos_dsd_energy2_1(DsdEnergy2Work* work) {
         }
         break;
     case 4:
-        FadeToAmount(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->fadeAmount, 8);
         work->state++;
         break;
     case 5:
@@ -4909,7 +4909,7 @@ void task_bos_dsd_energy2_2(DsdEnergy2Work* work) {
     s16 y;
 
     if (work->unk_3C == 1) {
-        if (work->z >= 0 && gBtlWork->unk_024 == 0x100) {
+        if (work->z >= 0 && gBtlWork->scale == 0x100) {
             affine = 0;
         } else {
             scale = 0x200 - -work->z / 128;

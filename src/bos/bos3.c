@@ -38,7 +38,7 @@ void task_bos_jf_shadow_2(JfShadowWork* work) {
 
     frame = GetBattleSpritePriorityFlags(obj->y);
 
-    if (obj->z >= 0 && gBtlWork->unk_024 == 0x100) {
+    if (obj->z >= 0 && gBtlWork->scale == 0x100) {
         sprite = 0;
     } else {
         size = 0x200 - ((obj->unk_010 - obj->z) / 128);

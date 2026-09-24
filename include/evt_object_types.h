@@ -14,9 +14,9 @@ typedef struct EvtObj {
     void* anim;
     u16 unk_1C;
     u8 unk_1E[0x02];
-    s32 unk_20;
-    s32 unk_24;
-    u8 unk_28;
+    s32 scaleX;
+    s32 scaleY;
+    u8 angle;
 } EvtObj;
 
 #endif

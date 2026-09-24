@@ -201,8 +201,8 @@ typedef struct UnkStruct_08096F94 {
     s32 unk_BC;
     s32 unk_C0;
     s32 unk_C4;
-    s16 unk_C8;
-    s16 unk_CA;
+    s16 scaleX;
+    s16 scaleY;
     u16 unk_CC;
     s16 x;
     s16 y2;
@@ -284,8 +284,8 @@ typedef struct UnkStruct_0809A02C {
     s32 unk_1AC;
     s32 unk_1B0;
     s32 unk_1B4;
-    s16 unk_1B8;
-    s16 unk_1BA;
+    s16 scaleX;
+    s16 scaleY;
     s16 unk_1BC;
     s16 x;
     s16 y;
@@ -462,8 +462,8 @@ typedef struct UnkStruct_0809C534 {
     u8 unk_55;
     u8 unk_56[0x02];
     ListNode node;
-    s16 unk_6C;
-    s16 unk_6E;
+    s16 scaleX;
+    s16 scaleY;
     u16 x2;
     u16 y2;
     u8 unk_74;
@@ -789,7 +789,7 @@ typedef struct ReloadChildWork {
     u8 unk_1E[0x02];
     s32 unk_20;
     s32 unk_24;
-    s32 unk_28;
+    s32 scale;
     u8 unk_2C[0x04];
     ListNode node;
     u8 unk_44;
@@ -927,7 +927,7 @@ typedef struct MapcardWork {
     s32 unk_5C;
     s32 unk_60;
     s32 unk_64;
-    u16 unk_68;
+    u16 scale;
     u16 unk_6A;
     u16 unk_6C;
     u8 angle;
@@ -1065,8 +1065,8 @@ typedef struct PrizeCardWork {
     s32 unk_D4;
     s32 unk_D8;
     s32 unk_DC;
-    s16 unk_E0;
-    s16 unk_E2;
+    s16 scaleX;
+    s16 scaleY;
     s16 unk_E4;
     s16 x;
     s16 y2;

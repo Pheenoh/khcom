@@ -86,7 +86,7 @@ typedef struct SrollBCharGfx {
 typedef struct SrollBCharDef {
     SrollBCharGfx* gfx;
     u8 unk_04[0x8];
-    u16 unk_0C;
+    u16 animId;
     u16 unk_0E;
 } SrollBCharDef;
 
@@ -101,9 +101,9 @@ typedef struct SrollBCharSub {
     AnimState* anim;
     u16 unk_1C;
     u8 unk_1E[0x2];
-    s32 unk_20;
-    s32 unk_24;
-    u8 unk_28;
+    s32 scaleX;
+    s32 scaleY;
+    u8 angle;
 } SrollBCharSub;
 
 typedef struct SrollBCharSet {
@@ -142,7 +142,7 @@ typedef struct SrollBLogoArg {
     s32 y;
     s32* unk_08;
     s32 unk_0C;
-    u16 unk_10;
+    u16 animId;
 } SrollBLogoArg;
 
 typedef struct SrollBSecnWork {

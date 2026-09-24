@@ -455,12 +455,12 @@ void mode_battle_0(u32 mode) {
         case 0x9A:
             SetBattleBounds(0, 0x100, 0x148, 0x1A8);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosDsd, 0);
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 0x94:
             SetBattleBounds(-32, 0x120, 0x120, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosGa, 0);
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 0x99:
 #ifdef VERSION_EU
@@ -469,40 +469,40 @@ void mode_battle_0(u32 mode) {
             SetBattleBounds(0, 0xE0, 0x118, 0x180);
 #endif
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosMd, 0);
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 0x96:
             SetBattleBounds(0x80, 0x180, 0x140, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosTm, 0);
-            gBtlWork->unk_0B3 = 12;
+            gBtlWork->fadeAmount = 12;
             break;
         case 0x97:
             SetBattleBounds(0, 0x200, 0, 0x200);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosUrsula, 0);
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         case 0x98:
             SetBattleBounds(0x80, 0x1A8, 0x126, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosPc, 0);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescPcAcddmg, gBtlWork->actor);
-            gBtlWork->unk_0B3 = 12;
+            gBtlWork->fadeAmount = 12;
             break;
         case 0x9C:
             SetBattleBounds(0x80, 0x170, 0x1E0, 0x200);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosLst, 0);
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         case 0x9B:
             SetBattleBounds(0x80, 0x170, 0x228, 0x278);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosBoogie, 0);
             gBtlWork->boundsCallback = &func_0801050C;
-            gBtlWork->unk_0B3 = 5;
+            gBtlWork->fadeAmount = 5;
             break;
         default:
             SetBattleBounds(0x1A4, 0x264, 0x148, 0x180);
             TaskCreate(&gBtlWork->taskPools[0], &gTaskDescBosJf, 0);
             gBtlWork->boundsCallback = &func_080BD4A8;
-            gBtlWork->unk_0B3 = 10;
+            gBtlWork->fadeAmount = 10;
             break;
         }
     } else if (gBtlWork->flags & 0x800000000) {

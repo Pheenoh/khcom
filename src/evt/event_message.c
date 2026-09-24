@@ -3145,7 +3145,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         p->unk_1B3 = 1;
         gBtlWork->unk_000 = gEventState->unk_48;
         gBtlWork->unk_004 = gEventState->unk_4C;
-        gBtlWork->unk_024 = 0x100;
+        gBtlWork->scale = 0x100;
         gBtlWork->unk_018 = 0;
         gBtlWork->unk_028 = 0x100;
         gBtlWork->x = gEventState->unk_48;
@@ -3172,7 +3172,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         gBtlWork->unk_004 = 0x5400;
-        gBtlWork->unk_024 = 0x100;
+        gBtlWork->scale = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
         gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, NULL);
@@ -3189,7 +3189,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         gBtlWork->unk_004 = 0x5400;
-        gBtlWork->unk_024 = 0x100;
+        gBtlWork->scale = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 424, 294, 384);
         gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosPc, &p->tasks);
@@ -3214,7 +3214,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         gBtlWork->unk_004 = 0x5400;
-        gBtlWork->unk_024 = 0x100;
+        gBtlWork->scale = 0x100;
         gBtlWork->unk_018 = 0;
         SetBattleBounds(128, 368, 480, 512);
         gEventState->unk_00[16] = TaskCreate(&p->tasks, &gTaskDescBosLst, &p->tasks);
@@ -3291,7 +3291,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->tasks, &gTaskDescBosBoogie, NULL);
-        gBtlWork->unk_0B3 = 5;
+        gBtlWork->fadeAmount = 5;
         break;
     case 99:
         SetupBg(0, 0, 24, 0);
@@ -3308,7 +3308,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->tasks, &gTaskDescBosUrsula, NULL);
-        gBtlWork->unk_0B3 = 5;
+        gBtlWork->fadeAmount = 5;
         break;
     case 104:
         SetupBg(0, 0, 24, 0);
@@ -3325,7 +3325,7 @@ void event_chara_0(EventCharaWork* p, u32* a) {
         TaskPoolInit(&gBtlWork->taskPools[1], 1);
         p->unk_1B3 = 1;
         TaskCreate(&p->tasks, &gTaskDescBosGa, (void*)1);
-        gBtlWork->unk_0B3 = 5;
+        gBtlWork->fadeAmount = 5;
         break;
     default:
         if ((p->keyframes->unk_18 & 0x2000) == 0) {
@@ -6461,7 +6461,7 @@ void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
     p->unk_30 = 0;
     p->x = gUnk_09033CD0[n = p->face->positionIndex];
     p->y = gUnk_09033CF0[n];
-    p->unk_2C = 0x100;
+    p->scaleX = 0x100;
     p->unk_31 = 0;
     p->unk_32 = 0;
     p->unk_34 = 1;
@@ -6530,9 +6530,9 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
         p->unk_30 = 4;
 
         if (p->face->positionIndex <= 1) {
-            p->unk_2C = -255;
+            p->scaleX = -255;
         } else if (p->face->positionIndex <= 3) {
-            p->unk_2C = 256;
+            p->scaleX = 256;
         }
 
         p->y = gUnk_09033CF0[p->face->positionIndex];
@@ -6575,7 +6575,7 @@ void msgface_2(MsgFaceWork* p) {
     u8 v;
 
     if (p->unk_34 != 0) {
-        t = AllocObjAffine(0, p->unk_2C, 256, 0);
+        t = AllocObjAffine(0, p->scaleX, 256, 0);
         if (t != 0) {
             DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, t, 0, 50);
         } else {
@@ -6642,7 +6642,7 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     }
     p->x = gUnk_09033CD0[n = p->face->positionIndex];
     p->y = gUnk_09033CF0[n];
-    p->unk_2C = 256;
+    p->scaleX = 256;
     p->unk_30 = 8;
     SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     return 1;
@@ -6651,10 +6651,10 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
 u8 func_08073CA4(MsgFaceWork* p, void* a) {
     const MsgFaceAnim* t;
 
-    if (p->unk_2C < 0) {
-        ApproachValue(&p->unk_2C, -2, p->unk_30);
+    if (p->scaleX < 0) {
+        ApproachValue(&p->scaleX, -2, p->unk_30);
     } else {
-        ApproachValue(&p->unk_2C, 2, p->unk_30);
+        ApproachValue(&p->scaleX, 2, p->unk_30);
     }
     p->unk_30--;
 
@@ -6686,16 +6686,16 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
 }
 
 u8 func_08073DA4(MsgFaceWork* p, void* a) {
-    if (p->unk_2C < 0) {
-        ApproachValue(&p->unk_2C, -255, p->unk_30);
+    if (p->scaleX < 0) {
+        ApproachValue(&p->scaleX, -255, p->unk_30);
     } else {
-        ApproachValue(&p->unk_2C, 256, p->unk_30);
+        ApproachValue(&p->scaleX, 256, p->unk_30);
     }
     p->unk_30--;
     if (p->unk_30 == 0) {
         p->unk_31 = 1;
         p->face->command = 0;
-        p->unk_2C = 256;
+        p->scaleX = 256;
         SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     }
     return 1;

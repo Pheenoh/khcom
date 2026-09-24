@@ -4068,7 +4068,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
 
             m4aSongNumStart(SONG_EF_LIMIMOV);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         } else if ((u16)(uv - 22) <= 42) {
             if (p->flags & 4) {
                 p->x -= 1280;
@@ -4743,7 +4743,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         switch ((s16)work->unk_154) {
         case 0:
             SetBtlSoraAnimation(work, 14, 0);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             m4aSongNumStart(SONG_VO_SR_ATTACK08);
             break;
         case 15:
@@ -5066,7 +5066,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         }
 
         func_0801DD08(work);
-        FadeToAmount(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->fadeAmount, 8);
         work->unk_038 = 53;
         work->unk_156 = 0;
         work->unk_154 = 0;
@@ -5332,7 +5332,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         work->unk_150 = 0;
 
         if ((s16)work->unk_154 == 0) {
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             SetBtlSoraAnimation(work, 66, 0);
 
             if (p->flags & 4) {
@@ -5592,7 +5592,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if ((s16)work->unk_154 == 0) {
             SetBtlSoraAnimation(work, 69, 0);
             m4aSongNumStart(SONG_VO_SR_ATTACK08);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
 
         if (work->anim.timer == 0) {
@@ -5633,7 +5633,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
         if ((s16)work->unk_154 == 0) {
             SetBtlSoraAnimation(work, 69, 0);
             m4aSongNumStart(SONG_VO_SR_ATTACK08);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
 
         if (work->anim.timer == 0) {
@@ -5717,7 +5717,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
 
         switch ((s16)work->unk_154) {
         case 0:
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             m4aSongNumStart(SONG_VO_SR_SUMMON01);
             SetBtlSoraAnimation(work, 60, 0);
             break;
@@ -5865,7 +5865,7 @@ s32 task_btl_sora_1(BtlSoraWork* work) {
             }
 
             m4aSongNumStart(SONG_EF_LIMIMOV);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             break;
         case 25:
             SetBtlSoraAnimation(work, 55, 0);
@@ -6259,10 +6259,10 @@ void task_btl_sora_2(BtlSoraWork* work) {
 
     if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
         if (p->flags & 4) {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
             sx = sy;
         } else {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
 
             if (sy == 0x100) {
                 sx = sy;
@@ -6273,11 +6273,11 @@ void task_btl_sora_2(BtlSoraWork* work) {
         }
     } else {
         if (p->flags & 4) {
-            sx = gBtlWork->unk_024 * work->unk_19C >> 8;
-            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+            sx = gBtlWork->scale * work->unk_19C >> 8;
+            sy = gBtlWork->scale * work->unk_1A0 >> 8;
         } else {
-            sx = -(gBtlWork->unk_024 * work->unk_19C >> 8);
-            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+            sx = -(gBtlWork->scale * work->unk_19C >> 8);
+            sy = gBtlWork->scale * work->unk_1A0 >> 8;
         }
     }
 
@@ -6445,7 +6445,7 @@ void func_08027570(BtlRikuWork* work, BtlDrawInfo* out) {
     }
     out->anim = work->anim;
     out->unk_28 = *(void**)work->tiles2;
-    out->unk_2C = gBtlWork->unk_024;
+    out->unk_2C = gBtlWork->scale;
 }
 
 void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
@@ -6480,7 +6480,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
             q = p;
             flags |= 1;
         } else {
-            v = gBtlWork->unk_024;
+            v = gBtlWork->scale;
             q = -v;
             p = v;
         }
@@ -8500,7 +8500,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
         }
 
         if ((s16)work->unk_158 == 0) {
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             SetBtlRikuAnimation(work, 15, 0);
             m4aSongNumStart(SONG_VO_RK_ATTACK02);
         }
@@ -9962,7 +9962,7 @@ s32 task_btl_riku_1(BtlRikuWork* work) {
             }
 
             if (d == 1) {
-                m4aSongNumStart(a->unk_0E);
+                m4aSongNumStart(a->song);
 
                 if (a->flags & 2) {
                     if (p->flags & 4) {
@@ -10810,10 +10810,10 @@ void task_btl_riku_2(BtlRikuWork* work) {
 
     if (work->unk_19C == 0x100 && work->unk_1A0 == 0x100) {
         if (p->flags & 4) {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
             sx = sy;
         } else {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
 
             if (sy == 0x100) {
                 sx = sy;
@@ -10824,11 +10824,11 @@ void task_btl_riku_2(BtlRikuWork* work) {
         }
     } else {
         if (p->flags & 4) {
-            sx = gBtlWork->unk_024 * work->unk_19C >> 8;
-            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+            sx = gBtlWork->scale * work->unk_19C >> 8;
+            sy = gBtlWork->scale * work->unk_1A0 >> 8;
         } else {
-            sx = -(gBtlWork->unk_024 * work->unk_19C >> 8);
-            sy = gBtlWork->unk_024 * work->unk_1A0 >> 8;
+            sx = -(gBtlWork->scale * work->unk_19C >> 8);
+            sy = gBtlWork->scale * work->unk_1A0 >> 8;
         }
     }
 

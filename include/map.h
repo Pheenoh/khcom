@@ -108,7 +108,7 @@ typedef struct UnkStruct_080E6034 {
     u8 unk_11[0x03];
     s32 unk_14;
     u8 unk_18[0x04];
-    u8 unk_1C[0x14];
+    u8 node[0x14];
     const UnkStruct_0984BC9C* unk_30;
     void* unk_34;
 } UnkStruct_080E6034;
@@ -130,7 +130,7 @@ typedef struct UnkStruct_080E7D80 {
     u16 unk_1E;
     u16 unk_20;
     u16 unk_22;
-    void* unk_24;
+    void* desc;
 } UnkStruct_080E7D80;
 
 typedef struct UnkStruct_080E8B1C {
@@ -242,7 +242,7 @@ typedef struct UnkStruct_080E6394 {
 typedef struct MapEnmWork {
     const UnkStruct_0984BC9C* unk_00;
     u16 flags;
-    u16 unk_06;
+    u16 paletteBank;
     UnkStruct_080DFF1C unk_08;
     s32 unk_18;
     u8 unk_1C;
@@ -672,7 +672,7 @@ typedef struct MapPrizeWork {
     u8 angle;
     u8 unk_8D;
     u8 unk_8E[0x02];
-    s32 unk_90;
+    s32 scale;
     u16 unk_94;
     u8 unk_96;
     u8 unk_97;
@@ -798,8 +798,8 @@ typedef struct MapPrzCardWork {
     u8 unk_0AA[0x02];
     s32 unk_0AC;
     s32 unk_0B0;
-    s16 unk_0B4;
-    s16 unk_0B6;
+    s16 scaleX;
+    s16 scaleY;
     u8 unk_0B8;
     u8 unk_0B9;
     s16 x;

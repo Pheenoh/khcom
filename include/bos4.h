@@ -408,7 +408,7 @@ typedef struct BoogieKnifeWork {
     s32 unk_13C;
     s32 unk_140;
     u8 unk_144[0x4];
-    u32 unk_148;
+    u32 scaleX;
     u32 unk_14C;
     s32 unk_150;
     s32 unk_154;

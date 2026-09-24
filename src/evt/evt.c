@@ -35,9 +35,9 @@ void CreateEvtObjTask(void* pool, EvtObj* obj, s32 res, s32 anim, s32 a, s32 b, 
     obj->flags = 0;
     obj->unk_10 = 0;
     obj->unk_16 = 0x800;
-    obj->unk_24 = 0x100;
-    obj->unk_20 = 0x100;
-    obj->unk_28 = 0;
+    obj->scaleY = 0x100;
+    obj->scaleX = 0x100;
+    obj->angle = 0;
     TaskCreate(pool, &gTaskDescEvtObj, &param);
 }
 
@@ -55,9 +55,9 @@ s32 func_0801CE04(void* pool, void* desc, EvtObj* obj, s32 res, s32 anim, s32 a,
     obj->flags = 0;
     obj->unk_10 = 0;
     obj->unk_16 = 0x800;
-    obj->unk_24 = 0x100;
-    obj->unk_20 = 0x100;
-    obj->unk_28 = 0;
+    obj->scaleY = 0x100;
+    obj->scaleX = 0x100;
+    obj->angle = 0;
     TaskCreate(pool, desc, &param);
 }
 
@@ -116,7 +116,7 @@ void task_evt_obj_2(EvtObjWork* work) {
     y = (obj->y >> 8) + (obj->z >> 8) - (gEventState->y >> 8);
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, work->tiles, work->palette,
-        AllocObjAffine(obj->unk_28, obj->unk_20, obj->unk_24, 1), obj->unk_16,
+        AllocObjAffine(obj->angle, obj->scaleX, obj->scaleY, 1), obj->unk_16,
         (u16)(-0x1002 - (obj->y >> 8) * 4));
     TaskPoolDraw(&work->tasks);
 }

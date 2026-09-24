@@ -89,8 +89,8 @@ void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
     w->unk_1C7 = 0;
     w->unk_1C8 = 0;
     w->unk_1C9 = 24;
-    w->unk_1B8 = 0x80;
-    w->unk_1BA = 0x80;
+    w->scaleX = 0x80;
+    w->scaleY = 0x80;
     w->unk_1BC = 0x80;
     w->unk_1CA = 0;
     w->unk_1CB = 0;
@@ -132,8 +132,8 @@ void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
     w->unk_1C7 = 0;
     w->unk_1C8 = 0;
     w->unk_1C9 = 24;
-    w->unk_1B8 = 0x80;
-    w->unk_1BA = 0x80;
+    w->scaleX = 0x80;
+    w->scaleY = 0x80;
     w->unk_1BC = 0x80;
     w->unk_1CA = 0;
     w->unk_1CB = 0;
@@ -176,8 +176,8 @@ void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     w->unk_1C7 = 0;
     w->unk_1C8 = 0;
     w->unk_1C9 = 24;
-    w->unk_1B8 = 0x80;
-    w->unk_1BA = 0x80;
+    w->scaleX = 0x80;
+    w->scaleY = 0x80;
     w->unk_1BC = 0x80;
     w->unk_1CA = 0;
     w->unk_1CB = 0;
@@ -290,19 +290,19 @@ s32 Friend_card_1(UnkStruct_0809A02C* w, void* a) {
 
     ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C,
                   w->unk_40);
-    w->unk_1B8 =
+    w->scaleX =
         (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] *
          w->unk_1BC) >> 8;
-    w->unk_1BA =
+    w->scaleY =
         (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] *
          w->unk_1BC) >> 8;
 
-    if ((u16)(w->unk_1B8 + 2) <= 4) {
-        w->unk_1B8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_1BA + 2) <= 4) {
-        w->unk_1BA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 
     w->unk_1C7 += 2;
@@ -396,19 +396,19 @@ s32 Gimmick_card_1(UnkStruct_0809A02C* w, void* a) {
 
     ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C,
                   w->unk_40);
-    w->unk_1B8 =
+    w->scaleX =
         (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] *
          w->unk_1BC) >> 8;
-    w->unk_1BA =
+    w->scaleY =
         (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] *
          w->unk_1BC) >> 8;
 
-    if ((u16)(w->unk_1B8 + 2) <= 4) {
-        w->unk_1B8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_1BA + 2) <= 4) {
-        w->unk_1BA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 
     w->unk_1C7 += 2;
@@ -472,15 +472,15 @@ u8 func_0809AB2C(UnkStruct_0809A02C* w) {
         w->unk_1BC = t + 3;
     }
 
-    w->unk_1B8 = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
-    w->unk_1BA = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleX = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleY = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
 
-    if ((u16)(w->unk_1B8 + 2) <= 4) {
-        w->unk_1B8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_1BA + 2) <= 4) {
-        w->unk_1BA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 
     TaskPoolUpdate(&w->tasks);
@@ -495,10 +495,10 @@ u8 func_0809ACDC(UnkStruct_0809A02C* w) {
     WorldToScreen(&x, &y, gBtlWork->actor->x, gBtlWork->actor->y, gBtlWork->actor->z);
     w->unk_38 += ((x << 8) - w->unk_38) >> 3;
     w->unk_3C += ((y << 8) - w->unk_3C) >> 3;
-    w->unk_1B8 -= 10;
-    w->unk_1BA -= 10;
+    w->scaleX -= 10;
+    w->scaleY -= 10;
 
-    if (w->unk_1B8 <= 10) {
+    if (w->scaleX <= 10) {
         return 0;
     }
 
@@ -534,8 +534,8 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
             w->unk_1C7 = 0;
             w->unk_38 = 0x7800;
             w->unk_3C = 0x5000;
-            *(u16*)&w->unk_1B8 = v = 0x100;
-            *(u16*)&w->unk_1BA = v;
+            *(u16*)&w->scaleX = v = 0x100;
+            *(u16*)&w->scaleY = v;
 #ifdef VERSION_EU
             CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->cardId].name));
 #else
@@ -562,15 +562,15 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
         w->unk_1BC = t + 3;
     }
 
-    w->unk_1B8 = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
-    w->unk_1BA = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleX = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleY = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
 
-    if ((u16)(w->unk_1B8 + 2) <= 4) {
-        w->unk_1B8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_1BA + 2) <= 4) {
-        w->unk_1BA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 
     TaskPoolUpdate(&w->tasks);
@@ -627,15 +627,15 @@ s32 Heartless_card_1(UnkStruct_0809A02C* w, void* a) {
     }
 
     ColliderSetPosition(w->unk_144, w->unk_38, w->unk_3C, w->unk_40);
-    w->unk_1B8 = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
-    w->unk_1BA = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleX = (-gSineTable[((w->unk_1C7 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
+    w->scaleY = (-gSineTable[((w->unk_1C8 + 128) & 0xFF) + 64] * w->unk_1BC) >> 8;
 
-    if ((u16)(w->unk_1B8 + 2) <= 4) {
-        w->unk_1B8 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_1BA + 2) <= 4) {
-        w->unk_1BA = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 
     w->unk_1C7 += 2;
@@ -661,8 +661,8 @@ void func_0809B200(UnkStruct_0809A02C* w) {
             y = w->unk_3C >> 8;
         }
 
-        affine = AllocObjAffine(w->unk_1C9, w->unk_1B8,
-                                w->unk_1BA, 0);
+        affine = AllocObjAffine(w->unk_1C9, w->scaleX,
+                                w->scaleY, 0);
         DrawSprite(x, (u16)y - 8,
                    gUnk_08F709B0[w->cardDef->unk_2A].gfx,
                    ((UnkStruct_0809B200*)gUnk_02039DD4)->unk_030[w->cardDef->unk_2A],
@@ -711,8 +711,8 @@ void Heartless_card_2(UnkStruct_0809A02C* w) {
             y = w->unk_3C >> 8;
         }
 
-        affine = AllocObjAffine(w->unk_1C9, w->unk_1B8,
-                                w->unk_1BA, 0);
+        affine = AllocObjAffine(w->unk_1C9, w->scaleX,
+                                w->scaleY, 0);
         DrawSprite(x, (u16)y - 8,
                    gUnk_08F709B0[w->cardDef->unk_2A].gfx,
                    w->tiles, w->palette, affine,

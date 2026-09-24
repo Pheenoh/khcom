@@ -85,8 +85,8 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->unk_CC = -(GetRandom() % 129 + 0x300);
     w->unk_D0 = GetRandom() % 129 + 0x80;
     w->unk_F4 = GetRandom() % 256;
-    w->unk_E0 = 0x80;
-    w->unk_E2 = 0x80;
+    w->scaleX = 0x80;
+    w->scaleY = 0x80;
     w->unk_F2 = 0x80;
     w->unk_F7 = 0;
     w->unk_F8 = 0;
@@ -282,10 +282,10 @@ u8 func_08096390(PrizeCardWork* w) {
                 (gFieldState->y >> 8);
     w->x += (w->unk_EA - w->x) >> 3;
     w->y2 += (w->unk_EC - w->y2) >> 3;
-    w->unk_E0 -= 10;
-    w->unk_E2 -= 10;
+    w->scaleX -= 10;
+    w->scaleY -= 10;
 
-    if (w->unk_E0 > 10 && !(gFieldState->flags & 0x40000)) {
+    if (w->scaleX > 10 && !(gFieldState->flags & 0x40000)) {
         return 1;
     }
 
@@ -307,10 +307,10 @@ void PrizeCard_2(PrizeCardWork* w) {
         pal = 0x800;
     }
 
-    if (w->unk_E0 == 0x100 && w->unk_F6 == 0) {
+    if (w->scaleX == 0x100 && w->unk_F6 == 0) {
         affine = 0;
     } else {
-        affine = AllocObjAffine(w->unk_F6, w->unk_E0, w->unk_E2, 1);
+        affine = AllocObjAffine(w->unk_F6, w->scaleX, w->scaleY, 1);
     }
 
     def = &gCardDefs[w->cardId];
@@ -354,15 +354,15 @@ void PrizeCard_3(PrizeCardWork* w) {
 }
 
 void func_08096638(PrizeCardWork* w) {
-    w->unk_E0 = (-gSineTable[((w->unk_F8 + 0x80) & 0xFF) + 0x40] * w->unk_F2) >> 8;
-    w->unk_E2 = (-gSineTable[((w->unk_F7 + 0x80) & 0xFF) + 0x40] * w->unk_F2) >> 8;
+    w->scaleX = (-gSineTable[((w->unk_F8 + 0x80) & 0xFF) + 0x40] * w->unk_F2) >> 8;
+    w->scaleY = (-gSineTable[((w->unk_F7 + 0x80) & 0xFF) + 0x40] * w->unk_F2) >> 8;
 
-    if ((u16)(w->unk_E0 + 2) <= 4) {
-        w->unk_E0 = 2;
+    if ((u16)(w->scaleX + 2) <= 4) {
+        w->scaleX = 2;
     }
 
-    if ((u16)(w->unk_E2 + 2) <= 4) {
-        w->unk_E2 = 2;
+    if ((u16)(w->scaleY + 2) <= 4) {
+        w->scaleY = 2;
     }
 }
 

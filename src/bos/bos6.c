@@ -6175,7 +6175,7 @@ void task_bos_pc_fld_0(PcFldWork* work, BattleBackgroundDef* arg) {
     LoadBgTiles(0, arg->tiles, arg->tilesSize);
     LoadBgPalette(0, arg->palette, arg->paletteSize);
     SetBgMapBlocks(0, &arg->map, 2, 3);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x11400;
     gBtlWork->y = 0x15300;
@@ -8519,7 +8519,7 @@ u8 func_0810EBA0(BosLstWork* work) {
     case 3:
         func_08014A34(work->x, -0x800 + work->y + work->z);
         m4aSongNumStart(SONG_SND_718);
-        FadeToAmount(0, gBtlWork->unk_0B3, 8);
+        FadeToAmount(0, gBtlWork->fadeAmount, 8);
         work->unk_00A += 1;
         work->unk_068 = 0;
     case 4:

@@ -124,7 +124,7 @@ u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a) {
         ListPoolRemove(&w->node, *(void**)w->unk_0C);
         w->tiles2 = LoadObjTiles(gUnk_08F709B0[w->unk_19].tiles2, 0xD00);
         w->unk_44 = 8;
-        w->unk_28 = 0x66;
+        w->scale = 0x66;
         SetTaskUpdate(a, (TaskUpdateFunc)func_08098BA4);
         return 1;
     }
@@ -172,7 +172,7 @@ u8 func_08098AE4(ReloadChildWork* w, void* a) {
 s32 func_08098BA4(ReloadChildWork* w) {
     ApproachValue(&w->unk_20, 0, w->unk_44);
     ApproachValue(&w->unk_24, 0, w->unk_44);
-    ApproachValue(&w->unk_28, 256, w->unk_44);
+    ApproachValue(&w->scale, 256, w->unk_44);
 
     if (w->unk_44 != 0) {
         w->unk_44--;
@@ -196,7 +196,7 @@ void RELOAD_CHILDREN_2(ReloadChildWork* w) {
     if ((s8)w->unk_18 < 0) {
         x = (w->unk_20 + *w->unk_10) >> 8;
         y = (w->unk_24 + *w->unk_14) >> 8;
-        aff = AllocObjAffine(0, w->unk_28, w->unk_28, 0);
+        aff = AllocObjAffine(0, w->scale, w->scale, 0);
         DrawSprite(x, y + (gSineTable[w->angle] >> 8), gUnk_08F709B0[w->unk_19].gfx2, w->tiles2, w->palette, aff, 0, 49);
     }
 }

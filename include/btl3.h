@@ -89,7 +89,7 @@ typedef struct BtlRaidWork {
     BtlObj* actor;
     void* tiles;
     void* palette2;
-    u16 unk_68;
+    u16 song;
     u8 unk_6A[0x02];
 } BtlRaidWork;
 

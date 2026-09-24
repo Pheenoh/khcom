@@ -1130,7 +1130,7 @@ void task_bos_boogie_map_0(void* work, BattleBackgroundDef* arg) {
     LoadBgTiles(0, arg->tiles, arg->tilesSize);
     LoadBgPalette(0, arg->palette, arg->paletteSize);
     SetBgMapBlocks(0, &arg->map, 2, 2);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0xF800;
     gBtlWork->y = 0x21000;
@@ -1389,11 +1389,11 @@ void func_080DB04C(BoogieKnifeWork* work) {
     s32 dy;
 
     if (gUnk_0203C578 != 0) {
-        work->unk_148 = 0x100;
+        work->scaleX = 0x100;
         work->unk_14C = 0;
         dy = 0x2000;
     } else {
-        work->unk_148 = -0x100;
+        work->scaleX = -0x100;
         work->unk_14C = 0;
         dy = -0x2000;
     }
@@ -1518,7 +1518,7 @@ void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
         pal = (void*)work->palette;
     }
 
-    aff = AllocObjAffine(0, work->unk_148, 0x100, 0);
+    aff = AllocObjAffine(0, work->scaleX, 0x100, 0);
     DrawSprite(x, y, AnimGetGfx(&work->anim), (void*)work->tiles, pal, aff, c,
         -0x1004 - (p->y >> 8) * 4);
 }
@@ -2146,7 +2146,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
                 x = p->x - 0x1C00;
             }
             func_08014AAC(x, p->y + p->z + 0x1C00);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             work->unk_004++;
         } else if ((s16)work->unk_004 == 3) {
             if (!FadeIsActive()) {
@@ -2326,7 +2326,7 @@ void task_bos_ursula_map_0(UrsulaMapWork* work, BattleBackgroundDef* arg) {
     LoadBgTiles(1, arg->tiles, arg->tilesSize);
     LoadBgPalette(1, arg->palette, arg->paletteSize);
     SetBgMapBlocks(1, arg->map, 2, 2);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x10000;
     gBtlWork->y = 0x17100;

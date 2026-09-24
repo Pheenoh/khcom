@@ -464,22 +464,22 @@ void task_smn_cloud_2(SmnCloudWork* work) {
 
     if (work->unk_150 == 256 && work->unk_154 == work->unk_150) {
         if (body->flags & 4) {
-            sclY = gBtlWork->unk_024;
+            sclY = gBtlWork->scale;
             sclX = sclY;
-        } else if (gBtlWork->unk_024 == work->unk_154) {
-            sclY = gBtlWork->unk_024;
+        } else if (gBtlWork->scale == work->unk_154) {
+            sclY = gBtlWork->scale;
             sclX = sclY;
             flags |= 1;
         } else {
-            sclY = gBtlWork->unk_024;
+            sclY = gBtlWork->scale;
             sclX = -sclY;
         }
     } else if (body->flags & 4) {
-        sclX = gBtlWork->unk_024 * work->unk_150 >> 8;
-        sclY = gBtlWork->unk_024 * work->unk_154 >> 8;
+        sclX = gBtlWork->scale * work->unk_150 >> 8;
+        sclY = gBtlWork->scale * work->unk_154 >> 8;
     } else {
-        sclX = -(gBtlWork->unk_024 * work->unk_150 >> 8);
-        sclY = gBtlWork->unk_024 * work->unk_154 >> 8;
+        sclX = -(gBtlWork->scale * work->unk_150 >> 8);
+        sclY = gBtlWork->scale * work->unk_154 >> 8;
     }
 
     if (sclY == 256 && sclX == sclY) {
@@ -812,15 +812,15 @@ void task_smn_bambi_2(SmnBambiWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_154 == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_154 == gBtlWork->scale) {
         sclY = work->unk_154;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_154 >> 8;
@@ -1144,15 +1144,15 @@ void task_smn_tink_2(SmnTinkWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_14C == gBtlWork->scale) {
         sclY = work->unk_14C;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_14C >> 8;
@@ -1435,15 +1435,15 @@ void task_smn_simba_2(SmnSimbaWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_150 == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_150 == gBtlWork->scale) {
         sclY = work->unk_150;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_150 >> 8;
@@ -1689,15 +1689,15 @@ void task_smn_mushu_2(SmnMushuWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_14C == gBtlWork->scale) {
         sclY = work->unk_14C;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_14C >> 8;
@@ -1893,15 +1893,15 @@ void task_smn_dumbo_2(SmnDumboWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_150 == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_150 == gBtlWork->scale) {
         sclY = work->unk_150;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_150 >> 8;
@@ -2316,15 +2316,15 @@ void task_smn_genie_2(SmnGenieWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_14C == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_14C == gBtlWork->scale) {
         sclY = work->unk_14C;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_14C >> 8;
@@ -2455,7 +2455,7 @@ u8 task_smn_king_1(SmnKingWork* work) {
         if (func_08044F98(work)) {
             work->state = 4;
             work->unk_148 = 0;
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
         break;
     case 4:
@@ -2526,15 +2526,15 @@ void task_smn_king_2(SmnKingWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256 && work->unk_154 == gBtlWork->unk_024) {
+    } else if (gBtlWork->scale == 256 && work->unk_154 == gBtlWork->scale) {
         sclY = work->unk_154;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     sclX = sclX * work->unk_154 >> 8;

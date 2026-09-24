@@ -84,7 +84,7 @@ void func_0801071C(void) {
     gBtlWork->unk_0A0 = 0;
     gBtlWork->unk_0FC = -0x10000;
     gBtlWork->unk_12C = 66;
-    gBtlWork->unk_0B3 = 10;
+    gBtlWork->fadeAmount = 10;
     gBtlWork->flags |= 0x4000;
     gUnk_020348CC[0] = 0;
     gUnk_020348D0[0] = 0;

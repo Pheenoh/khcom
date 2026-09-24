@@ -142,7 +142,7 @@ typedef struct MsgFaceWork {
     u8 anim[0x18];
     s32 x;
     s32 y;
-    s32 unk_2C;
+    s32 scaleX;
     u8 unk_30;
     u8 unk_31;
     u8 unk_32;

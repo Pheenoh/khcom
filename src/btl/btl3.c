@@ -255,7 +255,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     work->vx = 0x800;
     work->unk_54 = 10;
     work->flags = 2;
-    work->unk_68 = 568;
+    work->song = 568;
 
     switch (work->unk_48) {
     case 0:
@@ -269,14 +269,14 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         func_08040150(work, &x, &y, &z);
         func_08017260(x, y, z, 332);
         work->unk_54 = 16;
-        work->unk_68 = 505;
+        work->song = 505;
         break;
     case 3:
         work->unk_4C = 102;
         func_08040150(work, &x, &y, &z);
         func_080172F8(x, y, z, 332);
         work->unk_54 = 16;
-        work->unk_68 = 509;
+        work->song = 509;
         break;
     case 4:
         work->unk_4C = 103;
@@ -379,7 +379,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
             work->y += (obj->y - work->y) >> 3;
 
             if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 8) != 0) {
-                m4aSongNumStart(work->unk_68);
+                m4aSongNumStart(work->song);
 
                 if (obj->flags & 2) {
                     work->unk_3A = 20;
@@ -415,7 +415,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         }
 
         if (func_08011F78(work->unk_4C, work->x, work->y, work->z, 8, 8, 32) != 0) {
-            m4aSongNumStart(work->unk_68);
+            m4aSongNumStart(work->song);
         }
 
         if (hit != 0) {
@@ -460,7 +460,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
         } else {
             if (func_08011F78(work->unk_4C, work->x, work->y, work->z,
                               work->unk_54, work->unk_54, 32) != 0) {
-                m4aSongNumStart(work->unk_68);
+                m4aSongNumStart(work->song);
             }
         }
 
@@ -495,7 +495,7 @@ u8 task_btl_raid_1(BtlRaidWork* work) {
 
         if (func_08011F78(work->unk_4C, work->x, work->y, work->z,
                           work->unk_54, work->unk_54, 32) != 0) {
-            m4aSongNumStart(work->unk_68);
+            m4aSongNumStart(work->song);
         }
 
         if (work->unk_3A <= 0) {
@@ -558,7 +558,7 @@ void task_btl_raid_2(BtlRaidWork* work) {
     if (work->flags & 2) {
         flags = GetBattleSpritePriorityFlags(work->y);
         WorldToScreen(&sx, &sy, work->x, work->y, work->z);
-        scale = gBtlWork->unk_024 * work->unk_44 >> 8;
+        scale = gBtlWork->scale * work->unk_44 >> 8;
 
         if (scale == 256) {
             affine = 0;

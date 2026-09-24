@@ -197,7 +197,7 @@ void task_bos_lst_fld_0(LstFldWork* work, LstFldArg* arg) {
 
     LoadBgTiles(0, arg->tiles, arg->tilesSize);
     LoadBgPalette(0, arg->palette, arg->paletteSize);
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0xF800;
     gBtlWork->y = 0x1F000;
@@ -627,7 +627,7 @@ u8 eu_0810F08C(LstWork* work) {
     s = work->state;
     result = func_08110918(work);
 
-    if (result == 1 && (s->unk_074 == 0x100 || s->unk_078 == 0x100)) {
+    if (result == 1 && (s->scaleX == 0x100 || s->scaleY == 0x100)) {
         result = 0;
     }
 
@@ -853,8 +853,8 @@ void task_bos_lst_bit_0(LstState* work, LstBitArg* arg) {
     work->unk_06C = p->y;
     work->unk_070 = p->z;
     work->angle = arg->unk_04 << 7;
-    work->unk_074 = 2;
-    work->unk_078 = 2;
+    work->scaleX = 2;
+    work->scaleY = 2;
     work->tiles = (u32)LoadObjTiles(gUnk_09CD0334, 0x900);
     work->palette = (u32)LoadObjPalette(gUnk_09D69594, 0x60);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 0x20);
@@ -927,8 +927,8 @@ u8 task_bos_lst_bit_1(LstState* work) {
         ApproachValueHalfSteps(&work->unk_028, work->unk_050, 20);
         ApproachValueHalfSteps(&work->unk_02C, work->unk_054, 20);
         ApproachValueHalfSteps(&work->unk_030, work->unk_058, 20);
-        ApproachValueHalfSteps(&work->unk_074, 0x100, 32);
-        ApproachValueHalfSteps(&work->unk_078, 0x100, 32);
+        ApproachValueHalfSteps(&work->scaleX, 0x100, 32);
+        ApproachValueHalfSteps(&work->scaleY, 0x100, 32);
         work->unk_006++;
 
         if (work->unk_006 > 29) {
@@ -936,8 +936,8 @@ u8 task_bos_lst_bit_1(LstState* work) {
             work->unk_004 = 0;
             work->unk_006 = 0;
             work->unk_008 = 0;
-            work->unk_074 = 0x100;
-            work->unk_078 = 0x100;
+            work->scaleX = 0x100;
+            work->scaleY = 0x100;
         }
         break;
     case 1:
@@ -1077,8 +1077,8 @@ u8 task_bos_lst_bit_1(LstState* work) {
         ApproachValueHalfSteps(&work->unk_028, work->unk_050, 16);
         ApproachValueHalfSteps(&work->unk_02C, work->unk_054, 16);
         ApproachValueHalfSteps(&work->unk_030, work->unk_058, 16);
-        ApproachValueHalfSteps(&work->unk_074, 0x200, 16);
-        ApproachValueHalfSteps(&work->unk_078, 2, 16);
+        ApproachValueHalfSteps(&work->scaleX, 0x200, 16);
+        ApproachValueHalfSteps(&work->scaleY, 2, 16);
         work->unk_006++;
 
         if (work->unk_006 > 59) {
@@ -1089,8 +1089,8 @@ u8 task_bos_lst_bit_1(LstState* work) {
         }
         break;
     case 6:
-        work->unk_074 = 0x100;
-        work->unk_078 = 0x100;
+        work->scaleX = 0x100;
+        work->scaleY = 0x100;
         AnimReset(&work->anim);
         AnimChange(&work->anim, 4, 1);
         break;
@@ -1203,7 +1203,7 @@ void task_bos_lst_bit_2(LstState* work) {
                   work->unk_030 + work->unk_03C + work->unk_040);
     prio = GetBattleSpritePriorityFlags(work->unk_02C);
     z = -0x1004 - (work->unk_02C >> 8) * 4;
-    affine = AllocObjAffine(work->unk_01B, work->unk_074, work->unk_078, 0);
+    affine = AllocObjAffine(work->unk_01B, work->scaleX, work->scaleY, 0);
     gfx = AnimGetGfx(&work->anim);
     DrawSprite(x, y, gfx, (void*)work->tiles, pal, affine, prio, z);
     TaskPoolDraw(&work->tasks);
@@ -1405,7 +1405,7 @@ void task_bos_lst_lsr_2(LstLsrWork* work) {
         prio = GetBattleSpritePriorityFlags(work->y2);
         z = -0x1004 - (work->y2 >> 8) * 4;
         WorldToScreen(&x2, &y2, work->x, work->y, work->z);
-        oam = AllocObjAffineAngle(work->unk_002, 1);
+        oam = AllocObjAffineAngle(work->angle, 1);
         x = x2 + (x1 - x2) * work->unk_010 / work->unk_014;
         y = y2 + (y1 - y2) * work->unk_010 / work->unk_014;
         DrawSprite(x, y, gUnk_09EFBEC4[13], (void*)work->tiles, (void*)work->palette,

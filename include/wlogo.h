@@ -93,8 +93,8 @@ typedef struct WlogoBksObjWork {
     s32 y;
     s32 targetX;
     s32 targetY;
-    s32 unk_03C;
-    s32 unk_040;
+    s32 scaleX;
+    s32 scaleY;
     u8 unk_044;
     u8 unk_045;
     s16 unk_046;
@@ -314,7 +314,7 @@ typedef struct WlogoNvlMovWork {
     void* palette;
     void* gfx;
     AnimState anim;
-    u8 unk_048;
+    u8 animId;
     u8 unk_049;
     u8 unk_04A[0x2];
 } WlogoNvlMovWork;
@@ -358,7 +358,7 @@ typedef struct WlogoWonWork {
     void* tiles;
     void* palette;
     u16 unk_008;
-    u8 unk_00A;
+    u8 angle;
     u8 unk_00B;
     s32 x[10];
     s32 y[10];
@@ -377,7 +377,7 @@ typedef struct WlogoHwtObjA {
     s32 x;
     s32 y;
     s32 unk_08;
-    u8 unk_0C;
+    u8 animId;
     u8 unk_0D[0x3];
 } WlogoHwtObjA;
 

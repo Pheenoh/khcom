@@ -45,7 +45,7 @@ typedef struct UnkStruct_09EF70D0 {
     void* unk_2C;
     s32* unk_30;
     s32* unk_34;
-    u16 unk_38;
+    u16 song;
 } UnkStruct_09EF70D0;
 
 typedef struct UnkStruct_09EF8370 {
@@ -67,7 +67,7 @@ typedef struct UnkStruct_09EF8370 {
     const u8* unk_28;
     struct UnkStruct_080E56B4* unk_2C;
     struct UnkStruct_080EC760Entry* unk_30;
-    u16 unk_34;
+    u16 song;
     u8 unk_36[0x02];
     s32 unk_38;
     s32 unk_3C;

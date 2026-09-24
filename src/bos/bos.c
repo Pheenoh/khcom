@@ -7,7 +7,7 @@ void task_bos_map_0(s32 unused, BosMapConfig* cfg) {
     LoadBgPalette(0, cfg->palette, cfg->paletteSize);
     SetBgMapBlocks(0, cfg->maps, 2, 2);
 
-    gBtlWork->unk_024 = 0x100;
+    gBtlWork->scale = 0x100;
     gBtlWork->unk_028 = 0x100;
     gBtlWork->x = 0x10000;
     gBtlWork->y = 0x14000;

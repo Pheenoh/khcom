@@ -81,8 +81,8 @@ typedef struct LstState {
     u32 unk_068;
     u32 unk_06C;
     u32 unk_070;
-    u32 unk_074;
-    u32 unk_078;
+    u32 scaleX;
+    u32 scaleY;
     u32 anim;
     u8 unk_080[0x14];
     u32 tiles;
@@ -177,7 +177,7 @@ typedef LstState LstBitWork;
 
 typedef struct LstLsrWork {
     s16 state;
-    u8 unk_002;
+    u8 angle;
     u8 unk_003;
     s32 unk_004;
     u16* unk_008;

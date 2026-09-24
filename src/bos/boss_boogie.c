@@ -210,7 +210,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             if (FadeIsActive() == 0) {
                 func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
-                FadeToAmount(0, gBtlWork->unk_0B3, 8);
+                FadeToAmount(0, gBtlWork->fadeAmount, 8);
                 work->unk_170 = 3;
                 work->timer = 0;
             }

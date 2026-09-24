@@ -821,24 +821,24 @@ void func_0800DF30(EmyWork* work) {
 
         if (work->unk_17C == 0x100 && work->unk_180 == 0x100) {
             if (actor->flags & 4) {
-                sy = gBtlWork->unk_024;
+                sy = gBtlWork->scale;
                 sx = sy;
-            } else if (gBtlWork->unk_024 == 0x100) {
-                sy = gBtlWork->unk_024;
+            } else if (gBtlWork->scale == 0x100) {
+                sy = gBtlWork->scale;
                 sx = sy;
                 g |= 1;
             } else {
-                sy = gBtlWork->unk_024;
+                sy = gBtlWork->scale;
                 sx = -sy;
             }
         } else {
             if (actor->flags & 4) {
-                sx = (gBtlWork->unk_024 * work->unk_17C) >> 8;
-                sy = gBtlWork->unk_024;
+                sx = (gBtlWork->scale * work->unk_17C) >> 8;
+                sy = gBtlWork->scale;
                 sy = (sy * work->unk_180) >> 8;
             } else {
-                sx = -((gBtlWork->unk_024 * work->unk_17C) >> 8);
-                sy = gBtlWork->unk_024;
+                sx = -((gBtlWork->scale * work->unk_17C) >> 8);
+                sy = gBtlWork->scale;
                 sy = (sy * work->unk_180) >> 8;
             }
         }

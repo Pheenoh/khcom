@@ -114,7 +114,7 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->timer = 0;
     work->unk_2C = 0;
     work->state = 0;
-    work->unk_1C = 0x19;
+    work->scaleY = 0x19;
     InitTextSlots(work->unk_3C, 0x24);
     work->palette2 = _08066468(1);
 #ifdef VERSION_EU
@@ -142,9 +142,9 @@ u8 task_room_name_1(RoomNameWork* work) {
         if (work->timer > 1) {
             work->timer = 0;
             work->y2 -= 0x99;
-            work->unk_1C += 0x19;
-            if (work->unk_1C > 0xFF) {
-                work->unk_1C = 0x100;
+            work->scaleY += 0x19;
+            if (work->scaleY > 0xFF) {
+                work->scaleY = 0x100;
                 work->state++;
             }
         }
@@ -161,9 +161,9 @@ u8 task_room_name_1(RoomNameWork* work) {
         if (work->timer > 1) {
             work->timer = 0;
             work->y2 += 0x99;
-            work->unk_1C -= 0x19;
-            if (work->unk_1C <= 0x19) {
-                work->unk_1C = 0x19;
+            work->scaleY -= 0x19;
+            if (work->scaleY <= 0x19) {
+                work->scaleY = 0x19;
                 return 0;
             }
         }
@@ -176,7 +176,7 @@ void task_room_name_2(RoomNameWork* work) {
     s32 affine;
 
     if (work->state != 0) {
-        affine = AllocObjAffine(0, 0x100, work->unk_1C, 0);
+        affine = AllocObjAffine(0, 0x100, work->scaleY, 0);
         DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
         DrawTextSlots(work->x2 >> 8, work->y2 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);
     }

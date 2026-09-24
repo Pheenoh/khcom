@@ -382,7 +382,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 4:
         if (work->unk_150 == 0) {
             func_08014A34(actor->x, actor->y + actor->z - ((s16)actor->unk_0A2 << 8));
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
         func_0802F284(actor->x, actor->y, actor->z);
         work->unk_158 = 0;
@@ -416,7 +416,7 @@ s32 func_0800E5F0(HumWork* work) {
     case 6:
         if (work->unk_150 == 0) {
             func_08014AAC(actor->x, actor->y + actor->z - ((s16)actor->unk_0A2 << 8));
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
         func_0802F284(actor->x, actor->y, actor->z);
         work->unk_158 = 0;

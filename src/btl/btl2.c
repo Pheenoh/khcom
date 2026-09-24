@@ -106,11 +106,11 @@ void task_btl_shadow_2(BtlShadowWork* work) {
         if (!(actor->flags & 0x0000000402000000)) {
             anim = GetBattleSpritePriorityFlags(actor->y);
 
-            if (actor->z >= 0 && gBtlWork->unk_024 == 0x100) {
+            if (actor->z >= 0 && gBtlWork->scale == 0x100) {
                 aff = 0;
             } else {
                 s32 sc = 0x100 - (actor->unk_010 - actor->z) / 128;
-                sc = (gBtlWork->unk_024 * sc) >> 8;
+                sc = (gBtlWork->scale * sc) >> 8;
                 if (sc <= 127) {
                     sc = 128;
                 }
@@ -1674,7 +1674,7 @@ void task_btl_prize_2(BtlPrizeWork* work) {
         s32 pri = 0x800;
 
         WorldToScreen(&x, &y, work->x, work->y, work->z);
-        aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
+        aff = AllocObjAffine(0, gBtlWork->scale, gBtlWork->scale, 1);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, pri,
                    (u16)(-4100 - (work->y >> 8) * 4));
 
@@ -1905,7 +1905,7 @@ void task_btl_premire_2(BtlPremireWork* work) {
         u16 anim = GetBattleSpritePriorityFlags(work->y);
 
         WorldToScreen(&x, &y, work->x, work->y, work->z);
-        aff = AllocObjAffine(0, gBtlWork->unk_024, gBtlWork->unk_024, 1);
+        aff = AllocObjAffine(0, gBtlWork->scale, gBtlWork->scale, 1);
         DrawSprite(x, y, work->gfx, work->tiles, work->palette, aff, anim,
                    (u16)(-4100 - (work->y >> 8) * 4));
 

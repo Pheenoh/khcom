@@ -54,7 +54,7 @@
 struct BtlObj;
 
 typedef struct BgFx {
-    s32 unk_00;
+    s32 bg;
     void (*update)(void);
     s16 unk_08;
     s16 unk_0A;

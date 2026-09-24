@@ -2428,7 +2428,7 @@ u8 task_hum_ansem_1(AnsemWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F0D0, &w->base.anim, 3, 0, w->base.tiles);
             AnimChangeWithDef(gUnk_0813F140, &w->base.sub->anim, 6, 0, w->base.sub->tiles);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             w->unk_1C4 = -0xC00;
         }
 
@@ -2775,7 +2775,7 @@ u8 task_hum_hades_1(HadesWork* work) {
     case 25:
         if ((s16)work->base.unk_150 == 0) {
             AnimChangeWithDef(gUnk_0813F22C, &w->base.anim, 8, 1, w->base.tiles);
-            w->unk_27C = 10;
+            w->scale = 10;
             work->base.unk_152 = 8;
             w->unk_1CA = (w->unk_1CA & 0xFFFB) | 2;
 
@@ -2800,9 +2800,9 @@ u8 task_hum_hades_1(HadesWork* work) {
 
         if ((s16)work->base.unk_152 > 0) {
             if (w->unk_1CA & 4) {
-                ApproachValue(&w->unk_27C, 10, (u16)work->base.unk_152);
+                ApproachValue(&w->scale, 10, (u16)work->base.unk_152);
             } else {
-                ApproachValue(&w->unk_27C, 0x100, (u16)work->base.unk_152);
+                ApproachValue(&w->scale, 0x100, (u16)work->base.unk_152);
             }
             work->base.unk_152--;
         }
@@ -2882,7 +2882,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             w->sub2[0].z += (act->z + ((s16)q << 8) - w->sub2[0].z) >> 1;
             w->sub2[1].z += (act->z + ((s16)s << 8) - w->sub2[1].z) >> 1;
             {
-                s32 v = w->unk_27C;
+                s32 v = w->scale;
                 p = (s16)p + (v * 14 >> 8);
                 q = (s16)q + (v * 10 >> 8);
                 r = (s16)r + (v * 8 >> 8);
@@ -2901,7 +2901,7 @@ u8 task_hum_hades_1(HadesWork* work) {
             w->sub2[0].z2 += (act->z + ((s16)q << 8) - w->sub2[0].z2) >> 3;
             w->sub2[1].z2 += (act->z + ((s16)s << 8) - w->sub2[1].z2) >> 3;
             {
-                s32 v = w->unk_27C;
+                s32 v = w->scale;
                 p = (s16)p + (v * 24 >> 8);
                 q = (s16)q + (v * 20 >> 8);
                 r = (s16)r + (v * 10 >> 8);
@@ -2927,7 +2927,7 @@ u8 task_hum_hades_1(HadesWork* work) {
         }
 #endif
 
-        if (w->unk_27C == 0x100) {
+        if (w->scale == 0x100) {
             if (func_08011F78(0x121, w->sub2[0].x3, w->sub2[0].unk_00, w->sub2[0].z3, 16, 16, 16)) {
                 m4aSongNumStart(SONG_EF_FIRE01);
             }
@@ -3096,19 +3096,19 @@ void task_hum_hades_2(HadesWork* work) {
         e = &work->sub2[i];
         attr = GetBattleSpritePriorityFlags(e->unk_00);
 
-        if (work->unk_27C == 0x100) {
+        if (work->scale == 0x100) {
             if ((act->flags & 4) == 0) {
                 attr |= 1;
             }
-            sx = work->unk_27C;
+            sx = work->scale;
         } else {
             if ((act->flags & 4) == 0) {
-                sx = work->unk_27C;
+                sx = work->scale;
             } else {
-                sx = -work->unk_27C;
+                sx = -work->scale;
             }
         }
-        affine = AllocObjAffine(0, sx, work->unk_27C, 0);
+        affine = AllocObjAffine(0, sx, work->scale, 0);
         gfx = AnimGetGfx(&work->anim);
         WorldToScreen(&x, &y, e->x, e->y, e->z);
         DrawSprite(x, y, gfx, work->tiles, work->palette, affine, attr,
@@ -3201,7 +3201,7 @@ void func_0804FA70(MahluxiaWork* work, RikuSpawn* dst) {
     }
     dst->anim = work->base.anim;
     dst->unk_28 = *(u32*)work->base.tiles;
-    dst->unk_2C = gBtlWork->unk_024;
+    dst->unk_2C = gBtlWork->scale;
 }
 
 void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
@@ -3236,8 +3236,8 @@ void func_0804FAD4(MahluxiaWork* work, RikuSpawn* p) {
         sx = sy;
         attr |= 1;
     } else {
-        sx = -gBtlWork->unk_024;
-        sy = gBtlWork->unk_024;
+        sx = -gBtlWork->scale;
+        sy = gBtlWork->scale;
     }
 
     if (sy == 0x100 && sx == sy) {
@@ -4123,7 +4123,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
         if ((s16)work->base.unk_150 == 0) {
             m4aSongNumStart(SONG_SND_285);
             AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
         }
@@ -4492,7 +4492,7 @@ u8 task_hum_laxene_1(LaxeneWork* work) {
             act->z = 0;
             AnimReset(&work->base.anim);
             AnimChangeWithDef(gUnk_0813F498, &w->base.anim, 12, 0, w->base.tiles);
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             w->unk_188 = 0;
             work->base.unk_158 = 0x400;
             w->unk_190 = 8;
@@ -5299,7 +5299,7 @@ u8 task_hum_axcel_1(AxcelWork* work) {
     case 33: {
         s32 a, b, c;
         if ((s16)work->base.unk_150 == 0) {
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
             AnimChangeWithDef(gUnk_0813F5E0, &w->base.anim, 12, 0, w->base.tiles);
             if (act->flags & 4) {
                 func_08017E18(act->x, 1, 303);
@@ -6212,7 +6212,7 @@ void task_hum_vixen_ice_2(VixenIceWork* work) {
     if (work->sub->unk_01 != 0) {
         gfx = AnimGetGfx(&work->anim);
         WorldToScreen(&x, &y, work->sub->x, work->sub->y, 0);
-        s = work->unk_8C * gBtlWork->unk_024 >> 8;
+        s = work->unk_8C * gBtlWork->scale >> 8;
         if (gBtlWork->unk_018 != 0 || s > 0x100) {
             affine = AllocObjAffine(gBtlWork->unk_018, s, s, 1);
         } else {
@@ -7539,7 +7539,7 @@ void func_08057E2C(RikuWork* work, RikuSpawn* dst) {
     }
     dst->anim = work->base.anim;
     dst->unk_28 = *(u32*)work->base.tiles;
-    dst->unk_2C = gBtlWork->unk_024;
+    dst->unk_2C = gBtlWork->scale;
 }
 
 void func_08057E90(RikuWork* work, RikuSpawn* p) {
@@ -7574,8 +7574,8 @@ void func_08057E90(RikuWork* work, RikuSpawn* p) {
         sx = sy;
         attr |= 1;
     } else {
-        sx = -gBtlWork->unk_024;
-        sy = gBtlWork->unk_024;
+        sx = -gBtlWork->scale;
+        sy = gBtlWork->scale;
     }
 
     if (sy == 0x100 && sx == sy) {

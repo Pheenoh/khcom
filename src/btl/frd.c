@@ -524,22 +524,22 @@ void task_frd_donald_2(FrdDonaldWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -813,22 +813,22 @@ void task_frd_goofy_2(FrdGoofyWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -1046,22 +1046,22 @@ void task_frd_ariel_2(FrdArielWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -1525,24 +1525,24 @@ void task_frd_jack_2(FrdJackWork* work) {
     angle = work->unk_160;
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (angle == 0 && gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (angle == 0 && gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
     if (angle != 0) {
         affine = AllocObjAffine(angle, sclX, sclY, 1);
-    } else if (gBtlWork->unk_024 == 256) {
+    } else if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -1763,7 +1763,7 @@ u8 task_frd_pan_1(FrdPanWork* work) {
         if (work->unk_14E == 0) {
             AnimChangeWithDef(gUnk_0813ECFC, &work->anim, 2, 1, work->tiles);
             work->unk_150 = 70;
-            FadeToAmount(0, gBtlWork->unk_0B3, 8);
+            FadeToAmount(0, gBtlWork->fadeAmount, 8);
         }
         func_0801D288();
         if (gBtlWork->flags & 0x4000) {
@@ -1846,22 +1846,22 @@ void task_frd_pan_2(FrdPanWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -2085,22 +2085,22 @@ void task_frd_aladdin_2(FrdAladdinWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);
@@ -2316,22 +2316,22 @@ void task_frd_beast_2(FrdBeastWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);

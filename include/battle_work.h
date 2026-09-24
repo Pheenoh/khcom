@@ -19,7 +19,7 @@ typedef struct BtlWork {
     s16 unk_01A;
     s32 unk_01C;
     s32 unk_020;
-    s32 unk_024;
+    s32 scale;
     s32 unk_028;
     TaskPool taskPools[3];
     u64 flags;
@@ -39,7 +39,7 @@ typedef struct BtlWork {
     BtlObj* actor4;
     s16 unk_0B0;
     s8 unk_0B2;
-    u8 unk_0B3;
+    u8 fadeAmount;
     u8 unk_0B4;
     u8 unk_0B5[0x03];
     s32 x3;

@@ -3576,7 +3576,7 @@ u8 func_080FC17C(MdWork* work) {
                 if (FadeIsActive() == 0) {
                     func_08014AAC(work->sub[0].x,
                                   work->sub[0].y + work->sub[0].z);
-                    FadeToAmount(0, gBtlWork->unk_0B3, 8);
+                    FadeToAmount(0, gBtlWork->fadeAmount, 8);
                     work->unk_016 = 120;
                     work->unk_00C = 1;
                 }
@@ -3927,7 +3927,7 @@ void task_bos_md_map_0(MdMapWork* work, MdMapData* p) {
     LoadBgTiles(0, p->tiles, p->tilesSize);
     LoadBgPalette(0, p->palette, p->paletteSize);
     SetBgMapBlocks(0, &p->map, 2, 2);
-    gBtlWork->unk_024 = 256;
+    gBtlWork->scale = 256;
     gBtlWork->unk_028 = 256;
     gBtlWork->x = 0x10000;
     gBtlWork->y = 0x14000;
@@ -4154,7 +4154,7 @@ void task_bos_md_fire_0(MdFireWork* work, MdFireArg* arg) {
 
     work->unk_006 = 0;
     work->unk_008 = 0;
-    work->unk_030 = 25;
+    work->scale = 25;
     work->unk_034 = 30;
     work->unk_000 = 0;
     work->z = 0;
@@ -4228,11 +4228,11 @@ void task_bos_md_fire_2(MdFireWork* work) {
     frame = GetBattleSpritePriorityFlags(work->y);
 
     if (work->unk_000 == 0) {
-        ApproachValue(&work->unk_030, 0x100, work->unk_034);
-        sprite = AllocObjAffine(0, work->unk_030, work->unk_030, 0);
+        ApproachValue(&work->scale, 0x100, work->unk_034);
+        sprite = AllocObjAffine(0, work->scale, work->scale, 0);
     } else if (work->unk_000 == 4) {
-        ApproachValue(&work->unk_030, 25, work->unk_034);
-        sprite = AllocObjAffine(0, work->unk_030, work->unk_030, 0);
+        ApproachValue(&work->scale, 25, work->unk_034);
+        sprite = AllocObjAffine(0, work->scale, work->scale, 0);
     } else {
         sprite = 0;
     }

@@ -241,7 +241,7 @@ void task_wlogo_hwt_obj_0(WlogoHwtObjWork* work, s32 arg) {
     work->tiles = LoadObjTiles(gUnk_0961B072, 0xF20);
     work->palette = LoadObjPalette(gUnk_096FAD64, 0x20);
     AnimInit(&work->anim, gUnk_09EF356C, gUnk_09EF3548);
-    AnimStart(&work->anim, gUnk_096194D0[work->unk_04A].unk_0C, 1);
+    AnimStart(&work->anim, gUnk_096194D0[work->unk_04A].animId, 1);
     work->gfx = AnimGetGfx(&work->anim);
     work->x = gUnk_096194D0[work->unk_04A].x;
     work->y = gUnk_096194D0[work->unk_04A].y;
@@ -306,7 +306,7 @@ void task_wlogo_won_0(WlogoWonWork* work) {
         work->unk_0C0[i] = 0;
     }
     work->unk_008 = 0;
-    work->unk_00A = 0;
+    work->angle = 0;
     work->state = 0;
     work->unk_0F3 = 0;
     SetBgBlend(0, 16, 0);
@@ -380,7 +380,7 @@ void task_wlogo_won_2(WlogoWonWork* work) {
 
     if (work->state == 1) {
         for (i = 0; i < 10; i++) {
-            affine = AllocObjAffine(work->unk_00A, gUnk_09EF180C[work->unk_0CA[i]], 0x100, 0);
+            affine = AllocObjAffine(work->angle, gUnk_09EF180C[work->unk_0CA[i]], 0x100, 0);
             DrawSprite(work->x[i] >> 8, work->y[i] >> 8, work->gfx[i], work->tiles, work->palette, affine, 0, gUnk_09EF167C[i].unk_10);
         }
     }
@@ -600,9 +600,9 @@ void task_wlogo_nvl_mov_0(WlogoNvlMovWork* work) {
     work->unk_049 = 1;
     work->tiles = LoadObjTiles(gUnk_0961C062, 0x600);
     work->palette = LoadObjPalette(gUnk_096FADA4, 0x20);
-    work->unk_048 = 3;
+    work->animId = 3;
     AnimInit(&work->anim, gUnk_09EF35A4, gUnk_09EF3574);
-    AnimStart(&work->anim, work->unk_048, 0);
+    AnimStart(&work->anim, work->animId, 0);
     work->gfx = AnimGetGfx(&work->anim);
     TaskPoolInit(&gWlogoNvlMovTaskPool, 10);
 }
@@ -2035,8 +2035,8 @@ void task_wlogo_bks_obj_0(WlogoBksObjWork* work, s32 arg) {
     work->y = gUnk_09EF1CB6[work->unk_029][1] << 8;
     work->targetX = gUnk_09EF1C7E[work->unk_029][0] << 8;
     work->targetY = gUnk_09EF1C7E[work->unk_029][1] << 8;
-    work->unk_03C = 0x100;
-    work->unk_040 = 0x100;
+    work->scaleX = 0x100;
+    work->scaleY = 0x100;
     work->unk_024 = 0;
     work->unk_026 = 30;
     work->state = 0;
@@ -2059,7 +2059,7 @@ u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
             if (++work->unk_046 > 19) {
                 work->unk_046 = 0;
             }
-            work->unk_03C = gUnk_09EF180C[work->unk_046];
+            work->scaleX = gUnk_09EF180C[work->unk_046];
         } else {
             work->unk_024 = 0;
             work->unk_026 = 0;
@@ -2079,7 +2079,7 @@ u8 task_wlogo_bks_obj_1(WlogoBksObjWork* work) {
 void task_wlogo_bks_obj_2(WlogoBksObjWork* work) {
     s32 affine;
 
-    affine = AllocObjAffine(0, work->unk_03C, work->unk_040, 1);
+    affine = AllocObjAffine(0, work->scaleX, work->scaleY, 1);
     DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, work->unk_048);
 }
 

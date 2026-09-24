@@ -747,23 +747,23 @@ void task_emy_00_2(EmyWork* work) {
 
         if (zoom == 0x100) {
             if (act->flags & 4) {
-                scale = gBtlWork->unk_024;
+                scale = gBtlWork->scale;
                 rot = scale;
-            } else if (gBtlWork->unk_024 == zoom) {
+            } else if (gBtlWork->scale == zoom) {
                 scale = zoom;
                 rot = scale;
                 pri |= 1;
             } else {
-                rot = -gBtlWork->unk_024;
-                scale = gBtlWork->unk_024;
+                rot = -gBtlWork->scale;
+                scale = gBtlWork->scale;
             }
         } else {
             if (act->flags & 4) {
-                rot = gBtlWork->unk_024 * work->unk_17C >> 8;
-                scale = gBtlWork->unk_024;
+                rot = gBtlWork->scale * work->unk_17C >> 8;
+                scale = gBtlWork->scale;
             } else {
-                rot = -(gBtlWork->unk_024 * work->unk_17C >> 8);
-                scale = gBtlWork->unk_024;
+                rot = -(gBtlWork->scale * work->unk_17C >> 8);
+                scale = gBtlWork->scale;
             }
 
             scale = scale * zoom >> 8;
@@ -2053,7 +2053,7 @@ void task_emy_16_b_2(Emy16bWork* work) {
     if (work->unk_09C != 0) {
         pri = GetBattleSpritePriorityFlags(work->y);
         WorldToScreen(&x, &y, work->x, work->y, work->z);
-        angle = gBtlWork->unk_024;
+        angle = gBtlWork->scale;
 
         if (angle == 0x100) {
             affine = 0;
@@ -4254,23 +4254,23 @@ void task_emy_37_2(Emy37Work* work) {
 
         if (zoom == 0x100) {
             if (act->flags & 4) {
-                scale = gBtlWork->unk_024;
+                scale = gBtlWork->scale;
                 rot = scale;
-            } else if (work->unk_184 == 0 && gBtlWork->unk_024 == zoom) {
+            } else if (work->unk_184 == 0 && gBtlWork->scale == zoom) {
                 scale = zoom;
                 rot = scale;
                 pri |= 1;
             } else {
-                rot = -gBtlWork->unk_024;
-                scale = gBtlWork->unk_024;
+                rot = -gBtlWork->scale;
+                scale = gBtlWork->scale;
             }
         } else {
             if (act->flags & 4) {
-                rot = gBtlWork->unk_024 * work->base.unk_17C >> 8;
-                scale = gBtlWork->unk_024;
+                rot = gBtlWork->scale * work->base.unk_17C >> 8;
+                scale = gBtlWork->scale;
             } else {
-                rot = -(gBtlWork->unk_024 * work->base.unk_17C >> 8);
-                scale = gBtlWork->unk_024;
+                rot = -(gBtlWork->scale * work->base.unk_17C >> 8);
+                scale = gBtlWork->scale;
             }
 
             scale = scale * zoom >> 8;

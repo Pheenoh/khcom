@@ -277,22 +277,22 @@ void eu_08061588(FrdPoohWork* work) {
     flags = GetBattleSpritePriorityFlags(body->y);
 
     if (body->flags & 4) {
-        sclY = gBtlWork->unk_024;
+        sclY = gBtlWork->scale;
         sclX = sclY;
-    } else if (gBtlWork->unk_024 == 256) {
-        sclY = gBtlWork->unk_024;
+    } else if (gBtlWork->scale == 256) {
+        sclY = gBtlWork->scale;
         sclX = sclY;
         flags |= 1;
     } else {
-        sclX = -gBtlWork->unk_024;
-        sclY = gBtlWork->unk_024;
+        sclX = -gBtlWork->scale;
+        sclY = gBtlWork->scale;
     }
 
     WorldToScreen(&sx, &sy, body->x, body->y, body->z);
 
-    if (gBtlWork->unk_024 == 256) {
+    if (gBtlWork->scale == 256) {
         affine = 0;
-    } else if (gBtlWork->unk_024 <= 255) {
+    } else if (gBtlWork->scale <= 255) {
         affine = AllocObjAffine(0, sclX, sclY, 0);
     } else {
         affine = AllocObjAffine(0, sclX, sclY, 1);

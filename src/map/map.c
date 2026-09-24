@@ -3261,7 +3261,7 @@ void func_080E56B4(void* a) {
     e->unk_00 = n;
     e->unk_14 = &gUnk_0984C1CC;
     e->unk_04 = v;
-    TaskCreate(gFieldState->tasks, gUnk_0984C1CC.unk_24, e);
+    TaskCreate(gFieldState->tasks, gUnk_0984C1CC.desc, e);
     e++;
 
     if (func_080DF750() != 0) {
@@ -3280,7 +3280,7 @@ void func_080E56B4(void* a) {
         e->unk_00 = n;
         e->unk_14 = &gUnk_0984C23C;
         e->unk_04 = v;
-        TaskCreate(gFieldState->tasks, gUnk_0984C23C.unk_24, e);
+        TaskCreate(gFieldState->tasks, gUnk_0984C23C.desc, e);
     }
 }
 
@@ -3638,7 +3638,7 @@ void func_080E6034(MapEnmWork* p) {
         q->unk_00 = p->unk_08;
         q->unk_10 = p->unk_1C;
         q->unk_14 = p->unk_18;
-        ListPoolActivate(q->unk_1C, gGameState.unk_0E8);
+        ListPoolActivate(q->node, gGameState.unk_0E8);
     }
 }
 
@@ -3657,7 +3657,7 @@ void func_080E607C(void) {
         w.unk_18 = q->unk_10;
         w.unk_1C = q->unk_14;
         TaskCreate(gFieldState->tasks4, d->desc, &w);
-        q = ListPoolNext(q->unk_1C);
+        q = ListPoolNext(q->node);
     }
     ListPoolInit(gGameState.unk_0E8);
 
@@ -3710,7 +3710,7 @@ void func_080E6178(void) {
             w.unk_18 = q->unk_10;
             w.unk_1C = q->unk_14;
             TaskCreate(gFieldState->tasks4, d->desc, &w);
-            q = ListPoolNext(q->unk_1C);
+            q = ListPoolNext(q->node);
         }
         if (gGameState.flags & 2) {
             gGameState.flags &= ~2;
@@ -3872,7 +3872,7 @@ void func_080E657C(MapEnmWork* p) {
             q->unk_00 = p->unk_08;
             q->unk_10 = p->unk_1C;
             q->unk_14 = p->unk_18;
-            ListPoolActivate(q->unk_1C, gGameState.unk_0E8);
+            ListPoolActivate(q->node, gGameState.unk_0E8);
         }
     }
     gUnk_02034F40--;
@@ -4913,7 +4913,7 @@ void func_080E8594(void) {
         d = gUnk_0203C7B8[i].unk_14;
 
         if ((gUnk_0203C7B8[i].unk_00 & 1) == 0) {
-            TaskCreate(gFieldState->tasks, d->unk_24, &gUnk_0203C7B8[i]);
+            TaskCreate(gFieldState->tasks, d->desc, &gUnk_0203C7B8[i]);
         }
     }
     TaskCreate(gFieldState->tasks, &gTaskDescMapGmkDmy, 0);
@@ -5780,7 +5780,7 @@ void Mode_MapDbg_0(void) {
     func_080E0078();
     func_0801CB00();
     SeedRandom(gFrameCounter);
-    m4aSongNumStartOrContinue(p->unk_38);
+    m4aSongNumStartOrContinue(p->song);
     TaskPoolInit(gUnk_02034F90, 1);
     TaskCreate(gUnk_02034F90, &gTaskDescMapDbg, &gUnk_02034FA4);
     TaskCreate(gFieldState->tasks, &gTaskDescMapDmg, 0);
@@ -6153,7 +6153,7 @@ void Mode_MapFld_0(void) {
     func_080E0078();
     func_0801CB00();
     SeedRandom(gFrameCounter);
-    m4aSongNumStartOrContinue(p->unk_38);
+    m4aSongNumStartOrContinue(p->song);
     FadeStartIn(0, 16);
 }
 
@@ -6533,7 +6533,7 @@ void Mode_MapFix_0(void) {
     func_080E5800();
     func_0801CB00();
     SeedRandom(gFrameCounter);
-    m4aSongNumStartOrContinue(p->unk_34);
+    m4aSongNumStartOrContinue(p->song);
 
     if (gUnk_0203C590.unk_02 & 0x80) {
         t = gUnk_0203C590.unk_02 & 0xFF7F;
@@ -6731,9 +6731,9 @@ void func_080EAD84(u8 a) {
         gNewGameSlotMenuWork->unk_160 = LoadTextSlots((void*)func_080DF804(e->world), &gNewGameSlotMenuWork->unk_040);
 
         if (gNewGameSlotMenuWork->unk_33D == 0) {
-            LoadObjPaletteBank(gNewGameSlotMenuWork->palette8->unk_06, &gUnk_099910C4[0xB40]);
+            LoadObjPaletteBank(gNewGameSlotMenuWork->palette8->paletteBank, &gUnk_099910C4[0xB40]);
         } else {
-            LoadObjPaletteBank(gNewGameSlotMenuWork->palette8->unk_06, &gUnk_099910C4[0xB80]);
+            LoadObjPaletteBank(gNewGameSlotMenuWork->palette8->paletteBank, &gUnk_099910C4[0xB80]);
         }
     } else {
         func_080EAB20(i, 1, 13);
@@ -7223,9 +7223,9 @@ void func_080EBA58(u8 a) {
         gLoadGameMenuWork->unk_15C = LoadTextSlots((void*)func_080DF804(e->world), &gLoadGameMenuWork->unk_03C);
 
         if (a <= 1) {
-            LoadObjPaletteBank(gLoadGameMenuWork->palette7->unk_06, &gUnk_099910C4[0xB40]);
+            LoadObjPaletteBank(gLoadGameMenuWork->palette7->paletteBank, &gUnk_099910C4[0xB40]);
         } else {
-            LoadObjPaletteBank(gLoadGameMenuWork->palette7->unk_06, &gUnk_099910C4[0xB80]);
+            LoadObjPaletteBank(gLoadGameMenuWork->palette7->paletteBank, &gUnk_099910C4[0xB80]);
         }
     } else {
         func_080EB818(a, 1, 13);

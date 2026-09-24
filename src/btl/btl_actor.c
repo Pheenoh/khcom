@@ -29,10 +29,10 @@ void func_0800EEBC(Actor* p, SprObj* s) {
     attr = GetBattleSpritePriorityFlags(s->y);
 
     if (*(u64*)&c->unk_34 & 4) {
-        sy = gBtlWork->unk_024;
+        sy = gBtlWork->scale;
         sx = sy;
     } else {
-        sy = gBtlWork->unk_024;
+        sy = gBtlWork->scale;
 
         if (sy == 0x100) {
             sx = sy;
@@ -81,10 +81,10 @@ void func_0800EFE8(Actor* work) {
 
     if (work->unk_168 == 0x100 && work->unk_16C == 0x100) {
         if (c->flags & 4) {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
             sx = sy;
         } else {
-            sy = gBtlWork->unk_024;
+            sy = gBtlWork->scale;
 
             if (sy == 0x100) {
                 sx = sy;
@@ -95,12 +95,12 @@ void func_0800EFE8(Actor* work) {
         }
     } else {
         if (c->flags & 4) {
-            sx = (gBtlWork->unk_024 * work->unk_168 >> 8);
-            g = gBtlWork->unk_024;
+            sx = (gBtlWork->scale * work->unk_168 >> 8);
+            g = gBtlWork->scale;
             sy = g * work->unk_16C >> 8;
         } else {
-            sx = -(gBtlWork->unk_024 * work->unk_168 >> 8);
-            g = gBtlWork->unk_024;
+            sx = -(gBtlWork->scale * work->unk_168 >> 8);
+            g = gBtlWork->scale;
             sy = g * work->unk_16C >> 8;
         }
     }

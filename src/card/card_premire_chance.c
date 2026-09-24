@@ -78,8 +78,8 @@ void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
     ListNodeInit(&w->node, &gCardListWork->cards, w);
     ListPoolAppend(&w->node, &gCardListWork->cards);
     w->unk_55 = 0;
-    w->unk_6C = 0x100;
-    w->unk_6E = 0x100;
+    w->scaleX = 0x100;
+    w->scaleY = 0x100;
     w->x2 = 0;
     w->y2 = 0;
     w->unk_53 = 32;
@@ -163,7 +163,7 @@ void func_0809C78C(UnkStruct_0809C534* w) {
     }
 
     if (w->unk_54 != 0) {
-        affine = AllocObjAffine(0, w->unk_6C, w->unk_6E, 1);
+        affine = AllocObjAffine(0, w->scaleX, w->scaleY, 1);
         DrawSprite(w->x + w->x2, w->y + w->y2, w->cardDef->gfx, w->tiles, w->palette2, affine, 0x400,
                    gUnk_0903628A[w->unk_52] + 70);
         DrawSprite(w->x + w->x2, w->y + w->y2, w->cardBack->gfx, w->tiles2, w->palette3, affine, 0x400,

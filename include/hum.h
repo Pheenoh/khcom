@@ -309,7 +309,7 @@ typedef struct HadesWork {
     AnimState anim3;
     void* palette;
     HadesSub sub2[2];
-    s32 unk_27C;
+    s32 scale;
 } HadesWork;
 
 typedef struct LeonWork {

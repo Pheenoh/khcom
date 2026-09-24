@@ -37,12 +37,12 @@ void WorldToScreen(s16* a, s16* b, s32 px, s32 py, s32 pz) {
     s32 u;
     s32 v;
 
-    if (gBtlWork->unk_024 == 0x100) {
+    if (gBtlWork->scale == 0x100) {
         x = (px >> 8) - (gBtlWork->unk_000 >> 8);
         y = ((py >> 8) + (pz >> 8)) - (gBtlWork->unk_004 >> 8);
     } else {
-        x = (((px >> 8) - (gBtlWork->unk_000 >> 8)) * gBtlWork->unk_024) >> 8;
-        y = ((((py >> 8) + (pz >> 8)) - (gBtlWork->unk_004 >> 8)) * gBtlWork->unk_024) >> 8;
+        x = (((px >> 8) - (gBtlWork->unk_000 >> 8)) * gBtlWork->scale) >> 8;
+        y = ((((py >> 8) + (pz >> 8)) - (gBtlWork->unk_004 >> 8)) * gBtlWork->scale) >> 8;
     }
 
     if (gBtlWork->unk_018 == 0) {
@@ -110,7 +110,7 @@ void BtlWorkInit(void) {
     gBtlWork->unk_0A0 = 0;
     gBtlWork->unk_0FC = 0xFFFF0000;
     gBtlWork->unk_12C = 0x42;
-    gBtlWork->unk_0B3 = 10;
+    gBtlWork->fadeAmount = 10;
     d = gBtlWork->unk_13C;
     p = (u8*)&gGameState;
     p += 0xF8;
