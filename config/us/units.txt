@@ -157,7 +157,6 @@ event_message.c
 mode_eventselect.c
 card_battle.c
 card_card.c
-card_battle_riku_rodata.s
 card_battle_riku.c
 card_map_anim.c
 card_deckmenu2_rodata.s
