@@ -80,93 +80,54 @@ entries:
     address: 0x09EB71F0
   eu:
     address: 0x09F5A3CC
-- name: gUnk_0895085C
-  record: Sprite
+- name: gUnk_08950902
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16392, 16400, 4]
-  - [16392, 16432, 4]
-  - [16392, 80, 8]
-  - [8, 96, 10]
+  cell: [104, 16]
+  anchor: [0, 0]
+  columns: 4
+  frames:
+  - symbol: gUnk_0895085C
+    pieces:
+    - [16x16, 0, 0]
+    - [32x8, 16, 8]
+    - [32x8, 48, 8]
+    - [16x8, 80, 8]
+    - [8x8, 96, 8]
+  - symbol: gUnk_0895087E
+    pieces:
+    - [32x8, 16, 8]
+    - [32x8, 48, 8]
+    - [16x8, 80, 8]
+    - [8x8, 96, 8]
+    - [16x16, 0, 0]
+  - symbol: gUnk_089508A0
+    pieces:
+    - [32x8, 16, 8]
+    - [32x8, 48, 8]
+    - [16x8, 80, 8]
+    - [8x8, 96, 8]
+    - [16x16, 0, 0]
+  - symbol: gUnk_089508C2
+    pieces:
+    - [32x8, 16, 8]
+    - [32x8, 48, 8]
+    - [16x8, 80, 8]
+    - [8x8, 96, 8]
+    - [16x16, 0, 0]
+  animations:
+  - symbol: gUnk_089508E4
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 8], [1, 8], [2, 8], [1, 8], [0, 8], [3, 8]]
   us:
     address: 0x0895085C
+    size: 902
   jp:
     address: 0x08943E44
+    size: 902
   eu:
     address: 0x0897C180
-- name: gUnk_0895087E
-  record: Sprite
-  oam:
-  - [16392, 16400, 4]
-  - [16392, 16432, 4]
-  - [16392, 80, 8]
-  - [8, 96, 10]
-  - [0, 16384, 11]
-  us:
-    address: 0x0895087E
-  jp:
-    address: 0x08943E66
-  eu:
-    address: 0x0897C1A2
-- name: gUnk_089508A0
-  record: Sprite
-  oam:
-  - [16392, 16400, 4]
-  - [16392, 16432, 4]
-  - [16392, 80, 8]
-  - [8, 96, 10]
-  - [0, 16384, 15]
-  us:
-    address: 0x089508A0
-  jp:
-    address: 0x08943E88
-  eu:
-    address: 0x0897C1C4
-- name: gUnk_089508C2
-  record: Sprite
-  oam:
-  - [16392, 16400, 4]
-  - [16392, 16432, 4]
-  - [16392, 80, 8]
-  - [8, 96, 10]
-  - [0, 16384, 19]
-  us:
-    address: 0x089508C2
-  jp:
-    address: 0x08943EAA
-  eu:
-    address: 0x0897C1E6
-- name: gUnk_089508E4
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 8]
-  - [1, 8]
-  - [2, 8]
-  - [1, 8]
-  - [0, 8]
-  - [3, 8]
-  us:
-    address: 0x089508E4
-  jp:
-    address: 0x08943ECC
-  eu:
-    address: 0x0897C208
-- name: gUnk_08950902
-  format: tiles4
-  width: 1
-  us:
-    address: 0x08950902
-    size: 736
-  jp:
-    address: 0x08943EEA
-    size: 736
-  eu:
-    address: 0x0897C226
-    size: 736
+    size: 902
 - name: gUnk_08C6B0C4
   format: tiles4
   us:
