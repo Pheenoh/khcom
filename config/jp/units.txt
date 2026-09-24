@@ -341,7 +341,6 @@ sprite_palettes_9.s
 link_menu_palettes.s
 mode_pooh.c
 mode_pooh_tables.s
-poo_data.c
 poo.c
 poo_tables.s
 mode_allmap.c
