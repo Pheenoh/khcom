@@ -170,7 +170,6 @@ card_deckcard2.c
 card_enemy.c
 card_worldselect.c
 card_prize_card.c
-card_prize_card_init_rodata.s
 card_prize_card_init.c
 card_reload_children_rodata.s
 card_reload_children.c

@@ -1132,21 +1132,21 @@ typedef struct UnkStruct_08096C38_Item {
 } UnkStruct_08096C38_Item;
 
 typedef struct UnkStruct_08096C38 {
-    UnkStruct_08096C38_Item* unk_00;
+    const UnkStruct_08096C38_Item* unk_00;
     u16 unk_04;
     u16 unk_06;
 } UnkStruct_08096C38;
 
 typedef struct UnkStruct_09035DCC {
-    UnkStruct_08096C38* data;
+    const UnkStruct_08096C38* data;
     u16 size;
     u16 unk_06;
 } UnkStruct_09035DCC;
 
-extern UnkStruct_09035DCC gUnk_09035DCC[];
-extern UnkStruct_09035DCC gUnk_090360BC[];
-extern u16 gUnk_0903612C[];
-extern u16 gUnk_090359FC[];
+extern const UnkStruct_09035DCC gUnk_09035DCC[];
+extern const UnkStruct_09035DCC gUnk_090360BC[];
+extern const u16 gUnk_0903612C[];
+extern const u16 gUnk_090359FC[];
 extern Deck gUnk_09041FA0;
 extern u16 gUnk_09041F70[];
 extern u32 gUnk_09036210[];

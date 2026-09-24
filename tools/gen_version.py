@@ -2174,6 +2174,7 @@ TARGET_DATA_SIZE = {
         ("card_catalog.c", ".data"): 0x140,
         ("msg_localized_data.c", ".data"): 0x1075c,
         ("card_deckmenu2.c", ".rodata"): 0x30c,
+        ("card_prize_card_init.c", ".rodata"): 0x7ad,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,
