@@ -2,6 +2,8 @@
 #define GUARD_POOH_ACTOR_TYPES_H
 
 #include "types.h"
+#include "obj.h"
+#include "taskpool.h"
 
 typedef struct PooPos {
     s32 x;
@@ -37,5 +39,36 @@ typedef struct PooState {
     u16 unk_40;
     u16 unk_42;
 } PooState;
+
+typedef struct PoohWork {
+    void* tiles;
+    PaletteSlot* palette;
+    u8 unk_08[0x04];
+    u8 anim[0x18];
+    u8 unk_24;
+    u8 unk_25;
+    u16 unk_26;
+    u8 unk_28[0x10];
+    u8 unk_38;
+    u8 unk_39;
+    u8 unk_3A;
+    u8 unk_3B;
+    u8 unk_3C[0x0C];
+    s32 unk_48;
+    u8 collider[0x5C];
+    s32 unk_A8;
+    u16 unk_AC;
+    u8 unk_AE[0x02];
+    TaskPool tasks;
+    Task* task;
+    u8 unk_C8[0x0E];
+    u8 unk_D6;
+    u8 unk_D7[0x03];
+    u16 unk_DA;
+    u8 unk_DC[0x1A];
+    u8 unk_F6;
+    u8 unk_F7[0x03];
+    u8 unk_FA;
+} PoohWork;
 
 #endif

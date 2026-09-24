@@ -23,6 +23,6 @@ void func_080C7CC8(struct PoohWork* w);
 void func_080C7FEC(struct PoohWork* w, u32 anim);
 u8 func_080C83C4(u16 x, u16 y, u16 px, u16 py);
 s32 func_080C8404(struct PoohPos* a, struct PoohPos* b);
-void func_080C84E0(struct PoohWork* w, u32 b);
+void func_080C8428(struct PoohWork* w, u32 b);
 
 #endif

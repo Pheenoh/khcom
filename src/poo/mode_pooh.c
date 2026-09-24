@@ -1,9 +1,4 @@
-#include "registration_data.h"
-#include "msg_api.h"
-#include "mode_pooh_api.h"
 #include "mode_pooh.h"
-#include "gba/keys.h"
-#include "pooh_animation_assets.h"
 #include "sprites_pooh.h"
 #include "world_types.h"
 
@@ -1052,50 +1047,4 @@ void func_080C8428(PoohWork* w, u32 b) {
         ReleaseObjPalette(w->palette);
         w->palette = LoadObjPalette(pal, 32);
     }
-}
-
-void func_080C84E0(PoohWork* w, u32 b) {
-    gUnk_02034DAC = b;
-
-    if (b == 0) {
-        gUnk_0203C3F0 = 0;
-    }
-
-    if (b >= 38 && b <= 39) {
-        w->unk_AC = 0;
-
-        if (!IsTaskActive(w->task)) {
-            w->task = TaskCreate(&w->tasks, &gTaskDescPooBalloon, w->unk_28);
-        }
-    }
-
-    if (b == 30 || b == 24 || b == 4 || b == 11) {
-        w->unk_DA = 0;
-    }
-
-    if (b == 15) {
-        w->unk_48 = -0x130;
-    }
-
-    if (b >= 36 && b <= 37) {
-        m4aSongNumStart(0x149);
-    } else if (b == 16) {
-        m4aSongNumStart(SONG_SYS_PO_FALL);
-    } else if (b == 39 || b == 22 || (b >= 32 && b <= 35)) {
-        do {
-            w->unk_38 = 0xAD;
-            w->unk_3A = 0xAD;
-            w->unk_3B = w->unk_38;
-        } while (0);
-    }
-
-    if (b > 35) {
-        do {
-            w->unk_38 = 0x53;
-            w->unk_3A = 0x53;
-            w->unk_3B = w->unk_38;
-        } while (0);
-    }
-
-    func_080C8428(w, b);
 }

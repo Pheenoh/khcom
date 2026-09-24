@@ -6,6 +6,7 @@
 
 struct PooPos;
 
+void func_080C84E0(struct PoohWork* w, u32 b);
 void func_080CA35C(void);
 void func_080CA368(s32 a, u16 b, u16 c);
 void func_080CA6A8(s32 a, s32 b);
