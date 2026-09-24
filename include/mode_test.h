@@ -129,7 +129,6 @@ typedef struct LockonWork {
 
 s32 func_0805F93C(u8 bg, u8 b, u8 c, u8 d, u8 e);
 void func_080B0754(void);
-void func_08061824(void);
 
 #ifndef VERSION_EU
 extern Mode gModeTest;
@@ -150,14 +149,6 @@ void func_0805FB84(u8 x, u8 y, u32 c, u8 v);
 void task_lockon_0(LockonWork* w);
 s8 func_0805F5D8(s32 a, s32 b, LockonWork* w, s8 n, s8* list);
 u8 func_0805F6B4(u16 a, s32 b, s32 c, FldObj* d);
-void func_08062D3C(void);
-void func_0806250C(void);
-void func_08062CE4(void);
-void func_08061FC8(void);
-void func_080629F8(void);
-void func_08062D20(void);
-u8 func_080629CC(void);
-void func_0806297C(void);
 u8 task_lockon_1(LockonWork* w);
 void task_lockon_2(LockonWork* w);
 void task_lockon_3(LockonWork* w);

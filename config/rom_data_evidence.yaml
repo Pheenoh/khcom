@@ -2042,7 +2042,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:1351,1710,2522; EU byte character domain at2101 and2176; matching one-piece glyph attributes for indices0..255
+  provenance: msg.c:709,1068,1880; EU byte character domain at1459 and1534; matching one-piece glyph attributes for indices0..255
 - name: gUnk_09EEC538_glyphs
   us: '0x09EEC538'
   targets:
@@ -2052,7 +2052,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:3480 EncodeSmallFontString maps digits,letters,punctuation through44; DrawSmallFontString at3707 indexes the result
+  provenance: msg.c:2838 EncodeSmallFontString maps digits,letters,punctuation through44; DrawSmallFontString at3065 indexes the result
 - name: gUnk_09EEB188_glyphs
   us: '0x09EEB188'
   targets:
@@ -2061,7 +2061,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: 'msg.c:1588..1662 and1825: short-font numeric and letter glyph mapping reaches index29'
+  provenance: 'msg.c:946..1020 and1183: short-font numeric and letter glyph mapping reaches index29'
 - name: gUnk_09EEB608_glyphs
   us: '0x09EEB608'
   targets:
@@ -2070,7 +2070,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:2526 andfunc_08066E40 group1 maximum255 at4384
+  provenance: msg.c:1884 andfunc_08066E40 group1 maximum255 at3742
 - name: gUnk_09EEBA0C_glyphs
   us: '0x09EEBA0C'
   targets:
@@ -2079,7 +2079,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:2530 andfunc_08066E40 group2 maximum255 at5300
+  provenance: msg.c:1888 andfunc_08066E40 group2 maximum255 at4658
 - name: gUnk_09EEBE10_glyphs
   us: '0x09EEBE10'
   targets:
@@ -2088,7 +2088,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:2534 andfunc_08066E40 group3 maximum199 at6492
+  provenance: msg.c:1892 andfunc_08066E40 group3 maximum199 at5850
 - name: gUnk_09EEC134_glyphs
   us: '0x09EEC134'
   targets:
@@ -2097,7 +2097,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
   layer: 1
-  provenance: msg.c:2110 byte-range check through255 and2179 Latin glyph lookup; EU instead usesgUnk_09EEB204
+  provenance: msg.c:1468 byte-range check through255 and1537 Latin glyph lookup; EU instead usesgUnk_09EEB204
 - name: animation_resources_09EE14D4
   layer: 1
   provenance: mode_test.c:46-65 clamps gfx selection to0..13; US/JP ETC ObjDef animCount is5; these callbacks and ObjDef entries are absent in EU. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
