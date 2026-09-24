@@ -83,6 +83,22 @@ void func_0808CC58(u16 a, u8 b);
 void func_0808DD20(u8 a, u16 b);
 void func_08090170(DeckCard2Work* node);
 #ifndef VERSION_EU
+const s16 gUnk_09041F04[3] = { 116, 116, 116 };
+
+const s16 gUnk_09041F0A[3] = { 56, 104, 148 };
+
+const s16 gUnk_09041F10[5] = { 12, 28, 42, 56, 70 };
+
+const s16 gUnk_09041F1A[6] = { 172, 172, 188, 202, 216, 230 };
+
+const s16 gUnk_09041F26[5] = { 64, 82, 100, 118, 136 };
+
+const s16 gUnk_09041F30[2] = { 80, 128 };
+
+const s16 gUnk_09041F34[5] = { 80, 88, 96, 104, 112 };
+
+const u16 gUnk_09041F3E[4] = { 45, 93, 141, 30 };
+
 void deckexchange_0(u8* work, void* a) {
     s32 zero;
     u16 n;
