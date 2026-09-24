@@ -2129,7 +2129,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFB840
   layer: 1
-  provenance: sroll.c task_sroll_c_char_0 loops i=0..4 and uses i as AnimStart index at480-481 in all regions. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: sroll_c_char.c task_sroll_c_char_0 loops i=0..4 and uses i as AnimStart index at26-27 in all regions. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efb840'
   targets:
     jp: '0x9ed2dc4'
@@ -2159,7 +2159,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFB9CC_us_eu
   layer: 1
-  provenance: Independent sroll.c direct table consumers and animation loop0..4 establish each base. Five complete animation payloads agree US/EU and max gfxIndex65 exactly reaches the independently referenced animation-table base, proving66 gfx pointers.
+  provenance: Independent sroll_c_char.c direct table consumers and animation loop0..4 establish each base. Five complete animation payloads agree US/EU and max gfxIndex65 exactly reaches the independently referenced animation-table base, proving66 gfx pointers.
   us: '0x9efb9cc'
   targets:
     eu: '0x9f87740'
@@ -2168,7 +2168,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFBAD4_jp_headers
   layer: 1
-  provenance: Independent sroll.c regional code consumers select the same five animation roles by loop index0..4. Every target is independently parsed as the canonical six-byte AnimHeader prefix followed by frameCount four-byte frames. JP frames are localized and differ, but retain the same five selector roles and reference only the63-entry JP gfx table. No US-to-JP gfx slot equivalence is asserted.
+  provenance: Independent sroll_c_char.c regional code consumers select the same five animation roles by loop index0..4. Every target is independently parsed as the canonical six-byte AnimHeader prefix followed by frameCount four-byte frames. JP frames are localized and differ, but retain the same five selector roles and reference only the63-entry JP gfx table. No US-to-JP gfx slot equivalence is asserted.
   us: '0x9efbad4'
   targets:
     jp: '0x9ed304c'

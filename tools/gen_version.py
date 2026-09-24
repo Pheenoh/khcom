@@ -2116,7 +2116,7 @@ TARGET_FUNC_ADDR = {
 TARGET_DATA_SIZE = {
     "eu": {
         ("mode_sio.c", ".rodata"): 0x92,
-        ("sroll.c", ".rodata"): 0x257,
+        ("sroll_b_secn.c", ".rodata"): 0x162,
         ("bos5.c", ".rodata"): 0x11B5,
         ("btl_hud_localized_data.c", ".data"): 0x31C,
         ("actor_localized_data.c", ".data"): 0x124,
@@ -2182,7 +2182,7 @@ TARGET_DATA_SIZE = {
         ("msg_localized_data.c", ".data"): 0x1075c,
     },
     "jp": {
-        ("sroll.c", ".rodata"): 0x287,
+        ("sroll_b_secn.c", ".rodata"): 0x192,
         ("events_074_133.c", ".rodata"): 0x33ea0,
         ("events_000_073.c", ".rodata"): 0x3cdf8,
         ("events_134_196.c", ".rodata"): 0x1f7a0,
@@ -2207,6 +2207,9 @@ TARGET_DATA_ADDR = {
         ("tutorial.c", ".rodata"): 0x0814fc68,
         ("card_stock_info.c", ".rodata"): 0x0900ba1c,
         ("mode_staffroll.c", ".rodata"): 0x09a06558,
+        ("sroll_b_crtn.c", ".rodata"): 0x09a09398,
+        ("sroll_c_char.c", ".rodata"): 0x09a093ac,
+        ("sroll_tmr.c", ".rodata"): 0x09a093c0,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2226,6 +2229,9 @@ TARGET_DATA_ADDR = {
         ("ms.c", ".rodata"): 0x09999a74,
         ("mode_backupstat.c", ".rodata"): 0x09999a88,
         ("mode_staffroll.c", ".rodata"): 0x09aaf400,
+        ("sroll_b_crtn.c", ".rodata"): 0x09ab2210,
+        ("sroll_c_char.c", ".rodata"): 0x09ab2224,
+        ("sroll_tmr.c", ".rodata"): 0x09ab2238,
         ("mode_battle.c", ".data"): 0x09f3ea64,
         ("mode_chkmov.c", ".data"): 0x09f49a6c,
         ("jiminy_data.c", ".data"): 0x09f49abc,
