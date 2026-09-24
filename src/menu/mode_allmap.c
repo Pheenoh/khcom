@@ -1,11 +1,14 @@
 #include "macros.h"
-#include "registration_data.h"
-#include "map_api.h"
-#include "mode_allmap_api.h"
-#include "m4a_song.h"
-#include "obj_api.h"
 #include "mode_allmap.h"
 #include "sprites_allmap.h"
+#include "poo.h"
+#include "sprites_pooh.h"
+#include "system_state.h"
+
+#ifdef VERSION_EU
+extern u8* gUnkEu_09F800A4[5];
+extern u8* gUnkEu_09F800B8[5];
+#endif
 
 Mode gModeAllmap = {
     "mode_allmap",
@@ -29,11 +32,63 @@ u16* gUnk_0203C510[8] EWRAM_COMMON(16);
 u16* gUnk_0203C530 EWRAM_COMMON(4);
 u16 gUnk_0203C534 EWRAM_COMMON(4);
 
+u16 gUnk_02034E38;
+u16 gUnk_02034E3A;
 s16 gUnk_02034E3C;
 s16 gUnk_02034E3E;
 u8 gUnk_02034E40[0x40];
 u8 gUnk_02034E80;
 u8 gUnk_02034E81;
+
+void func_080D3050(void) {
+    PooPalStep t[9];
+
+    memcpy(t, gUnk_096FDB40, sizeof(t));
+    gUnk_02034E38++;
+    if (gUnk_02034E38 < t[gUnk_02034E3A].unk_02) {
+        return;
+    }
+    gUnk_02034E38 = 0;
+    gUnk_02034E3A++;
+    if (t[gUnk_02034E3A].unk_00 == 0xFF) {
+        gUnk_02034E3A = 0;
+    }
+    LoadPalette(&gUnk_0984A138[t[gUnk_02034E3A].unk_00 * 0x20], (void*)0x05000040, 0x20);
+}
+
+void func_080D30C8(void) {
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].map, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
+    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].tiles, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
+    LoadPalette(gUnk_096FDA8C[gGameState.world].palette, (void*)0x05000140, 0x20);
+}
+
+void func_080D313C(void) {
+    u8* src;
+    void* dst;
+
+    dst = (u8*)GetBgCharBase(2) + 0x20;
+
+    if ((gGameState.flags & 8) != 0) {
+#ifdef VERSION_EU
+        src = gUnkEu_09F800B8[gLanguage] + gGameState.floor * 0x140;
+#else
+        src = &gUnk_097B8258[gGameState.floor * 0x140];
+#endif
+    } else {
+#ifdef VERSION_EU
+        src = gUnkEu_09F800A4[gLanguage] + gGameState.floor * 0x140;
+#else
+        src = &gUnk_097B7218[gGameState.floor * 0x140];
+#endif
+    }
+    RequestDma3Copy(src, dst, 0x140);
+    dst = (u8*)GetBgScreenBase(2) + 0x480;
+    src = gUnk_0983BC18;
+    RequestDma3Copy(src, dst, 10);
+    dst = (u8*)GetBgScreenBase(2) + 0x4C0;
+    src += 0x40;
+    RequestDma3Copy(src, dst, 10);
+}
 
 void mode_allmap_0(s32 a) {
     gUnk_02034E81 = 0;

@@ -1,5 +1,4 @@
 #include "macros.h"
-#include "system_state.h"
 #include "poo.h"
 #include "background_actor_assets.h"
 #include "sprites_btl.h"
@@ -31,11 +30,6 @@ PooState gPooState EWRAM_COMMON(16);
 void* gUnk_0203C4B4 EWRAM_COMMON(4);
 
 extern AnimDef gUnk_09EF4C88[5];
-
-#ifdef VERSION_EU
-extern u8* gUnkEu_09F800A4[5];
-extern u8* gUnkEu_09F800B8[5];
-#endif
 
 const PooSpot gUnk_096FC05C[55] = {
     { 0, 0, 0 },
@@ -211,8 +205,6 @@ u32 gUnk_02034E2C;
 PooBeeAfterEventWork* gPooBeeAfterEventWork;
 u16 gUnk_02034E34;
 u16 gUnk_02034E36;
-u16 gUnk_02034E38;
-u16 gUnk_02034E3A;
 
 void func_080C84E0(PoohWork* w, u32 b) {
     gUnk_02034DAC = b;
@@ -7244,56 +7236,6 @@ void func_080D3008(void) {
 
 void func_080D3034(s16 a) {
     SetBlendAlpha(a, 16 - a);
-}
-
-void func_080D3050(void) {
-    PooPalStep t[9];
-
-    memcpy(t, gUnk_096FDB40, sizeof(t));
-    gUnk_02034E38++;
-    if (gUnk_02034E38 < t[gUnk_02034E3A].unk_02) {
-        return;
-    }
-    gUnk_02034E38 = 0;
-    gUnk_02034E3A++;
-    if (t[gUnk_02034E3A].unk_00 == 0xFF) {
-        gUnk_02034E3A = 0;
-    }
-    LoadPalette(&gUnk_0984A138[t[gUnk_02034E3A].unk_00 * 0x20], (void*)0x05000040, 0x20);
-}
-
-void func_080D30C8(void) {
-    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].map, (u8*)GetBgScreenBase(2) + 0x200, 0x300);
-    RequestDma3Copy(gUnk_096FDA8C[gGameState.world].tiles, (u8*)GetBgCharBase(2) + 0x2000, 0x2000);
-    LoadPalette(gUnk_096FDA8C[gGameState.world].palette, (void*)0x05000140, 0x20);
-}
-
-void func_080D313C(void) {
-    u8* src;
-    void* dst;
-
-    dst = (u8*)GetBgCharBase(2) + 0x20;
-
-    if ((gGameState.flags & 8) != 0) {
-#ifdef VERSION_EU
-        src = gUnkEu_09F800B8[gLanguage] + gGameState.floor * 0x140;
-#else
-        src = &gUnk_097B8258[gGameState.floor * 0x140];
-#endif
-    } else {
-#ifdef VERSION_EU
-        src = gUnkEu_09F800A4[gLanguage] + gGameState.floor * 0x140;
-#else
-        src = &gUnk_097B7218[gGameState.floor * 0x140];
-#endif
-    }
-    RequestDma3Copy(src, dst, 0x140);
-    dst = (u8*)GetBgScreenBase(2) + 0x480;
-    src = gUnk_0983BC18;
-    RequestDma3Copy(src, dst, 10);
-    dst = (u8*)GetBgScreenBase(2) + 0x4C0;
-    src += 0x40;
-    RequestDma3Copy(src, dst, 10);
 }
 
 const char gTaskNamePooPooh[] = "task_poo_pooh";
