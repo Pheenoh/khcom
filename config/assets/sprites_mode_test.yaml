@@ -79,255 +79,119 @@ entries:
     address: 0x09EC3A58
   eu:
     address: 0x09F77850
-- name: gUnk_08B24C98
-  record: Sprite
-  align: 4
-  oam:
-  - [16636, 16864, 0]
-  us:
-    address: 0x08B24C98
-  jp:
-    address: 0x08B18280
-- name: gUnk_08B24CA2
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [0, 4568, 8]
-  us:
-    address: 0x08B24CA2
-  jp:
-    address: 0x08B1828A
-- name: gUnk_08B24CB2
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [16384, 4560, 9]
-  us:
-    address: 0x08B24CB2
-  jp:
-    address: 0x08B1829A
-- name: gUnk_08B24CC2
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [16384, 20936, 11]
-  us:
-    address: 0x08B24CC2
-  jp:
-    address: 0x08B182AA
-- name: gUnk_08B24CD2
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [16384, 20928, 11]
-  us:
-    address: 0x08B24CD2
-  jp:
-    address: 0x08B182BA
-- name: gUnk_08B24CE2
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [16384, 20928, 15]
-  - [0, 4536, 8]
-  us:
-    address: 0x08B24CE2
-  jp:
-    address: 0x08B182CA
-- name: gUnk_08B24CF8
-  record: Sprite
-  oam:
-  - [16384, 16864, 4]
-  - [16384, 16832, 15]
-  - [16384, 4528, 9]
-  us:
-    address: 0x08B24CF8
-  jp:
-    address: 0x08B182E0
-- name: gUnk_08B24D0E
-  record: Sprite
-  oam:
-  - [16636, 16864, 19]
-  us:
-    address: 0x08B24D0E
-  jp:
-    address: 0x08B182F6
-- name: gUnk_08B24D18
-  record: Sprite
-  oam:
-  - [16636, 16864, 23]
-  us:
-    address: 0x08B24D18
-  jp:
-    address: 0x08B18300
-- name: gUnk_08B24D22
-  record: Sprite
-  oam:
-  - [16636, 16864, 27]
-  us:
-    address: 0x08B24D22
-  jp:
-    address: 0x08B1830A
-- name: gUnk_08B24D2C
-  record: Sprite
-  oam:
-  - [16384, 16864, 31]
-  - [16384, 16832, 35]
-  - [16384, 4528, 39]
-  us:
-    address: 0x08B24D2C
-  jp:
-    address: 0x08B18314
-- name: gUnk_08B24D42
-  record: Sprite
-  oam:
-  - [16384, 16864, 41]
-  - [16384, 16832, 45]
-  - [16384, 432, 49]
-  us:
-    address: 0x08B24D42
-  jp:
-    address: 0x08B1832A
-- name: gUnk_08B24D58
-  record: Sprite
-  oam:
-  - [16384, 16864, 51]
-  - [16384, 16832, 55]
-  - [16384, 432, 59]
-  us:
-    address: 0x08B24D58
-  jp:
-    address: 0x08B18340
-- name: gUnk_08B24D6E
-  record: Sprite
-  oam:
-  - [0, 488, 61]
-  us:
-    address: 0x08B24D6E
-  jp:
-    address: 0x08B18356
-- name: gUnk_08B24D78
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x08B24D78
-  jp:
-    address: 0x08B18360
-- name: gUnk_08B24D82
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [1, 4]
-  us:
-    address: 0x08B24D82
-  jp:
-    address: 0x08B1836A
-- name: gUnk_08B24D8C
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [2, 4]
-  us:
-    address: 0x08B24D8C
-  jp:
-    address: 0x08B18374
-- name: gUnk_08B24D96
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [3, 4]
-  us:
-    address: 0x08B24D96
-  jp:
-    address: 0x08B1837E
-- name: gUnk_08B24DA0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [4, 4]
-  us:
-    address: 0x08B24DA0
-  jp:
-    address: 0x08B18388
 - name: b_hpgag_e
-  format: tiles4
-  width: 2
+  format: sprite_sheet
   palette: b_states
   symbol: gUnk_08B24DAA
-  us:
-    address: 0x08B24DAA
-    size: 1984
-  jp:
-    address: 0x08B18392
-    size: 1984
-- name: gUnk_090D7C50
-  record: Sprite
   align: 4
-  oam:
-  - [248, 16888, 0]
+  cell: [80, 12]
+  anchor: [80, 4]
+  columns: 8
+  frames:
+  - symbol: gUnk_08B24C98
+    pieces:
+    - [32x8, -32, -4]
+  - symbol: gUnk_08B24CA2
+    pieces:
+    - [32x8, -32, 0]
+    - [8x8, -40, 0, {hflip: true}]
+  - symbol: gUnk_08B24CB2
+    pieces:
+    - [32x8, -32, 0]
+    - [16x8, -48, 0, {hflip: true}]
+  - symbol: gUnk_08B24CC2
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -56, 0, {hflip: true}]
+  - symbol: gUnk_08B24CD2
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0, {hflip: true}]
+  - symbol: gUnk_08B24CE2
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0, {hflip: true}]
+    - [8x8, -72, 0, {hflip: true}]
+  - symbol: gUnk_08B24CF8
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0]
+    - [16x8, -80, 0, {hflip: true}]
+  - symbol: gUnk_08B24D0E
+    pieces:
+    - [32x8, -32, -4]
+  - symbol: gUnk_08B24D18
+    pieces:
+    - [32x8, -32, -4]
+  - symbol: gUnk_08B24D22
+    pieces:
+    - [32x8, -32, -4]
+  - symbol: gUnk_08B24D2C
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0]
+    - [16x8, -80, 0, {hflip: true}]
+  - symbol: gUnk_08B24D42
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0]
+    - [16x8, -80, 0]
+  - symbol: gUnk_08B24D58
+    pieces:
+    - [32x8, -32, 0]
+    - [32x8, -64, 0]
+    - [16x8, -80, 0]
+  - symbol: gUnk_08B24D6E
+    pieces:
+    - [8x8, -24, 0]
+  animations:
+  - symbol: gUnk_08B24D78
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnk_08B24D82
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[1, 4]]
+  - symbol: gUnk_08B24D8C
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[2, 4]]
+  - symbol: gUnk_08B24D96
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[3, 4]]
+  - symbol: gUnk_08B24DA0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[4, 4]]
+  us:
+    address: 0x08B24C98
+    size: 2258
+  jp:
+    address: 0x08B18280
+    size: 2258
+- name: gUnk_090D7C84
+  format: sprite_sheet
+  align: 4
+  cell: [16, 16]
+  anchor: [8, 8]
+  columns: 3
+  frames:
+  - symbol: gUnk_090D7C50
+    pieces:
+    - [16x16, -8, -8]
+  - symbol: gUnk_090D7C5A
+    pieces:
+    - [16x16, -8, -8]
+  - symbol: gUnk_090D7C64
+    pieces:
+    - [16x16, -8, -8]
+  animations:
+  - symbol: gUnk_090D7C6E
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[1, 10], [2, 10], [1, 10], [0, 10]]
   us:
     address: 0x090D7C50
+    size: 436
   jp:
     address: 0x09093178
+    size: 436
   eu:
     address: 0x091A72D8
-- name: gUnk_090D7C5A
-  record: Sprite
-  oam:
-  - [248, 16888, 4]
-  us:
-    address: 0x090D7C5A
-  jp:
-    address: 0x09093182
-  eu:
-    address: 0x091A72E2
-- name: gUnk_090D7C64
-  record: Sprite
-  oam:
-  - [248, 16888, 8]
-  us:
-    address: 0x090D7C64
-  jp:
-    address: 0x0909318C
-  eu:
-    address: 0x091A72EC
-- name: gUnk_090D7C6E
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [1, 10]
-  - [2, 10]
-  - [1, 10]
-  - [0, 10]
-  us:
-    address: 0x090D7C6E
-  jp:
-    address: 0x09093196
-  eu:
-    address: 0x091A72F6
-- name: gUnk_090D7C84
-  format: tiles4
-  width: 2
-  us:
-    address: 0x090D7C84
-    size: 384
-  jp:
-    address: 0x090931AC
-    size: 384
-  eu:
-    address: 0x091A730C
-    size: 384
+    size: 436
