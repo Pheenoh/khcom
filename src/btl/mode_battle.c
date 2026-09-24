@@ -302,7 +302,7 @@ void mode_battle_0(u32 mode) {
             break;
         }
 
-        gBtlWork->unk_1C4 = 2;
+        gBtlWork->bg = 2;
 
         switch (mode) {
         case 0x98:
@@ -335,17 +335,17 @@ void mode_battle_0(u32 mode) {
         }
     } else if (gBtlWork->flags & 0x800000000) {
         m4aSongNumStart(SONG_BGM_EVENT2);
-        gBtlWork->unk_1C4 = 3;
+        gBtlWork->bg = 3;
         gBtlWork->unk_1C6 = 2;
         SetBgMode2();
         SetupBg(gBtlWork->unk_1C6, 0, 12, 0);
-        SetupBg(gBtlWork->unk_1C4, 2, 28, 10);
+        SetupBg(gBtlWork->bg, 2, 28, 10);
         SetBgPriority(gBtlWork->unk_1C6, 2);
-        SetBgPriority(gBtlWork->unk_1C4, 0);
+        SetBgPriority(gBtlWork->bg, 0);
         SetBgOverflow(gBtlWork->unk_1C6, 1);
-        SetBgOverflow(gBtlWork->unk_1C4, 0);
+        SetBgOverflow(gBtlWork->bg, 0);
     } else if (gBtlWork->flags & 0x800) {
-        gBtlWork->unk_1C4 = 2;
+        gBtlWork->bg = 2;
         gBtlWork->unk_1C6 = 3;
 
         switch (mode) {
@@ -380,7 +380,7 @@ void mode_battle_0(u32 mode) {
         SetBgOverflow(3, 1);
         SetBgOverflow(2, 0);
     } else {
-        gBtlWork->unk_1C4 = 2;
+        gBtlWork->bg = 2;
         gBtlWork->unk_1C6 = 3;
 
         switch (gGameState.unk_00D) {
@@ -439,7 +439,7 @@ void mode_battle_0(u32 mode) {
     TaskPoolInit(&gBtlWork->taskPools[0], 40);
     TaskPoolInit(&gBtlWork->taskPools[1], 32);
     TaskPoolInit(&gBtlWork->taskPools[2], 1);
-    BgFxInit(0x80, gBtlWork->unk_1C4);
+    BgFxInit(0x80, gBtlWork->bg);
     ColliderPoolsInit();
 
     if (gGameState.flags & 8) {

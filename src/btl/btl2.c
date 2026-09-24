@@ -1925,12 +1925,12 @@ void task_btl_premire_3(BtlPremireWork* work) {
 void task_btl_start_0(BtlStartWork* work) {
     BgAnimStart(&gUnk_09EDA918, 120, 72);
     BgAnimSetTransform(0, 0x200, 0x200);
-    SetBgBlend(gBtlWork->unk_1C4, 16, 16);
+    SetBgBlend(gBtlWork->bg, 16, 16);
     func_08019050(1, 0x200, 0x10000, 0x14000);
     FadeStartIn(0, 60);
     work->unk_00 = 0;
     m4aSongNumStart(SONG_SYS_ENCOUNT);
-    SetBgPriority(gBtlWork->unk_1C4, 0);
+    SetBgPriority(gBtlWork->bg, 0);
 }
 
 s32 task_btl_start_1(BtlStartWork* work) {

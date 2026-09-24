@@ -845,7 +845,7 @@ void mode_worldinspect_0(void) {
         if (gUnk_02035100[i] != 0 && gUnk_02035100[i + 1] != 0) {
             WorldinspectConn* conn = gUnk_099930BC;
             id = gWorldinspectNavs[i].rect;
-            WorldInspectCopyTilemapRect(conn[id].unk_00, conn[id].unk_02, gUnk_09A333DC, conn[id].unk_04, conn[id].unk_06, gUnk_020354D4, gWorldinspectNavs[i].x2, gWorldinspectNavs[i].y2);
+            WorldInspectCopyTilemapRect(conn[id].width, conn[id].height, gUnk_09A333DC, conn[id].x, conn[id].y, gUnk_020354D4, gWorldinspectNavs[i].x2, gWorldinspectNavs[i].y2);
         }
     }
 

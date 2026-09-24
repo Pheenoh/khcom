@@ -16,10 +16,10 @@
 #include "key.h"
 
 typedef struct {
-    s16 unk_00;
-    s16 unk_02;
-    s16 unk_04;
-    s16 unk_06;
+    s16 width;
+    s16 height;
+    s16 x;
+    s16 y;
 } WorldinspectConn;
 
 #endif /* GUARD_MODE_WORLDINSPECT_H */
