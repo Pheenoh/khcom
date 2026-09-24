@@ -22,8 +22,6 @@ const AnimDef gUnk_0813E8F4[5] = {
     { gUnk_09EE1368, gUnk_09EE137C, gUnk_08B229A8, 0, { 0, 0, 0 } },
 };
 
-const char gTaskNameBtlBadstatus[] = "task_btl_badstatus";
-
 void task_btl_form_0(BtlFormWork* work, const BtlFormList* list) {
     s32 i;
 
@@ -773,4 +771,4 @@ TaskDesc gTaskDescBtlBorn = { gTaskNameBtlBorn, task_btl_born_0, task_btl_born_1
 
 TaskDesc gTaskDescBtlRaid = { gTaskNameBtlRaid, task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
 
-TaskDesc gTaskDescBtlBadstatus = { gTaskNameBtlBadstatus, task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };
+TaskDesc gTaskDescBtlBadstatus = { "task_btl_badstatus", task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };

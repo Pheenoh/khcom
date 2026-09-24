@@ -49,10 +49,8 @@ void func_08060F64(void) {
     TaskPoolDestroy(&gContinueTaskPool);
 }
 
-const char gModeNameContinue[] = "Continue";
-
 Mode gModeContinue = {
-    gModeNameContinue,
+    "Continue",
     (ModeInitFunc)func_08060ED8,
     func_08060F1C,
     func_08060F64,

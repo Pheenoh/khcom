@@ -1953,30 +1953,20 @@ s32 task_btl_start_1(BtlStartWork* work) {
     return 1;
 }
 
-const char gTaskNameBtlShadow[] = "task_btl_shadow";
-const char gTaskNameBtlHpply[] = "task_btl_hpply";
-const char gTaskNameBtlHpenm[] = "task_btl_hpenm";
-const char gTaskNameBtlPause[] = "task_btl_pause";
-const char gTaskNameBtlPop[] = "task_btl_pop";
-const char gTaskNameBtlEscape[] = "task_btl_escape";
-const char gTaskNameBtlPrize[] = "task_btl_prize";
-const char gTaskNameBtlPremire[] = "task_btl_premire";
-const char gTaskNameBtlStart[] = "task_btl_start";
+TaskDesc gTaskDescBtlShadow = { "task_btl_shadow", task_btl_shadow_0, task_btl_shadow_1, task_btl_shadow_2, task_btl_shadow_3, 0x10 };
 
-TaskDesc gTaskDescBtlShadow = { gTaskNameBtlShadow, task_btl_shadow_0, task_btl_shadow_1, task_btl_shadow_2, task_btl_shadow_3, 0x10 };
+TaskDesc gTaskDescBtlHpply = { "task_btl_hpply", task_btl_hpply_0, task_btl_hpply_1, task_btl_hpply_2, task_btl_hpply_3, 0x6C };
 
-TaskDesc gTaskDescBtlHpply = { gTaskNameBtlHpply, task_btl_hpply_0, task_btl_hpply_1, task_btl_hpply_2, task_btl_hpply_3, 0x6C };
+TaskDesc gTaskDescBtlHpenm = { "task_btl_hpenm", task_btl_hpenm_0, task_btl_hpenm_1, task_btl_hpenm_2, task_btl_hpenm_3, 0x24 };
 
-TaskDesc gTaskDescBtlHpenm = { gTaskNameBtlHpenm, task_btl_hpenm_0, task_btl_hpenm_1, task_btl_hpenm_2, task_btl_hpenm_3, 0x24 };
+TaskDesc gTaskDescBtlPause = { "task_btl_pause", task_btl_pause_0, task_btl_pause_1, task_btl_pause_2, task_btl_pause_3, 0x28 };
 
-TaskDesc gTaskDescBtlPause = { gTaskNameBtlPause, task_btl_pause_0, task_btl_pause_1, task_btl_pause_2, task_btl_pause_3, 0x28 };
+TaskDesc gTaskDescBtlPop = { "task_btl_pop", task_btl_pop_0, task_btl_pop_1, task_btl_pop_2, task_btl_pop_3, 0x34 };
 
-TaskDesc gTaskDescBtlPop = { gTaskNameBtlPop, task_btl_pop_0, task_btl_pop_1, task_btl_pop_2, task_btl_pop_3, 0x34 };
+TaskDesc gTaskDescBtlEscape = { "task_btl_escape", task_btl_escape_0, task_btl_escape_1, task_btl_escape_2, task_btl_escape_3, 0x24 };
 
-TaskDesc gTaskDescBtlEscape = { gTaskNameBtlEscape, task_btl_escape_0, task_btl_escape_1, task_btl_escape_2, task_btl_escape_3, 0x24 };
+TaskDesc gTaskDescBtlPrize = { "task_btl_prize", task_btl_prize_0, task_btl_prize_1, task_btl_prize_2, task_btl_prize_3, 0x4C };
 
-TaskDesc gTaskDescBtlPrize = { gTaskNameBtlPrize, task_btl_prize_0, task_btl_prize_1, task_btl_prize_2, task_btl_prize_3, 0x4C };
+TaskDesc gTaskDescBtlPremire = { "task_btl_premire", task_btl_premire_0, task_btl_premire_1, task_btl_premire_2, task_btl_premire_3, 0x60 };
 
-TaskDesc gTaskDescBtlPremire = { gTaskNameBtlPremire, task_btl_premire_0, task_btl_premire_1, task_btl_premire_2, task_btl_premire_3, 0x60 };
-
-TaskDesc gTaskDescBtlStart = { gTaskNameBtlStart, task_btl_start_0, task_btl_start_1, 0, 0, 0x4 };
+TaskDesc gTaskDescBtlStart = { "task_btl_start", task_btl_start_0, task_btl_start_1, 0, 0, 0x4 };

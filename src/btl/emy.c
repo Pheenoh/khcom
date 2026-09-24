@@ -558,8 +558,6 @@ const AnimDef gUnk_0813E804[3] = {
 
 const EmyDef gUnk_0813E834 = { gUnk_08F6DD44, gUnk_0813E804, 0, 130, 20, 60, 64, 32, 32, 10, 0, { 28, 260, 16, 8, 16, 100, 0 } };
 
-const char gTaskNameEmyTest[] = "task_emy_test";
-
 void task_emy_00_0(EmyWork* work, void* obj) {
     func_0800C778(work, &gUnk_0813D3CC, obj);
     work->flags |= 1;
@@ -5754,4 +5752,4 @@ TaskDesc gTaskDescEmyTrumpH = { gTaskNameEmyTrumpH, task_emy_trump_h_0, task_emy
 
 TaskDesc gTaskDescEmyTrumpS = { gTaskNameEmyTrumpS, task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
-TaskDesc gTaskDescEmyTest = { gTaskNameEmyTest, task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };
+TaskDesc gTaskDescEmyTest = { "task_emy_test", task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };

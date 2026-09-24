@@ -280,7 +280,6 @@ extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
 extern const char gTaskNameLockon[];
-extern const char gModeNameContinue[];
 extern const char gModeNameEventselect[];
 extern const char gTaskNameHanabira[];
 extern const char gTaskNameHanabiraC[];

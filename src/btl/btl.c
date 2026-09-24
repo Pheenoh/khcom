@@ -224,8 +224,6 @@ const RikuAttackDef gUnk_0813C790 = { 5, 15, 0, gUnk_0813C6DC, 255, 656, 0, 1, 0
 
 const RikuAttackDef gUnk_0813C7AC = { 6, 15, 0, &gUnk_0813C6DC[2], 257, 657, 0, 1, 0, &gUnk_0813C73C };
 
-const char gTaskNameBtlRiku[] = "task_btl_riku";
-
 void func_0807B3C4(s32 a);
 
 void task_btl_lockon_0(BtlLockonWork* work) {
@@ -10920,4 +10918,4 @@ TaskDesc gTaskDescBtlArea = { gTaskNameBtlArea, task_btl_area_0, task_btl_area_1
 
 TaskDesc gTaskDescBtlSora = { gTaskNameBtlSora, task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
-TaskDesc gTaskDescBtlRiku = { gTaskNameBtlRiku, task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };
+TaskDesc gTaskDescBtlRiku = { "task_btl_riku", task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };

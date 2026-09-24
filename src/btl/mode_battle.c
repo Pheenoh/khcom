@@ -90,7 +90,6 @@ const u8 gUnkEu_08125144[0xFC] = {
     0xF0, 0x01, 0xF0, 0x01, 0xF0, 0x01, 0xF0, 0x01, 0xF0, 0x01, 0x50, 0x01,
 };
 
-const char gModeNameLang[12] = "mode_lang";
 #endif
 
 #ifdef VERSION_EU
@@ -655,10 +654,8 @@ void mode_battle_2(void) {
     EwramFree(gBtlWork);
 }
 
-const char gModeNameBattle[12] = "mode_battle";
-
 #ifdef VERSION_EU
-Mode gModeLang = { gModeNameLang, eu_08009CD0, eu_08009E10, eu_0800A0DC };
+Mode gModeLang = { "mode_lang", eu_08009CD0, eu_08009E10, eu_0800A0DC };
 #endif
 
-Mode gModeBattle = { gModeNameBattle, mode_battle_0, mode_battle_1, mode_battle_2 };
+Mode gModeBattle = { "mode_battle", mode_battle_0, mode_battle_1, mode_battle_2 };

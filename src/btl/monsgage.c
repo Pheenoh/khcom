@@ -303,10 +303,8 @@ void eu_0805ECE4(MonsgageWork* work) {
 }
 #endif
 
-const char gTaskNameMonsgage[] = "task_monsgage";
-
 TaskDesc gTaskDescMonsgage = {
-    gTaskNameMonsgage,
+    "task_monsgage",
 #ifdef VERSION_EU
     (TaskInitFunc)eu_0805E9F0,
     (TaskUpdateFunc)eu_0805EA44,

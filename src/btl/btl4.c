@@ -1044,10 +1044,8 @@ void func_0805DB28(BtlEffect* p) {
     p->unk_00 &= ~4;
 }
 
-const char gTaskNameBtlPopCb[] = "task_btl_pop_cb";
-
 TaskDesc gTaskDescBtlPopCb = {
-    gTaskNameBtlPopCb,
+    "task_btl_pop_cb",
     (TaskInitFunc)task_btl_pop_cb_0,
     (TaskUpdateFunc)task_btl_pop_cb_1,
     (TaskFunc)task_btl_pop_cb_2,
@@ -1055,10 +1053,8 @@ TaskDesc gTaskDescBtlPopCb = {
     0x1C,
 };
 
-const char gTaskNameBtlExp[] = "task_btl_exp";
-
 TaskDesc gTaskDescBtlExp = {
-    gTaskNameBtlExp,
+    "task_btl_exp",
     (TaskInitFunc)task_btl_exp_0,
     (TaskUpdateFunc)task_btl_exp_1,
     (TaskFunc)task_btl_exp_2,
@@ -1066,10 +1062,8 @@ TaskDesc gTaskDescBtlExp = {
     0x4C,
 };
 
-const char gTaskNameBtlVslockon[] = "task_btl_vslockon";
-
 TaskDesc gTaskDescBtlVslockon = {
-    gTaskNameBtlVslockon,
+    "task_btl_vslockon",
     (TaskInitFunc)task_btl_vslockon_0,
     (TaskUpdateFunc)task_btl_vslockon_1,
     (TaskFunc)task_btl_vslockon_2,
@@ -1077,10 +1071,8 @@ TaskDesc gTaskDescBtlVslockon = {
     0x24,
 };
 
-const char gTaskNameBtlHpoth[] = "task_btl_hpoth";
-
 TaskDesc gTaskDescBtlHpoth = {
-    gTaskNameBtlHpoth,
+    "task_btl_hpoth",
     (TaskInitFunc)task_btl_hpoth_0,
     (TaskUpdateFunc)task_btl_hpoth_1,
     (TaskFunc)task_btl_hpoth_2,

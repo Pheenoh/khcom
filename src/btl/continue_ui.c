@@ -30,8 +30,6 @@ const s32 gUnk_08F7DAFC[2] = {
     0x4000, 0x5600,
 };
 
-const char gTaskNameContinue[] = "Continue";
-
 #ifdef VERSION_EU
 extern u8 gUnkEu_0954C7B4[];
 extern u8 gUnkEu_0954D7A0[];
@@ -302,7 +300,7 @@ void Continue_3(ContinueWork* p) {
     gBldCnt = 0;
 }
 TaskDesc gUnk_09EE2834 = {
-    gTaskNameContinue,
+    "Continue",
     (TaskInitFunc)func_0806CD60,
     (TaskUpdateFunc)Continue_1,
     (TaskFunc)Continue_2,
@@ -311,7 +309,7 @@ TaskDesc gUnk_09EE2834 = {
 };
 
 TaskDesc gUnk_09EE284C = {
-    gTaskNameContinue,
+    "Continue",
     (TaskInitFunc)func_0806CF04,
     (TaskUpdateFunc)Continue_1,
     (TaskFunc)Continue_2,

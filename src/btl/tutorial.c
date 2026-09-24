@@ -537,10 +537,8 @@ void task_tutorial_3(TutorialWork* work) {
     SeedRandom(gFrameCounter);
 }
 
-const char gTaskNameTutorial[] = "task_tutorial";
-
 TaskDesc gTaskDescTutorial = {
-    gTaskNameTutorial,
+    "task_tutorial",
     (TaskInitFunc)task_tutorial_0,
     (TaskUpdateFunc)task_tutorial_1,
     (TaskFunc)task_tutorial_2,

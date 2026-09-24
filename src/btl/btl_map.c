@@ -10,8 +10,6 @@ const s8 gUnk_0813C7D8[32] = {
     4, 4, 4, 4, -4, -4, -4, -4, 3, 3, 3, 3, -3, -3, -3, -3, 2, 2, 2, 2, -2, -2, -2, -2, 1, 1, 1, 1, -1, -1, -1, -1,
 };
 
-const char gTaskNameBtlMap[] = "task_btl_map";
-
 #ifdef VERSION_EU
 extern u8 gUnkEu_08F7042C[];
 extern u8 gUnkEu_08F7D724[];
@@ -411,4 +409,4 @@ s32 task_btl_map_1(BtlMapWork* work) {
     return 1;
 }
 
-TaskDesc gTaskDescBtlMap = { gTaskNameBtlMap, task_btl_map_0, task_btl_map_1, 0, 0, 0x10 };
+TaskDesc gTaskDescBtlMap = { "task_btl_map", task_btl_map_0, task_btl_map_1, 0, 0, 0x10 };

@@ -71,8 +71,6 @@ const AnimDef gUnk_0813EB4C[3] = {
     { gUnk_09EDE8A0, gUnk_09EDE8C0, gUnk_088B4A9C, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameSmnKing[] = "task_smn_king";
-
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     BtlObj* body;
     BtlObj* obj;
@@ -2640,4 +2638,4 @@ TaskDesc gTaskDescSmnDumbo = { gTaskNameSmnDumbo, task_smn_dumbo_0, task_smn_dum
 
 TaskDesc gTaskDescSmnGenie = { gTaskNameSmnGenie, task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
 
-TaskDesc gTaskDescSmnKing = { gTaskNameSmnKing, task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };
+TaskDesc gTaskDescSmnKing = { "task_smn_king", task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };

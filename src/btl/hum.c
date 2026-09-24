@@ -433,8 +433,6 @@ const AnimDef gUnk_0813FDD4[2] = {
 
 const HumDef gHumRobeDef = { 128, 0, gUnk_09617C78, 0, { 51, 99, 64, 14, 32, 99, 0 } };
 
-const char gTaskNameHumRobe[] = "task_hum_robe";
-
 void task_hum_cloud_0(CloudWork* work, void* obj) {
     HumInit(&work->base, &gHumCloudDef);
     work->unk_188 = 0;
@@ -8799,4 +8797,4 @@ TaskDesc gTaskDescHumRiku = { gTaskNameHumRiku, task_hum_riku_0, task_hum_riku_1
 
 TaskDesc gTaskDescHumLeon = { gTaskNameHumLeon, task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
 
-TaskDesc gTaskDescHumRobe = { gTaskNameHumRobe, task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };
+TaskDesc gTaskDescHumRobe = { "task_hum_robe", task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };

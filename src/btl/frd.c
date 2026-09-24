@@ -68,8 +68,6 @@ const AnimDef gUnk_0813ED90[2] = {
     { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 1, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdBeast[] = "task_frd_beast";
-
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     BtlObj* body;
 
@@ -2366,4 +2364,4 @@ TaskDesc gTaskDescFrdPan = { gTaskNameFrdPan, task_frd_pan_0, task_frd_pan_1, ta
 
 TaskDesc gTaskDescFrdAladdin = { gTaskNameFrdAladdin, task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
 
-TaskDesc gTaskDescFrdBeast = { gTaskNameFrdBeast, task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };
+TaskDesc gTaskDescFrdBeast = { "task_frd_beast", task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };
