@@ -1,18 +1,6 @@
 #include "movie_text.h"
 
-#ifdef VERSION_JP
-u16 func_0805E848(u8* str) {
-    s32 i;
-
-    i = 0;
-    for (;;) {
-        if (str[i] == 0) {
-            return i / 2;
-        }
-        i++;
-    }
-}
-#else
+#ifndef VERSION_JP
 s16 func_0805E848(u16* widths, u16 count) {
     s16 i;
     s16 total;
@@ -29,44 +17,35 @@ s16 func_0805E848(u16* widths, u16 count) {
     }
     return 120 - total / 2;
 }
+#endif
 
-#ifdef VERSION_EU
-u16 CountNonSpaceChars(u8* str) {
+u16 CountNonSpaceChars(TextChar* str) {
     s32 i;
+#ifndef VERSION_JP
     s32 n;
-    u8 c;
+    TextChar c;
+#endif
 
     i = 0;
+#ifndef VERSION_JP
     n = 0;
+#endif
+
     for (;;) {
+#ifdef VERSION_JP
+        if (str[i] == 0) {
+            return i / 2;
+        }
+#else
         c = str[i];
         if (c == 0) {
             return n;
         }
+
         if (c != 0x20) {
             n++;
         }
+#endif
         i++;
     }
 }
-#else
-u16 CountNonSpaceChars(u16* str) {
-    s32 n;
-    u16 c;
-
-    n = 0;
-
-    for (;;) {
-        c = *str;
-        if (c == 0) {
-            return n;
-        }
-
-        if (c != 0x20) {
-            n++;
-        }
-        str++;
-    }
-}
-#endif
-#endif
