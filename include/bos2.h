@@ -526,5 +526,8 @@ extern s16 gUnk_0203AC80;
 extern JfMapArg gJfMapArg;
 extern s16 gUnk_0203ACB0;
 extern s16 gUnk_0203ACB4;
+extern s16 gUnk_0203ACC0;
+extern s16 gUnk_0203ACC4;
+extern s16 gUnk_0203ACD4;
 
 #endif /* GUARD_BOS2_H */

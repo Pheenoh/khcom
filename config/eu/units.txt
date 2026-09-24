@@ -297,8 +297,12 @@ mode_wlogo.c
 wlogo.c
 boss_tm_rodata.s
 boss_tm.c
-bos2_rodata.s
-bos2.c
+bos_jf_rodata.s
+bos_jf.c
+bos_jf_majin.c
+bos_dsd_main.c
+bos_dsd_ita.c
+bos_dsd_circle.c
 chara.c
 bos3.c
 mode_sio_dbg_rodata.s

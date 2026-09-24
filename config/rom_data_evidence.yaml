@@ -5559,7 +5559,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF3A48
   layer: 1
-  provenance: bos2.c task_bos_jf_borderline_0 explicitly starts animations27 and28, independently proving29 entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_jf_majin.c task_bos_jf_borderline_0 explicitly starts animations27 and28, independently proving29 entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef3a48'
   targets:
     jp: '0x9ecae34'
@@ -5569,7 +5569,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF3C20
   layer: 1
-  provenance: bos2.c task_bos_dsd_main_0 explicitly starts animation0 on the first animation state. bos2.c task_bos_dsd_main_0 explicitly starts animation0 on the second animation state. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_dsd_main.c task_bos_dsd_main_0 explicitly starts animation0 on the first animation state. bos_dsd_main.c task_bos_dsd_main_0 explicitly starts animation0 on the second animation state. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef3c20'
   targets:
     jp: '0x9ecb00c'
