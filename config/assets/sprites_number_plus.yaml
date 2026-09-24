@@ -54,39 +54,26 @@ entries:
     address: 0x09EC07F0
   eu:
     address: 0x09F7462C
-- name: gUnk_090451AC
-  record: Sprite
+- name: gUnk_090451C0
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
+  cell: [16, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnk_090451AC
+    pieces:
+    - [16x16, 0, 0]
+  animations:
+  - symbol: gUnk_090451B6
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x090451AC
+    size: 148
   jp:
     address: 0x09012054
+    size: 148
   eu:
     address: 0x090D1FCC
-- name: gUnk_090451B6
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x090451B6
-  jp:
-    address: 0x0901205E
-  eu:
-    address: 0x090D1FD6
-- name: gUnk_090451C0
-  format: tiles4
-  width: 2
-  us:
-    address: 0x090451C0
-    size: 128
-  jp:
-    address: 0x09012068
-    size: 128
-  eu:
-    address: 0x090D1FE0
-    size: 128
+    size: 148
