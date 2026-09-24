@@ -7,11 +7,10 @@
 struct UnkStruct_02034F24;
 struct UnkStruct_02034F80;
 struct MapCell;
-struct UnkStruct_080DFF1C;
 struct UnkStruct_080E92B8;
 
-s32 func_080DFF1C(struct UnkStruct_080DFF1C* p);
-void func_080DFF4C(struct UnkStruct_080DFF1C* p);
+s32 func_080DFF1C(FldPos* p);
+void func_080DFF4C(FldPos* p);
 s32 func_080DFF94(s32 x, s32 y, s32 z);
 void func_080E0298(s32 x, s32 y);
 void func_080E02A8(s32 dx, s32 dy);

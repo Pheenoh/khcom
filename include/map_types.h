@@ -2,13 +2,7 @@
 #define GUARD_MAP_TYPES_H
 
 #include "types.h"
-
-typedef struct UnkStruct_080DFF1C {
-    s32 x;
-    s32 y;
-    s32 z;
-    s32 unk_0C;
-} UnkStruct_080DFF1C;
+#include "fld_types.h"
 
 typedef struct UnkStruct_02034F80 {
     u8 unk_00;

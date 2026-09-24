@@ -50,19 +50,19 @@ s32 func_080DFEBC(s32 x, s32 y, s32 z) {
     return r;
 }
 
-s32 func_080DFF1C(UnkStruct_080DFF1C* p) {
+s32 func_080DFF1C(FldPos* p) {
     return func_080DFEBC(p->x, p->y + p->unk_0C, p->unk_0C);
 }
 
-s32 func_080DFF30(UnkStruct_080DFF1C* p) {
+s32 func_080DFF30(FldPos* p) {
     return func_080DFEBC(p->x, p->y + p->z, -0x100000);
 }
 
-void func_080DFF4C(UnkStruct_080DFF1C* p) {
+void func_080DFF4C(FldPos* p) {
     p->unk_0C = func_080DFF30(p);
 }
 
-void func_080DFF5C(UnkStruct_080DFF1C* p, s16 x, s16 y, u8 a, u8 b) {
+void func_080DFF5C(FldPos* p, s16 x, s16 y, u8 a, u8 b) {
     p->x = (x << 13) + (a << 12);
     p->y = (y << 12) + (b << 11);
     p->z = 0;
@@ -88,7 +88,7 @@ s32 func_080DFF94(s32 x, s32 y, s32 z) {
     return 0x80;
 }
 
-void func_080DFFEC(UnkStruct_080DFF1C* p) {
+void func_080DFFEC(FldPos* p) {
     func_080E524C(p, &p->y);
     p->z = 0;
     p->z = p->unk_0C = func_080DFF30(p);
@@ -223,7 +223,7 @@ void func_080E02C0(s32 x, s32 y, s32 z) {
     gUnk_0203C7AC->unk_2C = z;
 }
 
-u8 func_080E02E0(UnkStruct_080DFF1C* p, s16 a, s16 b) {
+u8 func_080E02E0(FldPos* p, s16 a, s16 b) {
     if (gUnk_0203C7AC->unk_20 == 0) {
         return 0;
     }
@@ -415,7 +415,7 @@ void func_080E062C(void) {
             break;
         }
     } else {
-        func_080E524C((UnkStruct_080DFF1C*)&gFieldState->unk_DC, &gFieldState->unk_E0);
+        func_080E524C((FldPos*)&gFieldState->unk_DC, &gFieldState->unk_E0);
         gFieldState->unk_E4 = 0x80;
     }
 
@@ -489,7 +489,7 @@ void func_080E0900(MapCell* p, s32 a, s32 b) {
     }
 }
 
-u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a) {
+u8 func_080E0920(FldPos* p, u16 a) {
     u16 d = (p->unk_0C - p->z) >> 8;
 
     return d > a * 16;
@@ -768,7 +768,7 @@ void func_080E0FD8(UnkStruct_02034F20* p) {
                 if (e->unk_08 != -0x100000 && p->unk_04 == e->unk_0C) {
                     d = ((p->unk_04 - e->unk_08) >> 8) / 16;
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 3)) {
+                    if (func_080E0920((FldPos*)e, 3)) {
                         q = func_080E08BC((s16)x, (s16)(y - d));
 
                         if ((e->unk_00 & 28) == 0 && (q->unk_00 & 28) == 0) {
@@ -1119,7 +1119,7 @@ void func_080E1670(void) {
             case 2:
                 v = func_080E0938(10);
 
-                if (func_080E0920((UnkStruct_080DFF1C*)e, 3)) {
+                if (func_080E0920((FldPos*)e, 3)) {
                     func_080E0A38(e);
                     func_080E09B4(e, 10, v);
                     func_080E0960(func_080E08BC(i, j - 1), 3);
@@ -1134,7 +1134,7 @@ void func_080E1670(void) {
                 func_080E09B4(func_080E08BC(i, j - 1), 48, v);
                 func_080E0A38(e);
 
-                if (func_080E0920((UnkStruct_080DFF1C*)e, 3)) {
+                if (func_080E0920((FldPos*)e, 3)) {
                     func_080E09B4(e, 7, v);
                     func_080E0960(func_080E08BC(i, j + 1), 3);
                     func_080E09B4(func_080E08BC(i, j + 1), 8, v);
@@ -1147,7 +1147,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     sub_080E0B00(e, 23);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0BF4(i, j + 1, 4, 24);
                     } else {
                         func_080E0BF4(i, j + 1, 4, 25);
@@ -1163,7 +1163,7 @@ void func_080E1670(void) {
                     func_080E09B4(e, 13, v);
                     func_080E09B4(func_080E08BC(i, j - 1), 47, v);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0960(func_080E08BC(i, j + 1), 4);
                         func_080E09B4(func_080E08BC(i, j + 1), 14, v);
                     } else if ((func_080E08BC(i, j + 2)->unk_00 & 16) == 0) {
@@ -1179,7 +1179,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     sub_080E0B00(e, 29);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0BF4(i, j + 1, 5, 30);
                     } else {
                         func_080E0BF4(i, j + 1, 5, 31);
@@ -1195,7 +1195,7 @@ void func_080E1670(void) {
                     func_080E09B4(e, 18, v);
                     func_080E09B4(func_080E08BC(i, j - 1), 49, v);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0960(func_080E08BC(i, j + 1), 5);
                         func_080E09B4(func_080E08BC(i, j + 1), 19, v);
                     } else if ((func_080E08BC(i, j + 2)->unk_00 & 16) == 0) {
@@ -1211,7 +1211,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     sub_080E0B00(e, 26);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0BF4(i, j - 1, 4, 27);
                     } else if ((func_080E08BC(i, j - 2)->unk_00 & 16) == 0) {
                         func_080E0BF4(i, j - 1, 4, 28);
@@ -1223,7 +1223,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     func_080E09B4(e, 15, v);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0960(func_080E08BC(i, j - 1), 4);
                         func_080E09B4(func_080E08BC(i, j - 1), 16, v);
                     }
@@ -1234,7 +1234,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     sub_080E0B00(e, 32);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0BF4(i, j - 1, 5, 33);
                     } else if ((func_080E08BC(i, j - 2)->unk_00 & 16) == 0) {
                         func_080E0BF4(i, j - 1, 5, 34);
@@ -1246,7 +1246,7 @@ void func_080E1670(void) {
                     func_080E0A38(e);
                     func_080E09B4(e, 20, v);
 
-                    if (func_080E0920((UnkStruct_080DFF1C*)e, 2)) {
+                    if (func_080E0920((FldPos*)e, 2)) {
                         func_080E0960(func_080E08BC(i, j - 1), 5);
                         func_080E09B4(func_080E08BC(i, j - 1), 21, v);
                     }
@@ -2954,7 +2954,7 @@ void func_080E51C0(void* p, s16 a, s16 b) {
     RequestTilemapStripCopy(r, GetBgScreenBase(1), a, b, 0);
 }
 
-u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
+u8 func_080E524C(FldPos* a, s32* b) {
     u16 h;
     u16 x;
     u16 y;
@@ -2988,7 +2988,7 @@ u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
     return 0;
 }
 
-u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b) {
+u8 func_080E5354(FldPos* a, s32* b) {
     u16 w = 6;
     u16 h = 8;
     u16 x;
@@ -3116,7 +3116,7 @@ void func_080E55E4(const u8* src) {
 void func_080E56B4(void* a) {
     UnkStruct_080E56B4* q = a;
     UnkStruct_0203C7B8* e;
-    UnkStruct_080DFF1C v;
+    FldPos v;
     s32 x;
     s32 n;
 

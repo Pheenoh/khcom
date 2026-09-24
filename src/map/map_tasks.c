@@ -214,7 +214,7 @@ const char gTaskNameMapGmkGP09[] = "Task_MapGmk_GP09";
 const char gTaskNameMapGmk00[] = "Task_MapGmk00";
 
 s32 func_080EF3A0(MapEnmWork* p) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
 
     if (p->unk_08.x < gFieldState->x - 0x1800 || p->unk_08.x > gFieldState->x + 0x10800 ||
         q->y + q->z < gFieldState->y - 0x800 || q->y + q->z > gFieldState->y + 0xC000) {
@@ -241,7 +241,7 @@ void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
 }
 
 void func_080EF478(MapEnmWork* p, s32 b, s32 c) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
 
     if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->z) {
         p->unk_08.x = b;
@@ -484,7 +484,7 @@ void Task_MapEnm00_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 }
 
 s32 Task_MapEnm00_1(MapEnmWork* p) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -623,7 +623,7 @@ void func_080EFC08(MapEnmWork* p) {
 
 void func_080EFCF4(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
-    UnkStruct_080DFF1C t;
+    FldPos t;
     s32 dx;
     s32 dy;
     s32 v;
@@ -684,13 +684,13 @@ void func_080EFCF4(MapEnmWork* p) {
         p->unk_D0++;
     }
 
-    r = func_080DFF1C((UnkStruct_080DFF1C*)q);
+    r = func_080DFF1C((FldPos*)q);
 
     if (r < q->unk_08) {
-        *(UnkStruct_080DFF1C*)q = t;
+        *(FldPos*)q = t;
         p->unk_D8 = q->unk_04 + 0x1000;
     } else if (r == 0x100000) {
-        *(UnkStruct_080DFF1C*)q = t;
+        *(FldPos*)q = t;
         p->unk_D8 = q->unk_04 - 0x1000;
     } else {
         q->unk_0C = r;
@@ -749,7 +749,7 @@ void Task_MapEnm01_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
 s32 Task_MapEnm01_1(MapEnmWork* p) {
     MapEnmWork* q = p;
-    UnkStruct_080DFF1C* pos = &p->unk_08;
+    FldPos* pos = &p->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -804,7 +804,7 @@ void Task_MapEnm02_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
 s32 Task_MapEnm02_1(MapEnmWork* p) {
     MapEnmWork* w = p;
-    UnkStruct_080DFF1C* q = &w->unk_08;
+    FldPos* q = &w->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -938,14 +938,14 @@ void func_080F02A0(UnkStruct_080F023C* w) {
 void func_080F0348(UnkStruct_080F023C* w) {
     UnkStruct_080F023C* q = w;
     UnkStruct_080EF4BC* v = (UnkStruct_080EF4BC*)&w->unk_08;
-    UnkStruct_080DFF1C tmp;
+    FldPos tmp;
     s32 n;
 
     func_080E5D6C((MapEnmWork*)w, 1, 3);
     func_080E5DEC((MapEnmWork*)w);
     TaskPoolUpdate(&w->tasks);
     func_080F0108(w, 1);
-    tmp = *(UnkStruct_080DFF1C*)v;
+    tmp = *(FldPos*)v;
 
     if (GetRandom() % 20 != 0) {
         v->angle = GetAngle(w->unk_08, v->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
@@ -965,13 +965,13 @@ void func_080F0348(UnkStruct_080F023C* w) {
         w->update = func_080F0470;
     }
 
-    n = func_080DFF1C((UnkStruct_080DFF1C*)v);
+    n = func_080DFF1C((FldPos*)v);
 
     if (n < v->unk_08) {
-        *(UnkStruct_080DFF1C*)v = tmp;
+        *(FldPos*)v = tmp;
         w->unk_D8 = v->unk_04 + 0x1000;
     } else if (n == 0x100000) {
-        *(UnkStruct_080DFF1C*)v = tmp;
+        *(FldPos*)v = tmp;
         w->unk_D8 = v->unk_04 - 0x1000;
     } else {
         v->unk_0C = n;
@@ -982,14 +982,14 @@ void func_080F0348(UnkStruct_080F023C* w) {
 
 void func_080F0470(UnkStruct_080F023C* w) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&w->unk_08;
-    UnkStruct_080DFF1C save;
+    FldPos save;
     s32 r;
 
     func_080E5D6C((MapEnmWork*)w, 1, 3);
     func_080E5DEC((MapEnmWork*)w);
     TaskPoolUpdate(&w->tasks);
     func_080F0108(w, 1);
-    save = *(UnkStruct_080DFF1C*)q;
+    save = *(FldPos*)q;
 
     if (GetRandom() % 20 != 0) {
         q->angle = GetAngle(w->unk_08, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
@@ -1001,13 +1001,13 @@ void func_080F0470(UnkStruct_080F023C* w) {
         w->update = func_080F02A0;
     }
 
-    r = func_080DFF1C((UnkStruct_080DFF1C*)q);
+    r = func_080DFF1C((FldPos*)q);
 
     if (r < q->unk_08) {
-        *(UnkStruct_080DFF1C*)q = save;
+        *(FldPos*)q = save;
         w->unk_D8 = q->unk_04 + 0x1000;
     } else if (r == 0x100000) {
-        *(UnkStruct_080DFF1C*)q = save;
+        *(FldPos*)q = save;
         w->unk_D8 = q->unk_04 - 0x1000;
     } else {
         q->unk_0C = r;
@@ -1022,12 +1022,12 @@ void Task_MapEnm03_0(UnkStruct_080F023C* w, UnkStruct_080E5B90* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     ColliderSetDisabled(&w->collider, 0);
     w->timer = 0;
-    *(UnkStruct_080DFF1C*)&w->unk_F8 = *(UnkStruct_080DFF1C*)&w->unk_08;
+    *(FldPos*)&w->unk_F8 = *(FldPos*)&w->unk_08;
 }
 
 s32 Task_MapEnm03_1(MapEnmWork* p) {
     MapEnmWork* w = p;
-    UnkStruct_080DFF1C* q = &w->unk_08;
+    FldPos* q = &w->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -1124,7 +1124,7 @@ void func_080F0708(UnkStruct_080F023C* p, u8 flag) {
 void func_080F07EC(MapEnmWork* p) {
     MapEnmWork* r = p;
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
-    UnkStruct_080DFF1C tmp;
+    FldPos tmp;
 
     func_080E5D6C(p, 0, 3);
     func_080E5DEC(p);
@@ -1163,7 +1163,7 @@ void func_080F07EC(MapEnmWork* p) {
 
 void func_080F08E4(MapEnmWork* p) {
     UnkStruct_080EF4BC* q = (UnkStruct_080EF4BC*)&p->unk_08;
-    UnkStruct_080DFF1C t;
+    FldPos t;
     s32 dx;
     s32 dy;
     s32 v;
@@ -1224,13 +1224,13 @@ void func_080F08E4(MapEnmWork* p) {
         p->unk_D0++;
     }
 
-    r = func_080DFF1C((UnkStruct_080DFF1C*)q);
+    r = func_080DFF1C((FldPos*)q);
 
     if (r < q->unk_08) {
-        *(UnkStruct_080DFF1C*)q = t;
+        *(FldPos*)q = t;
         p->unk_D8 = q->unk_04 + 0x1000;
     } else if (r == 0x100000) {
-        *(UnkStruct_080DFF1C*)q = t;
+        *(FldPos*)q = t;
         p->unk_D8 = q->unk_04 - 0x1000;
     } else {
         q->unk_0C = r;
@@ -1289,7 +1289,7 @@ void Task_MapEnm04_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
 s32 Task_MapEnm04_1(MapEnmWork* p) {
     MapEnmWork* q = p;
-    UnkStruct_080DFF1C* pos = &p->unk_08;
+    FldPos* pos = &p->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -1407,7 +1407,7 @@ void Task_MapEnm05_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
 s32 Task_MapEnm05_1(MapEnmWork* p) {
     MapEnmWork* q = p;
-    UnkStruct_080DFF1C* pos = &p->unk_08;
+    FldPos* pos = &p->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -1525,7 +1525,7 @@ void Task_MapEnm06_0(MapEnmWork* p, UnkStruct_080E5B90* q) {
 
 s32 Task_MapEnm06_1(MapEnmWork* p) {
     MapEnmWork* q = p;
-    UnkStruct_080DFF1C* pos = &p->unk_08;
+    FldPos* pos = &p->unk_08;
 
     if (gFieldState->flags & 0x40000) {
         func_080E6034(p);
@@ -1737,7 +1737,7 @@ void func_080F1544(MapGmkJumpWork* w) {
 }
 
 void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
+    FldPos* p = (FldPos*)w;
     AnimState* a;
     s32 v;
 
@@ -1823,8 +1823,8 @@ s32 func_080F173C(MapGmkEnmWork* w) {
     return 1;
 }
 
-void Task_MapGmk_Enm_0(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
-    UnkStruct_080DFF1C* e = &w->unk_000;
+void Task_MapGmk_Enm_0(MapGmkEnmWork* w, FldPos* arg) {
+    FldPos* e = &w->unk_000;
     AnimState* an;
     u8* anim;
     u8* frames;
@@ -1921,7 +1921,7 @@ void Task_MapGmk_Dmy_3(u8* work) {
 }
 
 u8 func_080F1978(MapGmkTutorialWork* w) {
-    if (func_080E02E0((UnkStruct_080DFF1C*)w, 0, 8) != 0) {
+    if (func_080E02E0((FldPos*)w, 0, 8) != 0) {
         if ((gFieldState->flags & 0x800000) == 0 && gFieldState->actor.fieldPosition.z == gFieldState->actor.fieldPosition.unk_0C) {
             TaskPool* pool = &w->tasks;
 
@@ -1973,7 +1973,7 @@ void Task_MapGmk_Tutorial_0(MapGmkTutorialWork* w) {
     w->x = 0x19000;
     w->y = 0xAA00;
     w->z = 0;
-    w->unk_00C = func_080DFF30((UnkStruct_080DFF1C*)w);
+    w->unk_00C = func_080DFF30((FldPos*)w);
     w->z = w->unk_00C;
     w->y -= w->unk_00C;
     w->unk_014 = 0xAD;
@@ -2041,7 +2041,7 @@ u8 func_080F1C64(MapGmkSpiderWork* w) {
 void Task_MapGmk_Spider_0(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
     u8 v;
 
-    *(UnkStruct_080DFF1C*)w = arg->unk_04;
+    *(FldPos*)w = arg->unk_04;
     w->unk_01A = 24;
     w->tiles = AllocObjTiles(0x720, gUnk_0899A8BE);
     w->palette = LoadObjPalette(&gUnk_08F691E4[0x6A0], 32);
@@ -2097,7 +2097,7 @@ void Task_MapGmk_Spider_3(MapGmkSpiderWork* w) {
 }
 
 s32 func_080F1E28(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
 
     if (func_080E02E0(p, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
@@ -2184,7 +2184,7 @@ void Task_MapGmk_GP00_3(MapGmkGpWork* w) {
 }
 
 u8 func_080F207C(MapGmkGp1Work* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
 
     if (func_080E8374((UnkStruct_080E8374*)p) != 0) {
         ColliderSetDisabled(&w->collider, 1);
@@ -2278,7 +2278,7 @@ void Task_MapGmk_GP01_3(MapGmkGpWork* w) {
 }
 
 u8 func_080F230C(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
 
     if (func_080E02E0(q, 8, 8)) {
         MapCell* e;
@@ -2373,7 +2373,7 @@ void Task_MapGmk_GP02_3(MapGmkGpWork* w) {
 }
 
 u8 func_080F2594(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
 
     if (func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
@@ -2477,7 +2477,7 @@ void Task_MapGmk_GP03_3(MapGmkGpWork* w) {
 }
 
 u8 func_080F285C(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
     AnimState* a = &w->anim;
 
     w->gfx = AnimUpdate(a);
@@ -2572,7 +2572,7 @@ void Task_MapGmk_GP04_3(MapGmkGpWork* w) {
 }
 
 s32 func_080F2AF4(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
 
     if (!(w->cell->unk_00 & 2) && func_080E02E0(q, 8, 8)) {
         m4aSongNumStart(w->unk_0C4);
@@ -2665,7 +2665,7 @@ void Task_MapGmk_GP05_3(MapGmkGpWork* w) {
 }
 
 u8 func_080F2D90(MapGmkGpWork* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
     AnimState* a = &w->anim;
 
     w->gfx = AnimUpdate(a);
@@ -2871,7 +2871,7 @@ void Task_MapGmk_GP07_3(MapGmkGpWork* w) {
 }
 
 s32 func_080F32F4(MapGmkGp8Work* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
     AnimState* a;
 
     if (func_080E02E0(q, 8, 8)) {
@@ -3097,7 +3097,7 @@ void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
 }
 
 u8 Task_MapGmk00_1(MapGmk00Work* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
     u16 t;
 
     if ((u8)func_080E0390() != 0) {
@@ -3163,7 +3163,7 @@ u8 func_080F3A74(MapGmk01Work* w) {
 }
 
 u8 func_080F3ADC(MapGmk01Work* w) {
-    UnkStruct_080DFF1C* q = &w->unk_004;
+    FldPos* q = &w->unk_004;
 
     if (w->unk_000->unk_00 & 8) {
         gUnk_0203C7AC->flags |= 4;
@@ -3252,7 +3252,7 @@ void Task_MapGmk01_3(MapGmkGpWork* w) {
     ColliderUnregister(w->collider);
 }
 
-void func_080F3D58(UnkStruct_080DFF1C* p) {
+void func_080F3D58(FldPos* p) {
     u16 r;
 
     if (gGameState.flags & 8) {
@@ -3277,7 +3277,7 @@ void func_080F3D58(UnkStruct_080DFF1C* p) {
 }
 
 u8 func_080F3E24(MapGmkBarrelWork* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
     u16 r;
 
     if (func_080E02E0(p, 8, 8) != 0) {
@@ -3475,7 +3475,7 @@ s32 Task_MapGmk04_1(MapGmk04Work* w) {
 }
 
 void Task_MapGmk04_2(MapGmk04Work* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
     u16 v;
     s32 k;
     s32 x;
@@ -3570,7 +3570,7 @@ s32 Task_MapGmk05_1(MapGmk05Work* w) {
 }
 
 void Task_MapGmk05_2(MapGmk05Work* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
     u16 v;
     s32 k;
     s32 x;
@@ -3672,7 +3672,7 @@ s32 Task_MapGmk06_1(MapGmk06Work* w) {
 }
 
 void Task_MapGmk06_2(MapGmk06Work* w) {
-    UnkStruct_080DFF1C* p = &w->unk_004;
+    FldPos* p = &w->unk_004;
     u16 v;
     s32 k;
     s32 x;
@@ -3700,10 +3700,10 @@ void func_080F49D0(MapPrizeWork* w) {
     w->x += gSineTable[w->angle] * w->unk_88 >> 8;
     w->y += -gSineTable[w->angle + 64] * w->unk_88 >> 8;
 
-    if (func_080DFBDC((UnkStruct_080DFF1C*)w) != 0) {
+    if (func_080DFBDC((FldPos*)w) != 0) {
         w->angle = w->angle + (100 + GetRandom() % 57);
     } else {
-        w->unk_0C = func_080DFF1C((UnkStruct_080DFF1C*)w);
+        w->unk_0C = func_080DFF1C((FldPos*)w);
     }
 
     if (w->z > w->unk_0C) {
@@ -3792,7 +3792,7 @@ void Task_MapPrize_0(MapPrizeWork* w, UnkStruct_080E8F50* arg) {
     w->y = arg->unk_08;
     w->z = arg->unk_0C;
     w->unk_0C = 0;
-    func_080DFF4C((UnkStruct_080DFF1C*)w);
+    func_080DFF4C((FldPos*)w);
     w->vz = -(GetRandom() % 0x301 + 0x200);
     w->unk_88 = GetRandom() % 155 + 153;
     w->angle = GetRandom();
@@ -3904,7 +3904,7 @@ void func_080F4F60(MapPrzCardWork* w) {
 }
 
 void func_080F4FB0(MapPrzCardWork* w) {
-    UnkStruct_080DFF1C v = *(UnkStruct_080DFF1C*)w;
+    FldPos v = *(FldPos*)w;
     s32 nx;
     s32 ny;
 
@@ -3913,12 +3913,12 @@ void func_080F4FB0(MapPrzCardWork* w) {
     w->unk_000 += gSineTable[w->unk_0B8] * w->unk_0B0 >> 8;
     w->unk_004 += -gSineTable[w->unk_0B8 + 64] * w->unk_0B0 >> 8;
 
-    if (func_080DFBDC((UnkStruct_080DFF1C*)w) != 0) {
+    if (func_080DFBDC((FldPos*)w) != 0) {
         w->unk_0B8 = w->unk_0B8 + (112 + GetRandom() % 33);
         w->unk_000 = v.x;
         w->unk_004 = v.y;
     } else {
-        w->unk_00C = func_080DFF1C((UnkStruct_080DFF1C*)w);
+        w->unk_00C = func_080DFF1C((FldPos*)w);
     }
 
     if (w->unk_008 - 0x800 > w->unk_00C) {
@@ -4078,7 +4078,7 @@ void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     w->unk_004 = p->unk_08;
     w->unk_008 = p->unk_0C;
     w->unk_00C = 0;
-    func_080DFF4C((UnkStruct_080DFF1C*)w);
+    func_080DFF4C((FldPos*)w);
     w->unk_0AC = -(GetRandom() % 129 + 0x300);
     w->unk_0B0 = GetRandom() % 129 + 128;
     w->unk_0B8 = GetRandom();

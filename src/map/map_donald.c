@@ -85,7 +85,7 @@ s32 Task_MapDonald_1(MapDonaldWork* w) {
 }
 
 void Task_MapDonald_2(MapDonaldWork* w) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)w;
+    FldPos* p = (FldPos*)w;
     u16 v;
     s32 k;
     s16 x;

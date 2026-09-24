@@ -10,7 +10,7 @@
 
 extern u8 gUnk_09EF6A34[];
 extern u8 gUnk_09EF6A42[];
-extern u8 (*gUnk_09EF6A50[])(UnkStruct_080DFF1C*);
+extern u8 (*gUnk_09EF6A50[])(FldPos*);
 extern u8 (*gUnk_09EF6A88[])(UnkStruct_080E8B1C*);
 extern u8 gUnk_09EF6AB0[];
 
@@ -64,7 +64,7 @@ u8 gUnk_02034F40;
 u8 gUnk_02034F41;
 u8 gUnk_02034F42;
 u32 gUnk_02034F44;
-UnkStruct_080DFF1C gUnk_02034F48[3];
+FldPos gUnk_02034F48[3];
 u8 gUnk_02034F78;
 u8 gUnk_02034F79;
 u16 gUnk_02034F7A;
@@ -89,7 +89,7 @@ LoadGameMenuWork* gLoadGameMenuWork;
 UnkStruct_02034FE4* gUnk_02034FE4;
 
 void func_080E590C(UnkStruct_080E5B90* p) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
     s32 t;
 
     func_080E5354(q, &q->y);
@@ -101,7 +101,7 @@ void func_080E590C(UnkStruct_080E5B90* p) {
 }
 
 void func_080E5938(UnkStruct_080E5B90* p) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
     s32 t;
 
     func_080E5354(q, &q->y);
@@ -113,7 +113,7 @@ void func_080E5938(UnkStruct_080E5B90* p) {
 }
 
 s32 func_080E5968(UnkStruct_080E5B90* p) {
-    UnkStruct_080DFF1C* q = &p->unk_08;
+    FldPos* q = &p->unk_08;
     s32 t;
     s32 i;
 
@@ -135,7 +135,7 @@ s32 func_080E5968(UnkStruct_080E5B90* p) {
 }
 
 u8 func_080E59D8(UnkStruct_080E5B90* w) {
-    UnkStruct_080DFF1C* d = &w->unk_08;
+    FldPos* d = &w->unk_08;
     UnkStruct_02034F20* q = func_080E54A0(1);
     u16 wd = q->unk_02 - q->unk_00 - 2;
     u16 ht = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
@@ -179,7 +179,7 @@ u8 func_080E59D8(UnkStruct_080E5B90* w) {
 }
 
 u8 func_080E5AC8(UnkStruct_080E5B90* w) {
-    UnkStruct_080DFF1C* d = &w->unk_08;
+    FldPos* d = &w->unk_08;
     UnkStruct_02034F20* q = func_080E54A0(0);
     u16 wd = q->unk_02 - q->unk_00 - 2;
     u16 ht = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
@@ -814,7 +814,7 @@ s32 func_080E6A80(s16 x, s16 y, u16 n) {
     return 1;
 }
 
-u8 func_080E6B24(UnkStruct_080DFF1C* p) {
+u8 func_080E6B24(FldPos* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 2;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
     s16 rx = GetRandom() % w;
@@ -841,7 +841,7 @@ u8 func_080E6B24(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E6C2C(UnkStruct_080DFF1C* p) {
+u8 func_080E6C2C(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -887,7 +887,7 @@ u8 func_080E6C2C(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E6DB0(UnkStruct_080DFF1C* p) {
+u8 func_080E6DB0(FldPos* p) {
     s16 x;
     s16 y;
     s16 cy;
@@ -928,7 +928,7 @@ u8 func_080E6DB0(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E6F04(UnkStruct_080DFF1C* p) {
+u8 func_080E6F04(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -974,7 +974,7 @@ u8 func_080E6F04(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7088(UnkStruct_080DFF1C* p) {
+u8 func_080E7088(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -1020,7 +1020,7 @@ u8 func_080E7088(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E71F0(UnkStruct_080DFF1C* p) {
+u8 func_080E71F0(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -1066,7 +1066,7 @@ u8 func_080E71F0(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7358(UnkStruct_080DFF1C* p) {
+u8 func_080E7358(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -1110,7 +1110,7 @@ u8 func_080E7358(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E74D8(UnkStruct_080DFF1C* p) {
+u8 func_080E74D8(FldPos* p) {
     s16 x;
     s16 y;
     s16 cy;
@@ -1151,7 +1151,7 @@ u8 func_080E74D8(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7620(UnkStruct_080DFF1C* p) {
+u8 func_080E7620(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -1197,7 +1197,7 @@ u8 func_080E7620(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E77A4(UnkStruct_080DFF1C* p) {
+u8 func_080E77A4(FldPos* p) {
     s16 ry;
     s16 rx;
     s16 sy;
@@ -1243,7 +1243,7 @@ u8 func_080E77A4(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7928(UnkStruct_080DFF1C* p) {
+u8 func_080E7928(FldPos* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 3;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 3;
     s16 rx = GetRandom() % w;
@@ -1270,7 +1270,7 @@ u8 func_080E7928(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7A30(UnkStruct_080DFF1C* p) {
+u8 func_080E7A30(FldPos* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 4;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 4;
     s16 rx = GetRandom() % w;
@@ -1297,7 +1297,7 @@ u8 func_080E7A30(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7B38(UnkStruct_080DFF1C* p) {
+u8 func_080E7B38(FldPos* p) {
     u16 w = gUnk_0203C7AC->unk_04 - 5;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 5;
     s16 rx = GetRandom() % w;
@@ -1324,7 +1324,7 @@ u8 func_080E7B38(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7C40(UnkStruct_080DFF1C* p) {
+u8 func_080E7C40(FldPos* p) {
     UnkStruct_02034F20* e = func_080E54A0(0);
     u16 w = e->unk_02 - e->unk_00 - 2;
     u16 h = gUnk_0203C7AC->unk_0A - gUnk_0203C7AC->unk_08 - 2;
@@ -1354,7 +1354,7 @@ u8 func_080E7C40(UnkStruct_080DFF1C* p) {
     return 0;
 }
 
-u8 func_080E7D64(UnkStruct_080DFF1C* a, u8 b) {
+u8 func_080E7D64(FldPos* a, u8 b) {
     return gUnk_09EF6A50[b](a);
 }
 
@@ -1398,7 +1398,7 @@ void func_080E7DF8(void) {
 }
 
 void func_080E7E3C(void) {
-    UnkStruct_080DFF1C w;
+    FldPos w;
     UnkStruct_080DEE18* e;
     const UnkStruct_080E7D80* q;
     s32 i;
@@ -1456,7 +1456,7 @@ void func_080E7E3C(void) {
 }
 
 void func_080E7FCC(void) {
-    UnkStruct_080DFF1C w;
+    FldPos w;
 
     if (gUnk_0203C7AC->unk_0D == 6 || gUnk_0203C7AC->unk_0D == 0x17) {
         func_080E7D64(&w, gUnk_0984C1CC.unk_15);
@@ -1470,7 +1470,7 @@ void func_080E7FCC(void) {
 }
 
 void func_080E8058(void) {
-    UnkStruct_080DFF1C w;
+    FldPos w;
 
     if (gUnk_0203C7AC->unk_0D == 11) {
         func_080E7D64(&w, gUnk_0984C204.unk_15);
@@ -1484,7 +1484,7 @@ void func_080E8058(void) {
 }
 
 void func_080E80E0(void) {
-    UnkStruct_080DFF1C w;
+    FldPos w;
     const UnkStruct_080E7D80* t;
     s32 i;
     s32 f;
@@ -1549,7 +1549,7 @@ void func_080E826C(void) {
     s32 i;
 
     for (i = gUnk_02034F78; i < 16; i++) {
-        UnkStruct_080DFF1C w;
+        FldPos w;
         const UnkStruct_080E7D80* e = &gUnk_09856FB4[func_080E6634(i)];
         u8 f = func_080E7DB8(e->unk_14, e->tiles);
         u8 g;
@@ -1633,7 +1633,7 @@ void func_080E83DC(s32 a, s32 b, s32 c) {
     }
 }
 
-void func_080E84DC(UnkStruct_080DFF1C* p) {
+void func_080E84DC(FldPos* p) {
     u16 r = GetRandom() % 10000;
 
     if (r <= 0x5DB) {
@@ -4702,7 +4702,7 @@ void func_080ECAA8(MapDoorWork* p) {
 
 s32 func_080ECAC8(MapDoorWork* p) {
     UnkStruct_080DFB7C* flags = p->unk_00;
-    UnkStruct_080DFF1C* e = (UnkStruct_080DFF1C*)&p->unk_04;
+    FldPos* e = (FldPos*)&p->unk_04;
 
     if (!(gFieldState->flags & 0x2000) && !(gUnk_0203C7AC->flags & 0x4004) &&
         (u8)(flags->unk_07 + 3) > 1 && (flags->unk_00 & 0x12) != 0x12 &&
@@ -4769,7 +4769,7 @@ u8 func_080ECC8C(MapDoorWork* p) {
 
 void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)&w->unk_04;
-    UnkStruct_080DFF1C* v = &e->unk_00;
+    FldPos* v = &e->unk_00;
     const UnkStruct_0984B968* q = &gUnk_0984B968[gUnk_0203C590.unk_04];
 
     w->unk_00 = p;
@@ -6480,7 +6480,7 @@ u8 gUnk_09EF6A42[14] = {
     40,
 };
 
-u8 (*gUnk_09EF6A50[14])(UnkStruct_080DFF1C*) = {
+u8 (*gUnk_09EF6A50[14])(FldPos*) = {
     func_080E6B24,
     func_080E6C2C,
     func_080E6F04,

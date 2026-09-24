@@ -103,7 +103,7 @@ typedef struct UnkStruct_0984BC9C {
 } UnkStruct_0984BC9C;
 
 typedef struct UnkStruct_080E6034 {
-    UnkStruct_080DFF1C unk_00;
+    FldPos unk_00;
     u8 unk_10;
     u8 unk_11[0x03];
     s32 unk_14;
@@ -148,7 +148,7 @@ typedef struct UnkStruct_080E8B1C {
 typedef struct UnkStruct_0203C7B8 {
     u16 unk_00;
     u8 unk_02[0x02];
-    UnkStruct_080DFF1C unk_04;
+    FldPos unk_04;
     const UnkStruct_080E7D80* unk_14;
 } UnkStruct_0203C7B8;
 
@@ -171,7 +171,7 @@ typedef struct UnkStruct_080E87EC {
 } UnkStruct_080E87EC;
 
 typedef struct UnkStruct_080E64D4 {
-    UnkStruct_080DFF1C unk_00;
+    FldPos unk_00;
     u8 unk_10[0x2A];
     u16 unk_3A;
     s32 unk_3C;
@@ -221,14 +221,14 @@ typedef struct UnkStruct_080EF4BC {
 typedef struct UnkStruct_080E5B90 {
     const UnkStruct_0984BC9C* unk_00;
     void* unk_04;
-    UnkStruct_080DFF1C unk_08;
+    FldPos unk_08;
     u8 unk_18;
     u8 unk_19[0x03];
     s32 unk_1C;
 } UnkStruct_080E5B90;
 
 typedef struct UnkStruct_080E6394 {
-    UnkStruct_080DFF1C unk_00;
+    FldPos unk_00;
     s32 unk_10;
     u8 unk_14;
     u8 unk_15[0x05];
@@ -243,7 +243,7 @@ typedef struct MapEnmWork {
     const UnkStruct_0984BC9C* unk_00;
     u16 flags;
     u16 paletteBank;
-    UnkStruct_080DFF1C unk_08;
+    FldPos unk_08;
     s32 unk_18;
     u8 unk_1C;
     u8 unk_1D[0x03];
@@ -495,7 +495,7 @@ typedef struct MapDbgWork {
 } MapDbgWork;
 
 typedef struct MapGmkEnmWork {
-    UnkStruct_080DFF1C unk_000;
+    FldPos unk_000;
     u8 unk_010[0x0A];
     u16 unk_01A;
     u8 unk_01C[0x24];
@@ -565,7 +565,7 @@ typedef struct MapGmkTutorialWork {
 
 typedef struct MapGmk01Work {
     UnkStruct_0203C7B8* unk_000;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     AnimState anim;
@@ -595,7 +595,7 @@ typedef struct MapGmkSpiderWork {
 
 typedef struct MapGmkGpWork {
     MapCell* cell;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     AnimState anim;
@@ -609,7 +609,7 @@ typedef struct MapGmkGpWork {
 
 typedef struct MapGmkGp1Work {
     MapCell* cell;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     AnimState anim;
@@ -624,7 +624,7 @@ typedef struct MapGmkGp1Work {
 
 typedef struct MapGmk00Work {
     UnkStruct_0203C7B8* unk_000;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x2E];
     u16 unk_072;
@@ -642,7 +642,7 @@ typedef struct MapGmk00Work {
 
 typedef struct MapGmkBarrelWork {
     UnkStruct_0203C7B8* unk_000;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     AnimState anim;
@@ -680,7 +680,7 @@ typedef struct MapPrizeWork {
 
 typedef struct MapGmkGp8Work {
     MapCell* cell;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x2E];
     u16 flags;
@@ -699,7 +699,7 @@ typedef struct MapGmkGp8Work {
 
 typedef struct MapGmkGp08Work {
     MapCell* cell;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x2E];
     u16 unk_072;
@@ -717,7 +717,7 @@ typedef struct MapGmkGp08Work {
 
 typedef struct MapGmk04Work {
     UnkStruct_0203C7B8* unk_000;
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     u8* palette;
@@ -730,7 +730,7 @@ typedef struct MapGmk04Work {
 
 typedef struct MapGmk05Work {
     u8 unk_000[0x04];
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x2A];
     u16 unk_03E;
     s32 unk_040;
@@ -758,7 +758,7 @@ typedef struct MapFrdWork {
 
 typedef struct MapGmk06Work {
     u8 unk_000[0x04];
-    UnkStruct_080DFF1C unk_004;
+    FldPos unk_004;
     u8 unk_014[0x30];
     u8 collider[0x5C];
     AnimState anim;
@@ -1285,8 +1285,8 @@ void sub_080E0B00(MapCell* p, s32 n);
 void func_080E2668(UnkStruct_02034F20* p, s32 a);
 void func_080E4EB0(u16* a, u16* b, u16* c, s16 d, s16 e);
 void func_080E507C(u16* a, u16* b, u16* c, s16 d, s16 e);
-u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b);
-u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b);
+u8 func_080E524C(FldPos* a, s32* b);
+u8 func_080E5354(FldPos* a, s32* b);
 void func_080E56B4(void* a);
 s32 func_080E55A4(s16 x, s16 y);
 void func_080E5B90(UnkStruct_080E5B90* p, const UnkStruct_0984BC9C* q);
@@ -1313,15 +1313,15 @@ void func_080EABB8(u8 a, u16 v);
 void func_080EAC60(u8 a, u32 b);
 
 s32 func_080DFEBC(s32 x, s32 y, s32 z);
-s32 func_080DFF30(UnkStruct_080DFF1C* p);
-void func_080DFF5C(UnkStruct_080DFF1C* p, s16 x, s16 y, u8 a, u8 b);
-void func_080DFFEC(UnkStruct_080DFF1C* p);
+s32 func_080DFF30(FldPos* p);
+void func_080DFF5C(FldPos* p, s16 x, s16 y, u8 a, u8 b);
+void func_080DFFEC(FldPos* p);
 s32 func_080E0010(s32 x);
 s32 func_080E0044(s32 y);
 void func_080E0078(void);
 void func_080E0558(void);
 void func_080E062C(void);
-u8 func_080E02E0(UnkStruct_080DFF1C* p, s16 a, s16 b);
+u8 func_080E02E0(FldPos* p, s16 a, s16 b);
 u8 func_080E0378(void);
 s32 func_080E0390(void);
 s32 func_080E03C0(s32 a);
@@ -1335,7 +1335,7 @@ void Mode_MenuMsg_0(s32 arg);
 void func_080104F4(void);
 void func_080E0878(void);
 void func_080E0900(MapCell* p, s32 a, s32 b);
-u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a);
+u8 func_080E0920(FldPos* p, u16 a);
 u8 func_080E0938(u8 a);
 void func_080E09B4(MapCell* p, u8 n, u8 v);
 void func_080E0A38(MapCell* p);
@@ -1407,7 +1407,7 @@ u8 func_080E8BE4(UnkStruct_080E8B1C* p);
 void func_080E58E4(void);
 void func_080EAD84(u8 a);
 u8 func_080E6634(u8 a);
-u8 func_080E7D64(UnkStruct_080DFF1C* a, u8 b);
+u8 func_080E7D64(FldPos* a, u8 b);
 s32 func_080E7D80(void* a);
 s32 func_080E7DB8(u8 flag, void* a);
 void func_080E7DF8(void);
@@ -1418,7 +1418,7 @@ void func_080E80E0(void);
 void func_080E826C(void);
 void func_080E853C(void);
 void func_080E8594(void);
-void func_080E84DC(UnkStruct_080DFF1C* p);
+void func_080E84DC(FldPos* p);
 void func_080E8624(void);
 void func_080E891C(UnkStruct_080E8864* p);
 u8 func_080E89E4(s16 x, s16 y, const u8* p);

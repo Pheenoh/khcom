@@ -60,13 +60,13 @@ void func_080DFAF4(u8 a, u8 b);
 void func_080DFB2C(void);
 struct UnkStruct_02034F24* func_080DFB7C(u8 a);
 MapCell* func_080DFB8C(s32 x, s32 y);
-u8 func_080DFBDC(UnkStruct_080DFF1C* p);
+u8 func_080DFBDC(FldPos* p);
 u8 func_080DFC24(void);
 void func_080DFC7C(void);
-u8 func_080DFC94(UnkStruct_080DFF1C* p, s32 x, s32 y);
-u8 func_080DFCDC(UnkStruct_080DFF1C* p);
-u8 func_080DFD84(UnkStruct_080DFF1C* p);
-u8 _080DFE1C(UnkStruct_080DFF1C* p);
+u8 func_080DFC94(FldPos* p, s32 x, s32 y);
+u8 func_080DFCDC(FldPos* p);
+u8 func_080DFD84(FldPos* p);
+u8 _080DFE1C(FldPos* p);
 s32 func_080DFE7C(s32 x, s32 y, s32 z);
 
 #ifdef VERSION_EU
