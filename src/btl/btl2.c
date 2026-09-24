@@ -1013,8 +1013,8 @@ void task_btl_pause_3(BtlPauseWork* work) {
     ReleaseObjPalette(work->palette);
 }
 
-#ifdef VERSION_EU
 void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
+#ifdef VERSION_EU
     switch (gLanguage) {
     case 0:
         switch (src->unk_12) {
@@ -1140,15 +1140,7 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     }
 
     AnimStart(&work->anim, 0, 1);
-    work->gfx = AnimGetGfx(&work->anim);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    work->x = src->x;
-    work->y = src->y;
-    work->z = src->z;
-    work->timer = 0;
-}
 #else
-void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     switch (src->unk_12) {
     case 0:
         work->tiles = LoadObjTiles(gUnk_08B1F020, 0x100);
@@ -1207,6 +1199,7 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
         AnimStart(&work->anim, 0, 1);
         break;
     }
+#endif
 
     work->gfx = AnimGetGfx(&work->anim);
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
@@ -1215,7 +1208,6 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
     work->z = src->z;
     work->timer = 0;
 }
-#endif
 
 s32 task_btl_pop_1(BtlPopWork* work) {
     work->z -= 0xC0;
