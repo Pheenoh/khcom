@@ -441,10 +441,10 @@ void func_080A4C1C(UnkStruct_080A3F5C* w) {
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }
-#ifndef VERSION_JP
 u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
+#ifndef VERSION_JP
     s32* p;
-    u8 x;
+#endif
 
     if (w->unk_146[0] == 0) {
         return 0;
@@ -453,6 +453,13 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
     if (w->unk_145 == 1) {
         w->unk_145 = 0;
         w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
+#ifdef VERSION_JP
+        w->unk_138[3] = func_0806BDB8(
+            0x2E00,
+            gUnk_09033CB8[w->messageDef->positionIndex],
+            (s32)(w->messageDef->text),
+            (s32*)&w->gfx2);
+#else
         p = (s32*)&w->gfx2;
 
         if (*p != 0) {
@@ -467,33 +474,13 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
                 (s32)LANGSTR(w->messageDef->text),
                 p);
         }
+#endif
 
-        x = w->unk_138[3];
-        w->unk_138[1] = x;
-    }
-
-    return 1;
-}
-#else
-u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
-    if (w->unk_146[0] == 0) {
-        return 0;
-    }
-
-    if (w->unk_145 == 1) {
-        w->unk_145 = 0;
-        w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
-        w->unk_138[3] = func_0806BDB8(
-            0x2E00,
-            gUnk_09033CB8[w->messageDef->positionIndex],
-            (s32)(w->messageDef->text),
-            (s32*)&w->gfx2);
         w->unk_138[1] = w->unk_138[3];
     }
 
     return 1;
 }
-#endif
 s32 func_080A4D7C(u64* src) {
     if (gUnk_02034B00 != 0) {
         gUnk_02034B00->unk_10C = *src;
