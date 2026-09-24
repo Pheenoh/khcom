@@ -155,7 +155,6 @@ tools:
             - src/moogle_data
             - src/player_progression
             - src/player_progression_data
-            - src/reload_animation_data
             - src/remaining_resource_data
             - src/sram_state
             - src/staff_roll_localized_resource_data

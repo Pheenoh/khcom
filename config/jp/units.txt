@@ -137,8 +137,7 @@ sprites_emy_palettes.s
 jiminy_journal_palettes.s
 lockon.c
 debug_font_tiles.s
-card_def_data.c
-card_label_data.c
+card_catalog.c
 mode_deck.c
 mode_continue.c
 mode_event.c
@@ -216,12 +215,10 @@ card_riku_tutorial_tables.s
 card_print.c
 sprites_number_plus.c
 sprites_card_pictures.c
-card_lookup_data.c
-card_label_sprite_data.c
+card_picture_sprite_data.c
 sprites_premire_chance.c
 sprites_card_1.c
 sprites_level_up.c
-reload_animation_data.c
 card_reload_sprite_data.c
 sprites_card_2.c
 card_localized_deck_labels_data.c
