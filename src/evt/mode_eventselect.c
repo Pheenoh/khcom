@@ -66,7 +66,7 @@ s16 gEventSelectIndex __attribute__((aligned(4)));
 static u8 sEventSelectList;
 UnkStruct_02039DD0* gUnk_02039DD0 EWRAM_COMMON(4);
 
-s16 func_08075064(u8 a) {
+s16 GetEventListLength(u8 a) {
     s16 n = 0;
 
     switch (a) {
@@ -133,12 +133,12 @@ void mode_eventselect_1(void) {
         gEventSelectIndex--;
     }
 
-    if (func_08075064(sEventSelectList) - 1 < gEventSelectIndex) {
+    if (GetEventListLength(sEventSelectList) - 1 < gEventSelectIndex) {
         gEventSelectIndex = 0;
     }
 
     if (gEventSelectIndex < 0) {
-        gEventSelectIndex = func_08075064(sEventSelectList) - 1;
+        gEventSelectIndex = GetEventListLength(sEventSelectList) - 1;
     }
 
     func_0805FCB0(10, 0, 2, gUnk_09033EE0);

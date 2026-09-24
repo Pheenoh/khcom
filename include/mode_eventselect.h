@@ -163,6 +163,6 @@ s32 Event_Debug_1(u8* work);
 void Event_Debug_2(u8* work);
 void Event_Debug_3(s32* p);
 
-s16 func_08075064(u8 a);
+s16 GetEventListLength(u8 a);
 
 #endif

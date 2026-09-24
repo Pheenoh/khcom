@@ -1578,7 +1578,7 @@ func_08074E40	0x08074e40	72	0x080741e4	global
 func_08074E88	0x08074e88	64	0x0807422c	global
 _08074EC8	0x08074ec8	328	0x0807426c	global
 func_08075010	0x08075010	84	0x080743b4	global
-func_08075064	0x08075064	112	0x08074408	global
+GetEventListLength	0x08075064	112	0x08074408	global
 mode_eventselect_0	0x080750d4	72	0x08074478	named
 mode_eventselect_1	0x0807511c	568	0x080744c0	named
 mode_eventselect_2	0x08075354	12	0x08074714	named
@@ -4469,7 +4469,7 @@ Task_MapDmg_0	0x080f7878	48	0x080f5458	body
 Task_MapDmg_1	0x080f78a8	68	0x080f5488	global
 Task_MapDmg_2	0x080f78ec	432	0x080f54cc	global
 Task_MapDmg_3	0x080f7a9c	24	0x080f567c	body
-func_080F7AB4	0x080f7ab4	44	0x080f5694	match
+GetFloorName	0x080f7ab4	44	0x080f5694	match
 Task_MapFloor_0	0x080f7ae0	132	0x080f56c8	near
 Task_MapFloor_1	0x080f7b64	20	0x080f574c	body
 Task_MapFloor_2	0x080f7b78	64	0x080f5760	global

@@ -2086,7 +2086,7 @@ TARGET_FUNC_SIZE = {
         "func_080EC04C": 148,
         "func_080ED250": 208,
         "func_080EEB00": 352,
-        "func_080F7AB4": 52,
+        "GetFloorName": 52,
         "func_08100608": 56,
         "func_081017A0": 492,
         "func_08101970": 760,

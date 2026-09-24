@@ -10964,7 +10964,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
 - name: event_sequence_index_jp
-  provenance: The sentinel-terminated debug selector lists consumed by func_08075064 and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
+  provenance: The sentinel-terminated debug selector lists consumed by GetEventListLength and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
   us: '0x9ee3fb4'
   targets:
     jp: '0x9ebb5d4'
@@ -10972,7 +10972,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
 - name: event_sequence_index_eu_0
-  provenance: The sentinel-terminated debug selector lists consumed by func_08075064 and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
+  provenance: The sentinel-terminated debug selector lists consumed by GetEventListLength and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
   us: '0x9ee3fb4'
   targets:
     eu: '0x9f6f270'
@@ -10980,7 +10980,7 @@ tables:
   stride: 4
   pointer_offsets: [0]
 - name: event_sequence_index_eu_129
-  provenance: The sentinel-terminated debug selector lists consumed by func_08075064 and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
+  provenance: The sentinel-terminated debug selector lists consumed by GetEventListLength and mode_eventselect_1 explicitly select final event ID196 in US/JP and194 in EU. Three parallel indexes reach EventBackgroundDef, EventSequenceDef, and Shift-JIS debug event names. Complete name sequences are byte-identical after omitting only the two US dummy events127/128 from EU; this independently corroborates the regional pointer pairing. Each pointer index ends at the next independently referenced, differently typed index. The real195-entry EU form is preserved without dummy objects.
   us: '0x9ee41b8'
   targets:
     eu: '0x9f6f46c'

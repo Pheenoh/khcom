@@ -311,7 +311,7 @@ void Task_MapDmg_0(u8* work);
 s32 Task_MapDmg_1(u8* work);
 void Task_MapDmg_2(u8* work);
 void Task_MapDmg_3(u8* work);
-void* func_080F7AB4(void);
+void* GetFloorName(void);
 void Task_MapFloor_0(MapFloorWork* w);
 s32 Task_MapFloor_1(u8* work);
 void Task_MapFloor_2(MapFloorWork* w);

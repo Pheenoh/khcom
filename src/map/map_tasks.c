@@ -5487,7 +5487,7 @@ void Task_MapDmg_3(u8* work) {
     ReleaseObjPalette(*(u8**)&work[0]);
 }
 
-void* func_080F7AB4(void) {
+void* GetFloorName(void) {
 #ifdef VERSION_EU
     if (gGameState.flags & 8) {
         return eu_0805E924(gBasementFloorNames[(s8)gGameState.floor]);
@@ -5514,7 +5514,7 @@ void Task_MapFloor_0(MapFloorWork* w) {
     InitTextSlots(w->unk_18, 40);
 #endif
     w->palette2 = _08066468(1);
-    w->unk_10 = LoadTextSlots(func_080F7AB4(), w->unk_18);
+    w->unk_10 = LoadTextSlots(GetFloorName(), w->unk_18);
     w->unk_0C = (240 - GetTextSlotsWidth(w->unk_18, w->unk_10)) / 2;
 }
 
