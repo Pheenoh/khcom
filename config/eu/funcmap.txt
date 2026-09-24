@@ -1439,7 +1439,7 @@ LoadTwoDigitTextSlots	0x08065a70	92	0x080661b8	match
 InitTextSlots	0x08065acc	20	0x08066214	body
 FreeTextSlots	0x08065ae0	40	0x08066228	global
 GetTextSlotsWidth	0x08065b08	76	0x08066250	global
-func_08065B54	0x08065b54	24	0x08066304	match
+GetTextLength	0x08065b54	24	0x08066304	match
 LoadTextSlots	0x08065b6c	16	0x0806631c	body
 LoadLatinTextSlots	0x08065b7c	404	0x0806632c	match
 LoadJapaneseTextSlots	0x08065d10	944	-	absent
@@ -4558,8 +4558,8 @@ func_080FE900	0x080fe900	80	0x080fc510	global
 mode_worldselect_0	0x080fe950	848	0x080fc560	named
 mode_worldselect_1	0x080feca0	944	0x080fc8c8	named
 mode_worldselect_2	0x080ff050	188	0x080fcc88	named
-func_080FF10C	0x080ff10c	144	0x080fcd44	body
-func_080FF19C	0x080ff19c	140	0x080fcdd4	body
+WorldInspectSetTilemapRectPalette	0x080ff10c	144	0x080fcd44	body
+WorldInspectCopyTilemapRect	0x080ff19c	140	0x080fcdd4	body
 func_080FF228	0x080ff228	52	0x080fce60	match
 func_080FF25C	0x080ff25c	92	0x080fce94	match
 func_080FF2B8	0x080ff2b8	88	0x080fcf00	match
@@ -4570,8 +4570,8 @@ func_080FF8CC	0x080ff8cc	832	0x080fd5b4	entry
 mode_worldinspect_0	0x080ffc0c	1708	0x080fd990	named
 mode_worldinspect_1	0x081002b8	400	0x080fe19c	named
 mode_worldinspect_2	0x08100448	164	0x080fe320	named
-func_081004EC	0x081004ec	144	0x080fe3c4	body
-func_0810057C	0x0810057c	140	0x080fe454	body
+WorldWarpSetTilemapRectPalette	0x081004ec	144	0x080fe3c4	body
+WorldWarpCopyTilemapRect	0x0810057c	140	0x080fe454	body
 func_08100608	0x08100608	52	0x080fe4e0	match
 func_0810063C	0x0810063c	52	0x080fe518	match
 func_08100670	0x08100670	28	0x080fe550	global
@@ -4606,7 +4606,7 @@ func_08102728	0x08102728	36	0x08100b8c	global
 func_0810274C	0x0810274c	40	0x08100bb0	global
 func_08102774	0x08102774	64	0x08100bd8	global
 func_081027B4	0x081027b4	324	0x08100c18	global
-func_081028F8	0x081028f8	140	0x08100d5c	body
+MoogleShopCopyTilemapRect	0x081028f8	140	0x08100d5c	body
 func_08102984	0x08102984	272	0x08100de8	xref
 MoogleShopReadMenuKeys	0x08102a94	32	0x08100f00	body
 func_08102AB4	0x08102ab4	788	0x08100f20	global
@@ -4614,7 +4614,7 @@ func_08102DC8	0x08102dc8	360	0x08101234	global
 func_08102F30	0x08102f30	876	0x0810139c	global
 func_0810329C	0x0810329c	2620	0x08101708	match
 func_08103CD8	0x08103cd8	124	0x08102170	global
-func_08103D54	0x08103d54	40	0x081021ec	global
+LoadMooglePackSelectionTilemap	0x08103d54	40	0x081021ec	global
 func_08103D7C	0x08103d7c	108	0x08102214	global
 func_08103DE8	0x08103de8	340	0x08102280	global
 func_08103F3C	0x08103f3c	88	0x081023d4	global

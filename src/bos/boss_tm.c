@@ -51,7 +51,7 @@ extern WlogoTtEffStep gUnk_09EF2034[9];
 extern s8 gUnk_09EF2194[4];
 extern u8 gUnk_09EF21B0[8];
 extern s16 gUnk_09EF21B8[5];
-extern TmFootStep gUnk_09EF21C4[3];
+extern TmFootStep gBosTmFootSteps[3];
 extern TmFootStep gUnk_09EF2244[16];
 extern TmFootStep gUnk_09EF2464[10];
 extern TmFootStep gUnk_09EF25A4[9];
@@ -1694,24 +1694,24 @@ u8 task_bos_tm_foot_1(TmFootWork* work) {
             work->gfx = gUnk_09EF39DC[1];
             work->gfx2 = gUnk_09EF39DC[1];
             work->body.z = work->tm->unk_10 +
-                            ((gUnk_09EF21C4[(s16)work->tm->unk_34].unk_02 - 4) << 8);
+                            ((gBosTmFootSteps[(s16)work->tm->unk_34].unk_02 - 4) << 8);
             work->body2.z = work->tm->unk_10 +
-                            ((gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0A - 4) << 8);
+                            ((gBosTmFootSteps[(s16)work->tm->unk_34].unk_0A - 4) << 8);
             work->body3.z = work->tm->unk_10 + 0x2800;
             work->body4.z = work->tm->unk_10 + 0x2800;
             break;
         }
 
         if ((s16)work->tm->unk_34 <= 2) {
-            work->gfx = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_06];
-            work->gfx2 = gUnk_09EF39DC[gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0E];
-            work->body.z += gUnk_09EF21C4[(s16)work->tm->unk_34].unk_02 << 8;
-            work->body2.z += gUnk_09EF21C4[(s16)work->tm->unk_34].unk_0A << 8;
+            work->gfx = gUnk_09EF39DC[gBosTmFootSteps[(s16)work->tm->unk_34].unk_06];
+            work->gfx2 = gUnk_09EF39DC[gBosTmFootSteps[(s16)work->tm->unk_34].unk_0E];
+            work->body.z += gBosTmFootSteps[(s16)work->tm->unk_34].unk_02 << 8;
+            work->body2.z += gBosTmFootSteps[(s16)work->tm->unk_34].unk_0A << 8;
         }
 
         if (work->tm->unk_32 <= 2) {
             work->gfx =
-                gUnk_09EF39DC[(table = gUnk_09EF21C4, e = &table[work->tm->unk_32])->unk_06 + 1];
+                gUnk_09EF39DC[(table = gBosTmFootSteps, e = &table[work->tm->unk_32])->unk_06 + 1];
             work->gfx2 = gUnk_09EF39DC[e->unk_0E + 1];
             work->body.z -= e->unk_02 << 8;
             work->body2.z -= e->unk_0A << 8;
@@ -2951,7 +2951,7 @@ s16 gUnk_09EF21B8[5] = { -15, -6, 0, 8, 20 };
 
 s16 gUnk_09EF21C2 = 0;
 
-TmFootStep gUnk_09EF21C4[3] = {
+TmFootStep gBosTmFootSteps[3] = {
     { 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, { 0, 0, 0, 0 }, 0, 0, { 0, 0, 0, 0 } },
     { 0, 6, 0, 1, 0, 6, 0, 1, 0, 0, { 0, 0, 0, 0 }, 0, 0, { 0, 0, 0, 0 } },
     { 0, 9, 0, 0, 0, 9, 0, 0, 0, 0, { 0, 0, 0, 0 }, 0, 0, { 0, 0, 0, 0 } },

@@ -448,7 +448,7 @@ u8 func_081027B4(s16 a) {
     return r;
 }
 
-void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
+void MoogleShopCopyTilemapRect(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy) {
     s16 i;
     s16 j;
     s16 n;
@@ -483,7 +483,7 @@ void func_08102984(s16 a) {
         if (gUnk_02035B18[a][j][0] >= 0) {
             LoadDecimalDigitTiles(gUnk_09993760[gUnk_02035B08[a]][gUnk_02035B18[a][j][1]], gUnk_09A18EBC,
                 (u8*)GetBgCharBase(2) + (j * 0xC0 + 0xC0), 0x40, 3);
-            func_081028F8(12, 8, LANGSTR(gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].tilemap),
+            MoogleShopCopyTilemapRect(12, 8, LANGSTR(gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].tilemap),
                 gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].srcX,
                 gMooglePackMenuEntries[j].packTilemaps[gUnk_02035B08[a]].srcY, gUnk_02035C00,
                 gMooglePackMenuEntries[j].tilemapX, gMooglePackMenuEntries[j].tilemapY);
@@ -912,7 +912,7 @@ void func_08103CD8(s16 a) {
     }
 }
 
-void func_08103D54(s16 a) {
+void LoadMooglePackSelectionTilemap(s16 a) {
     LoadBgMap(1, gMooglePackMenuEntries[a].selectionTilemap, gMooglePackMenuEntries[a].selectionTilemapSize);
 }
 
@@ -983,7 +983,7 @@ void func_08103DE8(void) {
         } else if (keys & DPAD_RIGHT) {
             gUnk_02035B02 = 3;
             gUnk_02035B10 = 0;
-            func_08103D54(0);
+            LoadMooglePackSelectionTilemap(0);
             m4aSongNumStart(SONG_SYS_CLICK);
         }
     }
@@ -1168,7 +1168,7 @@ void func_081041B4(void) {
     }
 
     if (gUnk_02035B10 != old) {
-        func_08103D54(gUnk_02035B10);
+        LoadMooglePackSelectionTilemap(gUnk_02035B10);
         m4aSongNumStart(SONG_SYS_CLICK);
     }
 }
@@ -1237,7 +1237,7 @@ void mode_ms_shop_0(void) {
     func_08103CD8(gUnk_02035B04);
 
     if (gUnk_02035B00 != 0) {
-        func_08103D54(gUnk_02035B10);
+        LoadMooglePackSelectionTilemap(gUnk_02035B10);
     }
 
     func_08102984(gUnk_02035B04);
@@ -1311,7 +1311,7 @@ void mode_ms_shop_1(void) {
             if (gUnk_02035B00 != 0) {
                 for (; gUnk_02035B10 > 0 && gUnk_02035B18[gUnk_02035B04][gUnk_02035B10][0] < 0; gUnk_02035B10--) {
                 }
-                func_08103D54(gUnk_02035B10);
+                LoadMooglePackSelectionTilemap(gUnk_02035B10);
             } else {
                 DisableBg(1);
             }

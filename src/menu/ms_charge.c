@@ -1210,7 +1210,7 @@ void mode_ms_charge_0(void) {
         *dst = EwramAlloc(0x2D0);
     }
     InitTextSlots(gUnk_02035DE4, 90);
-    length = func_08065B54(
+    length = GetTextLength(
 #ifdef VERSION_EU
         eu_0805E924(gUnkEu_08890F40)
 #else
@@ -1231,7 +1231,7 @@ void mode_ms_charge_0(void) {
         gUnk_08159F38
 #endif
     , gUnk_02035DEC);
-    length = func_08065B54(
+    length = GetTextLength(
 #ifdef VERSION_EU
         eu_0805E924(gUnkEu_08895960)
 #else
@@ -1252,7 +1252,7 @@ void mode_ms_charge_0(void) {
         gUnk_0815C204
 #endif
     , gUnk_02035DF4);
-    length = func_08065B54(
+    length = GetTextLength(
 #ifdef VERSION_EU
         eu_0805E924(gUnkEu_08890E1C)
 #else
@@ -1273,7 +1273,7 @@ void mode_ms_charge_0(void) {
         gUnk_08159E10
 #endif
     , gUnk_02035DFC);
-    length = func_08065B54(
+    length = GetTextLength(
 #ifdef VERSION_EU
         eu_0805E924(gUnkEu_08890E44)
 #else

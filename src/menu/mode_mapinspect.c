@@ -1173,9 +1173,9 @@ void mode_mapinspect_0(void) {
     InitTextSlots(gUnk_02035F9C, 0x5A);
 
 #ifdef VERSION_EU
-    length = func_08065B54(eu_0805E924(gUnkEu_08890EC0));
+    length = GetTextLength(eu_0805E924(gUnkEu_08890EC0));
 #else
-    length = func_08065B54(gUnk_08159FBC);
+    length = GetTextLength(gUnk_08159FBC);
 #endif
     gUnk_02035FAA = length;
     gUnk_02035FA4 = EwramAlloc(gUnk_02035FAA * 8);
@@ -1187,9 +1187,9 @@ void mode_mapinspect_0(void) {
 #endif
 
 #ifdef VERSION_EU
-    length = func_08065B54(eu_0805E924(gUnkEu_08890E1C));
+    length = GetTextLength(eu_0805E924(gUnkEu_08890E1C));
 #else
-    length = func_08065B54(gUnk_08159E10);
+    length = GetTextLength(gUnk_08159E10);
 #endif
     gUnk_02035FB2 = length;
     gUnk_02035FAC = EwramAlloc(gUnk_02035FB2 * 8);
@@ -1201,9 +1201,9 @@ void mode_mapinspect_0(void) {
 #endif
 
 #ifdef VERSION_EU
-    length = func_08065B54(eu_0805E924(gUnkEu_08890E44));
+    length = GetTextLength(eu_0805E924(gUnkEu_08890E44));
 #else
-    length = func_08065B54(gUnk_08159E18);
+    length = GetTextLength(gUnk_08159E18);
 #endif
     gUnk_02035FBA = length;
     gUnk_02035FB4 = EwramAlloc(gUnk_02035FBA * 8);
@@ -1215,20 +1215,20 @@ void mode_mapinspect_0(void) {
 #endif
 
 #ifdef VERSION_JP
-    gUnk_02035FC2[0] = func_08065B54(gUnk_0814FBB0);
+    gUnk_02035FC2[0] = GetTextLength(gUnk_0814FBB0);
     gUnk_02035FBC[0] = EwramAlloc(gUnk_02035FC2[0] * 8);
     InitTextSlots(gUnk_02035FBC[0], gUnk_02035FC2[0]);
     gUnk_02035FC0[0] = LoadTextSlots(gUnk_0814FBB0, gUnk_02035FBC[0]);
 
-    gUnk_02035FC2[1] = func_08065B54(gUnk_0814FBBC);
+    gUnk_02035FC2[1] = GetTextLength(gUnk_0814FBBC);
     gUnk_02035FBC[1] = EwramAlloc(gUnk_02035FC2[1] * 8);
     InitTextSlots(gUnk_02035FBC[1], gUnk_02035FC2[1]);
     gUnk_02035FC0[1] = LoadTextSlots(gUnk_0814FBBC, gUnk_02035FBC[1]);
 #else
 #ifdef VERSION_EU
-    gUnk_02035FC2[0] = func_08065B54(eu_0805E924(gUnkEu_08895CF8));
+    gUnk_02035FC2[0] = GetTextLength(eu_0805E924(gUnkEu_08895CF8));
 #else
-    gUnk_02035FC2[0] = func_08065B54(gUnk_0815C136);
+    gUnk_02035FC2[0] = GetTextLength(gUnk_0815C136);
 #endif
     gUnk_02035FBC[0] = EwramAlloc(gUnk_02035FC2[0] * 8);
     InitTextSlots(gUnk_02035FBC[0], gUnk_02035FC2[0]);

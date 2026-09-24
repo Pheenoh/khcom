@@ -1151,7 +1151,7 @@ extern u8 gUnk_09849BF8[];
 extern u8 gUnk_09849BD8[];
 extern u8 gUnk_09849CF8[];
 extern u8 gUnk_09753154[];
-extern const PooPoint gUnk_096FD730[];
+extern const PooPoint gPooBeePoints[];
 extern u8 gUnk_09744842[];
 extern u8 gUnk_097567FC[];
 extern u8 gUnk_09758C04[];

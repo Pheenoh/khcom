@@ -5712,8 +5712,8 @@ void task_poo_bee_0(PooBeeWork* w) {
     for (; i < 4; i++) {
         w->sub[i].unk_00 = -0x500;
         w->sub[i].unk_04 = 0x500;
-        w->sub[i].unk_10 = gUnk_096FD730[i].unk_00;
-        w->sub[i].unk_14 = gUnk_096FD730[i].unk_04;
+        w->sub[i].unk_10 = gPooBeePoints[i].unk_00;
+        w->sub[i].unk_14 = gPooBeePoints[i].unk_04;
     }
     AnimInit(w->anim, a, b);
     AnimStart(w->anim, 0, 1);
@@ -5735,8 +5735,8 @@ u8 task_poo_bee_1(PooBeeWork* w) {
                 w->sub[i].unk_00 = w->unk_A4 - 0x500;
                 w->sub[i].unk_04 = w->unk_A8 + 0x500;
                 w->sub[i].unk_08 = w->unk_AC;
-                w->sub[i].unk_10 = 0x2000 + gUnk_0203C3EC->x + gUnk_096FD730[i].unk_00;
-                w->sub[i].unk_14 = -0x2000 + gUnk_0203C3EC->y + gUnk_096FD730[i].unk_04;
+                w->sub[i].unk_10 = 0x2000 + gUnk_0203C3EC->x + gPooBeePoints[i].unk_00;
+                w->sub[i].unk_14 = -0x2000 + gUnk_0203C3EC->y + gPooBeePoints[i].unk_04;
             }
         }
 
@@ -8349,7 +8349,7 @@ TaskDesc gTaskDescPooWagonwheel = {
 
 const char gTaskNamePooSpark[] = "task_poo_spark";
 
-const PooPoint gUnk_096FD730[4] = { { -512, -1792 }, { -2304, 512 }, { 2304, -768 }, { 768, 1792 } };
+const PooPoint gPooBeePoints[4] = { { -512, -1792 }, { -2304, 512 }, { 2304, -768 }, { 768, 1792 } };
 
 TaskDesc gTaskDescPooSpark = {
     gTaskNamePooSpark,

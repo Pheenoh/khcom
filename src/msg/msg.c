@@ -2761,7 +2761,7 @@ s16 eu_0806629C(TextSlot* p, u8 n) {
 #define MSG_CHAR(p) (*(p))
 #endif
 
-s32 func_08065B54(u16* s) {
+s32 GetTextLength(u16* s) {
 #ifdef VERSION_JP
     u16* p = s;
     u16 n = 0;

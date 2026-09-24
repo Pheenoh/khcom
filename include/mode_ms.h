@@ -130,7 +130,7 @@ void func_08104404(void);
 void mode_ms_shop_0(void);
 void func_081041B4(void);
 void mode_ms_shop_2(void);
-void func_08103D54(s16 a);
+void LoadMooglePackSelectionTilemap(s16 a);
 void func_08103D7C(void);
 void func_08103DE8(void);
 
@@ -140,7 +140,7 @@ void func_0810264C(u16 a, u16 b, u16 c);
 u8 func_0810329C(u16 a);
 void func_08102AB4(s16 x, s16 y);
 void func_08103F94(s16 a, s16 b);
-void func_081028F8(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
+void MoogleShopCopyTilemapRect(u16 w, s16 h, u16* src, s16 sx, s16 sy, u16* dst, s16 dx, s16 dy);
 
 extern u8 gUnk_0203C590[];
 
