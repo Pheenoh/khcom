@@ -952,18 +952,18 @@ MapCell* func_080DFB8C(s32 x, s32 y) {
 }
 
 u8 func_080DFBDC(UnkStruct_080DFF1C* p) {
-    s32 y = p->x + p->z;
-    MapCell* q = func_080DFB8C(p->unk_00, y);
+    s32 y = p->y + p->unk_0C;
+    MapCell* q = func_080DFB8C(p->x, y);
 
     if (q == 0) {
         return 1;
     }
 
-    if (q->unk_08 >= p->y && q->unk_0C != 0x100000) {
+    if (q->unk_08 >= p->z && q->unk_0C != 0x100000) {
         return 0;
     }
 
-    return func_080E86C8(q, p->unk_00, y);
+    return func_080E86C8(q, p->x, y);
 }
 
 u8 func_080DFC24(void) {
@@ -991,19 +991,19 @@ u8 func_080DFC94(UnkStruct_080DFF1C* p, s32 x, s32 y) {
     s32 old;
 
     if (func_080DFBDC(p) != 0) {
-        p->unk_00 = x;
-        p->x = y;
+        p->x = x;
+        p->y = y;
         return 1;
     }
 
-    old = p->z;
-    p->z = func_080DFF1C(p);
+    old = p->unk_0C;
+    p->unk_0C = func_080DFF1C(p);
 
-    if (old != p->z) {
+    if (old != p->unk_0C) {
         if (func_080DFBDC(p) != 0) {
-            p->unk_00 = x;
-            p->x = y;
-            p->z = old;
+            p->x = x;
+            p->y = y;
+            p->unk_0C = old;
             return 1;
         }
     }
@@ -1026,12 +1026,12 @@ u8 func_080DFCDC(UnkStruct_080DFF1C* p) {
         return 0;
     }
 
-    if (p->y != p->z) {
+    if (p->z != p->unk_0C) {
         return 0;
     }
 
-    a = (p->unk_00 >> 8) / 32;
-    b = ((p->x + p->y) >> 8) / 16;
+    a = (p->x >> 8) / 32;
+    b = ((p->y + p->z) >> 8) / 16;
 
     for (i = 0; i <= 3; i++) {
         e = (UnkStruct_080DFB7C*)func_080DFB7C(i);
@@ -1056,12 +1056,12 @@ u8 func_080DFD84(UnkStruct_080DFF1C* p) {
         return (u32)gUnk_0203C7AC->flags >> 9 & 1;
     }
 
-    if (p->y != p->z) {
+    if (p->z != p->unk_0C) {
         return 0;
     }
 
-    a = (p->unk_00 >> 8) / 32;
-    b = ((p->x + p->y) >> 8) / 16;
+    a = (p->x >> 8) / 32;
+    b = ((p->y + p->z) >> 8) / 16;
 
     for (i = 0; i <= 3; i++) {
         e = (UnkStruct_080DFB7C*)func_080DFB7C(i);
@@ -1076,7 +1076,7 @@ u8 func_080DFD84(UnkStruct_080DFF1C* p) {
 }
 
 u8 _080DFE1C(UnkStruct_080DFF1C* p) {
-    MapCell* q = func_080DFB8C(p->unk_00, p->x + p->z);
+    MapCell* q = func_080DFB8C(p->x, p->y + p->unk_0C);
 
     if (q->unk_00 & 0x20) {
         switch (q->unk_02) {

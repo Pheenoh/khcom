@@ -39,6 +39,13 @@ typedef struct Collider {
     u32 unk_58;
 } Collider;
 
+typedef struct BtlObjPos {
+    s32 unk_00;
+    s32 x;
+    s32 y;
+    s32 z;
+} BtlObjPos;
+
 typedef struct BtlObj {
     s32 unk_000;
     s32 x;

@@ -236,8 +236,8 @@ const char gTaskNameMapGmk00[] = "Task_MapGmk00";
 s32 func_080EF3A0(MapEnmWork* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
-    if (p->unk_08.unk_00 < gFieldState->x - 0x1800 || p->unk_08.unk_00 > gFieldState->x + 0x10800 ||
-        q->x + q->y < gFieldState->y - 0x800 || q->x + q->y > gFieldState->y + 0xC000) {
+    if (p->unk_08.x < gFieldState->x - 0x1800 || p->unk_08.x > gFieldState->x + 0x10800 ||
+        q->y + q->z < gFieldState->y - 0x800 || q->y + q->z > gFieldState->y + 0xC000) {
         p->update = 0;
         ColliderSetDisabled(p->collider, 1);
         return 1;
@@ -252,7 +252,7 @@ void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
         b /= 5;
         c /= 5;
     }
-    p->unk_08.unk_00 += gSineTable[q->angle] * q->unk_10 >> 8;
+    p->unk_08.x += gSineTable[q->angle] * q->unk_10 >> 8;
     q->unk_04 += -gSineTable[q->angle + 64] * q->unk_10 >> 8;
     q->unk_10 += b;
     if (q->unk_10 > c) {
@@ -263,9 +263,9 @@ void func_080EF404(MapEnmWork* p, s32 b, s32 c) {
 void func_080EF478(MapEnmWork* p, s32 b, s32 c) {
     UnkStruct_080DFF1C* q = &p->unk_08;
 
-    if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->y) {
-        p->unk_08.unk_00 = b;
-        q->x = c;
+    if (func_080DFBDC(q) != 0 || func_080DFF1C(q) != q->z) {
+        p->unk_08.x = b;
+        q->y = c;
         p->update = func_080EF84C;
         ColliderSetDisabled(p->collider, 1);
     }
@@ -278,7 +278,7 @@ s32 func_080EF4BC(MapEnmWork* p) {
     if (gFieldState->actor.fieldPosition.unk_0C != q->unk_0C) {
         return 0;
     }
-    ang = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+    ang = GetAngle(p->unk_08.x, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     if (abs(GetAngleDiff(ang, q->angle)) > 0x18) {
         return 0;
     }
@@ -322,7 +322,7 @@ void func_080EF58C(MapEnmWork* p) {
     func_080E5D6C(p, 1, 1);
     func_080E5DEC(p);
     TaskPoolUpdate(p->tasks);
-    x = p->unk_08.unk_00;
+    x = p->unk_08.x;
     y = q->unk_04;
 
     if ((u8)func_080EF4BC(p) != 0) {
@@ -367,7 +367,7 @@ void func_080EF664(MapEnmWork* p) {
     func_080E5D6C(p, 2, 1);
     func_080E5DEC(p);
     TaskPoolUpdate(p->tasks);
-    x = p->unk_08.unk_00;
+    x = p->unk_08.x;
     y = q->unk_04;
 
     if ((u8)func_080EF4BC(p) != 0) {
@@ -519,7 +519,7 @@ s32 Task_MapEnm00_1(MapEnmWork* p) {
         p->update(p);
 
         if (p->update != 0) {
-            ColliderSetPosition(p->collider, q->unk_00, q->x, q->y);
+            ColliderSetPosition(p->collider, q->x, q->y, q->z);
             return 1;
         }
     }
@@ -614,7 +614,7 @@ void func_080EFC08(MapEnmWork* p) {
     func_080EFA7C((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.x, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if (q->unk_08 < gFieldState->actor.fieldPosition.z - 0x4000) {
@@ -657,7 +657,7 @@ void func_080EFCF4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.x, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -784,7 +784,7 @@ s32 Task_MapEnm01_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->x, pos->y, pos->z);
             return 1;
         }
     }
@@ -835,7 +835,7 @@ s32 Task_MapEnm02_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
-            ColliderSetPosition(w->collider, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->collider, q->x, q->y, q->z);
             return 1;
         }
     }
@@ -1058,7 +1058,7 @@ s32 Task_MapEnm03_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))w->update)(w);
 
         if (w->update != 0) {
-            ColliderSetPosition(w->collider, q->unk_00, q->x, q->y);
+            ColliderSetPosition(w->collider, q->x, q->y, q->z);
             return 1;
         }
     }
@@ -1153,7 +1153,7 @@ void func_080F07EC(MapEnmWork* p) {
     func_080F0660((UnkStruct_080F023C*)p, 0);
 
     if (GetRandom() % 20 == 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.x, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if (q->unk_08 < gFieldState->actor.fieldPosition.z - 0x4000) {
@@ -1197,7 +1197,7 @@ void func_080F08E4(MapEnmWork* p) {
     t = p->unk_08;
 
     if (GetRandom() % 20 != 0) {
-        q->angle = GetAngle(p->unk_08.unk_00, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        q->angle = GetAngle(p->unk_08.x, q->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     dx = p->unk_D4;
@@ -1324,7 +1324,7 @@ s32 Task_MapEnm04_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->x, pos->y, pos->z);
             return 1;
         }
     }
@@ -1371,7 +1371,7 @@ void func_080F0C68(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (GetRandom() % 20 == 0) {
-        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.x, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1442,7 +1442,7 @@ s32 Task_MapEnm05_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->x, pos->y, pos->z);
             return 1;
         }
     }
@@ -1489,7 +1489,7 @@ void func_080F0EEC(MapEnmWork* p) {
     TaskPoolUpdate(p->tasks);
 
     if (GetRandom() % 20 == 0) {
-        r->angle = GetAngle(p->unk_08.unk_00, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        r->angle = GetAngle(p->unk_08.x, r->unk_04, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
     }
 
     if ((u8)func_080E5FB4(p) != 0) {
@@ -1560,7 +1560,7 @@ s32 Task_MapEnm06_1(MapEnmWork* p) {
         ((void (*)(MapEnmWork*))p->update)(q);
 
         if (p->update != 0) {
-            ColliderSetPosition(&p->collider, pos->unk_00, pos->x, pos->y);
+            ColliderSetPosition(&p->collider, pos->x, pos->y, pos->z);
             return 1;
         }
     }
@@ -1761,11 +1761,11 @@ void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     AnimState* a;
     s32 v;
 
-    p->unk_00 = arg->x << 13;
-    p->x = arg->y << 12;
-    p->y = 0;
-    p->y = w->unk_00C = func_080DFF30(p);
-    p->x -= w->unk_00C;
+    p->x = arg->x << 13;
+    p->y = arg->y << 12;
+    p->z = 0;
+    p->z = w->unk_00C = func_080DFF30(p);
+    p->y -= w->unk_00C;
 
     switch (arg->unk_0E) {
     case 3:
@@ -1789,7 +1789,7 @@ void Task_MapGmk_Jump_0(MapGmkJumpWork* w, UnkStruct_02034F20* arg) {
     AnimStart(a, 0, 1);
     w->update = func_080F1460;
     ColliderInit(&w->collider, 6, 16, 0);
-    ColliderSetPosition(&w->collider, p->unk_00, p->x, p->y);
+    ColliderSetPosition(&w->collider, p->x, p->y, p->z);
 }
 
 s32 Task_MapGmk_Jump_1(MapGmkJumpWork* w) {
@@ -1831,7 +1831,7 @@ void Task_MapGmk_Jump_3(MapGmkJumpWork* w) {
 s32 func_080F173C(MapGmkEnmWork* w) {
     if (w->unk_070 != 0) {
         w->gfx = AnimUpdate(&w->anim);
-        ApproachValue(&w->unk_000.y, w->unk_06C, w->unk_070);
+        ApproachValue(&w->unk_000.z, w->unk_06C, w->unk_070);
         w->unk_070--;
     } else {
         gUnk_0203C7AC->flags |= 2;
@@ -1851,8 +1851,8 @@ void Task_MapGmk_Enm_0(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     u8 f;
 
     w->unk_000 = *arg;
-    w->unk_000.x += 0x800;
-    w->unk_000.y -= 0x1000;
+    w->unk_000.y += 0x800;
+    w->unk_000.z -= 0x1000;
     w->unk_01A = 16;
 
     if (gUnk_0203C590.unk_04 != 2) {
@@ -1877,12 +1877,12 @@ void Task_MapGmk_Enm_0(MapGmkEnmWork* w, UnkStruct_080DFF1C* arg) {
     w->unk_064 = func_080F173C;
     f = 0;
 
-    if (gFieldState->actor.fieldPosition.x >= e->unk_00) {
+    if (gFieldState->actor.fieldPosition.x >= e->x) {
         f = 1;
     }
     w->unk_068 = f;
     w->unk_070 = 8;
-    w->unk_06C = e->y - 0x1000;
+    w->unk_06C = e->z - 0x1000;
 }
 
 u8 Task_MapGmk_Enm_1(u8* work) {
@@ -2151,9 +2151,9 @@ void Task_MapGmk_GP00_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2161,7 +2161,7 @@ void Task_MapGmk_GP00_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->timer = 0;
     w->update = func_080F1E28;
@@ -2190,9 +2190,9 @@ void Task_MapGmk_GP00_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2247,9 +2247,9 @@ void Task_MapGmk_GP01_0(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2259,7 +2259,7 @@ void Task_MapGmk_GP01_0(MapGmkGp1Work* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(a);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->unk_0C6 = 1;
     w->update = func_080F207C;
@@ -2283,9 +2283,9 @@ void Task_MapGmk_GP01_2(MapGmkGp1Work* w) {
     s32 y;
 
     if (w->unk_0C6 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-        k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+        x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+        k = w->unk_004.y >> 8;
+        y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -2339,9 +2339,9 @@ void Task_MapGmk_GP02_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2351,7 +2351,7 @@ void Task_MapGmk_GP02_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(a);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->update = func_080F230C;
 }
@@ -2379,9 +2379,9 @@ void Task_MapGmk_GP02_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2443,9 +2443,9 @@ void Task_MapGmk_GP03_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2455,7 +2455,7 @@ void Task_MapGmk_GP03_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(a);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->update = func_080F2594;
 }
@@ -2483,9 +2483,9 @@ void Task_MapGmk_GP03_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2533,9 +2533,9 @@ void Task_MapGmk_GP04_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2550,7 +2550,7 @@ void Task_MapGmk_GP04_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->update = func_080F285C;
 }
@@ -2578,9 +2578,9 @@ void Task_MapGmk_GP04_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2626,9 +2626,9 @@ void Task_MapGmk_GP05_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2643,7 +2643,7 @@ void Task_MapGmk_GP05_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->update = func_080F2AF4;
 }
@@ -2671,9 +2671,9 @@ void Task_MapGmk_GP05_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2733,9 +2733,9 @@ void Task_MapGmk_GP06_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2750,7 +2750,7 @@ void Task_MapGmk_GP06_0(MapGmkGpWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = d->unk_20;
     w->update = func_080F2D90;
 }
@@ -2778,9 +2778,9 @@ void Task_MapGmk_GP06_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2839,9 +2839,9 @@ void Task_MapGmk_GP07_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2850,7 +2850,7 @@ void Task_MapGmk_GP07_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(&w->anim);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = func_080F3050;
 }
 
@@ -2877,9 +2877,9 @@ void Task_MapGmk_GP07_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -2932,9 +2932,9 @@ void Task_MapGmk_GP08_0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -2942,7 +2942,7 @@ void Task_MapGmk_GP08_0(MapGmkGp08Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C8 = d->unk_20;
     w->unk_0CA = 0;
     w->unk_0CC = func_080F32F4;
@@ -2971,9 +2971,9 @@ void Task_MapGmk_GP08_2(MapGmkGp8Work* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 
@@ -3032,9 +3032,9 @@ void Task_MapGmk_GP09_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
 
     w->cell = (MapCell*)arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -3042,7 +3042,7 @@ void Task_MapGmk_GP09_0(MapGmkGp8Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C8 = 0;
     w->unk_0CC = func_080F35C0;
 }
@@ -3070,9 +3070,9 @@ void Task_MapGmk_GP09_2(MapGmkGp8Work* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 
@@ -3094,9 +3094,9 @@ void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
 
     w->unk_000 = arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = LoadObjTiles(d->tiles, d->tilesSize);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -3105,7 +3105,7 @@ void Task_MapGmk00_0(MapGmk00Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
 
     if (func_080E8374((UnkStruct_080E8374*)e) != 0) {
         ColliderSetDisabled(&w->collider, 1);
@@ -3153,9 +3153,9 @@ void Task_MapGmk00_2(MapGmk00Work* w) {
     s32 y;
 
     if (w->unk_0C8 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-        k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+        x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+        k = w->unk_004.y >> 8;
+        y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -3239,7 +3239,7 @@ void Task_MapGmk01_0(MapGmk01Work* w, UnkStruct_0203C7B8* arg) {
     }
     SetObjTileSource(w->tiles, gUnk_09858320);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
 }
 
 u8 Task_MapGmk01_1(MapGmk01Work* w) {
@@ -3259,9 +3259,9 @@ void Task_MapGmk01_2(MapGmkGpWork* w) {
     s32 x;
     s32 y;
 
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = w->unk_004.x >> 8;
-    y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = w->unk_004.y >> 8;
+    y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3278,20 +3278,20 @@ void func_080F3D58(UnkStruct_080DFF1C* p) {
     if (gGameState.flags & 8) {
         r = GetRandom() % 10000;
         if (r < 6000) {
-            CreateMapPrizeTasks(0, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(0, 5, p->x, p->y, p->z);
         } else if (r < 10000) {
-            CreateMapPrizeTasks(1, 3, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(1, 3, p->x, p->y, p->z);
         }
     } else {
         r = GetRandom() % 10000;
         if (r < 3000) {
-            CreateMapPrizeTasks(0, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(0, 5, p->x, p->y, p->z);
         } else if (r < 5000) {
-            CreateMapPrizeTasks(1, 3, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(1, 3, p->x, p->y, p->z);
         } else if (r < 8000) {
-            CreateMapPrizeTasks(2, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(2, 5, p->x, p->y, p->z);
         } else {
-            CreateMapPrizeTasks(3, 5, p->unk_00, p->x, p->y);
+            CreateMapPrizeTasks(3, 5, p->x, p->y, p->z);
         }
     }
 }
@@ -3317,7 +3317,7 @@ u8 func_080F3E24(MapGmkBarrelWork* w) {
         TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, p);
 
         if (r <= 5999) {
-            if ((u8)func_080E8FB8(0, p->unk_00, p->x, p->y) != 1) {
+            if ((u8)func_080E8FB8(0, p->x, p->y, p->z) != 1) {
                 func_080F3D58(p);
             }
         } else if (r <= 9999) {
@@ -3360,9 +3360,9 @@ void Task_MapGmk_Barrel_0(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
 
     w->unk_000 = arg;
     e->unk_00 = arg->unk_04;
-    w->unk_004.unk_00 += d->unk_16 << 8;
-    e->unk_00.x += d->unk_18 << 8;
-    e->unk_00.y += d->unk_1A << 8;
+    w->unk_004.x += d->unk_16 << 8;
+    e->unk_00.y += d->unk_18 << 8;
+    e->unk_00.z += d->unk_1A << 8;
     e->unk_1A = d->unk_1E;
     w->tiles = AllocObjTiles(d->tilesSize, d->tiles);
     w->palette = LoadObjPalette(d->palette, 32);
@@ -3372,7 +3372,7 @@ void Task_MapGmk_Barrel_0(MapGmkBarrelWork* w, UnkStruct_0203C7B8* arg) {
     w->gfx = AnimGetGfx(a);
     SetObjTileSource(w->tiles, d->tiles);
     ColliderInit(&w->collider, 6, d->unk_1C, d->unk_1E);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     w->unk_0C4 = 1;
     w->update = func_080F3E24;
 }
@@ -3395,9 +3395,9 @@ void Task_MapGmk_Barrel_2(MapGmkBarrelWork* w) {
     s32 y;
 
     if (w->unk_0C4 != 0) {
-        x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-        k = w->unk_004.x >> 8;
-        y = k + (w->unk_004.y >> 8) - (gFieldState->y >> 8);
+        x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+        k = w->unk_004.y >> 8;
+        y = k + (w->unk_004.z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
     }
@@ -3470,7 +3470,7 @@ void Task_MapGmk04_0(MapGmk04Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->collider, 4, 24, 24);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     TaskPoolInit(&w->tasks, 1);
     FldObjRegister(e);
 }
@@ -3502,9 +3502,9 @@ void Task_MapGmk04_2(MapGmk04Work* w) {
     s32 y;
 
     TaskPoolDraw(&w->tasks);
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = p->x >> 8;
-    y = k + (p->y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = p->y >> 8;
+    y = k + (p->z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3560,7 +3560,7 @@ void Task_MapGmk05_0(MapGmk05Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(a, 0, 1);
     w->gfx = AnimGetGfx(a);
     ColliderInit(&w->collider, 4, 16, 24);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     FldObjRegister(e);
     TaskPoolInit(&w->tasks, 1);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, e);
@@ -3596,12 +3596,12 @@ void Task_MapGmk05_2(MapGmk05Work* w) {
     s32 x;
     s32 y;
 
-    k = p->x >> 8;
+    k = p->y >> 8;
     v = -0x1004 - k * 4;
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    y = k + (p->y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    y = k + (p->z >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
-    ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+    ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
     ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
     TaskPoolDraw(&w->tasks);
 
@@ -3667,7 +3667,7 @@ void Task_MapGmk06_0(MapGmk06Work* w, UnkStruct_0203C7B8* arg) {
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
     ColliderInit(&w->collider, 4, 24, 24);
-    ColliderSetPosition(&w->collider, w->unk_004.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, w->unk_004.x, e->unk_00.y, e->unk_00.z);
     TaskPoolInit(&w->tasks, 1);
     FldObjRegister(e);
 }
@@ -3699,9 +3699,9 @@ void Task_MapGmk06_2(MapGmk06Work* w) {
     s32 y;
 
     TaskPoolDraw(&w->tasks);
-    x = (w->unk_004.unk_00 >> 8) - (gFieldState->x >> 8);
-    k = p->x >> 8;
-    y = k + (p->y >> 8) - (gFieldState->y >> 8);
+    x = (w->unk_004.x >> 8) - (gFieldState->x >> 8);
+    k = p->y >> 8;
+    y = k + (p->z >> 8) - (gFieldState->y >> 8);
     v = -0x1004 - k * 4;
     DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, v);
 }
@@ -3935,8 +3935,8 @@ void func_080F4FB0(MapPrzCardWork* w) {
 
     if (func_080DFBDC((UnkStruct_080DFF1C*)w) != 0) {
         w->unk_0B8 = w->unk_0B8 + (112 + GetRandom() % 33);
-        w->unk_000 = v.unk_00;
-        w->unk_004 = v.x;
+        w->unk_000 = v.x;
+        w->unk_004 = v.y;
     } else {
         w->unk_00C = func_080DFF1C((UnkStruct_080DFF1C*)w);
     }
@@ -4414,10 +4414,10 @@ void Task_MapDonald_0(MapDonaldWork* w) {
         }
     }
 
-    e->unk_00.y = 0;
-    e->unk_00.z = func_080DFF30(&e->unk_00);
-    e->unk_00.y = e->unk_00.z;
-    e->unk_00.x -= e->unk_00.z;
+    e->unk_00.z = 0;
+    e->unk_00.unk_0C = func_080DFF30(&e->unk_00);
+    e->unk_00.z = e->unk_00.unk_0C;
+    e->unk_00.y -= e->unk_00.unk_0C;
     e->unk_14 = 0x80;
     e->unk_1A = 0x20;
     e->unk_30 = 2;
@@ -4428,7 +4428,7 @@ void Task_MapDonald_0(MapDonaldWork* w) {
     AnimInit(&w->anim, gUnk_09EEE0A8, gUnk_09EEE03C);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     FldObjRegister(e);
     TaskPoolInit(&w->tasks, 2);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
@@ -4463,12 +4463,12 @@ void Task_MapDonald_2(MapDonaldWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
-        k = p->x >> 8;
-        y = k + (p->y >> 8) - (gFieldState->y >> 8);
+        x = (p->x >> 8) - (gFieldState->x >> 8);
+        k = p->y >> 8;
+        y = k + (p->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
-        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
         ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->tasks);
 
@@ -4529,10 +4529,10 @@ void Task_MapGoofy_0(MapGoofyWork* w) {
         }
     }
 
-    e->unk_00.y = 0;
-    e->unk_00.z = func_080DFF30(&e->unk_00);
-    e->unk_00.y = e->unk_00.z;
-    e->unk_00.x -= e->unk_00.z;
+    e->unk_00.z = 0;
+    e->unk_00.unk_0C = func_080DFF30(&e->unk_00);
+    e->unk_00.z = e->unk_00.unk_0C;
+    e->unk_00.y -= e->unk_00.unk_0C;
     e->unk_14 = 0x80;
     e->unk_1A = 0x30;
     e->unk_30 = 2;
@@ -4543,7 +4543,7 @@ void Task_MapGoofy_0(MapGoofyWork* w) {
     AnimInit(&w->anim, gUnk_09EEE1CC, gUnk_09EEE1C8);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     FldObjRegister(e);
     TaskPoolInit(&w->tasks, 2);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
@@ -4578,12 +4578,12 @@ void Task_MapGoofy_2(MapGoofyWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
-        k = p->x >> 8;
-        y = k + (p->y >> 8) - (gFieldState->y >> 8);
+        x = (p->x >> 8) - (gFieldState->x >> 8);
+        k = p->y >> 8;
+        y = k + (p->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
-        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
         ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->tasks);
 
@@ -4640,15 +4640,15 @@ void Task_MapNamine_0(MapNamineWork* w) {
     case 25:
     case 26:
     default:
-        p->unk_00.unk_00 = 0x15200;
-        p->unk_00.x = 0xF800;
+        p->unk_00.x = 0x15200;
+        p->unk_00.y = 0xF800;
         w->unk_0C4 = 0x801;
         break;
     }
 
-    p->unk_00.y = 0;
-    p->unk_00.y = p->unk_00.z = func_080DFF30(&p->unk_00);
-    p->unk_00.x -= p->unk_00.z;
+    p->unk_00.z = 0;
+    p->unk_00.z = p->unk_00.unk_0C = func_080DFF30(&p->unk_00);
+    p->unk_00.y -= p->unk_00.unk_0C;
     p->unk_14 = 173;
     p->unk_1A = 48;
     p->unk_30 = 2;
@@ -4660,7 +4660,7 @@ void Task_MapNamine_0(MapNamineWork* w) {
     AnimInit(&w->anim, gUnk_09EF0D64, gUnk_09EF0D48);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(w->collider, 4, 16, 48);
-    ColliderSetPosition(w->collider, p->unk_00.unk_00, p->unk_00.x, p->unk_00.y);
+    ColliderSetPosition(w->collider, p->unk_00.x, p->unk_00.y, p->unk_00.z);
 
     if (w->unk_0C0 != 0) {
         FldObjRegister(p);
@@ -4699,12 +4699,12 @@ void Task_MapNamine_2(MapNamineWork* w) {
     s16 y;
 
     if (w->unk_0C2 != 0) {
-        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
-        k = p->x >> 8;
-        y = k + (p->y >> 8) - (gFieldState->y >> 8);
+        x = (p->x >> 8) - (gFieldState->x >> 8);
+        k = p->y >> 8;
+        y = k + (p->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, w->unk_0C4, v);
-        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
         ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->tasks);
 
@@ -4780,25 +4780,25 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
 
     switch (gUnk_0203C590.unk_00) {
     case 27:
-        e->unk_00.unk_00 = 0x27C00;
-        e->unk_00.x = 0x10700;
+        e->unk_00.x = 0x27C00;
+        e->unk_00.y = 0x10700;
         break;
     case 23:
-        e->unk_00.unk_00 = 0x24900;
-        e->unk_00.x = 0xD500;
+        e->unk_00.x = 0x24900;
+        e->unk_00.y = 0xD500;
         break;
     case 24:
     case 25:
     case 26:
     default:
-        e->unk_00.unk_00 = 0x17A00;
-        e->unk_00.x = 0x11000;
+        e->unk_00.x = 0x17A00;
+        e->unk_00.y = 0x11000;
         break;
     }
 
-    e->unk_00.y = 0;
-    e->unk_00.y = e->unk_00.z = func_080DFF30(&e->unk_00);
-    e->unk_00.x -= e->unk_00.y;
+    e->unk_00.z = 0;
+    e->unk_00.z = e->unk_00.unk_0C = func_080DFF30(&e->unk_00);
+    e->unk_00.y -= e->unk_00.z;
     e->unk_14 = 173;
     e->unk_1A = 48;
     e->unk_30 = 2;
@@ -4825,7 +4825,7 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
         AnimInit(&w->anim, gUnk_09EF04D8, gUnk_09EF04D4);
         AnimStart(&w->anim, 0, 1);
         ColliderInit(&w->collider, 4, 16, 48);
-        ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
         TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
         break;
     case 23:
@@ -4835,7 +4835,7 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
         AnimInit(&w->anim, gUnk_09EF0510, gUnk_09EF04FC);
         AnimStart(&w->anim, 0, 1);
         ColliderInit(&w->collider, 4, 16, 48);
-        ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
         TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
         break;
     case 24:
@@ -4848,7 +4848,7 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
         AnimInit(&w->anim, gUnk_09EF0628, gUnk_09EF060C);
         AnimStart(&w->anim, 1, 1);
         ColliderInit(&w->collider, 4, 36, 48);
-        ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+        ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
         break;
     }
 
@@ -4883,12 +4883,12 @@ void Task_MapNiseriku_2(MapNiserikuWork* w) {
     s16 y;
 
     if (w->unk_0C2 != 0) {
-        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
-        k = p->x >> 8;
-        y = k + (p->y >> 8) - (gFieldState->y >> 8);
+        x = (p->x >> 8) - (gFieldState->x >> 8);
+        k = p->y >> 8;
+        y = k + (p->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, v);
-        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
         ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->tasks);
 
@@ -4942,13 +4942,13 @@ void func_080F6AD8(MapMickeyWork* w) {
 void Task_MapMickey_0(MapMickeyWork* w) {
     UnkStruct_080E6394* e = (UnkStruct_080E6394*)w;
 
-    e->unk_00.unk_00 = 0x1C800;
-    e->unk_00.x = 0xE000;
+    e->unk_00.x = 0x1C800;
+    e->unk_00.y = 0xE000;
     w->unk_0C2 = 0x801;
-    e->unk_00.y = 0;
-    e->unk_00.z = func_080DFF30(&e->unk_00);
-    e->unk_00.y = e->unk_00.z;
-    e->unk_00.x -= e->unk_00.z;
+    e->unk_00.z = 0;
+    e->unk_00.unk_0C = func_080DFF30(&e->unk_00);
+    e->unk_00.z = e->unk_00.unk_0C;
+    e->unk_00.y -= e->unk_00.unk_0C;
     e->unk_14 = 0xAD;
     e->unk_1A = 0x30;
     e->unk_30 = 2;
@@ -4959,7 +4959,7 @@ void Task_MapMickey_0(MapMickeyWork* w) {
     AnimInit(&w->anim, gUnk_09EF0824, gUnk_09EF0820);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
-    ColliderSetPosition(&w->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     FldObjRegister(e);
     TaskPoolInit(&w->tasks, 2);
     TaskCreate(&w->tasks, &gTaskDescFldShadow, w);
@@ -4994,12 +4994,12 @@ void Task_MapMickey_2(MapMickeyWork* w) {
     s16 y;
 
     if (w->unk_0C1 != 0) {
-        x = (p->unk_00 >> 8) - (gFieldState->x >> 8);
-        k = p->x >> 8;
-        y = k + (p->y >> 8) - (gFieldState->y >> 8);
+        x = (p->x >> 8) - (gFieldState->x >> 8);
+        k = p->y >> 8;
+        y = k + (p->z >> 8) - (gFieldState->y >> 8);
         v = -0x1004 - k * 4;
         DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, w->unk_0C2, v);
-        ((UnkStruct_080E64D4*)p)->unk_3C = p->z;
+        ((UnkStruct_080E64D4*)p)->unk_3C = p->unk_0C;
         ((UnkStruct_080E64D4*)p)->unk_3A = v + 1;
         TaskPoolDraw(&w->tasks);
 
@@ -5283,13 +5283,13 @@ s32 func_080F7488(UnkStruct_080DFF1C* p, s32 lim) {
     s32 dx;
     s32 dy;
 
-    dx = p->unk_00 - gFieldState->actor.fieldPosition.x;
+    dx = p->x - gFieldState->actor.fieldPosition.x;
     if (dx < 0) {
-        dx = gFieldState->actor.fieldPosition.x - p->unk_00;
+        dx = gFieldState->actor.fieldPosition.x - p->x;
     }
-    dy = p->x - gFieldState->actor.fieldPosition.y;
+    dy = p->y - gFieldState->actor.fieldPosition.y;
     if (dy < 0) {
-        dy = gFieldState->actor.fieldPosition.y - p->x;
+        dy = gFieldState->actor.fieldPosition.y - p->y;
     }
 
     if (dx > 0x8000 || dy > 0x8000) {
@@ -5416,9 +5416,9 @@ void Task_MapFaint_2(MapFaintWork* w) {
     u16 x;
     u16 y;
 
-    x = (e->unk_00.unk_00 >> 8) - (gFieldState->x >> 8);
-    y = (e->unk_00.x >> 8) + ((e->unk_00.y - ((s16)e->unk_1A + 8) * 0x100) >> 8) - (gFieldState->y >> 8);
-    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, -0x1005 - (e->unk_00.x >> 8) * 4);
+    x = (e->unk_00.x >> 8) - (gFieldState->x >> 8);
+    y = (e->unk_00.y >> 8) + ((e->unk_00.z - ((s16)e->unk_1A + 8) * 0x100) >> 8) - (gFieldState->y >> 8);
+    DrawSprite(x, y, AnimGetGfx(&w->anim), w->tiles, w->palette, 0, 0x800, -0x1005 - (e->unk_00.y >> 8) * 4);
 }
 
 void Task_MapFaint_3(u8* work) {

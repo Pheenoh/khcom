@@ -475,7 +475,7 @@ void func_080D9B6C(BoogieDiceWork* work) {
 }
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)(arg + 0x40);
+    BtlObjPos* p = (BtlObjPos*)(arg + 0x40);
     s32 c;
     s32 d;
     s32 e;
@@ -519,7 +519,7 @@ void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg) {
     }
 }
 u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
 
     if (work->unk_170 == 0) {
         switch (func_0801ADAC(p)) {
@@ -786,7 +786,7 @@ u8 task_bos_boogie_dice_1(BoogieDiceWork* work) {
 }
 
 void task_bos_boogie_dice_2(BoogieDiceWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
     s16 x;
     s16 y;
     u16 c;
@@ -912,7 +912,7 @@ void task_bos_boogie_explosiondice_0(BoogieExplosiondiceWork* work, void* arg) {
 }
 
 u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
 
     if (func_080DA4DC((u8*)work) != 0) {
         return 1;
@@ -945,7 +945,7 @@ u8 task_bos_boogie_explosiondice_1(BoogieExplosiondiceWork* work) {
 }
 
 void task_bos_boogie_explosiondice_2(BoogieExplosiondiceWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
     u8 f = func_080DA4DC((u8*)work);
     s16 x;
     s16 y;
@@ -1228,7 +1228,7 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     m4aSongNumStart(SONG_BTL_BU_KAITEN);
 }
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
 
     switch (func_0801ADAC(p)) {
     case 5:
@@ -1314,7 +1314,7 @@ u8 task_bos_boogie_disk_1(BoogieDiskWork* work) {
     return 1;
 }
 void task_bos_boogie_disk_2(BoogieDiskWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
     s16 x;
     s16 y;
     u16 c = GetBattleSpritePriorityFlags(p->y);
@@ -1336,7 +1336,7 @@ void task_bos_boogie_disk_3(BoogieDiskWork* work) {
 }
 
 void func_080DB04C(BoogieKnifeWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_02C;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_02C;
     s32 dy;
 
     if (gUnk_0203C578 != 0) {
@@ -1392,7 +1392,7 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     AnimStart(&work->anim, 0, 1);
 }
 u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_02C;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_02C;
 
     if (gUnk_0203C574 != 0) {
         work->state = 2;
@@ -1448,7 +1448,7 @@ u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
     return 1;
 }
 void task_bos_boogie_knife_2(BoogieKnifeWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_02C;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_02C;
     s16 x;
     s16 y;
     u16 c;
@@ -1658,7 +1658,7 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     func_0801BCD4(&work->unk_040);
 }
 u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
     BoogieDiceWork* arg = (BoogieDiceWork*)work->unk_154;
     void* q = &arg->unk_040;
 
@@ -1746,7 +1746,7 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work) {
 }
 
 void task_bos_boogie_kaihuku_2(BoogieKaihukuWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_040;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_040;
     void* d;
     u16 v;
     s16 x;
@@ -1848,7 +1848,7 @@ void task_bos_ursula_0(UrsulaWork* work) {
 }
 
 void func_080DBC00(UrsulaWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_024;
 
     if ((s16)work->unk_140 == 0) {
         work->unk_140 = 32;
@@ -1866,7 +1866,7 @@ void func_080DBC00(UrsulaWork* work) {
 }
 
 u8 func_080DBC68(UrsulaWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_024;
 
     func_080DBC00(work);
 
@@ -2185,7 +2185,7 @@ u8 task_bos_ursula_1(UrsulaWork* work) {
     return 1;
 }
 void task_bos_ursula_2(UrsulaWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_024;
     s32 d = 0;
 
     if (func_080DC510() != 0 && work->unk_134 == (u32)gUnk_09EF5190) {
@@ -2466,7 +2466,7 @@ void task_bos_ursula_tako_0(UrsulaTakoWork* work, u8* arg) {
     func_0801C7FC(&work->unk_028, 35, 51);
 }
 u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_028;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_028;
     s32 x;
     s32 y;
     s32 z;
@@ -2643,7 +2643,7 @@ u8 task_bos_ursula_tako_1(UrsulaTakoWork* work) {
 }
 
 void task_bos_ursula_tako_2(UrsulaTakoWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_028;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_028;
     void* pal;
     s16 x;
     s16 y;

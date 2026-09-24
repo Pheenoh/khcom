@@ -4,10 +4,10 @@
 #include "types.h"
 
 typedef struct UnkStruct_080DFF1C {
-    s32 unk_00;
     s32 x;
     s32 y;
     s32 z;
+    s32 unk_0C;
 } UnkStruct_080DFF1C;
 
 typedef struct UnkStruct_02034F80 {

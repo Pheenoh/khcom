@@ -229,7 +229,7 @@ void task_bos_ursula_bubble_single_0(UrsulaBubbleSingleWork* work, u8* arg) {
     work->timer = 0x3C;
 }
 u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_024;
 
     work->unk_140 -= 12;
 
@@ -309,7 +309,7 @@ u8 task_bos_ursula_bubble_single_1(UrsulaBubbleSingleWork* work) {
 }
 
 void task_bos_ursula_bubble_single_2(UrsulaBubbleSingleWork* work) {
-    UnkStruct_080DFF1C* p = (UnkStruct_080DFF1C*)&work->unk_024;
+    BtlObjPos* p = (BtlObjPos*)&work->unk_024;
     void* pal;
     u16 v;
     s16 x;

@@ -154,23 +154,23 @@ s32 func_080DFEBC(s32 x, s32 y, s32 z) {
 }
 
 s32 func_080DFF1C(UnkStruct_080DFF1C* p) {
-    return func_080DFEBC(p->unk_00, p->x + p->z, p->z);
+    return func_080DFEBC(p->x, p->y + p->unk_0C, p->unk_0C);
 }
 
 s32 func_080DFF30(UnkStruct_080DFF1C* p) {
-    return func_080DFEBC(p->unk_00, p->x + p->y, -0x100000);
+    return func_080DFEBC(p->x, p->y + p->z, -0x100000);
 }
 
 void func_080DFF4C(UnkStruct_080DFF1C* p) {
-    p->z = func_080DFF30(p);
+    p->unk_0C = func_080DFF30(p);
 }
 
 void func_080DFF5C(UnkStruct_080DFF1C* p, s16 x, s16 y, u8 a, u8 b) {
-    p->unk_00 = (x << 13) + (a << 12);
-    p->x = (y << 12) + (b << 11);
-    p->y = 0;
-    p->y = p->z = func_080DFF30(p);
-    p->x -= p->z;
+    p->x = (x << 13) + (a << 12);
+    p->y = (y << 12) + (b << 11);
+    p->z = 0;
+    p->z = p->unk_0C = func_080DFF30(p);
+    p->y -= p->unk_0C;
 }
 
 s32 func_080DFF94(s32 x, s32 y, s32 z) {
@@ -192,10 +192,10 @@ s32 func_080DFF94(s32 x, s32 y, s32 z) {
 }
 
 void func_080DFFEC(UnkStruct_080DFF1C* p) {
-    func_080E524C(p, &p->x);
-    p->y = 0;
-    p->y = p->z = func_080DFF30(p);
-    p->x -= p->z;
+    func_080E524C(p, &p->y);
+    p->z = 0;
+    p->z = p->unk_0C = func_080DFF30(p);
+    p->y -= p->unk_0C;
 }
 
 s32 func_080E0010(s32 x) {
@@ -335,31 +335,31 @@ u8 func_080E02E0(UnkStruct_080DFF1C* p, s16 a, s16 b) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_24 - 0x1400 > p->unk_00 + (a << 8)) {
+    if (gUnk_0203C7AC->unk_24 - 0x1400 > p->x + (a << 8)) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_24 + 0x1400 < p->unk_00 - (a << 8)) {
+    if (gUnk_0203C7AC->unk_24 + 0x1400 < p->x - (a << 8)) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_28 - 0x1400 > p->x + (a << 8)) {
+    if (gUnk_0203C7AC->unk_28 - 0x1400 > p->y + (a << 8)) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_28 + 0x1400 < p->x - (a << 8)) {
+    if (gUnk_0203C7AC->unk_28 + 0x1400 < p->y - (a << 8)) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_2C - 0x2000 > p->y) {
+    if (gUnk_0203C7AC->unk_2C - 0x2000 > p->z) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_2C + 0x800 < p->y - (b << 8)) {
+    if (gUnk_0203C7AC->unk_2C + 0x800 < p->z - (b << 8)) {
         return 0;
     }
 
-    if (gUnk_0203C7AC->unk_2C <= p->z) {
+    if (gUnk_0203C7AC->unk_2C <= p->unk_0C) {
         return 1;
     }
     return 0;
@@ -593,7 +593,7 @@ void func_080E0900(MapCell* p, s32 a, s32 b) {
 }
 
 u8 func_080E0920(UnkStruct_080DFF1C* p, u16 a) {
-    u16 d = (p->z - p->y) >> 8;
+    u16 d = (p->unk_0C - p->z) >> 8;
 
     return d > a * 16;
 }
@@ -3073,7 +3073,7 @@ u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
             u16 yy = y + gUnk_02034F2C;
 
             if ((*(u32*)func_080E08BC(x, yy) & 0xFF0340) == 0) {
-                a->unk_00 = (x << 13) + 0x1000;
+                a->x = (x << 13) + 0x1000;
                 *b = (yy << 12) + 0x800;
                 return 1;
             }
@@ -3086,7 +3086,7 @@ u8 func_080E524C(UnkStruct_080DFF1C* a, s32* b) {
         y %= h;
     }
 
-    a->unk_00 = gFieldState->actor.fieldPosition.x;
+    a->x = gFieldState->actor.fieldPosition.x;
     *b = gFieldState->actor.fieldPosition.y + gFieldState->actor.fieldPosition.unk_0C;
     return 0;
 }
@@ -3120,7 +3120,7 @@ u8 func_080E5354(UnkStruct_080DFF1C* a, s32* b) {
             e = func_080E08BC(xx, yy);
 
             if (e != 0 && (*(u32*)e & 0xFF0340) == 0) {
-                a->unk_00 = (xx << 13) + 0x1000;
+                a->x = (xx << 13) + 0x1000;
                 *b = (yy << 12) + 0x800;
                 return 1;
             }
@@ -3229,10 +3229,10 @@ void func_080E56B4(void* a) {
     e = gUnk_0203C7B8;
 
     while (q->unk_00 != 0xFF) {
-        v.unk_00 = q->unk_04;
+        v.x = q->unk_04;
         x = q->unk_08;
-        v.x = v.y = v.z = 0;
-        v.x = x;
+        v.y = v.z = v.unk_0C = 0;
+        v.y = x;
         e->unk_00 = 2;
         n = q->unk_00;
         e->unk_14 = &gUnk_09856FB4[n];
@@ -3247,17 +3247,17 @@ void func_080E56B4(void* a) {
     }
 
     if ((gGameState.flags & 8) || (s8)gGameState.floor != 0) {
-        v.unk_00 = 0x18000;
+        v.x = 0x18000;
         x = 0x11000;
     } else {
-        v.unk_00 = 0x26000;
+        v.x = 0x26000;
         x = 0x12000;
     }
 
-    v.x = x;
+    v.y = x;
     n = 0;
+    v.unk_0C = n;
     v.z = n;
-    v.y = n;
     e->unk_00 = n;
     e->unk_14 = &gUnk_0984C1CC;
     e->unk_04 = v;
@@ -3266,17 +3266,17 @@ void func_080E56B4(void* a) {
 
     if (func_080DF750() != 0) {
         if ((gGameState.flags & 8) || (s8)gGameState.floor != 0) {
-            v.unk_00 = 0x1F000;
+            v.x = 0x1F000;
             x = 0x14000;
         } else {
-            v.unk_00 = 0x2D000;
+            v.x = 0x2D000;
             x = 0x15000;
         }
 
-        v.x = x;
+        v.y = x;
         n = 0;
+        v.unk_0C = n;
         v.z = n;
-        v.y = n;
         e->unk_00 = n;
         e->unk_14 = &gUnk_0984C23C;
         e->unk_04 = v;
@@ -3329,24 +3329,24 @@ void func_080E590C(UnkStruct_080E5B90* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
     s32 t;
 
-    func_080E5354(q, &q->x);
-    q->y = 0;
+    func_080E5354(q, &q->y);
+    q->z = 0;
     t = func_080DFF30(q);
+    q->unk_0C = t;
+    q->y -= t;
     q->z = t;
-    q->x -= t;
-    q->y = t;
 }
 
 void func_080E5938(UnkStruct_080E5B90* p) {
     UnkStruct_080DFF1C* q = &p->unk_08;
     s32 t;
 
-    func_080E5354(q, &q->x);
-    q->y = 0;
+    func_080E5354(q, &q->y);
+    q->z = 0;
     t = func_080DFF30(q);
-    q->z = t;
-    q->x -= t;
-    q->y = -0xA000;
+    q->unk_0C = t;
+    q->y -= t;
+    q->z = -0xA000;
 }
 
 s32 func_080E5968(UnkStruct_080E5B90* p) {
@@ -3354,15 +3354,15 @@ s32 func_080E5968(UnkStruct_080E5B90* p) {
     s32 t;
     s32 i;
 
-    if (func_080E524C(q, &q->x) != 0) {
-        q->y = 0;
+    if (func_080E524C(q, &q->y) != 0) {
+        q->z = 0;
         t = func_080DFF30(q);
+        q->unk_0C = t;
         q->z = t;
-        q->y = t;
-        q->x -= t;
+        q->y -= t;
 
         for (i = 0; i < gUnk_02034F40; i++) {
-            if (gUnk_02034F48[i].unk_00 >> 8 == q->unk_00 >> 8 && gUnk_02034F48[i].x >> 8 == q->x >> 8) {
+            if (gUnk_02034F48[i].x >> 8 == q->x >> 8 && gUnk_02034F48[i].y >> 8 == q->y >> 8) {
                 return 0;
             }
         }
@@ -3400,14 +3400,14 @@ u8 func_080E59D8(UnkStruct_080E5B90* w) {
                     continue;
                 }
 
-                d->unk_00 = v;
+                d->x = v;
                 v = y << 12;
-                d->x = v + 0x1800;
-                d->y = 0;
+                d->y = v + 0x1800;
+                d->z = 0;
                 t = func_080DFF30(d);
+                d->unk_0C = t;
                 d->z = t;
-                d->y = t;
-                d->x -= t;
+                d->y -= t;
                 return 1;
             }
         }
@@ -3432,13 +3432,13 @@ u8 func_080E5AC8(UnkStruct_080E5B90* w) {
             if (func_080E548C(x, y)->unk_00 & 0x80) {
                 s32 t;
 
-                d->unk_00 = x << 13;
-                d->x = y << 12;
-                d->y = 0;
+                d->x = x << 13;
+                d->y = y << 12;
+                d->z = 0;
                 t = func_080DFF30(d);
-                d->z = t;
-                d->x -= t;
-                d->y = t - 0x2000;
+                d->unk_0C = t;
+                d->y -= t;
+                d->z = t - 0x2000;
                 return 1;
             }
         }
@@ -3500,7 +3500,7 @@ void func_080E5C00(UnkStruct_080E5B90* w, u8 a, u8 b) {
     case 0:
     default:
         ok = func_080E5968(w);
-        w->unk_18 = GetAngle(w->unk_08.unk_00, w->unk_08.x, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
+        w->unk_18 = GetAngle(w->unk_08.x, w->unk_08.y, gFieldState->actor.fieldPosition.x, gFieldState->actor.fieldPosition.y);
         break;
     }
     if (ok) {
@@ -3607,8 +3607,8 @@ void func_080E5F50(MapEnmWork* p) {
         }
 
         if (ColliderIsTouchingType(p->collider, 6)) {
-            p->unk_08.unk_00 += p->unk_80;
-            p->unk_08.x += p->unk_84;
+            p->unk_08.x += p->unk_80;
+            p->unk_08.y += p->unk_84;
         }
     }
 }
@@ -3801,9 +3801,9 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     p->unk_CA = d->unk_0A;
     p->unk_D0 = 0;
     p->unk_D2 = 0;
-    p->unk_D4 = e->unk_00.unk_00;
-    p->unk_D8 = e->unk_00.x;
-    p->unk_DC = e->unk_00.y;
+    p->unk_D4 = e->unk_00.x;
+    p->unk_D8 = e->unk_00.y;
+    p->unk_DC = e->unk_00.z;
     gUnk_02034F40++;
     gUnk_02034F41 += d->unk_08;
     p->tiles = AllocObjTiles(d->unk_08 * 32, 0);
@@ -3822,7 +3822,7 @@ void func_080E6394(MapEnmWork* p, UnkStruct_080E5B90* q) {
     } else {
         ColliderInit(&p->collider, 3, d->unk_0C, d->unk_0A);
     }
-    ColliderSetPosition(&p->collider, e->unk_00.unk_00, e->unk_00.x, e->unk_00.y);
+    ColliderSetPosition(&p->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
     ColliderSetDisabled(&p->collider, 1);
     func_080E5CD4(p);
 }
@@ -3848,14 +3848,14 @@ void func_080E64D4(MapEnmWork* p) {
         flags = 0x801;
     }
 
-    k = q->unk_00.x >> 8;
+    k = q->unk_00.y >> 8;
     v = -0x1004 - k * 4;
-    q->unk_3C = q->unk_00.z;
+    q->unk_3C = q->unk_00.unk_0C;
     q->unk_3A = v + 1;
     z = 0;
-    x = (p->unk_08.unk_00 >> 8) - (gFieldState->x >> 8);
+    x = (p->unk_08.x >> 8) - (gFieldState->x >> 8);
     t = flags;
-    y = k + (q->unk_00.y >> 8) - (gFieldState->y >> 8);
+    y = k + (q->unk_00.z >> 8) - (gFieldState->y >> 8);
     DrawSprite(x, y, p->gfx, p->tiles, p->palette, z, t, v);
     TaskPoolDraw(p->tasks);
 }
@@ -3958,8 +3958,8 @@ s32 func_080E6804(s16 x, s16 y) {
     n = 0;
 
     for (i = 0; i < gUnk_02034F78; i++) {
-        cx = (gUnk_0203C7B8[i].unk_04.unk_00 >> 8) / 32;
-        cy = ((gUnk_0203C7B8[i].unk_04.x + gUnk_0203C7B8[i].unk_04.y) >> 8) / 16;
+        cx = (gUnk_0203C7B8[i].unk_04.x >> 8) / 32;
+        cy = ((gUnk_0203C7B8[i].unk_04.y + gUnk_0203C7B8[i].unk_04.z) >> 8) / 16;
         if (cx > x - 9 && cx < x + 9 && cy > y - 11 && cy < y + 11) {
             n++;
             if (n > 2) {
@@ -4243,7 +4243,7 @@ u8 func_080E7088(UnkStruct_080DFF1C* p) {
                 if (a == b && a > 8) {
                     func_080E6998(rx, sy, 3, 3);
                     func_080DFF5C(p, rx, (s16)(a + sy), 3, 3);
-                    p->y -= a << 12;
+                    p->z -= a << 12;
                     return 1;
                 }
             }
@@ -4289,7 +4289,7 @@ u8 func_080E71F0(UnkStruct_080DFF1C* p) {
                 if (a == b && a > 8) {
                     func_080E6998(rx, sy, 3, 3);
                     func_080DFF5C(p, rx, (s16)(a + sy), 3, 3);
-                    p->y -= a << 12;
+                    p->z -= a << 12;
                     return 1;
                 }
             }
@@ -4331,7 +4331,7 @@ u8 func_080E7358(UnkStruct_080DFF1C* p) {
                         if (a == b && a > 8) {
                             func_080E6998(rx, sy, 2, 2);
                             func_080DFF5C(p, rx, (s16)(a + sy), 2, 2);
-                            p->y -= a << 12;
+                            p->z -= a << 12;
                             return 1;
                         }
                     }
@@ -4374,7 +4374,7 @@ u8 func_080E74D8(UnkStruct_080DFF1C* p) {
                         if (h > 8) {
                             func_080E6998(x, cy, 1, 2);
                             func_080DFF5C(p, x, h + cy, 1, 2);
-                            p->y -= h << 12;
+                            p->z -= h << 12;
                             return 1;
                         }
                     }
@@ -4418,7 +4418,7 @@ u8 func_080E7620(UnkStruct_080DFF1C* p) {
                         if (a == b && a > 8) {
                             func_080E6998(rx, sy, 2, 2);
                             func_080DFF5C(p, rx, (s16)(a + sy), 2, 2);
-                            p->y -= a << 12;
+                            p->z -= a << 12;
                             return 1;
                         }
                     }
@@ -4687,7 +4687,7 @@ void func_080E7E3C(void) {
         gUnk_02034F7A += q->tilesSize >> 5;
         gUnk_02034F79++;
         gUnk_02034F78++;
-        p = func_080E67D4(w.unk_00, w.x + w.y);
+        p = func_080E67D4(w.x, w.y + w.z);
         p->unk_00 |= 0x80;
     }
 }
@@ -4874,11 +4874,11 @@ void func_080E84DC(UnkStruct_080DFF1C* p) {
     u16 r = GetRandom() % 10000;
 
     if (r <= 0x5DB) {
-        if (func_080E8FB8(0, p->unk_00, p->x, p->y) != 1) {
-            func_080E83DC(p->unk_00, p->x, p->y);
+        if (func_080E8FB8(0, p->x, p->y, p->z) != 1) {
+            func_080E83DC(p->x, p->y, p->z);
         }
     } else if (r <= 0x1D4B) {
-        func_080E83DC(p->unk_00, p->x, p->y);
+        func_080E83DC(p->x, p->y, p->z);
     }
 }
 
@@ -8020,7 +8020,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         w->unk_50 = q->unk_04;
         e->unk_14 = 173;
         w->unk_04 = (p->unk_02 << 5) + 16;
-        e->unk_00.x = (p->unk_04 << 4) + 10;
+        e->unk_00.y = (p->unk_04 << 4) + 10;
         break;
     case 1:
         w->unk_4C = gMapUiSpriteUs_098A94B4;
@@ -8028,7 +8028,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         w->unk_50 = q->unk_1C;
         e->unk_14 = 45;
         w->unk_04 = (p->unk_02 << 5) + 16;
-        e->unk_00.x = (p->unk_04 << 4) + 6;
+        e->unk_00.y = (p->unk_04 << 4) + 6;
         break;
     case 2:
         w->unk_4C = gMapUiSpriteUs_098A94C8;
@@ -8036,7 +8036,7 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         w->unk_50 = q->unk_14;
         e->unk_14 = 211;
         w->unk_04 = (p->unk_02 << 5) + 16;
-        e->unk_00.x = (p->unk_04 << 4) + 6;
+        e->unk_00.y = (p->unk_04 << 4) + 6;
         break;
     case 3:
         w->unk_4C = gMapUiSpriteUs_098A948C;
@@ -8044,15 +8044,15 @@ void Task_MapDoor_0(MapDoorWork* w, UnkStruct_080DFB7C* p) {
         w->unk_50 = q->unk_0C;
         e->unk_14 = 83;
         w->unk_04 = (p->unk_02 << 5) + 16;
-        e->unk_00.x = (p->unk_04 << 4) + 10;
+        e->unk_00.y = (p->unk_04 << 4) + 10;
         break;
     }
 
-    v->unk_00 <<= 8;
     v->x <<= 8;
-    v->y = 0;
-    v->y = v->z = func_080DFF30(v);
-    v->x -= v->y;
+    v->y <<= 8;
+    v->z = 0;
+    v->z = v->unk_0C = func_080DFF30(v);
+    v->y -= v->z;
     e->unk_1A = 32;
     e->unk_30 = 3;
     w->tiles = AllocSpriteFrameTiles(0x400);
