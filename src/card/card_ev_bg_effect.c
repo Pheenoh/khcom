@@ -47,9 +47,113 @@ extern u8* gEventState;
 u8 func_080A2024(u8* work, void* a);
 void func_080A1E4C(u8* work);
 
+const EventBgEffectDef gUnk_0903803C = {
+    &gUnk_09EE7998[0], gUnk_094233B8 + 0x500, gUnk_096148D8 + 0x20, 0x8C0, 0x20, { 1, 1, 0, 0 }, NULL, 0, -1,
+};
+
+const EventBgEffectFrame gUnk_09038058[8] = {
+    { 6, 0 },
+    { 6, 0x800 },
+    { 6, 0x1000 },
+    { 6, 0x1800 },
+    { 6, 0x2000 },
+    { 6, 0x2800 },
+    { 6, 0x3000 },
+    { 6, 0x3800 },
+};
+
+const EventBgEffectDef gUnk_09038078 = {
+    &gUnk_09EE7998[1], gUnk_094233B8 + 0xDC0, gUnk_096148D8 + 0x40, 0x800, 0x20, { 1, 1, 0, 0 }, gUnk_09038058, 8, -1,
+};
+
+const EventBgEffectFrame gUnk_09038094[8] = {
+    { 6, 0 },
+    { 6, 0xC00 },
+    { 6, 0x1800 },
+    { 6, 0x2400 },
+    { 6, 0x3000 },
+    { 6, 0x3C00 },
+    { 6, 0x4800 },
+    { 6, 0x5400 },
+};
+
+const EventBgEffectDef gUnk_090380B4 = {
+    &gUnk_09EE7998[2], gUnk_094233B8 + 0x4C80, gUnk_096148D8 + 0x60, 0xC00, 0x20, { 1, 1, 0, 0 }, gUnk_09038094, 8, -1,
+};
+
+const EventBgEffectFrame gUnk_090380D0[10] = {
+    { 6, 0 },
+    { 6, 0x800 },
+    { 6, 0x1000 },
+    { 6, 0x1800 },
+    { 6, 0x2000 },
+    { 6, 0x2800 },
+    { 6, 0x3000 },
+    { 6, 0x3800 },
+    { 6, 0x4000 },
+    { 6, 0x4800 },
+};
+
+const EventBgEffectDef gUnk_090380F8 = {
+    &gUnk_09EE7998[3], gUnk_094233B8 + 0xFAE0, gUnk_096148D8 + 0xA0, 0x800, 0x20, { 1, 1, 0, 0 }, gUnk_090380D0, 10, -1,
+};
+
+const EventBgEffectFrame gUnk_09038114[10] = {
+    { 6, 0 },
+    { 6, 0x800 },
+    { 6, 0x1000 },
+    { 6, 0x1800 },
+    { 6, 0x2000 },
+    { 6, 0x2800 },
+    { 6, 0x3000 },
+    { 6, 0x3800 },
+    { 6, 0x4000 },
+    { 6, 0x4800 },
+};
+
+const EventBgEffectDef gUnk_0903813C = {
+    &gUnk_09EE7998[4], gUnk_094233B8 + 0xAAE0, gUnk_096148D8 + 0x80, 0x800, 0x20, { 1, 1, 0, 0 }, gUnk_09038114, 10, -1,
+};
+
+const EventBgEffectFrame gUnk_09038158[16] = {
+    { 6, 0 },
+    { 6, 0xC00 },
+    { 6, 0x1800 },
+    { 6, 0x2400 },
+    { 6, 0x3000 },
+    { 6, 0x3C00 },
+    { 6, 0x4800 },
+    { 6, 0x3000 },
+    { 6, 0x3C00 },
+    { 6, 0x4800 },
+    { 6, 0x3000 },
+    { 6, 0x3C00 },
+    { 6, 0x4800 },
+    { 6, 0x3000 },
+    { 6, 0x3C00 },
+    { 6, 0x4800 },
+};
+
+const EventBgEffectDef gUnk_09038198 = {
+    &gUnk_09EE7998[5], gUnk_094233B8 + 0x14AE0, gUnk_096148D8 + 0xC0, 0xC00, 0x20, { 1, 1, 0, 0 }, gUnk_09038158, 16, -1,
+};
+
+const EventBgEffectFrame gUnk_090381B4[6] = {
+    { 6, 0 },
+    { 6, 0x1000 },
+    { 6, 0x2000 },
+    { 6, 0x3000 },
+    { 6, 0x4000 },
+    { 6, 0x5000 },
+};
+
+const EventBgEffectDef gUnk_090381CC = {
+    &gUnk_09EE7998[6], gUnk_094233B8 + 0x19D80, gUnk_096148D8 + 0xE0, 0x1000, 0x20, { 1, 1, 0, 0 }, gUnk_090381B4, 6, 2,
+};
+
 void func_080A1DAC(EventBgEffectWork* w) {
     EventBgEffectEntry* e;
-    EventBgEffectDef* d;
+    const EventBgEffectDef* d;
 
     e = &w->entries[w->unk_14];
     d = gUnk_09EE79B4[e->unk_02];
@@ -196,8 +300,8 @@ u8 func_080A2024(u8* work, void* a) {
 }
 
 u8 func_080A207C(EventBgEffectWork* w) {
-    EventBgEffectDef* d;
-    EventBgEffectFrame* tbl;
+    const EventBgEffectDef* d;
+    const EventBgEffectFrame* tbl;
 
     if (w->unk_15 == 0) {
         return 0;
@@ -236,7 +340,7 @@ void CreateEVBGEFFECTTask(u8* work) {
     TaskCreate(&work[0x10], &gTaskDescEVBGEFFECT, work);
 }
 
-EventBgEffectDef* gUnk_09EE79B4[8] = {
+const EventBgEffectDef* gUnk_09EE79B4[8] = {
     &gUnk_0903803C,
     &gUnk_09038078,
     &gUnk_090380B4,

@@ -1648,7 +1648,7 @@ typedef struct EventBgEffectDef {
     u16 tilesSize;
     u16 paletteSize;
     u8 unk_10[0x04];
-    EventBgEffectFrame* frames;
+    const EventBgEffectFrame* frames;
     u8 frameCount;
     s8 loopFrame;
 } EventBgEffectDef;
@@ -1666,7 +1666,7 @@ typedef struct EventBgEffectWork {
     u8 unk_16;
 } EventBgEffectWork;
 
-extern EventBgEffectDef* gUnk_09EE79B4[];
+extern const EventBgEffectDef* gUnk_09EE79B4[];
 
 typedef struct ReloadArgs {
     u32 unk_00;
@@ -2626,13 +2626,13 @@ extern u16* gUnk_09EE78F0[7];
 extern const void* gUnk_09EE790C[2];
 extern void* gUnk_09EE7914[3];
 extern void* gUnk_09EE7998[7];
-extern EventBgEffectDef gUnk_0903803C;
-extern EventBgEffectDef gUnk_09038078;
-extern EventBgEffectDef gUnk_090380B4;
-extern EventBgEffectDef gUnk_090380F8;
-extern EventBgEffectDef gUnk_0903813C;
-extern EventBgEffectDef gUnk_09038198;
-extern EventBgEffectDef gUnk_090381CC;
+extern const EventBgEffectDef gUnk_0903803C;
+extern const EventBgEffectDef gUnk_09038078;
+extern const EventBgEffectDef gUnk_090380B4;
+extern const EventBgEffectDef gUnk_090380F8;
+extern const EventBgEffectDef gUnk_0903813C;
+extern const EventBgEffectDef gUnk_09038198;
+extern const EventBgEffectDef gUnk_090381CC;
 
 extern CardHelpText* gUnk_09EE79EC[];
 extern CardHelpText* gUnk_09EE79F4[];
@@ -2919,7 +2919,7 @@ extern void** gUnkEu_09F72E10[5];
 #endif
 extern TaskDesc gTaskDescLVUPEFFECT;
 extern TaskDesc gTaskDescLvupLogo;
-extern EventBgEffectDef* gUnk_09EE79B4[8];
+extern const EventBgEffectDef* gUnk_09EE79B4[8];
 extern TaskDesc gTaskDescEVBGEFFECT;
 extern const CardHelpDef* gCardHelpDefs[];
 extern TaskDesc gTaskDescStockInfo;
