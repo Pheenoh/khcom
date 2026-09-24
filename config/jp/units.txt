@@ -166,7 +166,6 @@ card_prize_card.c
 card_prize_card_init.c
 card_reload_children.c
 card_friend_card.c
-card_premire_chance_rodata.s
 card_premire_chance.c
 premium_card_text.s
 card_name.c

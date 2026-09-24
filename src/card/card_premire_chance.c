@@ -50,6 +50,10 @@ void func_0809CA1C(u8* work);
 u8 func_0809C9F4(UnkStruct_0809C9A4* p);
 u8 func_0809CB78(u8* work, void* a);
 
+const s16 gUnk_09036278[9] = { 0, 11, 23, 34, 46, 57, 68, 79, 90 };
+
+const u8 gUnk_0903628A[9] = { 6, 4, 2, 0, 2, 4, 6, 8, 12 };
+
 void func_0809C534(UnkStruct_0809C534* w, UnkStruct_0809C534_Args* a) {
     CardDef* def;
 
