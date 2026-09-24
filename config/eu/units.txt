@@ -29,7 +29,6 @@ mode_movie.c
 jiminy_data.c
 jiminy_eu_localized_text_data.c
 jiminy_records_index_data.c
-jiminy_list.c
 mode_jiminy.c
 formation_data.c
 emy_common.c

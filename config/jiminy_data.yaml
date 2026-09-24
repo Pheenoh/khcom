@@ -1,10 +1,10 @@
 version: 1
 provenance:
-  details: mode_jiminy.c:568-654 selects 16 JiminyDetail groups with explicit counts totaling 319; each detail text and lineCount defines one live line-pointer array. The 319 details alias exactly 270 descriptions identically in all three regions.
-  menus: JiminyEntry.unk_04 and unk_08 provide the menu-name pointer and count to func_0805A95C at mode_jiminy.c:135-144 and254-265. Reachable category indices prove all21 entries and19 distinct arrays.
-  placeholders: jiminy_list.c:132-143 clamps the selected index to0..12 before LoadTextSlots.
+  details: mode_jiminy.c:2100-2186 selects 16 JiminyDetail groups with explicit counts totaling 319; each detail text and lineCount defines one live line-pointer array. The 319 details alias exactly 270 descriptions identically in all three regions.
+  menus: JiminyEntry.unk_04 and unk_08 provide the menu-name pointer and count to func_0805A95C at mode_jiminy.c:1667-1676 and1786-1797. Reachable category indices prove all21 entries and19 distinct arrays.
+  placeholders: mode_jiminy.c:1360-1371 clamps the selected index to0..12 before LoadTextSlots.
   eu_text: eu_0805E968 selects one of five pointers at offsets0,4,8,12,16; eu_0805E9AC selects the corresponding u16 line count at20,22,24,26,28. All270 records have zero trailing16-bit padding.
-  eu_names: eu_0805E924 selects one of five pointers at offsets0,4,8,12,16. Menu names flow through jiminy_list.c:223; detail names through mode_jiminy.c:723,746,770.
+  eu_names: eu_0805E924 selects one of five pointers at offsets0,4,8,12,16. Menu names flow through mode_jiminy.c:1451; detail names through mode_jiminy.c:2255,2278,2302.
   save: save.h defines SAVE_SIGNATURE_SIZE as24; save.c compares/copies exactly24 bytes through gSaveSignature. US/JP use version12 and EU version13.
   inline_eu_world_names: Twenty-five original single-byte null-terminated strings are defined by the five established JiminyLocalizedName language-pointer records at 0888E364 through 0888E4C0. Individual extents end at their native terminators; the six remaining bytes are independently checked native four-byte object alignment, not fabricated data. Existing pointer identities and all encoded byte values are preserved.
   inline_jp_description_text: Eighteen existing Jiminy description-pointer targets at 0813FEB8..08140081 are native Shift-JIS null-terminated strings, each independently bounded by the original text asset evidence and its terminator. Compiler definitions retain every native byte and symbol, including five text bytes beyond the old accidental report-classification boundary. All three-byte or one-byte alignment between strings and the initial three-byte gap are separately checked native four-byte alignment, not array elements.

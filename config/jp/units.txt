@@ -52,7 +52,6 @@ jiminy_data.c
 jiminy_inline_text_data.c
 rodata_script.s
 jiminy_records_index_data.c
-jiminy_list.c
 mode_jiminy.c
 rodata_script_gap_1.s
 monsgage.c

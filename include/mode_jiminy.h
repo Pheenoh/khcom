@@ -6,7 +6,6 @@
 #ifndef GUARD_MODE_JIMINY_H
 #define GUARD_MODE_JIMINY_H
 
-#include "jiminy_list.h"
 #include "map_api.h"
 #include "msg_api.h"
 #include "mode.h"
@@ -43,10 +42,11 @@ extern u8 gUnk_09611AB8[];
 extern u8 gUnk_09614AB8[];
 extern u8 gUnk_09614D58[];
 
+void func_0805A484(void);
 u8 func_0805AA9C(void);
 void func_0805A8D0(void);
 s32 func_08065170(s32 a, s32 b, void* c);
-void func_0805A95C(s32 a, s16 b, void* c, const void* d, const void* e, s32 f, s32 g, s32 h);
+void func_0805A95C(s16 a, s16 b, u16** c, const u16* d, const u16* e, s16 f, s16 g, s16 h);
 
 void func_0805BAE4(void);
 void func_0805B9D0(s16 a, s16 b, s32 c, s16 d, s16 e, s16 f);
