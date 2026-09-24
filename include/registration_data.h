@@ -408,7 +408,6 @@ extern const char gTaskNamePooHoney[];
 extern const char gTaskNamePooPoohstump[];
 
 extern Mode gModeWORLDSELECT;
-extern const char gUnk_090359BC[];
 
 extern Mode gModeSioDbgFlg;
 

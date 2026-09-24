@@ -2737,19 +2737,19 @@ void* func_08095C28(u8* w, u16 b, void* pool, u8 mode) {
     return ((void**)TaskCreate(pool, &gTaskDescReloadGage, &args))[1];
 }
 
-const char gUnk_090359BC[] = "WORLDSELECT";
+Mode gModeWORLDSELECT = {
+    "WORLDSELECT",
+    (ModeInitFunc)WORLDSELECT_0,
+    WORLDSELECT_1,
+    WORLDSELECT_2,
+};
+
 #ifdef VERSION_EU
 const u16 gUnkEu_090CED64[5] = {
     864, 864, 864, 864, 864,
 };
 #endif
 
-Mode gModeWORLDSELECT = {
-    gUnk_090359BC,
-    (ModeInitFunc)WORLDSELECT_0,
-    WORLDSELECT_1,
-    WORLDSELECT_2,
-};
 #ifdef VERSION_EU
 void* gUnkEu_09F6FF30[5] = {
     gUnk_093F6734, gUnkEu_094C9860, gUnk_093F6734, gUnkEu_094C9860, gUnkEu_094C9C20,
