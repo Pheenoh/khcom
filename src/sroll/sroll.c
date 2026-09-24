@@ -1932,20 +1932,18 @@ void SetDecodedAudioReadPosition(s32 pos) {
     gUnk_02038098 = pos;
 }
 
-const char gTaskNameSrollAName[] = "task_sroll_a_name";
-
-const s32 gUnk_09A542CC[16] = { -1, -2, -3, -4, -3, -2, -1, 0, 1, 2, 3, 4, 3, 2, 1, 0 };
-
-const s32 gUnk_09A5430C[16] = { -1, -2, -3, -4, -5, -6, -7, -8, -7, -6, -5, -4, -3, -2, -1, 0 };
-
 TaskDesc gTaskDescSrollAName = {
-    gTaskNameSrollAName,
+    "task_sroll_a_name",
     (TaskInitFunc)task_sroll_a_name_0,
     (TaskUpdateFunc)task_sroll_a_name_1,
     (TaskFunc)task_sroll_a_name_2,
     (TaskFunc)task_sroll_a_name_3,
     0x38,
 };
+
+const s32 gUnk_09A542CC[16] = { -1, -2, -3, -4, -3, -2, -1, 0, 1, 2, 3, 4, 3, 2, 1, 0 };
+
+const s32 gUnk_09A5430C[16] = { -1, -2, -3, -4, -5, -6, -7, -8, -7, -6, -5, -4, -3, -2, -1, 0 };
 
 TaskDesc gTaskDescSrollBChar = {
     "task_sroll_b_char",
@@ -1956,7 +1954,14 @@ TaskDesc gTaskDescSrollBChar = {
     0x40,
 };
 
-const char gTaskNameSrollBLogo[] = "task_sroll_b_logo";
+TaskDesc gTaskDescSrollBLogo = {
+    "task_sroll_b_logo",
+    (TaskInitFunc)task_sroll_b_logo_0,
+    (TaskUpdateFunc)task_sroll_b_logo_1,
+    (TaskFunc)task_sroll_b_logo_2,
+    (TaskFunc)task_sroll_b_logo_3,
+    0x30,
+};
 
 void* const gUnk_09A54374[][4] = {
 #if defined(VERSION_US)
@@ -2028,15 +2033,6 @@ void* const gUnk_09A54374[][4] = {
     { gUnkEu_09CE49B0, (void*)(41 * 32), gUnkEu_09F87544, gUnkEu_09F87524 },
     { gUnkEu_09CE501C, (void*)(50 * 32), gUnkEu_09F8756C, gUnkEu_09F8754C },
 #endif
-};
-
-TaskDesc gTaskDescSrollBLogo = {
-    gTaskNameSrollBLogo,
-    (TaskInitFunc)task_sroll_b_logo_0,
-    (TaskUpdateFunc)task_sroll_b_logo_1,
-    (TaskFunc)task_sroll_b_logo_2,
-    (TaskFunc)task_sroll_b_logo_3,
-    0x30,
 };
 
 TaskDesc gTaskDescSrollBSecn = {
