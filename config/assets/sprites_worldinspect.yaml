@@ -1573,2370 +1573,1359 @@ entries:
   items: [gUnkEu_099AC9E6]
   eu:
     address: 0x09F854E8
-- name: gUnk_0999C394
-  record: Sprite
+- name: gUnk_0999C410
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 16776, 0]
-  - [16384, 16808, 4]
-  - [16384, 16840, 8]
-  - [16384, 16872, 12]
-  - [16384, 16392, 16]
-  - [16384, 16424, 20]
-  - [16384, 16456, 24]
-  - [16384, 104, 28]
+  cell: [240, 8]
+  anchor: [120, 0]
+  columns: 2
+  frames:
+  - symbol: gUnk_0999C394
+    pieces:
+    - [32x8, -120, 0]
+    - [32x8, -88, 0, {fresh: true}]
+    - [32x8, -56, 0, {fresh: true}]
+    - [32x8, -24, 0, {fresh: true}]
+    - [32x8, 8, 0, {fresh: true}]
+    - [32x8, 40, 0, {fresh: true}]
+    - [32x8, 72, 0, {fresh: true}]
+    - [16x8, 104, 0]
+  - symbol: gUnk_0999C3C8
+    pieces:
+    - [32x8, -120, 0]
+    - [32x8, -88, 0, {fresh: true}]
+    - [32x8, -56, 0, {fresh: true}]
+    - [32x8, -24, 0, {fresh: true}]
+    - [32x8, 8, 0, {fresh: true}]
+    - [32x8, 40, 0, {fresh: true}]
+    - [32x8, 72, 0, {fresh: true}]
+    - [16x8, 104, 0]
+  animations:
+  - symbol: gUnk_0999C3FC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnk_0999C406
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[1, 4]]
   us:
     address: 0x0999C394
+    size: 2044
   jp:
     address: 0x09950EA8
+    size: 2044
   eu:
     address: 0x099A2650
-- name: gUnk_0999C3C8
-  record: Sprite
-  oam:
-  - [16384, 16776, 30]
-  - [16384, 16808, 34]
-  - [16384, 16840, 38]
-  - [16384, 16872, 42]
-  - [16384, 16392, 46]
-  - [16384, 16424, 50]
-  - [16384, 16456, 54]
-  - [16384, 104, 58]
-  us:
-    address: 0x0999C3C8
-  jp:
-    address: 0x09950EDC
-  eu:
-    address: 0x099A2684
-- name: gUnk_0999C3FC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999C3FC
-  jp:
-    address: 0x09950F10
-  eu:
-    address: 0x099A26B8
-- name: gUnk_0999C406
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [1, 4]
-  us:
-    address: 0x0999C406
-  jp:
-    address: 0x09950F1A
-  eu:
-    address: 0x099A26C2
-- name: gUnk_0999C410
-  format: tiles4
-  width: 4
-  us:
-    address: 0x0999C410
-    size: 1920
-  jp:
-    address: 0x09950F24
-    size: 1920
-  eu:
-    address: 0x099A26CC
-    size: 1920
-- name: gUnk_0999CB90
-  record: Sprite
+    size: 2044
+- name: gUnk_0999CBB6
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
+  cell: [112, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnk_0999CB90
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+  animations:
+  - symbol: gUnk_0999CBAC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x0999CB90
+    size: 934
   jp:
     address: 0x099516A4
+    size: 934
   eu:
     address: 0x099A2E4C
-- name: gUnk_0999CBAC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999CBAC
-  jp:
-    address: 0x099516C0
-  eu:
-    address: 0x099A2E68
-- name: gUnk_0999CBB6
-  format: tiles4
-  width: 4
-  us:
-    address: 0x0999CBB6
-    size: 896
-  jp:
-    address: 0x099516CA
-    size: 896
-  eu:
-    address: 0x099A2E72
-    size: 896
-- name: gUnk_0999CF38
-  record: Sprite
+    size: 934
+- name: gUnk_0999CFC6
+  format: sprite_sheet
   align: 4
+  cell: [240, 16]
+  anchor: [112, 0]
+  columns: 3
+  frames:
+  - symbol: gUnk_0999CF38
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [8x16, 96, 0]
+  - symbol: gUnk_0999CF54
+    pieces:
+    - [32x8, -112, 0]
+    - [32x8, -80, 0]
+    - [32x8, -48, 0]
+    - [32x8, -16, 0]
+    - [32x8, 16, 0]
+    - [32x8, 48, 0]
+    - [32x8, 80, 0]
+    - [16x8, 112, 0]
+  - symbol: gUnk_0999CF88
+    pieces:
+    - [32x8, -112, 0, {vflip: true}]
+    - [32x8, -80, 0, {vflip: true}]
+    - [32x8, -48, 0, {vflip: true}]
+    - [32x8, -16, 0, {vflip: true}]
+    - [32x8, 16, 0, {vflip: true}]
+    - [32x8, 48, 0, {vflip: true}]
+    - [32x8, 80, 0, {vflip: true}]
+    - [16x8, 112, 0, {vflip: true}]
+  animations:
+  - symbol: gUnk_0999CFBC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x0999CF38
-    oam:
-    - [16384, 32768, 0]
-    - [16384, 32800, 8]
-    - [16384, 32832, 16]
-    - [32768, 96, 24]
+    size: 1166
   jp:
     address: 0x09951A4C
-    oam:
-    - [16384, 32768, 0]
-    - [16384, 32800, 8]
-    - [16384, 32832, 16]
+    size: 1096
+    frames:
+    - symbol: gUnk_0999CF38
+      pieces:
+      - [32x16, 0, 0]
+      - [32x16, 32, 0]
+      - [32x16, 64, 0]
+    - symbol: gUnk_0999CF54
+      pieces:
+      - [32x8, -112, 0]
+      - [32x8, -80, 0]
+      - [32x8, -48, 0]
+      - [32x8, -16, 0]
+      - [32x8, 16, 0]
+      - [32x8, 48, 0]
+      - [32x8, 80, 0]
+      - [16x8, 112, 0]
+    - symbol: gUnk_0999CF88
+      pieces:
+      - [32x8, -112, 0, {vflip: true}]
+      - [32x8, -80, 0, {vflip: true}]
+      - [32x8, -48, 0, {vflip: true}]
+      - [32x8, -16, 0, {vflip: true}]
+      - [32x8, 16, 0, {vflip: true}]
+      - [32x8, 48, 0, {vflip: true}]
+      - [32x8, 80, 0, {vflip: true}]
+      - [16x8, 112, 0, {vflip: true}]
   eu:
     address: 0x099A421C
-    oam:
-    - [16384, 32768, 0]
-    - [16384, 32800, 8]
-    - [16384, 32832, 16]
-    - [32768, 96, 24]
-- name: gUnk_0999CF54
-  record: Sprite
-  us:
-    address: 0x0999CF54
-    oam:
-    - [16384, 16784, 26]
-    - [16384, 16816, 26]
-    - [16384, 16848, 26]
-    - [16384, 16880, 26]
-    - [16384, 16400, 26]
-    - [16384, 16432, 26]
-    - [16384, 16464, 26]
-    - [16384, 112, 30]
-  jp:
-    address: 0x09951A62
-    oam:
-    - [16384, 16784, 24]
-    - [16384, 16816, 24]
-    - [16384, 16848, 24]
-    - [16384, 16880, 24]
-    - [16384, 16400, 24]
-    - [16384, 16432, 24]
-    - [16384, 16464, 24]
-    - [16384, 112, 28]
-  eu:
-    address: 0x099A4238
-    oam:
-    - [16384, 16784, 26]
-    - [16384, 16816, 26]
-    - [16384, 16848, 26]
-    - [16384, 16880, 26]
-    - [16384, 16400, 26]
-    - [16384, 16432, 26]
-    - [16384, 16464, 26]
-    - [16384, 112, 30]
-- name: gUnk_0999CF88
-  record: Sprite
-  us:
-    address: 0x0999CF88
-    oam:
-    - [16384, 24976, 26]
-    - [16384, 25008, 26]
-    - [16384, 25040, 26]
-    - [16384, 25072, 26]
-    - [16384, 24592, 26]
-    - [16384, 24624, 26]
-    - [16384, 24656, 26]
-    - [16384, 8304, 30]
-  jp:
-    address: 0x09951A96
-    oam:
-    - [16384, 24976, 24]
-    - [16384, 25008, 24]
-    - [16384, 25040, 24]
-    - [16384, 25072, 24]
-    - [16384, 24592, 24]
-    - [16384, 24624, 24]
-    - [16384, 24656, 24]
-    - [16384, 8304, 28]
-  eu:
-    address: 0x099A426C
-    oam:
-    - [16384, 24976, 26]
-    - [16384, 25008, 26]
-    - [16384, 25040, 26]
-    - [16384, 25072, 26]
-    - [16384, 24592, 26]
-    - [16384, 24624, 26]
-    - [16384, 24656, 26]
-    - [16384, 8304, 30]
-- name: gUnk_0999CFBC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999CFBC
-  jp:
-    address: 0x09951ACA
-  eu:
-    address: 0x099A42A0
-- name: gUnk_0999CFC6
-  format: tiles4
-  width: 1
-  us:
-    address: 0x0999CFC6
-    size: 1024
-  jp:
-    address: 0x09951AD4
-    size: 960
-  eu:
-    address: 0x099A42AA
-    size: 1024
-- name: gUnk_0999D3C8
-  record: Sprite
+    size: 1166
+- name: gUnk_0999D41A
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
+  cell: [32, 16]
+  anchor: [0, 0]
+  columns: 5
+  frames:
+  - symbol: gUnk_0999D3C8
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999D3D2
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999D3DC
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999D3E6
+    pieces:
+    - [32x8, 0, 4]
+  - symbol: gUnk_0999D3F0
+    pieces:
+    - [32x8, 0, 4]
+  animations:
+  - symbol: gUnk_0999D3FA
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 5], [1, 5], [2, 4], [3, 4], [4, 3]]
+  - symbol: gUnk_0999D414
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
   us:
     address: 0x0999D3C8
+    size: 1106
   jp:
     address: 0x09951E94
+    size: 1106
   eu:
     address: 0x099A46AC
-- name: gUnk_0999D3D2
-  record: Sprite
-  oam:
-  - [16384, 32768, 8]
-  us:
-    address: 0x0999D3D2
-  jp:
-    address: 0x09951E9E
-  eu:
-    address: 0x099A46B6
-- name: gUnk_0999D3DC
-  record: Sprite
-  oam:
-  - [16384, 32768, 16]
-  us:
-    address: 0x0999D3DC
-  jp:
-    address: 0x09951EA8
-  eu:
-    address: 0x099A46C0
-- name: gUnk_0999D3E6
-  record: Sprite
-  oam:
-  - [16388, 16384, 24]
-  us:
-    address: 0x0999D3E6
-  jp:
-    address: 0x09951EB2
-  eu:
-    address: 0x099A46CA
-- name: gUnk_0999D3F0
-  record: Sprite
-  oam:
-  - [16388, 16384, 28]
-  us:
-    address: 0x0999D3F0
-  jp:
-    address: 0x09951EBC
-  eu:
-    address: 0x099A46D4
-- name: gUnk_0999D3FA
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 5]
-  - [1, 5]
-  - [2, 4]
-  - [3, 4]
-  - [4, 3]
-  us:
-    address: 0x0999D3FA
-  jp:
-    address: 0x09951EC6
-  eu:
-    address: 0x099A46DE
-- name: gUnk_0999D414
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x0999D414
-  jp:
-    address: 0x09951EE0
-  eu:
-    address: 0x099A46F8
-- name: gUnk_0999D41A
-  format: tiles4
-  width: 4
-  us:
-    address: 0x0999D41A
-    size: 1024
-  jp:
-    address: 0x09951EE6
-    size: 1024
-  eu:
-    address: 0x099A46FE
-    size: 1024
-- name: gUnk_0999D81C
-  record: Sprite
+    size: 1106
+- name: gUnk_0999D8A8
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [7, 16, 5]
+  cell: [24, 27]
+  anchor: [0, 0]
+  columns: 4
+  frames:
+  - symbol: gUnk_0999D81C
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 7]
+  - symbol: gUnk_0999D832
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 8]
+  - symbol: gUnk_0999D848
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 9]
+  - symbol: gUnk_0999D85E
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 10]
+  animations:
+  - symbol: gUnk_0999D874
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnk_0999D892
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnk_0999D89C
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnk_0999D8A2
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
   us:
     address: 0x0999D81C
+    size: 332
   jp:
     address: 0x099522E8
+    size: 332
   eu:
     address: 0x099A4B00
-- name: gUnk_0999D832
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [8, 16, 5]
-  us:
-    address: 0x0999D832
-  jp:
-    address: 0x099522FE
-  eu:
-    address: 0x099A4B16
-- name: gUnk_0999D848
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [9, 16, 5]
-  us:
-    address: 0x0999D848
-  jp:
-    address: 0x09952314
-  eu:
-    address: 0x099A4B2C
-- name: gUnk_0999D85E
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [10, 16, 5]
-  us:
-    address: 0x0999D85E
-  jp:
-    address: 0x0995232A
-  eu:
-    address: 0x099A4B42
-- name: gUnk_0999D874
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  us:
-    address: 0x0999D874
-  jp:
-    address: 0x09952340
-  eu:
-    address: 0x099A4B58
-- name: gUnk_0999D892
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999D892
-  jp:
-    address: 0x0995235E
-  eu:
-    address: 0x099A4B76
-- name: gUnk_0999D89C
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x0999D89C
-  jp:
-    address: 0x09952368
-  eu:
-    address: 0x099A4B80
-- name: gUnk_0999D8A2
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x0999D8A2
-  jp:
-    address: 0x0995236E
-  eu:
-    address: 0x099A4B86
-- name: gUnk_0999D8A8
-  format: tiles4
-  width: 2
-  us:
-    address: 0x0999D8A8
-    size: 192
-  jp:
-    address: 0x09952374
-    size: 192
-  eu:
-    address: 0x099A4B8C
-    size: 192
-- name: gUnk_0999D968
-  record: Sprite
+    size: 332
+- name: gUnk_0999DAEC
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [8, 16, 5]
+  cell: [240, 27]
+  anchor: [128, 0]
+  columns: 8
+  frames:
+  - symbol: gUnk_0999D968
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 8]
+  - symbol: gUnk_0999D97E
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 9]
+  - symbol: gUnk_0999D994
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 10]
+  - symbol: gUnk_0999D9AA
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 11]
+  - symbol: gUnk_0999D9C0
+    pieces:
+    - [8x8, 0, 0]
+  - symbol: gUnk_0999D9CA
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [16x16, 64, 0]
+    - [8x16, 80, 0]
+  - symbol: gUnk_0999D9E6
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0, {fresh: true}]
+    - [32x8, -64, 0, {fresh: true}]
+    - [32x8, -32, 0, {fresh: true}]
+    - [32x8, 0, 0, {fresh: true}]
+    - [32x8, 32, 0, {fresh: true}]
+    - [32x8, 64, 0, {fresh: true}]
+    - [16x8, 96, 0]
+  - symbol: gUnk_0999DA1A
+    pieces:
+    - [32x8, -40, 0]
+    - [32x8, -8, 0, {fresh: true}]
+    - [32x8, 24, 0, {fresh: true}]
+    - [32x8, 56, 0, {fresh: true}]
+    - [16x8, 88, 0]
+    - [8x8, 104, 0]
+  - symbol: gUnk_0999DA42
+    pieces:
+    - [16x16, 8, 0, {hflip: true}]
+    - [8x16, 0, 0, {hflip: true}]
+    - [16x8, 1, 16, {hflip: true}]
+  - symbol: gUnk_0999DA58
+    pieces:
+    - [16x16, 9, 0, {hflip: true}]
+    - [8x16, 1, 0, {hflip: true}]
+    - [16x8, 2, 16, {hflip: true}]
+  - symbol: gUnk_0999DA6E
+    pieces:
+    - [16x16, 10, 0, {hflip: true}]
+    - [8x16, 2, 0, {hflip: true}]
+    - [16x8, 3, 16, {hflip: true}]
+  - symbol: gUnk_0999DA84
+    pieces:
+    - [16x16, 11, 0, {hflip: true}]
+    - [8x16, 3, 0, {hflip: true}]
+    - [16x8, 4, 16, {hflip: true}]
+  animations:
+  - symbol: gUnk_0999DA9A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnk_0999DAB8
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnk_0999DAC2
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnk_0999DAC8
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnk_0999DACE
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[8, 4], [9, 3], [10, 3], [11, 4], [10, 3], [9, 3]]
   us:
     address: 0x0999D968
+    size: 3140
   jp:
     address: 0x09952434
+    size: 3070
+    frames:
+    - symbol: gUnk_0999D968
+      pieces:
+      - [16x16, 0, 0]
+      - [8x8, 10, 16]
+      - [8x8, 16, 8]
+    - symbol: gUnk_0999D97E
+      pieces:
+      - [16x16, 0, 1]
+      - [8x8, 10, 17]
+      - [8x8, 16, 9]
+    - symbol: gUnk_0999D994
+      pieces:
+      - [16x16, 0, 2]
+      - [8x8, 10, 18]
+      - [8x8, 16, 10]
+    - symbol: gUnk_0999D9AA
+      pieces:
+      - [16x16, 0, 3]
+      - [8x8, 10, 19]
+      - [8x8, 16, 11]
+    - symbol: gUnk_0999D9C0
+      pieces:
+      - [8x8, 0, 0]
+    - symbol: gUnk_0999D9CA
+      pieces:
+      - [32x16, 0, 0]
+      - [32x16, 32, 0]
+      - [16x16, 64, 0]
+    - symbol: gUnk_0999D9E6
+      pieces:
+      - [32x8, -128, 0]
+      - [32x8, -96, 0, {fresh: true}]
+      - [32x8, -64, 0, {fresh: true}]
+      - [32x8, -32, 0, {fresh: true}]
+      - [32x8, 0, 0, {fresh: true}]
+      - [32x8, 32, 0, {fresh: true}]
+      - [32x8, 64, 0, {fresh: true}]
+      - [16x8, 96, 0]
+    - symbol: gUnk_0999DA1A
+      pieces:
+      - [32x8, -40, 0]
+      - [32x8, -8, 0, {fresh: true}]
+      - [32x8, 24, 0, {fresh: true}]
+      - [32x8, 56, 0, {fresh: true}]
+      - [16x8, 88, 0]
+      - [8x8, 104, 0]
+    - symbol: gUnk_0999DA42
+      pieces:
+      - [16x16, 8, 0, {hflip: true}]
+      - [8x16, 0, 0, {hflip: true}]
+      - [16x8, 1, 16, {hflip: true}]
+    - symbol: gUnk_0999DA58
+      pieces:
+      - [16x16, 9, 0, {hflip: true}]
+      - [8x16, 1, 0, {hflip: true}]
+      - [16x8, 2, 16, {hflip: true}]
+    - symbol: gUnk_0999DA6E
+      pieces:
+      - [16x16, 10, 0, {hflip: true}]
+      - [8x16, 2, 0, {hflip: true}]
+      - [16x8, 3, 16, {hflip: true}]
+    - symbol: gUnk_0999DA84
+      pieces:
+      - [16x16, 11, 0, {hflip: true}]
+      - [8x16, 3, 0, {hflip: true}]
+      - [16x8, 4, 16, {hflip: true}]
   eu:
     address: 0x099A5F0C
-- name: gUnk_0999D97E
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [9, 16, 5]
-  us:
-    address: 0x0999D97E
-  jp:
-    address: 0x0995244A
-  eu:
-    address: 0x099A5F22
-- name: gUnk_0999D994
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [10, 16, 5]
-  us:
-    address: 0x0999D994
-  jp:
-    address: 0x09952460
-  eu:
-    address: 0x099A5F38
-- name: gUnk_0999D9AA
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [11, 16, 5]
-  us:
-    address: 0x0999D9AA
-  jp:
-    address: 0x09952476
-  eu:
-    address: 0x099A5F4E
-- name: gUnk_0999D9C0
-  record: Sprite
-  oam:
-  - [0, 0, 6]
-  us:
-    address: 0x0999D9C0
-  jp:
-    address: 0x0995248C
-  eu:
-    address: 0x099A5F64
-- name: gUnk_0999D9CA
-  record: Sprite
-  us:
-    address: 0x0999D9CA
-    oam:
-    - [16384, 32768, 7]
-    - [16384, 32800, 15]
-    - [0, 16448, 23]
-    - [32768, 80, 27]
-  jp:
-    address: 0x09952496
-    oam:
-    - [16384, 32768, 7]
-    - [16384, 32800, 15]
-    - [0, 16448, 23]
-  eu:
-    address: 0x099A5F6E
-    oam:
-    - [16384, 32768, 7]
-    - [16384, 32800, 15]
-    - [0, 16448, 23]
-    - [32768, 80, 27]
-- name: gUnk_0999D9E6
-  record: Sprite
-  us:
-    address: 0x0999D9E6
-    oam:
-    - [16384, 16768, 29]
-    - [16384, 16800, 33]
-    - [16384, 16832, 37]
-    - [16384, 16864, 41]
-    - [16384, 16384, 45]
-    - [16384, 16416, 49]
-    - [16384, 16448, 53]
-    - [16384, 96, 57]
-  jp:
-    address: 0x099524AC
-    oam:
-    - [16384, 16768, 27]
-    - [16384, 16800, 31]
-    - [16384, 16832, 35]
-    - [16384, 16864, 39]
-    - [16384, 16384, 43]
-    - [16384, 16416, 47]
-    - [16384, 16448, 51]
-    - [16384, 96, 55]
-  eu:
-    address: 0x099A5F8A
-    oam:
-    - [16384, 16768, 29]
-    - [16384, 16800, 33]
-    - [16384, 16832, 37]
-    - [16384, 16864, 41]
-    - [16384, 16384, 45]
-    - [16384, 16416, 49]
-    - [16384, 16448, 53]
-    - [16384, 96, 57]
-- name: gUnk_0999DA1A
-  record: Sprite
-  us:
-    address: 0x0999DA1A
-    oam:
-    - [16384, 16856, 59]
-    - [16384, 16888, 63]
-    - [16384, 16408, 67]
-    - [16384, 16440, 71]
-    - [16384, 88, 75]
-    - [0, 104, 77]
-  jp:
-    address: 0x099524E0
-    oam:
-    - [16384, 16856, 57]
-    - [16384, 16888, 61]
-    - [16384, 16408, 65]
-    - [16384, 16440, 69]
-    - [16384, 88, 73]
-    - [0, 104, 75]
-  eu:
-    address: 0x099A5FBE
-    oam:
-    - [16384, 16856, 59]
-    - [16384, 16888, 63]
-    - [16384, 16408, 67]
-    - [16384, 16440, 71]
-    - [16384, 88, 75]
-    - [0, 104, 77]
-- name: gUnk_0999DA42
-  record: Sprite
-  us:
-    address: 0x0999DA42
-    oam:
-    - [0, 20488, 78]
-    - [32768, 4096, 82]
-    - [16400, 4097, 84]
-  jp:
-    address: 0x09952508
-    oam:
-    - [0, 20488, 76]
-    - [32768, 4096, 80]
-    - [16400, 4097, 82]
-  eu:
-    address: 0x099A5FE6
-    oam:
-    - [0, 20488, 78]
-    - [32768, 4096, 82]
-    - [16400, 4097, 84]
-- name: gUnk_0999DA58
-  record: Sprite
-  us:
-    address: 0x0999DA58
-    oam:
-    - [0, 20489, 78]
-    - [32768, 4097, 82]
-    - [16400, 4098, 84]
-  jp:
-    address: 0x0995251E
-    oam:
-    - [0, 20489, 76]
-    - [32768, 4097, 80]
-    - [16400, 4098, 82]
-  eu:
-    address: 0x099A5FFC
-    oam:
-    - [0, 20489, 78]
-    - [32768, 4097, 82]
-    - [16400, 4098, 84]
-- name: gUnk_0999DA6E
-  record: Sprite
-  us:
-    address: 0x0999DA6E
-    oam:
-    - [0, 20490, 78]
-    - [32768, 4098, 82]
-    - [16400, 4099, 84]
-  jp:
-    address: 0x09952534
-    oam:
-    - [0, 20490, 76]
-    - [32768, 4098, 80]
-    - [16400, 4099, 82]
-  eu:
-    address: 0x099A6012
-    oam:
-    - [0, 20490, 78]
-    - [32768, 4098, 82]
-    - [16400, 4099, 84]
-- name: gUnk_0999DA84
-  record: Sprite
-  us:
-    address: 0x0999DA84
-    oam:
-    - [0, 20491, 78]
-    - [32768, 4099, 82]
-    - [16400, 4100, 84]
-  jp:
-    address: 0x0995254A
-    oam:
-    - [0, 20491, 76]
-    - [32768, 4099, 80]
-    - [16400, 4100, 82]
-  eu:
-    address: 0x099A6028
-    oam:
-    - [0, 20491, 78]
-    - [32768, 4099, 82]
-    - [16400, 4100, 84]
-- name: gUnk_0999DA9A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  us:
-    address: 0x0999DA9A
-  jp:
-    address: 0x09952560
-  eu:
-    address: 0x099A603E
-- name: gUnk_0999DAB8
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999DAB8
-  jp:
-    address: 0x0995257E
-  eu:
-    address: 0x099A605C
-- name: gUnk_0999DAC2
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x0999DAC2
-  jp:
-    address: 0x09952588
-  eu:
-    address: 0x099A6066
-- name: gUnk_0999DAC8
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x0999DAC8
-  jp:
-    address: 0x0995258E
-  eu:
-    address: 0x099A606C
-- name: gUnk_0999DACE
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [8, 4]
-  - [9, 3]
-  - [10, 3]
-  - [11, 4]
-  - [10, 3]
-  - [9, 3]
-  us:
-    address: 0x0999DACE
-  jp:
-    address: 0x09952594
-  eu:
-    address: 0x099A6072
-- name: gUnk_0999DAEC
-  format: tiles4
-  width: 2
-  us:
-    address: 0x0999DAEC
-    size: 2752
-  jp:
-    address: 0x099525B2
-    size: 2688
-  eu:
-    address: 0x099A6090
-    size: 2752
+    size: 3140
     symbol: gUnkEu_099A6090
-- name: gUnk_0999E5AC
-  record: Sprite
+- name: gUnk_0999E69E
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 16384, 0]
-  - [32776, 16384, 4]
-  - [32776, 16408, 8]
-  - [16416, 8, 12]
+  cell: [48, 40]
+  anchor: [0, 0]
+  columns: 8
+  frames:
+  - symbol: gUnk_0999E5AC
+    pieces:
+    - [32x8, 0, 0]
+    - [8x32, 0, 8]
+    - [8x32, 24, 8]
+    - [16x8, 8, 32]
+  - symbol: gUnk_0999E5C8
+    pieces:
+    - [32x8, 0, 0]
+    - [8x32, 0, 8]
+    - [8x32, 24, 8]
+    - [16x8, 8, 32]
+  - symbol: gUnk_0999E5E4
+    pieces:
+    - [16x32, 0, 0]
+    - [16x32, 16, 0]
+    - [32x8, 0, 32]
+  - symbol: gUnk_0999E5FA
+    pieces:
+    - [16x16, 8, 8]
+    - [16x8, 8, 24]
+  - symbol: gUnk_0999E60A
+    pieces:
+    - [16x16, 8, 8]
+    - [16x8, 8, 24]
+  - symbol: gUnk_0999E61A
+    pieces:
+    - [32x16, 0, 0]
+    - [16x16, 32, 0]
+  - symbol: gUnk_0999E62A
+    pieces:
+    - [32x16, 0, 0]
+    - [16x16, 32, 0]
+  - symbol: gUnk_0999E63A
+    pieces:
+    - [32x16, 0, 0]
+    - [16x16, 32, 0]
+  - symbol: gUnk_0999E64A
+    pieces:
+    - [32x8, 0, 4]
+    - [16x8, 32, 4]
+  - symbol: gUnk_0999E65A
+    pieces:
+    - [32x8, 4, 4]
+    - [8x8, 36, 4]
+  animations:
+  - symbol: gUnk_0999E66A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 5], [1, 5], [2, 4], [3, 4], [4, 3]]
+  - symbol: gUnk_0999E684
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[5, 5], [6, 5], [7, 4], [8, 4], [9, 3]]
   us:
     address: 0x0999E5AC
+    size: 3666
   jp:
     address: 0x09953034
+    size: 3666
   eu:
     address: 0x099A9D50
-- name: gUnk_0999E5C8
-  record: Sprite
-  oam:
-  - [16384, 16384, 14]
-  - [32776, 16384, 18]
-  - [32776, 16408, 22]
-  - [16416, 8, 26]
-  us:
-    address: 0x0999E5C8
-  jp:
-    address: 0x09953050
-  eu:
-    address: 0x099A9D6C
-- name: gUnk_0999E5E4
-  record: Sprite
-  oam:
-  - [32768, 32768, 28]
-  - [32768, 32784, 36]
-  - [16416, 16384, 44]
-  us:
-    address: 0x0999E5E4
-  jp:
-    address: 0x0995306C
-  eu:
-    address: 0x099A9D88
-- name: gUnk_0999E5FA
-  record: Sprite
-  oam:
-  - [8, 16392, 48]
-  - [16408, 8, 52]
-  us:
-    address: 0x0999E5FA
-  jp:
-    address: 0x09953082
-  eu:
-    address: 0x099A9D9E
-- name: gUnk_0999E60A
-  record: Sprite
-  oam:
-  - [8, 16392, 54]
-  - [16408, 8, 58]
-  us:
-    address: 0x0999E60A
-  jp:
-    address: 0x09953092
-  eu:
-    address: 0x099A9DAE
-- name: gUnk_0999E61A
-  record: Sprite
-  oam:
-  - [16384, 32768, 60]
-  - [0, 16416, 68]
-  us:
-    address: 0x0999E61A
-  jp:
-    address: 0x099530A2
-  eu:
-    address: 0x099A9DBE
-- name: gUnk_0999E62A
-  record: Sprite
-  oam:
-  - [16384, 32768, 72]
-  - [0, 16416, 80]
-  us:
-    address: 0x0999E62A
-  jp:
-    address: 0x099530B2
-  eu:
-    address: 0x099A9DCE
-- name: gUnk_0999E63A
-  record: Sprite
-  oam:
-  - [16384, 32768, 84]
-  - [0, 16416, 92]
-  us:
-    address: 0x0999E63A
-  jp:
-    address: 0x099530C2
-  eu:
-    address: 0x099A9DDE
-- name: gUnk_0999E64A
-  record: Sprite
-  oam:
-  - [16388, 16384, 96]
-  - [16388, 32, 100]
-  us:
-    address: 0x0999E64A
-  jp:
-    address: 0x099530D2
-  eu:
-    address: 0x099A9DEE
-- name: gUnk_0999E65A
-  record: Sprite
-  oam:
-  - [16388, 16388, 102]
-  - [4, 36, 106]
-  us:
-    address: 0x0999E65A
-  jp:
-    address: 0x099530E2
-  eu:
-    address: 0x099A9DFE
-- name: gUnk_0999E66A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 5]
-  - [1, 5]
-  - [2, 4]
-  - [3, 4]
-  - [4, 3]
-  us:
-    address: 0x0999E66A
-  jp:
-    address: 0x099530F2
-  eu:
-    address: 0x099A9E0E
-- name: gUnk_0999E684
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [5, 5]
-  - [6, 5]
-  - [7, 4]
-  - [8, 4]
-  - [9, 3]
-  us:
-    address: 0x0999E684
-  jp:
-    address: 0x0995310C
-  eu:
-    address: 0x099A9E28
-- name: gUnk_0999E69E
-  format: tiles4
-  width: 1
-  us:
-    address: 0x0999E69E
-    size: 3424
-  jp:
-    address: 0x09953126
-    size: 3424
-  eu:
-    address: 0x099A9E42
-    size: 3424
-- name: gUnk_0999F400
-  record: Sprite
+    size: 3666
+- name: gUnk_0999F488
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
+  cell: [240, 16]
+  anchor: [128, 0]
+  columns: 3
+  frames:
+  - symbol: gUnk_0999F400
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnk_0999F416
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0]
+  - symbol: gUnk_0999F44A
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0, {hflip: true}]
+  animations:
+  - symbol: gUnk_0999F47E
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x0999F400
+    size: 1416
   jp:
     address: 0x09953E88
+    size: 1416
   eu:
     address: 0x099AABA4
-- name: gUnk_0999F416
-  record: Sprite
-  oam:
-  - [16384, 16768, 24]
-  - [16384, 16800, 24]
-  - [16384, 16832, 24]
-  - [16384, 16864, 24]
-  - [16384, 16384, 24]
-  - [16384, 16416, 24]
-  - [16384, 16448, 24]
-  - [16384, 96, 28]
-  us:
-    address: 0x0999F416
-  jp:
-    address: 0x09953E9E
-  eu:
-    address: 0x099AABBA
-- name: gUnk_0999F44A
-  record: Sprite
-  oam:
-  - [16384, 16768, 30]
-  - [16384, 16800, 34]
-  - [16384, 16832, 34]
-  - [16384, 16864, 34]
-  - [16384, 16384, 34]
-  - [16384, 16416, 34]
-  - [16384, 16448, 34]
-  - [16384, 4192, 38]
-  us:
-    address: 0x0999F44A
-  jp:
-    address: 0x09953ED2
-  eu:
-    address: 0x099AABEE
-- name: gUnk_0999F47E
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0999F47E
-  jp:
-    address: 0x09953F06
-  eu:
-    address: 0x099AAC22
-- name: gUnk_0999F488
-  format: tiles4
-  width: 4
-  us:
-    address: 0x0999F488
-    size: 1280
-  jp:
-    address: 0x09953F10
-    size: 1280
-  eu:
-    address: 0x099AAC2C
-    size: 1280
-- name: gUnk_0999F988
-  record: Sprite
+    size: 1416
+- name: gUnk_0999FA20
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
+  cell: [32, 16]
+  anchor: [0, 0]
+  columns: 8
+  frames:
+  - symbol: gUnk_0999F988
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999F992
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999F99C
+    pieces:
+    - [32x16, 0, 0]
+  - symbol: gUnk_0999F9A6
+    pieces:
+    - [32x8, 0, 4]
+  - symbol: gUnk_0999F9B0
+    pieces:
+    - [32x8, 0, 4]
+  - symbol: gUnk_0999F9BA
+    pieces:
+    - [16x16, 0, 0]
+  - symbol: gUnk_0999F9C4
+    pieces:
+    - [16x16, 0, 0]
+  - symbol: gUnk_0999F9CE
+    pieces:
+    - [16x16, 0, 0]
+  - symbol: gUnk_0999F9D8
+    pieces:
+    - [16x16, 0, 0]
+  - symbol: gUnk_0999F9E2
+    pieces:
+    - [16x16, 0, 0]
+  animations:
+  - symbol: gUnk_0999F9EC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 5], [1, 5], [2, 4], [3, 4], [4, 3]]
+  - symbol: gUnk_0999FA06
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[5, 5], [6, 7], [7, 6], [8, 7], [9, 6]]
   us:
     address: 0x0999F988
+    size: 1816
   jp:
     address: 0x09954410
+    size: 1816
   eu:
     address: 0x099AB12C
-- name: gUnk_0999F992
-  record: Sprite
-  oam:
-  - [16384, 32768, 8]
-  us:
-    address: 0x0999F992
-  jp:
-    address: 0x0995441A
-  eu:
-    address: 0x099AB136
-- name: gUnk_0999F99C
-  record: Sprite
-  oam:
-  - [16384, 32768, 16]
-  us:
-    address: 0x0999F99C
-  jp:
-    address: 0x09954424
-  eu:
-    address: 0x099AB140
-- name: gUnk_0999F9A6
-  record: Sprite
-  oam:
-  - [16388, 16384, 24]
-  us:
-    address: 0x0999F9A6
-  jp:
-    address: 0x0995442E
-  eu:
-    address: 0x099AB14A
-- name: gUnk_0999F9B0
-  record: Sprite
-  oam:
-  - [16388, 16384, 28]
-  us:
-    address: 0x0999F9B0
-  jp:
-    address: 0x09954438
-  eu:
-    address: 0x099AB154
-- name: gUnk_0999F9BA
-  record: Sprite
-  oam:
-  - [0, 16384, 32]
-  us:
-    address: 0x0999F9BA
-  jp:
-    address: 0x09954442
-  eu:
-    address: 0x099AB15E
-- name: gUnk_0999F9C4
-  record: Sprite
-  oam:
-  - [0, 16384, 36]
-  us:
-    address: 0x0999F9C4
-  jp:
-    address: 0x0995444C
-  eu:
-    address: 0x099AB168
-- name: gUnk_0999F9CE
-  record: Sprite
-  oam:
-  - [0, 16384, 40]
-  us:
-    address: 0x0999F9CE
-  jp:
-    address: 0x09954456
-  eu:
-    address: 0x099AB172
-- name: gUnk_0999F9D8
-  record: Sprite
-  oam:
-  - [0, 16384, 44]
-  us:
-    address: 0x0999F9D8
-  jp:
-    address: 0x09954460
-  eu:
-    address: 0x099AB17C
-- name: gUnk_0999F9E2
-  record: Sprite
-  oam:
-  - [0, 16384, 48]
-  us:
-    address: 0x0999F9E2
-  jp:
-    address: 0x0995446A
-  eu:
-    address: 0x099AB186
-- name: gUnk_0999F9EC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 5]
-  - [1, 5]
-  - [2, 4]
-  - [3, 4]
-  - [4, 3]
-  us:
-    address: 0x0999F9EC
-  jp:
-    address: 0x09954474
-  eu:
-    address: 0x099AB190
-- name: gUnk_0999FA06
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [5, 5]
-  - [6, 7]
-  - [7, 6]
-  - [8, 7]
-  - [9, 6]
-  us:
-    address: 0x0999FA06
-  jp:
-    address: 0x0995448E
-  eu:
-    address: 0x099AB1AA
-- name: gUnk_0999FA20
-  format: tiles4
-  width: 4
-  us:
-    address: 0x0999FA20
-    size: 1664
-  jp:
-    address: 0x099544A8
-    size: 1664
-  eu:
-    address: 0x099AB1C4
-    size: 1664
-- name: gUnk_099A00A0
-  record: Sprite
+    size: 1816
+- name: gUnk_099A012C
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [7, 16, 5]
+  cell: [24, 27]
+  anchor: [0, 0]
+  columns: 4
+  frames:
+  - symbol: gUnk_099A00A0
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 7]
+  - symbol: gUnk_099A00B6
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 8]
+  - symbol: gUnk_099A00CC
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 9]
+  - symbol: gUnk_099A00E2
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 10]
+  animations:
+  - symbol: gUnk_099A00F8
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnk_099A0116
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnk_099A0120
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnk_099A0126
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
   us:
     address: 0x099A00A0
+    size: 332
   jp:
     address: 0x09954B28
+    size: 332
   eu:
     address: 0x099AB844
-- name: gUnk_099A00B6
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [8, 16, 5]
-  us:
-    address: 0x099A00B6
-  jp:
-    address: 0x09954B3E
-  eu:
-    address: 0x099AB85A
-- name: gUnk_099A00CC
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [9, 16, 5]
-  us:
-    address: 0x099A00CC
-  jp:
-    address: 0x09954B54
-  eu:
-    address: 0x099AB870
-- name: gUnk_099A00E2
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [10, 16, 5]
-  us:
-    address: 0x099A00E2
-  jp:
-    address: 0x09954B6A
-  eu:
-    address: 0x099AB886
-- name: gUnk_099A00F8
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  us:
-    address: 0x099A00F8
-  jp:
-    address: 0x09954B80
-  eu:
-    address: 0x099AB89C
-- name: gUnk_099A0116
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0116
-  jp:
-    address: 0x09954B9E
-  eu:
-    address: 0x099AB8BA
-- name: gUnk_099A0120
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x099A0120
-  jp:
-    address: 0x09954BA8
-  eu:
-    address: 0x099AB8C4
-- name: gUnk_099A0126
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  us:
-    address: 0x099A0126
-  jp:
-    address: 0x09954BAE
-  eu:
-    address: 0x099AB8CA
-- name: gUnk_099A012C
-  format: tiles4
-  width: 2
-  us:
-    address: 0x099A012C
-    size: 192
-  jp:
-    address: 0x09954BB4
-    size: 192
-  eu:
-    address: 0x099AB8D0
-    size: 192
-- name: gUnk_099A01EC
-  record: Sprite
+    size: 332
+- name: gUnk_099A0206
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
-  - [232, 8, 16]
+  cell: [32, 40]
+  anchor: [16, 24]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A01EC
+    pieces:
+    - [32x32, -16, -16]
+    - [8x8, 8, -24]
+  animations:
+  - symbol: gUnk_099A01FC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A01EC
+    size: 570
   jp:
     address: 0x09954C74
+    size: 570
   eu:
     address: 0x099ACEF0
-- name: gUnk_099A01FC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A01FC
-  jp:
-    address: 0x09954C84
-  eu:
-    address: 0x099ACF00
-- name: gUnk_099A0206
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A0206
-    size: 544
-  jp:
-    address: 0x09954C8E
-    size: 544
-  eu:
-    address: 0x099ACF0A
-    size: 544
-- name: gUnk_099A0428
-  record: Sprite
+    size: 570
+- name: gUnk_099A0442
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
-  - [233, 511, 16]
+  cell: [32, 39]
+  anchor: [16, 23]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A0428
+    pieces:
+    - [32x32, -16, -16]
+    - [8x8, -1, -23, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A0438
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A0428
+    size: 570
   jp:
     address: 0x09954EB0
+    size: 570
   eu:
     address: 0x099AD12C
-- name: gUnk_099A0438
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0438
-  jp:
-    address: 0x09954EC0
-  eu:
-    address: 0x099AD13C
-- name: gUnk_099A0442
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A0442
-    size: 544
-  jp:
-    address: 0x09954ECA
-    size: 544
-  eu:
-    address: 0x099AD146
-    size: 544
-- name: gUnk_099A0664
-  record: Sprite
+    size: 570
+- name: gUnk_099A067E
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
-  - [15, 504, 16]
+  cell: [32, 39]
+  anchor: [16, 16]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A0664
+    pieces:
+    - [32x32, -16, -16]
+    - [8x8, -8, 15, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A0674
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A0664
+    size: 570
   jp:
     address: 0x099550EC
+    size: 570
   eu:
     address: 0x099AD368
-- name: gUnk_099A0674
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0674
-  jp:
-    address: 0x099550FC
-  eu:
-    address: 0x099AD378
-- name: gUnk_099A067E
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A067E
-    size: 544
-  jp:
-    address: 0x09955106
-    size: 544
-  eu:
-    address: 0x099AD382
-    size: 544
-- name: gUnk_099A08A0
-  record: Sprite
+    size: 570
+- name: gUnk_099A08BA
+  format: sprite_sheet
   align: 4
-  oam:
-  - [238, 33264, 0]
-  - [16398, 16880, 16]
+  cell: [32, 40]
+  anchor: [16, 18]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A08A0
+    pieces:
+    - [32x32, -16, -18]
+    - [32x8, -16, 14]
+  animations:
+  - symbol: gUnk_099A08B0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A08A0
+    size: 666
   jp:
     address: 0x09955328
+    size: 666
   eu:
     address: 0x099AD5A4
-- name: gUnk_099A08B0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A08B0
-  jp:
-    address: 0x09955338
-  eu:
-    address: 0x099AD5B4
-- name: gUnk_099A08BA
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A08BA
-    size: 640
-  jp:
-    address: 0x09955342
-    size: 640
-  eu:
-    address: 0x099AD5BE
-    size: 640
-- name: gUnk_099A0B3C
-  record: Sprite
+    size: 666
+- name: gUnk_099A0B5C
+  format: sprite_sheet
   align: 4
-  oam:
-  - [33004, 33268, 0]
-  - [33006, 32771, 8]
-  - [16395, 500, 16]
+  cell: [31, 39]
+  anchor: [12, 20]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A0B3C
+    pieces:
+    - [16x32, -12, -20]
+    - [16x32, 3, -18, {layer: 1}]
+    - [16x8, -12, 11, {layer: 2}]
+  animations:
+  - symbol: gUnk_099A0B52
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A0B3C
+    size: 608
   jp:
     address: 0x099555C4
+    size: 608
   eu:
     address: 0x099AD840
-- name: gUnk_099A0B52
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0B52
-  jp:
-    address: 0x099555DA
-  eu:
-    address: 0x099AD856
-- name: gUnk_099A0B5C
-  format: tiles4
-  width: 2
-  us:
-    address: 0x099A0B5C
-    size: 576
-  jp:
-    address: 0x099555E4
-    size: 576
-  eu:
-    address: 0x099AD860
-    size: 576
-- name: gUnk_099A0D9C
-  record: Sprite
+    size: 608
+- name: gUnk_099A0DBC
+  format: sprite_sheet
   align: 4
+  cell: [48, 24]
+  anchor: [20, 17]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A0D9C
+    pieces:
+    - [32x16, -20, -9]
+    - [16x16, 12, -9]
+    - [8x8, -13, -16, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A0DB2
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A0D9C
-    oam:
-    - [16631, 33260, 0]
-    - [247, 16396, 8]
-    - [240, 499, 12]
+    size: 448
   jp:
     address: 0x09955824
-    oam:
-    - [16631, 33260, 0]
-    - [247, 16396, 8]
-    - [240, 499, 12]
+    size: 448
   eu:
     address: 0x099ADAA0
-    oam:
-    - [16630, 33260, 0]
-    - [246, 16396, 8]
-    - [239, 499, 12]
-- name: gUnk_099A0DB2
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0DB2
-  jp:
-    address: 0x0995583A
-  eu:
-    address: 0x099ADAB6
-- name: gUnk_099A0DBC
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A0DBC
-    size: 416
-  jp:
-    address: 0x09955844
-    size: 416
-  eu:
-    address: 0x099ADAC0
-    size: 416
-- name: gUnk_099A0F5C
-  record: Sprite
+    size: 448
+    frames:
+    - symbol: gUnk_099A0D9C
+      pieces:
+      - [32x16, -20, -10]
+      - [16x16, 12, -10]
+      - [8x8, -13, -17, {layer: 1}]
+- name: gUnk_099A0F70
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
+  cell: [32, 32]
+  anchor: [16, 16]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A0F5C
+    pieces:
+    - [32x32, -16, -16]
+  animations:
+  - symbol: gUnk_099A0F66
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A0F5C
+    size: 532
   jp:
     address: 0x099559E4
+    size: 532
   eu:
     address: 0x099ADC60
-- name: gUnk_099A0F66
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A0F66
-  jp:
-    address: 0x099559EE
-  eu:
-    address: 0x099ADC6A
-- name: gUnk_099A0F70
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A0F70
-    size: 512
-  jp:
-    address: 0x099559F8
-    size: 512
-  eu:
-    address: 0x099ADC74
-    size: 512
-- name: gUnk_099A1170
-  record: Sprite
+    size: 532
+- name: gUnk_099A118A
+  format: sprite_sheet
   align: 4
-  oam:
-  - [238, 33264, 0]
-  - [13, 511, 16]
+  cell: [32, 39]
+  anchor: [16, 18]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A1170
+    pieces:
+    - [32x32, -16, -18]
+    - [8x8, -1, 13, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A1180
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A1170
+    size: 570
   jp:
     address: 0x09955BF8
+    size: 570
   eu:
     address: 0x099ADE74
-- name: gUnk_099A1180
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A1180
-  jp:
-    address: 0x09955C08
-  eu:
-    address: 0x099ADE84
-- name: gUnk_099A118A
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A118A
-    size: 544
-  jp:
-    address: 0x09955C12
-    size: 544
-  eu:
-    address: 0x099ADE8E
-    size: 544
-- name: gUnk_099A13AC
-  record: Sprite
+    size: 570
+- name: gUnk_099A13CC
+  format: sprite_sheet
   align: 4
-  oam:
-  - [33002, 33264, 0]
-  - [9, 504, 8]
-  - [33010, 33279, 9]
+  cell: [31, 40]
+  anchor: [16, 22]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A13AC
+    pieces:
+    - [16x32, -16, -22, {layer: 1}]
+    - [8x8, -8, 9, {layer: 2}]
+    - [16x32, -1, -14, {layer: 3}]
+  animations:
+  - symbol: gUnk_099A13C2
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A13AC
+    size: 576
   jp:
     address: 0x09955E34
+    size: 576
   eu:
     address: 0x099AE0B0
-- name: gUnk_099A13C2
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A13C2
-  jp:
-    address: 0x09955E4A
-  eu:
-    address: 0x099AE0C6
-- name: gUnk_099A13CC
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A13CC
-    size: 544
-  jp:
-    address: 0x09955E54
-    size: 544
-  eu:
-    address: 0x099AE0D0
-    size: 544
-- name: gUnk_099A15EC
-  record: Sprite
+    size: 576
+- name: gUnk_099A1600
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
+  cell: [32, 32]
+  anchor: [16, 16]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A15EC
+    pieces:
+    - [32x32, -16, -16]
+  animations:
+  - symbol: gUnk_099A15F6
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A15EC
+    size: 532
   jp:
     address: 0x09956074
+    size: 532
   eu:
     address: 0x099AE2F0
-- name: gUnk_099A15F6
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A15F6
-  jp:
-    address: 0x0995607E
-  eu:
-    address: 0x099AE2FA
-- name: gUnk_099A1600
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A1600
-    size: 512
-  jp:
-    address: 0x09956088
-    size: 512
-  eu:
-    address: 0x099AE304
-    size: 512
-- name: gUnk_099A1800
-  record: Sprite
+    size: 532
+- name: gUnk_099A181A
+  format: sprite_sheet
   align: 4
-  oam:
-  - [232, 33264, 0]
-  - [16391, 33264, 16]
+  cell: [32, 47]
+  anchor: [16, 24]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A1800
+    pieces:
+    - [32x32, -16, -24]
+    - [32x16, -16, 7, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A1810
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A1800
+    size: 794
   jp:
     address: 0x09956288
+    size: 794
   eu:
     address: 0x099AE504
-- name: gUnk_099A1810
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A1810
-  jp:
-    address: 0x09956298
-  eu:
-    address: 0x099AE514
-- name: gUnk_099A181A
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A181A
-    size: 768
-  jp:
-    address: 0x099562A2
-    size: 768
-  eu:
-    address: 0x099AE51E
-    size: 768
-- name: gUnk_099A1B1C
-  record: Sprite
+    size: 794
+- name: gUnk_099A1B30
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
+  cell: [32, 32]
+  anchor: [16, 16]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A1B1C
+    pieces:
+    - [32x32, -16, -16]
+  animations:
+  - symbol: gUnk_099A1B26
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A1B1C
+    size: 532
   jp:
     address: 0x099565A4
+    size: 532
   eu:
     address: 0x099AE820
-- name: gUnk_099A1B26
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A1B26
-  jp:
-    address: 0x099565AE
-  eu:
-    address: 0x099AE82A
-- name: gUnk_099A1B30
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A1B30
-    size: 512
-  jp:
-    address: 0x099565B8
-    size: 512
-  eu:
-    address: 0x099AE834
-    size: 512
-- name: gUnk_099A1D30
-  record: Sprite
+    size: 532
+- name: gUnk_099A1D44
+  format: sprite_sheet
   align: 4
-  oam:
-  - [240, 33264, 0]
+  cell: [32, 32]
+  anchor: [16, 16]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A1D30
+    pieces:
+    - [32x32, -16, -16]
+  animations:
+  - symbol: gUnk_099A1D3A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A1D30
+    size: 532
   jp:
     address: 0x099567B8
+    size: 532
   eu:
     address: 0x099AEA34
-- name: gUnk_099A1D3A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A1D3A
-  jp:
-    address: 0x099567C2
-  eu:
-    address: 0x099AEA3E
-- name: gUnk_099A1D44
-  format: tiles4
-  width: 4
-  us:
-    address: 0x099A1D44
-    size: 512
-  jp:
-    address: 0x099567CC
-    size: 512
-  eu:
-    address: 0x099AEA48
-    size: 512
-- name: gUnkEu_099A31F4
-  record: Sprite
+    size: 532
+- name: gUnkEu_099A3220
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
-  - [32768, 112, 28]
+  cell: [120, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnkEu_099A31F4
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+    - [8x16, 112, 0]
+  animations:
+  - symbol: gUnkEu_099A3216
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A31F4
-- name: gUnkEu_099A3216
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A3216
-- name: gUnkEu_099A3220
-  format: tiles4
-  width: 1
-  eu:
-    address: 0x099A3220
-    size: 960
-- name: gUnkEu_099A35E0
-  record: Sprite
+    size: 1004
+- name: gUnkEu_099A360C
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
-  - [32768, 112, 28]
+  cell: [120, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnkEu_099A35E0
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+    - [8x16, 112, 0]
+  animations:
+  - symbol: gUnkEu_099A3602
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A35E0
-- name: gUnkEu_099A3602
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A3602
-- name: gUnkEu_099A360C
-  format: tiles4
-  width: 1
-  eu:
-    address: 0x099A360C
-    size: 960
-- name: gUnkEu_099A39CC
-  record: Sprite
+    size: 1004
+- name: gUnkEu_099A39F2
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [16384, 32864, 24]
+  cell: [128, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnkEu_099A39CC
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [32x16, 96, 0]
+  animations:
+  - symbol: gUnkEu_099A39E8
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A39CC
-- name: gUnkEu_099A39E8
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A39E8
-- name: gUnkEu_099A39F2
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099A39F2
-    size: 1024
-- name: gUnkEu_099A3DF4
-  record: Sprite
+    size: 1062
+- name: gUnkEu_099A3E1A
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [16384, 32864, 24]
+  cell: [128, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnkEu_099A3DF4
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [32x16, 96, 0]
+  animations:
+  - symbol: gUnkEu_099A3E10
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A3DF4
-- name: gUnkEu_099A3E10
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A3E10
-- name: gUnkEu_099A3E1A
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099A3E1A
-    size: 1024
-- name: gUnkEu_099A4C4C
-  record: Sprite
+    size: 1062
+- name: gUnkEu_099A4CDA
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
+  cell: [240, 16]
+  anchor: [112, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099A4C4C
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+  - symbol: gUnkEu_099A4C68
+    pieces:
+    - [32x8, -112, 0]
+    - [32x8, -80, 0]
+    - [32x8, -48, 0]
+    - [32x8, -16, 0]
+    - [32x8, 16, 0]
+    - [32x8, 48, 0]
+    - [32x8, 80, 0]
+    - [16x8, 112, 0]
+  - symbol: gUnkEu_099A4C9C
+    pieces:
+    - [32x8, -112, 0, {vflip: true}]
+    - [32x8, -80, 0, {vflip: true}]
+    - [32x8, -48, 0, {vflip: true}]
+    - [32x8, -16, 0, {vflip: true}]
+    - [32x8, 16, 0, {vflip: true}]
+    - [32x8, 48, 0, {vflip: true}]
+    - [32x8, 80, 0, {vflip: true}]
+    - [16x8, 112, 0, {vflip: true}]
+  animations:
+  - symbol: gUnkEu_099A4CD0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A4C4C
-- name: gUnkEu_099A4C68
-  record: Sprite
-  oam:
-  - [16384, 16784, 28]
-  - [16384, 16816, 28]
-  - [16384, 16848, 28]
-  - [16384, 16880, 28]
-  - [16384, 16400, 28]
-  - [16384, 16432, 28]
-  - [16384, 16464, 28]
-  - [16384, 112, 32]
-  eu:
-    address: 0x099A4C68
-- name: gUnkEu_099A4C9C
-  record: Sprite
-  oam:
-  - [16384, 24976, 28]
-  - [16384, 25008, 28]
-  - [16384, 25040, 28]
-  - [16384, 25072, 28]
-  - [16384, 24592, 28]
-  - [16384, 24624, 28]
-  - [16384, 24656, 28]
-  - [16384, 8304, 32]
-  eu:
-    address: 0x099A4C9C
-- name: gUnkEu_099A4CD0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A4CD0
-- name: gUnkEu_099A4CDA
-  format: tiles4
-  width: 1
-  eu:
-    address: 0x099A4CDA
-    size: 1088
-- name: gUnkEu_099A511C
-  record: Sprite
+    size: 1230
+- name: gUnkEu_099A51AA
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [32768, 96, 24]
+  cell: [240, 16]
+  anchor: [112, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099A511C
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [8x16, 96, 0]
+  - symbol: gUnkEu_099A5138
+    pieces:
+    - [32x8, -112, 0]
+    - [32x8, -80, 0]
+    - [32x8, -48, 0]
+    - [32x8, -16, 0]
+    - [32x8, 16, 0]
+    - [32x8, 48, 0]
+    - [32x8, 80, 0]
+    - [16x8, 112, 0]
+  - symbol: gUnkEu_099A516C
+    pieces:
+    - [32x8, -112, 0, {vflip: true}]
+    - [32x8, -80, 0, {vflip: true}]
+    - [32x8, -48, 0, {vflip: true}]
+    - [32x8, -16, 0, {vflip: true}]
+    - [32x8, 16, 0, {vflip: true}]
+    - [32x8, 48, 0, {vflip: true}]
+    - [32x8, 80, 0, {vflip: true}]
+    - [16x8, 112, 0, {vflip: true}]
+  animations:
+  - symbol: gUnkEu_099A51A0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A511C
-- name: gUnkEu_099A5138
-  record: Sprite
-  oam:
-  - [16384, 16784, 26]
-  - [16384, 16816, 26]
-  - [16384, 16848, 26]
-  - [16384, 16880, 26]
-  - [16384, 16400, 26]
-  - [16384, 16432, 26]
-  - [16384, 16464, 26]
-  - [16384, 112, 30]
-  eu:
-    address: 0x099A5138
-- name: gUnkEu_099A516C
-  record: Sprite
-  oam:
-  - [16384, 24976, 26]
-  - [16384, 25008, 26]
-  - [16384, 25040, 26]
-  - [16384, 25072, 26]
-  - [16384, 24592, 26]
-  - [16384, 24624, 26]
-  - [16384, 24656, 26]
-  - [16384, 8304, 30]
-  eu:
-    address: 0x099A516C
-- name: gUnkEu_099A51A0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A51A0
-- name: gUnkEu_099A51AA
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099A51AA
-    size: 1024
-- name: gUnkEu_099A55AC
-  record: Sprite
+    size: 1166
+- name: gUnkEu_099A563A
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [32768, 96, 24]
+  cell: [240, 16]
+  anchor: [112, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099A55AC
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [8x16, 96, 0]
+  - symbol: gUnkEu_099A55C8
+    pieces:
+    - [32x8, -112, 0]
+    - [32x8, -80, 0]
+    - [32x8, -48, 0]
+    - [32x8, -16, 0]
+    - [32x8, 16, 0]
+    - [32x8, 48, 0]
+    - [32x8, 80, 0]
+    - [16x8, 112, 0]
+  - symbol: gUnkEu_099A55FC
+    pieces:
+    - [32x8, -112, 0, {vflip: true}]
+    - [32x8, -80, 0, {vflip: true}]
+    - [32x8, -48, 0, {vflip: true}]
+    - [32x8, -16, 0, {vflip: true}]
+    - [32x8, 16, 0, {vflip: true}]
+    - [32x8, 48, 0, {vflip: true}]
+    - [32x8, 80, 0, {vflip: true}]
+    - [16x8, 112, 0, {vflip: true}]
+  animations:
+  - symbol: gUnkEu_099A5630
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A55AC
-- name: gUnkEu_099A55C8
-  record: Sprite
-  oam:
-  - [16384, 16784, 26]
-  - [16384, 16816, 26]
-  - [16384, 16848, 26]
-  - [16384, 16880, 26]
-  - [16384, 16400, 26]
-  - [16384, 16432, 26]
-  - [16384, 16464, 26]
-  - [16384, 112, 30]
-  eu:
-    address: 0x099A55C8
-- name: gUnkEu_099A55FC
-  record: Sprite
-  oam:
-  - [16384, 24976, 26]
-  - [16384, 25008, 26]
-  - [16384, 25040, 26]
-  - [16384, 25072, 26]
-  - [16384, 24592, 26]
-  - [16384, 24624, 26]
-  - [16384, 24656, 26]
-  - [16384, 8304, 30]
-  eu:
-    address: 0x099A55FC
-- name: gUnkEu_099A5630
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A5630
-- name: gUnkEu_099A563A
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099A563A
-    size: 1024
-- name: gUnkEu_099A5A3C
-  record: Sprite
+    size: 1166
+- name: gUnkEu_099A5ACA
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
+  cell: [240, 16]
+  anchor: [112, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099A5A3C
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+  - symbol: gUnkEu_099A5A58
+    pieces:
+    - [32x8, -112, 0]
+    - [32x8, -80, 0]
+    - [32x8, -48, 0]
+    - [32x8, -16, 0]
+    - [32x8, 16, 0]
+    - [32x8, 48, 0]
+    - [32x8, 80, 0]
+    - [16x8, 112, 0]
+  - symbol: gUnkEu_099A5A8C
+    pieces:
+    - [32x8, -112, 0, {vflip: true}]
+    - [32x8, -80, 0, {vflip: true}]
+    - [32x8, -48, 0, {vflip: true}]
+    - [32x8, -16, 0, {vflip: true}]
+    - [32x8, 16, 0, {vflip: true}]
+    - [32x8, 48, 0, {vflip: true}]
+    - [32x8, 80, 0, {vflip: true}]
+    - [16x8, 112, 0, {vflip: true}]
+  animations:
+  - symbol: gUnkEu_099A5AC0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099A5A3C
-- name: gUnkEu_099A5A58
-  record: Sprite
-  oam:
-  - [16384, 16784, 28]
-  - [16384, 16816, 28]
-  - [16384, 16848, 28]
-  - [16384, 16880, 28]
-  - [16384, 16400, 28]
-  - [16384, 16432, 28]
-  - [16384, 16464, 28]
-  - [16384, 112, 32]
-  eu:
-    address: 0x099A5A58
-- name: gUnkEu_099A5A8C
-  record: Sprite
-  oam:
-  - [16384, 24976, 28]
-  - [16384, 25008, 28]
-  - [16384, 25040, 28]
-  - [16384, 25072, 28]
-  - [16384, 24592, 28]
-  - [16384, 24624, 28]
-  - [16384, 24656, 28]
-  - [16384, 8304, 32]
-  eu:
-    address: 0x099A5A8C
-- name: gUnkEu_099A5AC0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A5AC0
-- name: gUnkEu_099A5ACA
-  format: tiles4
-  width: 1
-  eu:
-    address: 0x099A5ACA
-    size: 1088
-- name: gUnkEu_099A6B50
-  record: Sprite
+    size: 1230
+- name: gUnkEu_099A6CCE
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [8, 16, 5]
+  cell: [240, 27]
+  anchor: [128, 0]
+  columns: 8
+  frames:
+  - symbol: gUnkEu_099A6B50
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 8]
+  - symbol: gUnkEu_099A6B66
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 9]
+  - symbol: gUnkEu_099A6B7C
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 10]
+  - symbol: gUnkEu_099A6B92
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 11]
+  - symbol: gUnkEu_099A6BA8
+    pieces:
+    - [8x8, 0, 0]
+  - symbol: gUnkEu_099A6BB2
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099A6BC8
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0, {fresh: true}]
+    - [32x8, -64, 0, {fresh: true}]
+    - [32x8, -32, 0, {fresh: true}]
+    - [32x8, 0, 0, {fresh: true}]
+    - [32x8, 32, 0, {fresh: true}]
+    - [32x8, 64, 0, {fresh: true}]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099A6BFC
+    pieces:
+    - [32x8, -40, 0]
+    - [32x8, -8, 0, {fresh: true}]
+    - [32x8, 24, 0, {fresh: true}]
+    - [32x8, 56, 0, {fresh: true}]
+    - [16x8, 88, 0]
+    - [8x8, 104, 0]
+  - symbol: gUnkEu_099A6C24
+    pieces:
+    - [16x16, 8, 0, {hflip: true}]
+    - [8x16, 0, 0, {hflip: true}]
+    - [16x8, 1, 16, {hflip: true}]
+  - symbol: gUnkEu_099A6C3A
+    pieces:
+    - [16x16, 9, 0, {hflip: true}]
+    - [8x16, 1, 0, {hflip: true}]
+    - [16x8, 2, 16, {hflip: true}]
+  - symbol: gUnkEu_099A6C50
+    pieces:
+    - [16x16, 10, 0, {hflip: true}]
+    - [8x16, 2, 0, {hflip: true}]
+    - [16x8, 3, 16, {hflip: true}]
+  - symbol: gUnkEu_099A6C66
+    pieces:
+    - [16x16, 11, 0, {hflip: true}]
+    - [8x16, 3, 0, {hflip: true}]
+    - [16x8, 4, 16, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099A6C7C
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnkEu_099A6C9A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnkEu_099A6CA4
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A6CAA
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A6CB0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[8, 4], [9, 3], [10, 3], [11, 4], [10, 3], [9, 3]]
   eu:
     address: 0x099A6B50
-- name: gUnkEu_099A6B66
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [9, 16, 5]
-  eu:
-    address: 0x099A6B66
-- name: gUnkEu_099A6B7C
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [10, 16, 5]
-  eu:
-    address: 0x099A6B7C
-- name: gUnkEu_099A6B92
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [11, 16, 5]
-  eu:
-    address: 0x099A6B92
-- name: gUnkEu_099A6BA8
-  record: Sprite
-  oam:
-  - [0, 0, 6]
-  eu:
-    address: 0x099A6BA8
-- name: gUnkEu_099A6BB2
-  record: Sprite
-  oam:
-  - [16384, 32768, 7]
-  - [16384, 32800, 15]
-  - [16384, 32832, 23]
-  eu:
-    address: 0x099A6BB2
-- name: gUnkEu_099A6BC8
-  record: Sprite
-  oam:
-  - [16384, 16768, 31]
-  - [16384, 16800, 35]
-  - [16384, 16832, 39]
-  - [16384, 16864, 43]
-  - [16384, 16384, 47]
-  - [16384, 16416, 51]
-  - [16384, 16448, 55]
-  - [16384, 96, 59]
-  eu:
-    address: 0x099A6BC8
-- name: gUnkEu_099A6BFC
-  record: Sprite
-  oam:
-  - [16384, 16856, 61]
-  - [16384, 16888, 65]
-  - [16384, 16408, 69]
-  - [16384, 16440, 73]
-  - [16384, 88, 77]
-  - [0, 104, 79]
-  eu:
-    address: 0x099A6BFC
-- name: gUnkEu_099A6C24
-  record: Sprite
-  oam:
-  - [0, 20488, 80]
-  - [32768, 4096, 84]
-  - [16400, 4097, 86]
-  eu:
-    address: 0x099A6C24
-- name: gUnkEu_099A6C3A
-  record: Sprite
-  oam:
-  - [0, 20489, 80]
-  - [32768, 4097, 84]
-  - [16400, 4098, 86]
-  eu:
-    address: 0x099A6C3A
-- name: gUnkEu_099A6C50
-  record: Sprite
-  oam:
-  - [0, 20490, 80]
-  - [32768, 4098, 84]
-  - [16400, 4099, 86]
-  eu:
-    address: 0x099A6C50
-- name: gUnkEu_099A6C66
-  record: Sprite
-  oam:
-  - [0, 20491, 80]
-  - [32768, 4099, 84]
-  - [16400, 4100, 86]
-  eu:
-    address: 0x099A6C66
-- name: gUnkEu_099A6C7C
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  eu:
-    address: 0x099A6C7C
-- name: gUnkEu_099A6C9A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A6C9A
-- name: gUnkEu_099A6CA4
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A6CA4
-- name: gUnkEu_099A6CAA
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A6CAA
-- name: gUnkEu_099A6CB0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [8, 4]
-  - [9, 3]
-  - [10, 3]
-  - [11, 4]
-  - [10, 3]
-  - [9, 3]
-  eu:
-    address: 0x099A6CB0
-- name: gUnkEu_099A6CCE
-  format: tiles4
-  width: 2
-  eu:
-    address: 0x099A6CCE
-    size: 2816
-- name: gUnkEu_099A77D0
-  record: Sprite
+    size: 3198
+- name: gUnkEu_099A794E
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [8, 16, 5]
+  cell: [240, 27]
+  anchor: [128, 0]
+  columns: 8
+  frames:
+  - symbol: gUnkEu_099A77D0
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 8]
+  - symbol: gUnkEu_099A77E6
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 9]
+  - symbol: gUnkEu_099A77FC
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 10]
+  - symbol: gUnkEu_099A7812
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 11]
+  - symbol: gUnkEu_099A7828
+    pieces:
+    - [8x8, 0, 0]
+  - symbol: gUnkEu_099A7832
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099A7848
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0, {fresh: true}]
+    - [32x8, -64, 0, {fresh: true}]
+    - [32x8, -32, 0, {fresh: true}]
+    - [32x8, 0, 0, {fresh: true}]
+    - [32x8, 32, 0, {fresh: true}]
+    - [32x8, 64, 0, {fresh: true}]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099A787C
+    pieces:
+    - [32x8, -40, 0]
+    - [32x8, -8, 0, {fresh: true}]
+    - [32x8, 24, 0, {fresh: true}]
+    - [32x8, 56, 0, {fresh: true}]
+    - [16x8, 88, 0]
+    - [8x8, 104, 0]
+  - symbol: gUnkEu_099A78A4
+    pieces:
+    - [16x16, 8, 0, {hflip: true}]
+    - [8x16, 0, 0, {hflip: true}]
+    - [16x8, 1, 16, {hflip: true}]
+  - symbol: gUnkEu_099A78BA
+    pieces:
+    - [16x16, 9, 0, {hflip: true}]
+    - [8x16, 1, 0, {hflip: true}]
+    - [16x8, 2, 16, {hflip: true}]
+  - symbol: gUnkEu_099A78D0
+    pieces:
+    - [16x16, 10, 0, {hflip: true}]
+    - [8x16, 2, 0, {hflip: true}]
+    - [16x8, 3, 16, {hflip: true}]
+  - symbol: gUnkEu_099A78E6
+    pieces:
+    - [16x16, 11, 0, {hflip: true}]
+    - [8x16, 3, 0, {hflip: true}]
+    - [16x8, 4, 16, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099A78FC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnkEu_099A791A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnkEu_099A7924
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A792A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A7930
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[8, 4], [9, 3], [10, 3], [11, 4], [10, 3], [9, 3]]
   eu:
     address: 0x099A77D0
-- name: gUnkEu_099A77E6
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [9, 16, 5]
-  eu:
-    address: 0x099A77E6
-- name: gUnkEu_099A77FC
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [10, 16, 5]
-  eu:
-    address: 0x099A77FC
-- name: gUnkEu_099A7812
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [11, 16, 5]
-  eu:
-    address: 0x099A7812
-- name: gUnkEu_099A7828
-  record: Sprite
-  oam:
-  - [0, 0, 6]
-  eu:
-    address: 0x099A7828
-- name: gUnkEu_099A7832
-  record: Sprite
-  oam:
-  - [16384, 32768, 7]
-  - [16384, 32800, 15]
-  - [16384, 32832, 23]
-  eu:
-    address: 0x099A7832
-- name: gUnkEu_099A7848
-  record: Sprite
-  oam:
-  - [16384, 16768, 31]
-  - [16384, 16800, 35]
-  - [16384, 16832, 39]
-  - [16384, 16864, 43]
-  - [16384, 16384, 47]
-  - [16384, 16416, 51]
-  - [16384, 16448, 55]
-  - [16384, 96, 59]
-  eu:
-    address: 0x099A7848
-- name: gUnkEu_099A787C
-  record: Sprite
-  oam:
-  - [16384, 16856, 61]
-  - [16384, 16888, 65]
-  - [16384, 16408, 69]
-  - [16384, 16440, 73]
-  - [16384, 88, 77]
-  - [0, 104, 79]
-  eu:
-    address: 0x099A787C
-- name: gUnkEu_099A78A4
-  record: Sprite
-  oam:
-  - [0, 20488, 80]
-  - [32768, 4096, 84]
-  - [16400, 4097, 86]
-  eu:
-    address: 0x099A78A4
-- name: gUnkEu_099A78BA
-  record: Sprite
-  oam:
-  - [0, 20489, 80]
-  - [32768, 4097, 84]
-  - [16400, 4098, 86]
-  eu:
-    address: 0x099A78BA
-- name: gUnkEu_099A78D0
-  record: Sprite
-  oam:
-  - [0, 20490, 80]
-  - [32768, 4098, 84]
-  - [16400, 4099, 86]
-  eu:
-    address: 0x099A78D0
-- name: gUnkEu_099A78E6
-  record: Sprite
-  oam:
-  - [0, 20491, 80]
-  - [32768, 4099, 84]
-  - [16400, 4100, 86]
-  eu:
-    address: 0x099A78E6
-- name: gUnkEu_099A78FC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  eu:
-    address: 0x099A78FC
-- name: gUnkEu_099A791A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A791A
-- name: gUnkEu_099A7924
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A7924
-- name: gUnkEu_099A792A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A792A
-- name: gUnkEu_099A7930
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [8, 4]
-  - [9, 3]
-  - [10, 3]
-  - [11, 4]
-  - [10, 3]
-  - [9, 3]
-  eu:
-    address: 0x099A7930
-- name: gUnkEu_099A794E
-  format: tiles4
-  width: 2
-  eu:
-    address: 0x099A794E
-    size: 2816
+    size: 3198
 - name: gUnk_099A7C98
   record: Sprite
   align: 4
@@ -4739,15 +3728,98 @@ entries:
     address: 0x0995CE88
   eu:
     address: 0x099B6384
-- name: gUnkEu_099A8450
-  record: Sprite
+- name: gUnkEu_099A85CE
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [8, 16, 5]
+  cell: [240, 27]
+  anchor: [128, 0]
+  columns: 8
+  frames:
+  - symbol: gUnkEu_099A8450
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 8]
+  - symbol: gUnkEu_099A8466
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 9]
+  - symbol: gUnkEu_099A847C
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 10]
+  - symbol: gUnkEu_099A8492
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 11]
+  - symbol: gUnkEu_099A84A8
+    pieces:
+    - [8x8, 0, 0]
+  - symbol: gUnkEu_099A84B2
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099A84C8
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0, {fresh: true}]
+    - [32x8, -64, 0, {fresh: true}]
+    - [32x8, -32, 0, {fresh: true}]
+    - [32x8, 0, 0, {fresh: true}]
+    - [32x8, 32, 0, {fresh: true}]
+    - [32x8, 64, 0, {fresh: true}]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099A84FC
+    pieces:
+    - [32x8, -40, 0]
+    - [32x8, -8, 0, {fresh: true}]
+    - [32x8, 24, 0, {fresh: true}]
+    - [32x8, 56, 0, {fresh: true}]
+    - [16x8, 88, 0]
+    - [8x8, 104, 0]
+  - symbol: gUnkEu_099A8524
+    pieces:
+    - [16x16, 8, 0, {hflip: true}]
+    - [8x16, 0, 0, {hflip: true}]
+    - [16x8, 1, 16, {hflip: true}]
+  - symbol: gUnkEu_099A853A
+    pieces:
+    - [16x16, 9, 0, {hflip: true}]
+    - [8x16, 1, 0, {hflip: true}]
+    - [16x8, 2, 16, {hflip: true}]
+  - symbol: gUnkEu_099A8550
+    pieces:
+    - [16x16, 10, 0, {hflip: true}]
+    - [8x16, 2, 0, {hflip: true}]
+    - [16x8, 3, 16, {hflip: true}]
+  - symbol: gUnkEu_099A8566
+    pieces:
+    - [16x16, 11, 0, {hflip: true}]
+    - [8x16, 3, 0, {hflip: true}]
+    - [16x8, 4, 16, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099A857C
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnkEu_099A859A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnkEu_099A85A4
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A85AA
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A85B0
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[8, 4], [9, 3], [10, 3], [11, 4], [10, 3], [9, 3]]
   eu:
     address: 0x099A8450
+    size: 3198
 - name: gUnk_099A845E
   record: AnimHeader
   fields:
@@ -4761,14 +3833,6 @@ entries:
     address: 0x0995CEE6
   eu:
     address: 0x099B63E2
-- name: gUnkEu_099A8466
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [9, 16, 5]
-  eu:
-    address: 0x099A8466
 - name: gUnk_099A8468
   record: Sprite
   align: 4
@@ -4792,36 +3856,6 @@ entries:
     address: 0x0995CEF0
   eu:
     address: 0x099B63EC
-- name: gUnkEu_099A847C
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [10, 16, 5]
-  eu:
-    address: 0x099A847C
-- name: gUnkEu_099A8492
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [11, 16, 5]
-  eu:
-    address: 0x099A8492
-- name: gUnkEu_099A84A8
-  record: Sprite
-  oam:
-  - [0, 0, 6]
-  eu:
-    address: 0x099A84A8
-- name: gUnkEu_099A84B2
-  record: Sprite
-  oam:
-  - [16384, 32768, 7]
-  - [16384, 32800, 15]
-  - [16384, 32832, 23]
-  eu:
-    address: 0x099A84B2
 - name: gUnk_099A84BA
   record: AnimHeader
   fields:
@@ -4862,38 +3896,6 @@ entries:
     address: 0x0995CF4C
   eu:
     address: 0x099B6448
-- name: gUnkEu_099A84C8
-  record: Sprite
-  oam:
-  - [16384, 16768, 31]
-  - [16384, 16800, 35]
-  - [16384, 16832, 39]
-  - [16384, 16864, 43]
-  - [16384, 16384, 47]
-  - [16384, 16416, 51]
-  - [16384, 16448, 55]
-  - [16384, 96, 59]
-  eu:
-    address: 0x099A84C8
-- name: gUnkEu_099A84FC
-  record: Sprite
-  oam:
-  - [16384, 16856, 61]
-  - [16384, 16888, 65]
-  - [16384, 16408, 69]
-  - [16384, 16440, 73]
-  - [16384, 88, 77]
-  - [0, 104, 79]
-  eu:
-    address: 0x099A84FC
-- name: gUnkEu_099A8524
-  record: Sprite
-  oam:
-  - [0, 20488, 80]
-  - [32768, 4096, 84]
-  - [16400, 4097, 86]
-  eu:
-    address: 0x099A8524
 - name: gUnk_099A852E
   record: AnimHeader
   fields:
@@ -4929,44 +3931,6 @@ entries:
     address: 0x0995CFC0
   eu:
     address: 0x099B64BC
-- name: gUnkEu_099A853A
-  record: Sprite
-  oam:
-  - [0, 20489, 80]
-  - [32768, 4097, 84]
-  - [16400, 4098, 86]
-  eu:
-    address: 0x099A853A
-- name: gUnkEu_099A8550
-  record: Sprite
-  oam:
-  - [0, 20490, 80]
-  - [32768, 4098, 84]
-  - [16400, 4099, 86]
-  eu:
-    address: 0x099A8550
-- name: gUnkEu_099A8566
-  record: Sprite
-  oam:
-  - [0, 20491, 80]
-  - [32768, 4099, 84]
-  - [16400, 4100, 86]
-  eu:
-    address: 0x099A8566
-- name: gUnkEu_099A857C
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  eu:
-    address: 0x099A857C
 - name: gUnk_099A8584
   record: AnimHeader
   fields:
@@ -5006,51 +3970,6 @@ entries:
     address: 0x0995D018
   eu:
     address: 0x099B6514
-- name: gUnkEu_099A859A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A859A
-- name: gUnkEu_099A85A4
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A85A4
-- name: gUnkEu_099A85AA
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A85AA
-- name: gUnkEu_099A85B0
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [8, 4]
-  - [9, 3]
-  - [10, 3]
-  - [11, 4]
-  - [10, 3]
-  - [9, 3]
-  eu:
-    address: 0x099A85B0
-- name: gUnkEu_099A85CE
-  format: tiles4
-  width: 2
-  eu:
-    address: 0x099A85CE
-    size: 2816
 - name: gUnk_099A85F4
   record: AnimHeader
   fields:
@@ -5530,408 +4449,281 @@ entries:
     address: 0x0995D3FA
   eu:
     address: 0x099B68F6
-- name: gUnk_099A897C
-  record: Sprite
+- name: gRoomAssetUs_099A899C
+  format: sprite_sheet
   align: 4
-  oam:
-  - [231, 49620, 0]
-  - [16421, 500, 64]
-  - [33015, 32786, 66]
+  cell: [78, 70]
+  anchor: [44, 25]
+  columns: 1
+  frames:
+  - symbol: gUnk_099A897C
+    pieces:
+    - [64x64, -44, -25]
+    - [16x8, -12, 37, {layer: 1}]
+    - [16x32, 18, -9, {layer: 1}]
+  animations:
+  - symbol: gUnk_099A8992
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x099A897C
+    size: 2400
   jp:
     address: 0x0995D404
-  eu:
-    address: 0x099B6900
-- name: gUnk_099A8992
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x099A8992
-  jp:
-    address: 0x0995D41A
-  eu:
-    address: 0x099B6916
-- name: gRoomAssetUs_099A899C
-  format: tiles4
-  width: 1
-  us:
-    address: 0x099A899C
-    size: 2368
-  jp:
-    address: 0x0995D424
-    size: 2368
+    size: 2400
     symbol: gRoomAssetJp_0995D424
   eu:
-    address: 0x099B6920
-    size: 2368
+    address: 0x099B6900
+    size: 2400
     symbol: gRoomAssetEu_099B6920
-- name: gUnkEu_099A90D0
-  record: Sprite
+- name: gUnkEu_099A924E
+  format: sprite_sheet
   align: 4
-  oam:
-  - [0, 16384, 0]
-  - [16, 10, 4]
-  - [8, 16, 5]
+  cell: [240, 27]
+  anchor: [128, 0]
+  columns: 8
+  frames:
+  - symbol: gUnkEu_099A90D0
+    pieces:
+    - [16x16, 0, 0]
+    - [8x8, 10, 16]
+    - [8x8, 16, 8]
+  - symbol: gUnkEu_099A90E6
+    pieces:
+    - [16x16, 0, 1]
+    - [8x8, 10, 17]
+    - [8x8, 16, 9]
+  - symbol: gUnkEu_099A90FC
+    pieces:
+    - [16x16, 0, 2]
+    - [8x8, 10, 18]
+    - [8x8, 16, 10]
+  - symbol: gUnkEu_099A9112
+    pieces:
+    - [16x16, 0, 3]
+    - [8x8, 10, 19]
+    - [8x8, 16, 11]
+  - symbol: gUnkEu_099A9128
+    pieces:
+    - [8x8, 0, 0]
+  - symbol: gUnkEu_099A9132
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099A9148
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0, {fresh: true}]
+    - [32x8, -64, 0, {fresh: true}]
+    - [32x8, -32, 0, {fresh: true}]
+    - [32x8, 0, 0, {fresh: true}]
+    - [32x8, 32, 0, {fresh: true}]
+    - [32x8, 64, 0, {fresh: true}]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099A917C
+    pieces:
+    - [32x8, -40, 0]
+    - [32x8, -8, 0, {fresh: true}]
+    - [32x8, 24, 0, {fresh: true}]
+    - [32x8, 56, 0, {fresh: true}]
+    - [16x8, 88, 0]
+    - [8x8, 104, 0]
+  - symbol: gUnkEu_099A91A4
+    pieces:
+    - [16x16, 8, 0, {hflip: true}]
+    - [8x16, 0, 0, {hflip: true}]
+    - [16x8, 1, 16, {hflip: true}]
+  - symbol: gUnkEu_099A91BA
+    pieces:
+    - [16x16, 9, 0, {hflip: true}]
+    - [8x16, 1, 0, {hflip: true}]
+    - [16x8, 2, 16, {hflip: true}]
+  - symbol: gUnkEu_099A91D0
+    pieces:
+    - [16x16, 10, 0, {hflip: true}]
+    - [8x16, 2, 0, {hflip: true}]
+    - [16x8, 3, 16, {hflip: true}]
+  - symbol: gUnkEu_099A91E6
+    pieces:
+    - [16x16, 11, 0, {hflip: true}]
+    - [8x16, 3, 0, {hflip: true}]
+    - [16x8, 4, 16, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099A91FC
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4], [1, 3], [2, 3], [3, 4], [2, 3], [1, 3]]
+  - symbol: gUnkEu_099A921A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
+  - symbol: gUnkEu_099A9224
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A922A
+    fields: {unk_00: 64, unk_02: 64}
+    frames: []
+  - symbol: gUnkEu_099A9230
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[8, 4], [9, 3], [10, 3], [11, 4], [10, 3], [9, 3]]
   eu:
     address: 0x099A90D0
-- name: gUnkEu_099A90E6
-  record: Sprite
-  oam:
-  - [1, 16384, 0]
-  - [17, 10, 4]
-  - [9, 16, 5]
-  eu:
-    address: 0x099A90E6
-- name: gUnkEu_099A90FC
-  record: Sprite
-  oam:
-  - [2, 16384, 0]
-  - [18, 10, 4]
-  - [10, 16, 5]
-  eu:
-    address: 0x099A90FC
-- name: gUnkEu_099A9112
-  record: Sprite
-  oam:
-  - [3, 16384, 0]
-  - [19, 10, 4]
-  - [11, 16, 5]
-  eu:
-    address: 0x099A9112
-- name: gUnkEu_099A9128
-  record: Sprite
-  oam:
-  - [0, 0, 6]
-  eu:
-    address: 0x099A9128
-- name: gUnkEu_099A9132
-  record: Sprite
-  oam:
-  - [16384, 32768, 7]
-  - [16384, 32800, 15]
-  - [16384, 32832, 23]
-  eu:
-    address: 0x099A9132
-- name: gUnkEu_099A9148
-  record: Sprite
-  oam:
-  - [16384, 16768, 31]
-  - [16384, 16800, 35]
-  - [16384, 16832, 39]
-  - [16384, 16864, 43]
-  - [16384, 16384, 47]
-  - [16384, 16416, 51]
-  - [16384, 16448, 55]
-  - [16384, 96, 59]
-  eu:
-    address: 0x099A9148
-- name: gUnkEu_099A917C
-  record: Sprite
-  oam:
-  - [16384, 16856, 61]
-  - [16384, 16888, 65]
-  - [16384, 16408, 69]
-  - [16384, 16440, 73]
-  - [16384, 88, 77]
-  - [0, 104, 79]
-  eu:
-    address: 0x099A917C
-- name: gUnkEu_099A91A4
-  record: Sprite
-  oam:
-  - [0, 20488, 80]
-  - [32768, 4096, 84]
-  - [16400, 4097, 86]
-  eu:
-    address: 0x099A91A4
-- name: gUnkEu_099A91BA
-  record: Sprite
-  oam:
-  - [0, 20489, 80]
-  - [32768, 4097, 84]
-  - [16400, 4098, 86]
-  eu:
-    address: 0x099A91BA
-- name: gUnkEu_099A91D0
-  record: Sprite
-  oam:
-  - [0, 20490, 80]
-  - [32768, 4098, 84]
-  - [16400, 4099, 86]
-  eu:
-    address: 0x099A91D0
-- name: gUnkEu_099A91E6
-  record: Sprite
-  oam:
-  - [0, 20491, 80]
-  - [32768, 4099, 84]
-  - [16400, 4100, 86]
-  eu:
-    address: 0x099A91E6
-- name: gUnkEu_099A91FC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  - [1, 3]
-  - [2, 3]
-  - [3, 4]
-  - [2, 3]
-  - [1, 3]
-  eu:
-    address: 0x099A91FC
-- name: gUnkEu_099A921A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099A921A
-- name: gUnkEu_099A9224
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A9224
-- name: gUnkEu_099A922A
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames: []
-  eu:
-    address: 0x099A922A
-- name: gUnkEu_099A9230
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [8, 4]
-  - [9, 3]
-  - [10, 3]
-  - [11, 4]
-  - [10, 3]
-  - [9, 3]
-  eu:
-    address: 0x099A9230
-- name: gUnkEu_099A924E
-  format: tiles4
-  width: 2
-  eu:
-    address: 0x099A924E
-    size: 2816
-- name: gUnkEu_099AB990
-  record: Sprite
+    size: 3198
+- name: gUnkEu_099ABA18
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
+  cell: [240, 16]
+  anchor: [128, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099AB990
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099AB9A6
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099AB9DA
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099ABA0E
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099AB990
-- name: gUnkEu_099AB9A6
-  record: Sprite
-  oam:
-  - [16384, 16768, 24]
-  - [16384, 16800, 24]
-  - [16384, 16832, 24]
-  - [16384, 16864, 24]
-  - [16384, 16384, 24]
-  - [16384, 16416, 24]
-  - [16384, 16448, 24]
-  - [16384, 96, 28]
-  eu:
-    address: 0x099AB9A6
-- name: gUnkEu_099AB9DA
-  record: Sprite
-  oam:
-  - [16384, 16768, 30]
-  - [16384, 16800, 34]
-  - [16384, 16832, 34]
-  - [16384, 16864, 34]
-  - [16384, 16384, 34]
-  - [16384, 16416, 34]
-  - [16384, 16448, 34]
-  - [16384, 4192, 38]
-  eu:
-    address: 0x099AB9DA
-- name: gUnkEu_099ABA0E
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099ABA0E
-- name: gUnkEu_099ABA18
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099ABA18
-    size: 1280
-- name: gUnkEu_099ABF18
-  record: Sprite
+    size: 1416
+- name: gUnkEu_099ABFA0
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [32768, 64, 16]
+  cell: [240, 16]
+  anchor: [128, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099ABF18
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [8x16, 64, 0]
+  - symbol: gUnkEu_099ABF2E
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099ABF62
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099ABF96
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099ABF18
-- name: gUnkEu_099ABF2E
-  record: Sprite
-  oam:
-  - [16384, 16768, 18]
-  - [16384, 16800, 18]
-  - [16384, 16832, 18]
-  - [16384, 16864, 18]
-  - [16384, 16384, 18]
-  - [16384, 16416, 18]
-  - [16384, 16448, 18]
-  - [16384, 96, 22]
-  eu:
-    address: 0x099ABF2E
-- name: gUnkEu_099ABF62
-  record: Sprite
-  oam:
-  - [16384, 16768, 24]
-  - [16384, 16800, 28]
-  - [16384, 16832, 28]
-  - [16384, 16864, 28]
-  - [16384, 16384, 28]
-  - [16384, 16416, 28]
-  - [16384, 16448, 28]
-  - [16384, 4192, 32]
-  eu:
-    address: 0x099ABF62
-- name: gUnkEu_099ABF96
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099ABF96
-- name: gUnkEu_099ABFA0
-  format: tiles4
-  width: 1
-  eu:
-    address: 0x099ABFA0
-    size: 1088
-- name: gUnkEu_099AC3E0
-  record: Sprite
+    size: 1224
+- name: gUnkEu_099AC468
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
+  cell: [240, 16]
+  anchor: [128, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099AC3E0
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099AC3F6
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099AC42A
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099AC45E
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099AC3E0
-- name: gUnkEu_099AC3F6
-  record: Sprite
-  oam:
-  - [16384, 16768, 24]
-  - [16384, 16800, 24]
-  - [16384, 16832, 24]
-  - [16384, 16864, 24]
-  - [16384, 16384, 24]
-  - [16384, 16416, 24]
-  - [16384, 16448, 24]
-  - [16384, 96, 28]
-  eu:
-    address: 0x099AC3F6
-- name: gUnkEu_099AC42A
-  record: Sprite
-  oam:
-  - [16384, 16768, 30]
-  - [16384, 16800, 34]
-  - [16384, 16832, 34]
-  - [16384, 16864, 34]
-  - [16384, 16384, 34]
-  - [16384, 16416, 34]
-  - [16384, 16448, 34]
-  - [16384, 4192, 38]
-  eu:
-    address: 0x099AC42A
-- name: gUnkEu_099AC45E
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099AC45E
-- name: gUnkEu_099AC468
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099AC468
-    size: 1280
-- name: gUnkEu_099AC968
-  record: Sprite
+    size: 1416
+- name: gUnkEu_099AC9F0
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
+  cell: [240, 16]
+  anchor: [128, 0]
+  columns: 3
+  frames:
+  - symbol: gUnkEu_099AC968
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+  - symbol: gUnkEu_099AC97E
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0]
+  - symbol: gUnkEu_099AC9B2
+    pieces:
+    - [32x8, -128, 0]
+    - [32x8, -96, 0]
+    - [32x8, -64, 0]
+    - [32x8, -32, 0]
+    - [32x8, 0, 0]
+    - [32x8, 32, 0]
+    - [32x8, 64, 0]
+    - [16x8, 96, 0, {hflip: true}]
+  animations:
+  - symbol: gUnkEu_099AC9E6
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   eu:
     address: 0x099AC968
-- name: gUnkEu_099AC97E
-  record: Sprite
-  oam:
-  - [16384, 16768, 24]
-  - [16384, 16800, 24]
-  - [16384, 16832, 24]
-  - [16384, 16864, 24]
-  - [16384, 16384, 24]
-  - [16384, 16416, 24]
-  - [16384, 16448, 24]
-  - [16384, 96, 28]
-  eu:
-    address: 0x099AC97E
-- name: gUnkEu_099AC9B2
-  record: Sprite
-  oam:
-  - [16384, 16768, 30]
-  - [16384, 16800, 34]
-  - [16384, 16832, 34]
-  - [16384, 16864, 34]
-  - [16384, 16384, 34]
-  - [16384, 16416, 34]
-  - [16384, 16448, 34]
-  - [16384, 4192, 38]
-  eu:
-    address: 0x099AC9B2
-- name: gUnkEu_099AC9E6
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  eu:
-    address: 0x099AC9E6
-- name: gUnkEu_099AC9F0
-  format: tiles4
-  width: 4
-  eu:
-    address: 0x099AC9F0
-    size: 1280
+    size: 1416
 - name: gUnk_099FB53C
   format: tiles4
   width: 2
