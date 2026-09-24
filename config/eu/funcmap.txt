@@ -4563,7 +4563,7 @@ func_080FF19C	0x080ff19c	140	0x080fcdd4	body
 func_080FF228	0x080ff228	52	0x080fce60	match
 func_080FF25C	0x080ff25c	92	0x080fce94	match
 func_080FF2B8	0x080ff2b8	88	0x080fcf00	match
-func_080FF310	0x080ff310	32	0x080fd008	body
+WorldInspectReadMenuKeys	0x080ff310	32	0x080fd008	body
 func_080FF330	0x080ff330	1124	0x080fd028	match
 func_080FF794	0x080ff794	312	0x080fd47c	match
 func_080FF8CC	0x080ff8cc	832	0x080fd5b4	entry
@@ -4575,7 +4575,7 @@ func_0810057C	0x0810057c	140	0x080fe454	body
 func_08100608	0x08100608	52	0x080fe4e0	match
 func_0810063C	0x0810063c	52	0x080fe518	match
 func_08100670	0x08100670	28	0x080fe550	global
-WorldInspectReadMenuKeys	0x0810068c	32	0x080fe56c	body
+WorldWarpReadMenuKeys	0x0810068c	32	0x080fe56c	body
 func_081006AC	0x081006ac	724	0x080fe58c	xref
 func_08100980	0x08100980	764	0x080fe97c	xref
 mode_worldwarp_0	0x08100c7c	1664	0x080fed0c	named

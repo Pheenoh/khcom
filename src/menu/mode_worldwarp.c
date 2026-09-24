@@ -247,7 +247,7 @@ void func_08100670(s16 a, u8* b, void* c) {
     RequestDma3Copy(b + a * 256, c, 0x100);
 }
 
-u16 WorldInspectReadMenuKeys(void) {
+u16 WorldWarpReadMenuKeys(void) {
     s32 keys;
 
     keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -260,7 +260,7 @@ void func_081006AC(void) {
     u16 keys;
 
     prev = gUnk_020354E8;
-    keys = WorldInspectReadMenuKeys();
+    keys = WorldWarpReadMenuKeys();
 
     if (keys & A_BUTTON) {
         if (gUnk_020354E8 == gGameState.floor) {

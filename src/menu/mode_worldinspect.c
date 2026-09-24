@@ -399,7 +399,7 @@ void func_080FF2B8(s16 index) {
 
     RequestDma3Copy(src, (u8*)GetBgCharBase(0) + 32, 0x100);
 }
-s32 func_080FF310(void) {
+s32 WorldInspectReadMenuKeys(void) {
     s32 keys;
 
     keys = GetKeysPressed() & (A_BUTTON | B_BUTTON | SELECT_BUTTON | START_BUTTON);
@@ -412,7 +412,7 @@ void func_080FF330(void) {
     s16 i;
 
     old = gUnk_020350F8;
-    keys = func_080FF310();
+    keys = WorldInspectReadMenuKeys();
 
     if (keys & 1) {
         if (gUnk_02035100[gUnk_020350F8] != 0) {
@@ -540,7 +540,7 @@ void func_080FF794(void) {
     u16 keys;
     s32 i;
 
-    keys = func_080FF310();
+    keys = WorldInspectReadMenuKeys();
 
     if (keys & 10) {
         m4aSongNumStart(SONG_SYS_CLOSE);
