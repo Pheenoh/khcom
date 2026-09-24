@@ -1418,10 +1418,8 @@ void mode_ms_charge_2(void) {
     EwramFree(gMsCards);
 }
 
-const char gModeNameMsCharge[] = "mode_ms_charge";
-
 Mode gModeMsCharge = {
-    gModeNameMsCharge,
+    "mode_ms_charge",
     (ModeInitFunc)mode_ms_charge_0,
     mode_ms_charge_1,
     mode_ms_charge_2,

@@ -1026,10 +1026,8 @@ void mode_worldinspect_2(void) {
     EwramFree(gUnk_020354D4);
 }
 
-const char gModeNameWorldinspect[] = "mode_worldinspect";
-
 Mode gModeWorldinspect = {
-    gModeNameWorldinspect,
+    "mode_worldinspect",
     (ModeInitFunc)mode_worldinspect_0,
     mode_worldinspect_1,
     mode_worldinspect_2,

@@ -1380,10 +1380,8 @@ void mode_mapinspect_2(void) {
     EwramFree(gMapCardInventoryEntries);
 }
 
-const char gModeNameMapinspect[] = "mode_mapinspect";
-
 Mode gModeMapinspect = {
-    gModeNameMapinspect,
+    "mode_mapinspect",
     (ModeInitFunc)mode_mapinspect_0,
     mode_mapinspect_1,
     mode_mapinspect_2,

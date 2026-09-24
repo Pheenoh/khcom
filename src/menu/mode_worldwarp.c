@@ -804,10 +804,8 @@ void mode_worldwarp_2(void) {
     EwramFree(gUnk_0203550C);
 }
 
-const char gModeNameWorldwarp[] = "mode_worldwarp";
-
 Mode gModeWorldwarp = {
-    gModeNameWorldwarp,
+    "mode_worldwarp",
     (ModeInitFunc)mode_worldwarp_0,
     mode_worldwarp_1,
     mode_worldwarp_2,

@@ -75,8 +75,6 @@ const u16 gUnk_099931D0[3] = {
     131,
 };
 
-const char gModeNameMsTop[] = "mode_ms_top";
-
 #ifdef VERSION_EU
 void* gUnkEu_09F84EE8[5] = {
     gUnk_09A378DC,
@@ -120,7 +118,7 @@ void* gUnkEu_09F84F38[5] = {
 #endif
 
 Mode gModeMsTop = {
-    gModeNameMsTop,
+    "mode_ms_top",
     (ModeInitFunc)mode_ms_top_0,
     mode_ms_top_1,
     mode_ms_top_2,

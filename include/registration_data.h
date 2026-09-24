@@ -352,7 +352,6 @@ extern const char gTaskNameStatusScrollcursor[];
 extern const char gTaskNameStatusMeswindow[];
 extern const char gTaskNameStatusMessage[];
 extern const char gTaskNameStatusFriend[];
-extern const char gTaskNameStockMesDisp[];
 extern const char gModeNameMapDbg[];
 extern const char gModeNameMapFld[];
 extern const char gModeNameMapFix[];
@@ -361,7 +360,6 @@ extern const char gModeNameMenuLoad[];
 extern const char gModeNameMenuMsg[];
 extern const char gTaskNameMapRnd[];
 extern const char gTaskNameMapFix[];
-extern const char gModeNameMsTop[];
 
 extern TaskDesc gUnk_09EE484C;
 extern TaskDesc gTaskDescEventDebug;

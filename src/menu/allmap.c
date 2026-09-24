@@ -58,10 +58,6 @@ const s16 gUnk_096FDC50[4][4] = {
     {72, 104, 136, 168},
 };
 
-const char gTaskNameAllmapDoorinfo[] = "task_allmap_doorinfo";
-
-const char gTaskNameAllmapPusha[] = "task_allmap_pusha";
-
 static s32 gUnk_02034E84;
 static s32 gUnk_02034E88;
 static s32 gUnk_02034E8C;
@@ -1263,7 +1259,7 @@ TaskDesc gTaskDescAllmapBar = {
 };
 
 TaskDesc gTaskDescAllmapDoorinfo = {
-    gTaskNameAllmapDoorinfo,
+    "task_allmap_doorinfo",
     (TaskInitFunc)task_allmap_doorinfo_0,
     (TaskUpdateFunc)task_allmap_doorinfo_1,
     (TaskFunc)task_allmap_doorinfo_2,
@@ -1272,7 +1268,7 @@ TaskDesc gTaskDescAllmapDoorinfo = {
 };
 
 TaskDesc gTaskDescAllmapPusha = {
-    gTaskNameAllmapPusha,
+    "task_allmap_pusha",
     (TaskInitFunc)task_allmap_pusha_0,
     (TaskUpdateFunc)task_allmap_pusha_1,
     (TaskFunc)task_allmap_pusha_2,

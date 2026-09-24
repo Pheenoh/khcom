@@ -61,8 +61,6 @@ const StatusFriendTable gStatusFriendTable = {{
     {128, 670},
 }};
 
-const char gTaskNameStockMesDisp[] = "stock_mes_disp";
-
 static StatusWork* gStatusWork;
 static u8 gUnk_02034F00;
 static s16 gUnk_02034F02;
@@ -1267,7 +1265,7 @@ TaskDesc gTaskDescStatusFriend = {
 };
 
 TaskDesc gTaskDescStockMesDisp = {
-    gTaskNameStockMesDisp,
+    "stock_mes_disp",
     (TaskInitFunc)stock_mes_disp_0,
     (TaskUpdateFunc)stock_mes_disp_1,
     (TaskFunc)stock_mes_disp_2,

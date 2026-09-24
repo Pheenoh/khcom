@@ -85,10 +85,8 @@ void func_080D7568(u8 a) {
     gUnk_02034EF8 = a;
 }
 
-const char gModeNameStatus[] = "mode_status";
-
 Mode gModeStatus = {
-    gModeNameStatus,
+    "mode_status",
     (ModeInitFunc)mode_status_0,
     mode_status_1,
     mode_status_2,

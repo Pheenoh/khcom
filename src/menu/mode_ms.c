@@ -1350,10 +1350,8 @@ void mode_ms_shop_2(void) {
     EwramFree(gUnk_02035C00);
 }
 
-const char gModeNameMsShop[] = "mode_ms_shop";
-
 Mode gModeMsShop = {
-    gModeNameMsShop,
+    "mode_ms_shop",
     (ModeInitFunc)mode_ms_shop_0,
     mode_ms_shop_1,
     mode_ms_shop_2,
