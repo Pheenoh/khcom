@@ -131,8 +131,8 @@ typedef struct CardDisplayWork {
     u8 unk_A6;
     u8 unk_A7;
 } CardDisplayWork;
-extern u16 gUnk_0903BFD4[];
-extern u16 gUnk_0903BFBC[];
+extern const u16 gUnk_0903BFD4[];
+extern const u16 gUnk_0903BFBC[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_090A0C86[];
 typedef struct CardListWork {

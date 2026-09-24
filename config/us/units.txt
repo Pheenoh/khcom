@@ -193,8 +193,6 @@ card_lvup_logo.c
 card_ev_bg_effect_rodata.s
 card_ev_bg_effect.c
 card_help_text.s
-card_help_data.c
-card_stock_info_rodata.s
 card_stock_info.c
 card_lvup_msg_rodata.s
 card_lvup_msg.c
