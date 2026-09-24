@@ -2279,7 +2279,7 @@ TARGET_DATA_ADDR = {
         ("tutorial.c", ".rodata"): 0x08896514,
         ("mode_test.c", ".rodata"): 0x08896644,
         ("lockon.c", ".rodata"): 0x08f7f15c,
-        ("msg_portrait_data.c", ".rodata"): 0x090cb778,
+        ("event_message.c", ".rodata"): 0x090cb778,
         ("card_help_data.c", ".rodata"): 0x090d15a0,
         ("mode_wlogo.c", ".rodata"): 0x095da8ac,
         ("mode_pooh.c", ".rodata"): 0x096c934c,

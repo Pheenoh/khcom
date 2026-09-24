@@ -305,7 +305,7 @@ extern u8 gUnk_09614758[];
 extern u8 gUnk_09614778[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_096147B8[];
-extern s32 gUnk_09033758[];
+extern const s32 gUnk_09033758[];
 extern u8 gUnk_050001C0[];
 extern u8 gUnk_096148D8[];
 extern u8 gUnk_08F69BE4[];
@@ -321,7 +321,7 @@ extern u16 gUnk_08159E10[];
 extern u16 gUnk_08159E18[];
 extern u16 gUnk_08F7D438[];
 extern u8 gUnk_090CBFB2[];
-extern EventCharaParams gUnk_0903380C[];
+extern const EventCharaParams gUnk_0903380C[];
 
 void _08065994(void);
 u16 func_080659BC(u8 v, TextSlot* out);

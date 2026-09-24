@@ -101,7 +101,7 @@ typedef struct EffectWork {
 extern EventState* gEventState;
 extern u8 gUnk_08F6DC84[];
 extern u8 gUnk_08BCB3D8[];
-extern s16 gUnk_0903380C[][6];
+extern const s16 gUnk_0903380C[][6];
 extern const char gUnk_08F70990[];
 #ifdef VERSION_EU
 extern Mode gUnkEu_09F5D6EC;

@@ -153,8 +153,6 @@ events_074_133.c
 events_000_073.c
 events_134_196.c
 event_name_text.s
-msg_portrait_data.c
-event_message_rodata.s
 event_message.c
 mode_eventselect.c
 card_battle_rodata.s
