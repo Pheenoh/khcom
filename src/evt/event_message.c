@@ -2606,10 +2606,6 @@ const s32 gUnk_09033D28[2] = {
 
 const char gTaskNameMsgwait[] = "msgwait";
 
-const char gTaskNameMsgwaitYesno[] = "msgwait_yesno";
-
-const char gTaskNameView[] = "view";
-
 EventScanlineScroll* gEventScanlineScroll EWRAM_COMMON(4);
 
 void event_seq_0(EventSeqWork* work, u8* a) {
@@ -7484,7 +7480,7 @@ TaskDesc gTaskDescMsgface[3] = {
         0x108,
     },
     {
-        gTaskNameMsgwaitYesno,
+        "msgwait_yesno",
         (TaskInitFunc)msgwait_yesno_0,
         (TaskUpdateFunc)msgwait_yesno_1,
         (TaskFunc)msgwait_yesno_2,
@@ -7494,7 +7490,7 @@ TaskDesc gTaskDescMsgface[3] = {
 };
 
 TaskDesc gTaskDescView = {
-    gTaskNameView,
+    "view",
     (TaskInitFunc)view_0,
     (TaskUpdateFunc)view_1,
     (TaskFunc)view_2,
