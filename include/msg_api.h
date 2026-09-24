@@ -14,21 +14,13 @@ u16 func_08064D04(s32 a);
 #ifndef VERSION_EU
 u8 func_080653D4(s32 a, s32 b, u8* c);
 #endif
-#ifdef VERSION_US
-s32 func_08064DD4(u16* a);
-#else
-s32 func_08064DD4(u8* a);
-#endif
+s32 func_08064DD4(TextChar* a);
 void func_080658B8(u8 n);
 void func_08065940(void);
 #ifdef VERSION_EU
 s16 eu_0806629C(TextSlot* p, u8 n);
 #endif
-#ifdef VERSION_US
-s32 func_080660C0(u16* a, void** p);
-#else
-s32 func_080660C0(u8* a, void** p);
-#endif
+s32 func_080660C0(TextChar* a, void** p);
 void FreeSmallFontResources(void* a, void* b);
 u16 EncodeSmallFontString(u8* s, u16* out);
 u16 FormatSmallFontHex(s32 v, u16* out);

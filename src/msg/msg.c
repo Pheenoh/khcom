@@ -309,11 +309,7 @@ void* func_08063678(s32 a) {
 }
 #endif
 #ifndef VERSION_EU
-#ifndef VERSION_JP
-void func_08063744(s32 x, s32 y, u16* s, u8 slot, u8 a) {
-#else
-void func_08063744(s32 x, s32 y, u8* s, u8 slot, u8 a) {
-#endif
+void func_08063744(s32 x, s32 y, TextChar* s, u8 slot, u8 a) {
     u16 g;
     u16 lo;
     u8 kind;
@@ -1337,11 +1333,7 @@ u16 func_08064D04(s32 a) {
     return gUnk_02034A84->palette->index;
 }
 
-#ifdef VERSION_US
-s32 func_08064DD4(u16* a) {
-#else
-s32 func_08064DD4(u8* a) {
-#endif
+s32 func_08064DD4(TextChar* a) {
     u16 sum;
     s32 v;
 
@@ -2469,11 +2461,7 @@ s32 LoadJapaneseTextSlots(u16* a, TextSlot* b) {
 }
 #endif
 #ifndef VERSION_EU
-#ifndef VERSION_JP
-s32 func_080660C0(u16* a, void** p) {
-#else
-s32 func_080660C0(u8* a, void** p) {
-#endif
+s32 func_080660C0(TextChar* a, void** p) {
     u8 buf[2];
     u16* c;
     u16 w;
@@ -6600,11 +6588,7 @@ u16 func_0806C42C(s16 v, u16* out) {
     return EncodeSmallFontString(buf, out);
 }
 #ifndef VERSION_EU
-#ifndef VERSION_JP
-s32 func_0806C490(u16* a) {
-#else
-s32 func_0806C490(u8* a) {
-#endif
+s32 func_0806C490(TextChar* a) {
     u8 buf[2];
     u16* c;
     u16 w;
@@ -6789,11 +6773,7 @@ s32 func_0806C490(u8* a) {
 }
 #endif
 #ifndef VERSION_EU
-#ifndef VERSION_JP
-s32 func_0806C81C(u16* a, u16 b) {
-#else
-s32 func_0806C81C(u8* a, u16 b) {
-#endif
+s32 func_0806C81C(TextChar* a, u16 b) {
     u8 buf[2];
     u16* c;
     u16 w;
@@ -6977,11 +6957,7 @@ s32 func_0806C81C(u8* a, u16 b) {
     return n;
 }
 #endif
-#if defined(VERSION_JP) || defined(VERSION_EU)
-u8 func_0806CBAC(u8* a, u16* b, u16 tile) {
-#else
-u8 func_0806CBAC(u16* a, u16* b, u16 tile) {
-#endif
+u8 func_0806CBAC(TextChar* a, u16* b, u16 tile) {
     u8* dst = (u8*)0x06014000 + tile * 32;
     s32 flag = 0;
     gUnk_02034A90 = 0;
