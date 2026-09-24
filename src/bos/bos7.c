@@ -24,10 +24,8 @@ const s32 gUnk_09A4FD20 = 0;
 
 const s8* gUnk_09EF9E6C[2] = { gUnk_09A4FBF4, gUnk_09A4FC15 };
 
-const char gTaskNameBosLstFld[] = "task_bos_lst_fld";
-
 TaskDesc gTaskDescBosLstFld = {
-    gTaskNameBosLstFld,
+    "task_bos_lst_fld",
     (TaskInitFunc)task_bos_lst_fld_0,
     (TaskUpdateFunc)task_bos_lst_fld_1,
     (TaskFunc)task_bos_lst_fld_2,
@@ -64,10 +62,8 @@ LstAnimSet gLstAnimSets[4] = {
     { 5, 0, 4, 14 },
 };
 
-const char gTaskNameBosLstBit[] = "task_bos_lst_bit";
-
 TaskDesc gTaskDescBosLstBit = {
-    gTaskNameBosLstBit,
+    "task_bos_lst_bit",
     (TaskInitFunc)task_bos_lst_bit_0,
     (TaskUpdateFunc)task_bos_lst_bit_1,
     (TaskFunc)task_bos_lst_bit_2,
@@ -75,10 +71,8 @@ TaskDesc gTaskDescBosLstBit = {
     0x1D0,
 };
 
-const char gTaskNameBosLstLsr[] = "task_bos_lst_lsr";
-
 TaskDesc gTaskDescBosLstLsr = {
-    gTaskNameBosLstLsr,
+    "task_bos_lst_lsr",
     (TaskInitFunc)task_bos_lst_lsr_0,
     (TaskUpdateFunc)task_bos_lst_lsr_1,
     (TaskFunc)task_bos_lst_lsr_2,
@@ -121,10 +115,8 @@ TaskDesc gTaskDescBosLstFal = {
     0x40,
 };
 
-const char gTaskNameBosLstCtr[] = "task_bos_lst_ctr";
-
 TaskDesc gTaskDescBosLstCtr = {
-    gTaskNameBosLstCtr,
+    "task_bos_lst_ctr",
     (TaskInitFunc)task_bos_lst_ctr_0,
     (TaskUpdateFunc)task_bos_lst_ctr_1,
     (TaskFunc)task_bos_lst_ctr_2,
@@ -132,10 +124,8 @@ TaskDesc gTaskDescBosLstCtr = {
     0x188,
 };
 
-const char gTaskNameBosLstSnp[] = "task_bos_lst_snp";
-
 TaskDesc gTaskDescBosLstSnp = {
-    gTaskNameBosLstSnp,
+    "task_bos_lst_snp",
     (TaskInitFunc)task_bos_lst_snp_0,
     (TaskUpdateFunc)task_bos_lst_snp_1,
     (TaskFunc)task_bos_lst_snp_2,

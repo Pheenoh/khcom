@@ -395,10 +395,8 @@ TaskDesc gTaskDescBosGa = {
     0xA54,
 };
 
-const char gTaskNameBosMd[] = "task_bos_md";
-
 TaskDesc gTaskDescBosMd = {
-    gTaskNameBosMd,
+    "task_bos_md",
     (TaskInitFunc)task_bos_md_0,
     (TaskUpdateFunc)task_bos_md_1,
     (TaskFunc)task_bos_md_2,
@@ -434,10 +432,8 @@ TaskDesc gTaskDescBosMdMap = {
     0x4,
 };
 
-const char gTaskNameBosMdFire[] = "task_bos_md_fire";
-
 TaskDesc gTaskDescBosMdFire = {
-    gTaskNameBosMdFire,
+    "task_bos_md_fire",
     (TaskInitFunc)task_bos_md_fire_0,
     (TaskUpdateFunc)task_bos_md_fire_1,
     (TaskFunc)task_bos_md_fire_2,
@@ -445,10 +441,8 @@ TaskDesc gTaskDescBosMdFire = {
     0x170,
 };
 
-const char gTaskNameBosMdDai[] = "task_bos_md_dai";
-
 TaskDesc gTaskDescBosMdDai = {
-    gTaskNameBosMdDai,
+    "task_bos_md_dai",
     (TaskInitFunc)task_bos_md_dai_0,
     (TaskUpdateFunc)task_bos_md_dai_1,
     (TaskFunc)task_bos_md_dai_2,
@@ -456,10 +450,8 @@ TaskDesc gTaskDescBosMdDai = {
     0x84,
 };
 
-const char gTaskNameBosMdHahen[] = "task_bos_md_hahen";
-
 TaskDesc gTaskDescBosMdHahen = {
-    gTaskNameBosMdHahen,
+    "task_bos_md_hahen",
     (TaskInitFunc)task_bos_md_hahen_0,
     (TaskUpdateFunc)task_bos_md_hahen_1,
     (TaskFunc)task_bos_md_hahen_2,
@@ -607,10 +599,8 @@ const MdModel gMdModels[13] = {
 #endif
 };
 
-const char gModeNameWorldselect[] = "mode_worldselect";
-
 Mode gModeWorldselect = {
-    gModeNameWorldselect,
+    "mode_worldselect",
     (ModeInitFunc)mode_worldselect_0,
     mode_worldselect_1,
     mode_worldselect_2,
