@@ -2157,7 +2157,7 @@ TARGET_DATA_SIZE = {
         ("continue_ui.c", ".data"): 0x44,
         ("card_stock_info.c", ".rodata"): 0x2D2,
         ("card_localized_deck_labels_data.c", ".data"): 0xe4,
-        ("msg_font_data.c", ".data"): 0x4bc,
+        ("msg_font_data.c", ".data"): 0x52c,
         ("card_sprite_data.c", ".data"): 0x2b8,
         ("mode_sio_dbg.c", ".data"): 0x40,
         ("poo.c", ".data"): 0xc00,
