@@ -5619,7 +5619,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF6774
   layer: 1
-  provenance: bos4.c task_bos_boogie_explosiondice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. bos4.c task_bos_boogie_dice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_boogie_dice.c task_bos_boogie_explosiondice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. bos_boogie_dice.c task_bos_boogie_dice_0 starts animation0 and GetMaxSpriteTileBytes uses4 gfx entries. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef6774'
   targets:
     jp: '0x9ecdb60'
@@ -5629,7 +5629,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF6860
   layer: 1
-  provenance: bos4.c UrsulaTakoWork unk_024 is0 or65532; task_bos_ursula_tako_1 explicitly selects unk_024+7, proving animation0..7. bos4.c task_bos_ursula_bubble_single_0 starts animation0 and its update/draw callbacks explicitly start animation1; EU uses the same selections through eu_080DA80C. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_boogie_dice.c UrsulaTakoWork unk_024 is0 or65532; task_bos_ursula_tako_1 explicitly selects unk_024+7, proving animation0..7. bos_ursula_bubble.c task_bos_ursula_bubble_single_0 starts animation0 and its update/draw callbacks explicitly start animation1; EU uses the same selections through eu_080DA80C. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef6860'
   targets:
     jp: '0x9ecdc4c'

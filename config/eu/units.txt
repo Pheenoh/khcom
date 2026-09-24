@@ -346,8 +346,9 @@ mode_status.c
 status.c
 boss_boogie_rodata.s
 boss_boogie.c
-bos4_rodata.s
-bos4.c
+bos_boogie_dice_rodata.s
+bos_boogie_dice.c
+bos_ursula_bubble.c
 sprites_pooh_1.c
 sprites_evt_5.c
 sprites_pooh_2.c
