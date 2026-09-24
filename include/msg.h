@@ -350,7 +350,6 @@ u8 func_0807344C(MsgWinWork* p, void* a);
 void func_0807361C(MsgWinWork* p);
 void func_08073508(MsgWinWork* p);
 void func_080736F8(MsgWinWork* p);
-u8 func_08072EAC(MsgWinWork* p, void* a);
 u8 func_08073F78(MsgWaitWork* p);
 u8 msgface_1(MsgFaceWork* p, void* a);
 u8 func_08073B04(MsgFaceWork* p, void* a);

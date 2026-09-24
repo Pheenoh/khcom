@@ -197,7 +197,7 @@ void func_0806CF04(ContinueWork* p) {
     p->unk_66 = 0x1000;
     p->unk_6A = 0;
 }
-s32 Continue_1(ContinueWork* p) {
+static s32 Continue_1(ContinueWork* p) {
     const s32* t;
 
     BgAnimUpdate();
@@ -282,11 +282,11 @@ s32 Continue_1(ContinueWork* p) {
     p->y += (t[p->unk_60] - p->y) >> 3;
     p->unk_64 += 4;
 }
-void Continue_2(ContinueWork* p) {
+static void Continue_2(ContinueWork* p) {
     DrawSprite(p->x >> 8, p->y >> 8, p->gfx, p->tiles, p->palette, 0, 4, 100);
     DrawSprite(120, 120, p->gfx2, p->tiles2, p->palette2, 0, 0, 100);
 }
-void Continue_3(ContinueWork* p) {
+static void Continue_3(ContinueWork* p) {
     DisableBg(0);
     DisableBg(2);
     LoadBgMap(0, gUnk_08125E24, 0x800);

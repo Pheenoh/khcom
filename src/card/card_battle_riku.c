@@ -50,7 +50,7 @@ u8 gUnk_02039DDC EWRAM_COMMON(4);
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
-u8 func_0807EDEC(UnkStruct_08080268* w, void* a);
+static u8 cardbattle_1(UnkStruct_08080268* w, void* a);
 u8 func_0807FB5C(UnkStruct_08080268* w, void* a);
 void func_0807FD10(UnkStruct_08080268* w, u8 n);
 void func_0807FE30(UnkStruct_08080268* w, u8 n);
@@ -354,7 +354,7 @@ void func_0807E724(UnkStruct_08080268* w, s8 idx) {
     }
 }
 
-void func_0807E8F4(UnkStruct_08080268* w) {
+static void cardbattle_0(UnkStruct_08080268* w) {
     s32 zero;
     u8 i;
 
@@ -544,7 +544,7 @@ void func_0807E8F4(UnkStruct_08080268* w) {
     gUnk_02039DD4->unk_0D4 = w->unk_B8;
 }
 
-u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
+static u8 cardbattle_1(UnkStruct_08080268* w, void* a) {
     UnkStruct_080ABA80 arr;
     u8 flag[4];
     UnkStruct_080ABA80 arr2;
@@ -1119,7 +1119,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
     return 1;
 }
 
-void func_0807F99C(UnkStruct_08080268* w) {
+static void cardbattle_2(UnkStruct_08080268* w) {
     if (gUnk_02039DD4->unk_0EA != 0 && gUnk_02039B9C->unk_0F4 != 28 && w->unk_B9 != 0 && w->unk_BA != 0) {
         DrawSprite(w->x, 4, gUnk_09EF12E8[0], w->tiles, w->palette, 0, 16, 12);
     }
@@ -1127,7 +1127,7 @@ void func_0807F99C(UnkStruct_08080268* w) {
     TaskPoolDraw(w);
 }
 
-void func_0807FA0C(u8* work) {
+static void cardbattle_3(u8* work) {
     UnkStruct_0807FA0C* w;
     u8 i;
 
@@ -1221,7 +1221,7 @@ u8 func_0807FB5C(UnkStruct_08080268* w, void* a) {
             w->unk_C4[0] = 0;
             m4aSongNumStop(SONG_SYS_RELOAD);
             gUnk_02034AA4 = 0;
-            SetTaskUpdate(a, (TaskUpdateFunc)func_0807EDEC);
+            SetTaskUpdate(a, (TaskUpdateFunc)cardbattle_1);
         }
     }
 
@@ -2542,7 +2542,7 @@ u8 func_08081B70(CardDisplayWork* p, void* a) {
     return func_08082C98(p, a);
 }
 
-void func_08081C98(CardDisplayWork* p) {
+static void card_2(CardDisplayWork* p) {
     void* gfx;
     s32 aff;
     u16 y;
@@ -3768,14 +3768,14 @@ u8 func_08083B20(UnkStruct_08083B20* w, u8 b) {
     return 0;
 }
 
-void func_08081C98(CardDisplayWork* p);
+static void card_2(CardDisplayWork* p);
 
 TaskDesc gTaskDescCardBattleRiku = {
     "cardbattle",
-    (TaskInitFunc)func_0807E8F4,
-    (TaskUpdateFunc)func_0807EDEC,
-    (TaskFunc)func_0807F99C,
-    (TaskFunc)func_0807FA0C,
+    (TaskInitFunc)cardbattle_0,
+    (TaskUpdateFunc)cardbattle_1,
+    (TaskFunc)cardbattle_2,
+    (TaskFunc)cardbattle_3,
     0xCC,
 };
 
@@ -3783,7 +3783,7 @@ TaskDesc gUnk_09EE49CC = {
     "card",
     (TaskInitFunc)func_08081A3C,
     (TaskUpdateFunc)func_08081B70,
-    (TaskFunc)func_08081C98,
+    (TaskFunc)card_2,
     (TaskFunc)func_080820F4,
     0xA8,
 };

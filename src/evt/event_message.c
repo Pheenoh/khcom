@@ -6010,7 +6010,7 @@ void func_08072C34(EventCharaWork* p) {
 #define MSG_WIN_ID_B 0x9C
 #endif
 
-void func_08072D98(MsgWinWork* p, u8* arg) {
+static void msgwin_0(MsgWinWork* p, u8* arg) {
     EventSequenceDef* t;
 
     p->unk_28 = arg[0];
@@ -6058,7 +6058,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     CreateMsgfaceTask(p, &p->face, p->script->portraitId, p->script->expressionId, p->script->positionIndex);
 }
 
-u8 func_08072EAC(MsgWinWork* p, void* a) {
+static u8 msgwin_1(MsgWinWork* p, void* a) {
     const MessageScriptEntry* e;
 
     if (p->unk_29 == 0) {
@@ -6230,7 +6230,7 @@ u8 func_08073170(MsgWinWork* p, void* a) {
     TaskPoolUpdate(p);
     return 1;
 }
-void func_08073238(MsgWinWork* p) {
+static void msgwin_2(MsgWinWork* p) {
     const MessageScriptEntry* e = &p->script[p->unk_27];
 
     if (e->portraitId != 62) {
@@ -6240,7 +6240,7 @@ void func_08073238(MsgWinWork* p) {
     }
     TaskPoolDraw(p);
 }
-void func_08073274(MsgWinWork* p) {
+static void msgwin_3(MsgWinWork* p) {
     if (p->palette != NULL) {
         ReleaseObjPalette(p->palette);
     }
@@ -6307,7 +6307,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     p->unk_27++;
                     gEventState->flags &= ~1;
                     p->face.unk_08 = 1;
-                    SetTaskUpdate(a, (TaskUpdateFunc)func_08072EAC);
+                    SetTaskUpdate(a, (TaskUpdateFunc)msgwin_1);
                 }
             } else {
                 p->unk_1E = 8;
@@ -6347,7 +6347,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
             p->unk_2A = 0;
             p->unk_29 = 0;
             p->unk_27++;
-            SetTaskUpdate(a, (TaskUpdateFunc)func_08072EAC);
+            SetTaskUpdate(a, (TaskUpdateFunc)msgwin_1);
         }
     }
     TaskPoolUpdate(p);
@@ -7455,10 +7455,10 @@ void* gUnk_09EE4724[4] = {
 
 TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
-    (TaskInitFunc)func_08072D98,
-    (TaskUpdateFunc)func_08072EAC,
-    (TaskFunc)func_08073238,
-    (TaskFunc)func_08073274,
+    (TaskInitFunc)msgwin_0,
+    (TaskUpdateFunc)msgwin_1,
+    (TaskFunc)msgwin_2,
+    (TaskFunc)msgwin_3,
     0x44,
 };
 

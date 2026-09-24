@@ -72,7 +72,7 @@ u8 func_0806BDB8(s32 x, s32 y, s32 s, s32* d);
 #endif
 u8 func_080A4010(UnkStruct_080A3F5C* w, void* a);
 
-void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
+static void msgwin_0(UnkStruct_080A3F5C* w, void* a) {
     vu32 zero;
 
     zero = 0;
@@ -175,7 +175,7 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
     return 1;
 }
 
-u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
+static u8 msgwin_1(UnkStruct_080A3F5C* w, void* a) {
     LoadBgTiles(w->bg, gUnk_094233B8, 1280);
     LoadBgPalette(w->bg, gUnk_096148D8, 32);
     SetBgMapBlocks(w->bg, gUnk_09EE4724[((NumberPlusArgs*)w->messageDef)->unk_04], 2, 1);
@@ -237,7 +237,7 @@ u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
     SetTaskUpdate(a, (TaskUpdateFunc)func_080A3558);
     return 1;
 }
-void func_080A3848(UnkStruct_080A3F5C* w) {
+static void msgwin_2(UnkStruct_080A3F5C* w) {
     void** p;
 
     if (w->unk_149 != 0) {
@@ -269,7 +269,7 @@ void func_080A3848(UnkStruct_080A3F5C* w) {
     }
 }
 
-void func_080A3A04(UnkStruct_080A3F5C* w) {
+static void msgwin_3(UnkStruct_080A3F5C* w) {
     func_0806C34C();
 
     if (w->tiles3 != 0) {
@@ -2948,9 +2948,9 @@ CardMessageDef gCardMessageDefs[] = {
 
 TaskDesc gUnk_09EE8E18 = {
     "msgwin",
-    (TaskInitFunc)func_080A33C4,
-    (TaskUpdateFunc)func_080A3640,
-    (TaskFunc)func_080A3848,
-    (TaskFunc)func_080A3A04,
+    (TaskInitFunc)msgwin_0,
+    (TaskUpdateFunc)msgwin_1,
+    (TaskFunc)msgwin_2,
+    (TaskFunc)msgwin_3,
     0x150,
 };

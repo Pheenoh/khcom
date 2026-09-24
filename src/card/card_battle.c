@@ -27,8 +27,8 @@
 u16 func_080787B8(CardBattleWork* w, u8 n);
 s32 func_08077F44(UnkStruct_08080268* w, u8* task);
 s32 func_08076F4C(CardBattleWork* w);
-void func_08077E10(CardBattleWork* w);
-void func_08077E98(CardBattleWork* w);
+static void cardbattle_2(CardBattleWork* w);
+static void cardbattle_3(CardBattleWork* w);
 u8 func_080762A8(void);
 void func_08076354(void);
 void func_08076388(void);
@@ -486,7 +486,7 @@ void func_080782EC(void);
 void func_080784BC(void* work, s32 mode);
 void func_080785B8(void* work, s32 mode);
 
-void func_08076CB4(UnkStruct_08080268* w) {
+static void cardbattle_0(UnkStruct_08080268* w) {
     u32 zero = 0;
     u8 i;
 
@@ -1206,7 +1206,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
     return 1;
 }
 
-void func_08077E10(CardBattleWork* w) {
+static void cardbattle_2(CardBattleWork* w) {
     gUnk_02039DD4->gfx = AnimUpdate(&gUnk_02039DD4->anim);
     gUnk_02039DD4->gfx2 = AnimUpdate(&gUnk_02039DD4->anim2);
 
@@ -1219,7 +1219,7 @@ void func_08077E10(CardBattleWork* w) {
     TaskPoolDraw(&gUnk_02039DD4->tasks);
 }
 
-void func_08077E98(CardBattleWork* w) {
+static void cardbattle_3(CardBattleWork* w) {
     u8 i;
 
     TaskPoolDestroy(w);
@@ -1378,9 +1378,9 @@ u16 gUnk_09EE48F4[47] = {
 
 TaskDesc gTaskDescCardBattleSora = {
     "cardbattle",
-    (TaskInitFunc)func_08076CB4,
+    (TaskInitFunc)cardbattle_0,
     (TaskUpdateFunc)func_08076F80,
-    (TaskFunc)func_08077E10,
-    (TaskFunc)func_08077E98,
+    (TaskFunc)cardbattle_2,
+    (TaskFunc)cardbattle_3,
     0xCC,
 };

@@ -2636,7 +2636,7 @@ u8 func_0807BE54(CardDisplayWork* p, void* a) {
     return func_0807D194(p, a);
 }
 
-void func_0807BEC0(CardDisplayWork* p) {
+static void card_2(CardDisplayWork* p) {
     s16 y;
     void* gfx;
     s32 aff;
@@ -4125,13 +4125,13 @@ u8 func_0807E34C(void) {
     return 0;
 }
 
-void func_0807BEC0(CardDisplayWork* p);
+static void card_2(CardDisplayWork* p);
 
 TaskDesc gUnk_09EE496C = {
     "card",
     (TaskInitFunc)func_0807BC24,
     (TaskUpdateFunc)func_0807BD64,
-    (TaskFunc)func_0807BEC0,
+    (TaskFunc)card_2,
     (TaskFunc)func_0807C2E0,
     0xA8,
 };

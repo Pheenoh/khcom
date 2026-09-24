@@ -12,7 +12,6 @@ struct UnkStruct_080A1B4C;
 struct UnkStruct_080ABA80;
 struct MapcardWork;
 
-void func_0807E8F4(struct UnkStruct_08080268* w);
 void Mapcard_2(struct MapcardWork* w);
 void Level_Up_3(u8* work);
 void mode_sio_battle_0(s32 a);

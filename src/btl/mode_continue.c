@@ -12,7 +12,7 @@
 TaskPool gContinueTaskPool;
 Task* gUnk_02034A5C;
 
-void func_08060ED8(void) {
+static void Continue_0(void) {
     TaskPoolInit(&gContinueTaskPool, 2);
 
     if ((gGameState.flags & 8) == 0) {
@@ -45,13 +45,13 @@ void func_08060F1C(void) {
     }
 }
 
-void func_08060F64(void) {
+static void Continue_2(void) {
     TaskPoolDestroy(&gContinueTaskPool);
 }
 
 Mode gModeContinue = {
     "Continue",
-    (ModeInitFunc)func_08060ED8,
+    (ModeInitFunc)Continue_0,
     func_08060F1C,
-    func_08060F64,
+    Continue_2,
 };

@@ -51,7 +51,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a);
 u16 func_08096D48(u16 a, s32 b);
 s16 func_08084458(u16 cardId);
 
-void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
+static void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     PrizeCardTaskArgs args;
     CardDef* def;
     CardBack* back;
@@ -100,7 +100,7 @@ void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     w->unk_FB = 0;
     TaskPoolInit((TaskPool*)w->unk_20, 1);
 }
-u8 PrizeCard_1(PrizeCardWork* w, void* a) {
+static u8 PrizeCard_1(PrizeCardWork* w, void* a) {
     s32 k = 112;
     s16 x;
     s16 y;
@@ -291,7 +291,7 @@ u8 func_08096390(PrizeCardWork* w) {
 
     return 0;
 }
-void PrizeCard_2(PrizeCardWork* w) {
+static void PrizeCard_2(PrizeCardWork* w) {
     u16 pal;
     s32 affine;
     void* gfx;
@@ -338,7 +338,7 @@ void PrizeCard_2(PrizeCardWork* w) {
     TaskPoolDraw(w->unk_20);
 }
 
-void PrizeCard_3(PrizeCardWork* w) {
+static void PrizeCard_3(PrizeCardWork* w) {
     FadeSetPaletteExcluded(w->palette2->index + 16, 0);
     FadeSetPaletteExcluded(w->palette->index + 16, 0);
     ColliderUnregister(w->collider);

@@ -81,7 +81,7 @@ u16 GetDeckCardCount(u8 index);
 u8 GetActiveDeckIndex(void);
 void func_08090170(DeckCard2Work* node);
 
-void func_080A584C(u8* work, void* a) {
+static void Deckmenu2_0(u8* work, void* a) {
     u16 v;
 
     *(void**)&work[0x4F4] = a;
@@ -506,7 +506,7 @@ u8 func_080A6474(u8* work, void* a) {
     return 1;
 }
 
-void func_080A6500(u8* work) {
+static void Deckmenu2_2(u8* work) {
     if (*(void**)&work[0x3CC] != 0) {
 #ifdef VERSION_EU
         DrawSprite(*(s32*)&work[0x4AC] >> 8, 0, gUnkEu_09F74360[gLanguage][0], *(void**)&work[0x3CC], *(void**)&work[0x3C8], 0, 0, 10);
@@ -558,7 +558,7 @@ void func_080A6500(u8* work) {
     TaskPoolDraw(&work[0x420]);
 }
 
-void func_080A676C(u8* work) {
+static void Deckmenu2_3(u8* work) {
     func_080A6968(work);
     ReleaseObjTiles(*(void**)&work[0x00]);
     ReleaseObjTiles(*(void**)&work[0x04]);
@@ -1061,7 +1061,7 @@ u8 func_080A7388(u8* work, s16 x, s16 y, u16 dir) {
     return 0;
 }
 
-void func_080A584C(u8* work, void* a);
+static void Deckmenu2_0(u8* work, void* a);
 
 #ifdef VERSION_EU
 void* gUnkEu_09F7434C[5] = { gUnk_090A418E, gUnkEu_091926B2, gUnkEu_0919308A, gUnkEu_09192D42, gUnkEu_091929FA };
@@ -1079,9 +1079,9 @@ u8* gUnkEu_09F74374[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gU
 
 TaskDesc gUnk_09EE8EF0 = {
     "Deckmenu2",
-    (TaskInitFunc)func_080A584C,
+    (TaskInitFunc)Deckmenu2_0,
     (TaskUpdateFunc)func_080A5C9C,
-    (TaskFunc)func_080A6500,
-    (TaskFunc)func_080A676C,
+    (TaskFunc)Deckmenu2_2,
+    (TaskFunc)Deckmenu2_3,
     0x510,
 };

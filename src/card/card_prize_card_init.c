@@ -456,7 +456,7 @@ void Version_3(s32* p) {
 s32 CreateVersionDisplay(void* a) {
     return (s32)TaskCreate(a, &gTaskDescVersion, 0);
 }
-void func_08096F94(UnkStruct_08096F94* w, s32* args) {
+static void PrizeCard_0(UnkStruct_08096F94* w, s32* args) {
     u8* p;
 
     w->unk_B0 = args[8];
@@ -498,7 +498,7 @@ void func_08096F94(UnkStruct_08096F94* w, s32* args) {
     TaskPoolInit(&w->tasks, 1);
     gBtlWork->unk_0B0++;
 }
-u8 func_08097138(UnkStruct_08096F94* w, void* a) {
+static u8 PrizeCard_1(UnkStruct_08096F94* w, void* a) {
     s16 x;
     s16 y;
 
@@ -687,7 +687,7 @@ u8 func_08097600(UnkStruct_08096F94* w) {
     return 1;
 }
 
-void func_08097688(UnkStruct_08096F94* w) {
+static void PrizeCard_2(UnkStruct_08096F94* w) {
     u16 pal;
     s32 affine;
     void* gfx;
@@ -739,7 +739,7 @@ void func_08097688(UnkStruct_08096F94* w) {
     TaskPoolDraw(&w->tasks);
 }
 
-void func_08097834(PrizeCardWork* w) {
+static void PrizeCard_3(PrizeCardWork* w) {
     FadeSetPaletteExcluded(w->palette2->index + 16, 0);
     FadeSetPaletteExcluded(w->palette->index + 16, 0);
     ColliderUnregister(&w->unk_20[0x24]);
@@ -1457,10 +1457,10 @@ TaskDesc gTaskDescVersion = {
 
 TaskDesc gUnk_09EE7650 = {
     "PrizeCard",
-    (TaskInitFunc)func_08096F94,
-    (TaskUpdateFunc)func_08097138,
-    (TaskFunc)func_08097688,
-    (TaskFunc)func_08097834,
+    (TaskInitFunc)PrizeCard_0,
+    (TaskUpdateFunc)PrizeCard_1,
+    (TaskFunc)PrizeCard_2,
+    (TaskFunc)PrizeCard_3,
     0xEC,
 };
 

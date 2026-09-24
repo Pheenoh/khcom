@@ -989,7 +989,7 @@ u8 GetActiveDeckIndex(void) {
 
 void func_08085FB0(void) {
 }
-void func_08085FB4(u8* work, void* a) {
+static void Deckmenu2_0(u8* work, void* a) {
     u16 unk;
     *(void**)&work[CARDWORK(0x8BC)] = a;
     SetBgMode0();
@@ -1106,7 +1106,7 @@ void func_08085FB4(u8* work, void* a) {
     work[CARDWORK(0x8D0)] = 0;
     work[CARDWORK(0x8D2)] = 0;
 }
-u8 func_080863C0(u8* work, void* a) {
+static u8 Deckmenu2_1(u8* work, void* a) {
 #ifdef VERSION_EU
     FadeStartIn(0, 16);
 
@@ -3909,7 +3909,7 @@ void func_0808B3DC(u8* work, u8 flag) {
     }
 }
 
-void func_0808B66C(UnkStruct_0808B66C* w) {
+static void Deckmenu2_2(UnkStruct_0808B66C* w) {
     gCardUiSpriteState.gfx = AnimUpdate(&gCardUiSpriteState.anim);
     if (w->unk_8C9 == 0) {
         if (w->unk_8B0 != 0) {
@@ -7197,7 +7197,7 @@ void func_0808FA8C(UnkStruct_0808FA8C* w) {
     }
 }
 
-void func_08085FB4(u8* work, void* a);
+static void Deckmenu2_0(u8* work, void* a);
 
 const u16* gUnk_09EE4A68[12] = {
     gUnk_090354E8,
@@ -7271,9 +7271,9 @@ u8* gUnkEu_09F6FE04[5] = { gUnkEu_094EAD64, gUnkEu_094E90E4, gUnkEu_094EA2E4, gU
 
 TaskDesc gUnk_09EE4AF4 = {
     "Deckmenu2",
-    (TaskInitFunc)func_08085FB4,
-    (TaskUpdateFunc)func_080863C0,
-    (TaskFunc)func_0808B66C,
+    (TaskInitFunc)Deckmenu2_0,
+    (TaskUpdateFunc)Deckmenu2_1,
+    (TaskFunc)Deckmenu2_2,
     (TaskFunc)func_0808C2F0,
 #ifdef VERSION_EU
     0x8DC,
