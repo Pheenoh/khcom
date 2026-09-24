@@ -1,5 +1,4 @@
 #include "mode_deck.h"
-#include "card_keyboard_text.h"
 #include "boss_card_data.h"
 #include "map_animation_data.h"
 #include "card_deck_data.h"
@@ -1190,16 +1189,23 @@ extern u8 gUnkEu_095F12A2[];
 
 extern const s16 gUnk_09035950[];
 extern const s16 gUnk_09035956[];
-extern s16 gUnk_090356EC[];
-extern s16 gUnk_090356F2[];
-extern s16 gUnk_09035702[];
-extern s16 gUnk_0903571A[];
-extern s16 gUnk_0903571E[];
+extern const s16 gUnk_090356EC[];
+extern const s16 gUnk_090356F2[];
+extern const s16 gUnk_09035702[];
+extern const s16 gUnk_0903571A[];
+extern const s16 gUnk_0903571E[];
+extern const s16 gUnk_090356F8[];
+extern const s16 gUnk_0903570E[];
 typedef struct UnkStruct_09035730 {
     s32 unk_00[2];
 } UnkStruct_09035730;
 
-extern UnkStruct_09035730 gUnk_09035730;
+extern const UnkStruct_09035730 gUnk_09035730;
+#ifdef VERSION_EU
+extern const u16 gUnkEu_090CE9E0[];
+extern const u16 gUnkEu_090CE9EA[];
+extern const u16 gUnkEu_090CE9F4[];
+#endif
 extern u8 gUnk_09618C58[];
 extern u8 gUnk_09619098[];
 extern u8 gUnk_090A3E46[];
@@ -2349,10 +2355,26 @@ typedef struct UnkStruct_0808F0C0 {
 } UnkStruct_0808F0C0;
 
 typedef struct UnkStruct_09035898 {
-    s16* unk_00;
+    const s16* unk_00;
     s16 unk_04;
     u8 unk_06[2];
 } UnkStruct_09035898;
+
+extern const s16 gUnk_09035808[];
+extern const s16 gUnk_09035874[];
+extern const UnkStruct_09035898 gUnk_09035898[];
+extern const UnkStruct_09035898 gUnk_090358D0[];
+#ifdef VERSION_EU
+extern const UnkStruct_09035898 gUnkEu_090CEC30[];
+extern const UnkStruct_09035898 gUnkEu_090CEC70[];
+extern const s16 gUnkEu_090CECE8[];
+#endif
+#ifdef VERSION_JP
+extern const s16 gUnkJp_09008DEC[];
+extern const u8 gUnkJp_090089B0[];
+extern const u8 gUnkJp_090089BC[];
+extern const u8 gUnkJp_090089C8[];
+#endif
 
 typedef struct UnkStruct_0808FA8C {
     u8 unk_000[0x4D4];

@@ -159,9 +159,7 @@ card_battle.c
 card_card.c
 card_battle_riku.c
 card_map_anim.c
-card_deckmenu2_rodata.s
 card_deckmenu2.c
-card_deckmenu2_keyboard.s
 card_deckcard2.c
 card_enemy_rodata.s
 card_enemy.c

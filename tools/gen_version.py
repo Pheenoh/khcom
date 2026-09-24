@@ -1816,9 +1816,7 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08891508": 0x08891508,
         "gUnkEu_088927F4": 0x088927F4,
         "gUnkEu_088928E4": 0x088928E4,
-        "gUnkEu_090CE9EA": 0x090CE9EA,
         "gUnkEu_090D1DF4": 0x090D1DF4,
-        "gUnkEu_090CE9F4": 0x090CE9F4,
         "gUnkEu_08892780": 0x08892780,
         "gUnkEu_08892864": 0x08892864,
         "gUnkEu_08890EC0": 0x08890EC0,
@@ -1843,9 +1841,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08891714": 0x08891714,
         "gUnkEu_08895EDC": 0x08895EDC,
         "gUnkEu_090D1DC0": 0x090D1DC0,
-        "gUnkEu_090CEC30": 0x090CEC30,
-        "gUnkEu_090CEC70": 0x090CEC70,
-        "gUnkEu_090CECE8": 0x090CECE8,
         "gUnkEu_090D1328": 0x090D1328,
         "gUnkEu_08891580": 0x08891580,
         "gUnkEu_099AEE98": 0x099AEE98,
@@ -1904,7 +1899,6 @@ TARGET_ONLY_SYMBOLS = {
         "gMoogleAssetEu_099B2668": 0x99b2668,
         "gBossMapBlockEu_08124944": 0x8124944,
         "gUnkEu_090CF64D": 0x090CF64D,
-        "gUnkEu_090CE9E0": 0x090CE9E0,
         "gUnkEu_090D1FB0": 0x090D1FB0,
         "gUnkEu_090D1DA5": 0x090D1DA5,
         "gUnk_08B1ED76": 0x08b4a686,
@@ -1964,7 +1958,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnk_0814FBB0": 0x0814FBB0,
         "gUnk_0814FBBC": 0x0814FBBC,
         "gUnk_0814FBD4": 0x0814FBD4,
-        "gUnkJp_09008DEC": 0x09008DEC,
         "gMoogleAssetJp_00000001": 0x1,
         "gMoogleAssetJp_00000002": 0x2,
         "gMoogleAssetJp_00000003": 0x3,
@@ -2180,6 +2173,7 @@ TARGET_DATA_SIZE = {
         ("mode_chkmov.c", ".data"): 0x10,
         ("card_catalog.c", ".data"): 0x140,
         ("msg_localized_data.c", ".data"): 0x1075c,
+        ("card_deckmenu2.c", ".rodata"): 0x30c,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,
@@ -2196,6 +2190,7 @@ TARGET_DATA_SIZE = {
         ("mode_staffroll.c", ".data"): 0xba0,
         ("jiminy_inline_text_data.c", ".rodata"): 0x1c9,
         ("mode_jiminy.c", ".rodata"): 0x48a8,
+        ("card_deckmenu2.c", ".rodata"): 0x442,
     },
 }
 
@@ -2210,6 +2205,7 @@ TARGET_DATA_ADDR = {
         ("sroll_b_crtn.c", ".rodata"): 0x09a09398,
         ("sroll_c_char.c", ".rodata"): 0x09a093ac,
         ("sroll_tmr.c", ".rodata"): 0x09a093c0,
+        ("card_deckmenu2.c", ".rodata"): 0x090089b0,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2244,6 +2240,7 @@ TARGET_DATA_ADDR = {
         ("mode_ms_top.c", ".data"): 0x09f84ee8,
         ("ms_charge.c", ".data"): 0x09f84fa8,
         ("mode_mapinspect.c", ".data"): 0x09f85008,
+        ("card_deckmenu2.c", ".rodata"): 0x090ce9e0,
     },
 }
 
@@ -2251,7 +2248,6 @@ TARGET_BLOB_REGIONS = {
     "jp": (
         (0x0814E57C, "rodata_script_gap_1"),
         (0x0814FC76, "rodata_movie_alignment"),
-        (0x090089AE, "card_deckmenu2_deck_names"),
     ),
     "eu": (
         (0x0812FB22, "rodata_movie_alignment"),

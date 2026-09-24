@@ -57,11 +57,8 @@ u8 func_080892E8(u8* work, void* a);
 extern AnimHeader gUnk_090A44BA;
 extern void* gUnkEu_09F6FD8C[];
 extern void** gUnkEu_09F6FDA0[];
-extern u16 gUnkEu_090CE9E0[];
 extern void* gUnkEu_09F6FDB4[];
-extern u16 gUnkEu_090CE9EA[];
 extern void* gUnkEu_09F6FDDC[];
-extern u16 gUnkEu_090CE9F4[];
 
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
@@ -86,7 +83,6 @@ u8 func_08089220(u8* work, void* a);
 struct UnkStruct_0808F0C0;
 u8 func_0808F3E8(struct UnkStruct_0808F0C0* w, void* a);
 u8 func_0808F660(struct UnkStruct_0808F0C0* w, void* a);
-extern s16 gUnk_0903570E[];
 void func_0808D6C4(u8* work);
 struct UnkStruct_080889DC;
 u8 func_08086A14(struct UnkStruct_080889DC* w, void* a);
@@ -108,7 +104,6 @@ u8 func_08089D20(u8* work, void* a);
 u8 func_0808B068(u8* work, void* a);
 u8 func_08089EC0(u8* work, void* a);
 u8 func_080870FC(UnkStruct_0808DB04* w, void* a);
-extern s16 gUnk_090356F8[];
 s32 func_0808D828(u8* work);
 extern u8 gUnk_09614318[];
 void func_0808C940(UnkStruct_0808C940* w, s16 n);
@@ -793,6 +788,14 @@ s32 func_08085BAC(void) {
     return 0;
 }
 
+#ifdef VERSION_JP
+const u8 gUnkJp_090089B0[12] = "\x83\x66\x83\x62\x83\x4c\x82\x50";
+
+const u8 gUnkJp_090089BC[12] = "\x83\x66\x83\x62\x83\x4c\x82\x51";
+
+const u8 gUnkJp_090089C8[12] = "\x83\x66\x83\x62\x83\x4c\x82\x52";
+#endif
+
 void func_08085C3C(void) {
     gActiveDeck = 0;
     InitCardCollection();
@@ -990,6 +993,39 @@ u8 GetActiveDeckIndex(void) {
 
 void func_08085FB0(void) {
 }
+
+#ifdef VERSION_EU
+const u16 gUnkEu_090CE9E0[5] = { 0x280, 0x280, 0x280, 0x280, 0x280 };
+
+const u16 gUnkEu_090CE9EA[5] = { 0x1800, 0x1800, 0x1800, 0x1800, 0x1800 };
+
+const u16 gUnkEu_090CE9F4[5] = { 0x320, 0x320, 0x320, 0x320, 0x320 };
+#endif
+
+const s16 gUnk_090356EC[3] = { 116, 116, 116 };
+
+#ifdef VERSION_EU
+const s16 gUnk_090356F2[3] = { 51, 99, 148 };
+#else
+const s16 gUnk_090356F2[3] = { 56, 104, 148 };
+#endif
+
+const s16 gUnk_090356F8[5] = { 12, 28, 42, 56, 70 };
+
+const s16 gUnk_09035702[6] = { 172, 172, 188, 202, 216, 230 };
+
+const s16 gUnk_0903570E[6] = { 50, 67, 85, 108, 126, 149 };
+
+const s16 gUnk_0903571A[2] = { 80, 128 };
+
+const s16 gUnk_0903571E[9] = { 80, 88, 96, 104, 112, 45, 93, 141, 30 };
+
+#ifdef VERSION_JP
+const UnkStruct_09035730 gUnk_09035730 = { { 94, 151 } };
+#else
+const UnkStruct_09035730 gUnk_09035730 = { { 102, 148 } };
+#endif
+
 static void Deckmenu2_0(u8* work, void* a) {
     u16 unk;
     *(void**)&work[CARDWORK(0x8BC)] = a;
@@ -6122,9 +6158,6 @@ u8 func_0808EF80(u8* work, u16 dir) {
     return 1;
 }
 
-extern UnkStruct_09035898 gUnk_09035898[];
-extern UnkStruct_09035898 gUnk_090358D0[];
-
 u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
     if (w->cursor.parts.y == 1 && (u16)w->cursor.parts.x > 10) {
         switch (keys) {
@@ -6241,8 +6274,6 @@ u8 func_0808F0C0(UnkStruct_0808F0C0* w, u16 keys) {
     return 1;
 }
 #ifdef VERSION_EU
-extern UnkStruct_09035898 gUnkEu_090CEC30[];
-extern UnkStruct_09035898 gUnkEu_090CEC70[];
 u8 func_eu_0808E94C(UnkStruct_0808F0C0* w, u16 keys) {
     if (w->cursor.parts.y == 1 && (u16)w->cursor.parts.x > 5) {
         switch (keys) {
@@ -6608,8 +6639,6 @@ void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
 extern u8 gUnk_096145B8[];
 extern u8 gUnk_090A5F1E[];
 extern u8 gUnk_09614518[];
-extern s16 gUnk_09035808[];
-extern s16 gUnk_09035874[];
 #ifdef VERSION_JP
 extern u8 gUnkJp_093D1694[];
 #endif
@@ -6736,12 +6765,6 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
     return 1;
 }
 #if defined(VERSION_JP) || defined(VERSION_EU)
-#ifdef VERSION_JP
-extern s16 gUnkJp_09008DEC[];
-#else
-extern s16 gUnkEu_090CECE8[];
-#endif
-
 u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
 #ifdef VERSION_EU
     u8* mode = &w->unk_7C7;
@@ -7263,48 +7286,92 @@ void** gUnkEu_09F6FE44[5] = { gUnk_09EEB08C, gUnk_09EEB08C, gUnkEu_09F7721C, gUn
 void* gUnkEu_09F6FE58[5] = { gUnk_09EEB0B8, gUnk_09EEB0B8, gUnkEu_09F77248, gUnkEu_09F77210, gUnk_09EEB0B8 };
 #endif
 #ifdef VERSION_US
+const u16 gKeyboardTextUs_09035742[16] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 0 };
+
+const u16 gKeyboardTextUs_09035762[12] = { 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 0 };
+
+const u16 gKeyboardTextUs_0903577A[16] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 0 };
+
+const u16 gKeyboardTextUs_0903579A[12] = { 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 0 };
+
+const u16 gKeyboardTextUs_090357B2[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 0x266a, 0x2642, 0x2640, '#', '&', 0 };
+
+const u16 gKeyboardTextUs_090357D2[16] = { '!', '?', 0x203b, '%', '$', ' ', '(', ')', '<', '>', ' ', 0x300c, 0x300d, 0x300e, 0x300f, 0 };
+
+const u16 gKeyboardTextUs_090357F2[11] = { '-', '~', '/', '.', '\'', 0x2191, 0x2193, 0x2190, 0x2192, '_', 0 };
+
 const u8* gUnk_09EE4B0C[7] = {
-    gKeyboardTextUs_09035742,
-    gKeyboardTextUs_09035762,
-    gKeyboardTextUs_0903577A,
-    gKeyboardTextUs_0903579A,
-    gKeyboardTextUs_090357B2,
-    gKeyboardTextUs_090357D2,
-    gKeyboardTextUs_090357F2,
+    (const u8*)gKeyboardTextUs_09035742,
+    (const u8*)gKeyboardTextUs_09035762,
+    (const u8*)gKeyboardTextUs_0903577A,
+    (const u8*)gKeyboardTextUs_0903579A,
+    (const u8*)gKeyboardTextUs_090357B2,
+    (const u8*)gKeyboardTextUs_090357D2,
+    (const u8*)gKeyboardTextUs_090357F2,
 };
 #endif
 #ifdef VERSION_JP
 const u8* gUnk_09EE4B0C[7] = {
-    gKeyboardTextJp_09008AE0,
-    gKeyboardTextJp_09008AC0,
-    gKeyboardTextJp_09008AA0,
-    gKeyboardTextJp_09008A88,
-    gKeyboardTextJp_09008A68,
-    gKeyboardTextJp_09008A48,
-    gKeyboardTextJp_09008A2C,
+    "\x82\xa0\x82\xa2\x82\xa4\x82\xa6\x82\xa8\x82\xa9\x82\xab\x82\xad\x82\xaf\x82\xb1\x82\xb3\x82\xb5\x82\xb7\x82\xb9\x82\xbb",
+    "\x82\xbd\x82\xbf\x82\xc2\x82\xc4\x82\xc6\x82\xc8\x82\xc9\x82\xca\x82\xcb\x82\xcc\x82\xcd\x82\xd0\x82\xd3\x82\xd6\x82\xd9",
+    "\x82\xdc\x82\xdd\x82\xde\x82\xdf\x82\xe0\x82\xe2\x81\x40\x82\xe4\x81\x40\x82\xe6\x82\xe7\x82\xe8\x82\xe9\x82\xea\x82\xeb",
+    "\x82\xed\x81\x40\x82\xf0\x81\x40\x82\xf1\x81\x7c\x81\x5b\x81\x60\x81\x63\x81\x40",
+    "\x82\xaa\x82\xac\x82\xae\x82\xb0\x82\xb2\x82\xb4\x82\xb6\x82\xb8\x82\xba\x82\xbc\x82\xbe\x82\xc0\x82\xc3\x82\xc5\x82\xc7",
+    "\x82\xce\x82\xd1\x82\xd4\x82\xd7\x82\xda\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\xcf\x82\xd2\x82\xd5\x82\xd8\x82\xdb",
+    "\x82\x9f\x82\xa1\x82\xa3\x82\xa5\x82\xa7\x82\xc1\x81\x40\x82\xe1\x82\xe3\x82\xe5\x81\x41\x81\x42",
 };
 
 const u8* gUnkJp_09EBC148[7] = {
-    gKeyboardTextJp_09008BB4,
-    gKeyboardTextJp_09008B94,
-    gKeyboardTextJp_09008B74,
-    gKeyboardTextJp_09008B5C,
-    gKeyboardTextJp_09008B3C,
-    gKeyboardTextJp_09008B1C,
-    gKeyboardTextJp_09008B00,
+    "\x83\x41\x83\x43\x83\x45\x83\x47\x83\x49\x83\x4a\x83\x4c\x83\x4e\x83\x50\x83\x52\x83\x54\x83\x56\x83\x58\x83\x5a\x83\x5c",
+    "\x83\x5e\x83\x60\x83\x63\x83\x65\x83\x67\x83\x69\x83\x6a\x83\x6b\x83\x6c\x83\x6d\x83\x6e\x83\x71\x83\x74\x83\x77\x83\x7a",
+    "\x83\x7d\x83\x7e\x83\x80\x83\x81\x83\x82\x83\x84\x81\x40\x83\x86\x81\x40\x83\x88\x83\x89\x83\x8a\x83\x8b\x83\x8c\x83\x8d",
+    "\x83\x8f\x81\x40\x83\x92\x81\x40\x83\x93\x81\x7c\x81\x5b\x81\x60\x81\x63\x81\x40",
+    "\x83\x4b\x83\x4d\x83\x4f\x83\x51\x83\x53\x83\x55\x83\x57\x83\x59\x83\x5b\x83\x5d\x83\x5f\x83\x61\x83\x64\x83\x66\x83\x68",
+    "\x83\x6f\x83\x72\x83\x75\x83\x78\x83\x7b\x81\x40\x81\x40\x83\x94\x81\x40\x81\x40\x83\x70\x83\x73\x83\x76\x83\x79\x83\x7c",
+    "\x83\x40\x83\x42\x83\x44\x83\x46\x83\x48\x83\x62\x81\x40\x83\x83\x83\x85\x83\x87\x81\x41\x81\x42",
 };
 
 const u8* gUnkJp_09EBC164[7] = {
-    gKeyboardTextJp_09008C84,
-    gKeyboardTextJp_09008C64,
-    gKeyboardTextJp_09008C44,
-    gKeyboardTextJp_09008C24,
-    gKeyboardTextJp_09008C0C,
-    gKeyboardTextJp_09008BEC,
-    gKeyboardTextJp_09008BD4,
+    "\x82\x60\x82\x61\x82\x62\x82\x63\x82\x64\x82\x65\x82\x66\x82\x67\x82\x68\x82\x69\x82\x6a\x82\x6b\x82\x6c\x82\x6d\x82\x6e",
+    "\x82\x6f\x82\x70\x82\x71\x82\x72\x82\x73\x82\x74\x82\x75\x82\x76\x82\x77\x82\x78\x82\x79\x81\x40\x81\x40\x81\x40\x81\x40",
+    "\x82\x81\x82\x82\x82\x83\x82\x84\x82\x85\x82\x86\x82\x87\x82\x88\x82\x89\x82\x8a\x82\x8b\x82\x8c\x82\x8d\x82\x8e\x82\x8f",
+    "\x82\x90\x82\x91\x82\x92\x82\x93\x82\x94\x82\x95\x82\x96\x82\x97\x82\x98\x82\x99\x82\x9a\x81\x40\x81\x40\x81\x40\x81\x40",
+    "\x82\x4f\x82\x50\x82\x51\x82\x52\x82\x53\x82\x54\x82\x55\x82\x56\x82\x57\x82\x58",
+    "\x81\x49\x81\x48\x81\x93\x81\x96\x81\x5e\x81\x75\x81\x76\x81\x77\x81\x78\x81\x40\x81\x69\x81\x6a\x81\x40\x81\x40\x81\x40",
+    "\x81\x7c\x81\x5b\x81\x60\x81\x63\x81\x66\x81\x41\x81\x42\x81\x45\x81\x43\x81\x40",
 };
 #endif
 #ifdef VERSION_EU
+const u8 gKeyboardTextEu_090CEA56[16] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 0 };
+
+const u8 gKeyboardTextEu_090CEA66[12] = { 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 0 };
+
+const u8 gKeyboardTextEu_090CEA72[16] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 0 };
+
+const u8 gKeyboardTextEu_090CEA82[12] = { 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 0 };
+
+const u8 gKeyboardTextEu_090CEA8E[16] = { 0xa1, 0xbf, 0xc0, 0xc1, 0xc2, 0xc4, 0xc8, 0xc9, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0xcf, 0xd1, 0 };
+
+const u8 gKeyboardTextEu_090CEA9E[11] = { 0xd2, 0xd3, 0xd4, 0xd6, 0xd9, 0xda, 0xdb, 0xdc, 0xdf, ' ', 0 };
+
+const u8 gKeyboardTextEu_090CEAA9[16] = { 0xe0, 0xe1, 0xe2, 0xe4, 0xe8, 0xe9, 0xea, 0xeb, 0xec, 0xed, 0xee, 0xef, 0xf1, 0xf2, 0xf3, 0 };
+
+const u8 gKeyboardTextEu_090CEAB9[11] = { 0xf4, 0xf5, 0xf9, 0xfa, 0xfb, 0xfc, 0xb0, 0x96, 0x93, 0x94, 0 };
+
+const u8 gKeyboardTextEu_090CEAC4[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', 0x86, 0x87, 0x83, 0xa7, 0 };
+
+const u8 gKeyboardTextEu_090CEAD4[11] = { '+', '-', 0xb1, 0xd7, '=', '%', ' ', ' ', ' ', ' ', 0 };
+
+const u8 gKeyboardTextEu_090CEADF[16] = { '?', '!', 0xb7, ':', '_', '/', '~', 0x07, 0x08, 0x09, '#', '&', 0x06, 0x97, '|', 0 };
+
+const u8 gKeyboardTextEu_090CEAEF[16] = { 0x0e, 0x16, 0x0f, 0x17, 0x10, 0x11, 0x14, 0x15, 0x13, 0x12, 0x0a, 0x0b, 0x0c, 0x0d, ';', 0 };
+
+const u8 gKeyboardTextEu_090CEAFF[6] = { '.', ',', 0x84, ' ', ' ', 0 };
+
+const u8 gKeyboardTextEu_090CEB05[16] = { '{', '}', '[', ']', 0xa6, 0x01, 0x02, 0x03, 0x04, 0x85, '(', ')', '<', '>', ' ', 0 };
+
+const u8 gKeyboardTextEu_090CEB15[6] = { 0x91, 0x92, ' ', ' ', ' ', 0 };
+
 const u8* gUnkEu_09F6FE6C[8] = {
     gKeyboardTextEu_090CEA56,
     gKeyboardTextEu_090CEA66,
@@ -7325,4 +7392,126 @@ const u8* gUnkEu_09F6FE8C[7] = {
     gKeyboardTextEu_090CEB05,
     gKeyboardTextEu_090CEB15,
 };
+#endif
+
+#ifdef VERSION_EU
+const s16 gUnk_09035808[15] = {
+    5, 19, 33, 47, 60, 83, 97, 111, 126, 140, 163, 177, 191, 205, 219,
+};
+
+const s16 gUnk_09035874[8] = {
+    33, 47, 61, 76, 92, 110, 128, 143,
+};
+
+const s16 gUnkEu_090CEB4A[15] = {
+    4, 18, 32, 46, 60, 83, 97, 109, 123, 137, 164, 177, 191, 205, 219,
+};
+
+const s16 gUnkEu_090CEB68[7] = {
+    40, 56, 70, 86, 102, 118, 134,
+};
+
+const UnkStruct_09035898 gUnk_09035898[8] = {
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+};
+
+const UnkStruct_09035898 gUnk_090358D0[15] = {
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+    { gUnk_09035874, 8 },
+};
+
+const UnkStruct_09035898 gUnkEu_090CEC30[8] = {
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+    { gUnkEu_090CEB4A, 15 },
+};
+
+const UnkStruct_09035898 gUnkEu_090CEC70[15] = {
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+    { gUnkEu_090CEB68, 7 },
+};
+
+const s16 gUnkEu_090CECE8[2] = { 1, 15 };
+#else
+const s16 gUnk_09035808[54] = {
+    3, 16, 30, 45, 58, 83, 97, 110, 124, 138, 162, 177, 190, 205, 219,
+    3, 16, 30, 45, 58, 83, 97, 124, 162, 177, 190, 205, 219, 3, 16,
+    30, 45, 58, 3, 16, 30, 45, 58, 162, 177, 190, 205, 219, 3, 16,
+    30, 45, 58, 83, 97, 110, 124, 138, 208,
+};
+
+const s16 gUnk_09035874[18] = {
+    39, 55, 71, 87, 103, 119, 136, 39, 55, 71, 103, 136, 39, 55, 71,
+    87, 103, 119,
+};
+
+const UnkStruct_09035898 gUnk_09035898[7] = {
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+    { gUnk_09035808, 15 },
+};
+
+const UnkStruct_09035898 gUnk_090358D0[16] = {
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+    { gUnk_09035874, 7 },
+};
+#endif
+#ifdef VERSION_JP
+const s16 gUnkJp_09008DEC[3] = { 1, 15, 29 };
 #endif
