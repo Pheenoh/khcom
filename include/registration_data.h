@@ -279,8 +279,6 @@ extern TaskDesc gTaskDescSrollBSecn;
 extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
-extern const char gModeNameSioBattle[];
-extern const char gModeNameSioBtlConnect[];
 extern const char gTaskNameBosJfLamp[];
 extern const char gTaskNameBosJfMajin[];
 extern const char gTaskNameBosDsd[];

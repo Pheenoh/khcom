@@ -55,9 +55,19 @@ u16 gUnk_0203AB20[10] EWRAM_COMMON(16);
 s8 gUnk_0203AB34[2] EWRAM_COMMON(4);
 #endif
 
-const char gModeNameSioBattle[] = "mode_sio_battle";
+Mode gModeSioBattle = {
+    "mode_sio_battle",
+    mode_sio_battle_0,
+    mode_sio_battle_1,
+    mode_sio_battle_2,
+};
 
-const char gModeNameSioBtlConnect[] = "mode_sio_btl_connect";
+Mode gModeSioBtlConnect = {
+    "mode_sio_btl_connect",
+    mode_sio_btl_connect_0,
+    mode_sio_btl_connect_1,
+    mode_sio_btl_connect_2,
+};
 
 const SioAnimDef gSioBtlOptionAnimDefs[2] = {
     {gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0},
@@ -3386,20 +3396,6 @@ void mode_sioError_2(void) {
     FreeTextSlots(gSioErrorWork->unk_08, SIO_ERROR_TEXT_SLOTS);
     EwramFree(gSioErrorWork);
 }
-
-Mode gModeSioBattle = {
-    gModeNameSioBattle,
-    mode_sio_battle_0,
-    mode_sio_battle_1,
-    mode_sio_battle_2,
-};
-
-Mode gModeSioBtlConnect = {
-    gModeNameSioBtlConnect,
-    mode_sio_btl_connect_0,
-    mode_sio_btl_connect_1,
-    mode_sio_btl_connect_2,
-};
 
 SioWorldEntry gSioWorldEntries[13] = {
 #if defined(VERSION_US)
