@@ -12,7 +12,7 @@ void EvtObjSetAnim(EvtObj* obj, s32 anim) {
     u16 t = obj->flags | 1;
 
     obj->flags = t;
-    obj->unk_00 = (s32)&gUnk_0813766C[anim];
+    obj->unk_00 = (s32)&gEvtObjAnims[anim];
 }
 
 void EvtObjSetPos(EvtObj* obj, s32 a, s32 b, s32 c) {

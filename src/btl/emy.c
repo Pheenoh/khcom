@@ -21,7 +21,7 @@ const AnimDef gUnk_0813D35C[7] = {
     { gUnk_09EDF9DC, gUnk_09EDF9F4, gUnk_08965D48, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D3CC = { gUnk_08F697A4, gUnk_0813D32C, 384, 130, 10, 20, 64, 32, 16, 10, 3, { 0, 12, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy00Def = { gUnk_08F697A4, gUnk_0813D32C, 384, 130, 10, 20, 64, 32, 16, 10, 3, { 0, 12, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy00 = { "task_emy_00", task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
 
@@ -36,7 +36,7 @@ const AnimDef gUnk_0813D434[2] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D454 = { gUnk_08F69804, gUnk_0813D404, 384, 130, 20, 20, 64, 32, 32, 10, 0, { 1, 33, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy01Def = { gUnk_08F69804, gUnk_0813D404, 384, 130, 20, 20, 64, 32, 32, 10, 0, { 1, 33, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy01 = { "task_emy_01", task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
 
@@ -51,7 +51,7 @@ const AnimDef gUnk_0813D4BC[2] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 8, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D4DC = { gUnk_08F69824, gUnk_0813D48C, 460, 130, 20, 20, 64, 32, 32, 10, 0, { 2, 34, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy02Def = { gUnk_08F69824, gUnk_0813D48C, 460, 130, 20, 20, 64, 32, 32, 10, 0, { 2, 34, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy02 = { "task_emy_02", task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
 
@@ -66,7 +66,7 @@ const AnimDef gUnk_0813D544[2] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 5, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D564 = { gUnk_08F69844, gUnk_0813D514, 512, 130, 20, 20, 64, 32, 32, 10, 0, { 3, 36, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy03Def = { gUnk_08F69844, gUnk_0813D514, 512, 130, 20, 20, 64, 32, 32, 10, 0, { 3, 36, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy03 = { "task_emy_03", task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
 
@@ -78,7 +78,7 @@ const AnimDef gUnk_0813D59C[3] = {
 
 const AnimDef gUnk_0813D5CC = { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 4, { 0, 0, 0 } };
 
-const EmyDef gUnk_0813D5DC = { gUnk_08F69864, gUnk_0813D59C, 332, 130, 20, 20, 0, 0, 0, 200, 0, { 4, 27, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy04Def = { gUnk_08F69864, gUnk_0813D59C, 332, 130, 20, 20, 0, 0, 0, 200, 0, { 4, 27, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy04 = { "task_emy_04", task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
 
@@ -93,7 +93,7 @@ const AnimDef gUnk_0813D644[2] = {
     { gUnk_09EE0140, gUnk_09EE0178, gUnk_089DDB2C, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D664 = { gUnk_08F69924, gUnk_0813D614, 230, 130, 20, 20, 70, 32, 48, 10, 0, { 5, 42, 32, 8, 16, 100, 0 } };
+const EmyDef gEmy06Def = { gUnk_08F69924, gUnk_0813D614, 230, 130, 20, 20, 70, 32, 48, 10, 0, { 5, 42, 32, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy06 = { "task_emy_06", task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
 
@@ -113,7 +113,7 @@ const AnimDef gUnk_0813D6CC[7] = {
     { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D73C = { gUnk_08F698A4, gUnk_0813D69C, 0, 130, 20, 20, 0, 0, 0, 1, 0, { 6, 40, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy07Def = { gUnk_08F698A4, gUnk_0813D69C, 0, 130, 20, 20, 0, 0, 0, 1, 0, { 6, 40, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy07 = { "task_emy_07", task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
 
@@ -132,7 +132,7 @@ const AnimDef gUnk_0813D7A4[6] = {
     { gUnk_09EDFFB0, gUnk_09EDFFD8, gUnk_089C11E6, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D804 = { gUnk_08F698E4, gUnk_0813D774, 179, 130, 20, 20, 24, 24, 16, 5, 0, { 7, 999, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy08Def = { gUnk_08F698E4, gUnk_0813D774, 179, 130, 20, 20, 24, 24, 16, 5, 0, { 7, 999, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy08 = { "task_emy_08", task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
 
@@ -147,7 +147,7 @@ const AnimDef gUnk_0813D86C[2] = {
     { gUnk_09EDFB38, gUnk_09EDFB58, gUnk_08985F9E, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D88C = { gUnk_08F697E4, gUnk_0813D83C, 307, 130, 10, 20, 64, 32, 16, 10, 0, { 9, 32, 35, 12, 16, 100, 0 } };
+const EmyDef gEmy14Def = { gUnk_08F697E4, gUnk_0813D83C, 307, 130, 10, 20, 64, 32, 16, 10, 0, { 9, 32, 35, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy14 = { "task_emy_14", task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
 
@@ -165,7 +165,7 @@ const AnimDef gUnk_0813D8F4[5] = {
     { gUnk_09EE020C, gUnk_09EE0230, gUnk_089E8384, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D944 = { gUnk_08F69944, gUnk_0813D8C4, 192, 200, 2, 20, 64, 32, 32, 10, 0, { 10, 41, 35, 12, 16, 100, 0 } };
+const EmyDef gEmy15Def = { gUnk_08F69944, gUnk_0813D8C4, 192, 200, 2, 20, 64, 32, 32, 10, 0, { 10, 41, 35, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy15 = { "task_emy_15", task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
 
@@ -180,7 +180,7 @@ const AnimDef gUnk_0813D9AC[2] = {
     { gUnk_09EE04B8, gUnk_09EE04DC, gUnk_08A20D96, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813D9CC = { gUnk_08F699C4, gUnk_0813D97C, 307, 130, 20, 20, 99, 32, 32, 10, 0, { 11, 29, 16, 8, 16, 100, 0 } };
+const EmyDef gEmy16Def = { gUnk_08F699C4, gUnk_0813D97C, 307, 130, 20, 20, 99, 32, 32, 10, 0, { 11, 29, 16, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy16 = { "task_emy_16", task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
 
@@ -201,7 +201,7 @@ const AnimDef gUnk_0813DA54[4] = {
     { gUnk_09EE0D70, gUnk_09EE0DB8, gUnk_08AF4A6E, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DA94 = { gUnk_08F69B24, gUnk_0813DA24, 768, 150, 4, 20, 40, 24, 16, 10, 0, { 12, 45, 40, 8, 16, 100, 0 } };
+const EmyDef gEmy18Def = { gUnk_08F69B24, gUnk_0813DA24, 768, 150, 4, 20, 40, 24, 16, 10, 0, { 12, 45, 40, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy18 = { "task_emy_18", task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
 
@@ -219,7 +219,7 @@ const AnimDef gUnk_0813DAFC[5] = {
     { gUnk_09EE02B4, gUnk_09EE02D0, gUnk_089F18A0, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DB4C = { gUnk_08F69964, gUnk_0813DACC, 256, 130, 20, 20, 80, 80, 32, 10, 0, { 13, 53, 32, 13, 16, 100, 0 } };
+const EmyDef gEmy19Def = { gUnk_08F69964, gUnk_0813DACC, 256, 130, 20, 20, 80, 80, 32, 10, 0, { 13, 53, 32, 13, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy19 = { "task_emy_19", task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
 
@@ -236,7 +236,7 @@ const AnimDef gUnk_0813DBB4[4] = {
     { gUnk_09EDFD4C, gUnk_09EDFD6C, gUnk_089A7288, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DBF4 = { gUnk_08F69884, gUnk_0813DB84, 396, 130, 20, 20, 80, 80, 16, 5, 0, { 14, 40, 32, 16, 16, 100, 0 } };
+const EmyDef gEmy21Def = { gUnk_08F69884, gUnk_0813DB84, 396, 130, 20, 20, 80, 80, 16, 5, 0, { 14, 40, 32, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy21 = { "task_emy_21", task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
 
@@ -251,7 +251,7 @@ const AnimDef gUnk_0813DC5C[2] = {
     { gUnk_09EE0580, gUnk_09EE05BC, gUnk_08A2D81C, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DC7C = { gUnk_08F699E4, gUnk_0813DC2C, 192, 130, 20, 20, 64, 32, 32, 5, 0, { 15, 61, 40, 12, 24, 15, 8 } };
+const EmyDef gEmy22Def = { gUnk_08F699E4, gUnk_0813DC2C, 192, 130, 20, 20, 64, 32, 32, 5, 0, { 15, 61, 40, 12, 24, 15, 8 } };
 
 TaskDesc gTaskDescEmy22 = { "task_emy_22", task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
 
@@ -266,7 +266,7 @@ const AnimDef gUnk_0813DCE4[2] = {
     { gUnk_09EE0350, gUnk_09EE036C, gUnk_08A02308, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DD04 = { gUnk_08F69984, gUnk_0813DCB4, 192, 30, 2, 20, 64, 40, 32, 25, 0, { 16, 66, 36, 10, 16, 100, 0 } };
+const EmyDef gEmy23Def = { gUnk_08F69984, gUnk_0813DCB4, 192, 30, 2, 20, 64, 40, 32, 25, 0, { 16, 66, 36, 10, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy23 = { "task_emy_23", task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
 
@@ -281,7 +281,7 @@ const AnimDef gUnk_0813DD6C[2] = {
     { gUnk_09EE0BE8, gUnk_09EE0C54, gUnk_08ACC9D0, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DD8C = { gUnk_08F69AE4, gUnk_0813DD3C, 253, 130, 20, 20, 24, 16, 16, 3, 0, { 17, 79, 40, 12, 32, 100, 0 } };
+const EmyDef gEmy25Def = { gUnk_08F69AE4, gUnk_0813DD3C, 253, 130, 20, 20, 24, 16, 16, 3, 0, { 17, 79, 40, 12, 32, 100, 0 } };
 
 TaskDesc gTaskDescEmy25 = { "task_emy_25", task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
 
@@ -296,7 +296,7 @@ const AnimDef gUnk_0813DDF4[2] = {
     { gUnk_09EE0630, gUnk_09EE064C, gUnk_08A3EE2E, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DE14 = { gUnk_08F69A04, gUnk_0813DDC4, 192, 130, 20, 20, 64, 32, 32, 10, 0, { 18, 89, 36, 20, 16, 100, 4 } };
+const EmyDef gEmy26Def = { gUnk_08F69A04, gUnk_0813DDC4, 192, 130, 20, 20, 64, 32, 32, 10, 0, { 18, 89, 36, 20, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy26 = { "task_emy_26", task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
 
@@ -311,7 +311,7 @@ const AnimDef gUnk_0813DE7C[2] = {
     { gUnk_09EE06D0, gUnk_09EE06E8, gUnk_08A49124, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DE9C = { gUnk_08F69A24, gUnk_0813DE4C, 192, 130, 20, 20, 64, 32, 64, 10, 0, { 19, 125, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy27Def = { gUnk_08F69A24, gUnk_0813DE4C, 192, 130, 20, 20, 64, 32, 64, 10, 0, { 19, 125, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy27 = { "task_emy_27", task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
 
@@ -328,7 +328,7 @@ const AnimDef gUnk_0813DF04[4] = {
     { gUnk_09EE0710, gUnk_09EE0728, gUnk_08A4E2F8, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DF44 = { gUnk_08F69A44, gUnk_0813DED4, 1024, 150, 4, 20, 40, 24, 16, 25, 0, { 20, 45, 48, 8, 16, 100, 4 } };
+const EmyDef gEmy28Def = { gUnk_08F69A44, gUnk_0813DED4, 1024, 150, 4, 20, 40, 24, 16, 25, 0, { 20, 45, 48, 8, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy28 = { "task_emy_28", task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
 
@@ -343,7 +343,7 @@ const AnimDef gUnk_0813DFAC[2] = {
     { gUnk_09EE07DC, gUnk_09EE0800, gUnk_08A62944, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813DFCC = { gUnk_08F69A64, gUnk_0813DF7C, 192, 300, 20, 20, 64, 64, 32, 30, 0, { 21, 80, 56, 22, 32, 100, 4 } };
+const EmyDef gEmy29Def = { gUnk_08F69A64, gUnk_0813DF7C, 192, 300, 20, 20, 64, 64, 32, 30, 0, { 21, 80, 56, 22, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy29 = { "task_emy_29", task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
 
@@ -364,7 +364,7 @@ const AnimDef gUnk_0813E034[8] = {
     { gUnk_09EE0A5C, gUnk_09EE0A78, gUnk_08AA7146, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E0B4 = { gUnk_08F69AC4, gUnk_0813E004, 1024, 150, 4, 20, 60, 32, 32, 30, 0, { 22, 45, 34, 30, 16, 100, 4 } };
+const EmyDef gEmy30Def = { gUnk_08F69AC4, gUnk_0813E004, 1024, 150, 4, 20, 60, 32, 32, 30, 0, { 22, 45, 34, 30, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy30 = { "task_emy_30", task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
 
@@ -380,7 +380,7 @@ const AnimDef gUnk_0813E11C[3] = {
     { gUnk_09EE00A0, gUnk_09EE00C4, gUnk_089D354A, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E14C = { gUnk_08F69904, gUnk_0813E0EC, 256, 100, 10, 20, 64, 32, 32, 10, 0, { 23, 95, 32, 12, 24, 100, 0 } };
+const EmyDef gEmy31Def = { gUnk_08F69904, gUnk_0813E0EC, 256, 100, 10, 20, 64, 32, 32, 10, 0, { 23, 95, 32, 12, 24, 100, 0 } };
 
 TaskDesc gTaskDescEmy31 = { "task_emy_31", task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
 
@@ -404,7 +404,7 @@ const AnimDef gUnk_0813E1B4[11] = {
     { gUnk_09EE0920, gUnk_09EE092C, gUnk_08A7D0F4, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E264 = { gUnk_08F69A84, gUnk_0813E184, 409, 130, 20, 20, 64, 32, 32, 10, 3, { 24, 110, 38, 12, 20, 100, 0 } };
+const EmyDef gEmy37Def = { gUnk_08F69A84, gUnk_0813E184, 409, 130, 20, 20, 64, 32, 32, 10, 3, { 24, 110, 38, 12, 20, 100, 0 } };
 
 TaskDesc gTaskDescEmy37 = { "task_emy_37", task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
 
@@ -419,7 +419,7 @@ const AnimDef gUnk_0813E2CC[2] = {
     { gUnk_09EDFA60, gUnk_09EDFA7C, gUnk_089744FE, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E2EC = { gUnk_08F697C4, gUnk_0813E29C, 76, 130, 80, 22, 64, 32, 32, 10, 0, { 25, 112, 56, 25, 32, 100, 4 } };
+const EmyDef gEmy38Def = { gUnk_08F697C4, gUnk_0813E29C, 76, 130, 80, 22, 64, 32, 32, 10, 0, { 25, 112, 56, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy38 = { "task_emy_38", task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
 
@@ -434,7 +434,7 @@ const AnimDef gUnk_0813E354[2] = {
     { gUnk_09EE09AC, gUnk_09EE09CC, gUnk_08A91ACA, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E374 = { gUnk_08F69AA4, gUnk_0813E324, 102, 130, 100, 22, 64, 32, 32, 10, 0, { 26, 134, 56, 25, 32, 100, 4 } };
+const EmyDef gEmy39Def = { gUnk_08F69AA4, gUnk_0813E324, 102, 130, 100, 22, 64, 32, 32, 10, 0, { 26, 134, 56, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy39 = { "task_emy_39", task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
 
@@ -449,7 +449,7 @@ const AnimDef gUnk_0813E3DC[2] = {
     { gUnk_09EE03E0, gUnk_09EE0420, gUnk_08A15034, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E3FC = { gUnk_08F699A4, gUnk_0813E3AC, 192, 400, 50, 20, 64, 32, 32, 10, 0, { 27, 108, 56, 32, 20, 100, 4 } };
+const EmyDef gEmy41Def = { gUnk_08F699A4, gUnk_0813E3AC, 192, 400, 50, 20, 64, 32, 32, 10, 0, { 27, 108, 56, 32, 20, 100, 4 } };
 
 TaskDesc gTaskDescEmy41 = { "task_emy_41", task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
 
@@ -464,7 +464,7 @@ const AnimDef gUnk_0813E464[2] = {
     { gUnk_09EE0CF8, gUnk_09EE0D28, gUnk_08AEA246, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E484 = { gUnk_08F69B04, gUnk_0813E434, 192, 130, 90, 20, 60, 60, 16, 10, 0, { 28, 260, 48, 25, 32, 100, 4 } };
+const EmyDef gEmy44Def = { gUnk_08F69B04, gUnk_0813E434, 192, 130, 90, 20, 60, 60, 16, 10, 0, { 28, 260, 48, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy44 = { "task_emy_44", task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
 
@@ -482,7 +482,7 @@ const AnimDef gUnk_0813E4EC[5] = {
     { gUnk_09EE0E74, gUnk_09EE0EBC, gUnk_08B02F02, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E53C = { gUnk_08F69B44, gUnk_0813E4BC, 128, 130, 20, 15, 64, 32, 32, 10, 0, { 29, 66, 27, 13, 16, 100, 0 } };
+const EmyDef gEmy81Def = { gUnk_08F69B44, gUnk_0813E4BC, 128, 130, 20, 15, 64, 32, 32, 10, 0, { 29, 66, 27, 13, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy81 = { "task_emy_81", task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
 
@@ -501,7 +501,7 @@ const AnimDef gUnk_0813E5A4[6] = {
     { gUnk_09EE0FFC, gUnk_09EE1020, gUnk_08B149BC, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E604 = { gUnk_08F69B64, gUnk_0813E574, 204, 3, 20, 20, 48, 32, 32, 1, 0, { 30, 66, 32, 10, 16, 100, 0 } };
+const EmyDef gEmy82Def = { gUnk_08F69B64, gUnk_0813E574, 204, 3, 20, 20, 48, 32, 32, 1, 0, { 30, 66, 32, 10, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy82 = { "task_emy_82", task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
 
@@ -518,7 +518,7 @@ const AnimDef gUnk_0813E66C[4] = {
     { gUnk_09EE10B0, gUnk_09EE10D4, gUnk_08B1BAA8, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E6AC = { gUnk_08F69B84, gUnk_0813E63C, 192, 130, 20, 20, 50, 50, 50, 10, 0, { 31, 66, 35, 12, 24, 100, 0 } };
+const EmyDef gEmy83Def = { gUnk_08F69B84, gUnk_0813E63C, 192, 130, 20, 20, 50, 50, 50, 10, 0, { 31, 66, 35, 12, 24, 100, 0 } };
 
 TaskDesc gTaskDescEmy83 = { "task_emy_83", task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
 
@@ -534,7 +534,7 @@ const AnimDef gUnk_0813E704[3] = {
 
 const AnimDef gUnk_0813E734 = { gUnk_09EE0AB4, gUnk_09EE0AC8, gUnk_08AB0C38, 0, { 0, 0, 0 } };
 
-const EmyDef gUnk_0813E744 = { gUnk_09617C98, gUnk_0813E704, 409, 130, 20, 20, 90, 32, 32, 10, 0, { 47, 200, 40, 16, 16, 100, 0 } };
+const EmyDef gEmyTrumpHDef = { gUnk_09617C98, gUnk_0813E704, 409, 130, 20, 20, 90, 32, 32, 10, 0, { 47, 200, 40, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmyTrumpH = { "task_emy_trump_h", task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
 
@@ -546,7 +546,7 @@ const AnimDef gUnk_0813E784[3] = {
 
 const AnimDef gUnk_0813E7B4 = { gUnk_09EE0AFC, gUnk_09EE0B14, gUnk_08AB8BE8, 0, { 0, 0, 0 } };
 
-const EmyDef gUnk_0813E7C4 = { gUnk_09617CB8, gUnk_0813E784, 307, 130, 20, 20, 64, 32, 32, 10, 0, { 46, 200, 40, 16, 16, 100, 0 } };
+const EmyDef gEmyTrumpSDef = { gUnk_09617CB8, gUnk_0813E784, 307, 130, 20, 20, 64, 32, 32, 10, 0, { 46, 200, 40, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmyTrumpS = { "task_emy_trump_s", task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
@@ -556,10 +556,10 @@ const AnimDef gUnk_0813E804[3] = {
     { gUnk_09EE2608, gUnk_09EE2618, gUnk_08C69204, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gUnk_0813E834 = { gUnk_08F6DD44, gUnk_0813E804, 0, 130, 20, 60, 64, 32, 32, 10, 0, { 28, 260, 16, 8, 16, 100, 0 } };
+const EmyDef gEmyTestDef = { gUnk_08F6DD44, gUnk_0813E804, 0, 130, 20, 60, 64, 32, 32, 10, 0, { 28, 260, 16, 8, 16, 100, 0 } };
 
 void task_emy_00_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D3CC, obj);
+    func_0800C778(work, &gEmy00Def, obj);
     work->flags |= 1;
     work->unk_150 = 0x12;
     work->unk_14C = 0x16;
@@ -796,7 +796,7 @@ void task_emy_00_3(EmyWork* work) {
 }
 
 void task_emy_01_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D454, obj);
+    func_0800C778(work, &gEmy01Def, obj);
     work->unk_150 = 7;
 }
 
@@ -893,7 +893,7 @@ void task_emy_01_3(EmyWork* work) {
 }
 
 void task_emy_02_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D4DC, obj);
+    func_0800C778(work, &gEmy02Def, obj);
     work->unk_150 = 7;
 }
 
@@ -990,7 +990,7 @@ void task_emy_02_3(EmyWork* work) {
 }
 
 void task_emy_03_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D564, obj);
+    func_0800C778(work, &gEmy03Def, obj);
     work->unk_150 = 7;
 }
 
@@ -1061,7 +1061,7 @@ void task_emy_03_3(EmyWork* work) {
 }
 
 void task_emy_04_0(Emy04Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813D5DC, obj);
+    func_0800C778(&work->base, &gEmy04Def, obj);
     work->base.unk_150 = 7;
     work->unk_184 = 0;
     work->unk_186 = 0;
@@ -1144,7 +1144,7 @@ void task_emy_04_3(EmyWork* work) {
 }
 
 void task_emy_06_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D664, obj);
+    func_0800C778(work, &gEmy06Def, obj);
     work->unk_150 = 7;
 }
 
@@ -1265,7 +1265,7 @@ void task_emy_06_3(EmyWork* work) {
 }
 
 void task_emy_07_0(Emy07Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813D73C, obj);
+    func_0800C778(&work->base, &gEmy07Def, obj);
     work->unk_184 = 0;
     work->unk_186 = 0;
     work->base.unk_150 = 0x12;
@@ -1497,7 +1497,7 @@ void task_emy_07_3(EmyWork* work) {
 }
 
 void task_emy_08_0(Emy08Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813D804, obj);
+    func_0800C778(&work->base, &gEmy08Def, obj);
     work->palette = LoadObjPalette(gUnk_08F698C4, 0x20);
     work->unk_188 = work->base.palette;
     work->flags = 0;
@@ -1691,7 +1691,7 @@ void task_emy_08_3(Emy08Work* work) {
 }
 
 void task_emy_14_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D88C, obj);
+    func_0800C778(work, &gEmy14Def, obj);
 }
 
 u8 task_emy_14_1(EmyWork* work) {
@@ -1737,7 +1737,7 @@ void task_emy_14_3(EmyWork* work) {
 }
 
 void task_emy_15_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813D944, obj);
+    func_0800C778(work, &gEmy15Def, obj);
 }
 
 u8 task_emy_15_1(EmyWork* work) {
@@ -1830,7 +1830,7 @@ void task_emy_15_3(EmyWork* work) {
 }
 
 void task_emy_16_0(Emy16Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813D9CC, obj);
+    func_0800C778(&work->base, &gEmy16Def, obj);
     work->unk_184 = 0;
     work->unk_188 = 0;
     TaskPoolInit(&work->tasks, 2);
@@ -2145,7 +2145,7 @@ void task_emy_16_p_3(Emy16pWork* work) {
 }
 
 void task_emy_18_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DA94, obj);
+    func_0800C778(work, &gEmy18Def, obj);
     work->actor.z = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -2296,7 +2296,7 @@ void task_emy_18_3(EmyWork* work) {
 }
 
 void task_emy_19_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DB4C, obj);
+    func_0800C778(work, &gEmy19Def, obj);
 }
 
 u8 task_emy_19_1(Emy19Work* work) {
@@ -2429,7 +2429,7 @@ void task_emy_19_3(EmyWork* work) {
 }
 
 void task_emy_21_0(Emy21Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813DBF4, obj);
+    func_0800C778(&work->base, &gEmy21Def, obj);
     work->unk_184 = 0;
 }
 
@@ -2589,7 +2589,7 @@ void task_emy_21_3(EmyWork* work) {
 }
 
 void task_emy_22_0(Emy22Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813DC7C, obj);
+    func_0800C778(&work->base, &gEmy22Def, obj);
     work->base.unk_150 = 7;
     work->unk_184 = 0;
 }
@@ -2740,7 +2740,7 @@ void task_emy_22_3(EmyWork* work) {
 }
 
 void task_emy_23_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DD04, obj);
+    func_0800C778(work, &gEmy23Def, obj);
     work->unk_150 = 7;
 }
 
@@ -2833,7 +2833,7 @@ void task_emy_23_3(EmyWork* work) {
 }
 
 void task_emy_25_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DD8C, obj);
+    func_0800C778(work, &gEmy25Def, obj);
 }
 
 u8 task_emy_25_1(EmyWork* work) {
@@ -2989,7 +2989,7 @@ void task_emy_25_3(EmyWork* work) {
 }
 
 void task_emy_26_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DE14, obj);
+    func_0800C778(work, &gEmy26Def, obj);
     work->actor.z = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -3096,7 +3096,7 @@ void task_emy_26_3(EmyWork* work) {
 }
 
 void task_emy_27_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DE9C, obj);
+    func_0800C778(work, &gEmy27Def, obj);
 }
 
 u8 task_emy_27_1(EmyWork* work) {
@@ -3187,7 +3187,7 @@ void task_emy_27_3(EmyWork* work) {
 }
 
 void task_emy_28_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813DF44, obj);
+    func_0800C778(work, &gEmy28Def, obj);
     work->actor.z = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -3348,7 +3348,7 @@ void task_emy_28_3(EmyWork* work) {
 }
 
 void task_emy_29_0(Emy29Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813DFCC, obj);
+    func_0800C778(&work->base, &gEmy29Def, obj);
     work->base.unk_16C = 0x180;
     work->base.unk_150 = 7;
     work->base.flags |= 1;
@@ -3468,7 +3468,7 @@ void task_emy_29_3(EmyWork* work) {
 }
 
 void task_emy_30_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E0B4, obj);
+    func_0800C778(work, &gEmy30Def, obj);
     work->actor.z = (GetRandom() % 0x1001) - 0x3000;
     work->unk_150 = 7;
 }
@@ -3735,7 +3735,7 @@ void task_emy_30_3(EmyWork* work) {
 }
 
 void task_emy_31_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E14C, obj);
+    func_0800C778(work, &gEmy31Def, obj);
     work->unk_150 = 7;
 }
 
@@ -3962,7 +3962,7 @@ void task_emy_31_3(EmyWork* work) {
 }
 
 void task_emy_37_0(Emy37Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813E264, obj);
+    func_0800C778(&work->base, &gEmy37Def, obj);
     work->base.flags |= 1;
     work->base.unk_150 = 0x12;
     work->base.unk_14C = 0x1C;
@@ -4306,7 +4306,7 @@ void task_emy_37_3(EmyWork* work) {
 }
 
 void task_emy_38_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E2EC, obj);
+    func_0800C778(work, &gEmy38Def, obj);
 }
 
 u8 task_emy_38_1(EmyWork* work) {
@@ -4379,7 +4379,7 @@ void task_emy_38_3(EmyWork* work) {
 }
 
 void task_emy_39_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E374, obj);
+    func_0800C778(work, &gEmy39Def, obj);
 }
 
 u8 task_emy_39_1(Emy39Work* work) {
@@ -4532,7 +4532,7 @@ void task_emy_39_3(EmyWork* work) {
 }
 
 void task_emy_41_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E3FC, obj);
+    func_0800C778(work, &gEmy41Def, obj);
     work->unk_150 = 7;
 }
 
@@ -4605,7 +4605,7 @@ void task_emy_41_3(EmyWork* work) {
 }
 
 void task_emy_44_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E484, obj);
+    func_0800C778(work, &gEmy44Def, obj);
 }
 
 u8 task_emy_44_1(EmyWork* work) {
@@ -4693,7 +4693,7 @@ void task_emy_44_3(EmyWork* work) {
 }
 
 void task_emy_81_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E53C, obj);
+    func_0800C778(work, &gEmy81Def, obj);
 }
 
 static inline s32 EmyFacingX(BtlObj* actor, s32 offset) {
@@ -4946,7 +4946,7 @@ void task_emy_81_3(EmyWork* work) {
 }
 
 void task_emy_82_0(Emy82Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813E604, obj);
+    func_0800C778(&work->base, &gEmy82Def, obj);
     work->base.unk_150 = 0x15;
     work->unk_184 = 0;
 }
@@ -5261,7 +5261,7 @@ void task_emy_82_3(EmyWork* work) {
 }
 
 void task_emy_83_0(Emy83Work* work, void* obj) {
-    func_0800C778(&work->base, &gUnk_0813E6AC, obj);
+    func_0800C778(&work->base, &gEmy83Def, obj);
     work->task = 0;
     work->base.unk_150 = 0x16;
     TaskPoolInit(&work->tasks, 4);
@@ -5553,7 +5553,7 @@ void task_emy_83_s_3(Emy83sWork* work) {
 }
 
 void task_emy_trump_h_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E744, obj);
+    func_0800C778(work, &gEmyTrumpHDef, obj);
 }
 
 u8 task_emy_trump_h_1(EmyWork* work) {
@@ -5604,7 +5604,7 @@ void task_emy_trump_h_3(EmyWork* work) {
 }
 
 void task_emy_trump_s_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E7C4, obj);
+    func_0800C778(work, &gEmyTrumpSDef, obj);
 }
 
 u8 task_emy_trump_s_1(EmyWork* work) {
@@ -5659,7 +5659,7 @@ void task_emy_trump_s_3(EmyWork* work) {
 }
 
 void task_emy_test_0(EmyWork* work, void* obj) {
-    func_0800C778(work, &gUnk_0813E834, obj);
+    func_0800C778(work, &gEmyTestDef, obj);
     work->actor.unk_02E = 0xBB8;
     work->actor.unk_02C = 0xBB8;
     work->actor.flags |= 0x1000;

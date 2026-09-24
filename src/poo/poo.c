@@ -1411,15 +1411,15 @@ void task_poo_map_0(PooMapWork* w) {
     gUnk_0203C3F8 = (gUnk_0203C408 >> 8) - 80;
     gFieldState->x = gUnk_0203C40C << 8;
     gFieldState->y = gUnk_0203C3F8 << 8;
-    w->unk_00 = gUnk_096FC6E0.mapWidth;
-    w->unk_01 = gUnk_096FC6E0.mapHeight;
+    w->unk_00 = gPooMapBgDesc.mapWidth;
+    w->unk_01 = gPooMapBgDesc.mapHeight;
     TaskPoolInit(&w->tasks, 178);
     func_080C9EAC(&w->tasks, func_080C9EFC(&w->tasks, 0));
     func_080C9E84(&w->tasks);
     TaskCreate(&w->tasks, &gTaskDescPooMapanime, 0);
-    LoadBgTiles(3, gUnk_096FC6E0.tiles, gUnk_096FC6E0.tilesSize);
-    LoadBgTiles(2, gUnk_096FC6E0.tiles2, gUnk_096FC6E0.tilesSize2);
-    LoadBgPalette(3, gUnk_096FC6E0.palette, gUnk_096FC6E0.paletteSize);
+    LoadBgTiles(3, gPooMapBgDesc.tiles, gPooMapBgDesc.tilesSize);
+    LoadBgTiles(2, gPooMapBgDesc.tiles2, gPooMapBgDesc.tilesSize2);
+    LoadBgPalette(3, gPooMapBgDesc.palette, gPooMapBgDesc.paletteSize);
     SetBgMapBlocks(3, gUnk_09EF4208, w->unk_00, w->unk_01);
     RedrawBgMapAt(3, gUnk_0203C40C, gUnk_0203C3F8);
     func_080CA35C();
@@ -7259,7 +7259,7 @@ void func_080D313C(void) {
 
 const char gTaskNamePooPooh[] = "task_poo_pooh";
 
-const PooMapBgDesc gUnk_096FC6E0 = {
+const PooMapBgDesc gPooMapBgDesc = {
     gUnk_097A2ED8, 32768, 0, gUnk_09849898, 512, 0, gUnk_097AAED8, 16032, 16, 9
 };
 

@@ -21,7 +21,7 @@ TaskDesc gTaskDescBtlLockon = { "task_btl_lockon", task_btl_lockon_0, task_btl_l
 
 TaskDesc gTaskDescBtlArea = { "task_btl_area", task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
 
-const AnimDef gUnk_0813BA2C[77] = {
+const AnimDef gBtlSoraAnimDefs[77] = {
     { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 0, { 0, 0, 0 } },
     { gUnk_09EDEE08, gUnk_09EDEE14, gUnk_088E33C2, 0, { 0, 0, 0 } },
     { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 4, { 0, 0, 0 } },
@@ -151,7 +151,7 @@ const u8 gUnk_0813C294[5] = {
 
 TaskDesc gTaskDescBtlSora = { "task_btl_sora", task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
-const AnimDef gUnk_0813C2AC[35] = {
+const AnimDef gBtlRikuAnimDefs[35] = {
     { gUnk_09EDF374, gUnk_09EDF38C, gUnk_0891ED26, 0, { 0, 0, 0 } },
     { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 1, { 0, 0, 0 } },
     { gUnk_09EDF404, gUnk_09EDF418, gUnk_08927806, 3, { 0, 0, 0 } },
@@ -558,7 +558,7 @@ void func_0801DDC4(BtlSoraWork* work) {
 void SetBtlSoraAnimation(BtlSoraWork* work, u16 a, u16 b) {
     const FldAnimDef* e;
 
-    e = &gUnk_0813BA2C[a];
+    e = &gBtlSoraAnimDefs[a];
     AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
     SetObjTileSource(work->tiles, e->tiles);
 }
@@ -6502,7 +6502,7 @@ void func_080275D4(BtlRikuWork* work, BtlDrawInfo* out) {
 void SetBtlRikuAnimation(BtlRikuWork* work, u16 a, u16 b) {
     const FldAnimDef* e;
 
-    e = &gUnk_0813C2AC[a];
+    e = &gBtlRikuAnimDefs[a];
     AnimChangeWithTables(&work->anim, e->animId, b, e->anims, e->gfxTable);
     SetObjTileSource(work->tiles2, e->tiles);
 }

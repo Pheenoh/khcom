@@ -14,7 +14,7 @@ TaskDesc gTaskDescBtlBorn = { "task_btl_born", task_btl_born_0, task_btl_born_1,
 
 TaskDesc gTaskDescBtlRaid = { "task_btl_raid", task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
 
-const AnimDef gUnk_0813E8F4[5] = {
+const AnimDef gBtlBadstatusAnimDefs[5] = {
     { gUnk_09EE12E8, gUnk_09EE130C, gUnk_08B21CFC, 0, { 0, 0, 0 } },
     { gUnk_09EE12D4, gUnk_09EE12E4, gUnk_08B21ACE, 0, { 0, 0, 0 } },
     { gUnk_09EE1318, gUnk_09EE132C, gUnk_08B2213C, 0, { 0, 0, 0 } },
@@ -595,7 +595,7 @@ void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
     work->palette3 = work->palette;
     AnimInit(&work->anim, 0, 0);
-    AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
+    AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 0, 1, work->tiles);
 }
 
 u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
@@ -614,24 +614,24 @@ u8 task_btl_badstatus_1(BtlBadStatusWork* work) {
 
         switch (state) {
         case 2:
-            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 0, 1, work->tiles);
+            AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 0, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         case 5:
-            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 2, 1, work->tiles);
+            AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 2, 1, work->tiles);
             work->palette3 = work->palette2;
             break;
         case 3:
-            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 3, 1, work->tiles);
+            AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 3, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         case 4:
-            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 4, 1, work->tiles);
+            AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 4, 1, work->tiles);
             work->palette3 = work->palette2;
             break;
         case 1:
         default:
-            AnimChangeWithDef(gUnk_0813E8F4, &work->anim, 1, 1, work->tiles);
+            AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 1, 1, work->tiles);
             work->palette3 = work->palette;
             break;
         }

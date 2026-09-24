@@ -515,7 +515,7 @@ const EvtAnimDef gUnk_08135EFC[500] = {
     { gUnk_09EEF4B8, gUnk_09EEF4E0, gUnk_092B769C },
 };
 
-const EvtObjAnim gUnk_0813766C[931] = {
+const EvtObjAnim gEvtObjAnims[931] = {
     { &gUnk_08135EFC[11], { 0 }, 0, 0 },
     { &gUnk_08135EFC[10], { 0 }, 0, 0 },
     { &gUnk_08135EFC[13], { 0 }, 0, 0 },

@@ -99,7 +99,7 @@ tables:
   stride: 32
   pointer_offsets: [0, 4, 8, 16, 20, 24]
 - name: gUnk_08135EFC
-  provenance: EvtAnimDef contains three pointers consumed by evt.c:68-71. The gUnk_0813766C table is anchored by evt.c:11; its 931 typed animation records have identical scalar fields and identical target indices across all regions. Their pointers cover 498 of 500 triples and directly reach indices 0 and 499. The highest triple is reached by animation923, which event sequence124 track7 references at US0x08FB4A68. Correspondence is established by this typed reference graph, not merely masked equality of the pure-pointer triples.
+  provenance: EvtAnimDef contains three pointers consumed by evt.c:68-71. The gEvtObjAnims table is anchored by evt.c:11; its 931 typed animation records have identical scalar fields and identical target indices across all regions. Their pointers cover 498 of 500 triples and directly reach indices 0 and 499. The highest triple is reached by animation923, which event sequence124 track7 references at US0x08FB4A68. Correspondence is established by this typed reference graph, not merely masked equality of the pure-pointer triples.
   us: '0x8135efc'
   targets:
     jp: '0x8135f78'
@@ -904,7 +904,7 @@ tables:
   size: 84
   stride: 4
   pointer_offsets: [0]
-- name: gUnk_0813BA2C
+- name: gBtlSoraAnimDefs
   provenance: '{"calls":[["src/btl.c",344,"u16 a"],["src/btl.c",444,"1"],["src/btl.c",565,"1"],["src/btl.c",2046,"0"],["src/btl.c",2061,"1"],["src/btl.c",2102,"51"],["src/btl.c",2398,"44"],["src/btl.c",2415,"work->unk_191[0] + 47"],["src/btl.c",2439,"53"],["src/btl.c",2512,"work->unk_191[0] + 47"],["src/btl.c",2533,"44"],["src/btl.c",2550,"1"],["src/btl.c",2620,"44"],["src/btl.c",2654,"1"],["src/btl.c",2674,"52"],["src/btl.c",2787,"(u16)(a->animId + work->unk_190)"],["src/btl.c",2789,"a->animId + work->unk_190"],["src/btl.c",2983,"51"],["src/btl.c",3052,"43"],["src/btl.c",3118,"43"],["src/btl.c",3148,"45"],["src/btl.c",3167,"46"],["src/btl.c",3183,"45"],["src/btl.c",3208,"46"],["src/btl.c",3222,"45"],["src/btl.c",3251,"46"],["src/btl.c",3269,"45"],["src/btl.c",3280,"46"],["src/btl.c",3296,"45"],["src/btl.c",3306,"46"],["src/btl.c",3323,"43"],["src/btl.c",3354,"1"],["src/btl.c",3413,"45"],["src/btl.c",3423,"46"],["src/btl.c",3441,"43"],["src/btl.c",3483,"1"],["src/btl.c",3497,"42"],["src/btl.c",3531,"1"],["src/btl.c",3549,"42"],["src/btl.c",3603,"1"],["src/btl.c",3622,"42"],["src/btl.c",3676,"1"],["src/btl.c",3692,"42"],["src/btl.c",3734,"1"],["src/btl.c",3748,"42"],["src/btl.c",3772,"1"],["src/btl.c",3788,"42"],["src/btl.c",3826,"1"],["src/btl.c",3842,"37"],["src/btl.c",4084,"1"],["src/btl.c",4153,"38"],["src/btl.c",4200,"39"],["src/btl.c",4204,"38"],["src/btl.c",4250,"41"],["src/btl.c",4307,"1"],["src/btl.c",4384,"41"],["src/btl.c",4425,"23"],["src/btl.c",4428,"28"],["src/btl.c",4431,"33"],["src/btl.c",4437,"3"],["src/btl.c",4440,"8"],["src/btl.c",4443,"13"],["src/btl.c",4539,"14"],["src/btl.c",4610,"71"],["src/btl.c",4677,"72"],["src/btl.c",4714,"73"],["src/btl.c",4755,"74"],["src/btl.c",4800,"75"],["src/btl.c",4827,"76"],["src/btl.c",4846,"76"],["src/btl.c",4873,"70"],["src/btl.c",4987,"68"],["src/btl.c",5066,"64"],["src/btl.c",5104,"65"],["src/btl.c",5130,"66"],["src/btl.c",5188,"67"],["src/btl.c",5220,"64"],["src/btl.c",5258,"65"],["src/btl.c",5286,"66"],["src/btl.c",5347,"21"],["src/btl.c",5387,"69"],["src/btl.c",5428,"69"],["src/btl.c",5516,"60"],["src/btl.c",5539,"61"],["src/btl.c",5599,"62"],["src/btl.c",5624,"63"],["src/btl.c",5631,"1"],["src/btl.c",5653,"54"],["src/btl.c",5665,"55"],["src/btl.c",5685,"56"],["src/btl.c",5700,"57"],["src/btl.c",5727,"40"],["src/btl.c",5757,"58"],["src/btl.c",5783,"59"],["src/btl.c",6009,"work->unk_191[0] + 47"]],"max_index":76}'
   us: '0x813ba2c'
   targets:
@@ -922,7 +922,7 @@ tables:
   size: 480
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813C2AC
+- name: gBtlRikuAnimDefs
   provenance: '{"calls":[["src/btl.c",6296,"u16 a"],["src/btl.c",6418,"0"],["src/btl.c",6474,"13"],["src/btl.c",6487,"12"],["src/btl.c",6600,"0"],["src/btl.c",7413,"26"],["src/btl.c",7434,"27"],["src/btl.c",7469,"28"],["src/btl.c",7515,"29"],["src/btl.c",7526,"30"],["src/btl.c",7537,"31"],["src/btl.c",7614,"32"],["src/btl.c",7643,"22"],["src/btl.c",7733,"25"],["src/btl.c",7806,"12"],["src/btl.c",7822,"21"],["src/btl.c",7926,"20"],["src/btl.c",8029,"33"],["src/btl.c",8171,"34"],["src/btl.c",8298,"15"],["src/btl.c",8331,"17"],["src/btl.c",8333,"16"],["src/btl.c",8347,"23"],["src/btl.c",8391,"24"],["src/btl.c",8416,"24"],["src/btl.c",8443,"15"],["src/btl.c",8481,"16"],["src/btl.c",8483,"17"],["src/btl.c",8486,"17"],["src/btl.c",8488,"18"],["src/btl.c",8578,"19"],["src/btl.c",8635,"14"],["src/btl.c",8755,"0"],["src/btl.c",8783,"24"],["src/btl.c",8843,"14"],["src/btl.c",8871,"0"],["src/btl.c",8897,"11"],["src/btl.c",8913,"0"],["src/btl.c",9200,"10"],["src/btl.c",9218,"9"],["src/btl.c",9241,"14"],["src/btl.c",9261,"24"],["src/btl.c",9407,"16"],["src/btl.c",9409,"17"],["src/btl.c",9412,"17"],["src/btl.c",9414,"18"],["src/btl.c",9455,"19"],["src/btl.c",9480,"16"],["src/btl.c",9482,"17"],["src/btl.c",9485,"17"],["src/btl.c",9487,"18"],["src/btl.c",9529,"9"],["src/btl.c",9558,"10"],["src/btl.c",9672,"*(u16*)&a->animId"],["src/btl.c",9674,"a->animId"],["src/btl.c",9870,"15"],["src/btl.c",9905,"16"],["src/btl.c",9912,"17"],["src/btl.c",9965,"12"],["src/btl.c",9967,"0"],["src/btl.c",9985,"17"],["src/btl.c",9992,"18"],["src/btl.c",10025,"19"],["src/btl.c",10051,"7"],["src/btl.c",10093,"14"],["src/btl.c",10135,"7"],["src/btl.c",10195,"8"],["src/btl.c",10243,"0"],["src/btl.c",10263,"8"],["src/btl.c",10303,"7"],["src/btl.c",10330,"14"],["src/btl.c",10561,"9"]],"max_index":34}'
   us: '0x813c2ac'
   targets:
@@ -959,7 +959,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D32C
-  provenance: '{"descriptor":"gUnk_0813D3CC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy00Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d32c'
   targets:
     jp: '0x813d3a8'
@@ -977,7 +977,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D404
-  provenance: '{"descriptor":"gUnk_0813D454","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy01Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d404'
   targets:
     jp: '0x813d480'
@@ -995,7 +995,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D48C
-  provenance: '{"descriptor":"gUnk_0813D4DC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy02Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d48c'
   targets:
     jp: '0x813d508'
@@ -1013,7 +1013,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D514
-  provenance: '{"descriptor":"gUnk_0813D564","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy03Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d514'
   targets:
     jp: '0x813d590'
@@ -1031,7 +1031,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D59C
-  provenance: '{"descriptor":"gUnk_0813D5DC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy04Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d59c'
   targets:
     jp: '0x813d618'
@@ -1049,7 +1049,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D614
-  provenance: '{"descriptor":"gUnk_0813D664","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy06Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d614'
   targets:
     jp: '0x813d690'
@@ -1067,7 +1067,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D69C
-  provenance: '{"descriptor":"gUnk_0813D73C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy07Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d69c'
   targets:
     jp: '0x813d718'
@@ -1085,7 +1085,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D774
-  provenance: '{"descriptor":"gUnk_0813D804","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy08Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d774'
   targets:
     jp: '0x813d7f0'
@@ -1103,7 +1103,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D83C
-  provenance: '{"descriptor":"gUnk_0813D88C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy14Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d83c'
   targets:
     jp: '0x813d8b8'
@@ -1121,7 +1121,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D8C4
-  provenance: '{"descriptor":"gUnk_0813D944","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy15Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d8c4'
   targets:
     jp: '0x813d940'
@@ -1139,7 +1139,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813D97C
-  provenance: '{"descriptor":"gUnk_0813D9CC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy16Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813d97c'
   targets:
     jp: '0x813d9f8'
@@ -1157,7 +1157,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DA24
-  provenance: '{"descriptor":"gUnk_0813DA94","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy18Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813da24'
   targets:
     jp: '0x813daa0'
@@ -1175,7 +1175,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DACC
-  provenance: '{"descriptor":"gUnk_0813DB4C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy19Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813dacc'
   targets:
     jp: '0x813db48'
@@ -1193,7 +1193,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DB84
-  provenance: '{"descriptor":"gUnk_0813DBF4","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy21Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813db84'
   targets:
     jp: '0x813dc00'
@@ -1211,7 +1211,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DC2C
-  provenance: '{"descriptor":"gUnk_0813DC7C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy22Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813dc2c'
   targets:
     jp: '0x813dca8'
@@ -1229,7 +1229,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DCB4
-  provenance: '{"descriptor":"gUnk_0813DD04","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy23Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813dcb4'
   targets:
     jp: '0x813dd30'
@@ -1247,7 +1247,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DD3C
-  provenance: '{"descriptor":"gUnk_0813DD8C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy25Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813dd3c'
   targets:
     jp: '0x813ddb8'
@@ -1265,7 +1265,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DDC4
-  provenance: '{"descriptor":"gUnk_0813DE14","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy26Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813ddc4'
   targets:
     jp: '0x813de40'
@@ -1283,7 +1283,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DE4C
-  provenance: '{"descriptor":"gUnk_0813DE9C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy27Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813de4c'
   targets:
     jp: '0x813dec8'
@@ -1301,7 +1301,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DED4
-  provenance: '{"descriptor":"gUnk_0813DF44","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy28Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813ded4'
   targets:
     jp: '0x813df50'
@@ -1319,7 +1319,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813DF7C
-  provenance: '{"descriptor":"gUnk_0813DFCC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy29Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813df7c'
   targets:
     jp: '0x813dff8'
@@ -1337,7 +1337,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E004
-  provenance: '{"descriptor":"gUnk_0813E0B4","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy30Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e004'
   targets:
     jp: '0x813e080'
@@ -1355,7 +1355,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E0EC
-  provenance: '{"descriptor":"gUnk_0813E14C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy31Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e0ec'
   targets:
     jp: '0x813e168'
@@ -1373,7 +1373,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E184
-  provenance: '{"descriptor":"gUnk_0813E264","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy37Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e184'
   targets:
     jp: '0x813e200'
@@ -1391,7 +1391,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E29C
-  provenance: '{"descriptor":"gUnk_0813E2EC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy38Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e29c'
   targets:
     jp: '0x813e318'
@@ -1409,7 +1409,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E324
-  provenance: '{"descriptor":"gUnk_0813E374","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy39Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e324'
   targets:
     jp: '0x813e3a0'
@@ -1427,7 +1427,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E3AC
-  provenance: '{"descriptor":"gUnk_0813E3FC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy41Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e3ac'
   targets:
     jp: '0x813e428'
@@ -1445,7 +1445,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E434
-  provenance: '{"descriptor":"gUnk_0813E484","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy44Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e434'
   targets:
     jp: '0x813e4b0'
@@ -1463,7 +1463,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E4BC
-  provenance: '{"descriptor":"gUnk_0813E53C","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy81Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e4bc'
   targets:
     jp: '0x813e538'
@@ -1481,7 +1481,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E574
-  provenance: '{"descriptor":"gUnk_0813E604","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy82Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e574'
   targets:
     jp: '0x813e5f0'
@@ -1499,7 +1499,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E63C
-  provenance: '{"descriptor":"gUnk_0813E6AC","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmy83Def","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e63c'
   targets:
     jp: '0x813e6b8'
@@ -1517,7 +1517,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E704
-  provenance: '{"descriptor":"gUnk_0813E744","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmyTrumpHDef","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e704'
   targets:
     jp: '0x813e780'
@@ -1535,7 +1535,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E784
-  provenance: '{"descriptor":"gUnk_0813E7C4","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmyTrumpSDef","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e784'
   targets:
     jp: '0x813e800'
@@ -1553,7 +1553,7 @@ tables:
   stride: 16
   pointer_offsets: [0, 4, 8]
 - name: gUnk_0813E804
-  provenance: '{"descriptor":"gUnk_0813E834","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
+  provenance: '{"descriptor":"gEmyTestDef","consumer":["src/emy_common.c",264,341,377],"max_index":2}'
   us: '0x813e804'
   targets:
     jp: '0x813e880'
@@ -1561,7 +1561,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813E8F4
+- name: gBtlBadstatusAnimDefs
   provenance: '{"calls":[["src/btl3.c",581,"0"],["src/btl3.c",600,"0"],["src/btl3.c",604,"2"],["src/btl3.c",608,"3"],["src/btl3.c",612,"4"],["src/btl3.c",617,"1"]],"max_index":4}'
   us: '0x813e8f4'
   targets:
@@ -1570,7 +1570,7 @@ tables:
   size: 80
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813E958
+- name: gSmnCloudAnimDefs
   provenance: '{"calls":[["src/smn.c",40,"0"],["src/smn.c",151,"0"],["src/smn.c",153,"1"],["src/smn.c",226,"6"],["src/smn.c",228,"7"],["src/smn.c",283,"2"],["src/smn.c",318,"3"],["src/smn.c",322,"4"],["src/smn.c",327,"5"]],"max_index":7}'
   us: '0x813e958'
   targets:
@@ -1579,7 +1579,7 @@ tables:
   size: 128
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813E9E8
+- name: gSmnBambiAnimDef
   provenance: '{"calls":[["src/smn.c",490,"0"]],"max_index":0}'
   us: '0x813e9e8'
   targets:
@@ -1588,7 +1588,7 @@ tables:
   size: 16
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EA08
+- name: gSmnTinkAnimDefs
   provenance: '{"calls":[["src/smn.c",822,"0"],["src/smn.c",942,"0"],["src/smn.c",967,"1"],["src/smn.c",1026,"2"],["src/smn.c",1045,"1"]],"max_index":2}'
   us: '0x813ea08'
   targets:
@@ -1597,7 +1597,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EA5C
+- name: gSmnSimbaAnimDef
   provenance: '{"calls":[["src/smn.c",1203,"0"]],"max_index":0}'
   us: '0x813ea5c'
   targets:
@@ -1606,7 +1606,7 @@ tables:
   size: 16
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EA7C
+- name: gSmnMushuAnimDefs
   provenance: '{"calls":[["src/smn.c",1440,"0"],["src/smn.c",1527,"2"],["src/smn.c",1536,"3"]],"max_index":3}'
   us: '0x813ea7c'
   targets:
@@ -1624,7 +1624,7 @@ tables:
   size: 16
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EADC
+- name: gSmnDumboAnimDefs
   provenance: '{"calls":[["src/smn.c",1693,"0"],["src/smn.c",1754,"0"],["src/smn.c",1766,"1"],["src/smn.c",1788,"2"]],"max_index":2}'
   us: '0x813eadc'
   targets:
@@ -1633,7 +1633,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EB1C
+- name: gSmnGenieAnimDefs
   provenance: '{"calls":[["src/smn.c",1899,"0"],["src/smn.c",2063,"0"],["src/smn.c",2078,"0"],["src/smn.c",2096,"0"],["src/smn.c",2121,"1"],["src/smn.c",2159,"1"],["src/smn.c",2198,"1"]],"max_index":1}'
   us: '0x813eb1c'
   targets:
@@ -1642,7 +1642,7 @@ tables:
   size: 32
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EB4C
+- name: gSmnKingAnimDefs
   provenance: '{"calls":[["src/smn.c",2320,"0"],["src/smn.c",2387,"1"],["src/smn.c",2395,"2"]],"max_index":2}'
   us: '0x813eb4c'
   targets:
@@ -1651,7 +1651,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EB8C
+- name: gFrdDonaldAnimDefs
   provenance: '{"calls":[["src/frd.c",47,"0"],["src/frd.c",113,"2"],["src/frd.c",129,"3"],["src/frd.c",179,"3"],["src/frd.c",188,"2"],["src/frd.c",211,"4"],["src/frd.c",212,"5"],["src/frd.c",238,"0"],["src/frd.c",289,"0"],["src/frd.c",338,"1"],["src/frd.c",383,"1"]],"max_index":5}'
   us: '0x813eb8c'
   targets:
@@ -1660,7 +1660,7 @@ tables:
   size: 96
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EBFC
+- name: gFrdGoofyAnimDefs
   provenance: '{"calls":[["src/frd.c",565,"0"],["src/frd.c",585,"0"],["src/frd.c",600,"1"],["src/frd.c",621,"1"],["src/frd.c",633,"0"],["src/frd.c",657,"2"],["src/frd.c",694,"3"],["src/frd.c",708,"4"]],"max_index":4}'
   us: '0x813ebfc'
   targets:
@@ -1669,7 +1669,7 @@ tables:
   size: 80
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EC5C
+- name: gFrdArielAnimDefs
   provenance: '{"calls":[["src/frd.c",826,"1"],["src/frd.c",888,"2"],["src/frd.c",919,"0"]],"max_index":2}'
   us: '0x813ec5c'
   targets:
@@ -1678,7 +1678,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EC9C
+- name: gFrdJackAnimDefs
   provenance: '{"calls":[["src/frd.c",1081,"0"],["src/frd.c",1116,"1"],["src/frd.c",1128,"2"],["src/frd.c",1157,"4"],["src/frd.c",1166,"3"],["src/frd.c",1179,"4"],["src/frd.c",1210,"1"],["src/frd.c",1211,"3"],["src/frd.c",1225,"2"],["src/frd.c",1252,"0"],["src/frd.c",1303,"0"],["src/frd.c",1351,"0"],["src/frd.c",1400,"0"]],"max_index":4}'
   us: '0x813ec9c'
   targets:
@@ -1687,7 +1687,7 @@ tables:
   size: 80
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813ECFC
+- name: gFrdPanAnimDefs
   provenance: '{"calls":[["src/frd.c",1554,"0"],["src/frd.c",1644,"0"],["src/frd.c",1659,"0"],["src/frd.c",1671,"0"],["src/frd.c",1690,"1"],["src/frd.c",1703,"2"],["src/frd.c",1755,"3"]],"max_index":3}'
   us: '0x813ecfc'
   targets:
@@ -1696,7 +1696,7 @@ tables:
   size: 64
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813ED4C
+- name: gFrdAladdinAnimDefs
   provenance: '{"calls":[["src/frd.c",1885,"0"],["src/frd.c",1917,"0"],["src/frd.c",1930,"1"],["src/frd.c",1941,"0"],["src/frd.c",1960,"2"]],"max_index":2}'
   us: '0x813ed4c'
   targets:
@@ -1705,7 +1705,7 @@ tables:
   size: 48
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813ED90
+- name: gFrdBeastAnimDefs
   provenance: '{"calls":[["src/frd.c",2151,"0"],["src/frd.c",2208,"1"]],"max_index":1}'
   us: '0x813ed90'
   targets:
@@ -1714,7 +1714,7 @@ tables:
   size: 32
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EDE8
+- name: gHumCloudAnimDefs
   provenance: '{"calls":[["src/hum.c",72,"0"],["src/hum.c",75,"0"],["src/hum.c",93,"0"],["src/hum.c",117,"1"],["src/hum.c",146,"2"],["src/hum.c",151,"8"],["src/hum.c",172,"9"],["src/hum.c",192,"3"],["src/hum.c",210,"4"],["src/hum.c",212,"5"],["src/hum.c",215,"5"],["src/hum.c",217,"6"],["src/hum.c",230,"7"],["src/hum.c",248,"5"],["src/hum.c",250,"4"],["src/hum.c",265,"14"],["src/hum.c",305,"10"],["src/hum.c",327,"11"],["src/hum.c",340,"12"],["src/hum.c",351,"13"],["src/hum.c",381,"18"],["src/hum.c",383,"19"],["src/hum.c",473,"5"],["src/hum.c",475,"4"],["src/hum.c",489,"14"],["src/hum.c",531,"15"],["src/hum.c",535,"16"],["src/hum.c",540,"17"]],"max_index":19}'
   us: '0x813ede8'
   targets:
@@ -1723,7 +1723,7 @@ tables:
   size: 320
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813EF6C
+- name: gHumHookAnimDefs
   provenance: '{"calls":[["src/hum.c",738,"0"],["src/hum.c",743,"0"],["src/hum.c",764,"0"],["src/hum.c",792,"1"],["src/hum.c",812,"2"],["src/hum.c",819,"2"],["src/hum.c",842,"11"],["src/hum.c",883,"9"],["src/hum.c",917,"12"],["src/hum.c",947,"14"],["src/hum.c",951,"13"],["src/hum.c",969,"12"],["src/hum.c",995,"14"],["src/hum.c",999,"13"],["src/hum.c",1016,"12"],["src/hum.c",1061,"9"],["src/hum.c",1092,"8"],["src/hum.c",1128,"10"],["src/hum.c",1168,"3"],["src/hum.c",1188,"5"],["src/hum.c",1190,"4"],["src/hum.c",1193,"5"],["src/hum.c",1195,"6"],["src/hum.c",1209,"7"]],"max_index":14}'
   us: '0x813ef6c'
   targets:
@@ -1786,7 +1786,7 @@ tables:
   size: 16
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813F498
+- name: gHumLaxeneAnimDefs
   provenance: '{"calls":[["src/hum.c",3510,"0"],["src/hum.c",3513,"0"],["src/hum.c",3516,"0"],["src/hum.c",3530,"1"],["src/hum.c",3542,"2"],["src/hum.c",3570,"3"],["src/hum.c",3574,"6"],["src/hum.c",3587,"7"],["src/hum.c",3607,"9"],["src/hum.c",3620,"10"],["src/hum.c",3643,"11"],["src/hum.c",3656,"6"],["src/hum.c",3670,"7"],["src/hum.c",3688,"8"],["src/hum.c",3702,"12"],["src/hum.c",3744,"5"],["src/hum.c",3746,"4"],["src/hum.c",3836,"13"],["src/hum.c",3838,"14"],["src/hum.c",3959,"13"],["src/hum.c",3961,"14"],["src/hum.c",4071,"12"]],"max_index":14}'
   us: '0x813f498'
   targets:
@@ -1813,7 +1813,7 @@ tables:
   size: 160
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813F7D8
+- name: gHumVixenAnimDefs
   provenance: '{"calls":[["src/hum.c",5201,"0"],["src/hum.c",5204,"0"],["src/hum.c",5209,"0"],["src/hum.c",5225,"1"],["src/hum.c",5272,"2"],["src/hum.c",5276,"3"],["src/hum.c",5307,"2"],["src/hum.c",5326,"4"],["src/hum.c",5350,"5"],["src/hum.c",5364,"6"],["src/hum.c",5376,"7"],["src/hum.c",5388,"4"],["src/hum.c",5441,"8"],["src/hum.c",5474,"9"],["src/hum.c",5487,"10"],["src/hum.c",5499,"11"],["src/hum.c",5511,"4"],["src/hum.c",5529,"12"],["src/hum.c",5542,"13"],["src/hum.c",5554,"14"],["src/hum.c",5567,"4"]],"max_index":14}'
   us: '0x813f7d8'
   targets:
@@ -1822,7 +1822,7 @@ tables:
   size: 240
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813F91C
+- name: gHumVixenFrzAnimDefs
   provenance: '{"calls":[["src/hum.c",5822,"0"],["src/hum.c",5849,"2"],["src/hum.c",5852,"7"],["src/hum.c",5855,"10"],["src/hum.c",5874,"4"],["src/hum.c",5877,"8"],["src/hum.c",5880,"11"],["src/hum.c",5899,"6"],["src/hum.c",5902,"9"],["src/hum.c",5905,"12"],["src/hum.c",5944,"1"],["src/hum.c",5956,"5"]],"max_index":12}'
   us: '0x813f91c'
   targets:
@@ -1831,7 +1831,7 @@ tables:
   size: 208
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813FA98
+- name: gHumLexceusAnimDefs
   provenance: '{"calls":[["src/hum.c",6168,"0"],["src/hum.c",6172,"0"],["src/hum.c",6175,"0"],["src/hum.c",6192,"1"],["src/hum.c",6221,"2"],["src/hum.c",6226,"7"],["src/hum.c",6261,"8"],["src/hum.c",6279,"5"],["src/hum.c",6312,"6"],["src/hum.c",6342,"3"],["src/hum.c",6422,"4"],["src/hum.c",6459,"0"],["src/hum.c",6469,"9"]],"max_index":9}'
   us: '0x813fa98'
   targets:
@@ -1840,7 +1840,7 @@ tables:
   size: 160
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813FBD4
+- name: gHumRikuAnimDefs
   provenance: '{"calls":[["src/hum.c",7262,"0"],["src/hum.c",7265,"0"],["src/hum.c",7278,"0"],["src/hum.c",7301,"1"],["src/hum.c",7326,"2"],["src/hum.c",7329,"2"],["src/hum.c",7347,"14"],["src/hum.c",7364,"15"],["src/hum.c",7390,"16"],["src/hum.c",7414,"17"],["src/hum.c",7423,"18"],["src/hum.c",7432,"19"],["src/hum.c",7490,"20"],["src/hum.c",7514,"10"],["src/hum.c",7557,"13"],["src/hum.c",7618,"0"],["src/hum.c",7630,"9"],["src/hum.c",7701,"8"],["src/hum.c",7787,"3"],["src/hum.c",7803,"5"],["src/hum.c",7805,"4"],["src/hum.c",7816,"11"],["src/hum.c",7836,"12"],["src/hum.c",7855,"3"],["src/hum.c",7870,"4"],["src/hum.c",7872,"5"],["src/hum.c",7875,"5"],["src/hum.c",7877,"6"],["src/hum.c",7889,"7"]],"max_index":20}'
   us: '0x813fbd4'
   targets:
@@ -1849,7 +1849,7 @@ tables:
   size: 336
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813FD58
+- name: gHumLeonAnimDefs
   provenance: '{"calls":[["src/hum.c",7931,"0"],["src/hum.c",7965,"0"],["src/hum.c",7970,"1"],["src/hum.c",7973,"3"],["src/hum.c",7977,"2"],["src/hum.c",7980,"0"],["src/hum.c",7994,"4"],["src/hum.c",8025,"3"]],"max_index":4}'
   us: '0x813fd58'
   targets:
@@ -1858,7 +1858,7 @@ tables:
   size: 80
   stride: 16
   pointer_offsets: [0, 4, 8]
-- name: gUnk_0813FDD4
+- name: gHumRobeAnimDefs
   provenance: '{"calls":[["src/hum.c",8059,"0"],["src/hum.c",8075,"1"],["src/hum.c",8079,"0"]],"max_index":1}'
   us: '0x813fdd4'
   targets:
@@ -3093,7 +3093,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_backgrounds_09EF4208
   layer: 1
-  provenance: task_poo_map_0 passes dimensions 16x9 from canonical PooMapBgDesc gUnk_096FC6E0; func_080CA36C independently indexes rows at stride 16 and reads each 32x32 tile block. task_poo_map_0 passes the same independently established 16x9 dimensions to SetBgMapBlocks for layer 1. task_poo_map_0 passes the same independently established 16x9 dimensions to SetBgMapBlocks for layer 2. All 2048-byte raw tilemaps agree across all three ROMs. Every nonNULL tile payload has an identical verified 3072-byte prefix. No raw map is substituted with compressed regional data.
+  provenance: task_poo_map_0 passes dimensions 16x9 from canonical PooMapBgDesc gPooMapBgDesc; func_080CA36C independently indexes rows at stride 16 and reads each 32x32 tile block. task_poo_map_0 passes the same independently established 16x9 dimensions to SetBgMapBlocks for layer 1. task_poo_map_0 passes the same independently established 16x9 dimensions to SetBgMapBlocks for layer 2. All 2048-byte raw tilemaps agree across all three ROMs. Every nonNULL tile payload has an identical verified 3072-byte prefix. No raw map is substituted with compressed regional data.
   us: '0x9ef4208'
   targets:
     jp: '0x9ecb5f4'
