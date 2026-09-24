@@ -7,7 +7,12 @@
 #include "mode_allmap.h"
 #include "sprites_allmap.h"
 
-const char gModeNameAllmap[] = "mode_allmap";
+Mode gModeAllmap = {
+    "mode_allmap",
+    mode_allmap_0,
+    mode_allmap_1,
+    mode_allmap_2,
+};
 
 const AllmapRoomOrder gAllmapRoomOrder = {{
     0, 4, 2, 5, 3, 10, 9, 13, 1, 7, 8, 11, 6, 14, 12, 15,
@@ -248,10 +253,3 @@ s32 func_080D37BC(u8 a) {
     }
     return r << 5;
 }
-
-Mode gModeAllmap = {
-    gModeNameAllmap,
-    mode_allmap_0,
-    mode_allmap_1,
-    mode_allmap_2,
-};
