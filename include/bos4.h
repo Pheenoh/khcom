@@ -548,7 +548,7 @@ typedef struct UnkStruct_096FDFC4 {
 
 extern const UnkStruct_096FDFC4 gUnk_096FDFC4;
 extern const UnkStruct_096FDFC4 gUnk_096FE0C0;
-extern UnkStruct_096FDFC4 gUnk_096FDF54;
+extern const UnkStruct_096FDFC4 gUnk_096FDF54;
 u8 task_bos_boogie_map_1(void);
 
 void task_bos_boogie_dice_2(BoogieDiceWork* work);

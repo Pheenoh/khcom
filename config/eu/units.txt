@@ -299,7 +299,6 @@ bos_tm_rodata.s
 bos_tm.c
 bos_tm_body.c
 bos_tm_foot.c
-bos_jf_rodata.s
 bos_jf.c
 bos_jf_majin.c
 bos_dsd_main.c
@@ -346,7 +345,6 @@ mode_status.c
 status.c
 boss_boogie_rodata.s
 boss_boogie.c
-bos_boogie_dice_rodata.s
 bos_boogie_dice.c
 bos_ursula_bubble.c
 sprites_pooh_1.c

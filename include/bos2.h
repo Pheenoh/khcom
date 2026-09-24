@@ -409,7 +409,7 @@ extern u8 gUnk_096FB884[];
 extern const s8 gUnk_0961A894[10];
 extern u8 gUnk_096FB904[];
 extern u8 gUnk_06010000[];
-extern u8 gUnk_0961A668[];
+extern const EmyKind gUnk_0961A668;
 
 extern u8 gUnk_08F69BC4[];
 extern const s16 gUnk_0961A860[6];

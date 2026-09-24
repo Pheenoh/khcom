@@ -80,7 +80,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_22C = 0x2A200;
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
-        func_0801B37C(&work->body, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
+        func_0801B37C(&work->body, &gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
         work->body.flags |= 4;
         TaskCreate(&work->tasks, &gTaskDescBosJfMajin, work);
     } else {
@@ -88,7 +88,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_224 = 0x15400;
         work->unk_228 = -0xB400;
         sub = &work->sub;
-        func_0801B37C(sub, gUnk_0961A668, work->unk_220, work->unk_224, work->unk_228);
+        func_0801B37C(sub, &gUnk_0961A668, work->unk_220, work->unk_224, work->unk_228);
         sub->flags |= 0x400;
         sub->flags |= 0x200000000000;
         sub->flags &= ~4;
@@ -97,7 +97,7 @@ void task_bos_jf_0(JfWork* work, s32 a) {
         work->unk_22C = 0x2A200;
         work->unk_230 = 0x15E00;
         work->unk_234 = -0x3800;
-        func_0801B37C(&work->body, gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
+        func_0801B37C(&work->body, &gUnk_0961A668, work->unk_22C, work->unk_230, work->unk_234);
         work->body.flags |= 4;
         work->body.flags |= 0x8000;
         work->body.flags |= 0x100000000;
@@ -949,6 +949,8 @@ s32 func_080BE278(JfLampWork* work) {
 
     return r;
 }
+
+const EmyKind gUnk_0961A668 = { 33, 1000, 16, 16, 24, 60, 0 };
 
 TaskDesc gTaskDescBosJf = {
     "task_bos_jf",

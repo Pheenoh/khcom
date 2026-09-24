@@ -22,6 +22,8 @@ s32 gUnk_0203C580 EWRAM_COMMON(4);
 u8 gUnk_0203C584 EWRAM_COMMON(4);
 UnkStruct_0203C590 gUnk_0203C590 EWRAM_COMMON(16);
 
+const UnkStruct_096FDFC4 gUnk_096FDF54 = { 39, 0, 16, 16, 0, 0, 1 };
+
 const char gTaskNameBosBoogieDice[] = "task_bos_boogie_dice";
 
 void* const gUnk_096FDF7C[6][3] = {
