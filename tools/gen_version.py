@@ -2108,8 +2108,8 @@ TARGET_FUNC_SIZE = {
 
 TARGET_FUNC_ADDR = {
     "eu": {
-        "func_08005458": 0x08005600,
-        "func_08005474": 0x08005620,
+        "GetBgMapX": 0x08005600,
+        "GetBgMapY": 0x08005620,
     },
 }
 
