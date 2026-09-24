@@ -533,8 +533,6 @@ bos6_rodata.s
 transform.s
 bos6.c
 bos7_tables.s
-boss_lst_data.c
-bos7_rodata.s
 bos7.c
 staff_roll_script_text.s
 staff_roll_script_data.c
