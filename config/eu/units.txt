@@ -295,7 +295,6 @@ sprite_palettes_21.s
 mode_sio.c
 mode_wlogo.c
 wlogo.c
-bos_tm_rodata.s
 bos_tm.c
 bos_tm_body.c
 bos_tm_foot.c
@@ -462,7 +461,6 @@ sprite_palettes_16.s
 sprites_worldinspect_palettes_2.s
 sprites_moogle_shop_palettes.s
 sprite_palettes_17.s
-bos_pc_rodata.s
 transform.s
 bos_pc.c
 bos_pc_event.c

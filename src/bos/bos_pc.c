@@ -1,5 +1,7 @@
 #include "bos6.h"
 #include "sprites_bos6.h"
+#include "sprites_bos7.h"
+#include "event_backgrounds.h"
 
 void task_bos_pc_3(PcWork* work);
 
@@ -118,6 +120,20 @@ PcAnimStep* gUnk_09EF9DB4[14] = {
     gUnk_09A4C818,
     gUnk_09A4C860,
 };
+
+const u16 gUnk_09A3DE9C[3][16] = {
+    { 0x1BE0, 0x7FFF, 0x34E4, 0x03DF, 0x037F, 0x031D, 0x02BB, 0x031F, 0x02BE, 0x025D, 0x02BF, 0x025F, 0x01DE, 0x023F, 0x01DF, 0x017F },
+    { 0x1BE0, 0x7FFF, 0x2586, 0x03DF, 0x037F, 0x031D, 0x02BB, 0x031F, 0x02BE, 0x025D, 0x02BF, 0x025F, 0x01DE, 0x023F, 0x01DF, 0x017F },
+    { 0x1BE0, 0x7FFF, 0x318C, 0x03DF, 0x037F, 0x031D, 0x02BB, 0x031F, 0x02BE, 0x025D, 0x02BF, 0x025F, 0x01DE, 0x023F, 0x01DF, 0x017F },
+};
+
+const EmyKind gUnk_09A3DEFC = { 36, 256, 16, 8, 0, 128, 0 };
+
+const BattleBackgroundDef gUnk_09A3DF0C = {
+    gUnk_09C91754, 0x3340, { 0, 0 }, gUnk_09D69274, 0x100, { 0, 0 }, { gUnk_09D33A74, gUnk_09D33274, gUnk_09D33A74, gUnk_09D33274 }
+};
+
+u8* const gUnk_09A3DF2C[2] = { gUnk_09D33A74 + 0x800, gUnk_09D33A74 + 0x800 };
 
 const PcSpriteCmd gUnk_09A3DF34[51] = {
     { 1, 0, 8, -40, -57, 49, 0 },
@@ -5366,7 +5382,7 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     BtlWork* g;
     u16 zero;
 
-    work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosPcFld, gUnk_09A3DF0C);
+    work->unk_2D0 = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosPcFld, (void*)&gUnk_09A3DF0C);
     work->state = 0;
     work->unk_002 = 0;
     work->unk_004 = 600;
@@ -5393,11 +5409,11 @@ void task_bos_pc_0(PcWork* work, s32 arg) {
     func_0810A444(work);
     func_0810A454(work);
     p = &work->unk_054;
-    func_0801B37C(p, gUnk_09A3DEFC, work->unk_020, work->unk_024, work->unk_028);
+    func_0801B37C(p, &gUnk_09A3DEFC, work->unk_020, work->unk_024, work->unk_028);
     work->unk_088 |= 0x400;
     work->unk_088 |= 4;
     q = &work->unk_164;
-    func_0801B37C(q, gUnk_09A3DEFC, work->unk_020, work->unk_024, work->unk_028 - 0x1000);
+    func_0801B37C(q, &gUnk_09A3DEFC, work->unk_020, work->unk_024, work->unk_028 - 0x1000);
     work->unk_198 |= 4;
     func_0801BDD4(q, p);
     ColliderInit(&work->collider, 8, 32, 56);

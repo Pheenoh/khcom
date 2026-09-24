@@ -2,6 +2,7 @@
 #include "registration_data.h"
 #include "boss_tm.h"
 #include "boss_tm_assets.h"
+#include "event_backgrounds.h"
 #include "chara_api.h"
 #include "acgtrans.h"
 
@@ -9,6 +10,10 @@ s16 gUnk_0203AB3C EWRAM_COMMON(4);
 s16 gUnk_0203AB40 EWRAM_COMMON(4);
 s16 gUnk_0203AB44 EWRAM_COMMON(4);
 s16 gUnk_0203AB48 EWRAM_COMMON(4);
+
+const BattleBackgroundDef gUnk_09619C68 = {
+    gUnk_0964AE84, 0x8000, { 0, 0 }, gUnk_096FB164, 0x140, { 0, 0 }, { gUnk_096BFC64, gUnk_096BFC64, gUnk_096BFC64, gUnk_096BFC64 }
+};
 
 const char gTaskNameBosTm[] = "task_bos_tm";
 
@@ -86,7 +91,7 @@ void task_bos_tm_0(TmWork* w, BtlObj* arg) {
         gBosTmArmTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmArm, &w->unk_48);
     } else {
         w->unk_2C = 0;
-        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, gUnk_09619C68);
+        TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosMap, (void*)&gUnk_09619C68);
         gBosTmTblTask = TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosTmTbl, w);
         gBosTmBodyTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmBody, w);
         gBosTmFootTask = TaskCreate(&gBosTmTaskPool, &gTaskDescBosTmFoot, w);

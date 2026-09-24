@@ -594,8 +594,8 @@ void func_0810A444(PcWork* work);
 void CreateBosPcFltTask(PcWork* work, u16 a, s32 b, s32 c, s32 d, u8 e);
 void CreateBosPcAcdTask(PcWork* work, TaskPool* pool);
 
-extern u8 gUnk_09A3DF0C[];
-extern u8 gUnk_09A3DEFC[];
+extern const BattleBackgroundDef gUnk_09A3DF0C;
+extern const EmyKind gUnk_09A3DEFC;
 extern u8 gUnk_08F69BC4[];
 extern const BattleBackgroundDef gBosLstBattleBackgroundDef;
 extern const EmyKind gBosLstEmyKind;
