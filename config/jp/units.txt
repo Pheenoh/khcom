@@ -6,6 +6,7 @@ taskpool.c
 key.c
 sprite.c
 engine.c
+random.c
 sio.c
 pallet.c
 util.c

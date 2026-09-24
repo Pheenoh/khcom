@@ -72,6 +72,7 @@ tools:
             - src/key
             - src/sprite
             - src/engine
+            - src/random
             - src/sio
             - src/pallet
             - src/util
