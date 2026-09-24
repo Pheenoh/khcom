@@ -1540,10 +1540,8 @@ void func_080C6EB0(u8* src, u8* dst, u16 size, s16 count) {
     }
 }
 
-const char gTaskNameCharaMaskFade[] = "task_chara_mask_fade";
-
 TaskDesc gTaskDescCharaMaskFade = {
-    gTaskNameCharaMaskFade,
+    "task_chara_mask_fade",
     (TaskInitFunc)task_chara_mask_fade_0,
     (TaskUpdateFunc)task_chara_mask_fade_1,
     (TaskFunc)task_chara_mask_fade_2,
@@ -1551,10 +1549,8 @@ TaskDesc gTaskDescCharaMaskFade = {
     0x240,
 };
 
-const char gTaskNameChgCardObj[] = "task_chgCardObj";
-
 TaskDesc gTaskDescChgCardObj = {
-    gTaskNameChgCardObj,
+    "task_chgCardObj",
     (TaskInitFunc)task_chgCardObj_0,
     (TaskUpdateFunc)task_chgCardObj_1,
     (TaskFunc)task_chgCardObj_2,

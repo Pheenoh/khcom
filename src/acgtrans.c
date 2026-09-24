@@ -1,8 +1,6 @@
 #include "task_descriptors.h"
 #include "acgtrans.h"
 
-const char gTaskNameAcgtrans[] = "task_acgtrans";
-
 void task_acgtrans_0(AcgTransWork* work, AcgTransConfig* cfg) {
     work->dst = cfg->dst;
     work->src = cfg->src;
@@ -49,4 +47,4 @@ void CreateBgTileTransferTask(void* a, s32 bg, u16 tile, u16 count, u16 frames, 
     TaskCreate(a, &gTaskDescAcgtrans, &cfg);
 }
 
-TaskDesc gTaskDescAcgtrans = { gTaskNameAcgtrans, task_acgtrans_0, task_acgtrans_1, 0, 0, 0x14 };
+TaskDesc gTaskDescAcgtrans = { "task_acgtrans", task_acgtrans_0, task_acgtrans_1, 0, 0, 0x14 };
