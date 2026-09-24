@@ -426,7 +426,7 @@ void task_status_sora_3(StatusSoraWork* work) {
 void task_status_deckname_0(StatusDecknameWork* work, u8* arg) {
     InitTextSlots(work, 10);
     work->unk_58 = arg;
-    work->unk_54 = LoadTextSlots(GetDeckName(GetActiveDeckIndex()), work);
+    work->textSlotCount = LoadTextSlots(GetDeckName(GetActiveDeckIndex()), work);
     work->palette = LoadObjPalette(gUnk_0984B1D8, 0x20);
 }
 
@@ -436,7 +436,7 @@ u8 task_status_deckname_1(StatusDecknameWork* work) {
 
 void task_status_deckname_2(StatusDecknameWork* work) {
     if (*work->unk_58 == 0) {
-        DrawTextSlots(144, 142, work, work->palette, 4, work->unk_54);
+        DrawTextSlots(144, 142, work, work->palette, 4, work->textSlotCount);
     }
 }
 
@@ -935,7 +935,7 @@ void task_status_meswindow_3(StatusMeswindowWork* work) {
 void task_status_message_0(StatusMessageWork* work, StatusMessageParam* arg) {
     InitTextSlots(work, 100);
     work->param = *arg;
-    work->unk_320 = LoadTextSlots(work->param.unk_00, work);
+    work->textSlotCount = LoadTextSlots(work->param.unk_00, work);
     work->palette = LoadObjPalette(gUnk_0984B1B8, 0x20);
 }
 
@@ -944,7 +944,7 @@ u8 task_status_message_1(StatusMessageWork* work) {
 }
 
 void task_status_message_2(StatusMessageWork* work) {
-    DrawTextSlots(work->param.x, work->param.y, work, work->palette, 3, work->unk_320);
+    DrawTextSlots(work->param.x, work->param.y, work, work->palette, 3, work->textSlotCount);
 }
 
 void task_status_message_3(StatusMessageWork* work) {

@@ -319,11 +319,11 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
 #else
     InitTextSlots(work, 24);
 #endif
-    work->unk_0CC = LoadTextSlots(GetRoomName(arg[0]), work);
+    work->textSlotCount = LoadTextSlots(GetRoomName(arg[0]), work);
     pal = func_080D3DCC(arg[0]);
     work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);
-    work->x = func_080D3D40(GetTextSlotsWidth(work, work->unk_0CC));
+    work->x = func_080D3D40(GetTextSlotsWidth(work, work->textSlotCount));
 }
 
 s32 task_allmap_roomname_1(void) {
@@ -331,7 +331,7 @@ s32 task_allmap_roomname_1(void) {
 }
 
 void task_allmap_roomname_2(AllmapRoomnameWork* work) {
-    DrawTextSlots(work->x + 117, 3, work, work->palette, 50, work->unk_0CC);
+    DrawTextSlots(work->x + 117, 3, work, work->palette, 50, work->textSlotCount);
 }
 
 void task_allmap_roomname_3(AllmapRoomnameWork* work) {

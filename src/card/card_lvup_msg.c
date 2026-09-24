@@ -56,49 +56,49 @@ extern u8 gUnkEu_08895EDC[];
 void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
     struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
-    InitTextSlots(w->unk_000, 20);
-    InitTextSlots(w->unk_0A0, 20);
-    InitTextSlots(w->unk_140, 20);
+    InitTextSlots(w->textSlots, 20);
+    InitTextSlots(w->textSlots2, 20);
+    InitTextSlots(w->textSlots3, 20);
 #ifndef VERSION_JP
-    InitTextSlots(w->unk_1E0, 20);
-    w->unk_2B0 = LoadTextSlots((u8*)gUnk_0903BFD4 + 0x24, w->unk_1E0);
+    InitTextSlots(w->textSlots4, 20);
+    w->textSlotCount4 = LoadTextSlots((u8*)gUnk_0903BFD4 + 0x24, w->textSlots4);
 #endif
     w->unk_28C = a->unk_04 >> 16;
     w->unk_2B4 = a->unk_00;
     if (args.unk_04 & 0x8000) {
 #ifdef VERSION_EU
-        w->unk_2AD = LoadTextSlots(eu_0805E924(gUnk_0815A09A), w->unk_000);
+        w->textSlotCount = LoadTextSlots(eu_0805E924(gUnk_0815A09A), w->textSlots);
 #else
-        w->unk_2AD = LoadTextSlots(gUnk_0815A09A, w->unk_000);
+        w->textSlotCount = LoadTextSlots(gUnk_0815A09A, w->textSlots);
 #endif
     } else if (args.unk_04 & 0x4000) {
 #ifdef VERSION_EU
-        w->unk_2AD = LoadTextSlots(eu_0805E924(gUnk_0815A198), w->unk_000);
+        w->textSlotCount = LoadTextSlots(eu_0805E924(gUnk_0815A198), w->textSlots);
 #else
-        w->unk_2AD = LoadTextSlots(gUnk_0815A198, w->unk_000);
+        w->textSlotCount = LoadTextSlots(gUnk_0815A198, w->textSlots);
 #endif
     } else if (!(gGameState.flags & 8)) {
 #ifdef VERSION_EU
-        w->unk_2AD = LoadTextSlots(eu_0805E924(gUnk_0815A0EE), w->unk_000);
+        w->textSlotCount = LoadTextSlots(eu_0805E924(gUnk_0815A0EE), w->textSlots);
 #else
-        w->unk_2AD = LoadTextSlots(gUnk_0815A0EE, w->unk_000);
+        w->textSlotCount = LoadTextSlots(gUnk_0815A0EE, w->textSlots);
 #endif
     } else {
 #ifdef VERSION_EU
-        w->unk_2AD = LoadTextSlots(eu_0805E924(gUnk_0815A152), w->unk_000);
+        w->textSlotCount = LoadTextSlots(eu_0805E924(gUnk_0815A152), w->textSlots);
 #else
-        w->unk_2AD = LoadTextSlots(gUnk_0815A152, w->unk_000);
+        w->textSlotCount = LoadTextSlots(gUnk_0815A152, w->textSlots);
 #endif
     }
-    w->unk_2AE = LoadTwoDigitTextSlots((u8)w->unk_28C, w->unk_0A0);
+    w->textSlotCount2 = LoadTwoDigitTextSlots((u8)w->unk_28C, w->textSlots2);
 #ifdef VERSION_EU
     if ((args.unk_04 & 0x8000) && gLanguage == 4) {
-        w->unk_2AF = LoadTextSlots(eu_0805E924(gUnkEu_08895EDC), w->unk_140);
+        w->textSlotCount3 = LoadTextSlots(eu_0805E924(gUnkEu_08895EDC), w->textSlots3);
     } else {
-        w->unk_2AF = LoadTextSlots(eu_0805E924(gUnk_0815A0A0), w->unk_140);
+        w->textSlotCount3 = LoadTextSlots(eu_0805E924(gUnk_0815A0A0), w->textSlots3);
     }
 #else
-    w->unk_2AF = LoadTextSlots(gUnk_0815A0A0, w->unk_140);
+    w->textSlotCount3 = LoadTextSlots(gUnk_0815A0A0, w->textSlots3);
 #endif
     w->unk_280 = _08066468(1);
     FadeSetPaletteExcluded(((u16*)w->unk_280)[3] + 16, 1);
@@ -111,12 +111,12 @@ void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
     w->y = 0xCE00;
     w->unk_2AC = 14;
     w->unk_2B1 = 0;
-    w->x = ((144 - (GetTextSlotsWidth(w->unk_000, w->unk_2AD)
+    w->x = ((144 - (GetTextSlotsWidth(w->textSlots, w->textSlotCount)
 #ifndef VERSION_JP
-                         + GetTextSlotsWidth(w->unk_1E0, w->unk_2B0)
+                         + GetTextSlotsWidth(w->textSlots4, w->textSlotCount4)
 #endif
-                         + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE)
-                         + GetTextSlotsWidth(w->unk_140, w->unk_2AF))) / 2) << 8;
+                         + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)
+                         + GetTextSlotsWidth(w->textSlots3, w->textSlotCount3))) / 2) << 8;
 #ifdef VERSION_EU
     w->tiles = AllocSpriteFrameTiles(0x780);
     UpdateSpriteFrameTiles(w->tiles, gUnk_09EF126C[0], gUnk_093F7C9C);
@@ -152,54 +152,54 @@ u8 func_080A25E0(LvupMsgWork* w, void* a) {
 }
 void Lvup_msg_2(LvupMsgWork* w) {
 #ifdef VERSION_JP
-    w->x2 = w->x + w->unk_2AD * 0xA00;
-    w->x3 = w->x2 + w->unk_2AE * 0xA00;
+    w->x2 = w->x + w->textSlotCount * 0xA00;
+    w->x3 = w->x2 + w->textSlotCount2 * 0xA00;
 #elif defined(VERSION_EU)
     switch (gLanguage) {
     case 0:
-        w->x3 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-        w->x2 = w->x3 + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
-        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE), w->y3 >> 8,
-                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        w->x3 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+        w->x2 = w->x3 + ((GetTextSlotsWidth(w->textSlots3, w->textSlotCount3) + 3) << 8);
+        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2), w->y3 >> 8,
+                      w->textSlots4, w->unk_280, 40, w->textSlotCount4);
         break;
     case 1:
-        w->x3 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-        w->x2 = w->x3 + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
-        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE), w->y3 >> 8,
-                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        w->x3 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+        w->x2 = w->x3 + ((GetTextSlotsWidth(w->textSlots3, w->textSlotCount3) + 3) << 8);
+        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2), w->y3 >> 8,
+                      w->textSlots4, w->unk_280, 40, w->textSlotCount4);
         break;
     case 2:
-        w->x2 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-        w->x3 = w->x2 + ((GetTextSlotsWidth(w->unk_0A0, w->unk_2AE) + 3) << 8);
+        w->x2 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+        w->x3 = w->x2 + ((GetTextSlotsWidth(w->textSlots2, w->textSlotCount2) + 3) << 8);
         break;
     case 3:
-        w->x3 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-        w->x2 = w->x3 + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
-        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE), w->y3 >> 8,
-                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        w->x3 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+        w->x2 = w->x3 + ((GetTextSlotsWidth(w->textSlots3, w->textSlotCount3) + 3) << 8);
+        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2), w->y3 >> 8,
+                      w->textSlots4, w->unk_280, 40, w->textSlotCount4);
         break;
     case 4:
-        w->x3 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-        w->x2 = w->x3 + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
-        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE), w->y3 >> 8,
-                      w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+        w->x3 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+        w->x2 = w->x3 + ((GetTextSlotsWidth(w->textSlots3, w->textSlotCount3) + 3) << 8);
+        DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2), w->y3 >> 8,
+                      w->textSlots4, w->unk_280, 40, w->textSlotCount4);
         break;
     }
 #else
-    w->x3 = w->x + ((GetTextSlotsWidth(w->unk_000, w->unk_2AD) + 3) << 8);
-    w->x2 = w->x3 + ((GetTextSlotsWidth(w->unk_140, w->unk_2AF) + 3) << 8);
+    w->x3 = w->x + ((GetTextSlotsWidth(w->textSlots, w->textSlotCount) + 3) << 8);
+    w->x2 = w->x3 + ((GetTextSlotsWidth(w->textSlots3, w->textSlotCount3) + 3) << 8);
 #endif
 #ifdef VERSION_EU
     DrawSprite(72, w->y >> 8, 0, w->tiles, w->palette, 0, 0, 41);
 #else
     DrawSprite(72, w->y >> 8, gUnk_09EF126C[0], w->tiles, w->palette, 0, 0, 41);
 #endif
-    DrawTextSlots(w->x >> 8, w->y2 >> 8, w->unk_000, w->unk_280, 40, w->unk_2AD);
-    DrawTextSlots(w->x2 >> 8, w->y3 >> 8, w->unk_0A0, w->unk_280, 40, w->unk_2AE);
-    DrawTextSlots(w->x3 >> 8, w->y4 >> 8, w->unk_140, w->unk_280, 40, w->unk_2AF);
+    DrawTextSlots(w->x >> 8, w->y2 >> 8, w->textSlots, w->unk_280, 40, w->textSlotCount);
+    DrawTextSlots(w->x2 >> 8, w->y3 >> 8, w->textSlots2, w->unk_280, 40, w->textSlotCount2);
+    DrawTextSlots(w->x3 >> 8, w->y4 >> 8, w->textSlots3, w->unk_280, 40, w->textSlotCount3);
 #ifdef VERSION_US
-    DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->unk_0A0, w->unk_2AE), w->y3 >> 8,
-                  w->unk_1E0, w->unk_280, 40, w->unk_2B0);
+    DrawTextSlots((w->x2 >> 8) + GetTextSlotsWidth(w->textSlots2, w->textSlotCount2), w->y3 >> 8,
+                  w->textSlots4, w->unk_280, 40, w->textSlotCount4);
 #endif
 }
 void Lvup_msg_3(u8* work) {

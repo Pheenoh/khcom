@@ -43,10 +43,10 @@ typedef struct RoomNameWork {
     u16 unk_2C;
     u8 unk_2E[0x2];
     s32 unk_30;
-    u8 unk_34;
+    u8 textSlotCount;
     u8 unk_35[0x3];
     void* palette2;
-    u8 unk_3C[0x120];
+    u8 textSlots[0x120];
 } RoomNameWork;
 
 extern u8 gUnk_099910C4[];

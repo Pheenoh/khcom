@@ -206,8 +206,8 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
     }
 #endif
 
-    InitTextSlots((TextSlot*)w->unk_020, 10);
-    InitTextSlots((TextSlot*)w->unk_070, 10);
+    InitTextSlots((TextSlot*)w->textSlots, 10);
+    InitTextSlots((TextSlot*)w->textSlots2, 10);
     SetTaskUpdate(a, (TaskUpdateFunc)func_080A3754);
 
     return 1;
@@ -264,8 +264,8 @@ void func_080A3848(UnkStruct_080A3F5C* w) {
     if (w->tiles2 != 0) {
         p = &gUnk_09EF126C;
         DrawSprite(120, 80, p[1], w->tiles2, w->palette4, 0, 0, 10);
-        DrawTextSlots((240 - w->unk_146[0] * 10) >> 1, 67, w->unk_020, w->unk_0C0, 0, w->unk_146[0]);
-        DrawTextSlots((240 - w->unk_146[1] * 10) >> 1, 82, w->unk_070, w->unk_0C0, 0, w->unk_146[1]);
+        DrawTextSlots((240 - w->unk_146[0] * 10) >> 1, 67, w->textSlots, w->unk_0C0, 0, w->unk_146[0]);
+        DrawTextSlots((240 - w->unk_146[1] * 10) >> 1, 82, w->textSlots2, w->unk_0C0, 0, w->unk_146[1]);
     }
 }
 
@@ -308,8 +308,8 @@ void func_080A3A04(UnkStruct_080A3F5C* w) {
         ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    FreeTextSlots((TextSlot*)w->unk_020, 10);
-    FreeTextSlots((TextSlot*)w->unk_070, 10);
+    FreeTextSlots((TextSlot*)w->textSlots, 10);
+    FreeTextSlots((TextSlot*)w->textSlots2, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034AFC = 0;
 }
@@ -403,11 +403,11 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             w->unk_124 = 0x5800;
             w->gfx4 = gUnk_09033D28[w->unk_144];
 #ifdef VERSION_EU
-            w->unk_146[0] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
-            w->unk_146[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->unk_070);
+            w->unk_146[0] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->textSlots);
+            w->unk_146[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->textSlots2);
 #else
-            w->unk_146[0] = LoadTextSlots(gUnk_08159E10, w->unk_020);
-            w->unk_146[1] = LoadTextSlots(gUnk_08159E18, w->unk_070);
+            w->unk_146[0] = LoadTextSlots(gUnk_08159E10, w->textSlots);
+            w->unk_146[1] = LoadTextSlots(gUnk_08159E18, w->textSlots2);
 #endif
             w->unk_0C0 = (s32)_08066468(1);
             SetTaskUpdate(a, (TaskUpdateFunc)func_080A3E8C);

@@ -94,9 +94,9 @@ typedef struct SioBtlConnectWork {
     u16 unk_00;
     s16 unk_02;
     s8 state;
-    u8 unk_05;
+    u8 textSlotCount;
     u8 unk_06[2];
-    TextSlot unk_08[SIO_CONNECT_TEXT_SLOTS];
+    TextSlot textSlots[SIO_CONNECT_TEXT_SLOTS];
     void* palette;
 } SioBtlConnectWork;
 
@@ -105,9 +105,9 @@ typedef struct SioErrorWork {
     u8 unk_01;
     u16 unk_02;
     u16 unk_04;
-    u8 unk_06;
+    u8 textSlotCount;
     u8 unk_07;
-    TextSlot unk_08[SIO_ERROR_TEXT_SLOTS];
+    TextSlot textSlots[SIO_ERROR_TEXT_SLOTS];
     void* palette;
 } SioErrorWork;
 
@@ -166,13 +166,13 @@ typedef struct SioChgCardWork {
     void* tiles5;
     void* gfx6;
     s8 unk_20C;
-    u8 unk_20D;
+    u8 textSlotCount;
     u8 unk_20E[2];
-    TextSlot unk_210[42];
+    TextSlot textSlots[42];
     s8 unk_360;
-    u8 unk_361;
+    u8 textSlotCount2;
     u8 unk_362[2];
-    TextSlot unk_364[20];
+    TextSlot textSlots2[20];
     s16 unk_404;
     u16 unk_406[0x3E7];
     u64 unk_BD4;
@@ -217,23 +217,23 @@ typedef struct SioBtlOptionWork {
     void* unk_008[4];
     void* gfx6[2];
     AnimState anim2[2];
-    u8 unk_050;
+    u8 textSlotCount;
     u8 unk_051[3];
-    TextSlot unk_054[20];
+    TextSlot textSlots[20];
 #ifdef VERSION_EU
     TextSlot unkEu_0F4[20];
 #endif
     void* palette7;
-    u8 unk_0F8;
+    u8 textSlotCount2;
     u8 unk_0F9[3];
-    TextSlot unk_0FC[10];
+    TextSlot textSlots2[10];
 #ifdef VERSION_EU
     TextSlot unkEu_1EC[10];
 #endif
     void* palette8;
-    u8 unk_150;
+    u8 textSlotCount3;
     u8 unk_151[3];
-    TextSlot unk_154[10];
+    TextSlot textSlots3[10];
 #ifdef VERSION_EU
     TextSlot unkEu_294[10];
 #endif
@@ -271,9 +271,9 @@ typedef struct SioBtlOptionWork {
     void* palette3;
     void* gfx3;
     s8 unk_228;
-    u8 unk_229;
+    u8 textSlotCount4;
     u8 unk_22A[2];
-    TextSlot unk_22C[60];
+    TextSlot textSlots4[60];
 #ifdef VERSION_EU
     TextSlot unkEu_54C[60];
 #endif

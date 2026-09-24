@@ -6812,15 +6812,15 @@ void msgwait_yesno_0(MsgWaitYesNoWork* p, u8* a) {
     p->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
     LoadObjPaletteBank(((ObjPalette*)p->palette3)->index, gUnk_09611AB8);
     FadeSetPaletteExcluded(((ObjPalette*)p->palette)->index + 16, 1);
-    InitTextSlots(p->unk_1C, 10);
-    InitTextSlots(p->unk_6C, 10);
+    InitTextSlots(p->textSlots, 10);
+    InitTextSlots(p->textSlots2, 10);
     p->palette4 = _08066468(1);
 #ifdef VERSION_EU
-    p->unk_F4 = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p->unk_1C);
-    p->unk_F5 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p->unk_6C);
+    p->textSlotCount = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p->textSlots);
+    p->textSlotCount2 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p->textSlots2);
 #else
-    p->unk_F4 = LoadTextSlots(gUnk_08159E10, p->unk_1C);
-    p->unk_F5 = LoadTextSlots(gUnk_08159E18, p->unk_6C);
+    p->textSlotCount = LoadTextSlots(gUnk_08159E10, p->textSlots);
+    p->textSlotCount2 = LoadTextSlots(gUnk_08159E18, p->textSlots2);
 #endif
     p->x = 0x5800;
     p->unk_100 = 1;
@@ -6904,8 +6904,8 @@ void msgwait_yesno_2(MsgWaitYesNoWork* p) {
     case 1:
         DrawSprite(120, 80, gUnk_09EF126C[1], p->tiles3, p->palette3, 0, 0, 10);
         DrawSprite(p->x >> 8, p->y >> 8, p->gfx2, p->tiles2, p->palette2, 0, 1, 9);
-        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_1C, p->unk_F4)) >> 1, 67, p->unk_1C, p->palette4, 0, p->unk_F4);
-        DrawTextSlots((240 - GetTextSlotsWidth(p->unk_6C, p->unk_F5)) >> 1, 82, p->unk_6C, p->palette4, 0, p->unk_F5);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->textSlots, p->textSlotCount)) >> 1, 67, p->textSlots, p->palette4, 0, p->textSlotCount);
+        DrawTextSlots((240 - GetTextSlotsWidth(p->textSlots2, p->textSlotCount2)) >> 1, 82, p->textSlots2, p->palette4, 0, p->textSlotCount2);
         break;
     }
 }
@@ -6915,8 +6915,8 @@ void msgwait_yesno_3(MsgWaitYesNoWork* p) {
     ReleaseObjPalette(p->palette3);
     ReleaseObjPalette(p->palette2);
     ReleaseObjPalette(p->palette4);
-    FreeTextSlots(p->unk_1C, 10);
-    FreeTextSlots(p->unk_6C, 10);
+    FreeTextSlots(p->textSlots, 10);
+    FreeTextSlots(p->textSlots2, 10);
 }
 void HBlankIntrEventScanlineScroll(void) {
     vu16 v;

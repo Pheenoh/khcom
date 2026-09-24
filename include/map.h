@@ -284,8 +284,8 @@ typedef struct LoadGameMenuWork {
     void* tiles;
     s32 y3;
     MapEnmWork* palette7;
-    u8 unk_03C[0x120];
-    u8 unk_15C;
+    u8 textSlots[0x120];
+    u8 textSlotCount;
     u8 unk_15D;
     u16 unk_15E;
     u8* palette3;
@@ -325,13 +325,13 @@ typedef struct NewGameSlotMenuWork {
     void* tiles;
     s32 y3;
     MapEnmWork* palette8;
-    u8 unk_040[0x120];
-    u8 unk_160;
+    u8 textSlots[0x120];
+    u8 textSlotCount;
     u8 unk_161;
     u16 unk_162;
     u8* palette9;
-    u8 unk_168[0x1B0];
-    u8 unk_318;
+    u8 textSlots2[0x1B0];
+    u8 textSlotCount2;
     u8 unk_319[0x03];
     u8* palette4;
     void* tiles4;
@@ -394,17 +394,17 @@ typedef struct MapMenuWork {
     void* tiles9[0x03];
     s32 gfx[0x03];
     u8* unk_17C;
-    TextSlot unk_180[0x21];
+    TextSlot textSlots2[0x21];
 #ifdef VERSION_EU
     u8 unkEu_288[0x108];
 #endif
-    u8 unk_288;
+    u8 textSlotCount2;
     u8 unk_289[0x03];
-    TextSlot unk_28C[0x06];
-    u8 unk_2BC;
+    TextSlot textSlots3[0x06];
+    u8 textSlotCount3;
     u8 unk_2BD[0x03];
-    TextSlot unk_2C0[0x09];
-    u8 unk_308;
+    TextSlot textSlots4[0x09];
+    u8 textSlotCount4;
     u8 unk_309;
     u8 unk_30A;
     u8 unk_30B;
@@ -439,17 +439,17 @@ typedef struct MapSaveWork {
     FldRes* palette7;
     void* tiles6;
     FldRes* palette8;
-    u8 unk_194[0xD8];
+    u8 textSlots2[0xD8];
 #ifdef VERSION_EU
     u8 unkEu_26C[0xD8];
 #endif
-    u8 unk_26C;
+    u8 textSlotCount2;
     u8 unk_26D[0x03];
-    u8 unk_270[0x30];
-    u8 unk_2A0;
+    u8 textSlots3[0x30];
+    u8 textSlotCount3;
     u8 unk_2A1[0x03];
-    u8 unk_2A4[0x48];
-    u8 unk_2EC;
+    u8 textSlots4[0x48];
+    u8 textSlotCount4;
     u8 unk_2ED[0x03];
     s32 (*update)(struct MapSaveWork*);
     u8 unk_2F4;
@@ -964,16 +964,16 @@ typedef struct MapFloorWork {
     void* gfx;
     s16 unk_0C;
     u16 unk_0E;
-    u8 unk_10;
+    u8 textSlotCount;
     u8 unk_11[0x03];
     void* palette2;
-    u8 unk_18[0x140];
+    u8 textSlots[0x140];
 } MapFloorWork;
 
 typedef struct MapMsgWork {
     FldRes* palette;
-    u8 unk_004[0x180];
-    u8 unk_184;
+    u8 textSlots[0x180];
+    u8 textSlotCount;
     u8 unk_185;
     s16 unk_186;
     u16 timer;

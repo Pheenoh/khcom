@@ -103,12 +103,12 @@ void Level_Up_0(LevelUpWork* w) {
         gUnk_02039DD4->unk_0E9 = 1;
     }
 #ifndef VERSION_EU
-    InitTextSlots(w->text[0], 36);
-    InitTextSlots(w->text[1], 36);
-    InitTextSlots(w->text[2], 36);
-    InitTextSlots(w->text[3], 36);
-    InitTextSlots(w->text[4], 36);
-    InitTextSlots(w->text[5], 36);
+    InitTextSlots(w->textSlots[0], 36);
+    InitTextSlots(w->textSlots[1], 36);
+    InitTextSlots(w->textSlots[2], 36);
+    InitTextSlots(w->textSlots[3], 36);
+    InitTextSlots(w->textSlots[4], 36);
+    InitTextSlots(w->textSlots[5], 36);
     w->unk_000[6] = LoadObjTiles(gUnk_0908CAEC, 0x500);
 #else
     w->unk_000[6] = LoadObjTiles(gUnkEu_09F72D1C[gLanguage], gUnkEu_090D1328[gLanguage]);
@@ -579,56 +579,56 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78D4[6], w->text[0]);
-                            w->unk_7B7[3] = 0;
+                            w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[0]);
+                            w->textSlotCounts[3] = 0;
 #endif
                             w->unk_7C8[0] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78D4[0], w->text[0]);
-                            w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78D4[3], w->text[3]);
+                            w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78D4[0], w->textSlots[0]);
+                            w->textSlotCounts[3] = LoadTextSlots(gUnk_09EE78D4[3], w->textSlots[3]);
 #endif
                         }
                         if (gGameState.progression.cp > 1899) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                            w->unk_7B7[4] = 0;
+                            w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                            w->textSlotCounts[4] = 0;
 #endif
                             w->unk_7C8[1] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[1], w->text[1]);
-                            w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78D4[4], w->text[4]);
+                            w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[1], w->textSlots[1]);
+                            w->textSlotCounts[4] = LoadTextSlots(gUnk_09EE78D4[4], w->textSlots[4]);
 #endif
                         }
                         if (gGameState.progression.unk_80 > 10) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                            w->unk_7B7[5] = 0;
+                            w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                            w->textSlotCounts[5] = 0;
 #endif
                             w->unk_7C8[2] = 0;
                         } else if ((u8)func_080A2370() == 0) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                            w->unk_7B7[5] = 0;
+                            w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                            w->textSlotCounts[5] = 0;
 #endif
                             w->unk_7C8[2] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[2], w->text[2]);
-                            w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78D4[5], w->text[5]);
+                            w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[2], w->textSlots[2]);
+                            w->textSlotCounts[5] = LoadTextSlots(gUnk_09EE78D4[5], w->textSlots[5]);
 #endif
                         }
                         w->palette = LoadObjPalette(gUnk_09613F98, 32);
@@ -638,56 +638,56 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78F0[6], w->text[0]);
-                            w->unk_7B7[3] = 0;
+                            w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78F0[6], w->textSlots[0]);
+                            w->textSlotCounts[3] = 0;
 #endif
                             w->unk_7C8[0] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78F0[0], w->text[0]);
-                            w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78F0[3], w->text[3]);
+                            w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78F0[0], w->textSlots[0]);
+                            w->textSlotCounts[3] = LoadTextSlots(gUnk_09EE78F0[3], w->textSlots[3]);
 #endif
                         }
                         if ((s16)gGameState.progression.ap > 29) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                            w->unk_7B7[4] = 0;
+                            w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                            w->textSlotCounts[4] = 0;
 #endif
                             w->unk_7C8[1] = 0;
                         } else if ((u8)func_080A151C() == 0) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                            w->unk_7B7[4] = 0;
+                            w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                            w->textSlotCounts[4] = 0;
 #endif
                             w->unk_7C8[1] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78F0[1], w->text[1]);
-                            w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78F0[4], w->text[4]);
+                            w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78F0[1], w->textSlots[1]);
+                            w->textSlotCounts[4] = LoadTextSlots(gUnk_09EE78F0[4], w->textSlots[4]);
 #endif
                         }
                         if ((s16)gGameState.progression.dp > 299) {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                            w->unk_7B7[5] = 0;
+                            w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                            w->textSlotCounts[5] = 0;
 #endif
                             w->unk_7C8[2] = 0;
                         } else {
 #ifdef VERSION_EU
                             UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
 #else
-                            w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78F0[2], w->text[2]);
-                            w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78F0[5], w->text[5]);
+                            w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78F0[2], w->textSlots[2]);
+                            w->textSlotCounts[5] = LoadTextSlots(gUnk_09EE78F0[5], w->textSlots[5]);
 #endif
                         }
                         w->palette = LoadObjPalette(gUnk_09613FD8, 32);
@@ -1110,15 +1110,15 @@ void Level_Up_2(LevelUpWork* w) {
 #ifdef VERSION_EU
                     DrawSprite(w->x5[i] + 5, w->y5[i] - 4, 0, w->tiles5[i], w->palette, 0, 0, 40);
 #else
-                    DrawTextSlots(w->x5[i] + 22, w->y5[i] - 5, w->text[i], w->palette, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->x5[i] + 4, w->y5[i] + 13, w->text[i + 3], w->palette, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->x5[i] + 22, w->y5[i] - 5, w->textSlots[i], w->palette, 40, w->textSlotCounts[i]);
+                    DrawTextSlots(w->x5[i] + 4, w->y5[i] + 13, w->textSlots[i + 3], w->palette, 40, w->textSlotCounts[i + 3]);
 #endif
                 } else {
 #ifdef VERSION_EU
                     DrawSprite(w->x5[i] + 3, w->y5[i] - 2, 0, w->tiles5[i], w->palette2, 0, 0, 40);
 #else
-                    DrawTextSlots(w->x5[i] + 20, w->y5[i] - 3, w->text[i], w->palette2, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->x5[i] + 2, w->y5[i] + 15, w->text[i + 3], w->palette2, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->x5[i] + 20, w->y5[i] - 3, w->textSlots[i], w->palette2, 40, w->textSlotCounts[i]);
+                    DrawTextSlots(w->x5[i] + 2, w->y5[i] + 15, w->textSlots[i + 3], w->palette2, 40, w->textSlotCounts[i + 3]);
 #endif
                 }
             }
@@ -1130,8 +1130,8 @@ void Level_Up_2(LevelUpWork* w) {
 #ifdef VERSION_EU
                     DrawSprite(w->x5[i] + 4, w->y5[i] - 3, 0, w->tiles5[i], w->palette, 0, 0, 40);
 #else
-                    DrawTextSlots(w->x5[i] + 22, w->y5[i] - 5, w->text[i], w->palette, 40, w->unk_7B7[i]);
-                    DrawTextSlots(w->x5[i] + 4, w->y5[i] + 13, w->text[i + 3], w->palette, 40, w->unk_7B7[i + 3]);
+                    DrawTextSlots(w->x5[i] + 22, w->y5[i] - 5, w->textSlots[i], w->palette, 40, w->textSlotCounts[i]);
+                    DrawTextSlots(w->x5[i] + 4, w->y5[i] + 13, w->textSlots[i + 3], w->palette, 40, w->textSlotCounts[i + 3]);
 #endif
                     DrawSprite(w->x4[i], w->y4[i], gUnk_09EEA2D8[i], w->unk_000[i], w->unk_000[5], 0, 0, 50);
                 } else {
@@ -1139,8 +1139,8 @@ void Level_Up_2(LevelUpWork* w) {
 #ifdef VERSION_EU
                         DrawSprite(w->x5[i] + 2, w->y5[i] - 1, 0, w->tiles5[i], w->palette2, 0, 0, 40);
 #else
-                        DrawTextSlots(w->x5[i] + 20, w->y5[i] - 3, w->text[i], w->palette2, 40, w->unk_7B7[i]);
-                        DrawTextSlots(w->x5[i] + 2, w->y5[i] + 15, w->text[i + 3], w->palette2, 40, w->unk_7B7[i + 3]);
+                        DrawTextSlots(w->x5[i] + 20, w->y5[i] - 3, w->textSlots[i], w->palette2, 40, w->textSlotCounts[i]);
+                        DrawTextSlots(w->x5[i] + 2, w->y5[i] + 15, w->textSlots[i + 3], w->palette2, 40, w->textSlotCounts[i + 3]);
 #endif
 #ifdef VERSION_EU
                         if (gLanguage != 3) {
@@ -1160,8 +1160,8 @@ void Level_Up_2(LevelUpWork* w) {
 #ifdef VERSION_EU
             DrawSprite(w->x5[w->unk_7B0] + 2, w->y5[w->unk_7B0] - 1, 0, w->tiles5[w->unk_7B0], w->palette, 0, 0, 40);
 #else
-            DrawTextSlots(w->x5[w->unk_7B0] + 22, w->y5[w->unk_7B0] - 5, w->text[w->unk_7B0], w->palette, 40, w->unk_7B7[w->unk_7B0]);
-            DrawTextSlots(w->x5[w->unk_7B0] + 4, w->y5[w->unk_7B0] + 13, w->text[w->unk_7B0 + 3], w->palette, 40, w->unk_7B7[w->unk_7B0 + 3]);
+            DrawTextSlots(w->x5[w->unk_7B0] + 22, w->y5[w->unk_7B0] - 5, w->textSlots[w->unk_7B0], w->palette, 40, w->textSlotCounts[w->unk_7B0]);
+            DrawTextSlots(w->x5[w->unk_7B0] + 4, w->y5[w->unk_7B0] + 13, w->textSlots[w->unk_7B0 + 3], w->palette, 40, w->textSlotCounts[w->unk_7B0 + 3]);
 #endif
             DrawSprite(w->x4[w->unk_7B0], w->y4[w->unk_7B0], 0, w->unk_000[w->unk_7B0], w->unk_000[5], 0, 0, 50);
             DrawSprite(w->x6, 0,
@@ -1530,56 +1530,56 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78D4[6], w->text[0]);
-                w->unk_7B7[3] = 0;
+                w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[0]);
+                w->textSlotCounts[3] = 0;
 #endif
                 w->unk_7C8[0] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][0], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78D4[0], w->text[0]);
-                w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78D4[3], w->text[3]);
+                w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78D4[0], w->textSlots[0]);
+                w->textSlotCounts[3] = LoadTextSlots(gUnk_09EE78D4[3], w->textSlots[3]);
 #endif
             }
             if (gGameState.progression.cp > 1899) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                w->unk_7B7[4] = 0;
+                w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                w->textSlotCounts[4] = 0;
 #endif
                 w->unk_7C8[1] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][1], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[1], w->text[1]);
-                w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78D4[4], w->text[4]);
+                w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[1], w->textSlots[1]);
+                w->textSlotCounts[4] = LoadTextSlots(gUnk_09EE78D4[4], w->textSlots[4]);
 #endif
             }
             if (gGameState.progression.unk_80 > 10) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                w->unk_7B7[5] = 0;
+                w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                w->textSlotCounts[5] = 0;
 #endif
                 w->unk_7C8[2] = 0;
             } else if ((u8)func_080A2370() == 0) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                w->unk_7B7[5] = 0;
+                w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                w->textSlotCounts[5] = 0;
 #endif
                 w->unk_7C8[2] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][2], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[2], w->text[2]);
-                w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78D4[5], w->text[5]);
+                w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[2], w->textSlots[2]);
+                w->textSlotCounts[5] = LoadTextSlots(gUnk_09EE78D4[5], w->textSlots[5]);
 #endif
             }
             w->palette = LoadObjPalette(gUnk_09613F98, 32);
@@ -1589,56 +1589,56 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78F0[6], w->text[0]);
-                w->unk_7B7[3] = 0;
+                w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78F0[6], w->textSlots[0]);
+                w->textSlotCounts[3] = 0;
 #endif
                 w->unk_7C8[0] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[0], gUnkEu_09F72D58[gLanguage][3], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[0] = LoadTextSlots(gUnk_09EE78F0[0], w->text[0]);
-                w->unk_7B7[3] = LoadTextSlots(gUnk_09EE78F0[3], w->text[3]);
+                w->textSlotCounts[0] = LoadTextSlots(gUnk_09EE78F0[0], w->textSlots[0]);
+                w->textSlotCounts[3] = LoadTextSlots(gUnk_09EE78F0[3], w->textSlots[3]);
 #endif
             }
             if ((s16)gGameState.progression.ap > 29) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                w->unk_7B7[4] = 0;
+                w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                w->textSlotCounts[4] = 0;
 #endif
                 w->unk_7C8[1] = 0;
             } else if ((u8)func_080A151C() == 0) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78D4[6], w->text[1]);
-                w->unk_7B7[4] = 0;
+                w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[1]);
+                w->textSlotCounts[4] = 0;
 #endif
                 w->unk_7C8[1] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[1], gUnkEu_09F72D58[gLanguage][4], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[1] = LoadTextSlots(gUnk_09EE78F0[1], w->text[1]);
-                w->unk_7B7[4] = LoadTextSlots(gUnk_09EE78F0[4], w->text[4]);
+                w->textSlotCounts[1] = LoadTextSlots(gUnk_09EE78F0[1], w->textSlots[1]);
+                w->textSlotCounts[4] = LoadTextSlots(gUnk_09EE78F0[4], w->textSlots[4]);
 #endif
             }
             if ((s16)gGameState.progression.dp > 299) {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][6], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78D4[6], w->text[2]);
-                w->unk_7B7[5] = 0;
+                w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78D4[6], w->textSlots[2]);
+                w->textSlotCounts[5] = 0;
 #endif
                 w->unk_7C8[2] = 0;
             } else {
 #ifdef VERSION_EU
                 UpdateSpriteFrameTiles(w->tiles5[2], gUnkEu_09F72D58[gLanguage][5], gUnkEu_09F72D44[gLanguage]);
 #else
-                w->unk_7B7[2] = LoadTextSlots(gUnk_09EE78F0[2], w->text[2]);
-                w->unk_7B7[5] = LoadTextSlots(gUnk_09EE78F0[5], w->text[5]);
+                w->textSlotCounts[2] = LoadTextSlots(gUnk_09EE78F0[2], w->textSlots[2]);
+                w->textSlotCounts[5] = LoadTextSlots(gUnk_09EE78F0[5], w->textSlots[5]);
 #endif
             }
             w->palette = LoadObjPalette(gUnk_09613FD8, 32);

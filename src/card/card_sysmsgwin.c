@@ -128,8 +128,8 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
 #endif
     }
 #endif
-    InitTextSlots(w->unk_020, 10);
-    InitTextSlots(w->unk_070, 10);
+    InitTextSlots(w->textSlots, 10);
+    InitTextSlots(w->textSlots2, 10);
     gUnk_0203A9D4 = 1;
     gUnk_0203A9D8 = 0;
     w->unk_138[1] = w->unk_138[3];
@@ -277,11 +277,11 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
             w->x = 0x5800;
             w->unk_11C = gUnk_09033D28[w->unk_13D] - 0x500;
 #ifdef VERSION_EU
-            ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
-            w->unk_140 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->unk_070);
+            ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->textSlots);
+            w->unk_140 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->textSlots2);
 #else
-            ((u8*)&w->unk_13E)[1] = LoadTextSlots(gUnk_08159E10, w->unk_020);
-            w->unk_140 = LoadTextSlots(gUnk_08159E18, w->unk_070);
+            ((u8*)&w->unk_13E)[1] = LoadTextSlots(gUnk_08159E10, w->textSlots);
+            w->unk_140 = LoadTextSlots(gUnk_08159E18, w->textSlots2);
 #endif
             w->unk_0C0 = (s32)_08066468(1);
             w->unk_144 = 1;
@@ -386,9 +386,9 @@ void func_080A4A50(UnkStruct_080A3F5C* w) {
 
     if (w->unk_144 != 0) {
         DrawSprite(120, 75, gUnk_09EF126C[1], w->tiles, w->palette3, 0, 0, 10);
-        DrawTextSlots((240 - GetTextSlotsWidth((TextSlot*)w->unk_020, ((u8*)&w->unk_13E)[1])) >> 1, 62, w->unk_020,
+        DrawTextSlots((240 - GetTextSlotsWidth((TextSlot*)w->textSlots, ((u8*)&w->unk_13E)[1])) >> 1, 62, w->textSlots,
                       (void*)w->unk_0C0, 0, ((u8*)&w->unk_13E)[1]);
-        DrawTextSlots((240 - GetTextSlotsWidth((TextSlot*)w->unk_070, w->unk_140)) >> 1, 77, w->unk_070,
+        DrawTextSlots((240 - GetTextSlotsWidth((TextSlot*)w->textSlots2, w->unk_140)) >> 1, 77, w->textSlots2,
                       (void*)w->unk_0C0, 0, w->unk_140);
     }
 }
@@ -436,8 +436,8 @@ void func_080A4C1C(UnkStruct_080A3F5C* w) {
         ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    FreeTextSlots((TextSlot*)w->unk_020, 10);
-    FreeTextSlots((TextSlot*)w->unk_070, 10);
+    FreeTextSlots((TextSlot*)w->textSlots, 10);
+    FreeTextSlots((TextSlot*)w->textSlots2, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }
@@ -595,8 +595,8 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
 #endif
     }
 #endif
-    InitTextSlots(w->unk_020, 10);
-    InitTextSlots(w->unk_070, 10);
+    InitTextSlots(w->textSlots, 10);
+    InitTextSlots(w->textSlots2, 10);
     gUnk_0203A9D4 = 1;
     gUnk_0203A9D8 = 0;
     w->unk_138[1] = w->unk_138[3];
@@ -671,11 +671,11 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     w->x = 0x8500;
     w->unk_11C = 0x5000;
 #ifdef VERSION_EU
-    ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->unk_020);
-    w->unk_140 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->unk_070);
+    ((u8*)&w->unk_13E)[1] = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), w->textSlots);
+    w->unk_140 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), w->textSlots2);
 #else
-    ((u8*)&w->unk_13E)[1] = LoadTextSlots(gUnk_08159E10, w->unk_020);
-    w->unk_140 = LoadTextSlots(gUnk_08159E18, w->unk_070);
+    ((u8*)&w->unk_13E)[1] = LoadTextSlots(gUnk_08159E10, w->textSlots);
+    w->unk_140 = LoadTextSlots(gUnk_08159E18, w->textSlots2);
 #endif
     w->unk_0C0 = (s32)_08066468(1);
     w->unk_144 = 1;
@@ -777,8 +777,8 @@ void func_080A52BC(UnkStruct_080A3F5C* w) {
         DrawSprite(w->x >> 8, w->unk_11C >> 8, w->gfx, w->tiles4, w->palette2, 0, 1, 10);
     }
 
-    DrawTextSlots(89, 86, w->unk_020, w->unk_0C0, 0, ((u8*)&w->unk_13E)[1]);
-    DrawTextSlots(135, 86, w->unk_070, w->unk_0C0, 0, w->unk_140);
+    DrawTextSlots(89, 86, w->textSlots, w->unk_0C0, 0, ((u8*)&w->unk_13E)[1]);
+    DrawTextSlots(135, 86, w->textSlots2, w->unk_0C0, 0, w->unk_140);
 }
 
 void func_080A53E4(UnkStruct_080A3F5C* w) {
@@ -824,8 +824,8 @@ void func_080A53E4(UnkStruct_080A3F5C* w) {
         ReleaseObjPalette((u8*)w->unk_0C0);
     }
 
-    FreeTextSlots((TextSlot*)w->unk_020, 10);
-    FreeTextSlots((TextSlot*)w->unk_070, 10);
+    FreeTextSlots((TextSlot*)w->textSlots, 10);
+    FreeTextSlots((TextSlot*)w->textSlots2, 10);
     gUnk_0203A9D4 = 0;
     gUnk_02034B00 = 0;
 }

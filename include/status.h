@@ -79,9 +79,9 @@ typedef struct StatusSoraWork {
 } StatusSoraWork;
 
 typedef struct StatusDecknameWork {
-    u8 unk_00[0x50];
+    u8 textSlots[0x50];
     void* palette;
-    u8 unk_54;
+    u8 textSlotCount;
     u8 unk_55[0x3];
     u8* unk_58;
 } StatusDecknameWork;
@@ -127,8 +127,8 @@ typedef struct StatusMessageParam {
 } StatusMessageParam;
 
 typedef struct StatusMessageWork {
-    u8 unk_000[0x320];
-    u8 unk_320;
+    u8 textSlots[0x320];
+    u8 textSlotCount;
     u8 unk_321[3];
     void* palette;
     StatusMessageParam param;

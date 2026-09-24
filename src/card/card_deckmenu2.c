@@ -3974,7 +3974,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
             }
             DrawSprite(24, 82, w->gfx4, w->tiles7, w->palette5, 0, 0x400, 100);
             DrawSprite(24, 82, w->gfx5, w->tiles8, w->palette6, 0, 0x400, 101);
-            DrawTextSlots(10, 116, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(10, 116, w->textSlots4, w->palette4, 20, w->textSlotCount4);
             if (w->tiles10 != 0) {
                 w->gfx3 = AnimUpdate(&w->anim3);
                 DrawSprite(24, 82, w->gfx3, w->tiles10, w->palette5, 0, 0, 1);
@@ -3998,7 +3998,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
             if (w->tiles9 != 0) {
                 DrawSprite(164, 82, w->gfx6, w->tiles9, w->palette5, 0, 0, 19);
             }
-            DrawTextSlots(100, 116, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(100, 116, w->textSlots4, w->palette4, 20, w->textSlotCount4);
             if (w->unk_8C9 == 0) {
                 func_0808B398((u8*)w);
             }
@@ -4015,7 +4015,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
                 w->gfx3 = AnimUpdate(&w->anim3);
                 DrawSprite(24, 82, w->gfx3, w->tiles10, w->palette5, 0, 0, 1);
             }
-            DrawTextSlots(10, 116, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(10, 116, w->textSlots4, w->palette4, 20, w->textSlotCount4);
         }
         if (w->unk_8C9 == 0) {
             func_0808B398((u8*)w);
@@ -4038,7 +4038,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
                 w->gfx3 = AnimUpdate(&w->anim3);
                 DrawSprite(24, 66, w->gfx3, w->tiles10, w->palette5, 0, 0, 1);
             }
-            DrawTextSlots(10, 100, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(10, 100, w->textSlots4, w->palette4, 20, w->textSlotCount4);
         }
         if (w->unk_8C9 == 0) {
             func_0808B398((u8*)w);
@@ -4053,7 +4053,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
                 w->gfx3 = AnimUpdate(&w->anim3);
                 DrawSprite(24, 66, w->gfx3, w->tiles10, w->palette5, 0, 0, 1);
             }
-            DrawTextSlots(10, 100, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(10, 100, w->textSlots4, w->palette4, 20, w->textSlotCount4);
         }
         if (w->unk_8C9 == 0) {
             func_0808B398((u8*)w);
@@ -4062,7 +4062,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
     case 13:
         DrawSprite(w->x9 >> 8, w->y8 >> 8, w->gfx9, w->tiles11, w->palette7, 0, 0, 20);
         DrawSprite(w->x10 >> 8, 18, 0, w->tiles13, w->palette7, 0, 0, 21);
-        DrawTextSlots(138, 16, w->unk_744, w->palette, 20, w->unk_7C4);
+        DrawTextSlots(138, 16, w->unk_744, w->palette, 20, w->textSlotCount6);
         break;
     case 12:
         DrawSprite((w->x3 >> 8) - 16, (w->y3 >> 8) - 30, w->gfx, w->tiles, w->palette, 0, w->unk_882, 0);
@@ -4073,7 +4073,7 @@ void func_0808B66C(UnkStruct_0808B66C* w) {
                 w->gfx3 = AnimUpdate(&w->anim3);
                 DrawSprite(24, 66, w->gfx3, w->tiles10, w->palette5, 0, 0, 1);
             }
-            DrawTextSlots(10, 100, w->unk_0F8, w->palette4, 20, w->unk_8C5);
+            DrawTextSlots(10, 100, w->textSlots4, w->palette4, 20, w->textSlotCount4);
         }
         if (w->unk_8C9 == 0) {
             func_0808B398((u8*)w);
@@ -6657,15 +6657,15 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
 #else
         UpdateSpriteFrameTiles(w->tiles2, gUnk_09EEB08C[10], gUnk_090A5F1E);
 #endif
-        FreeTextSlots(w->unk_038, 8);
-        FreeTextSlots(w->unk_078, 8);
-        FreeTextSlots(w->unk_0B8, 8);
-        FreeTextSlots(w->unk_0F8, 30);
+        FreeTextSlots(w->textSlots, 8);
+        FreeTextSlots(w->textSlots2, 8);
+        FreeTextSlots(w->textSlots3, 8);
+        FreeTextSlots(w->textSlots4, 30);
         FreeTextSlots(w->unk_1E8, 90);
-        InitTextSlots(w->unk_744, 8);
+        InitTextSlots(w->textSlots6, 8);
         func_0808F284((u8*)w);
-        w->unk_7C4 = LoadTextSlots(w->unk_784, w->unk_744);
-        w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+        w->textSlotCount6 = LoadTextSlots(w->unk_784, w->textSlots6);
+        w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->textSlots6, w->textSlotCount6) << 8) + 0x8300;
         break;
     case 1:
 #ifdef VERSION_JP
@@ -6979,8 +6979,8 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
     switch ((u16)GetKeysPressed()) {
     case B_BUTTON:
         func_0808F304((u8*)w);
-        w->unk_7C4 = LoadTextSlots(w->unk_784, w->unk_744);
-        w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+        w->textSlotCount6 = LoadTextSlots(w->unk_784, w->textSlots6);
+        w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->textSlots6, w->textSlotCount6) << 8) + 0x8300;
         break;
     case A_BUTTON:
 #ifdef VERSION_EU
@@ -6994,8 +6994,8 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
             FadeStartIn(0, 16);
         } else {
             if ((u8)func_0808F358((UnkStruct_0808F358*)w) != 0) {
-                w->unk_7C4 = LoadTextSlots(w->unk_784, w->unk_744);
-                w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->unk_744, w->unk_7C4) << 8) + 0x8300;
+                w->textSlotCount6 = LoadTextSlots(w->unk_784, w->textSlots6);
+                w->unk_7BC = ((s16)GetTextSlotsWidth((TextSlot*)w->textSlots6, w->textSlotCount6) << 8) + 0x8300;
             } else {
                 w->cursor.parts.x = 14;
 #ifdef VERSION_EU

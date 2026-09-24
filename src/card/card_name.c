@@ -68,24 +68,24 @@ void CardName_0(CardNameWork* w) {
     s32 v;
     s16 t;
 
-    InitTextSlots(w->unk_08, 32);
-    InitTextSlots(w->unk_108, 32);
+    InitTextSlots(w->textSlots, 32);
+    InitTextSlots(w->textSlots2, 32);
 #ifdef VERSION_EU
-    InitTextSlots(w->unk_208, 32);
+    InitTextSlots(w->textSlots3, 32);
 #else
-    InitTextSlots(w->unk_208, 2);
+    InitTextSlots(w->textSlots3, 2);
 #endif
     w->unk_218 = _08066468(1);
 #ifdef VERSION_EU
-    w->unk_226 = LoadTextSlots(eu_0805E924(q->cardDef->name), w->unk_08);
-    w->unk_227 = LoadTextSlots((u16*)gUnkEu_09F6602C.strings[gLanguage], w->unk_108);
+    w->textSlotCount = LoadTextSlots(eu_0805E924(q->cardDef->name), w->textSlots);
+    w->textSlotCount2 = LoadTextSlots((u16*)gUnkEu_09F6602C.strings[gLanguage], w->textSlots2);
 #else
-    w->unk_226 = LoadTextSlots(q->cardDef->name, w->unk_08);
+    w->textSlotCount = LoadTextSlots(q->cardDef->name, w->textSlots);
 #ifdef VERSION_JP
-    w->unk_228 = LoadTextSlots((u16*)gUnkJp_09009748, w->unk_208);
-    w->unk_227 = LoadTextSlots((u16*)gUnkJp_0900974C, w->unk_108);
+    w->textSlotCount3 = LoadTextSlots((u16*)gUnkJp_09009748, w->textSlots3);
+    w->textSlotCount2 = LoadTextSlots((u16*)gUnkJp_0900974C, w->textSlots2);
 #else
-    w->unk_227 = LoadTextSlots((u16*)&gUnk_09036278[22], w->unk_108);
+    w->textSlotCount2 = LoadTextSlots((u16*)&gUnk_09036278[22], w->textSlots2);
 #endif
 #endif
 #ifndef VERSION_JP
@@ -96,41 +96,41 @@ void CardName_0(CardNameWork* w) {
     case 0:
     case 2:
     case 3:
-        w->unk_228 = 0;
-        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->textSlotCount3 = 0;
+        v = (230 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
         w->unk_220 = v;
-        t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
+        t = (u16)w->unk_220 + GetTextSlotsWidth(w->textSlots, w->textSlotCount);
         w->unk_224 = t;
-        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        v = (240 - GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)) / 2;
         w->unk_222 = v;
         break;
     case 1:
-        w->unk_228 = LoadTextSlots((u16*)&gUnk_09036278[22], w->unk_208);
-        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->textSlotCount3 = LoadTextSlots((u16*)&gUnk_09036278[22], w->textSlots3);
+        v = (230 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
         w->unk_220 = v;
-        t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
+        t = (u16)w->unk_220 + GetTextSlotsWidth(w->textSlots, w->textSlotCount);
         w->unk_224 = t;
-        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        v = (240 - GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)) / 2;
         w->unk_222 = v;
         break;
     case 4:
-        w->unk_228 = LoadTextSlots((u16*)gUnkEu_090CF64D, w->unk_208);
-        v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+        w->textSlotCount3 = LoadTextSlots((u16*)gUnkEu_090CF64D, w->textSlots3);
+        v = (230 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
         w->unk_220 = v;
         w->unk_224 = v - 3;
-        v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+        v = (240 - GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)) / 2;
         w->unk_222 = v;
         break;
     default:
-        w->unk_228 = 0;
+        w->textSlotCount3 = 0;
         break;
     }
 #else
-    v = (230 - GetTextSlotsWidth(w->unk_08, w->unk_226)) / 2;
+    v = (230 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
     w->unk_220 = v;
-    t = (u16)w->unk_220 + GetTextSlotsWidth(w->unk_08, w->unk_226);
+    t = (u16)w->unk_220 + GetTextSlotsWidth(w->textSlots, w->textSlotCount);
     w->unk_224 = t;
-    v = (240 - GetTextSlotsWidth(w->unk_108, w->unk_227)) / 2;
+    v = (240 - GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)) / 2;
     w->unk_222 = v;
 #endif
     w->tiles = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);

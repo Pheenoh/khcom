@@ -1590,12 +1590,12 @@ void mode_jiminy_1(void) {
         DisableBg(2);
     }
 
-    for (i = 0; gJiminyWork->lines[i].unk_000[0].tiles != 0; i++) {
+    for (i = 0; gJiminyWork->lines[i].textSlots[0].tiles != 0; i++) {
         if (i >= gJiminyWork->unk_C78) {
             break;
         }
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
-            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
+            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->textSlotCounts[i]);
 
         if (gJiminyWork->unk_000 == 7) {
             switch (gJiminyWork->unk_C68[i]) {
@@ -2266,9 +2266,9 @@ void func_0805BAE4(void) {
         break;
     }
     func_080658B8(gJiminyWork->unk_C71);
-    for (i = 0; gJiminyWork->lines[i].unk_000[0].tiles != 0 && i < gJiminyWork->unk_C78; i++) {
+    for (i = 0; gJiminyWork->lines[i].textSlots[0].tiles != 0 && i < gJiminyWork->unk_C78; i++) {
         DrawTextSlots(gJiminyWork->unk_CAE, gJiminyWork->unk_CB0 + gJiminyWork->unk_CB2 * i,
-            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->unk_C60[i]);
+            &gJiminyWork->lines[i], gJiminyWork->palette3, 0, gJiminyWork->textSlotCounts[i]);
     }
     if (gJiminyWork->flags & 8) {
         DrawSprite(gJiminyWork->x, gJiminyWork->y - ((gJiminyWork->unk_D3E >> 3) & 3) + 4,

@@ -42,12 +42,12 @@
 #include "mode_battle_data.h"
 
 typedef struct AllmapRoomnameWork {
-    u8 unk_000[0xC8];
+    u8 textSlots[0xC8];
 #ifdef VERSION_EU
     u8 unkEu_0C8[0x60];
 #endif
     void* palette;
-    u8 unk_0CC;
+    u8 textSlotCount;
     u8 unk_0CD;
     u16 x;
 } AllmapRoomnameWork;

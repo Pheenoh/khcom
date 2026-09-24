@@ -6728,7 +6728,7 @@ void func_080EAD84(u8 a) {
 
     if (e->level != 0) {
         func_080EAB20(i, 1, e->floor);
-        gNewGameSlotMenuWork->unk_160 = LoadTextSlots((void*)func_080DF804(e->world), &gNewGameSlotMenuWork->unk_040);
+        gNewGameSlotMenuWork->textSlotCount = LoadTextSlots((void*)func_080DF804(e->world), &gNewGameSlotMenuWork->textSlots);
 
         if (gNewGameSlotMenuWork->unk_33D == 0) {
             LoadObjPaletteBank(gNewGameSlotMenuWork->palette8->paletteBank, &gUnk_099910C4[0xB40]);
@@ -6737,7 +6737,7 @@ void func_080EAD84(u8 a) {
         }
     } else {
         func_080EAB20(i, 1, 13);
-        gNewGameSlotMenuWork->unk_160 = 0;
+        gNewGameSlotMenuWork->textSlotCount = 0;
     }
 
     if (gNewGameSlotMenuWork->selectedSlot == 0) {
@@ -6769,7 +6769,7 @@ void func_080EAEB0(u8 a) {
         func_080EAB20(idx, 0, 13);
     }
 
-    gNewGameSlotMenuWork->unk_160 = 0;
+    gNewGameSlotMenuWork->textSlotCount = 0;
 }
 
 void func_080EAF10(void) {
@@ -6799,11 +6799,11 @@ void func_080EAF10(void) {
     ApproachValueHalf(&gNewGameSlotMenuWork->y3, (gNewGameSlotMenuWork->unk_162 + u) << 8);
     DrawSprite(76, gNewGameSlotMenuWork->y3 >> 8, AnimGetGfx(&gNewGameSlotMenuWork->anim),
         gNewGameSlotMenuWork->tiles, gNewGameSlotMenuWork->palette, 0, 0, 70);
-    DrawTextSlots(100, u + (gNewGameSlotMenuWork->unk_162 + 22), &gNewGameSlotMenuWork->unk_040,
-        gNewGameSlotMenuWork->palette8, 50, gNewGameSlotMenuWork->unk_160);
+    DrawTextSlots(100, u + (gNewGameSlotMenuWork->unk_162 + 22), &gNewGameSlotMenuWork->textSlots,
+        gNewGameSlotMenuWork->palette8, 50, gNewGameSlotMenuWork->textSlotCount);
     DrawTextSlots(
-        (240 - GetTextSlotsWidth(&gNewGameSlotMenuWork->unk_168, gNewGameSlotMenuWork->unk_318)) / 2, 134,
-        &gNewGameSlotMenuWork->unk_168, gNewGameSlotMenuWork->palette9, 50, gNewGameSlotMenuWork->unk_318);
+        (240 - GetTextSlotsWidth(&gNewGameSlotMenuWork->textSlots2, gNewGameSlotMenuWork->textSlotCount2)) / 2, 134,
+        &gNewGameSlotMenuWork->textSlots2, gNewGameSlotMenuWork->palette9, 50, gNewGameSlotMenuWork->textSlotCount2);
 }
 
 void func_080EB12C(NewGameSlotMenuWork* w) {
@@ -6965,14 +6965,14 @@ void Mode_MenuNew_0(void) {
     AnimInit(&gNewGameSlotMenuWork->anim, gUnk_09EF8D88, gUnk_09EF8D78);
     AnimStart(&gNewGameSlotMenuWork->anim, 0, 1);
     gNewGameSlotMenuWork->palette8 = LoadObjPalette(gUnk_09991C04, 32);
-    gNewGameSlotMenuWork->unk_160 = 0;
-    InitTextSlots(&gNewGameSlotMenuWork->unk_040, 36);
-    InitTextSlots(&gNewGameSlotMenuWork->unk_168, 54);
+    gNewGameSlotMenuWork->textSlotCount = 0;
+    InitTextSlots(&gNewGameSlotMenuWork->textSlots, 36);
+    InitTextSlots(&gNewGameSlotMenuWork->textSlots2, 54);
     gNewGameSlotMenuWork->palette9 = LoadObjPalette(gUnk_09991BE4, 32);
 #ifdef VERSION_EU
-    gNewGameSlotMenuWork->unk_318 = LoadTextSlots(eu_0805E924(gUnkEu_08892780), &gNewGameSlotMenuWork->unk_168);
+    gNewGameSlotMenuWork->textSlotCount2 = LoadTextSlots(eu_0805E924(gUnkEu_08892780), &gNewGameSlotMenuWork->textSlots2);
 #else
-    gNewGameSlotMenuWork->unk_318 = LoadTextSlots(gUnk_08159E1E, &gNewGameSlotMenuWork->unk_168);
+    gNewGameSlotMenuWork->textSlotCount2 = LoadTextSlots(gUnk_08159E1E, &gNewGameSlotMenuWork->textSlots2);
 #endif
 
     if (gNewGameSlotMenuWork->unk_33D != 0) {
@@ -7017,9 +7017,9 @@ void Mode_MenuNew_2(void) {
     ReleaseObjPalette(gNewGameSlotMenuWork->palette7);
     ReleaseObjTiles(gNewGameSlotMenuWork->tiles7);
     ReleaseObjPalette((u8*)gNewGameSlotMenuWork->palette8);
-    FreeTextSlots(gNewGameSlotMenuWork->unk_040, 36);
+    FreeTextSlots(gNewGameSlotMenuWork->textSlots, 36);
     ReleaseObjPalette(gNewGameSlotMenuWork->palette9);
-    FreeTextSlots(gNewGameSlotMenuWork->unk_168, 54);
+    FreeTextSlots(gNewGameSlotMenuWork->textSlots2, 54);
     EwramFree(gNewGameSlotMenuWork);
 }
 
@@ -7220,7 +7220,7 @@ void func_080EBA58(u8 a) {
 
     if (e->level != 0) {
         func_080EB818(a, 1, e->floor);
-        gLoadGameMenuWork->unk_15C = LoadTextSlots((void*)func_080DF804(e->world), &gLoadGameMenuWork->unk_03C);
+        gLoadGameMenuWork->textSlotCount = LoadTextSlots((void*)func_080DF804(e->world), &gLoadGameMenuWork->textSlots);
 
         if (a <= 1) {
             LoadObjPaletteBank(gLoadGameMenuWork->palette7->paletteBank, &gUnk_099910C4[0xB40]);
@@ -7229,7 +7229,7 @@ void func_080EBA58(u8 a) {
         }
     } else {
         func_080EB818(a, 1, 13);
-        gLoadGameMenuWork->unk_15C = 0;
+        gLoadGameMenuWork->textSlotCount = 0;
     }
 }
 
@@ -7241,7 +7241,7 @@ void func_080EBAE0(u8 a) {
     } else {
         func_080EB818(a, 0, 13);
     }
-    gLoadGameMenuWork->unk_15C = 0;
+    gLoadGameMenuWork->textSlotCount = 0;
 }
 
 void func_080EBB24(void) {
@@ -7322,8 +7322,8 @@ void func_080EBB24(void) {
     ApproachValueHalf(&gLoadGameMenuWork->y3, (gLoadGameMenuWork->unk_15E + u) << 8);
     DrawSprite(76, gLoadGameMenuWork->y3 >> 8, AnimGetGfx(&gLoadGameMenuWork->anim),
         gLoadGameMenuWork->tiles, gLoadGameMenuWork->palette, 0, 0x400, 70);
-    DrawTextSlots(100, u + (gLoadGameMenuWork->unk_15E + 22), &gLoadGameMenuWork->unk_03C,
-        gLoadGameMenuWork->palette7, 50, gLoadGameMenuWork->unk_15C);
+    DrawTextSlots(100, u + (gLoadGameMenuWork->unk_15E + 22), &gLoadGameMenuWork->textSlots,
+        gLoadGameMenuWork->palette7, 50, gLoadGameMenuWork->textSlotCount);
 }
 
 void func_080EBD00(LoadGameMenuWork* w) {
@@ -7597,8 +7597,8 @@ void Mode_MenuLoad_0(s32 arg) {
     AnimInit(&gLoadGameMenuWork->anim, gUnk_09EF8D88, gUnk_09EF8D78);
     AnimStart(&gLoadGameMenuWork->anim, 0, 1);
     gLoadGameMenuWork->palette7 = LoadObjPalette(gUnk_09991C04, 32);
-    gLoadGameMenuWork->unk_15C = 0;
-    InitTextSlots(gLoadGameMenuWork->unk_03C, 36);
+    gLoadGameMenuWork->textSlotCount = 0;
+    InitTextSlots(gLoadGameMenuWork->textSlots, 36);
 
     for (i = 0; i < 4; i++) {
         func_080EBA14(i);
@@ -7629,7 +7629,7 @@ void Mode_MenuLoad_2(void) {
     ReleaseObjPalette(gLoadGameMenuWork->palette6);
     ReleaseObjTiles(gLoadGameMenuWork->tiles6);
     ReleaseObjPalette((u8*)gLoadGameMenuWork->palette7);
-    FreeTextSlots(gLoadGameMenuWork->unk_03C, 36);
+    FreeTextSlots(gLoadGameMenuWork->textSlots, 36);
     EwramFree(gLoadGameMenuWork);
 }
 
@@ -8999,14 +8999,14 @@ void Task_MapMenu_2(MapMenuWork* w) {
         if (w->unk_30A != 0) {
             DrawTextSlots(
 #ifdef VERSION_EU
-                120 - (GetTextSlotsWidth(w->unk_180, w->unk_288) >> 1),
+                120 - (GetTextSlotsWidth(w->textSlots2, w->textSlotCount2) >> 1),
 #else
-                (240 - GetTextSlotsWidth(w->unk_180, w->unk_288)) / 2,
+                (240 - GetTextSlotsWidth(w->textSlots2, w->textSlotCount2)) / 2,
 #endif
-                64, w->unk_180,
-                w->unk_17C, 70, w->unk_288);
-            DrawTextSlots(80, 84, w->unk_28C, w->unk_17C, 70, w->unk_2BC);
-            DrawTextSlots(144, 84, w->unk_2C0, w->unk_17C, 70, w->unk_308);
+                64, w->textSlots2,
+                w->unk_17C, 70, w->textSlotCount2);
+            DrawTextSlots(80, 84, w->textSlots3, w->unk_17C, 70, w->textSlotCount3);
+            DrawTextSlots(144, 84, w->textSlots4, w->unk_17C, 70, w->textSlotCount4);
         }
     }
 }
@@ -9279,24 +9279,24 @@ s32 func_080EE824(MapSaveWork* w) {
         AnimInit(&w->anim, gUnk_09EF8D58, gUnk_09EF8D48);
         AnimStart(&w->anim, 2, 1);
         w->palette8 = _08066468(1);
-        p1 = w->unk_194;
+        p1 = w->textSlots2;
 #ifdef VERSION_EU
         InitTextSlots(p1, 54);
 #else
         InitTextSlots(p1, 27);
 #endif
-        p2 = w->unk_270;
+        p2 = w->textSlots3;
         InitTextSlots(p2, 6);
-        p3 = w->unk_2A4;
+        p3 = w->textSlots4;
         InitTextSlots(p3, 9);
 #ifdef VERSION_EU
-        w->unk_26C = LoadTextSlots(eu_0805E924(gUnkEu_08892864), p1);
-        w->unk_2A0 = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p2);
-        w->unk_2EC = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p3);
+        w->textSlotCount2 = LoadTextSlots(eu_0805E924(gUnkEu_08892864), p1);
+        w->textSlotCount3 = LoadTextSlots(eu_0805E924(gUnkEu_08890E1C), p2);
+        w->textSlotCount4 = LoadTextSlots(eu_0805E924(gUnkEu_08890E44), p3);
 #else
-        w->unk_26C = LoadTextSlots(gUnk_08159DF0, p1);
-        w->unk_2A0 = LoadTextSlots(gUnk_08159E10, p2);
-        w->unk_2EC = LoadTextSlots(gUnk_08159E18, p3);
+        w->textSlotCount2 = LoadTextSlots(gUnk_08159DF0, p1);
+        w->textSlotCount3 = LoadTextSlots(gUnk_08159E10, p2);
+        w->textSlotCount4 = LoadTextSlots(gUnk_08159E18, p3);
 #endif
         func_080EE50C((UnkStruct_080EE50C*)w, 1);
         w->unk_2F8 = 1;
@@ -9351,12 +9351,12 @@ s32 func_080EEB00(MapSaveWork* w) {
         }
 
 #ifdef VERSION_EU
-        w->unk_26C = LoadTextSlots(eu_0805E924(gUnkEu_088928E4), w->unk_194);
+        w->textSlotCount2 = LoadTextSlots(eu_0805E924(gUnkEu_088928E4), w->textSlots2);
 #else
-        w->unk_26C = LoadTextSlots(gUnk_0815B5A6, w->unk_194);
+        w->textSlotCount2 = LoadTextSlots(gUnk_0815B5A6, w->textSlots2);
 #endif
-        w->unk_2A0 = 0;
-        w->unk_2EC = 0;
+        w->textSlotCount3 = 0;
+        w->textSlotCount4 = 0;
         w->unk_2F4 = 0;
         w->update = func_080EEC5C;
     }
@@ -9534,21 +9534,21 @@ void Task_MapSave_2(MapSaveWork* w) {
 
         if (w->unk_2F4 != 0) {
 #ifdef VERSION_EU
-            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 92, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(166 - (GetTextSlotsWidth(w->textSlots2, w->textSlotCount2) >> 1), 92, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #elif defined(VERSION_JP)
-            DrawTextSlots(129, 92, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(129, 92, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #else
-            DrawTextSlots(124, 92, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(124, 92, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #endif
-            DrawTextSlots(128, 114, w->unk_270, w->palette8, 50, w->unk_2A0);
-            DrawTextSlots(184, 114, w->unk_2A4, w->palette8, 50, w->unk_2EC);
+            DrawTextSlots(128, 114, w->textSlots3, w->palette8, 50, w->textSlotCount3);
+            DrawTextSlots(184, 114, w->textSlots4, w->palette8, 50, w->textSlotCount4);
         } else {
 #ifdef VERSION_EU
-            DrawTextSlots(166 - (GetTextSlotsWidth(w->unk_194, w->unk_26C) >> 1), 102, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(166 - (GetTextSlotsWidth(w->textSlots2, w->textSlotCount2) >> 1), 102, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #elif defined(VERSION_JP)
-            DrawTextSlots(129, 103, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(129, 103, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #else
-            DrawTextSlots(130, 102, w->unk_194, w->palette8, 50, w->unk_26C);
+            DrawTextSlots(130, 102, w->textSlots2, w->palette8, 50, w->textSlotCount2);
 #endif
         }
 
@@ -9587,12 +9587,12 @@ void Task_MapSave_3(MapSaveWork* w) {
     FreeTextSlots(w->unk_044, 36);
     ReleaseObjPalette((u8*)w->palette8);
 #ifdef VERSION_EU
-    FreeTextSlots(w->unk_194, 54);
+    FreeTextSlots(w->textSlots2, 54);
 #else
-    FreeTextSlots(w->unk_194, 27);
+    FreeTextSlots(w->textSlots2, 27);
 #endif
-    FreeTextSlots(w->unk_270, 6);
-    FreeTextSlots(w->unk_2A4, 9);
+    FreeTextSlots(w->textSlots3, 6);
+    FreeTextSlots(w->textSlots4, 9);
     f = gUnk_0203C7AC->flags & ~0x80;
     gUnk_0203C7AC->flags = f;
     gFieldState->flags &= ~0x1000;

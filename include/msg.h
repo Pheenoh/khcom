@@ -264,14 +264,14 @@ typedef struct MsgWaitYesNoWork {
     void* palette3;
     void* palette;
     void* palette4;
-    TextSlot unk_1C[10];
-    TextSlot unk_6C[10];
+    TextSlot textSlots[10];
+    TextSlot textSlots2[10];
     void* gfx;
     void* gfx2;
     u8 anim2[0x18];
     u8 anim[0x18];
-    u8 unk_F4;
-    u8 unk_F5;
+    u8 textSlotCount;
+    u8 textSlotCount2;
     u8 unk_F6[2];
     s32 x;
     s32 y;

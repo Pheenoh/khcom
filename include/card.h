@@ -489,9 +489,9 @@ typedef struct UnkStruct_0808C940 {
     void* unk_1C;
     void* palette2;
     void* palette3;
-    TextSlot unk_28[8];
-    TextSlot unk_68[8];
-    TextSlot unk_A8[8];
+    TextSlot textSlots[8];
+    TextSlot textSlots2[8];
+    TextSlot textSlots3[8];
     u8 unk_E8[0x3D4];
     void* palette4;
     u8 unk_4C0[0xC];
@@ -548,10 +548,10 @@ typedef struct UnkStruct_0808C940 {
     u8 unk_6FB[5];
     u8 unk_700;
     u8 unk_701;
-    u8 unk_702;
-    u8 unk_703;
-    u8 unk_704;
-    u8 unk_705;
+    u8 textSlotCount;
+    u8 textSlotCount2;
+    u8 textSlotCount3;
+    u8 textSlotCount4;
     u8 unk_706;
     u8 unk_707[6];
     u8 unk_70D;
@@ -837,22 +837,22 @@ typedef char PremiumCardEffectWork_sizechk[(sizeof(struct PremiumCardEffectWork)
 typedef struct CardNameWork {
     void* tiles;
     UnkStruct_080038C8* unk_04;
-    TextSlot unk_08[32];
-    TextSlot unk_108[32];
+    TextSlot textSlots[32];
+    TextSlot textSlots2[32];
 #ifdef VERSION_EU
-    TextSlot unk_208[32];
+    TextSlot textSlots3[32];
 #else
-    TextSlot unk_208[2];
+    TextSlot textSlots3[2];
 #endif
     void* unk_218;
     void* palette;
     s16 unk_220;
     s16 unk_222;
     s16 unk_224;
-    u8 unk_226;
-    u8 unk_227;
+    u8 textSlotCount;
+    u8 textSlotCount2;
 #ifndef VERSION_US
-    u8 unk_228;
+    u8 textSlotCount3;
 #endif
 } CardNameWork;
 
@@ -1423,11 +1423,11 @@ typedef struct LvupMsgArgs {
 } LvupMsgArgs;
 
 typedef struct LvupMsgWork {
-    TextSlot unk_000[20];
-    TextSlot unk_0A0[20];
-    TextSlot unk_140[20];
+    TextSlot textSlots[20];
+    TextSlot textSlots2[20];
+    TextSlot textSlots3[20];
 #ifndef VERSION_JP
-    TextSlot unk_1E0[20];
+    TextSlot textSlots4[20];
 #endif
     void* unk_280;
     void* tiles;
@@ -1442,26 +1442,26 @@ typedef struct LvupMsgWork {
     s32 y3;
     s32 y4;
     s8 unk_2AC;
-    u8 unk_2AD;
-    u8 unk_2AE;
-    u8 unk_2AF;
+    u8 textSlotCount;
+    u8 textSlotCount2;
+    u8 textSlotCount3;
 #ifndef VERSION_JP
-    u8 unk_2B0;
+    u8 textSlotCount4;
 #endif
     u8 unk_2B1;
     u8* unk_2B4;
 } LvupMsgWork;
 
 typedef struct DeckConfirmWork {
-    u8 unk_000[0x280];
-    u8 unk_280[0x280];
-    u8 unk_500[0x280];
+    u8 textSlots[0x280];
+    u8 textSlots2[0x280];
+    u8 textSlots3[0x280];
     void* tiles;
     void* palette;
     void* palette2;
-    u8 unk_78C;
-    u8 unk_78D;
-    u8 unk_78E;
+    u8 textSlotCount;
+    u8 textSlotCount2;
+    u8 textSlotCount3;
     u8 unk_78F;
     s16 unk_790;
     s16 x;
@@ -1696,8 +1696,8 @@ typedef struct UnkStruct_080A4DCC {
     void* unk_014;
     void* unk_018;
     UnkStruct_080038C8* unk_01C;
-    u8 unk_020[0x50];
-    u8 unk_070[0x50];
+    u8 textSlots[0x50];
+    u8 textSlots2[0x50];
     s32 unk_0C0;
     u8 unk_0C4[0x18];
     u8 anim[0x18];
@@ -1736,8 +1736,8 @@ typedef struct UnkStruct_080A3F5C {
     void* palette3;
     void* tiles2;
     UnkStruct_080038C8* palette4;
-    u8 unk_020[0x50];
-    u8 unk_070[0x50];
+    u8 textSlots[0x50];
+    u8 textSlots2[0x50];
     s32 unk_0C0;
     u8 anim[0x18];
     u8 anim2[0x18];
@@ -2234,11 +2234,11 @@ typedef struct {
     void* unk_02C;
     void* palette5;
     void* palette6;
-    TextSlot unk_038[8];
-    TextSlot unk_078[8];
-    TextSlot unk_0B8[8];
-    TextSlot unk_0F8[30];
-    TextSlot unk_1E8[90];
+    TextSlot textSlots[8];
+    TextSlot textSlots2[8];
+    TextSlot textSlots3[8];
+    TextSlot textSlots4[30];
+    TextSlot textSlots5[90];
     void* tiles5;
     void* tiles6;
     void* palette3;
@@ -2266,7 +2266,7 @@ typedef struct {
     s32 y8;
     s32 x10;
     u8 unk_7C0[0x4];
-    u8 unk_7C4;
+    u8 textSlotCount6;
     u8 unk_7C5[3];
 #ifdef VERSION_EU
     u8 unk_eu_7C8[4];
@@ -2299,7 +2299,7 @@ typedef struct {
     u8 unk_8B0;
     u8 unk_8B1;
     u8 unk_8B2[0x13];
-    u8 unk_8C5;
+    u8 textSlotCount4;
     u8 unk_8C6[0x3];
     u8 unk_8C9;
     u8 unk_8CA[0x5];
@@ -2308,15 +2308,15 @@ typedef struct {
 
 typedef struct UnkStruct_0808F0C0 {
     u8 unk_000[0x38];
-    u8 unk_038[0x40];
-    u8 unk_078[0x40];
-    u8 unk_0B8[0x40];
-    u8 unk_0F8[0xF0];
+    u8 textSlots[0x40];
+    u8 textSlots2[0x40];
+    u8 textSlots3[0x40];
+    u8 textSlots4[0xF0];
     u8 unk_1E8[0x550];
     void* tiles;
     UnkStruct_080038C8* tiles2;
     void* palette;
-    u8 unk_744[0x40];
+    u8 textSlots6[0x40];
     u8 unk_784[0x14];
     AnimState anim;
     void* gfx;
@@ -2330,7 +2330,7 @@ typedef struct UnkStruct_0808F0C0 {
         } parts;
         u32 packed;
     } cursor;
-    u8 unk_7C4;
+    u8 textSlotCount6;
     u8 unk_7C5;
     u8 unk_7C6;
     u8 unk_7C7;
@@ -2414,7 +2414,7 @@ typedef struct LevelUpWork {
     void* tiles5[3];
     u8 unk_02C[0xC];
 #else
-    TextSlot text[6][36];
+    TextSlot textSlots[6][36];
 #endif
     void* palette;
     void* palette2;
@@ -2457,7 +2457,7 @@ typedef struct LevelUpWork {
     s8 unk_7B2[3];
     s8 unk_7B5;
     s8 unk_7B6;
-    u8 unk_7B7[6];
+    u8 textSlotCounts[6];
     u8 unk_7BD;
     u8 unk_7BE;
     u8 unk_7BF;

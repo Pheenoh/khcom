@@ -823,31 +823,31 @@ void func_080A8C58(UnkStruct_0808C940* w, u8 b) {
     if (b == 0) {
         switch (w->unk_700) {
         case 0:
-            DrawTextSlots(w->x4, w->y4, w->unk_28, w->palette, 20, w->unk_702);
-            DrawTextSlots(w->x5, w->y5, w->unk_68, w->palette4, 20, w->unk_703);
-            DrawTextSlots(w->x6, w->y6, w->unk_A8, w->palette4, 20, w->unk_704);
+            DrawTextSlots(w->x4, w->y4, w->textSlots, w->palette, 20, w->textSlotCount);
+            DrawTextSlots(w->x5, w->y5, w->textSlots2, w->palette4, 20, w->textSlotCount2);
+            DrawTextSlots(w->x6, w->y6, w->textSlots3, w->palette4, 20, w->textSlotCount3);
             break;
         case 1:
-            DrawTextSlots(w->x4, w->y4, w->unk_28, w->palette4, 20, w->unk_702);
-            DrawTextSlots(w->x5, w->y5, w->unk_68, w->palette, 20, w->unk_703);
-            DrawTextSlots(w->x6, w->y6, w->unk_A8, w->palette4, 20, w->unk_704);
+            DrawTextSlots(w->x4, w->y4, w->textSlots, w->palette4, 20, w->textSlotCount);
+            DrawTextSlots(w->x5, w->y5, w->textSlots2, w->palette, 20, w->textSlotCount2);
+            DrawTextSlots(w->x6, w->y6, w->textSlots3, w->palette4, 20, w->textSlotCount3);
             break;
         case 2:
-            DrawTextSlots(w->x4, w->y4, w->unk_28, w->palette4, 20, w->unk_702);
-            DrawTextSlots(w->x5, w->y5, w->unk_68, w->palette4, 20, w->unk_703);
-            DrawTextSlots(w->x6, w->y6, w->unk_A8, w->palette, 20, w->unk_704);
+            DrawTextSlots(w->x4, w->y4, w->textSlots, w->palette4, 20, w->textSlotCount);
+            DrawTextSlots(w->x5, w->y5, w->textSlots2, w->palette4, 20, w->textSlotCount2);
+            DrawTextSlots(w->x6, w->y6, w->textSlots3, w->palette, 20, w->textSlotCount3);
             break;
         }
     } else {
         switch (w->unk_700) {
         case 0:
-            DrawTextSlots(w->x4, w->y4, w->unk_28, w->palette, 20, w->unk_702);
+            DrawTextSlots(w->x4, w->y4, w->textSlots, w->palette, 20, w->textSlotCount);
             break;
         case 1:
-            DrawTextSlots(w->x5, w->y5, w->unk_68, w->palette, 20, w->unk_703);
+            DrawTextSlots(w->x5, w->y5, w->textSlots2, w->palette, 20, w->textSlotCount2);
             break;
         case 2:
-            DrawTextSlots(w->x6, w->y6, w->unk_A8, w->palette, 20, w->unk_704);
+            DrawTextSlots(w->x6, w->y6, w->textSlots3, w->palette, 20, w->textSlotCount3);
             break;
         }
     }
@@ -882,7 +882,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
             }
             DrawSprite(24, 82, w->gfx3, w->tiles4, w->palette2, 0, 0, 20);
             DrawSprite(24, 82, w->gfx4, w->tiles5, w->palette3, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 7:
@@ -894,7 +894,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
             if (w->tiles6 != 0) {
                 DrawSprite(164, 82, w->gfx5, w->tiles6, w->palette2, 0, 0, 19);
             }
-            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 5:
@@ -903,7 +903,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
         if (w->tiles4 != 0) {
             DrawSprite(24, 82, w->gfx3, w->tiles4, w->palette2, 0, 0, 20);
             DrawSprite(24, 82, w->gfx4, w->tiles5, w->palette3, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 6:
@@ -911,7 +911,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
         if (w->tiles4 != 0) {
             DrawSprite(24, 82, w->gfx3, w->tiles4, w->palette2, 0, 0, 20);
             DrawSprite(24, 82, w->gfx4, w->tiles5, w->palette3, 0, 0, 21);
-            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(10, 116, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 8:
@@ -922,7 +922,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
             if (w->tiles6 != 0) {
                 DrawSprite(164, 82, w->gfx5, w->tiles6, w->palette2, 0, 0, 19);
             }
-            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(100, 116, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 9:
@@ -931,7 +931,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
         if (w->tiles4 != 0) {
             DrawSprite(24, 66, w->gfx3, w->tiles4, w->palette2, 0, 0, 20);
             DrawSprite(24, 66, w->gfx4, w->tiles5, w->palette3, 0, 0, 21);
-            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     case 11:
@@ -940,7 +940,7 @@ void deckexchange_2(UnkStruct_0808C940* w) {
         if (w->tiles4 != 0) {
             DrawSprite(24, 66, w->gfx3, w->tiles4, w->palette2, 0, 0, 20);
             DrawSprite(24, 66, w->gfx4, w->tiles5, w->palette3, 0, 0, 21);
-            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->unk_705);
+            DrawTextSlots(10, 100, w->unk_E8, w->palette4, 20, w->textSlotCount4);
         }
         break;
     }

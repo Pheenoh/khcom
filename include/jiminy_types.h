@@ -53,7 +53,7 @@ typedef struct JiminyDetail {
 } JiminyDetail;
 
 typedef struct JiminyLine {
-    TextSlot unk_000[48];
+    TextSlot textSlots[48];
 } JiminyLine;
 
 typedef struct JiminyEntry {
@@ -93,7 +93,7 @@ typedef struct JiminyWork {
     s32 x4;
     s32 y5;
     JiminyLine lines[8];
-    u8 unk_C60[8];
+    u8 textSlotCounts[8];
     u8 unk_C68[8];
     u8 unk_C70;
     u8 unk_C71;

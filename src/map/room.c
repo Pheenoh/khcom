@@ -115,12 +115,12 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     work->unk_2C = 0;
     work->state = 0;
     work->scaleY = 0x19;
-    InitTextSlots(work->unk_3C, 0x24);
+    InitTextSlots(work->textSlots, 0x24);
     work->palette2 = _08066468(1);
 #ifdef VERSION_EU
-    work->unk_34 = LoadTextSlots(eu_0805E924(gRoomNames[work->unk_30]), work->unk_3C);
+    work->textSlotCount = LoadTextSlots(eu_0805E924(gRoomNames[work->unk_30]), work->textSlots);
 #else
-    work->unk_34 = LoadTextSlots(gRoomNames[work->unk_30], work->unk_3C);
+    work->textSlotCount = LoadTextSlots(gRoomNames[work->unk_30], work->textSlots);
 #endif
 }
 
@@ -178,13 +178,13 @@ void task_room_name_2(RoomNameWork* work) {
     if (work->state != 0) {
         affine = AllocObjAffine(0, 0x100, work->scaleY, 0);
         DrawSprite(work->x >> 8, work->y >> 8, work->gfx, work->tiles, work->palette, affine, 0, 0x3C);
-        DrawTextSlots(work->x2 >> 8, work->y2 >> 8, work->unk_3C, work->palette2, 0x32, work->unk_34);
+        DrawTextSlots(work->x2 >> 8, work->y2 >> 8, work->textSlots, work->palette2, 0x32, work->textSlotCount);
     }
 }
 
 void task_room_name_3(RoomNameWork* work) {
     ReleaseObjTiles(work->tiles);
-    FreeTextSlots(work->unk_3C, 0x24);
+    FreeTextSlots(work->textSlots, 0x24);
     ReleaseObjPalette(work->palette);
     ReleaseObjPalette(work->palette2);
 }

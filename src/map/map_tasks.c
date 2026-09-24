@@ -4246,11 +4246,11 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     LoadBgMap(0, &gUnk_09985F44[0x800], 0x800);
     SetBgScroll(0, 0, (u16)-46);
     LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 32);
-    InitTextSlots(w->unk_004, 48);
-    w->unk_184 = LoadTextSlots(text, w->unk_004);
+    InitTextSlots(w->textSlots, 48);
+    w->textSlotCount = LoadTextSlots(text, w->textSlots);
     w->palette = _08066468(1);
     FadeSetPaletteExcluded(w->palette->index + 16, 1);
-    w->unk_186 = (240 - GetTextSlotsWidth(w->unk_004, w->unk_184)) / 2;
+    w->unk_186 = (240 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
     w->timer = 0;
 }
 
@@ -4259,7 +4259,7 @@ s32 Task_MapMsg_1(MapMsgWork* w) {
 }
 
 void func_080F596C(MapMsgWork* w) {
-    DrawTextSlots(w->unk_186, 120, &w->unk_004, w->palette, 50, w->unk_184);
+    DrawTextSlots(w->unk_186, 120, &w->textSlots, w->palette, 50, w->textSlotCount);
 }
 
 void func_080F59A0(MapMsgWork* w) {
@@ -4269,7 +4269,7 @@ void func_080F59A0(MapMsgWork* w) {
 
     FadeSetPaletteExcluded(w->palette->index + 0x10, 0);
     ReleaseObjPalette((u8*)w->palette);
-    FreeTextSlots(&w->unk_004, 0x30);
+    FreeTextSlots(&w->textSlots, 0x30);
 }
 
 s32 Task_MapMsg2_1(MapMsgWork* w) {
@@ -5509,13 +5509,13 @@ void Task_MapFloor_0(MapFloorWork* w) {
     w->gfx = gUnk_09EF8DA4[0];
     w->unk_0E = 120;
 #ifdef VERSION_EU
-    InitTextSlots(w->unk_18, 60);
+    InitTextSlots(w->textSlots, 60);
 #else
-    InitTextSlots(w->unk_18, 40);
+    InitTextSlots(w->textSlots, 40);
 #endif
     w->palette2 = _08066468(1);
-    w->unk_10 = LoadTextSlots(GetFloorName(), w->unk_18);
-    w->unk_0C = (240 - GetTextSlotsWidth(w->unk_18, w->unk_10)) / 2;
+    w->textSlotCount = LoadTextSlots(GetFloorName(), w->textSlots);
+    w->unk_0C = (240 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
 }
 
 s32 Task_MapFloor_1(u8* work) {
@@ -5530,7 +5530,7 @@ s32 Task_MapFloor_1(u8* work) {
 
 void Task_MapFloor_2(MapFloorWork* w) {
     DrawSprite(120, 138, w->gfx, w->tiles, w->palette, 0, 0, 0x3C);
-    DrawTextSlots(w->unk_0C, 0x85, w->unk_18, w->palette2, 50, w->unk_10);
+    DrawTextSlots(w->unk_0C, 0x85, w->textSlots, w->palette2, 50, w->textSlotCount);
 }
 
 void Task_MapFloor_3(MapFloorWork* w) {
@@ -5538,9 +5538,9 @@ void Task_MapFloor_3(MapFloorWork* w) {
     ReleaseObjTiles(w->tiles);
     ReleaseObjPalette(w->palette2);
 #ifdef VERSION_EU
-    FreeTextSlots(w->unk_18, 60);
+    FreeTextSlots(w->textSlots, 60);
 #else
-    FreeTextSlots(w->unk_18, 40);
+    FreeTextSlots(w->textSlots, 40);
 #endif
     gFieldState->flags &= ~0x80;
     gFieldState->flags &= ~0x1000;
