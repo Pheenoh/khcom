@@ -4516,10 +4516,8 @@ s32 func_08114750(s32 x) {
     return x * x;
 }
 
-const char gModeNameStaffRoll[] = "mode_StaffRoll";
-
 Mode gModeStaffRoll = {
-    gModeNameStaffRoll,
+    "mode_StaffRoll",
     (ModeInitFunc)mode_StaffRoll_0,
     mode_StaffRoll_1,
     mode_StaffRoll_2,

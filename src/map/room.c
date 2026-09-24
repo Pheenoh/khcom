@@ -189,10 +189,8 @@ void task_room_name_3(RoomNameWork* work) {
     ReleaseObjPalette(work->palette2);
 }
 
-const char gTaskNameRoomName[] = "task_room_name";
-
 TaskDesc gTaskDescRoomName = {
-    gTaskNameRoomName,
+    "task_room_name",
     (TaskInitFunc)task_room_name_0,
     (TaskUpdateFunc)task_room_name_1,
     (TaskFunc)task_room_name_2,

@@ -359,7 +359,6 @@ extern TaskDesc gUnk_09EE8E30;
 extern TaskDesc gUnk_09EE8E48;
 extern TaskDesc gUnk_09EE8EF0;
 extern TaskDesc gTaskDescDarkPoint;
-extern const char gTaskNameStockInfo[];
 
 extern TaskDesc gTaskDescBosJfRock;
 extern TaskDesc gTaskDescBosJfBorderline;

@@ -2342,10 +2342,8 @@ void mode_jiminy_2(void) {
     EwramFree(gJiminyWork);
 }
 
-const char gModeNameJiminy[] = "mode_jiminy";
-
 Mode gModeJiminy = {
-    gModeNameJiminy,
+    "mode_jiminy",
     (ModeInitFunc)mode_jiminy_0,
     mode_jiminy_1,
     mode_jiminy_2,
