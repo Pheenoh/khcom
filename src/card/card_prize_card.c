@@ -51,6 +51,8 @@ u8 func_0809612C(PrizeCardWork* w, void* a);
 u16 func_08096D48(u16 a, s32 b);
 s16 func_08084458(u16 cardId);
 
+const u8 gUnk_090359E8[8] = { 1, 1, 4, 2, 5, 3, 3, 2 };
+
 static void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
     PrizeCardTaskArgs args;
     CardDef* def;
