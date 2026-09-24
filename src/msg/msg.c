@@ -1406,10 +1406,12 @@ s32 func_08064DD4(TextChar* a) {
 }
 
 #ifdef VERSION_EU
+typedef u8 MsgLatinChar;
 #define MSG_LATIN_CHAR(p) (*(u8*)(p))
 #define MSG_LATIN_CODE(wide, byte) (byte)
 #define MSG_LATIN_STEP 1
 #else
+typedef u16 MsgLatinChar;
 #define MSG_LATIN_CHAR(p) (*(u16*)(p))
 #define MSG_LATIN_CODE(wide, byte) (wide)
 #define MSG_LATIN_STEP 2
@@ -1543,11 +1545,8 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
     *d = 0;
     return gUnk_02034A90;
 }
-#ifdef VERSION_EU
-u8 func_08065170(s32 x, s32 y, u8* s) {
-#else
-u8 func_08065170(s32 x, s32 y, u16* s) {
-#endif
+
+u8 func_08065170(s32 x, s32 y, MsgLatinChar* s) {
     s32 cx;
     s32 cy;
     s32 f;
