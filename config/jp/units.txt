@@ -298,8 +298,10 @@ sprite_palettes_6.s
 mode_sio.c
 mode_wlogo.c
 wlogo.c
-boss_tm_rodata.s
-boss_tm.c
+bos_tm_rodata.s
+bos_tm.c
+bos_tm_body.c
+bos_tm_foot.c
 bos_jf_rodata.s
 bos_jf.c
 bos_jf_majin.c

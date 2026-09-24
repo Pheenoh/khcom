@@ -5539,7 +5539,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF39A0
   layer: 1
-  provenance: bos2.c task_bos_tm_arm_0 explicitly starts animation0 for both arm chains. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_tm_foot.c task_bos_tm_arm_0 explicitly starts animation0 for both arm chains. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef39a0'
   targets:
     jp: '0x9ecad8c'
@@ -5549,7 +5549,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EF39F8
   layer: 1
-  provenance: bos2.c task_bos_tm_arm_0 explicitly starts animation0 for the central arm animation. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_tm_foot.c task_bos_tm_arm_0 explicitly starts animation0 for the central arm animation. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9ef39f8'
   targets:
     jp: '0x9ecade4'
