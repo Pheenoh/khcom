@@ -7992,10 +7992,8 @@ const u16* gUnk_09EF4688[144] = {
     gUnk_08125E24,
 };
 
-const char gTaskNamePooSora[] = "task_poo_sora";
-
 TaskDesc gTaskDescPooSora = {
-    gTaskNamePooSora,
+    "task_poo_sora",
     (TaskInitFunc)task_poo_sora_0,
     (TaskUpdateFunc)task_poo_sora_1,
     (TaskFunc)task_poo_sora_2,
@@ -8003,10 +8001,8 @@ TaskDesc gTaskDescPooSora = {
     0xD0,
 };
 
-const char gTaskNamePooTrap[] = "task_poo_trap";
-
 TaskDesc gTaskDescPooTrap = {
-    gTaskNamePooTrap,
+    "task_poo_trap",
     (TaskInitFunc)task_poo_trap_0,
     (TaskUpdateFunc)task_poo_trap_1,
     (TaskFunc)task_poo_trap_2,
@@ -8014,10 +8010,8 @@ TaskDesc gTaskDescPooTrap = {
     0xB0,
 };
 
-const char gTaskNamePooPitAndButterfly[] = "task_poo_pitAndButterfly";
-
 TaskDesc gTaskDescPooPitAndButterfly = {
-    gTaskNamePooPitAndButterfly,
+    "task_poo_pitAndButterfly",
     (TaskInitFunc)task_poo_pitAndButterfly_0,
     (TaskUpdateFunc)task_poo_pitAndButterfly_1,
     (TaskFunc)task_poo_pitAndButterfly_2,
@@ -8025,10 +8019,8 @@ TaskDesc gTaskDescPooPitAndButterfly = {
     0xB0,
 };
 
-const char gTaskNamePooBalloon[] = "task_poo_balloon";
-
 TaskDesc gTaskDescPooBalloon = {
-    gTaskNamePooBalloon,
+    "task_poo_balloon",
     (TaskInitFunc)task_poo_balloon_0,
     (TaskUpdateFunc)task_poo_balloon_1,
     (TaskFunc)task_poo_balloon_2,
@@ -8036,10 +8028,8 @@ TaskDesc gTaskDescPooBalloon = {
     0x28,
 };
 
-const char gTaskNamePooShadow[] = "task_poo_shadow";
-
 TaskDesc gTaskDescPooShadow = {
-    gTaskNamePooShadow,
+    "task_poo_shadow",
     (TaskInitFunc)task_poo_shadow_0,
     (TaskUpdateFunc)task_poo_shadow_1,
     (TaskFunc)task_poo_shadow_2,
@@ -8047,10 +8037,8 @@ TaskDesc gTaskDescPooShadow = {
     0x14,
 };
 
-const char gTaskNamePooShadowdodai[] = "task_poo_shadowdodai";
-
 TaskDesc gTaskDescPooShadowdodai = {
-    gTaskNamePooShadowdodai,
+    "task_poo_shadowdodai",
     (TaskInitFunc)task_poo_shadowdodai_0,
     (TaskUpdateFunc)task_poo_shadowdodai_1,
     (TaskFunc)task_poo_shadowdodai_2,
@@ -8058,10 +8046,8 @@ TaskDesc gTaskDescPooShadowdodai = {
     0x34,
 };
 
-const char gTaskNamePooShadowscale[] = "task_poo_shadowscale";
-
 TaskDesc gTaskDescPooShadowscale = {
-    gTaskNamePooShadowscale,
+    "task_poo_shadowscale",
     (TaskInitFunc)task_poo_shadowscale_0,
     (TaskUpdateFunc)task_poo_shadowscale_1,
     (TaskFunc)task_poo_shadowscale_2,
@@ -8069,10 +8055,8 @@ TaskDesc gTaskDescPooShadowscale = {
     0x34,
 };
 
-const char gTaskNamePooFreeballoon[] = "task_poo_freeballoon";
-
 TaskDesc gTaskDescPooFreeballoon = {
-    gTaskNamePooFreeballoon,
+    "task_poo_freeballoon",
     (TaskInitFunc)task_poo_freeballoon_0,
     (TaskUpdateFunc)task_poo_freeballoon_1,
     (TaskFunc)task_poo_freeballoon_2,
@@ -8080,10 +8064,8 @@ TaskDesc gTaskDescPooFreeballoon = {
     0x98,
 };
 
-const char gTaskNamePooGauge[] = "task_poo_gauge";
-
 TaskDesc gTaskDescPooGauge = {
-    gTaskNamePooGauge,
+    "task_poo_gauge",
     (TaskInitFunc)task_poo_gauge_0,
     (TaskUpdateFunc)task_poo_gauge_1,
     (TaskFunc)task_poo_gauge_2,
@@ -8091,10 +8073,8 @@ TaskDesc gTaskDescPooGauge = {
     0x14,
 };
 
-const char gTaskNamePooTrapballoon[] = "task_poo_trapballoon";
-
 TaskDesc gTaskDescPooTrapballoon = {
-    gTaskNamePooTrapballoon,
+    "task_poo_trapballoon",
     (TaskInitFunc)task_poo_trapballoon_0,
     (TaskUpdateFunc)task_poo_trapballoon_1,
     (TaskFunc)task_poo_trapballoon_2,
@@ -8102,10 +8082,8 @@ TaskDesc gTaskDescPooTrapballoon = {
     0xD0,
 };
 
-const char gTaskNamePooOwlballoon[] = "task_poo_owlballoon";
-
 TaskDesc gTaskDescPooOwlballoon = {
-    gTaskNamePooOwlballoon,
+    "task_poo_owlballoon",
     (TaskInitFunc)task_poo_owlballoon_0,
     (TaskUpdateFunc)task_poo_owlballoon_1,
     (TaskFunc)task_poo_owlballoon_2,
@@ -8132,10 +8110,8 @@ TaskDesc gTaskDescPooHoney = {
     0x10C,
 };
 
-const char gTaskNamePooMapanime[] = "task_poo_mapanime";
-
 TaskDesc gTaskDescPooMapanime = {
-    gTaskNamePooMapanime,
+    "task_poo_mapanime",
     (TaskInitFunc)task_poo_mapanime_0,
     (TaskUpdateFunc)task_poo_mapanime_1,
     task_poo_mapanime_2,
@@ -8156,10 +8132,8 @@ TaskDesc gTaskDescPooPile = {
     0xD0,
 };
 
-const char gTaskNamePooTigerstump[] = "task_poo_tigerstump";
-
 TaskDesc gTaskDescPooTigerstump = {
-    gTaskNamePooTigerstump,
+    "task_poo_tigerstump",
     (TaskInitFunc)task_poo_tigerstump_0,
     (TaskUpdateFunc)task_poo_tigerstump_1,
     (TaskFunc)task_poo_tigerstump_2,
@@ -8192,10 +8166,8 @@ TaskDesc gTaskDescPooPoohstump = {
     0x90,
 };
 
-const char gTaskNamePooPiglet[] = "task_poo_piglet";
-
 TaskDesc gTaskDescPooPiglet = {
-    gTaskNamePooPiglet,
+    "task_poo_piglet",
     (TaskInitFunc)task_poo_piglet_0,
     (TaskUpdateFunc)task_poo_piglet_1,
     (TaskFunc)task_poo_piglet_2,
@@ -8203,10 +8175,8 @@ TaskDesc gTaskDescPooPiglet = {
     0xB8,
 };
 
-const char gTaskNamePooEeyore[] = "task_poo_eeyore";
-
 TaskDesc gTaskDescPooEeyore = {
-    gTaskNamePooEeyore,
+    "task_poo_eeyore",
     (TaskInitFunc)task_poo_eeyore_0,
     (TaskUpdateFunc)task_poo_eeyore_1,
     (TaskFunc)task_poo_eeyore_2,
@@ -8269,10 +8239,8 @@ TaskDesc gTaskDescPooRabbit = {
     0xB4,
 };
 
-const char gTaskNamePooTigger[] = "task_poo_tigger";
-
 TaskDesc gTaskDescPooTigger = {
-    gTaskNamePooTigger,
+    "task_poo_tigger",
     (TaskInitFunc)task_poo_tigger_0,
     (TaskUpdateFunc)task_poo_tiggerroo_1,
     (TaskFunc)task_poo_tiggerroo_2,
@@ -8280,10 +8248,8 @@ TaskDesc gTaskDescPooTigger = {
     0xD4,
 };
 
-const char gTaskNamePooTiggerroo[] = "task_poo_tiggerroo";
-
 TaskDesc gTaskDescPooTiggerroo = {
-    gTaskNamePooTiggerroo,
+    "task_poo_tiggerroo",
     (TaskInitFunc)task_poo_tiggerroo_0,
     (TaskUpdateFunc)task_poo_tiggerroo_1,
     (TaskFunc)task_poo_tiggerroo_2,
@@ -8291,10 +8257,8 @@ TaskDesc gTaskDescPooTiggerroo = {
     0xD4,
 };
 
-const char gTaskNamePooRoo[] = "task_poo_roo";
-
 TaskDesc gTaskDescPooRoo = {
-    gTaskNamePooRoo,
+    "task_poo_roo",
     (TaskInitFunc)task_poo_roo_0,
     (TaskUpdateFunc)task_poo_roo_1,
     (TaskFunc)task_poo_roo_2,
@@ -8302,10 +8266,8 @@ TaskDesc gTaskDescPooRoo = {
     0xBC,
 };
 
-const char gTaskNamePooRooFootmark[] = "task_poo_roo_footmark";
-
 TaskDesc gTaskDescPooRooFootmark = {
-    gTaskNamePooRooFootmark,
+    "task_poo_roo_footmark",
     (TaskInitFunc)task_poo_roo_footmark_0,
     (TaskUpdateFunc)task_poo_roo_footmark_1,
     (TaskFunc)task_poo_roo_footmark_2,
@@ -8313,10 +8275,8 @@ TaskDesc gTaskDescPooRooFootmark = {
     0x3C,
 };
 
-const char gTaskNamePooLeaf[] = "task_poo_leaf";
-
 TaskDesc gTaskDescPooLeaf = {
-    gTaskNamePooLeaf,
+    "task_poo_leaf",
     (TaskInitFunc)task_poo_leaf_0,
     (TaskUpdateFunc)task_poo_leaf_1,
     (TaskFunc)task_poo_leaf_2,
@@ -8324,10 +8284,8 @@ TaskDesc gTaskDescPooLeaf = {
     0x98,
 };
 
-const char gTaskNamePooTanpopo[] = "task_poo_tanpopo";
-
 TaskDesc gTaskDescPooTanpopo = {
-    gTaskNamePooTanpopo,
+    "task_poo_tanpopo",
     (TaskInitFunc)task_poo_tanpopo_0,
     (TaskUpdateFunc)task_poo_tanpopo_1,
     (TaskFunc)task_poo_tanpopo_2,
@@ -8335,10 +8293,8 @@ TaskDesc gTaskDescPooTanpopo = {
     0xB8,
 };
 
-const char gTaskNamePooTiBoard[] = "task_poo_ti_board";
-
 TaskDesc gTaskDescPooTiBoard = {
-    gTaskNamePooTiBoard,
+    "task_poo_ti_board",
     (TaskInitFunc)task_poo_ti_board_0,
     (TaskUpdateFunc)task_poo_ti_board_1,
     (TaskFunc)task_poo_ti_board_2,
@@ -8346,10 +8302,8 @@ TaskDesc gTaskDescPooTiBoard = {
     0x78,
 };
 
-const char gTaskNamePooEeyoretail[] = "task_poo_eeyoretail";
-
 TaskDesc gTaskDescPooEeyoretail = {
-    gTaskNamePooEeyoretail,
+    "task_poo_eeyoretail",
     (TaskInitFunc)task_poo_eeyoretail_0,
     (TaskUpdateFunc)task_poo_eeyoretail_1,
     (TaskFunc)task_poo_eeyoretail_2,
@@ -8357,10 +8311,8 @@ TaskDesc gTaskDescPooEeyoretail = {
     0x38,
 };
 
-const char gTaskNamePooHoneycomb[] = "task_poo_honeycomb";
-
 TaskDesc gTaskDescPooHoneycomb = {
-    gTaskNamePooHoneycomb,
+    "task_poo_honeycomb",
     (TaskInitFunc)task_poo_honeycomb_0,
     (TaskUpdateFunc)task_poo_honeycomb_1,
     (TaskFunc)task_poo_honeycomb_2,
@@ -8368,10 +8320,8 @@ TaskDesc gTaskDescPooHoneycomb = {
     0xA0,
 };
 
-const char gTaskNamePooVegetable[] = "task_poo_vegetable";
-
 TaskDesc gTaskDescPooVegetable = {
-    gTaskNamePooVegetable,
+    "task_poo_vegetable",
     (TaskInitFunc)task_poo_vegetable_0,
     (TaskUpdateFunc)task_poo_vegetable_1,
     (TaskFunc)task_poo_vegetable_2,
@@ -8379,10 +8329,8 @@ TaskDesc gTaskDescPooVegetable = {
     0x94,
 };
 
-const char gTaskNamePooWagon[] = "task_poo_wagon";
-
 TaskDesc gTaskDescPooWagon = {
-    gTaskNamePooWagon,
+    "task_poo_wagon",
     (TaskInitFunc)task_poo_wagon_0,
     (TaskUpdateFunc)task_poo_wagon_1,
     (TaskFunc)task_poo_wagon_2,
@@ -8390,10 +8338,8 @@ TaskDesc gTaskDescPooWagon = {
     0x44,
 };
 
-const char gTaskNamePooWagonwheel[] = "task_poo_wagonwheel";
-
 TaskDesc gTaskDescPooWagonwheel = {
-    gTaskNamePooWagonwheel,
+    "task_poo_wagonwheel",
     (TaskInitFunc)task_poo_wagonwheel_0,
     (TaskUpdateFunc)task_poo_wagonwheel_1,
     (TaskFunc)task_poo_wagonwheel_2,
@@ -8414,10 +8360,8 @@ TaskDesc gTaskDescPooSpark = {
     0x34,
 };
 
-const char gTaskNamePooBee[] = "task_poo_bee";
-
 TaskDesc gTaskDescPooBee = {
-    gTaskNamePooBee,
+    "task_poo_bee",
     (TaskInitFunc)task_poo_bee_0,
     (TaskUpdateFunc)task_poo_bee_1,
     (TaskFunc)task_poo_bee_2,
@@ -8461,10 +8405,8 @@ TaskDesc gTaskDescPooBeeAfterEvent = {
     0x54,
 };
 
-const char gTaskNamePooCabbage[] = "task_poo_cabbage";
-
 TaskDesc gTaskDescPooCabbage = {
-    gTaskNamePooCabbage,
+    "task_poo_cabbage",
     (TaskInitFunc)task_poo_cabbage_0,
     (TaskUpdateFunc)task_poo_cabbage_1,
     (TaskFunc)task_poo_cabbage_2,
@@ -8520,10 +8462,8 @@ TaskDesc gTaskDescPooCabbageborn = {
     0x18,
 };
 
-const char gTaskNamePooMapobjhit[] = "task_poo_mapobjhit";
-
 TaskDesc gTaskDescPooMapobjhit = {
-    gTaskNamePooMapobjhit,
+    "task_poo_mapobjhit",
     (TaskInitFunc)task_poo_mapobjhit_0,
     (TaskUpdateFunc)task_poo_mapobjhit_1,
     (TaskFunc)task_poo_mapobjhit_2,
@@ -8531,10 +8471,8 @@ TaskDesc gTaskDescPooMapobjhit = {
     0xA0,
 };
 
-const char gTaskNamePooPrize[] = "task_poo_prize";
-
 TaskDesc gTaskDescPooPrize = {
-    gTaskNamePooPrize,
+    "task_poo_prize",
     (TaskInitFunc)task_poo_prize_0,
     (TaskUpdateFunc)task_poo_prize_1,
     (TaskFunc)task_poo_prize_2,
@@ -8542,10 +8480,8 @@ TaskDesc gTaskDescPooPrize = {
     0x98,
 };
 
-const char gTaskNamePooZzz[] = "task_poo_zzz";
-
 TaskDesc gTaskDescPooZzz = {
-    gTaskNamePooZzz,
+    "task_poo_zzz",
     (TaskInitFunc)task_poo_zzz_0,
     (TaskUpdateFunc)task_poo_zzz_1,
     (TaskFunc)task_poo_zzz_2,
@@ -8561,10 +8497,8 @@ AnimDef gUnk_09EF4C88[5] = {
     { gUnk_09EF5D40, gUnk_09EF5D50, gUnk_0974459A, 0, { 0, 0, 0 } },
 };
 
-const char gTaskNamePooButterfly[] = "task_poo_butterfly";
-
 TaskDesc gTaskDescPooButterfly = {
-    gTaskNamePooButterfly,
+    "task_poo_butterfly",
     (TaskInitFunc)task_poo_butterfly_0,
     (TaskUpdateFunc)task_poo_butterfly_1,
     (TaskFunc)task_poo_butterfly_2,
@@ -8572,10 +8506,8 @@ TaskDesc gTaskDescPooButterfly = {
     0xE4,
 };
 
-const char gTaskNamePooButterflyRight[] = "task_poo_butterflyRight";
-
 TaskDesc gTaskDescPooButterflyRight = {
-    gTaskNamePooButterflyRight,
+    "task_poo_butterflyRight",
     (TaskInitFunc)task_poo_butterfly_0,
     (TaskUpdateFunc)task_poo_butterflyRight_1,
     (TaskFunc)task_poo_butterflyRight_2,
@@ -8583,10 +8515,8 @@ TaskDesc gTaskDescPooButterflyRight = {
     0xE4,
 };
 
-const char gTaskNamePooButterflyLeft[] = "task_poo_butterflyLeft";
-
 TaskDesc gTaskDescPooButterflyLeft = {
-    gTaskNamePooButterflyLeft,
+    "task_poo_butterflyLeft",
     (TaskInitFunc)task_poo_butterfly_0,
     (TaskUpdateFunc)task_poo_butterflyLeft_1,
     (TaskFunc)task_poo_butterflyLeft_2,
@@ -8594,10 +8524,8 @@ TaskDesc gTaskDescPooButterflyLeft = {
     0xE4,
 };
 
-const char gTaskNamePooMapbee[] = "task_poo_mapbee";
-
 TaskDesc gTaskDescPooMapbee = {
-    gTaskNamePooMapbee,
+    "task_poo_mapbee",
     (TaskInitFunc)task_poo_mapbee_0,
     (TaskUpdateFunc)task_poo_mapbee_1,
     (TaskFunc)task_poo_mapbee_2,
@@ -8605,10 +8533,8 @@ TaskDesc gTaskDescPooMapbee = {
     0x38,
 };
 
-const char gTaskNamePooMapbeeborn[] = "task_poo_mapbeeborn";
-
 TaskDesc gTaskDescPooMapbeeborn = {
-    gTaskNamePooMapbeeborn,
+    "task_poo_mapbeeborn",
     (TaskInitFunc)task_poo_mapbeeborn_0,
     (TaskUpdateFunc)task_poo_mapbeeborn_1,
     (TaskFunc)task_poo_mapbeeborn_2,
@@ -8616,10 +8542,8 @@ TaskDesc gTaskDescPooMapbeeborn = {
     0x9C,
 };
 
-const char gTaskNamePooMapbutterfly[] = "task_poo_mapbutterfly";
-
 TaskDesc gTaskDescPooMapbutterfly = {
-    gTaskNamePooMapbutterfly,
+    "task_poo_mapbutterfly",
     (TaskInitFunc)task_poo_mapbutterfly_0,
     (TaskUpdateFunc)task_poo_mapbutterfly_1,
     (TaskFunc)task_poo_mapbutterfly_2,
@@ -8627,10 +8551,8 @@ TaskDesc gTaskDescPooMapbutterfly = {
     0x38,
 };
 
-const char gTaskNamePooMapbutterflyborn[] = "task_poo_mapbutterflyborn";
-
 TaskDesc gTaskDescPooMapbutterflyborn = {
-    gTaskNamePooMapbutterflyborn,
+    "task_poo_mapbutterflyborn",
     (TaskInitFunc)task_poo_mapbutterflyborn_0,
     (TaskUpdateFunc)task_poo_mapbutterflyborn_1,
     (TaskFunc)task_poo_mapbutterflyborn_2,
@@ -8638,10 +8560,8 @@ TaskDesc gTaskDescPooMapbutterflyborn = {
     0x9C,
 };
 
-const char gTaskNamePooRabbitAfterEvent[] = "task_poo_rabbitAfterEvent";
-
 TaskDesc gTaskDescPooRabbitAfterEvent = {
-    gTaskNamePooRabbitAfterEvent,
+    "task_poo_rabbitAfterEvent",
     (TaskInitFunc)task_poo_rabbitAfterEvent_0,
     (TaskUpdateFunc)task_poo_rabbitAfterEvent_1,
     (TaskFunc)task_poo_rabbitAfterEvent_2,
@@ -8649,10 +8569,8 @@ TaskDesc gTaskDescPooRabbitAfterEvent = {
     0xA8,
 };
 
-const char gTaskNamePooCabbageAfterEvent[] = "task_poo_cabbageAfterEvent";
-
 TaskDesc gTaskDescPooCabbageAfterEvent = {
-    gTaskNamePooCabbageAfterEvent,
+    "task_poo_cabbageAfterEvent",
     (TaskInitFunc)task_poo_cabbageAfterEvent_0,
     (TaskUpdateFunc)task_poo_cabbageAfterEvent_1,
     (TaskFunc)task_poo_cabbageAfterEvent_2,
