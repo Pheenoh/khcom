@@ -281,19 +281,6 @@ extern TaskDesc gTaskDescSrollCChar;
 
 extern const char gModeNameSioBattle[];
 extern const char gModeNameSioBtlConnect[];
-extern const char gModeNameSioBtlOption[];
-extern const char gModeNameSioBtlCardget[];
-#ifndef VERSION_EU
-extern const char gModeNameSioChgConnect[];
-
-
-#endif
-#ifndef VERSION_EU
-extern const char gModeNameSioChgCard[];
-
-
-#endif
-extern const char gModeNameSioError[];
 extern const char gTaskNameBosJfLamp[];
 extern const char gTaskNameBosJfMajin[];
 extern const char gTaskNameBosDsd[];

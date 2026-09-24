@@ -3477,31 +3477,23 @@ u16 gUnk_09EF14C4[12] = {
     1,
 };
 
-const char gModeNameSioBtlOption[] = "mode_sio_btl_option";
-
 Mode gModeSioBtlOption = {
-    gModeNameSioBtlOption,
+    "mode_sio_btl_option",
     mode_sio_btl_option_0,
     mode_sio_btl_option_1,
     mode_sio_btl_option_2,
 };
 
-const char gModeNameSioBtlCardget[] = "mode_sio_btl_cardget";
-
 Mode gModeSioBtlCardget = {
-    gModeNameSioBtlCardget,
+    "mode_sio_btl_cardget",
     mode_sio_btl_cardget_0,
     mode_sio_btl_cardget_1,
     mode_sio_btl_cardget_2,
 };
 
 #ifndef VERSION_EU
-const char gModeNameSioChgConnect[] = "mode_sio_chg_connect";
-#endif
-
-#ifndef VERSION_EU
 Mode gModeSioChgConnect = {
-    gModeNameSioChgConnect,
+    "mode_sio_chg_connect",
     mode_sio_chg_connect_0,
     mode_sio_chg_connect_1,
     mode_sio_chg_connect_2,
@@ -3530,23 +3522,19 @@ const SioAnimDef gSioChgCardAnimDefs[3] = {
     {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 0},
     {gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 1},
 };
-
-const char gModeNameSioChgCard[] = "mode_sio_chg_card";
 #endif
 
 #ifndef VERSION_EU
 Mode gModeSioChgCard = {
-    gModeNameSioChgCard,
+    "mode_sio_chg_card",
     mode_sio_chg_card_0,
     mode_sio_chg_card_1,
     mode_sio_chg_card_2,
 };
 #endif
 
-const char gModeNameSioError[] = "mode_sioError";
-
 Mode gModeSioError = {
-    gModeNameSioError,
+    "mode_sioError",
     mode_sioError_0,
     mode_sioError_1,
     mode_sioError_2,

@@ -140,6 +140,4 @@ void func_0800C6B8(void) {
     }
 }
 
-const char gModeNameVsbattle[] = "mode_vsbattle";
-
-Mode gModeVsbattle = { gModeNameVsbattle, (ModeInitFunc)mode_vsbattle_0, mode_vsbattle_1, mode_vsbattle_2 };
+Mode gModeVsbattle = { "mode_vsbattle", (ModeInitFunc)mode_vsbattle_0, mode_vsbattle_1, mode_vsbattle_2 };
