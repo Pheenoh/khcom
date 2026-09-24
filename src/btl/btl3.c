@@ -8,11 +8,11 @@
 #include "sprites_btl.h"
 #include "sprites_fld.h"
 
-const char gTaskNameBtlForm[] = "task_btl_form";
+TaskDesc gTaskDescBtlForm = { "task_btl_form", task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
 
-const char gTaskNameBtlBorn[] = "task_btl_born";
+TaskDesc gTaskDescBtlBorn = { "task_btl_born", task_btl_born_0, task_btl_born_1, 0, 0, 0x14 };
 
-const char gTaskNameBtlRaid[] = "task_btl_raid";
+TaskDesc gTaskDescBtlRaid = { "task_btl_raid", task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
 
 const AnimDef gUnk_0813E8F4[5] = {
     { gUnk_09EE12E8, gUnk_09EE130C, gUnk_08B21CFC, 0, { 0, 0, 0 } },
@@ -764,11 +764,5 @@ BtlObj* func_08040D54(BtlAiWork* work) {
     p = list[GetRandom() % count];
     return p;
 }
-
-TaskDesc gTaskDescBtlForm = { gTaskNameBtlForm, task_btl_form_0, task_btl_form_1, 0, task_btl_form_3, 0x28 };
-
-TaskDesc gTaskDescBtlBorn = { gTaskNameBtlBorn, task_btl_born_0, task_btl_born_1, 0, 0, 0x14 };
-
-TaskDesc gTaskDescBtlRaid = { gTaskNameBtlRaid, task_btl_raid_0, task_btl_raid_1, task_btl_raid_2, task_btl_raid_3, 0x6C };
 
 TaskDesc gTaskDescBtlBadstatus = { "task_btl_badstatus", task_btl_badstatus_0, task_btl_badstatus_1, task_btl_badstatus_2, task_btl_badstatus_3, 0x30 };

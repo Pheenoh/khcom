@@ -23,7 +23,7 @@ const AnimDef gUnk_0813D35C[7] = {
 
 const EmyDef gUnk_0813D3CC = { gUnk_08F697A4, gUnk_0813D32C, 384, 130, 10, 20, 64, 32, 16, 10, 3, { 0, 12, 32, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy00[] = "task_emy_00";
+TaskDesc gTaskDescEmy00 = { "task_emy_00", task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
 
 const AnimDef gUnk_0813D404[3] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
@@ -38,7 +38,7 @@ const AnimDef gUnk_0813D434[2] = {
 
 const EmyDef gUnk_0813D454 = { gUnk_08F69804, gUnk_0813D404, 384, 130, 20, 20, 64, 32, 32, 10, 0, { 1, 33, 24, 12, 4, 100, 8 } };
 
-const char gTaskNameEmy01[] = "task_emy_01";
+TaskDesc gTaskDescEmy01 = { "task_emy_01", task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
 
 const AnimDef gUnk_0813D48C[3] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
@@ -53,7 +53,7 @@ const AnimDef gUnk_0813D4BC[2] = {
 
 const EmyDef gUnk_0813D4DC = { gUnk_08F69824, gUnk_0813D48C, 460, 130, 20, 20, 64, 32, 32, 10, 0, { 2, 34, 24, 12, 4, 100, 8 } };
 
-const char gTaskNameEmy02[] = "task_emy_02";
+TaskDesc gTaskDescEmy02 = { "task_emy_02", task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
 
 const AnimDef gUnk_0813D514[3] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
@@ -68,7 +68,7 @@ const AnimDef gUnk_0813D544[2] = {
 
 const EmyDef gUnk_0813D564 = { gUnk_08F69844, gUnk_0813D514, 512, 130, 20, 20, 64, 32, 32, 10, 0, { 3, 36, 24, 12, 4, 100, 8 } };
 
-const char gTaskNameEmy03[] = "task_emy_03";
+TaskDesc gTaskDescEmy03 = { "task_emy_03", task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
 
 const AnimDef gUnk_0813D59C[3] = {
     { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
@@ -80,7 +80,7 @@ const AnimDef gUnk_0813D5CC = { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 4, 
 
 const EmyDef gUnk_0813D5DC = { gUnk_08F69864, gUnk_0813D59C, 332, 130, 20, 20, 0, 0, 0, 200, 0, { 4, 27, 24, 12, 4, 100, 8 } };
 
-const char gTaskNameEmy04[] = "task_emy_04";
+TaskDesc gTaskDescEmy04 = { "task_emy_04", task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
 
 const AnimDef gUnk_0813D614[3] = {
     { gUnk_09EE00D0, gUnk_09EE00F0, gUnk_089D8148, 0, { 0, 0, 0 } },
@@ -95,7 +95,7 @@ const AnimDef gUnk_0813D644[2] = {
 
 const EmyDef gUnk_0813D664 = { gUnk_08F69924, gUnk_0813D614, 230, 130, 20, 20, 70, 32, 48, 10, 0, { 5, 42, 32, 8, 16, 100, 0 } };
 
-const char gTaskNameEmy06[] = "task_emy_06";
+TaskDesc gTaskDescEmy06 = { "task_emy_06", task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
 
 const AnimDef gUnk_0813D69C[3] = {
     { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
@@ -115,7 +115,7 @@ const AnimDef gUnk_0813D6CC[7] = {
 
 const EmyDef gUnk_0813D73C = { gUnk_08F698A4, gUnk_0813D69C, 0, 130, 20, 20, 0, 0, 0, 1, 0, { 6, 40, 32, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy07[] = "task_emy_07";
+TaskDesc gTaskDescEmy07 = { "task_emy_07", task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
 
 const AnimDef gUnk_0813D774[3] = {
     { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
@@ -134,7 +134,7 @@ const AnimDef gUnk_0813D7A4[6] = {
 
 const EmyDef gUnk_0813D804 = { gUnk_08F698E4, gUnk_0813D774, 179, 130, 20, 20, 24, 24, 16, 5, 0, { 7, 999, 32, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy08[] = "task_emy_08";
+TaskDesc gTaskDescEmy08 = { "task_emy_08", task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
 
 const AnimDef gUnk_0813D83C[3] = {
     { gUnk_09EDFAA4, gUnk_09EDFAC4, gUnk_0897CDAC, 0, { 0, 0, 0 } },
@@ -149,7 +149,7 @@ const AnimDef gUnk_0813D86C[2] = {
 
 const EmyDef gUnk_0813D88C = { gUnk_08F697E4, gUnk_0813D83C, 307, 130, 10, 20, 64, 32, 16, 10, 0, { 9, 32, 35, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy14[] = "task_emy_14";
+TaskDesc gTaskDescEmy14 = { "task_emy_14", task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
 
 const AnimDef gUnk_0813D8C4[3] = {
     { gUnk_09EE017C, gUnk_09EE01A0, gUnk_089DF930, 0, { 0, 0, 0 } },
@@ -167,7 +167,7 @@ const AnimDef gUnk_0813D8F4[5] = {
 
 const EmyDef gUnk_0813D944 = { gUnk_08F69944, gUnk_0813D8C4, 192, 200, 2, 20, 64, 32, 32, 10, 0, { 10, 41, 35, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy15[] = "task_emy_15";
+TaskDesc gTaskDescEmy15 = { "task_emy_15", task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
 
 const AnimDef gUnk_0813D97C[3] = {
     { gUnk_09EE0424, gUnk_09EE0448, gUnk_08A1823A, 0, { 0, 0, 0 } },
@@ -182,11 +182,11 @@ const AnimDef gUnk_0813D9AC[2] = {
 
 const EmyDef gUnk_0813D9CC = { gUnk_08F699C4, gUnk_0813D97C, 307, 130, 20, 20, 99, 32, 32, 10, 0, { 11, 29, 16, 8, 16, 100, 0 } };
 
-const char gTaskNameEmy16[] = "task_emy_16";
+TaskDesc gTaskDescEmy16 = { "task_emy_16", task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
 
-const char gTaskNameEmy16B[] = "task_emy_16_b";
+TaskDesc gTaskDescEmy16B = { "task_emy_16_b", task_emy_16_b_0, task_emy_16_b_1, task_emy_16_b_2, task_emy_16_b_3, 0xA0 };
 
-const char gTaskNameEmy16P[] = "task_emy_16_p";
+TaskDesc gTaskDescEmy16P = { "task_emy_16_p", task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
 
 const AnimDef gUnk_0813DA24[3] = {
     { gUnk_09EE0D2C, gUnk_09EE0D6C, gUnk_08AF0E4E, 0, { 0, 0, 0 } },
@@ -203,7 +203,7 @@ const AnimDef gUnk_0813DA54[4] = {
 
 const EmyDef gUnk_0813DA94 = { gUnk_08F69B24, gUnk_0813DA24, 768, 150, 4, 20, 40, 24, 16, 10, 0, { 12, 45, 40, 8, 16, 100, 0 } };
 
-const char gTaskNameEmy18[] = "task_emy_18";
+TaskDesc gTaskDescEmy18 = { "task_emy_18", task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
 
 const AnimDef gUnk_0813DACC[3] = {
     { gUnk_09EE0238, gUnk_09EE0250, gUnk_089EB0D6, 0, { 0, 0, 0 } },
@@ -221,7 +221,7 @@ const AnimDef gUnk_0813DAFC[5] = {
 
 const EmyDef gUnk_0813DB4C = { gUnk_08F69964, gUnk_0813DACC, 256, 130, 20, 20, 80, 80, 32, 10, 0, { 13, 53, 32, 13, 16, 100, 0 } };
 
-const char gTaskNameEmy19[] = "task_emy_19";
+TaskDesc gTaskDescEmy19 = { "task_emy_19", task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
 
 const AnimDef gUnk_0813DB84[3] = {
     { gUnk_09EDFC60, gUnk_09EDFC80, gUnk_0899014C, 0, { 0, 0, 0 } },
@@ -238,7 +238,7 @@ const AnimDef gUnk_0813DBB4[4] = {
 
 const EmyDef gUnk_0813DBF4 = { gUnk_08F69884, gUnk_0813DB84, 396, 130, 20, 20, 80, 80, 16, 5, 0, { 14, 40, 32, 16, 16, 100, 0 } };
 
-const char gTaskNameEmy21[] = "task_emy_21";
+TaskDesc gTaskDescEmy21 = { "task_emy_21", task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
 
 const AnimDef gUnk_0813DC2C[3] = {
     { gUnk_09EE0500, gUnk_09EE0530, gUnk_08A239E2, 0, { 0, 0, 0 } },
@@ -253,7 +253,7 @@ const AnimDef gUnk_0813DC5C[2] = {
 
 const EmyDef gUnk_0813DC7C = { gUnk_08F699E4, gUnk_0813DC2C, 192, 130, 20, 20, 64, 32, 32, 5, 0, { 15, 61, 40, 12, 24, 15, 8 } };
 
-const char gTaskNameEmy22[] = "task_emy_22";
+TaskDesc gTaskDescEmy22 = { "task_emy_22", task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
 
 const AnimDef gUnk_0813DCB4[3] = {
     { gUnk_09EE02D4, gUnk_09EE02F4, gUnk_089F3E0E, 0, { 0, 0, 0 } },
@@ -268,7 +268,7 @@ const AnimDef gUnk_0813DCE4[2] = {
 
 const EmyDef gUnk_0813DD04 = { gUnk_08F69984, gUnk_0813DCB4, 192, 30, 2, 20, 64, 40, 32, 25, 0, { 16, 66, 36, 10, 16, 100, 0 } };
 
-const char gTaskNameEmy23[] = "task_emy_23";
+TaskDesc gTaskDescEmy23 = { "task_emy_23", task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
 
 const AnimDef gUnk_0813DD3C[3] = {
     { gUnk_09EE0B18, gUnk_09EE0B64, gUnk_08ABBF0E, 0, { 0, 0, 0 } },
@@ -283,7 +283,7 @@ const AnimDef gUnk_0813DD6C[2] = {
 
 const EmyDef gUnk_0813DD8C = { gUnk_08F69AE4, gUnk_0813DD3C, 253, 130, 20, 20, 24, 16, 16, 3, 0, { 17, 79, 40, 12, 32, 100, 0 } };
 
-const char gTaskNameEmy25[] = "task_emy_25";
+TaskDesc gTaskDescEmy25 = { "task_emy_25", task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
 
 const AnimDef gUnk_0813DDC4[3] = {
     { gUnk_09EE05C0, gUnk_09EE05E0, gUnk_08A31D86, 0, { 0, 0, 0 } },
@@ -298,7 +298,7 @@ const AnimDef gUnk_0813DDF4[2] = {
 
 const EmyDef gUnk_0813DE14 = { gUnk_08F69A04, gUnk_0813DDC4, 192, 130, 20, 20, 64, 32, 32, 10, 0, { 18, 89, 36, 20, 16, 100, 4 } };
 
-const char gTaskNameEmy26[] = "task_emy_26";
+TaskDesc gTaskDescEmy26 = { "task_emy_26", task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
 
 const AnimDef gUnk_0813DE4C[3] = {
     { gUnk_09EE0658, gUnk_09EE0678, gUnk_08A42C16, 0, { 0, 0, 0 } },
@@ -313,7 +313,7 @@ const AnimDef gUnk_0813DE7C[2] = {
 
 const EmyDef gUnk_0813DE9C = { gUnk_08F69A24, gUnk_0813DE4C, 192, 130, 20, 20, 64, 32, 64, 10, 0, { 19, 125, 32, 12, 16, 100, 0 } };
 
-const char gTaskNameEmy27[] = "task_emy_27";
+TaskDesc gTaskDescEmy27 = { "task_emy_27", task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
 
 const AnimDef gUnk_0813DED4[3] = {
     { gUnk_09EE06EC, gUnk_09EE070C, gUnk_08A4AD94, 0, { 0, 0, 0 } },
@@ -330,7 +330,7 @@ const AnimDef gUnk_0813DF04[4] = {
 
 const EmyDef gUnk_0813DF44 = { gUnk_08F69A44, gUnk_0813DED4, 1024, 150, 4, 20, 40, 24, 16, 25, 0, { 20, 45, 48, 8, 16, 100, 4 } };
 
-const char gTaskNameEmy28[] = "task_emy_28";
+TaskDesc gTaskDescEmy28 = { "task_emy_28", task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
 
 const AnimDef gUnk_0813DF7C[3] = {
     { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
@@ -345,7 +345,7 @@ const AnimDef gUnk_0813DFAC[2] = {
 
 const EmyDef gUnk_0813DFCC = { gUnk_08F69A64, gUnk_0813DF7C, 192, 300, 20, 20, 64, 64, 32, 30, 0, { 21, 80, 56, 22, 32, 100, 4 } };
 
-const char gTaskNameEmy29[] = "task_emy_29";
+TaskDesc gTaskDescEmy29 = { "task_emy_29", task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
 
 const AnimDef gUnk_0813E004[3] = {
     { gUnk_09EE09D0, gUnk_09EE09EC, gUnk_08A971D2, 0, { 0, 0, 0 } },
@@ -366,7 +366,7 @@ const AnimDef gUnk_0813E034[8] = {
 
 const EmyDef gUnk_0813E0B4 = { gUnk_08F69AC4, gUnk_0813E004, 1024, 150, 4, 20, 60, 32, 32, 30, 0, { 22, 45, 34, 30, 16, 100, 4 } };
 
-const char gTaskNameEmy30[] = "task_emy_30";
+TaskDesc gTaskDescEmy30 = { "task_emy_30", task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
 
 const AnimDef gUnk_0813E0EC[3] = {
     { gUnk_09EE0008, gUnk_09EE0028, gUnk_089C44A8, 0, { 0, 0, 0 } },
@@ -382,7 +382,7 @@ const AnimDef gUnk_0813E11C[3] = {
 
 const EmyDef gUnk_0813E14C = { gUnk_08F69904, gUnk_0813E0EC, 256, 100, 10, 20, 64, 32, 32, 10, 0, { 23, 95, 32, 12, 24, 100, 0 } };
 
-const char gTaskNameEmy31[] = "task_emy_31";
+TaskDesc gTaskDescEmy31 = { "task_emy_31", task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
 
 const AnimDef gUnk_0813E184[3] = {
     { gUnk_09EE0824, gUnk_09EE0844, gUnk_08A67796, 0, { 0, 0, 0 } },
@@ -406,7 +406,7 @@ const AnimDef gUnk_0813E1B4[11] = {
 
 const EmyDef gUnk_0813E264 = { gUnk_08F69A84, gUnk_0813E184, 409, 130, 20, 20, 64, 32, 32, 10, 3, { 24, 110, 38, 12, 20, 100, 0 } };
 
-const char gTaskNameEmy37[] = "task_emy_37";
+TaskDesc gTaskDescEmy37 = { "task_emy_37", task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
 
 const AnimDef gUnk_0813E29C[3] = {
     { gUnk_09EDFA08, gUnk_09EDFA24, gUnk_08967A32, 0, { 0, 0, 0 } },
@@ -421,7 +421,7 @@ const AnimDef gUnk_0813E2CC[2] = {
 
 const EmyDef gUnk_0813E2EC = { gUnk_08F697C4, gUnk_0813E29C, 76, 130, 80, 22, 64, 32, 32, 10, 0, { 25, 112, 56, 25, 32, 100, 4 } };
 
-const char gTaskNameEmy38[] = "task_emy_38";
+TaskDesc gTaskDescEmy38 = { "task_emy_38", task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
 
 const AnimDef gUnk_0813E324[3] = {
     { gUnk_09EE0934, gUnk_09EE0954, gUnk_08A7E6E4, 0, { 0, 0, 0 } },
@@ -436,7 +436,7 @@ const AnimDef gUnk_0813E354[2] = {
 
 const EmyDef gUnk_0813E374 = { gUnk_08F69AA4, gUnk_0813E324, 102, 130, 100, 22, 64, 32, 32, 10, 0, { 26, 134, 56, 25, 32, 100, 4 } };
 
-const char gTaskNameEmy39[] = "task_emy_39";
+TaskDesc gTaskDescEmy39 = { "task_emy_39", task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
 
 const AnimDef gUnk_0813E3AC[3] = {
     { gUnk_09EE0370, gUnk_09EE038C, gUnk_08A0625A, 0, { 0, 0, 0 } },
@@ -451,7 +451,7 @@ const AnimDef gUnk_0813E3DC[2] = {
 
 const EmyDef gUnk_0813E3FC = { gUnk_08F699A4, gUnk_0813E3AC, 192, 400, 50, 20, 64, 32, 32, 10, 0, { 27, 108, 56, 32, 20, 100, 4 } };
 
-const char gTaskNameEmy41[] = "task_emy_41";
+TaskDesc gTaskDescEmy41 = { "task_emy_41", task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
 
 const AnimDef gUnk_0813E434[3] = {
     { gUnk_09EE0C58, gUnk_09EE0C80, gUnk_08AD3CFC, 0, { 0, 0, 0 } },
@@ -466,7 +466,7 @@ const AnimDef gUnk_0813E464[2] = {
 
 const EmyDef gUnk_0813E484 = { gUnk_08F69B04, gUnk_0813E434, 192, 130, 90, 20, 60, 60, 16, 10, 0, { 28, 260, 48, 25, 32, 100, 4 } };
 
-const char gTaskNameEmy44[] = "task_emy_44";
+TaskDesc gTaskDescEmy44 = { "task_emy_44", task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
 
 const AnimDef gUnk_0813E4BC[3] = {
     { gUnk_09EE0E2C, gUnk_09EE0E4C, gUnk_08AFF950, 0, { 0, 0, 0 } },
@@ -484,7 +484,7 @@ const AnimDef gUnk_0813E4EC[5] = {
 
 const EmyDef gUnk_0813E53C = { gUnk_08F69B44, gUnk_0813E4BC, 128, 130, 20, 15, 64, 32, 32, 10, 0, { 29, 66, 27, 13, 16, 100, 0 } };
 
-const char gTaskNameEmy81[] = "task_emy_81";
+TaskDesc gTaskDescEmy81 = { "task_emy_81", task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
 
 const AnimDef gUnk_0813E574[3] = {
     { gUnk_09EE0F18, gUnk_09EE0F38, gUnk_08B0AAE6, 0, { 0, 0, 0 } },
@@ -503,7 +503,7 @@ const AnimDef gUnk_0813E5A4[6] = {
 
 const EmyDef gUnk_0813E604 = { gUnk_08F69B64, gUnk_0813E574, 204, 3, 20, 20, 48, 32, 32, 1, 0, { 30, 66, 32, 10, 16, 100, 0 } };
 
-const char gTaskNameEmy82[] = "task_emy_82";
+TaskDesc gTaskDescEmy82 = { "task_emy_82", task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
 
 const AnimDef gUnk_0813E63C[3] = {
     { gUnk_09EE1024, gUnk_09EE1044, gUnk_08B16A8A, 0, { 0, 0, 0 } },
@@ -520,11 +520,11 @@ const AnimDef gUnk_0813E66C[4] = {
 
 const EmyDef gUnk_0813E6AC = { gUnk_08F69B84, gUnk_0813E63C, 192, 130, 20, 20, 50, 50, 50, 10, 0, { 31, 66, 35, 12, 24, 100, 0 } };
 
-const char gTaskNameEmy83[] = "task_emy_83";
+TaskDesc gTaskDescEmy83 = { "task_emy_83", task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
 
-const char gTaskNameEmy83B[] = "task_emy_83_b";
+TaskDesc gTaskDescEmy83B = { "task_emy_83_b", task_emy_83_b_0, task_emy_83_b_1, task_emy_83_b_2, task_emy_83_b_3, 0x90 };
 
-const char gTaskNameEmy83S[] = "task_emy_83_s";
+TaskDesc gTaskDescEmy83S = { "task_emy_83_s", task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
 
 const AnimDef gUnk_0813E704[3] = {
     { gUnk_09EE0A84, gUnk_09EE0A9C, gUnk_08AAB264, 0, { 0, 0, 0 } },
@@ -536,7 +536,7 @@ const AnimDef gUnk_0813E734 = { gUnk_09EE0AB4, gUnk_09EE0AC8, gUnk_08AB0C38, 0, 
 
 const EmyDef gUnk_0813E744 = { gUnk_09617C98, gUnk_0813E704, 409, 130, 20, 20, 90, 32, 32, 10, 0, { 47, 200, 40, 16, 16, 100, 0 } };
 
-const char gTaskNameEmyTrumpH[] = "task_emy_trump_h";
+TaskDesc gTaskDescEmyTrumpH = { "task_emy_trump_h", task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
 
 const AnimDef gUnk_0813E784[3] = {
     { gUnk_09EE0ACC, gUnk_09EE0AE4, gUnk_08AB357C, 0, { 0, 0, 0 } },
@@ -548,7 +548,7 @@ const AnimDef gUnk_0813E7B4 = { gUnk_09EE0AFC, gUnk_09EE0B14, gUnk_08AB8BE8, 0, 
 
 const EmyDef gUnk_0813E7C4 = { gUnk_09617CB8, gUnk_0813E784, 307, 130, 20, 20, 64, 32, 32, 10, 0, { 46, 200, 40, 16, 16, 100, 0 } };
 
-const char gTaskNameEmyTrumpS[] = "task_emy_trump_s";
+TaskDesc gTaskDescEmyTrumpS = { "task_emy_trump_s", task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
 const AnimDef gUnk_0813E804[3] = {
     { gUnk_09EE2608, gUnk_09EE2618, gUnk_08C69204, 0, { 0, 0, 0 } },
@@ -5677,79 +5677,5 @@ void task_emy_test_2(EmyWork* work) {
 void task_emy_test_3(EmyWork* work) {
     func_0800E0D0(work);
 }
-
-TaskDesc gTaskDescEmy00 = { gTaskNameEmy00, task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
-
-TaskDesc gTaskDescEmy01 = { gTaskNameEmy01, task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
-
-TaskDesc gTaskDescEmy02 = { gTaskNameEmy02, task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
-
-TaskDesc gTaskDescEmy03 = { gTaskNameEmy03, task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
-
-TaskDesc gTaskDescEmy04 = { gTaskNameEmy04, task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
-
-TaskDesc gTaskDescEmy06 = { gTaskNameEmy06, task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
-
-TaskDesc gTaskDescEmy07 = { gTaskNameEmy07, task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
-
-TaskDesc gTaskDescEmy08 = { gTaskNameEmy08, task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
-
-TaskDesc gTaskDescEmy14 = { gTaskNameEmy14, task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
-
-TaskDesc gTaskDescEmy15 = { gTaskNameEmy15, task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
-
-TaskDesc gTaskDescEmy16 = { gTaskNameEmy16, task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
-
-TaskDesc gTaskDescEmy16B = { gTaskNameEmy16B, task_emy_16_b_0, task_emy_16_b_1, task_emy_16_b_2, task_emy_16_b_3, 0xA0 };
-
-TaskDesc gTaskDescEmy16P = { gTaskNameEmy16P, task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
-
-TaskDesc gTaskDescEmy18 = { gTaskNameEmy18, task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
-
-TaskDesc gTaskDescEmy19 = { gTaskNameEmy19, task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
-
-TaskDesc gTaskDescEmy21 = { gTaskNameEmy21, task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
-
-TaskDesc gTaskDescEmy22 = { gTaskNameEmy22, task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
-
-TaskDesc gTaskDescEmy23 = { gTaskNameEmy23, task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
-
-TaskDesc gTaskDescEmy25 = { gTaskNameEmy25, task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
-
-TaskDesc gTaskDescEmy26 = { gTaskNameEmy26, task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
-
-TaskDesc gTaskDescEmy27 = { gTaskNameEmy27, task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
-
-TaskDesc gTaskDescEmy28 = { gTaskNameEmy28, task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
-
-TaskDesc gTaskDescEmy29 = { gTaskNameEmy29, task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
-
-TaskDesc gTaskDescEmy30 = { gTaskNameEmy30, task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
-
-TaskDesc gTaskDescEmy31 = { gTaskNameEmy31, task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
-
-TaskDesc gTaskDescEmy37 = { gTaskNameEmy37, task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
-
-TaskDesc gTaskDescEmy38 = { gTaskNameEmy38, task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
-
-TaskDesc gTaskDescEmy39 = { gTaskNameEmy39, task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
-
-TaskDesc gTaskDescEmy41 = { gTaskNameEmy41, task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
-
-TaskDesc gTaskDescEmy44 = { gTaskNameEmy44, task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
-
-TaskDesc gTaskDescEmy81 = { gTaskNameEmy81, task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
-
-TaskDesc gTaskDescEmy82 = { gTaskNameEmy82, task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
-
-TaskDesc gTaskDescEmy83 = { gTaskNameEmy83, task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
-
-TaskDesc gTaskDescEmy83B = { gTaskNameEmy83B, task_emy_83_b_0, task_emy_83_b_1, task_emy_83_b_2, task_emy_83_b_3, 0x90 };
-
-TaskDesc gTaskDescEmy83S = { gTaskNameEmy83S, task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
-
-TaskDesc gTaskDescEmyTrumpH = { gTaskNameEmyTrumpH, task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
-
-TaskDesc gTaskDescEmyTrumpS = { gTaskNameEmyTrumpS, task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
 TaskDesc gTaskDescEmyTest = { "task_emy_test", task_emy_test_0, task_emy_test_1, task_emy_test_2, task_emy_test_3, 0x184 };

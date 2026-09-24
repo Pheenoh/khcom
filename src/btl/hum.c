@@ -42,7 +42,7 @@ const AnimDef gUnk_0813EDE8[20] = {
 
 const HumDef gHumCloudDef = { 128, 0, gUnk_08F6DC24, 0, { 43, 99, 38, 14, 24, 99, 0 } };
 
-const char gTaskNameHumCloud[] = "task_hum_cloud";
+TaskDesc gTaskDescHumCloud = { "task_hum_cloud", task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
 
 const u32 gUnk_0813EF54[3] = {
     36, 36, 38,
@@ -76,11 +76,11 @@ const u8 gUnk_0813F078[8] = {
     0, 4, 4, 6, 8, 10, 8, 6,
 };
 
-const char gTaskNameHumHook[] = "task_hum_hook";
+TaskDesc gTaskDescHumHook = { "task_hum_hook", task_hum_hook_0, task_hum_hook_1, task_hum_hook_2, task_hum_hook_3, 0x1BC };
 
-const char gTaskNameHumHookMoon[] = "task_hum_hook_moon";
+TaskDesc gTaskDescHumHookMoon = { "task_hum_hook_moon", task_hum_hook_moon_0, task_hum_hook_moon_1, task_hum_hook_moon_2, task_hum_hook_moon_3, 0xC };
 
-const char gTaskNameHumHookBomb[] = "task_hum_hook_bomb";
+TaskDesc gTaskDescHumHookBomb = { "task_hum_hook_bomb", task_hum_hook_bomb_0, task_hum_hook_bomb_1, task_hum_hook_bomb_2, task_hum_hook_bomb_3, 0x54 };
 
 const u32 gUnk_0813F0B8[3] = {
     36, 37, 37,
@@ -117,7 +117,7 @@ const HumSubDef gHumAnsemSubDef = { gUnk_09618378, 128, 0 };
 
 const HumDef gHumAnsemDef = { 80, 0, gUnk_09618318, 0, { 52, 99, 65, 14, 42, 99, 0 } };
 
-const char gTaskNameHumAnsem[] = "task_hum_ansem";
+TaskDesc gTaskDescHumAnsem = { "task_hum_ansem", task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
 
 const u32 gUnk_0813F214[3] = {
     36, 36, 36,
@@ -158,7 +158,7 @@ const HumDef gHumHadesDef = {
 #endif
     , 0, gUnk_09617F18, 0, { 44, 99, 90, 14, 52, 99, 4 } };
 
-const char gTaskNameHumHades[] = "task_hum_hades";
+TaskDesc gTaskDescHumHades = { "task_hum_hades", task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
 
 const u32 gUnk_0813F350[3] = {
     37, 36, 37,
@@ -190,7 +190,7 @@ const HumSubDef gHumMahluxiaSubDef = { gUnk_08F6DC84, 90, 0 };
 
 const HumDef gHumMahluxiaDef = { 90, 0, gUnk_09618438, 0, { 51, 99, 60, 14, 40, 99, 0 } };
 
-const char gTaskNameHumMahluxia[] = "task_hum_mahluxia";
+TaskDesc gTaskDescHumMahluxia = { "task_hum_mahluxia", task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
 
 const u32 gUnk_0813F480[2][3] = {
     { 36, 38, 38 },
@@ -217,9 +217,9 @@ const AnimDef gUnk_0813F498[15] = {
 
 const HumDef gHumLaxeneDef = { 128, 0, gUnk_09618458, 0, { 49, 99, 60, 14, 46, 99, 0 } };
 
-const char gTaskNameHumLaxene[] = "task_hum_laxene";
+TaskDesc gTaskDescHumLaxene = { "task_hum_laxene", task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
 
-const char gTaskNameHumLaxeneKnf[] = "task_hum_laxene_knf";
+TaskDesc gTaskDescHumLaxeneKnf = { "task_hum_laxene_knf", task_hum_laxene_knf_0, task_hum_laxene_knf_1, task_hum_laxene_knf_2, task_hum_laxene_knf_3, 0x44 };
 
 const u32 gUnk_0813F5C8[2][3] = {
     { 36, 36, 36 },
@@ -266,9 +266,9 @@ const HumDef gHumAxcelDef = {
 #endif
     , 0, gUnk_096180F8, 0, { 48, 99, 60, 14, 32, 99, 0 } };
 
-const char gTaskNameHumAxcel[] = "task_hum_axcel";
+TaskDesc gTaskDescHumAxcel = { "task_hum_axcel", task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
 
-const char gTaskNameHumAxcelPtc[] = "task_hum_axcel_ptc";
+TaskDesc gTaskDescHumAxcelPtc = { "task_hum_axcel_ptc", task_hum_axcel_ptc_0, task_hum_axcel_ptc_1, task_hum_axcel_ptc_2, task_hum_axcel_ptc_3, 0x30 };
 
 const u32 gUnk_0813F7A8[3] = {
     36, 37, 36,
@@ -306,11 +306,11 @@ const AnimDef gUnk_0813F7D8[15] = {
 
 const HumDef gHumVixenDef = { 83, 0, gUnk_096183B8, 0, { 50, 99, 80, 14, 48, 99, 0 } };
 
-const char gTaskNameHumVixen[] = "task_hum_vixen";
+TaskDesc gTaskDescHumVixen = { "task_hum_vixen", task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
 
-const char gTaskNameHumVixenNdl[] = "task_hum_vixen_ndl";
+TaskDesc gTaskDescHumVixenNdl = { "task_hum_vixen_ndl", task_hum_vixen_ndl_0, task_hum_vixen_ndl_1, task_hum_vixen_ndl_2, task_hum_vixen_ndl_3, 0x30 };
 
-const char gTaskNameHumVixenIce[] = "task_hum_vixen_ice";
+TaskDesc gTaskDescHumVixenIce = { "task_hum_vixen_ice", task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
 
 const AnimDef gUnk_0813F91C[13] = {
     { gUnk_09EE20E8, gUnk_09EE2110, gUnk_08C10A58, 0, { 0, 0, 0 } },
@@ -328,7 +328,7 @@ const AnimDef gUnk_0813F91C[13] = {
     { gUnk_09EE2168, gUnk_09EE2180, gUnk_08C1B592, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameHumVixenFrz[] = "task_hum_vixen_frz";
+TaskDesc gTaskDescHumVixenFrz = { "task_hum_vixen_frz", task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
 
 const VixenFrgDef gVixenFrgDefs[15] = {
     { 12, -29, 3, 0 },
@@ -348,7 +348,7 @@ const VixenFrgDef gVixenFrgDefs[15] = {
     { 3, -54, 1, 1 },
 };
 
-const char gTaskNameHumVixenFrg[] = "task_hum_vixen_frg";
+TaskDesc gTaskDescHumVixenFrg = { "task_hum_vixen_frg", task_hum_vixen_frg_0, task_hum_vixen_frg_1, task_hum_vixen_frg_2, task_hum_vixen_frg_3, 0x220 };
 
 const u32 gUnk_0813FA8C[3] = {
     36, 37, 36,
@@ -369,15 +369,15 @@ const AnimDef gUnk_0813FA98[10] = {
 
 const HumDef gHumLexceusDef = { 128, 0, gUnk_09618478, 0, { 53, 99, 70, 24, 52, 99, 4 } };
 
-const char gTaskNameHumLexceus[] = "task_hum_lexceus";
+TaskDesc gTaskDescHumLexceus = { "task_hum_lexceus", task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
 
-const char gTaskNameHumLexTmh[] = "task_hum_lex_tmh";
+TaskDesc gTaskDescHumLexTmh = { "task_hum_lex_tmh", task_hum_lex_tmh_0, task_hum_lex_tmh_1, task_hum_lex_tmh_2, task_hum_lex_tmh_3, 0x4C };
 
-const char gTaskNameHumLexTmh0[] = "task_hum_lex_tmh0";
+TaskDesc gTaskDescHumLexTmh0 = { "task_hum_lex_tmh0", task_hum_lex_tmh0_0, task_hum_lex_tmh0_1, task_hum_lex_tmh0_2, task_hum_lex_tmh0_3, 0x38 };
 
-const char gTaskNameHumLexRock[] = "task_hum_lex_rock";
+TaskDesc gTaskDescHumLexRock = { "task_hum_lex_rock", task_hum_lex_rock_0, task_hum_lex_rock_1, task_hum_lex_rock_2, task_hum_lex_rock_3, 0x2C4 };
 
-const char gTaskNameHumMahluxiaFlw[] = "task_hum_mahluxia_flw";
+TaskDesc gTaskDescHumMahluxiaFlw = { "task_hum_mahluxia_flw", task_hum_mahluxia_flw_0, task_hum_mahluxia_flw_1, task_hum_mahluxia_flw_2, task_hum_mahluxia_flw_3, 0x3C };
 
 const u32 gUnk_0813FBBC[2][3] = {
     { 36, 36, 38 },
@@ -412,7 +412,7 @@ const HumDef gHumRikuDef = { 64, 0, gUnk_09618338, 0, { 45, 99, 38, 14, 24, 99, 
 
 const HumSubDef gHumRikuSubDef = { gUnk_09618338, 64, 0 };
 
-const char gTaskNameHumRiku[] = "task_hum_riku";
+TaskDesc gTaskDescHumRiku = { "task_hum_riku", task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
 
 const AnimDef gUnk_0813FD58[5] = {
     { gUnk_09EF01F0, gUnk_09EF01F8, gUnk_0934B7EC, 0, { 0, 0, 0 } },
@@ -424,7 +424,7 @@ const AnimDef gUnk_0813FD58[5] = {
 
 const HumDef gHumLeonDef = { 128, 0, gUnk_09618258, 0, { 41, 99, 64, 14, 40, 99, 0 } };
 
-const char gTaskNameHumLeon[] = "task_hum_leon";
+TaskDesc gTaskDescHumLeon = { "task_hum_leon", task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
 
 const AnimDef gUnk_0813FDD4[2] = {
     { gUnk_09EEE36C, gUnk_09EEE3BC, gUnk_091C37E0, 5, { 0, 0, 0 } },
@@ -8750,51 +8750,5 @@ void ApplySaveFileSmall(SaveFileSmall* save) {
     RestoreMapCardInventory(&save->small);
     gGameState.flags |= 8;
 }
-
-TaskDesc gTaskDescHumCloud = { gTaskNameHumCloud, task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
-
-TaskDesc gTaskDescHumHook = { gTaskNameHumHook, task_hum_hook_0, task_hum_hook_1, task_hum_hook_2, task_hum_hook_3, 0x1BC };
-
-TaskDesc gTaskDescHumHookMoon = { gTaskNameHumHookMoon, task_hum_hook_moon_0, task_hum_hook_moon_1, task_hum_hook_moon_2, task_hum_hook_moon_3, 0xC };
-
-TaskDesc gTaskDescHumHookBomb = { gTaskNameHumHookBomb, task_hum_hook_bomb_0, task_hum_hook_bomb_1, task_hum_hook_bomb_2, task_hum_hook_bomb_3, 0x54 };
-
-TaskDesc gTaskDescHumAnsem = { gTaskNameHumAnsem, task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
-
-TaskDesc gTaskDescHumHades = { gTaskNameHumHades, task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
-
-TaskDesc gTaskDescHumMahluxia = { gTaskNameHumMahluxia, task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
-
-TaskDesc gTaskDescHumLaxene = { gTaskNameHumLaxene, task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
-
-TaskDesc gTaskDescHumLaxeneKnf = { gTaskNameHumLaxeneKnf, task_hum_laxene_knf_0, task_hum_laxene_knf_1, task_hum_laxene_knf_2, task_hum_laxene_knf_3, 0x44 };
-
-TaskDesc gTaskDescHumAxcel = { gTaskNameHumAxcel, task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
-
-TaskDesc gTaskDescHumAxcelPtc = { gTaskNameHumAxcelPtc, task_hum_axcel_ptc_0, task_hum_axcel_ptc_1, task_hum_axcel_ptc_2, task_hum_axcel_ptc_3, 0x30 };
-
-TaskDesc gTaskDescHumVixen = { gTaskNameHumVixen, task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
-
-TaskDesc gTaskDescHumVixenNdl = { gTaskNameHumVixenNdl, task_hum_vixen_ndl_0, task_hum_vixen_ndl_1, task_hum_vixen_ndl_2, task_hum_vixen_ndl_3, 0x30 };
-
-TaskDesc gTaskDescHumVixenIce = { gTaskNameHumVixenIce, task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
-
-TaskDesc gTaskDescHumVixenFrz = { gTaskNameHumVixenFrz, task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
-
-TaskDesc gTaskDescHumVixenFrg = { gTaskNameHumVixenFrg, task_hum_vixen_frg_0, task_hum_vixen_frg_1, task_hum_vixen_frg_2, task_hum_vixen_frg_3, 0x220 };
-
-TaskDesc gTaskDescHumLexceus = { gTaskNameHumLexceus, task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
-
-TaskDesc gTaskDescHumLexTmh = { gTaskNameHumLexTmh, task_hum_lex_tmh_0, task_hum_lex_tmh_1, task_hum_lex_tmh_2, task_hum_lex_tmh_3, 0x4C };
-
-TaskDesc gTaskDescHumLexTmh0 = { gTaskNameHumLexTmh0, task_hum_lex_tmh0_0, task_hum_lex_tmh0_1, task_hum_lex_tmh0_2, task_hum_lex_tmh0_3, 0x38 };
-
-TaskDesc gTaskDescHumLexRock = { gTaskNameHumLexRock, task_hum_lex_rock_0, task_hum_lex_rock_1, task_hum_lex_rock_2, task_hum_lex_rock_3, 0x2C4 };
-
-TaskDesc gTaskDescHumMahluxiaFlw = { gTaskNameHumMahluxiaFlw, task_hum_mahluxia_flw_0, task_hum_mahluxia_flw_1, task_hum_mahluxia_flw_2, task_hum_mahluxia_flw_3, 0x3C };
-
-TaskDesc gTaskDescHumRiku = { gTaskNameHumRiku, task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
-
-TaskDesc gTaskDescHumLeon = { gTaskNameHumLeon, task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
 
 TaskDesc gTaskDescHumRobe = { "task_hum_robe", task_hum_robe_0, task_hum_robe_1, task_hum_robe_2, task_hum_robe_3, 0x18C };

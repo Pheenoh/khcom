@@ -19,11 +19,11 @@ const AnimDef gUnk_0813E958[8] = {
     { gUnk_09EDE6E0, gUnk_09EDE70C, gUnk_0888F218, 1, { 0, 0, 0 } },
 };
 
-const char gTaskNameSmnCloud[] = "task_smn_cloud";
+TaskDesc gTaskDescSmnCloud = { "task_smn_cloud", task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
 
 const AnimDef gUnk_0813E9E8 = { gUnk_09EDE790, gUnk_09EDE7B0, gUnk_088A4ADE, 0, { 0, 0, 0 } };
 
-const char gTaskNameSmnBambi[] = "task_smn_bambi";
+TaskDesc gTaskDescSmnBambi = { "task_smn_bambi", task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
 
 const AnimDef gUnk_0813EA08[3] = {
     { gUnk_09EEF628, gUnk_09EEF65C, gUnk_092D2EB6, 1, { 0, 0, 0 } },
@@ -31,13 +31,13 @@ const AnimDef gUnk_0813EA08[3] = {
     { gUnk_09EEF628, gUnk_09EEF65C, gUnk_092D2EB6, 3, { 0, 0, 0 } },
 };
 
-const char gTaskNameSmnTink[] = "task_smn_tink";
+TaskDesc gTaskDescSmnTink = { "task_smn_tink", task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
 
-const char gTaskNameSmnTinkeff[] = "task_smn_tinkeff";
+TaskDesc gTaskDescSmnTinkeff = { "task_smn_tinkeff", task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
 
 const AnimDef gUnk_0813EA5C = { gUnk_09EDE7F0, gUnk_09EDE810, gUnk_088A6022, 0, { 0, 0, 0 } };
 
-const char gTaskNameSmnSimba[] = "task_smn_simba";
+TaskDesc gTaskDescSmnSimba = { "task_smn_simba", task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
 
 const AnimDef gUnk_0813EA7C[4] = {
     { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 0, { 0, 0, 0 } },
@@ -48,7 +48,7 @@ const AnimDef gUnk_0813EA7C[4] = {
 
 const AnimDef gUnk_0813EABC = { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 4, { 0, 0, 0 } };
 
-const char gTaskNameSmnMushu[] = "task_smn_mushu";
+TaskDesc gTaskDescSmnMushu = { "task_smn_mushu", task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
 
 const AnimDef gUnk_0813EADC[3] = {
     { gUnk_09EDE848, gUnk_09EDE86C, gUnk_088ABF88, 0, { 0, 0, 0 } },
@@ -56,14 +56,14 @@ const AnimDef gUnk_0813EADC[3] = {
     { gUnk_09EDE848, gUnk_09EDE86C, gUnk_088ABF88, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameSmnDumbo[] = "task_smn_dumbo";
+TaskDesc gTaskDescSmnDumbo = { "task_smn_dumbo", task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
 
 const AnimDef gUnk_0813EB1C[2] = {
     { gUnk_09EDE878, gUnk_09EDE898, gUnk_088B087C, 0, { 0, 0, 0 } },
     { gUnk_09EDE878, gUnk_09EDE898, gUnk_088B087C, 1, { 0, 0, 0 } },
 };
 
-const char gTaskNameSmnGenie[] = "task_smn_genie";
+TaskDesc gTaskDescSmnGenie = { "task_smn_genie", task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
 
 const AnimDef gUnk_0813EB4C[3] = {
     { gUnk_09EDE8A0, gUnk_09EDE8C0, gUnk_088B4A9C, 0, { 0, 0, 0 } },
@@ -2621,21 +2621,5 @@ void func_08045494(BtlObj* body, u8 a, s16 b, s16 c) {
         }
     }
 }
-
-TaskDesc gTaskDescSmnCloud = { gTaskNameSmnCloud, task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
-
-TaskDesc gTaskDescSmnBambi = { gTaskNameSmnBambi, task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
-
-TaskDesc gTaskDescSmnTink = { gTaskNameSmnTink, task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
-
-TaskDesc gTaskDescSmnTinkeff = { gTaskNameSmnTinkeff, task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
-
-TaskDesc gTaskDescSmnSimba = { gTaskNameSmnSimba, task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
-
-TaskDesc gTaskDescSmnMushu = { gTaskNameSmnMushu, task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
-
-TaskDesc gTaskDescSmnDumbo = { gTaskNameSmnDumbo, task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
-
-TaskDesc gTaskDescSmnGenie = { gTaskNameSmnGenie, task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
 
 TaskDesc gTaskDescSmnKing = { "task_smn_king", task_smn_king_0, task_smn_king_1, task_smn_king_2, task_smn_king_3, 0x168 };

@@ -17,8 +17,9 @@
 #include "gba/keys.h"
 #include "gba/io_reg.h"
 
-const char gTaskNameBtlLockon[] = "task_btl_lockon";
-const char gTaskNameBtlArea[] = "task_btl_area";
+TaskDesc gTaskDescBtlLockon = { "task_btl_lockon", task_btl_lockon_0, task_btl_lockon_1, task_btl_lockon_2, task_btl_lockon_3, 0x28 };
+
+TaskDesc gTaskDescBtlArea = { "task_btl_area", task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
 
 const AnimDef gUnk_0813BA2C[77] = {
     { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 0, { 0, 0, 0 } },
@@ -148,7 +149,7 @@ const u8 gUnk_0813C294[5] = {
     10, 12, 15, 18, 20,
 };
 
-const char gTaskNameBtlSora[] = "task_btl_sora";
+TaskDesc gTaskDescBtlSora = { "task_btl_sora", task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
 const AnimDef gUnk_0813C2AC[35] = {
     { gUnk_09EDF374, gUnk_09EDF38C, gUnk_0891ED26, 0, { 0, 0, 0 } },
@@ -10911,11 +10912,5 @@ void task_btl_riku_3(BtlRikuWork* work) {
     ReleaseObjTiles(work->tiles);
     TaskPoolDestroy(&work->tasks);
 }
-
-TaskDesc gTaskDescBtlLockon = { gTaskNameBtlLockon, task_btl_lockon_0, task_btl_lockon_1, task_btl_lockon_2, task_btl_lockon_3, 0x28 };
-
-TaskDesc gTaskDescBtlArea = { gTaskNameBtlArea, task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
-
-TaskDesc gTaskDescBtlSora = { gTaskNameBtlSora, task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
 TaskDesc gTaskDescBtlRiku = { "task_btl_riku", task_btl_riku_0, task_btl_riku_1, task_btl_riku_2, task_btl_riku_3, 0x374 };

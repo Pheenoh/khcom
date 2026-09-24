@@ -16,7 +16,7 @@ const AnimDef gUnk_0813EB8C[6] = {
     { gUnk_09EEE0C4, gUnk_09EEE170, gUnk_091A4386, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdDonald[] = "task_frd_donald";
+TaskDesc gTaskDescFrdDonald = { "task_frd_donald", task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
 
 const AnimDef gUnk_0813EBFC[5] = {
     { gUnk_09EDE538, gUnk_09EDE540, gUnk_088717D8, 0, { 0, 0, 0 } },
@@ -26,7 +26,7 @@ const AnimDef gUnk_0813EBFC[5] = {
     { gUnk_09EDE4F0, gUnk_09EDE50C, gUnk_0886ADEC, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdGoofy[] = "task_frd_goofy";
+TaskDesc gTaskDescFrdGoofy = { "task_frd_goofy", task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
 
 const AnimDef gUnk_0813EC5C[3] = {
     { gUnk_09EDE5C8, gUnk_09EDE5F0, gUnk_088777F6, 0, { 0, 0, 0 } },
@@ -34,7 +34,7 @@ const AnimDef gUnk_0813EC5C[3] = {
     { gUnk_09EDE5C8, gUnk_09EDE5F0, gUnk_088777F6, 2, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdAriel[] = "task_frd_ariel";
+TaskDesc gTaskDescFrdAriel = { "task_frd_ariel", task_frd_ariel_0, task_frd_ariel_1, task_frd_ariel_2, task_frd_ariel_3, 0x164 };
 
 const AnimDef gUnk_0813EC9C[5] = {
     { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 0, { 0, 0, 0 } },
@@ -44,7 +44,7 @@ const AnimDef gUnk_0813EC9C[5] = {
     { gUnk_09EDE594, gUnk_09EDE5B4, gUnk_08875122, 4, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdJack[] = "task_frd_jack";
+TaskDesc gTaskDescFrdJack = { "task_frd_jack", task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
 
 const AnimDef gUnk_0813ECFC[4] = {
     { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 0, { 0, 0, 0 } },
@@ -53,7 +53,7 @@ const AnimDef gUnk_0813ECFC[4] = {
     { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 3, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdPan[] = "task_frd_pan";
+TaskDesc gTaskDescFrdPan = { "task_frd_pan", task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
 
 const AnimDef gUnk_0813ED4C[3] = {
     { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 2, { 0, 0, 0 } },
@@ -61,7 +61,7 @@ const AnimDef gUnk_0813ED4C[3] = {
     { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 1, { 0, 0, 0 } },
 };
 
-const char gTaskNameFrdAladdin[] = "task_frd_aladdin";
+TaskDesc gTaskDescFrdAladdin = { "task_frd_aladdin", task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
 
 const AnimDef gUnk_0813ED90[2] = {
     { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 0, { 0, 0, 0 } },
@@ -2351,17 +2351,5 @@ void task_frd_beast_3(FrdBeastWork* work) {
     ReleaseObjPalette(work->palette);
     TaskPoolDestroy(&work->tasks);
 }
-
-TaskDesc gTaskDescFrdDonald = { gTaskNameFrdDonald, task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
-
-TaskDesc gTaskDescFrdGoofy = { gTaskNameFrdGoofy, task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
-
-TaskDesc gTaskDescFrdAriel = { gTaskNameFrdAriel, task_frd_ariel_0, task_frd_ariel_1, task_frd_ariel_2, task_frd_ariel_3, 0x164 };
-
-TaskDesc gTaskDescFrdJack = { gTaskNameFrdJack, task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
-
-TaskDesc gTaskDescFrdPan = { gTaskNameFrdPan, task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
-
-TaskDesc gTaskDescFrdAladdin = { gTaskNameFrdAladdin, task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
 
 TaskDesc gTaskDescFrdBeast = { "task_frd_beast", task_frd_beast_0, task_frd_beast_1, task_frd_beast_2, task_frd_beast_3, 0x160 };
