@@ -259,7 +259,7 @@ extern u8 gUnkUs_09A5169C[2];
 extern u8 gUnkUs_09A516A0[22];
 extern u8 gUnkUs_09A516B8[2];
 extern u8 gUnkUs_09A516BC[11];
-extern u8 gUnkUs_09A54204[2];
+extern const u8 gUnkUs_09A54204[2];
 #endif
 
 #ifdef VERSION_JP
@@ -547,7 +547,7 @@ extern u8 gUnkJp_09A0652C[2];
 extern u8 gUnkJp_09A06530[22];
 extern u8 gUnkJp_09A06548[2];
 extern u8 gUnkJp_09A0654C[11];
-extern u8 gUnkJp_09A09094[2];
+extern const u8 gUnkJp_09A09094[2];
 #endif
 
 #ifdef VERSION_EU
@@ -832,7 +832,7 @@ extern u8 gUnkEu_09AAF3D4[2];
 extern u8 gUnkEu_09AAF3D8[22];
 extern u8 gUnkEu_09AAF3F0[2];
 extern u8 gUnkEu_09AAF3F4[11];
-extern u8 gUnkEu_09AB1F3C[2];
+extern const u8 gUnkEu_09AB1F3C[2];
 #endif
 
 #endif

@@ -1028,10 +1028,6 @@ regions:
       address: '0x9a516bc'
       size: 11
       encoding: shift_jis
-    - name: gUnkUs_09A54204
-      address: '0x9a54204'
-      size: 2
-      encoding: shift_jis
   jp:
     named_assets:
     - name: gUnkJp_09A049D0
@@ -2170,10 +2166,6 @@ regions:
       address: '0x9a0654c'
       size: 11
       encoding: shift_jis
-    - name: gUnkJp_09A09094
-      address: '0x9a09094'
-      size: 2
-      encoding: shift_jis
   eu:
     named_assets:
     - name: gUnkEu_09AADA0C
@@ -3299,8 +3291,4 @@ regions:
     - name: gUnkEu_09AAF3F4
       address: '0x9aaf3f4'
       size: 11
-      encoding: shift_jis
-    - name: gUnkEu_09AB1F3C
-      address: '0x9ab1f3c'
-      size: 2
       encoding: shift_jis

@@ -535,9 +535,6 @@ bos6.c
 bos7_tables.s
 bos7.c
 staff_roll_script_text.s
-staff_roll_script_data.c
-staff_roll_scene_data.c
-mode_staffroll_rodata.s
 mode_staffroll.c
 sprites_staff_roll_tiles_1.s
 sroll.c

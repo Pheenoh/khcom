@@ -340,7 +340,7 @@ extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_09C5C4E2[];
 extern u8 gUnk_09C5C704[];
 
-extern u8 gUnk_09A541C8[];
+extern const u8 gUnk_09A541C8[];
 
 void func_0810FEDC(void);
 void func_0810FE94(void);

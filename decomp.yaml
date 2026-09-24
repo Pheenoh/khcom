@@ -162,8 +162,6 @@ tools:
             - src/staff_roll_localized_resource_data
             - src/staff_roll_resource_data
             - src/staff_roll_resource_tail_data
-            - src/staff_roll_scene_data
-            - src/staff_roll_script_data
             - src/world_intro_data
             - src/worldinspect_data
             - src/worldlogo_state
