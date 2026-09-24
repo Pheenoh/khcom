@@ -168,7 +168,6 @@ card_prize_card_init.c
 card_reload_children.c
 card_friend_card.c
 card_premire_chance.c
-premium_card_text.s
 card_name.c
 premium_card_effect_tiles.s
 mode_premire_name_text.s

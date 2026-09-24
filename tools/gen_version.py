@@ -1898,7 +1898,6 @@ TARGET_ONLY_SYMBOLS = {
         "gMoogleAssetEu_099B23E8": 0x99b23e8,
         "gMoogleAssetEu_099B2668": 0x99b2668,
         "gBossMapBlockEu_08124944": 0x8124944,
-        "gUnkEu_090CF64D": 0x090CF64D,
         "gUnkEu_090D1FB0": 0x090D1FB0,
         "gUnkEu_090D1DA5": 0x090D1DA5,
         "gUnk_08B1ED76": 0x08b4a686,
@@ -1999,8 +1998,6 @@ TARGET_ONLY_SYMBOLS = {
         "gMoogleAssetJp_09958EEC": 0x9958eec,
         "gMoogleAssetJp_0995916C": 0x995916c,
         "gBossMapBlockJp_08125EA0": 0x8125ea0,
-        "gUnkJp_09009748": 0x09009748,
-        "gUnkJp_0900974C": 0x0900974C,
         "gUnk_08B25EF0": 0x08B190C6,
     },
 }
@@ -2175,6 +2172,7 @@ TARGET_DATA_SIZE = {
         ("msg_localized_data.c", ".data"): 0x1075c,
         ("card_deckmenu2.c", ".rodata"): 0x30c,
         ("card_prize_card_init.c", ".rodata"): 0x7ad,
+        ("card_name.c", ".rodata"): 0x34,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,
@@ -2192,6 +2190,7 @@ TARGET_DATA_SIZE = {
         ("jiminy_inline_text_data.c", ".rodata"): 0x1c9,
         ("mode_jiminy.c", ".rodata"): 0x48a8,
         ("card_deckmenu2.c", ".rodata"): 0x442,
+        ("card_name.c", ".rodata"): 0x44,
     },
 }
 
@@ -2207,6 +2206,7 @@ TARGET_DATA_ADDR = {
         ("sroll_c_char.c", ".rodata"): 0x09a093ac,
         ("sroll_tmr.c", ".rodata"): 0x09a093c0,
         ("card_deckmenu2.c", ".rodata"): 0x090089b0,
+        ("card_name.c", ".rodata"): 0x09009748,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2242,6 +2242,7 @@ TARGET_DATA_ADDR = {
         ("ms_charge.c", ".data"): 0x09f84fa8,
         ("mode_mapinspect.c", ".data"): 0x09f85008,
         ("card_deckmenu2.c", ".rodata"): 0x090ce9e0,
+        ("card_name.c", ".rodata"): 0x090cf648,
     },
 }
 

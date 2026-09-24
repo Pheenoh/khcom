@@ -55,13 +55,19 @@ u8 gUnk_02034ADA[6];
 void func_0809D124(PremiumCardEffectWork* w);
 void func_0809D1B0(PremiumCardEffectWork* w);
 void func_0809D160(PremiumCardEffectWork* w);
+
 #ifdef VERSION_JP
-extern u8 gUnkJp_09009748[];
-extern u8 gUnkJp_0900974C[];
+const u8 gUnkJp_09009748[] = "\x82\xaa";
+
+const u8 gUnkJp_0900974C[] = "\x83\x76\x83\x8c\x83\x7e\x83\x41\x89\xbb\x82\xb5\x82\xbd\x81\x49";
+#elif defined(VERSION_EU)
+const u8 gUnkEu_090CF648[5] = { ' ', 'e', 's', 't', 0 };
+
+const u8 gUnkEu_090CF64D[2] = { 0xa1, 0 };
+#else
+const u16 gUnk_090362A4[23] = { 'b', 'e', 'c', 'a', 'm', 'e', ' ', 'a', ' ', 'p', 'r', 'e', 'm', 'i', 'u', 'm', ' ', 'c', 'a', 'r', 'd', '!', 0 };
 #endif
-#ifdef VERSION_EU
-extern u8 gUnkEu_090CF64D[];
-#endif
+
 void CardName_0(CardNameWork* w) {
     UnkStruct_0809C534* q = gCardListWork->selectedCard;
     UnkStruct_080038C8* pal;
@@ -85,7 +91,7 @@ void CardName_0(CardNameWork* w) {
     w->textSlotCount3 = LoadTextSlots((u16*)gUnkJp_09009748, w->textSlots3);
     w->textSlotCount2 = LoadTextSlots((u16*)gUnkJp_0900974C, w->textSlots2);
 #else
-    w->textSlotCount2 = LoadTextSlots((u16*)&gUnk_09036278[22], w->textSlots2);
+    w->textSlotCount2 = LoadTextSlots((u16*)gUnk_090362A4, w->textSlots2);
 #endif
 #endif
 #ifndef VERSION_JP
@@ -105,7 +111,7 @@ void CardName_0(CardNameWork* w) {
         w->unk_222 = v;
         break;
     case 1:
-        w->textSlotCount3 = LoadTextSlots((u16*)&gUnk_09036278[22], w->textSlots3);
+        w->textSlotCount3 = LoadTextSlots((u16*)gUnkEu_090CF648, w->textSlots3);
         v = (230 - GetTextSlotsWidth(w->textSlots, w->textSlotCount)) / 2;
         w->unk_220 = v;
         t = (u16)w->unk_220 + GetTextSlotsWidth(w->textSlots, w->textSlotCount);
