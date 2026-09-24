@@ -39,7 +39,7 @@ const u16 gUnk_0813CD4C[8][8] = {
     { 109, 110, 111, 112, 122, 123, 135, 0 },
 };
 
-const char gTaskNameFldSora[] = "task_fld_sora";
+TaskDesc gTaskDescFldSora = { "task_fld_sora", task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
 
 const AnimDef gUnk_0813CDDC[15][5] = {
     { { gUnk_09EDF4C0, gUnk_09EDF4C4, gUnk_08933A34, 0, { 0, 0, 0 } }, { gUnk_09EEF89C, gUnk_09EEF8C0, gUnk_092EB78A, 0, { 0, 0, 0 } }, { gUnk_09EEF894, gUnk_09EEF898, gUnk_092EB288, 0, { 0, 0, 0 } }, { gUnk_09EDF4C8, gUnk_09EDF4CC, gUnk_08933D94, 0, { 0, 0, 0 } }, { gUnk_09EEF8C8, gUnk_09EEF8CC, gUnk_092ED580, 0, { 0, 0, 0 } } },
@@ -3498,8 +3498,6 @@ void task_fld_shadow_3(FldShadowWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
-
-TaskDesc gTaskDescFldSora = { gTaskNameFldSora, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
 
 TaskDesc gTaskDescFldRiku = { "task_fld_riku", task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
 
