@@ -1422,7 +1422,7 @@ const char gModeNameMsCharge[] = "mode_ms_charge";
 
 Mode gModeMsCharge = {
     gModeNameMsCharge,
-    (void (*)(s32))mode_ms_charge_0,
+    (ModeInitFunc)mode_ms_charge_0,
     mode_ms_charge_1,
     mode_ms_charge_2,
 };

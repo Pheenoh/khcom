@@ -303,18 +303,18 @@ void Continue_3(ContinueWork* p) {
 }
 TaskDesc gUnk_09EE2834 = {
     gTaskNameContinue,
-    (void (*)(void*, void*))func_0806CD60,
+    (TaskInitFunc)func_0806CD60,
     Continue_1,
-    (void (*)(void*))Continue_2,
-    (void (*)(void*))Continue_3,
+    (TaskFunc)Continue_2,
+    (TaskFunc)Continue_3,
     0x6C,
 };
 
 TaskDesc gUnk_09EE284C = {
     gTaskNameContinue,
-    (void (*)(void*, void*))func_0806CF04,
+    (TaskInitFunc)func_0806CF04,
     Continue_1,
-    (void (*)(void*))Continue_2,
-    (void (*)(void*))Continue_3,
+    (TaskFunc)Continue_2,
+    (TaskFunc)Continue_3,
     0x6C,
 };

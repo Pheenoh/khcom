@@ -125,7 +125,7 @@ u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a) {
         w->tiles2 = LoadObjTiles(gUnk_08F709B0[w->unk_19].tiles2, 0xD00);
         w->unk_44 = 8;
         w->unk_28 = 0x66;
-        SetTaskUpdate(a, (void*)func_08098BA4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08098BA4);
         return 1;
     }
 
@@ -146,7 +146,7 @@ u8 func_08098AE4(ReloadChildWork* w, void* a) {
     if (v == 0) {
         w->unk_44 = 8;
         f = RELOAD_CHILDREN_1;
-        SetTaskUpdate(a, (void*)f);
+        SetTaskUpdate(a, (TaskUpdateFunc)f);
         w->unk_46 = 0;
         return f(w, a);
     }
@@ -283,7 +283,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 
                 w->unk_28 = 8;
                 f = func_080990CC;
-                SetTaskUpdate(a, (u32)f);
+                SetTaskUpdate(a, (TaskUpdateFunc)f);
                 w->unk_26 = *(u16*)w->args.unk_04;
                 return f(w, a);
             }
@@ -297,7 +297,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 
                 w->unk_28 = 8;
                 f = func_080990CC;
-                SetTaskUpdate(a, (u32)f);
+                SetTaskUpdate(a, (TaskUpdateFunc)f);
                 w->unk_26 = *(u16*)w->args.unk_04;
                 return f(w, a);
             }
@@ -309,7 +309,7 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
 
         w->unk_28 = 8;
         f = func_080990CC;
-        SetTaskUpdate(a, (u32)f);
+        SetTaskUpdate(a, (TaskUpdateFunc)f);
         w->unk_26 = *(u16*)w->args.unk_04;
         return f(w, a);
     }
@@ -331,19 +331,19 @@ u8 REV_COUNT_1(RevCountWork* w, void* a) {
         u8 (*f)(RevCountWork*, void*);
 
         f = (u8 (*)(RevCountWork*, void*))func_08098FDC;
-        SetTaskUpdate(a, (u32)f);
+        SetTaskUpdate(a, (TaskUpdateFunc)f);
         w->unk_28 = 8;
         return f(w, a);
     }
 
     if (gBtlWork->unk_0A0 == 4) {
         w->unk_28 = 8;
-        SetTaskUpdate(a, (u32)func_08099048);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08099048);
     }
 
     if (*(u8*)w->args.unk_08 == 0) {
         w->unk_28 = 8;
-        SetTaskUpdate(a, (u32)func_08099048);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08099048);
     }
 
     return 1;
@@ -391,7 +391,7 @@ u8 func_08099048(RevCountWork* w, void* a) {
     if (*(u8*)w->args.unk_08 == 1) {
         w->unk_28 = 8;
         f = REV_COUNT_1;
-        SetTaskUpdate(a, (void*)f);
+        SetTaskUpdate(a, (TaskUpdateFunc)f);
         return f(w, a);
     }
 
@@ -418,14 +418,14 @@ u8 func_080990CC(RevCountWork* w, void* a) {
         if (w->unk_24 == 0) {
             if (*(s16*)w->args.unk_04 > 1) {
                 f = REV_COUNT_1;
-                SetTaskUpdate(a, (void*)f);
+                SetTaskUpdate(a, (TaskUpdateFunc)f);
                 w->unk_28 = 8;
                 return f(w, a);
             }
         } else {
             if (*(s16*)w->args.unk_04 > 0) {
                 f = REV_COUNT_1;
-                SetTaskUpdate(a, (void*)f);
+                SetTaskUpdate(a, (TaskUpdateFunc)f);
                 w->unk_28 = 8;
                 return f(w, a);
             }
@@ -501,12 +501,12 @@ u8 RELOAD_1(u8* work, void* a) {
 
     if (**(u8**)&work[0x30] == 0) {
         work[0x34] = 8;
-        SetTaskUpdate(a, (void*)func_08099330);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08099330);
     }
 
     if (gBtlWork->unk_0A0 == 4) {
         work[0x34] = 8;
-        SetTaskUpdate(a, (void*)func_08099330);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08099330);
     }
 
     return 1;
@@ -616,7 +616,7 @@ u8 PrizeBoss_1(BossPrizeWork* w, void* a) {
         if (gGameState.flags & 8) {
             _08085D04(gGameState.world);
         }
-        SetTaskUpdate(a, (void*)func_08099A18);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08099A18);
         WorldToScreen(&x, &y, w->unk_A8, w->unk_AC, w->unk_B0);
         w->unk_A8 = x << 8;
         w->unk_AC = y << 8;
@@ -741,7 +741,7 @@ u8 func_08099A18(BossPrizeWork* w, void* a) {
         if (w->unk_CC <= 0x7FF) {
             w->unk_EB = 0;
             w->unk_E6 = 0;
-            SetTaskUpdate(a, (void*)func_08099B60);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08099B60);
 #ifdef VERSION_EU
             CreateCardNameDisplay(&w->tasks, eu_0805E924(gCardDefs[w->cardId].name));
 #else
@@ -809,12 +809,12 @@ u8 func_08099B60(BossPrizeWork* w, void* a) {
     if ((u32)w->cardId > 0x1C2) {
         if (w->unk_EC == 120) {
             w->unk_EC = 0;
-            SetTaskUpdate(a, (void*)func_08099C4C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08099C4C);
         }
     } else {
         if (w->unk_EC == 30) {
             w->unk_EC = 0;
-            SetTaskUpdate(a, (void*)func_08099C4C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08099C4C);
         }
     }
 
@@ -1017,10 +1017,10 @@ const char gTaskNameReloadChildren[] = "RELOAD_CHILDREN";
 
 TaskDesc gTaskDescReloadChildren = {
     gTaskNameReloadChildren,
-    (void (*)(void*, void*))RELOAD_CHILDREN_0,
+    (TaskInitFunc)RELOAD_CHILDREN_0,
     RELOAD_CHILDREN_1,
-    (void (*)(void*))RELOAD_CHILDREN_2,
-    (void (*)(void*))RELOAD_CHILDREN_3,
+    (TaskFunc)RELOAD_CHILDREN_2,
+    (TaskFunc)RELOAD_CHILDREN_3,
     0x48,
 };
 
@@ -1050,10 +1050,10 @@ const char gTaskNameREVCOUNT[] = "REV_COUNT";
 
 TaskDesc gTaskDescREVCOUNT = {
     gTaskNameREVCOUNT,
-    (void (*)(void*, void*))REV_COUNT_0,
+    (TaskInitFunc)REV_COUNT_0,
     REV_COUNT_1,
-    (void (*)(void*))REV_COUNT_2,
-    (void (*)(void*))REV_COUNT_3,
+    (TaskFunc)REV_COUNT_2,
+    (TaskFunc)REV_COUNT_3,
     0x44,
 };
 
@@ -1079,10 +1079,10 @@ const char gTaskNameRELOAD[] = "RELOAD";
 
 TaskDesc gTaskDescRELOAD = {
     gTaskNameRELOAD,
-    (void (*)(void*, void*))RELOAD_0,
+    (TaskInitFunc)RELOAD_0,
     RELOAD_1,
-    (void (*)(void*))RELOAD_2,
-    (void (*)(void*))RELOAD_3,
+    (TaskFunc)RELOAD_2,
+    (TaskFunc)RELOAD_3,
     0x38,
 };
 
@@ -1090,10 +1090,10 @@ const char gTaskNamePrizeBoss[] = "PrizeBoss";
 
 TaskDesc gTaskDescPrizeBoss = {
     gTaskNamePrizeBoss,
-    (void (*)(void*, void*))PrizeBoss_0,
+    (TaskInitFunc)PrizeBoss_0,
     PrizeBoss_1,
-    (void (*)(void*))PrizeBoss_2,
-    (void (*)(void*))PrizeBoss_3,
+    (TaskFunc)PrizeBoss_2,
+    (TaskFunc)PrizeBoss_3,
     0xF0,
 };
 
@@ -1101,10 +1101,10 @@ const char gTaskNameCardEFFECT[] = "Card_EFFECT";
 
 TaskDesc gTaskDescCardEFFECT = {
     gTaskNameCardEFFECT,
-    (void (*)(void*, void*))Card_EFFECT_0,
+    (TaskInitFunc)Card_EFFECT_0,
     Card_EFFECT_1,
-    (void (*)(void*))Card_EFFECT_2,
-    (void (*)(void*))Card_EFFECT_3,
+    (TaskFunc)Card_EFFECT_2,
+    (TaskFunc)Card_EFFECT_3,
     0x4C,
 };
 
@@ -1112,9 +1112,9 @@ const char gTaskNameScrollbar[] = "scrollbar";
 
 TaskDesc gTaskDescScrollbar = {
     gTaskNameScrollbar,
-    (void (*)(void*, void*))scrollbar_0,
+    (TaskInitFunc)scrollbar_0,
     scrollbar_1,
-    (void (*)(void*))scrollbar_2,
-    (void (*)(void*))scrollbar_3,
+    (TaskFunc)scrollbar_2,
+    (TaskFunc)scrollbar_3,
     0x18,
 };

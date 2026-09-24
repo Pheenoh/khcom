@@ -384,7 +384,7 @@ u8 func_08032268(FldWork* work, void* task) {
         FadeSetPaletteExcluded(work->palette->index + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)task_fld_sora_1);
+        SetTaskUpdate(task, (TaskUpdateFunc)task_fld_sora_1);
         TaskPoolUpdate(work->tasks);
     } else {
         p = &work->unk_98;
@@ -443,7 +443,7 @@ u8 func_0803234C(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 4;
             work->unk_A4 |= 4;
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         } else {
             work->unk_98++;
         }
@@ -578,7 +578,7 @@ u8 func_080324DC(FldWork* work, void* task) {
                 act->angle = gUnk_0203C7AC->unk_18;
                 work->unk_B8 = act->fieldPosition.z - work->unk_B8;
                 work->unk_94 = 13;
-                SetTaskUpdate(task, (u32)func_0803234C);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_0803234C);
                 work->unk_98 = 0;
             }
         } else {
@@ -686,7 +686,7 @@ u8 func_080324DC(FldWork* work, void* task) {
             work->unk_A4 &= ~4;
             work->unk_94 = 0;
             work->unk_98 = 0;
-            SetTaskUpdate(task, (u32)task_fld_sora_1);
+            SetTaskUpdate(task, (TaskUpdateFunc)task_fld_sora_1);
         } else {
             work->unk_98++;
         }
@@ -719,13 +719,13 @@ u8 func_080324DC(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 6;
             act->angle = 211;
-            SetTaskUpdate(task, (u32)func_08032C3C);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08032C3C);
             break;
         case 1:
             work->unk_98 = 0;
             work->unk_94 = 6;
             act->angle = 45;
-            SetTaskUpdate(task, (u32)func_08032C3C);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08032C3C);
             break;
         default:
             if (work->unk_94 == 4 && act->fieldPosition.unk_0C - act->fieldPosition.z > 0xFFF) {
@@ -739,7 +739,7 @@ u8 func_080324DC(FldWork* work, void* task) {
                     work->unk_98 = 0;
                     work->unk_94 = 8;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_08033150);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_08033150);
                 }
             } else {
                 act->unk_10 = 230 * act->unk_10 >> 8;
@@ -755,7 +755,7 @@ u8 func_080324DC(FldWork* work, void* task) {
 
     if ((gFieldState->flags & 0x40000) != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08032268);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08032268);
         TaskPoolUpdate(work->tasks);
     }
 
@@ -847,7 +847,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
                 work->gfx = AnimGetGfx(work->anim);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
-                SetTaskUpdate(task, (u32)task_fld_sora_1);
+                SetTaskUpdate(task, (TaskUpdateFunc)task_fld_sora_1);
             }
         } else if (d == 0) {
             if ((GetKeysHeld() & DPAD_UP) || ((GetKeysHeld() & DPAD_LEFT) && act->angle == 0xD3) ||
@@ -870,7 +870,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
             act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
             func_08031F98(work, 6, 0);
             work->gfx = AnimGetGfx(work->anim);
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         }
 
         break;
@@ -884,7 +884,7 @@ u8 func_08032C3C(FldWork* work, void* task) {
         if (work->unk_A0 > 0) {
             work->unk_98 = 0;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         } else {
             work->unk_98++;
         }
@@ -916,7 +916,7 @@ u8 func_08033054(FldWork* work, void* task) {
         work->unk_A0 = 0;
         act->angle += 0x80;
         gFieldState->unk_68 = 0;
-        SetTaskUpdate(task, (u32)func_080324DC);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         return 1;
     }
 
@@ -987,7 +987,7 @@ u8 func_08033150(FldWork* work, void* task) {
         if (work->unk_A0 > 0) {
             work->unk_98 = 0;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         } else {
             work->unk_98++;
         }
@@ -1360,7 +1360,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
             func_08031F98(work, 0, 0);
             work->unk_94 = 0;
-            SetTaskUpdate(task, (u32)task_fld_sora_1);
+            SetTaskUpdate(task, (TaskUpdateFunc)task_fld_sora_1);
         } else {
             work->unk_98++;
         }
@@ -1394,7 +1394,7 @@ u8 func_0803366C(FldWork* work, void* task) {
 
     if (gFieldState->flags & 0x40000) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08032268);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08032268);
     }
 
     return 1;
@@ -1429,19 +1429,19 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         case 4:
             gFieldState->flags |= 0x800000;
         case 5:
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
             gFieldState->unk_68 = 0;
             break;
         case 6:
         case 7:
-            SetTaskUpdate(task, (u32)func_08032C3C);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08032C3C);
             gFieldState->unk_68 = 0;
             work->unk_98 = 1;
             break;
         case 8:
         case 9:
         case 10:
-            SetTaskUpdate(task, (u32)func_08033150);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08033150);
             gFieldState->unk_68 = 0;
             break;
         default:
@@ -1456,7 +1456,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         return 1;
     } else if (func_080DFC24() != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08033334);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08033334);
         TaskPoolUpdate(work->tasks);
         work->unk_94 = 15;
 
@@ -1467,7 +1467,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
         return 1;
     } else if ((gFieldState->flags & 0x40000) != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08032268);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08032268);
         TaskPoolUpdate(work->tasks);
         return 1;
     } else {
@@ -1514,13 +1514,13 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
                 gFieldState->flags |= 0x800000;
                 work->unk_98 = 0;
                 work->unk_94 = 2;
-                SetTaskUpdate(task, (u32)func_080324DC);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
                 m4aSongNumStart(work->unk_AC[2]);
             } else if ((GetKeysPressed() & A_BUTTON) != 0) {
                 work->unk_98 = 0;
                 gFieldState->unk_68 = 0;
                 work->unk_94 = 11;
-                SetTaskUpdate(task, (u32)func_0803366C);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_0803366C);
             }
         } else if (AnimIsFinished(work->anim) != 0) {
             work->unk_94 = 0;
@@ -1554,14 +1554,14 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
                     work->unk_94 = 6;
                     act->angle = 211;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_08032C3C);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_08032C3C);
                     break;
                 case 1:
                     work->unk_98 = 0;
                     work->unk_94 = 6;
                     act->angle = 45;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_08032C3C);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_08032C3C);
                     break;
                 }
             } else {
@@ -1674,7 +1674,7 @@ u8 task_fld_sora_1(FldWork* work, void* task) {
             gFieldState->unk_68 = 0;
             gFieldState->flags |= 0x800000;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_080324DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080324DC);
         } else if (z != act->fieldPosition.unk_0C) {
             gFieldState->unk_68 = 0;
         }
@@ -2083,7 +2083,7 @@ u8 func_08034A0C(FldWork* work, void* task) {
         FadeSetPaletteExcluded(work->palette->index + 16, 0);
         work->unk_94 = 0;
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)task_fld_riku_1);
+        SetTaskUpdate(task, (TaskUpdateFunc)task_fld_riku_1);
         TaskPoolUpdate(work->tasks);
     } else {
         p = &work->unk_98;
@@ -2143,7 +2143,7 @@ u8 func_08034AF0(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 4;
             work->unk_A4 |= 4;
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         } else {
             work->unk_98++;
         }
@@ -2277,7 +2277,7 @@ u8 func_08034C88(FldWork* work, void* task) {
                 act->angle = gUnk_0203C7AC->unk_18;
                 work->unk_B8 = act->fieldPosition.z - work->unk_B8;
                 work->unk_94 = 13;
-                SetTaskUpdate(task, (u32)func_08034AF0);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_08034AF0);
                 work->unk_98 = 0;
             }
         } else {
@@ -2385,7 +2385,7 @@ u8 func_08034C88(FldWork* work, void* task) {
             work->unk_A4 &= ~4;
             work->unk_94 = 0;
             work->unk_98 = 0;
-            SetTaskUpdate(task, (u32)task_fld_riku_1);
+            SetTaskUpdate(task, (TaskUpdateFunc)task_fld_riku_1);
         } else {
             work->unk_98++;
         }
@@ -2418,13 +2418,13 @@ u8 func_08034C88(FldWork* work, void* task) {
             work->unk_98 = 0;
             work->unk_94 = 6;
             act->angle = 211;
-            SetTaskUpdate(task, (u32)func_080353DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080353DC);
             break;
         case 1:
             work->unk_98 = 0;
             work->unk_94 = 6;
             act->angle = 45;
-            SetTaskUpdate(task, (u32)func_080353DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080353DC);
             break;
         default:
             if (work->unk_94 == 4 && act->fieldPosition.unk_0C - act->fieldPosition.z > 0xFFF) {
@@ -2438,7 +2438,7 @@ u8 func_08034C88(FldWork* work, void* task) {
                     work->unk_98 = 0;
                     work->unk_94 = 8;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_080358F0);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_080358F0);
                 }
             } else {
                 act->unk_10 = 230 * act->unk_10 >> 8;
@@ -2454,7 +2454,7 @@ u8 func_08034C88(FldWork* work, void* task) {
 
     if ((gFieldState->flags & 0x40000) != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08034A0C);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08034A0C);
     }
 
     return 1;
@@ -2545,7 +2545,7 @@ u8 func_080353DC(FldWork* work, void* task) {
                 work->gfx = AnimGetGfx(work->anim);
                 work->unk_94 = 0;
                 work->unk_98 = 0;
-                SetTaskUpdate(task, (u32)task_fld_riku_1);
+                SetTaskUpdate(task, (TaskUpdateFunc)task_fld_riku_1);
             }
         } else if (d == 0) {
             if ((GetKeysHeld() & DPAD_UP) || ((GetKeysHeld() & DPAD_LEFT) && act->angle == 0xD3) ||
@@ -2568,7 +2568,7 @@ u8 func_080353DC(FldWork* work, void* task) {
             act->fieldPosition.y += -gSineTable[act->angle + 64] * 10;
             func_0803473C(work, 6, 0);
             work->gfx = AnimGetGfx(work->anim);
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         }
 
         break;
@@ -2582,7 +2582,7 @@ u8 func_080353DC(FldWork* work, void* task) {
         if (work->unk_A0 > 0) {
             work->unk_98 = 0;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         } else {
             work->unk_98++;
         }
@@ -2614,7 +2614,7 @@ u8 func_080357F4(FldWork* work, void* task) {
         work->unk_A0 = 0;
         act->angle += 0x80;
         gFieldState->unk_68 = 0;
-        SetTaskUpdate(task, (u32)func_08034C88);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         return 1;
     }
 
@@ -2685,7 +2685,7 @@ u8 func_080358F0(FldWork* work, void* task) {
         if (work->unk_A0 > 0) {
             work->unk_98 = 0;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         } else {
             work->unk_98++;
         }
@@ -3053,7 +3053,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
             func_0803473C(work, 0, 0);
             work->unk_94 = 0;
-            SetTaskUpdate(task, (u32)task_fld_riku_1);
+            SetTaskUpdate(task, (TaskUpdateFunc)task_fld_riku_1);
         } else {
             work->unk_98++;
         }
@@ -3087,7 +3087,7 @@ u8 func_08035DFC(FldWork* work, void* task) {
 
     if (gFieldState->flags & 0x40000) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08034A0C);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08034A0C);
         TaskPoolUpdate(work->tasks);
     }
 
@@ -3122,19 +3122,19 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         case 3:
         case 4:
         case 5:
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
             gFieldState->unk_68 = 0;
             break;
         case 6:
         case 7:
-            SetTaskUpdate(task, (u32)func_080353DC);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080353DC);
             gFieldState->unk_68 = 0;
             work->unk_98 = 1;
             break;
         case 8:
         case 9:
         case 10:
-            SetTaskUpdate(task, (u32)func_080358F0);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_080358F0);
             gFieldState->unk_68 = 0;
             break;
         default:
@@ -3149,7 +3149,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         return 1;
     } else if (func_080DFC24() != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08035AD4);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08035AD4);
         TaskPoolUpdate(work->tasks);
         work->unk_94 = 15;
 
@@ -3160,7 +3160,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
         return 1;
     } else if ((gFieldState->flags & 0x40000) != 0) {
         work->unk_98 = 0;
-        SetTaskUpdate(task, (u32)func_08034A0C);
+        SetTaskUpdate(task, (TaskUpdateFunc)func_08034A0C);
         TaskPoolUpdate(work->tasks);
         return 1;
     } else {
@@ -3207,13 +3207,13 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
                 gFieldState->unk_68 = 0;
                 work->unk_98 = 0;
                 work->unk_94 = 2;
-                SetTaskUpdate(task, (u32)func_08034C88);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
                 m4aSongNumStart(work->unk_AC[2]);
             } else if ((GetKeysPressed() & A_BUTTON) != 0) {
                 work->unk_98 = 0;
                 gFieldState->unk_68 = 0;
                 work->unk_94 = 11;
-                SetTaskUpdate(task, (u32)func_08035DFC);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_08035DFC);
             }
         } else if (AnimIsFinished(work->anim) != 0) {
             work->unk_94 = 0;
@@ -3247,14 +3247,14 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
                     work->unk_94 = 6;
                     act->angle = 211;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_080353DC);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_080353DC);
                     break;
                 case 1:
                     work->unk_98 = 0;
                     work->unk_94 = 6;
                     act->angle = 45;
                     gFieldState->unk_68 = 0;
-                    SetTaskUpdate(task, (u32)func_080353DC);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_080353DC);
                     break;
                 }
             } else {
@@ -3367,7 +3367,7 @@ u8 task_fld_riku_1(FldWork* work, void* task) {
             gFieldState->unk_68 = 0;
             gFieldState->flags |= 0x800000;
             work->unk_94 = 4;
-            SetTaskUpdate(task, (u32)func_08034C88);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08034C88);
         } else if (z != act->fieldPosition.unk_0C) {
             gFieldState->unk_68 = 0;
         }

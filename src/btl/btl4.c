@@ -1048,10 +1048,10 @@ const char gTaskNameBtlPopCb[] = "task_btl_pop_cb";
 
 TaskDesc gTaskDescBtlPopCb = {
     gTaskNameBtlPopCb,
-    (void (*)(void*, void*))task_btl_pop_cb_0,
+    (TaskInitFunc)task_btl_pop_cb_0,
     task_btl_pop_cb_1,
-    (void (*)(void*))task_btl_pop_cb_2,
-    (void (*)(void*))task_btl_pop_cb_3,
+    (TaskFunc)task_btl_pop_cb_2,
+    (TaskFunc)task_btl_pop_cb_3,
     0x1C,
 };
 
@@ -1059,10 +1059,10 @@ const char gTaskNameBtlExp[] = "task_btl_exp";
 
 TaskDesc gTaskDescBtlExp = {
     gTaskNameBtlExp,
-    (void (*)(void*, void*))task_btl_exp_0,
+    (TaskInitFunc)task_btl_exp_0,
     task_btl_exp_1,
-    (void (*)(void*))task_btl_exp_2,
-    (void (*)(void*))task_btl_exp_3,
+    (TaskFunc)task_btl_exp_2,
+    (TaskFunc)task_btl_exp_3,
     0x4C,
 };
 
@@ -1070,10 +1070,10 @@ const char gTaskNameBtlVslockon[] = "task_btl_vslockon";
 
 TaskDesc gTaskDescBtlVslockon = {
     gTaskNameBtlVslockon,
-    (void (*)(void*, void*))task_btl_vslockon_0,
+    (TaskInitFunc)task_btl_vslockon_0,
     task_btl_vslockon_1,
-    (void (*)(void*))task_btl_vslockon_2,
-    (void (*)(void*))task_btl_vslockon_3,
+    (TaskFunc)task_btl_vslockon_2,
+    (TaskFunc)task_btl_vslockon_3,
     0x24,
 };
 
@@ -1081,9 +1081,9 @@ const char gTaskNameBtlHpoth[] = "task_btl_hpoth";
 
 TaskDesc gTaskDescBtlHpoth = {
     gTaskNameBtlHpoth,
-    (void (*)(void*, void*))task_btl_hpoth_0,
+    (TaskInitFunc)task_btl_hpoth_0,
     task_btl_hpoth_1,
-    (void (*)(void*))task_btl_hpoth_2,
-    (void (*)(void*))task_btl_hpoth_3,
+    (TaskFunc)task_btl_hpoth_2,
+    (TaskFunc)task_btl_hpoth_3,
     0x6C,
 };

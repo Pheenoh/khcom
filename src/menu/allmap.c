@@ -1206,28 +1206,28 @@ void* func_080D5960(u8 a) {
 
 TaskDesc gTaskDescAllmapRoom = {
     gTaskNameAllmapRoom,
-    (void (*)(void*, void*))task_allmap_room_0,
+    (TaskInitFunc)task_allmap_room_0,
     task_allmap_room_1,
-    (void (*)(void*))task_allmap_room_2,
-    (void (*)(void*))task_allmap_room_3,
+    (TaskFunc)task_allmap_room_2,
+    (TaskFunc)task_allmap_room_3,
     0xA0,
 };
 
 TaskDesc gTaskDescAllmapCursor = {
     gTaskNameAllmapCursor,
-    (void (*)(void*, void*))task_allmap_cursor_0,
+    (TaskInitFunc)task_allmap_cursor_0,
     task_allmap_cursor_1,
-    (void (*)(void*))task_allmap_cursor_2,
-    (void (*)(void*))task_allmap_cursor_3,
+    (TaskFunc)task_allmap_cursor_2,
+    (TaskFunc)task_allmap_cursor_3,
     0x48,
 };
 
 TaskDesc gTaskDescAllmapRoomname = {
     gTaskNameAllmapRoomname,
-    (void (*)(void*, void*))task_allmap_roomname_0,
+    (TaskInitFunc)task_allmap_roomname_0,
     task_allmap_roomname_1,
-    (void (*)(void*))task_allmap_roomname_2,
-    (void (*)(void*))task_allmap_roomname_3,
+    (TaskFunc)task_allmap_roomname_2,
+    (TaskFunc)task_allmap_roomname_3,
 #ifdef VERSION_EU
     0x130,
 #else
@@ -1255,27 +1255,27 @@ void* gUnkEu_09F80138[5] = {
 
 TaskDesc gTaskDescAllmapBar = {
     gTaskNameAllmapBar,
-    (void (*)(void*, void*))task_allmap_bar_0,
+    (TaskInitFunc)task_allmap_bar_0,
     task_allmap_bar_1,
-    (void (*)(void*))task_allmap_bar_2,
-    (void (*)(void*))task_allmap_bar_3,
+    (TaskFunc)task_allmap_bar_2,
+    (TaskFunc)task_allmap_bar_3,
     0x830,
 };
 
 TaskDesc gTaskDescAllmapDoorinfo = {
     gTaskNameAllmapDoorinfo,
-    (void (*)(void*, void*))task_allmap_doorinfo_0,
+    (TaskInitFunc)task_allmap_doorinfo_0,
     task_allmap_doorinfo_1,
-    (void (*)(void*))task_allmap_doorinfo_2,
-    (void (*)(void*))task_allmap_doorinfo_3,
+    (TaskFunc)task_allmap_doorinfo_2,
+    (TaskFunc)task_allmap_doorinfo_3,
     0x118,
 };
 
 TaskDesc gTaskDescAllmapPusha = {
     gTaskNameAllmapPusha,
-    (void (*)(void*, void*))task_allmap_pusha_0,
+    (TaskInitFunc)task_allmap_pusha_0,
     task_allmap_pusha_1,
-    (void (*)(void*))task_allmap_pusha_2,
-    (void (*)(void*))task_allmap_pusha_3,
+    (TaskFunc)task_allmap_pusha_2,
+    (TaskFunc)task_allmap_pusha_3,
     0x30,
 };

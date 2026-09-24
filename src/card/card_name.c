@@ -492,10 +492,10 @@ const char gTaskNameCardName[] = "CardName";
 
 TaskDesc gTaskDescCardName = {
     gTaskNameCardName,
-    (void (*)(void*, void*))CardName_0,
+    (TaskInitFunc)CardName_0,
     CardName_1,
-    (void (*)(void*))CardName_2,
-    (void (*)(void*))CardName_3,
+    (TaskFunc)CardName_2,
+    (TaskFunc)CardName_3,
 #ifdef VERSION_EU
     0x31C,
 #else
@@ -507,10 +507,10 @@ const char gTaskNamePremireEFFECT[] = "Premire_EFFECT";
 
 TaskDesc gUnk_09EE784C = {
     gTaskNamePremireEFFECT,
-    (void (*)(void*, void*))func_0809CE88,
+    (TaskInitFunc)func_0809CE88,
     func_0809D040,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
+    (TaskFunc)func_0809D0CC,
+    (TaskFunc)func_0809D0FC,
     0x54,
 };
 
@@ -518,18 +518,18 @@ const char gTaskNamePremireEFFECT2[] = "Premire_EFFECT2";
 
 TaskDesc gTaskDescPremireEFFECT2 = {
     gTaskNamePremireEFFECT2,
-    (void (*)(void*, void*))func_0809CE88,
+    (TaskInitFunc)func_0809CE88,
     Premire_EFFECT2_1,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
+    (TaskFunc)func_0809D0CC,
+    (TaskFunc)func_0809D0FC,
     0x54,
 };
 
 TaskDesc gUnk_09EE787C = {
     gTaskNamePremireEFFECT,
-    (void (*)(void*, void*))func_0809CF64,
+    (TaskInitFunc)func_0809CF64,
     func_0809D09C,
-    (void (*)(void*))func_0809D0CC,
-    (void (*)(void*))func_0809D0FC,
+    (TaskFunc)func_0809D0CC,
+    (TaskFunc)func_0809D0FC,
     0x54,
 };

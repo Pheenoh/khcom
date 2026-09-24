@@ -3042,4 +3042,4 @@ ObjDef gUnk_09ED82D4[] = {
     { gUnk_09EDF748, gUnk_09EDF760, gUnk_0894EC7C, 1, 0, gUnk_09618118, gUnk_0812E5F4, gUnk_0812B91C, 32, 0 },
 };
 
-Mode gModeChkobj = { gModeNameChkobj, (void (*)(s32))mode_chkobj_0, mode_chkobj_1, mode_chkobj_2 };
+Mode gModeChkobj = { gModeNameChkobj, (ModeInitFunc)mode_chkobj_0, mode_chkobj_1, mode_chkobj_2 };

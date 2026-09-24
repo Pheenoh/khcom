@@ -806,19 +806,19 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
 
 TaskDesc gTaskDescTitleLogo = {
     gTaskNameTitleLogo,
-    (void (*)(void*, void*))task_title_logo_0,
+    (TaskInitFunc)task_title_logo_0,
     task_title_logo_1,
-    (void (*)(void*))task_title_logo_2,
-    (void (*)(void*))task_title_logo_3,
+    (TaskFunc)task_title_logo_2,
+    (TaskFunc)task_title_logo_3,
     0x54,
 };
 
 TaskDesc gTaskDescTitleObj = {
     gTaskNameTitleObj,
-    (void (*)(void*, void*))task_title_obj_0,
+    (TaskInitFunc)task_title_obj_0,
     task_title_obj_1,
-    (void (*)(void*))task_title_obj_2,
-    (void (*)(void*))task_title_obj_3,
+    (TaskFunc)task_title_obj_2,
+    (TaskFunc)task_title_obj_3,
     0x64,
 };
 
@@ -834,10 +834,10 @@ void** gUnkEu_09F801D4[5] = {
 
 TaskDesc gTaskDescTitleMenu = {
     gTaskNameTitleMenu,
-    (void (*)(void*, void*))task_title_menu_0,
+    (TaskInitFunc)task_title_menu_0,
     task_title_menu_1,
-    (void (*)(void*))task_title_menu_2,
-    (void (*)(void*))task_title_menu_3,
+    (TaskFunc)task_title_menu_2,
+    (TaskFunc)task_title_menu_3,
     0x64,
 };
 
@@ -861,9 +861,9 @@ void** gUnkEu_09F80214[5] = {
 
 TaskDesc gTaskDescTitleLumichange = {
     gTaskNameTitleLumichange,
-    (void (*)(void*, void*))task_title_lumichange_0,
+    (TaskInitFunc)task_title_lumichange_0,
     task_title_lumichange_1,
-    (void (*)(void*))task_title_lumichange_2,
-    (void (*)(void*))task_title_lumichange_3,
+    (TaskFunc)task_title_lumichange_2,
+    (TaskFunc)task_title_lumichange_3,
     0xC,
 };

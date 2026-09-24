@@ -318,7 +318,7 @@ void eu_08061698(FrdPoohWork* work) {
 #ifndef VERSION_EU
 const char gModeNameTest[] = "mode_test";
 
-Mode gModeTest = { gModeNameTest, (void (*)(s32))mode_test_0, mode_test_1, mode_test_2 };
+Mode gModeTest = { gModeNameTest, (ModeInitFunc)mode_test_0, mode_test_1, mode_test_2 };
 #endif
 
 #ifdef VERSION_EU
@@ -326,10 +326,10 @@ const char gTaskNameFrdPoohEu[] = "task_frd_pooh";
 
 TaskDesc gTaskDescFrdPoohEu = {
     gTaskNameFrdPoohEu,
-    (void (*)(void*, void*))eu_08060C8C,
-    (u8 (*)(void*))eu_08060DF8,
-    (void (*)(void*))eu_08061588,
-    (void (*)(void*))eu_08061698,
+    (TaskInitFunc)eu_08060C8C,
+    (TaskUpdateFunc)eu_08060DF8,
+    (TaskFunc)eu_08061588,
+    (TaskFunc)eu_08061698,
     sizeof(FrdPoohWork),
 };
 #endif

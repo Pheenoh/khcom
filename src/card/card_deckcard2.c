@@ -215,9 +215,9 @@ const char gTaskNameDeckCard2[] = "DeckCard2";
 
 TaskDesc gTaskDescDeckCard2 = {
     gTaskNameDeckCard2,
-    (void (*)(void*, void*))DeckCard2_0,
+    (TaskInitFunc)DeckCard2_0,
     DeckCard2_1,
-    (void (*)(void*))DeckCard2_2,
-    (void (*)(void*))DeckCard2_3,
+    (TaskFunc)DeckCard2_2,
+    (TaskFunc)DeckCard2_3,
     0x50,
 };

@@ -164,10 +164,10 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
 
         switch (w->unk_113) {
         case 0:
-            SetTaskUpdate(a, (void*)func_080A3A98);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3A98);
             break;
         case 1:
-            SetTaskUpdate(a, (void*)func_080A3F5C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3F5C);
             break;
         }
     }
@@ -180,7 +180,7 @@ u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
     LoadBgPalette(w->unk_10C, gUnk_096148D8, 32);
     SetBgMapBlocks(w->unk_10C, gUnk_09EE4724[((NumberPlusArgs*)w->messageDef)->unk_04], 2, 1);
     ScrollBgMapTo(w->unk_10C, *(u16*)&w->x, 0);
-    SetTaskUpdate(a, (void*)func_080A36B0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A36B0);
     return 1;
 }
 
@@ -208,7 +208,7 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 
     InitTextSlots((TextSlot*)w->unk_020, 10);
     InitTextSlots((TextSlot*)w->unk_070, 10);
-    SetTaskUpdate(a, (void*)func_080A3754);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A3754);
 
     return 1;
 }
@@ -234,7 +234,7 @@ u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
         w->palette = 0;
     }
 
-    SetTaskUpdate(a, (void*)func_080A3558);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A3558);
     return 1;
 }
 void func_080A3848(UnkStruct_080A3F5C* w) {
@@ -345,7 +345,7 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
             }
 
             w->unk_148 = 1;
-            SetTaskUpdate(a, (void*)func_080A3BB0);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3BB0);
         }
 
         w->unk_142 = 0;
@@ -461,7 +461,7 @@ u8 func_080A3E8C(UnkStruct_080A3F5C* w, void* a) {
             gUnk_0203A9D8 = 0;
         }
 
-        SetTaskUpdate(a, (void*)func_080A3DD0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A3DD0);
         break;
     }
 
@@ -491,7 +491,7 @@ u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
         } else {
             e = gUnk_09EE45DC[w->messageDef->unk_00];
             AnimStart(w->anim, 0, e[w->messageDef->unk_08].unk_11);
-            SetTaskUpdate(a, (void*)func_080A4010);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A4010);
         }
 
         w->unk_142 = 0;
@@ -507,7 +507,7 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
     w->gfx = AnimUpdate(w->anim);
 
     if (w->unk_14F == 0) {
-        SetTaskUpdate(a, (void*)func_080A3DD0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A3DD0);
     } else if (w->unk_14E == 1) {
         w->unk_14E = 0;
         w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
@@ -2950,9 +2950,9 @@ const char gTaskName_09EE8E18[] = "msgwin";
 
 TaskDesc gUnk_09EE8E18 = {
     gTaskName_09EE8E18,
-    (void (*)(void*, void*))func_080A33C4,
+    (TaskInitFunc)func_080A33C4,
     func_080A3640,
-    (void (*)(void*))func_080A3848,
-    (void (*)(void*))func_080A3A04,
+    (TaskFunc)func_080A3848,
+    (TaskFunc)func_080A3A04,
     0x150,
 };

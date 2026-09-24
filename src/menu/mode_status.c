@@ -89,7 +89,7 @@ const char gModeNameStatus[] = "mode_status";
 
 Mode gModeStatus = {
     gModeNameStatus,
-    (void (*)(s32))mode_status_0,
+    (ModeInitFunc)mode_status_0,
     mode_status_1,
     mode_status_2,
 };

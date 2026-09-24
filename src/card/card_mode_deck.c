@@ -401,7 +401,7 @@ void func_080AB968(void) {
 #ifndef VERSION_EU
 Mode gUnk_09EE8F20 = {
     gUnk_09041F58,
-    (void (*)(s32))func_080AAF78,
+    (ModeInitFunc)func_080AAF78,
     func_080AAFB4,
     func_080AB008,
 };
@@ -411,10 +411,10 @@ const char gTaskNameDarkPoint[] = "DarkPoint";
 
 TaskDesc gTaskDescDarkPoint = {
     gTaskNameDarkPoint,
-    (void (*)(void*, void*))DarkPoint_0,
+    (TaskInitFunc)DarkPoint_0,
     DarkPoint_1,
-    (void (*)(void*))DarkPoint_2,
-    (void (*)(void*))DarkPoint_3,
+    (TaskFunc)DarkPoint_2,
+    (TaskFunc)DarkPoint_3,
     0x10,
 };
 

@@ -282,7 +282,7 @@ s32 Friend_card_1(UnkStruct_0809A02C* w, void* a) {
 #ifdef VERSION_EU
             w->unk_1CD = 1;
 #endif
-            SetTaskUpdate(a, (u32)func_0809AB2C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809AB2C);
         }
 
         return 1;
@@ -388,7 +388,7 @@ s32 Gimmick_card_1(UnkStruct_0809A02C* w, void* a) {
 #ifdef VERSION_EU
             w->unk_1CD = 1;
 #endif
-            SetTaskUpdate(a, (u32)func_0809AB2C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809AB2C);
         }
 
         return 1;
@@ -541,7 +541,7 @@ s32 func_0809AD98(UnkStruct_0809A02C* w, void* a) {
 #else
             CreateCardNameDisplay(&w->tasks, gCardDefs[w->cardId].name);
 #endif
-            SetTaskUpdate(a, (void*)func_0809AD60);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809AD60);
             w->unk_1C4 = 0;
             w->unk_1C2 = 50;
             return 1;
@@ -622,7 +622,7 @@ s32 Heartless_card_1(UnkStruct_0809A02C* w, void* a) {
         w->unk_1CA = 1;
         ColliderSetDisabled(w->unk_144, 1);
         func_0809A4E0(w, 1);
-        SetTaskUpdate(a, (void*)func_0809AD98);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809AD98);
         return 1;
     }
 
@@ -1163,7 +1163,7 @@ u8 func_0809BE80(u8* work, void* a) {
             m4aSongNumStart(SONG_SYS_CLOSE);
             work[0x8B] = 16;
             work[0x8C] = 16;
-            SetTaskUpdate(a, (void*)func_0809C4B0);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809C4B0);
             n = (UnkStruct_0809C534*)ListPoolFirst(&gCardListWork->cards);
 
             while (n != 0) {
@@ -1204,7 +1204,7 @@ u8 func_0809BE80(u8* work, void* a) {
         }
     } else {
         work[0x87] = 1;
-        SetTaskUpdate(a, (void*)func_0809C2D0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809C2D0);
     }
 
     if (work[0x51] == 4 || work[0x51] == 10) {
@@ -1236,7 +1236,7 @@ u8 func_0809C078(u8* work, void* a) {
     n = (u8*)ListPoolFirst(&gCardListWork->cards);
 
     if (n != 0 && n[0x55] == 1) {
-        SetTaskUpdate(a, (void*)func_0809BE80);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809BE80);
     }
 
     p = &work[0x8C];
@@ -1360,7 +1360,7 @@ u8 func_0809C2D0(u8* work, void* a) {
         FadeSetPaletteExcluded(14, 1);
         FadeSetPaletteExcluded(15, 1);
         TaskCreate(pool, &gTaskDescCardName, 0);
-        SetTaskUpdate(a, (void*)func_0809C448);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809C448);
     }
 
     TaskPoolUpdate(pool);
@@ -1383,7 +1383,7 @@ u8 func_0809C448(u8* work, void* a) {
     ) {
         work[0x8B] = 16;
         work[0x8C] = 16;
-        SetTaskUpdate(a, (void*)func_0809C4B0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809C4B0);
     }
 
 #ifdef VERSION_EU
@@ -1429,10 +1429,10 @@ const char gTaskNameFriendCard[] = "Friend card";
 
 TaskDesc gTaskDescFriendCard = {
     gTaskNameFriendCard,
-    (void (*)(void*, void*))Friend_card_0,
+    (TaskInitFunc)Friend_card_0,
     Friend_card_1,
-    (void (*)(void*))func_0809B200,
-    (void (*)(void*))func_0809B59C,
+    (TaskFunc)func_0809B200,
+    (TaskFunc)func_0809B59C,
     0x1D4,
 };
 
@@ -1440,10 +1440,10 @@ const char gTaskNameHeartlessCard[] = "Heartless card";
 
 TaskDesc gTaskDescHeartlessCard = {
     gTaskNameHeartlessCard,
-    (void (*)(void*, void*))Heartless_card_0,
+    (TaskInitFunc)Heartless_card_0,
     Heartless_card_1,
-    (void (*)(void*))Heartless_card_2,
-    (void (*)(void*))Heartless_card_3,
+    (TaskFunc)Heartless_card_2,
+    (TaskFunc)Heartless_card_3,
     0x1D4,
 };
 
@@ -1451,10 +1451,10 @@ const char gTaskNameGimmickCard[] = "Gimmick card";
 
 TaskDesc gTaskDescGimmickCard = {
     gTaskNameGimmickCard,
-    (void (*)(void*, void*))Gimmick_card_0,
+    (TaskInitFunc)Gimmick_card_0,
     Gimmick_card_1,
-    (void (*)(void*))func_0809B200,
-    (void (*)(void*))func_0809B59C,
+    (TaskFunc)func_0809B200,
+    (TaskFunc)func_0809B59C,
     0x1D4,
 };
 
@@ -1462,19 +1462,19 @@ const char gTaskNameStockName[] = "StockName";
 
 TaskDesc gUnk_09EE77D4 = {
     gTaskNameStockName,
-    (void (*)(void*, void*))func_0809B76C,
+    (TaskInitFunc)func_0809B76C,
     func_0809B840,
-    (void (*)(void*))func_0809B8F0,
-    (void (*)(void*))func_0809BB18,
+    (TaskFunc)func_0809B8F0,
+    (TaskFunc)func_0809BB18,
     0x34,
 };
 
 TaskDesc gUnk_09EE77EC = {
     gTaskNameStockName,
-    (void (*)(void*, void*))func_0809B920,
+    (TaskInitFunc)func_0809B920,
     func_0809B9F4,
-    (void (*)(void*))func_0809BAA4,
-    (void (*)(void*))func_0809BAE4,
+    (TaskFunc)func_0809BAA4,
+    (TaskFunc)func_0809BAE4,
     0x34,
 };
 #ifdef VERSION_EU
@@ -1485,9 +1485,9 @@ const char gTaskName_09EE7804[] = "Premire Chance";
 
 TaskDesc gUnk_09EE7804 = {
     gTaskName_09EE7804,
-    (void (*)(void*, void*))func_0809BB4C,
+    (TaskInitFunc)func_0809BB4C,
     func_0809C078,
-    (void (*)(void*))func_0809C110,
-    (void (*)(void*))func_0809C1EC,
+    (TaskFunc)func_0809C110,
+    (TaskFunc)func_0809C1EC,
     0x90,
 };

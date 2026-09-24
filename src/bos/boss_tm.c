@@ -2872,10 +2872,10 @@ void task_bos_tm_tbl_3(TmTblWork* work) {
 
 TaskDesc gTaskDescBosTm = {
     gTaskNameBosTm,
-    (void (*)(void*, void*))task_bos_tm_0,
+    (TaskInitFunc)task_bos_tm_0,
     task_bos_tm_1,
-    (void (*)(void*))task_bos_tm_2,
-    (void (*)(void*))task_bos_tm_3,
+    (TaskFunc)task_bos_tm_2,
+    (TaskFunc)task_bos_tm_3,
     0x64,
 };
 
@@ -2942,10 +2942,10 @@ s8 gUnk_09EF2194[4] = { 1, 3, 9, 4 };
 
 TaskDesc gTaskDescBosTmBody = {
     gTaskNameBosTmBody,
-    (void (*)(void*, void*))task_bos_tm_body_0,
+    (TaskInitFunc)task_bos_tm_body_0,
     task_bos_tm_body_1,
-    (void (*)(void*))task_bos_tm_body_2,
-    (void (*)(void*))task_bos_tm_body_3,
+    (TaskFunc)task_bos_tm_body_2,
+    (TaskFunc)task_bos_tm_body_3,
     0x494,
 };
 
@@ -3013,36 +3013,36 @@ TmFootStep gUnk_09EF26C4 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, { 0, 0, 0, 0 }, 0, 0,
 
 TaskDesc gTaskDescBosTmFoot = {
     gTaskNameBosTmFoot,
-    (void (*)(void*, void*))task_bos_tm_foot_0,
+    (TaskInitFunc)task_bos_tm_foot_0,
     task_bos_tm_foot_1,
-    (void (*)(void*))task_bos_tm_foot_2,
-    (void (*)(void*))task_bos_tm_foot_3,
+    (TaskFunc)task_bos_tm_foot_2,
+    (TaskFunc)task_bos_tm_foot_3,
     0x484,
 };
 
 TaskDesc gTaskDescBosTmClb = {
     gTaskNameBosTmClb,
-    (void (*)(void*, void*))task_bos_tm_clb_0,
+    (TaskInitFunc)task_bos_tm_clb_0,
     task_bos_tm_clb_1,
-    (void (*)(void*))task_bos_tm_clb_2,
-    (void (*)(void*))task_bos_tm_clb_3,
+    (TaskFunc)task_bos_tm_clb_2,
+    (TaskFunc)task_bos_tm_clb_3,
     0x1C,
 };
 
 TaskDesc gTaskDescBosTmArm = {
     gTaskNameBosTmArm,
-    (void (*)(void*, void*))task_bos_tm_arm_0,
+    (TaskInitFunc)task_bos_tm_arm_0,
     task_bos_tm_arm_1,
-    (void (*)(void*))task_bos_tm_arm_2,
-    (void (*)(void*))task_bos_tm_arm_3,
+    (TaskFunc)task_bos_tm_arm_2,
+    (TaskFunc)task_bos_tm_arm_3,
     0x258,
 };
 
 TaskDesc gTaskDescBosTmTbl = {
     gTaskNameBosTmTbl,
-    (void (*)(void*, void*))task_bos_tm_tbl_0,
+    (TaskInitFunc)task_bos_tm_tbl_0,
     task_bos_tm_tbl_1,
     0,
-    (void (*)(void*))task_bos_tm_tbl_3,
+    (TaskFunc)task_bos_tm_tbl_3,
     0x6C,
 };

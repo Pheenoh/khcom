@@ -217,11 +217,11 @@ u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
     switch (w->unk_113) {
     case 0:
     case 2:
-        SetTaskUpdate(a, (void*)func_080A470C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A470C);
         break;
     case 1:
     case 3:
-        SetTaskUpdate(a, (void*)func_080A4CC8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A4CC8);
         break;
     }
 
@@ -292,7 +292,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
 #else
             FadeSetPaletteExcluded(w->palette4->index + 16, 1);
 #endif
-            SetTaskUpdate(a, (void*)func_080A4958);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A4958);
         }
     }
     return 1;
@@ -342,7 +342,7 @@ u8 func_080A4958(UnkStruct_080A3F5C* w, void* a) {
         }
 
         w->unk_142 = 0;
-        SetTaskUpdate(a, (void*)func_080A4910);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A4910);
         break;
     }
 
@@ -646,7 +646,7 @@ u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
         break;
     }
     if (w->unk_113 == 0 || w->unk_113 == 2) {
-        SetTaskUpdate(a, (void*)func_080A5034);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A5034);
     }
     return 1;
 }
@@ -686,7 +686,7 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
 #else
     FadeSetPaletteExcluded(w->palette4->index + 16, 1);
 #endif
-    SetTaskUpdate(a, (void*)func_080A5198);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A5198);
     return 1;
 }
 s32 func_080A5150(UnkStruct_080A3F5C* w) {
@@ -740,13 +740,13 @@ u8 func_080A5198(UnkStruct_080A3F5C* w, void* a) {
         }
 
         w->unk_142 = 0;
-        SetTaskUpdate(a, (void*)func_080A5150);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A5150);
         break;
     case B_BUTTON:
         m4aSongNumStart(SONG_SYS_CLOSE);
         gUnk_0203A9D8 = 0;
         w->unk_142 = 0;
-        SetTaskUpdate(a, (void*)func_080A5150);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A5150);
         break;
     }
 
@@ -834,18 +834,18 @@ const char gTaskNameSysmsgwin[] = "sysmsgwin";
 
 TaskDesc gUnk_09EE8E30 = {
     gTaskNameSysmsgwin,
-    (void (*)(void*, void*))func_080A430C,
+    (TaskInitFunc)func_080A430C,
     func_080A4578,
-    (void (*)(void*))func_080A4A50,
-    (void (*)(void*))func_080A4C1C,
+    (TaskFunc)func_080A4A50,
+    (TaskFunc)func_080A4C1C,
     0x148,
 };
 
 TaskDesc gUnk_09EE8E48 = {
     gTaskNameSysmsgwin,
-    (void (*)(void*, void*))func_080A4DCC,
+    (TaskInitFunc)func_080A4DCC,
     func_080A4F14,
-    (void (*)(void*))func_080A52BC,
-    (void (*)(void*))func_080A53E4,
+    (TaskFunc)func_080A52BC,
+    (TaskFunc)func_080A53E4,
     0x148,
 };

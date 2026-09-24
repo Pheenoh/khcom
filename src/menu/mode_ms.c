@@ -1354,7 +1354,7 @@ const char gModeNameMsShop[] = "mode_ms_shop";
 
 Mode gModeMsShop = {
     gModeNameMsShop,
-    (void (*)(s32))mode_ms_shop_0,
+    (ModeInitFunc)mode_ms_shop_0,
     mode_ms_shop_1,
     mode_ms_shop_2,
 };

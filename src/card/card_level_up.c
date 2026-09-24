@@ -702,7 +702,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
                     }
                     w->unk_7B0 = i;
                     w->y3 = gUnk_09037FB4[w->unk_7B0];
-                    SetTaskUpdate(a, (void*)func_0809F390);
+                    SetTaskUpdate(a, (TaskUpdateFunc)func_0809F390);
                     if (gBtlWork->unk_10C == 151) {
                         LoadBgMap(0, gUnk_09EE7914[w->unk_7B0], 0x800);
                     } else {
@@ -815,7 +815,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
             AnimStart(&w->anim2, 1, 0);
         }
 
-        SetTaskUpdate(a, (void*)func_0809F730);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809F730);
         return 1;
     }
 
@@ -963,9 +963,9 @@ u8 func_0809F730(LevelUpWork* w, void* a) {
             w->unk_7C4 = 0;
             gBtlWork->unk_0FA--;
             if (gBtlWork->unk_0FA == 0) {
-                SetTaskUpdate(a, (void*)func_0809FBCC);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_0809FBCC);
             } else {
-                SetTaskUpdate(a, (void*)func_080A11CC);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_080A11CC);
             }
             m4aSongNumStart(SONG_SYS_KETTEI);
         }
@@ -1038,7 +1038,7 @@ u8 func_0809FBCC(u8* work, void* a) {
             ApproachValue(&work[offsetof(LevelUpWork, y2)], 0xA000, work[offsetof(LevelUpWork, unk_7BF)]);
             work[offsetof(LevelUpWork, unk_7BF)]--;
         } else {
-            SetTaskUpdate(a, (void*)func_0809FE14);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809FE14);
         }
     }
 
@@ -1653,7 +1653,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
         }
         w->unk_7B0 = i;
         w->y3 = gUnk_09037FB4[w->unk_7B0];
-        SetTaskUpdate(a, (void*)func_0809F390);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809F390);
         if (gBtlWork->unk_10C == 151) {
             LoadBgMap(0, gUnk_09EE7914[w->unk_7B0], 0x800);
         } else {
@@ -1782,7 +1782,7 @@ u8 func_080A11CC(LevelUpWork* w, void* a) {
             w->unk_7C5 = 0;
             w->unk_7A4 = 0;
             w->unk_7C7 = 0;
-            SetTaskUpdate(a, (void*)func_080A0A44);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A0A44);
         }
     }
 
@@ -1934,7 +1934,7 @@ u8 LVUP_EFFECT_1(LevelUpEffectWork* w, void* a) {
         }
 
         w->unk_94 = 1;
-        SetTaskUpdate(a, (void*)func_080A18F4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A18F4);
     }
 
     return 1;
@@ -2032,10 +2032,10 @@ const char gTaskNameLevelUp[] = "Level_Up";
 
 TaskDesc gTaskDescLevelUp = {
     gTaskNameLevelUp,
-    (void (*)(void*, void*))Level_Up_0,
+    (TaskInitFunc)Level_Up_0,
     Level_Up_1,
-    (void (*)(void*))Level_Up_2,
-    (void (*)(void*))Level_Up_3,
+    (TaskFunc)Level_Up_2,
+    (TaskFunc)Level_Up_3,
 #ifdef VERSION_EU
     0x124,
 #else
@@ -2064,9 +2064,9 @@ const char gTaskNameLVUPEFFECT[] = "LVUP_EFFECT";
 
 TaskDesc gTaskDescLVUPEFFECT = {
     gTaskNameLVUPEFFECT,
-    (void (*)(void*, void*))LVUP_EFFECT_0,
+    (TaskInitFunc)LVUP_EFFECT_0,
     LVUP_EFFECT_1,
-    (void (*)(void*))LVUP_EFFECT_2,
-    (void (*)(void*))LVUP_EFFECT_3,
+    (TaskFunc)LVUP_EFFECT_2,
+    (TaskFunc)LVUP_EFFECT_3,
     0xAC,
 };

@@ -2036,7 +2036,7 @@ const char gModeNameRikuBtlTutorial[] = "Mode_riku_btlTutorial";
 
 Mode gModeRikuBtlTutorial = {
     gModeNameRikuBtlTutorial,
-    (void (*)(s32))func_080AB96C,
+    (ModeInitFunc)func_080AB96C,
     Mode_riku_btlTutorial_1,
     func_080ABA70,
 };
@@ -2045,14 +2045,14 @@ const char gModeNameRikuDeckTutorial[] = "Mode_riku_deckTutorial";
 
 Mode gModeRikuDeckTutorial = {
     gModeNameRikuDeckTutorial,
-    (void (*)(s32))func_080AB96C,
+    (ModeInitFunc)func_080AB96C,
     Mode_riku_deckTutorial_1,
     func_080ABA70,
 };
 #ifdef VERSION_EU
 Mode gUnkEu_09F74600 = {
     gUnkEu_090D1FB0,
-    (void (*)(s32))eu_080AB9FC,
+    (ModeInitFunc)eu_080AB9FC,
     eu_080ABA38,
     eu_080ABA7C,
 };

@@ -308,15 +308,15 @@ const char gTaskNameMonsgage[] = "task_monsgage";
 TaskDesc gTaskDescMonsgage = {
     gTaskNameMonsgage,
 #ifdef VERSION_EU
-    (void (*)(void*, void*))eu_0805E9F0,
+    (TaskInitFunc)eu_0805E9F0,
     eu_0805EA44,
-    (void (*)(void*))eu_0805EC60,
-    (void (*)(void*))eu_0805ECE4,
+    (TaskFunc)eu_0805EC60,
+    (TaskFunc)eu_0805ECE4,
 #else
-    (void (*)(void*, void*))task_monsgage_0,
+    (TaskInitFunc)task_monsgage_0,
     task_monsgage_1,
-    (void (*)(void*))task_monsgage_2,
-    (void (*)(void*))task_monsgage_3,
+    (TaskFunc)task_monsgage_2,
+    (TaskFunc)task_monsgage_3,
 #endif
     0x28,
 };

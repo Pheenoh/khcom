@@ -237,7 +237,7 @@ u8 func_080A5C9C(u8* work, void* a) {
 #endif
     SetBgScroll(0, (u16)-88, (u16)-108);
     SetBgScroll(1, (u16)-88, (u16)-16);
-    SetTaskUpdate(a, (void*)func_080A5D3C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A5D3C);
     return 1;
 }
 
@@ -309,7 +309,7 @@ u8 func_080A5EA0(UnkStruct_080A5D3C* w, void* a) {
                 w->tiles = 0;
                 ReleaseObjPalette(w->palette);
                 w->palette = 0;
-                SetTaskUpdate(a, (void*)func_080A5F70);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_080A5F70);
             }
             break;
         }
@@ -325,7 +325,7 @@ u8 func_080A5F70(u8* work, void* a) {
     func_080A6BB4(work);
     func_080A6FAC((UnkStruct_080A6FAC*)work);
     work[0x50A] = 1;
-    SetTaskUpdate(a, (void*)func_080A5FF4);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A5FF4);
     return 1;
 }
 
@@ -367,7 +367,7 @@ u8 func_080A5FF4(u8* work, void* a) {
 
     if (work[0x504] != 0) {
         if (func_080A7300(work) != 0 && func_080A734C(work) != 0) {
-            SetTaskUpdate(a, (void*)func_080A6388);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A6388);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
@@ -424,12 +424,12 @@ u8 func_080A5FF4(u8* work, void* a) {
         work[0x50C] = 7;
         m4aSongNumStart(SONG_SYS_CANSEL);
         FadeStartOut(0, 4);
-        SetTaskUpdate(a, (void*)func_080A6388);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A6388);
         return 1;
     case B_BUTTON:
         work[0x50C] = 8;
         m4aSongNumStart(SONG_SYS_CANSEL);
-        SetTaskUpdate(a, (void*)func_080A63B8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A63B8);
         return 1;
     }
 
@@ -478,7 +478,7 @@ u8 func_080A63B8(u8* work, void* a) {
     work[0x505] = 16;
     work[0x506] = 16;
     work[0x50A] = 0;
-    SetTaskUpdate(a, (void*)func_080A6474);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A6474);
     return 1;
 }
 
@@ -499,7 +499,7 @@ u8 func_080A6474(u8* work, void* a) {
             (*p)--;
         } else {
             FadeStartOut(0, 4);
-            SetTaskUpdate(a, (void*)func_080A6388);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A6388);
         }
     }
 
@@ -1081,9 +1081,9 @@ const char gTaskName_09EE8EF0[] = "Deckmenu2";
 
 TaskDesc gUnk_09EE8EF0 = {
     gTaskName_09EE8EF0,
-    (void (*)(void*, void*))func_080A584C,
+    (TaskInitFunc)func_080A584C,
     func_080A5C9C,
-    (void (*)(void*))func_080A6500,
-    (void (*)(void*))func_080A676C,
+    (TaskFunc)func_080A6500,
+    (TaskFunc)func_080A676C,
     0x510,
 };

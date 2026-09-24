@@ -410,10 +410,10 @@ const char gTaskNameDeckEquip[] = "Deck Equip";
 
 TaskDesc gTaskDescDeckEquip = {
     gTaskNameDeckEquip,
-    (void (*)(void*, void*))Deck_Equip_0,
+    (TaskInitFunc)Deck_Equip_0,
     func_080A2DE4,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
@@ -421,10 +421,10 @@ const char gTaskNameDeckYesNo[] = "Deck_Yes_No";
 
 TaskDesc gTaskDescDeckYesNo = {
     gTaskNameDeckYesNo,
-    (void (*)(void*, void*))Deck_Yes_No_0,
+    (TaskInitFunc)Deck_Yes_No_0,
     func_080A30C0,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
@@ -432,10 +432,10 @@ const char gTaskNameDeckClear[] = "Deck_Clear";
 
 TaskDesc gTaskDescDeckClear = {
     gTaskNameDeckClear,
-    (void (*)(void*, void*))Deck_Clear_0,
+    (TaskInitFunc)Deck_Clear_0,
     func_080A30C0,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
@@ -443,37 +443,37 @@ const char gTaskNameDeckError[] = "Deck Error";
 
 TaskDesc gUnk_09EE7FA8 = {
     gTaskNameDeckError,
-    (void (*)(void*, void*))func_080A2980,
+    (TaskInitFunc)func_080A2980,
     func_080A2DE4,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
 TaskDesc gUnk_09EE7FC0 = {
     gTaskNameDeckError,
-    (void (*)(void*, void*))func_080A2A80,
+    (TaskInitFunc)func_080A2A80,
     func_080A2DE4,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
 TaskDesc gUnk_09EE7FD8 = {
     gTaskNameDeckError,
-    (void (*)(void*, void*))func_080A2BA4,
+    (TaskInitFunc)func_080A2BA4,
     func_080A2DE4,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 
 TaskDesc gUnk_09EE7FF0 = {
     gTaskNameDeckError,
-    (void (*)(void*, void*))func_080A2CC4,
+    (TaskInitFunc)func_080A2CC4,
     func_080A2DE4,
-    (void (*)(void*))func_080A2E14,
-    (void (*)(void*))func_080A2EF8,
+    (TaskFunc)func_080A2E14,
+    (TaskFunc)func_080A2EF8,
     0x7A8,
 };
 #ifdef VERSION_EU

@@ -222,10 +222,10 @@ const char gTaskNameLvupMsg[] = "Lvup msg";
 
 TaskDesc gTaskDescLvupMsg = {
     gTaskNameLvupMsg,
-    (void (*)(void*, void*))Lvup_msg_0,
+    (TaskInitFunc)Lvup_msg_0,
     Lvup_msg_1,
-    (void (*)(void*))Lvup_msg_2,
-    (void (*)(void*))Lvup_msg_3,
+    (TaskFunc)Lvup_msg_2,
+    (TaskFunc)Lvup_msg_3,
 #ifdef VERSION_JP
     0x218,
 #else

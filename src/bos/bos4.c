@@ -60,10 +60,10 @@ const UnkStruct_096FDFC4 gUnk_096FDFC4 = { 39, 0, 16, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieDice = {
     gTaskNameBosBoogieDice,
-    (void (*)(void*, void*))task_bos_boogie_dice_0,
+    (TaskInitFunc)task_bos_boogie_dice_0,
     task_bos_boogie_dice_1,
-    (void (*)(void*))task_bos_boogie_dice_2,
-    (void (*)(void*))task_bos_boogie_dice_3,
+    (TaskFunc)task_bos_boogie_dice_2,
+    (TaskFunc)task_bos_boogie_dice_3,
     0x174,
 };
 
@@ -71,10 +71,10 @@ const char gTaskNameBosBoogieExplosiondice[] = "task_bos_boogie_explosiondice";
 
 TaskDesc gTaskDescBosBoogieExplosiondice = {
     gTaskNameBosBoogieExplosiondice,
-    (void (*)(void*, void*))task_bos_boogie_explosiondice_0,
+    (TaskInitFunc)task_bos_boogie_explosiondice_0,
     task_bos_boogie_explosiondice_1,
-    (void (*)(void*))task_bos_boogie_explosiondice_2,
-    (void (*)(void*))task_bos_boogie_explosiondice_3,
+    (TaskFunc)task_bos_boogie_explosiondice_2,
+    (TaskFunc)task_bos_boogie_explosiondice_3,
     0x160,
 };
 
@@ -82,10 +82,10 @@ const char gTaskNameBosBoogieSaku[] = "task_bos_boogie_saku";
 
 TaskDesc gTaskDescBosBoogieSaku = {
     gTaskNameBosBoogieSaku,
-    (void (*)(void*, void*))task_bos_boogie_saku_0,
+    (TaskInitFunc)task_bos_boogie_saku_0,
     task_bos_boogie_saku_1,
-    (void (*)(void*))task_bos_boogie_saku_2,
-    (void (*)(void*))task_bos_boogie_saku_3,
+    (TaskFunc)task_bos_boogie_saku_2,
+    (TaskFunc)task_bos_boogie_saku_3,
     0x44,
 };
 
@@ -101,7 +101,7 @@ const UnkStruct_096FE034 gUnk_096FE064 = { gUnk_096FE020, 5, 0, gUnk_097ED678, 0
 
 TaskDesc gTaskDescBosBoogieMap = {
     gTaskNameBosBoogieMap,
-    (void (*)(void*, void*))task_bos_boogie_map_0,
+    (TaskInitFunc)task_bos_boogie_map_0,
     task_bos_boogie_map_1,
     0,
     0,
@@ -114,10 +114,10 @@ const EmyKind gBosBoogieDiskEmyKind = { 39, 0, 16, 16, 0, 0, 4 };
 
 TaskDesc gTaskDescBosBoogieMapanime = {
     gTaskNameBosBoogieMapanime,
-    (void (*)(void*, void*))task_bos_boogie_mapanime_0,
+    (TaskInitFunc)task_bos_boogie_mapanime_0,
     task_bos_boogie_mapanime_1,
-    (void (*)(void*))task_bos_boogie_mapanime_2,
-    (void (*)(void*))task_bos_boogie_mapanime_3,
+    (TaskFunc)task_bos_boogie_mapanime_2,
+    (TaskFunc)task_bos_boogie_mapanime_3,
     0x24,
 };
 
@@ -127,10 +127,10 @@ const UnkStruct_096FDFC4 gUnk_096FE0C0 = { 39, 0, 192, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieDisk = {
     gTaskNameBosBoogieDisk,
-    (void (*)(void*, void*))task_bos_boogie_disk_0,
+    (TaskInitFunc)task_bos_boogie_disk_0,
     task_bos_boogie_disk_1,
-    (void (*)(void*))task_bos_boogie_disk_2,
-    (void (*)(void*))task_bos_boogie_disk_3,
+    (TaskFunc)task_bos_boogie_disk_2,
+    (TaskFunc)task_bos_boogie_disk_3,
     0x160,
 };
 
@@ -140,10 +140,10 @@ const EmyKind gBosBoogieKnifereaderEmyKind = { 39, 0, 0, 0, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnife = {
     gTaskNameBosBoogieKnife,
-    (void (*)(void*, void*))task_bos_boogie_knife_0,
+    (TaskInitFunc)task_bos_boogie_knife_0,
     task_bos_boogie_knife_1,
-    (void (*)(void*))task_bos_boogie_knife_2,
-    (void (*)(void*))task_bos_boogie_knife_3,
+    (TaskFunc)task_bos_boogie_knife_2,
+    (TaskFunc)task_bos_boogie_knife_3,
     0x158,
 };
 
@@ -153,10 +153,10 @@ const EmyKind gBosBoogieKaihukuEmyKind = { 39, 0, 16, 16, 0, 0, 0 };
 
 TaskDesc gTaskDescBosBoogieKnifereader = {
     gTaskNameBosBoogieKnifereader,
-    (void (*)(void*, void*))task_bos_boogie_knifereader_0,
+    (TaskInitFunc)task_bos_boogie_knifereader_0,
     task_bos_boogie_knifereader_1,
-    (void (*)(void*))task_bos_boogie_knifereader_2,
-    (void (*)(void*))task_bos_boogie_knifereader_3,
+    (TaskFunc)task_bos_boogie_knifereader_2,
+    (TaskFunc)task_bos_boogie_knifereader_3,
     0x140,
 };
 
@@ -170,10 +170,10 @@ const BattleBackgroundDef gBosUrsulaBattleBackgroundDef = {
 
 TaskDesc gTaskDescBosBoogieKaihuku = {
     gTaskNameBosBoogieKaihuku,
-    (void (*)(void*, void*))task_bos_boogie_kaihuku_0,
+    (TaskInitFunc)task_bos_boogie_kaihuku_0,
     task_bos_boogie_kaihuku_1,
-    (void (*)(void*))task_bos_boogie_kaihuku_2,
-    (void (*)(void*))task_bos_boogie_kaihuku_3,
+    (TaskFunc)task_bos_boogie_kaihuku_2,
+    (TaskFunc)task_bos_boogie_kaihuku_3,
     0x158,
 };
 
@@ -353,10 +353,10 @@ const char gTaskNameBosUrsula[] = "task_bos_ursula";
 
 TaskDesc gTaskDescBosUrsula = {
     gTaskNameBosUrsula,
-    (void (*)(void*, void*))task_bos_ursula_0,
+    (TaskInitFunc)task_bos_ursula_0,
     task_bos_ursula_1,
-    (void (*)(void*))task_bos_ursula_2,
-    (void (*)(void*))task_bos_ursula_3,
+    (TaskFunc)task_bos_ursula_2,
+    (TaskFunc)task_bos_ursula_3,
     0x164,
 };
 
@@ -364,10 +364,10 @@ const char gTaskNameBosUrsulaMap[] = "task_bos_ursula_map";
 
 TaskDesc gTaskDescBosUrsulaMap = {
     gTaskNameBosUrsulaMap,
-    (void (*)(void*, void*))task_bos_ursula_map_0,
+    (TaskInitFunc)task_bos_ursula_map_0,
     task_bos_ursula_map_1,
     0,
-    (void (*)(void*))task_bos_ursula_map_3,
+    (TaskFunc)task_bos_ursula_map_3,
     0xC,
 };
 
@@ -377,10 +377,10 @@ const EmyKind gBosUrsulaTakoEmyKind = { 35, 0, 48, 16, 24, 0, 1 };
 
 TaskDesc gTaskDescBosUrsulaBorder = {
     gTaskNameBosUrsulaBorder,
-    (void (*)(void*, void*))task_bos_ursula_border_0,
+    (TaskInitFunc)task_bos_ursula_border_0,
     task_bos_ursula_border_1,
-    (void (*)(void*))task_bos_ursula_border_2,
-    (void (*)(void*))task_bos_ursula_border_3,
+    (TaskFunc)task_bos_ursula_border_2,
+    (TaskFunc)task_bos_ursula_border_3,
     0x8,
 };
 
@@ -388,10 +388,10 @@ const char gTaskNameBosUrsulaTako[] = "task_bos_ursula_tako";
 
 TaskDesc gTaskDescBosUrsulaTako = {
     gTaskNameBosUrsulaTako,
-    (void (*)(void*, void*))task_bos_ursula_tako_0,
+    (TaskInitFunc)task_bos_ursula_tako_0,
     task_bos_ursula_tako_1,
-    (void (*)(void*))task_bos_ursula_tako_2,
-    (void (*)(void*))task_bos_ursula_tako_3,
+    (TaskFunc)task_bos_ursula_tako_2,
+    (TaskFunc)task_bos_ursula_tako_3,
     0x204,
 };
 
@@ -419,10 +419,10 @@ const UnkStruct_096FE034 gUnk_096FE2C0 = { gUnk_096FE25C, 1, 0, gUnk_097EEF78, 0
 
 TaskDesc gTaskDescBosUrsulaBacktako = {
     gTaskNameBosUrsulaBacktako,
-    (void (*)(void*, void*))task_bos_ursula_backtako_0,
+    (TaskInitFunc)task_bos_ursula_backtako_0,
     task_bos_ursula_backtako_1,
-    (void (*)(void*))task_bos_ursula_backtako_2,
-    (void (*)(void*))task_bos_ursula_backtako_3,
+    (TaskFunc)task_bos_ursula_backtako_2,
+    (TaskFunc)task_bos_ursula_backtako_3,
     0x44,
 };
 
@@ -430,19 +430,19 @@ const char gTaskNameBosUrsulaMapanime[] = "task_bos_ursula_mapanime";
 
 TaskDesc gTaskDescBosUrsulaMapanime = {
     gTaskNameBosUrsulaMapanime,
-    (void (*)(void*, void*))task_bos_ursula_mapanime_0,
+    (TaskInitFunc)task_bos_ursula_mapanime_0,
     task_bos_ursula_mapanime_1,
-    (void (*)(void*))task_bos_ursula_mapanime_2,
-    (void (*)(void*))task_bos_ursula_mapanime_3,
+    (TaskFunc)task_bos_ursula_mapanime_2,
+    (TaskFunc)task_bos_ursula_mapanime_3,
     0x2C,
 };
 
 TaskDesc gTaskDescBosUrsulaBubble = {
     gTaskNameBosUrsulaBubble,
-    (void (*)(void*, void*))task_bos_ursula_bubble_0,
+    (TaskInitFunc)task_bos_ursula_bubble_0,
     task_bos_ursula_bubble_1,
-    (void (*)(void*))task_bos_ursula_bubble_2,
-    (void (*)(void*))task_bos_ursula_bubble_3,
+    (TaskFunc)task_bos_ursula_bubble_2,
+    (TaskFunc)task_bos_ursula_bubble_3,
 #ifdef VERSION_EU
     0x5C,
 #else
@@ -452,10 +452,10 @@ TaskDesc gTaskDescBosUrsulaBubble = {
 
 TaskDesc gTaskDescBosUrsulaBubbleSingle = {
     gTaskNameBosUrsulaBubbleSingle,
-    (void (*)(void*, void*))task_bos_ursula_bubble_single_0,
+    (TaskInitFunc)task_bos_ursula_bubble_single_0,
     task_bos_ursula_bubble_single_1,
-    (void (*)(void*))task_bos_ursula_bubble_single_2,
-    (void (*)(void*))task_bos_ursula_bubble_single_3,
+    (TaskFunc)task_bos_ursula_bubble_single_2,
+    (TaskFunc)task_bos_ursula_bubble_single_3,
 #ifdef VERSION_EU
     0x130,
 #else
@@ -465,10 +465,10 @@ TaskDesc gTaskDescBosUrsulaBubbleSingle = {
 
 TaskDesc gTaskDescBosUrsulaThunder = {
     gTaskNameBosUrsulaThunder,
-    (void (*)(void*, void*))task_bos_ursula_thunder_0,
+    (TaskInitFunc)task_bos_ursula_thunder_0,
     task_bos_ursula_thunder_1,
-    (void (*)(void*))task_bos_ursula_thunder_2,
-    (void (*)(void*))task_bos_ursula_thunder_3,
+    (TaskFunc)task_bos_ursula_thunder_2,
+    (TaskFunc)task_bos_ursula_thunder_3,
     0x10,
 };
 

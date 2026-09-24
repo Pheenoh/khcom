@@ -224,7 +224,7 @@ u8 HCEffectName_1(HcEffectNameWork* w, void* a) {
 #ifdef VERSION_EU
         func_0806BA0C((s16)gBtlWork->unk_0F8, &w->unk_22);
 #endif
-        SetTaskUpdate(a, (void*)func_0809DE30);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809DE30);
         return 1;
     }
 
@@ -339,7 +339,7 @@ u8 func_0809DE30(HcEffectNameWork* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CC);
             UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
-            SetTaskUpdate(a, (void*)HCEffectName_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
@@ -368,7 +368,7 @@ u8 func_0809DE30(HcEffectNameWork* w, void* a) {
             w->unk_26 = func_0809DA64((s32)w, gUnk_02039DD4->unk_0CE);
             UpdateSpriteFrameTiles(w->tiles3, gUnk_09EF12C8[w->unk_26], gUnk_093FB954);
 #endif
-            SetTaskUpdate(a, (void*)HCEffectName_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)HCEffectName_1);
         } else {
             u16 id = func_080792D0(&w->unk_20);
             w->unk_1E = id;
@@ -451,7 +451,7 @@ void NumberPlus_3(void** p) {
 
 Mode gModePremire = {
     gUnk_09037F80,
-    (void (*)(s32))Mode_Premire_0,
+    (ModeInitFunc)Mode_Premire_0,
     Mode_Premire_1,
     Mode_Premire_2,
 };
@@ -465,10 +465,10 @@ const char gTaskNameHCEffectName[] = "HCEffectName";
 
 TaskDesc gTaskDescHCEffectName = {
     gTaskNameHCEffectName,
-    (void (*)(void*, void*))HCEffectName_0,
+    (TaskInitFunc)HCEffectName_0,
     HCEffectName_1,
-    (void (*)(void*))HCEffectName_2,
-    (void (*)(void*))HCEffectName_3,
+    (TaskFunc)HCEffectName_2,
+    (TaskFunc)HCEffectName_3,
     0x28,
 };
 
@@ -476,9 +476,9 @@ const char gTaskNameNumberPlus[] = "NumberPlus";
 
 TaskDesc gTaskDescNumberPlus = {
     gTaskNameNumberPlus,
-    (void (*)(void*, void*))NumberPlus_0,
+    (TaskInitFunc)NumberPlus_0,
     NumberPlus_1,
-    (void (*)(void*))NumberPlus_2,
-    (void (*)(void*))NumberPlus_3,
+    (TaskFunc)NumberPlus_2,
+    (TaskFunc)NumberPlus_3,
     0x2C,
 };

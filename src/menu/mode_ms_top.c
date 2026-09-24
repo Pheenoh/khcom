@@ -121,7 +121,7 @@ void* gUnkEu_09F84F38[5] = {
 
 Mode gModeMsTop = {
     gModeNameMsTop,
-    (void (*)(s32))mode_ms_top_0,
+    (ModeInitFunc)mode_ms_top_0,
     mode_ms_top_1,
     mode_ms_top_2,
 };

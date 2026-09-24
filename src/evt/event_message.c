@@ -2986,7 +2986,7 @@ u8 event_seq_1(EventSeqWork* work, void* a) {
         }
     }
 
-    SetTaskUpdate(a, (void*)func_0806D830);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806D830);
     return 1;
 }
 u8 func_0806D808(void) {
@@ -3029,7 +3029,7 @@ u8 func_0806D830(EventSeqWork* p, void* a) {
         p->unk_2F = 1;
         gEventState->unk_82 = 1;
         FadeStartOut(0, 64);
-        SetTaskUpdate(a, (u32)func_0806D808);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0806D808);
 
         for (i = 0; i < 32; i++) {
             FadeSetPaletteExcluded(i, 0);
@@ -3383,7 +3383,7 @@ u8 event_chara_1(EventCharaWork* p, void* a) {
         gEventState->flags |= 1;
         gEventState->flags |= 4;
         p->unk_19C = 0;
-        SetTaskUpdate(a, (void*)func_080700D4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080700D4);
     }
     TaskPoolUpdate(&p->tasks);
 
@@ -3629,7 +3629,7 @@ u8 _0806E9DC(EventCharaWork* p, void* a) {
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
     TaskPoolUpdate(&p->tasks);
-    SetTaskUpdate(a, (void*)func_0806EA28);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806EA28);
     return 1;
 }
 u8 func_0806EA28(EventCharaWork* p, void* a) {
@@ -3670,7 +3670,7 @@ u8 func_0806EA28(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -3689,7 +3689,7 @@ u8 func_0806EB94(EventCharaWork* p, void* a) {
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
     TaskPoolUpdate(&p->tasks);
-    SetTaskUpdate(a, (void*)func_0806EBE0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806EBE0);
     return 1;
 }
 u8 func_0806EBE0(EventCharaWork* p, void* a) {
@@ -3720,7 +3720,7 @@ u8 func_0806EBE0(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -3739,7 +3739,7 @@ u8 func_0806ECE0(EventCharaWork* p, void* a) {
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
     TaskPoolUpdate(&p->tasks);
-    SetTaskUpdate(a, (void*)func_0806ED2C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806ED2C);
     return 1;
 }
 u8 func_0806ED2C(EventCharaWork* p, void* a) {
@@ -3770,7 +3770,7 @@ u8 func_0806ED2C(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -3789,7 +3789,7 @@ u8 func_0806EE20(EventCharaWork* p, void* a) {
     p->unk_1A8 = 0;
     p->unk_198 = p->unk_034;
     TaskPoolUpdate(&p->tasks);
-    SetTaskUpdate(a, (void*)func_0806EE6C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806EE6C);
     return 1;
 }
 u8 func_0806EE6C(EventCharaWork* p, void* a) {
@@ -3816,7 +3816,7 @@ u8 func_0806EE6C(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -3856,7 +3856,7 @@ u8 func_0806EF40(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
-    SetTaskUpdate(a, (void*)func_0806F02C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F02C);
 
     if (p->unk_026 == 3) {
         e = &p->keyframes[p->unk_1A0];
@@ -3884,7 +3884,7 @@ u8 func_0806F02C(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -3930,7 +3930,7 @@ u8 func_0806F114(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 0x1000;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
-    SetTaskUpdate(a, (void*)func_0806F204);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F204);
 
     if (p->unk_026 == 3) {
         e = &p->keyframes[p->unk_1A0];
@@ -3958,7 +3958,7 @@ u8 func_0806F204(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4003,7 +4003,7 @@ u8 func_0806F2EC(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
-    SetTaskUpdate(a, (void*)func_0806F3A8);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F3A8);
     TaskPoolUpdate(&p->tasks);
     return 1;
 }
@@ -4024,7 +4024,7 @@ u8 func_0806F3A8(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4063,7 +4063,7 @@ u8 func_0806F47C(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 0x1010;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
-    SetTaskUpdate(a, (void*)func_0806F53C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F53C);
     TaskPoolUpdate(&p->tasks);
     return 1;
 }
@@ -4084,7 +4084,7 @@ u8 func_0806F53C(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4102,7 +4102,7 @@ u8 func_0806F610(EventCharaWork* p, void* a) {
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
     p->unk_194 = p->unk_034;
-    SetTaskUpdate(a, (void*)func_0806F64C);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F64C);
     return 1;
 }
 u8 func_0806F64C(EventCharaWork* p, void* a) {
@@ -4120,7 +4120,7 @@ u8 func_0806F64C(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4138,7 +4138,7 @@ u8 func_0806F734(EventCharaWork* p, void* a) {
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
     p->unk_194 = p->unk_034;
-    SetTaskUpdate(a, (void*)func_0806F770);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F770);
     return 1;
 }
 u8 func_0806F770(EventCharaWork* p, void* a) {
@@ -4156,7 +4156,7 @@ u8 func_0806F770(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4174,7 +4174,7 @@ u8 func_0806F858(EventCharaWork* p, void* a) {
     p->unk_198 = 0;
     p->unk_190 = p->unk_02C;
     p->unk_194 = p->unk_034;
-    SetTaskUpdate(a, (void*)func_0806F898);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806F898);
     return 1;
 }
 u8 func_0806F898(EventCharaWork* p, void* a) {
@@ -4193,7 +4193,7 @@ u8 func_0806F898(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4257,7 +4257,7 @@ void func_0806F94C(EventCharaWork* p) {
 u8 func_0806FA84(EventCharaWork* p, void* a) {
     p->unk_1AA = 0;
     p->unk_1A9 = 0;
-    SetTaskUpdate(a, (void*)func_0806FAB8);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806FAB8);
     TaskPoolUpdate(&p->tasks);
     return 1;
 }
@@ -4286,7 +4286,7 @@ u8 func_0806FAB8(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
     }
     TaskPoolUpdate(&p->tasks);
@@ -4318,7 +4318,7 @@ u8 func_0806FB6C(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 16;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
-    SetTaskUpdate(a, (void*)func_0806FC28);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806FC28);
     TaskPoolUpdate(&p->tasks);
     return 1;
 }
@@ -4339,7 +4339,7 @@ u8 func_0806FC28(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4378,7 +4378,7 @@ u8 func_0806FCF4(void* work, void* a) {
     (*(volatile u16*)&gBldAlpha) = 0;
     p->unk_1AA = 0;
     p->unk_1A9 = 16;
-    SetTaskUpdate(a, (void*)func_0806FDB0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0806FDB0);
     TaskPoolUpdate(&p->tasks);
     return 1;
 }
@@ -4400,7 +4400,7 @@ u8 func_0806FDB0(EventCharaWork* p, void* a) {
         if (p->keyframes[p->unk_1A0].unk_1C != NULL) {
             SetTaskUpdate(a, p->keyframes[p->unk_1A0].unk_1C);
         } else {
-            SetTaskUpdate(a, (void*)event_chara_1);
+            SetTaskUpdate(a, (TaskUpdateFunc)event_chara_1);
         }
 
         if (p->keyframes[p->unk_1A0].unk_20 != NULL) {
@@ -4646,7 +4646,7 @@ u8 func_080700D4(EventCharaWork* p, void* a) {
     if ((GetKeysPressed() & B_BUTTON) != 0) {
         p->unk_1AF = 0;
         p->unk_1A8 = 0;
-        SetTaskUpdate(a, (void*)func_0807048C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0807048C);
     }
 
     v = p->unk_02C + (gSineTable[p->unk_1AB] * p->unk_19C >> 8);
@@ -4918,7 +4918,7 @@ u8 func_0807048C(EventCharaWork* p, void* a) {
             p->unk_18C = -0x540;
         } else if (p->unk_1A8 > 10) {
             p->unk_1AC = 255;
-            SetTaskUpdate(a, (void*)func_080700D4);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080700D4);
         } else {
             p->unk_1A8++;
         }
@@ -6114,14 +6114,14 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                         }
                     }
                     _08073E6C(&p->face);
-                    SetTaskUpdate(a, (void*)func_08073294);
+                    SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
                     gEventState->unk_8B = 1;
                 } else {
                     LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
                     LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
                     SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
                     RedrawBgMapAt(p->unk_38, p->unk_18, 0);
-                    SetTaskUpdate(a, (void*)func_08073294);
+                    SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
                     _08073E6C(&p->face);
                     gEventState->unk_81 = 1;
 
@@ -6167,14 +6167,14 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                 }
             }
             _08073E6C(&p->face);
-            SetTaskUpdate(a, (void*)func_08073294);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
             gEventState->unk_8B = 1;
         } else {
             LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
             LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
             SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
             RedrawBgMapAt(p->unk_38, p->unk_18, 0);
-            SetTaskUpdate(a, (void*)func_08073294);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
             _08073E6C(&p->face);
             gEventState->unk_81 = 1;
 
@@ -6213,12 +6213,12 @@ u8 func_08073170(MsgWinWork* p, void* a) {
             if (gEventState->unk_89 != 0) {
                 gEventState->unk_89--;
             } else {
-                SetTaskUpdate(a, (void*)func_08073294);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
                 _08073E6C(&p->face);
                 gEventState->unk_81 = 1;
             }
         } else {
-            SetTaskUpdate(a, (void*)func_08073294);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
             _08073E6C(&p->face);
             gEventState->unk_81 = 1;
         }
@@ -6268,7 +6268,7 @@ u8 func_08073294(MsgWinWork* p, void* a) {
         if ((e->flags & 0xF) == 0) {
             gEventState->unk_7B = 1;
         }
-        SetTaskUpdate(a, (void*)func_08073318);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073318);
     }
     TaskPoolUpdate(p);
     return 1;
@@ -6293,7 +6293,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
             p->unk_29 = 0;
             p->unk_2A = 1;
             p->face.unk_08 = 1;
-            SetTaskUpdate(a, (void*)func_08073170);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08073170);
         } else {
             _08065994();
 
@@ -6301,7 +6301,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                 if (p->script[p->unk_27 + 1].unk_08 != 4) {
                     p->unk_1E = 8;
                     func_08073E74(&p->face);
-                    SetTaskUpdate(a, (void*)func_0807344C);
+                    SetTaskUpdate(a, (TaskUpdateFunc)func_0807344C);
                     gEventState->unk_81 = text;
                     p->face.unk_08 = text;
                 } else {
@@ -6311,12 +6311,12 @@ u8 func_08073318(MsgWinWork* p, void* a) {
                     p->unk_27++;
                     gEventState->flags &= ~1;
                     p->face.unk_08 = 1;
-                    SetTaskUpdate(a, (void*)func_08072EAC);
+                    SetTaskUpdate(a, (TaskUpdateFunc)func_08072EAC);
                 }
             } else {
                 p->unk_1E = 8;
                 func_08073E74(&p->face);
-                SetTaskUpdate(a, (void*)func_0807344C);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_0807344C);
                 gEventState->unk_81 = text;
                 p->face.unk_08 = text;
             }
@@ -6351,7 +6351,7 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
             p->unk_2A = 0;
             p->unk_29 = 0;
             p->unk_27++;
-            SetTaskUpdate(a, (void*)func_08072EAC);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08072EAC);
         }
     }
     TaskPoolUpdate(p);
@@ -6523,12 +6523,12 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
             }
         }
 
-        SetTaskUpdate(a, (void*)func_08073B04);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073B04);
         break;
     case 2:
         p->unk_30 = 8;
         p->unk_31 = 0;
-        SetTaskUpdate(a, (void*)func_08073B54);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073B54);
         break;
     case 4:
         p->unk_30 = 4;
@@ -6540,10 +6540,10 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
         }
 
         p->y = gUnk_09033CF0[p->face->positionIndex];
-        SetTaskUpdate(a, (void*)func_08073CA4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073CA4);
         break;
     case 3:
-        SetTaskUpdate(a, (void*)func_08073B9C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073B9C);
         break;
     }
 
@@ -6602,7 +6602,7 @@ u8 func_08073B04(MsgFaceWork* p, void* a) {
     if (p->unk_30 == 0) {
         p->face->command = 0;
         p->unk_31 = 1;
-        SetTaskUpdate(a, (void*)msgface_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     }
     return 1;
 }
@@ -6611,7 +6611,7 @@ u8 func_08073B54(MsgFaceWork* p, void* a) {
     p->unk_30--;
     if (p->unk_30 == 0) {
         p->face->command = 0;
-        SetTaskUpdate(a, (void*)msgface_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     }
     return 1;
 }
@@ -6648,7 +6648,7 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     p->y = gUnk_09033CF0[n];
     p->unk_2C = 256;
     p->unk_30 = 8;
-    SetTaskUpdate(a, (void*)msgface_1);
+    SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     return 1;
 }
 
@@ -6684,7 +6684,7 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
             p->unk_31 = 0;
             p->unk_30 = 8;
         }
-        SetTaskUpdate(a, (void*)func_08073DA4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08073DA4);
     }
     return 1;
 }
@@ -6700,7 +6700,7 @@ u8 func_08073DA4(MsgFaceWork* p, void* a) {
         p->unk_31 = 1;
         p->face->command = 0;
         p->unk_2C = 256;
-        SetTaskUpdate(a, (void*)msgface_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)msgface_1);
     }
     return 1;
 }
@@ -6759,7 +6759,7 @@ u8 msgwait_1(MsgWaitWork* p, void* a) {
             m4aSongNumStart(SONG_SYS_KETTEI);
             return 0;
         } else {
-            SetTaskUpdate(a, (void*)func_08073F78);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08073F78);
             m4aSongNumStart(SONG_SYS_KETTEI);
         }
     }
@@ -6892,7 +6892,7 @@ u8 msgwait_yesno_1(MsgWaitYesNoWork* p, void* a) {
         AnimStart(p->anim, 3, 1);
         p->unk_104 = 1;
         m4aSongNumStart(SONG_SYS_CANSEL);
-        SetTaskUpdate(a, (void*)func_0807420C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0807420C);
     }
     return 1;
 }
@@ -7267,7 +7267,7 @@ u8 view_1(EventCameraWork* p, u8* task) {
     }
 
     if (gEventState->flags & 4) {
-        SetTaskUpdate(task, (u32)_08074EC8);
+        SetTaskUpdate(task, (TaskUpdateFunc)_08074EC8);
     }
 
     if (u != NULL && (u->flags & 1)) {
@@ -7423,10 +7423,10 @@ void func_08075010(EventCameraWork* p) {
 
 TaskDesc gTaskDescEventSeq = {
     gTaskNameEventSeq,
-    (void (*)(void*, void*))event_seq_0,
+    (TaskInitFunc)event_seq_0,
     event_seq_1,
-    (void (*)(void*))event_seq_2,
-    (void (*)(void*))event_seq_3,
+    (TaskFunc)event_seq_2,
+    (TaskFunc)event_seq_3,
 #ifdef VERSION_EU
     0x40,
 #else
@@ -7436,10 +7436,10 @@ TaskDesc gTaskDescEventSeq = {
 
 TaskDesc gTaskDescEventChara = {
     gTaskNameEventChara,
-    (void (*)(void*, void*))event_chara_0,
+    (TaskInitFunc)event_chara_0,
     event_chara_1,
-    (void (*)(void*))event_chara_2,
-    (void (*)(void*))event_chara_3,
+    (TaskFunc)event_chara_2,
+    (TaskFunc)event_chara_3,
     0x1BC,
 };
 
@@ -7459,45 +7459,45 @@ void* gUnk_09EE4724[4] = {
 
 TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
-    (void (*)(void*, void*))func_08072D98,
+    (TaskInitFunc)func_08072D98,
     func_08072EAC,
-    (void (*)(void*))func_08073238,
-    (void (*)(void*))func_08073274,
+    (TaskFunc)func_08073238,
+    (TaskFunc)func_08073274,
     0x44,
 };
 
 TaskDesc gTaskDescMsgface[3] = {
     {
         gTaskNameMsgface,
-        (void (*)(void*, void*))msgface_0,
+        (TaskInitFunc)msgface_0,
         msgface_1,
-        (void (*)(void*))msgface_2,
-        (void (*)(void*))msgface_3,
+        (TaskFunc)msgface_2,
+        (TaskFunc)msgface_3,
         0x3C,
     },
     {
         gTaskNameMsgwait,
-        (void (*)(void*, void*))msgwait_0,
+        (TaskInitFunc)msgwait_0,
         msgwait_1,
-        (void (*)(void*))msgwait_2,
-        (void (*)(void*))msgwait_3,
+        (TaskFunc)msgwait_2,
+        (TaskFunc)msgwait_3,
         0x108,
     },
     {
         gTaskNameMsgwaitYesno,
-        (void (*)(void*, void*))msgwait_yesno_0,
+        (TaskInitFunc)msgwait_yesno_0,
         msgwait_yesno_1,
-        (void (*)(void*))msgwait_yesno_2,
-        (void (*)(void*))msgwait_yesno_3,
+        (TaskFunc)msgwait_yesno_2,
+        (TaskFunc)msgwait_yesno_3,
         0x108,
     },
 };
 
 TaskDesc gTaskDescView = {
     gTaskNameView,
-    (void (*)(void*, void*))view_0,
+    (TaskInitFunc)view_0,
     view_1,
-    (void (*)(void*))view_2,
-    (void (*)(void*))view_3,
+    (TaskFunc)view_2,
+    (TaskFunc)view_3,
     0x15C,
 };

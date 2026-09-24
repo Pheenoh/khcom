@@ -2346,7 +2346,7 @@ const char gModeNameJiminy[] = "mode_jiminy";
 
 Mode gModeJiminy = {
     gModeNameJiminy,
-    (void (*)(s32))mode_jiminy_0,
+    (ModeInitFunc)mode_jiminy_0,
     mode_jiminy_1,
     mode_jiminy_2,
 };

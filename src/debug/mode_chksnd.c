@@ -1352,4 +1352,4 @@ ChkSndEntry gChkSndEntries[] = {
     { gUnk_0812E8F8, SONG_SND_970 },
 };
 
-Mode gModeChksnd = { gModeNameChksnd, (void (*)(s32))mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };
+Mode gModeChksnd = { gModeNameChksnd, (ModeInitFunc)mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };

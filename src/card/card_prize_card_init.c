@@ -532,7 +532,7 @@ u8 func_08097138(UnkStruct_08096F94* w, void* a) {
         w->unk_E5 = 1;
         m4aSongNumStart(SONG_SYS_ITEMGET);
         AddMapCard(w->unk_B0);
-        SetTaskUpdate(a, (void*)func_08097404);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08097404);
         WorldToScreen(&x, &y, w->unk_A0, w->unk_A4, w->unk_A8);
         w->unk_A0 = x << 8;
         w->unk_A4 = y << 8;
@@ -600,7 +600,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
         if (w->unk_C4 <= 0x7FF) {
             w->unk_E2 = 0;
             w->unk_DE = 0;
-            SetTaskUpdate(a, (void*)func_0809753C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0809753C);
             CreateCardNameDisplay(&w->tasks, func_08093C18(w->cardDef->unk_20));
         }
     }
@@ -832,7 +832,7 @@ u8 SpotLight_1(SpotlightWork* w, void* a) {
         FadeStartIn(0, 30);
         w->unk_00 = 30;
         gBldCnt = (BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3);
-        SetTaskUpdate(a, (void*)func_08097A80);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08097A80);
     }
 
     return 1;
@@ -966,7 +966,7 @@ s32 SELMAP_EVKEY_1(u8* work, void* a) {
     work[0x11D]++;
 
     if ((*(void***)&work[0xD8])[2] != 0) {
-        SetTaskUpdate(a, (void*)func_08097DE4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08097DE4);
     }
 
     q1 = &work[work[0x122] * 52];
@@ -1423,7 +1423,7 @@ const char gTaskNamePrizeCardInit[] = "PrizeCardInit";
 
 TaskDesc gTaskDescPrizeCardInit = {
     gTaskNamePrizeCardInit,
-    (void (*)(void*, void*))func_08096714,
+    (TaskInitFunc)func_08096714,
     PrizeCardInit_1,
     func_08096C20,
     func_08096C2C,
@@ -1434,7 +1434,7 @@ const char gTaskNamePrizeCardInitBoss[] = "PrizeCardInit_Boss";
 
 TaskDesc gTaskDescPrizeCardInitBoss = {
     gTaskNamePrizeCardInitBoss,
-    (void (*)(void*, void*))func_08096714,
+    (TaskInitFunc)func_08096714,
     PrizeCardInit_Boss_1,
     func_08096C20,
     func_08096C2C,
@@ -1445,10 +1445,10 @@ const char gTaskNameDispCardname[] = "DispCardname";
 
 TaskDesc gTaskDescDispCardname = {
     gTaskNameDispCardname,
-    (void (*)(void*, void*))DispCardname_0,
+    (TaskInitFunc)DispCardname_0,
     DispCardname_1,
-    (void (*)(void*))DispCardname_2,
-    (void (*)(void*))DispCardname_3,
+    (TaskFunc)DispCardname_2,
+    (TaskFunc)DispCardname_3,
     0x110,
 };
 
@@ -1456,10 +1456,10 @@ const char gTaskNameVersion[] = "Version";
 
 TaskDesc gTaskDescVersion = {
     gTaskNameVersion,
-    (void (*)(void*, void*))Version_0,
+    (TaskInitFunc)Version_0,
     Version_1,
-    (void (*)(void*))Version_2,
-    (void (*)(void*))Version_3,
+    (TaskFunc)Version_2,
+    (TaskFunc)Version_3,
     0x2C,
 };
 
@@ -1467,10 +1467,10 @@ const char gTaskName_09EE7650[] = "PrizeCard";
 
 TaskDesc gUnk_09EE7650 = {
     gTaskName_09EE7650,
-    (void (*)(void*, void*))func_08096F94,
+    (TaskInitFunc)func_08096F94,
     func_08097138,
-    (void (*)(void*))func_08097688,
-    (void (*)(void*))func_08097834,
+    (TaskFunc)func_08097688,
+    (TaskFunc)func_08097834,
     0xEC,
 };
 
@@ -1478,10 +1478,10 @@ const char gTaskNameSpotLight[] = "SpotLight";
 
 TaskDesc gTaskDescSpotLight = {
     gTaskNameSpotLight,
-    (void (*)(void*, void*))SpotLight_0,
+    (TaskInitFunc)SpotLight_0,
     SpotLight_1,
-    (void (*)(void*))SpotLight_2,
-    (void (*)(void*))SpotLight_3,
+    (TaskFunc)SpotLight_2,
+    (TaskFunc)SpotLight_3,
     0x18,
 };
 #ifdef VERSION_EU
@@ -1496,9 +1496,9 @@ const char gTaskNameSELMAPEVKEY[] = "SELMAP_EVKEY";
 
 TaskDesc gTaskDescSELMAPEVKEY = {
     gTaskNameSELMAPEVKEY,
-    (void (*)(void*, void*))SELMAP_EVKEY_0,
+    (TaskInitFunc)SELMAP_EVKEY_0,
     SELMAP_EVKEY_1,
-    (void (*)(void*))SELMAP_EVKEY_2,
-    (void (*)(void*))SELMAP_EVKEY_3,
+    (TaskFunc)SELMAP_EVKEY_2,
+    (TaskFunc)SELMAP_EVKEY_3,
     0x124,
 };

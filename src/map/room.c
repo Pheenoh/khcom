@@ -193,9 +193,9 @@ const char gTaskNameRoomName[] = "task_room_name";
 
 TaskDesc gTaskDescRoomName = {
     gTaskNameRoomName,
-    (void (*)(void*, void*))task_room_name_0,
+    (TaskInitFunc)task_room_name_0,
     task_room_name_1,
-    (void (*)(void*))task_room_name_2,
-    (void (*)(void*))task_room_name_3,
+    (TaskFunc)task_room_name_2,
+    (TaskFunc)task_room_name_3,
     0x15C,
 };

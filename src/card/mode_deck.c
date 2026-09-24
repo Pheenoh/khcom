@@ -240,6 +240,6 @@ void menu_3(MenuWork* w) {
 
 const char gModeNameDeck[] = "Mode_Deck";
 const char gTaskNameMenu[] = "menu";
-Mode gUnk_09EE2704 = { gModeNameDeck, (void (*)(s32))func_08060A74, func_08060AD8, func_08060BAC };
+Mode gUnk_09EE2704 = { gModeNameDeck, (ModeInitFunc)func_08060A74, func_08060AD8, func_08060BAC };
 
-TaskDesc gTaskDescMenu = { gTaskNameMenu, (void (*)(void*, void*))menu_0, menu_1, (void (*)(void*))menu_2, (void (*)(void*))menu_3, sizeof(MenuWork) };
+TaskDesc gTaskDescMenu = { gTaskNameMenu, (TaskInitFunc)menu_0, menu_1, (TaskFunc)menu_2, (TaskFunc)menu_3, sizeof(MenuWork) };

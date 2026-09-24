@@ -9749,14 +9749,14 @@ u8 (*gUnk_09EF6A88[2])(UnkStruct_080E8B1C*) = {
 
 Mode gModeMapDbg = {
     gModeNameMapDbg,
-    (void (*)(s32))Mode_MapDbg_0,
+    (ModeInitFunc)Mode_MapDbg_0,
     Mode_MapDbg_1,
     Mode_MapDbg_2,
 };
 
 Mode gModeMapFld = {
     gModeNameMapFld,
-    (void (*)(s32))Mode_MapFld_0,
+    (ModeInitFunc)Mode_MapFld_0,
     Mode_MapFld_1,
     Mode_MapFld_2,
 };
@@ -9812,14 +9812,14 @@ u8 gUnk_09EF6AB0[14] = {
 
 Mode gModeMapFix = {
     gModeNameMapFix,
-    (void (*)(s32))Mode_MapFix_0,
+    (ModeInitFunc)Mode_MapFix_0,
     Mode_MapFix_1,
     Mode_MapFix_2,
 };
 
 Mode gModeMenuNew = {
     gModeNameMenuNew,
-    (void (*)(s32))Mode_MenuNew_0,
+    (ModeInitFunc)Mode_MenuNew_0,
     Mode_MenuNew_1,
     Mode_MenuNew_2,
 };
@@ -9840,19 +9840,19 @@ Mode gModeMenuMsg = {
 
 TaskDesc gTaskDescMapRnd = {
     gTaskNameMapRnd,
-    (void (*)(void*, void*))Task_MapRnd_0,
+    (TaskInitFunc)Task_MapRnd_0,
     Task_MapRnd_1,
-    (void (*)(void*))Task_MapRnd_2,
-    (void (*)(void*))Task_MapRnd_3,
+    (TaskFunc)Task_MapRnd_2,
+    (TaskFunc)Task_MapRnd_3,
     0x14,
 };
 
 TaskDesc gTaskDescMapFix = {
     gTaskNameMapFix,
-    (void (*)(void*, void*))Task_MapFix_0,
+    (TaskInitFunc)Task_MapFix_0,
     Task_MapFix_1,
-    (void (*)(void*))Task_MapFix_2,
-    (void (*)(void*))Task_MapFix_3,
+    (TaskFunc)Task_MapFix_2,
+    (TaskFunc)Task_MapFix_3,
 #ifdef VERSION_EU
     0x1E8,
 #else
@@ -9862,19 +9862,19 @@ TaskDesc gTaskDescMapFix = {
 
 TaskDesc gTaskDescMapDoor = {
     gTaskNameMapDoor,
-    (void (*)(void*, void*))Task_MapDoor_0,
+    (TaskInitFunc)Task_MapDoor_0,
     Task_MapDoor_1,
-    (void (*)(void*))Task_MapDoor_2,
-    (void (*)(void*))Task_MapDoor_3,
+    (TaskFunc)Task_MapDoor_2,
+    (TaskFunc)Task_MapDoor_3,
     0x88,
 };
 
 TaskDesc gTaskDescMapMenu = {
     gTaskNameMapMenu,
-    (void (*)(void*, void*))Task_MapMenu_0,
+    (TaskInitFunc)Task_MapMenu_0,
     Task_MapMenu_1,
-    (void (*)(void*))Task_MapMenu_2,
-    (void (*)(void*))Task_MapMenu_3,
+    (TaskFunc)Task_MapMenu_2,
+    (TaskFunc)Task_MapMenu_3,
 #ifdef VERSION_EU
     0x41C,
 #else
@@ -9884,10 +9884,10 @@ TaskDesc gTaskDescMapMenu = {
 
 TaskDesc gTaskDescMapSave = {
     gTaskNameMapSave,
-    (void (*)(void*, void*))Task_MapSave_0,
+    (TaskInitFunc)Task_MapSave_0,
     Task_MapSave_1,
-    (void (*)(void*))Task_MapSave_2,
-    (void (*)(void*))Task_MapSave_3,
+    (TaskFunc)Task_MapSave_2,
+    (TaskFunc)Task_MapSave_3,
 #ifdef VERSION_EU
     0x3E8,
 #else
@@ -9897,9 +9897,9 @@ TaskDesc gTaskDescMapSave = {
 
 TaskDesc gTaskDescMapAnm = {
     gTaskNameMapAnm,
-    (void (*)(void*, void*))Task_MapAnm_0,
+    (TaskInitFunc)Task_MapAnm_0,
     Task_MapAnm_1,
-    (void (*)(void*))Task_MapAnm_2,
-    (void (*)(void*))Task_MapAnm_3,
+    (TaskFunc)Task_MapAnm_2,
+    (TaskFunc)Task_MapAnm_3,
     0xE0,
 };

@@ -149,7 +149,7 @@ u8 func_0809C710(u8* work, void* a) {
 
     if (work[0x53] == 0) {
         work[0x55] = 1;
-        SetTaskUpdate(a, (void*)func_0809C620);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809C620);
     }
 
     return 1;
@@ -256,7 +256,7 @@ u8 func_0809CB0C(u8* work, void* a) {
     work[0x53]--;
 
     if (work[0x53] == 0) {
-        SetTaskUpdate(a, (void*)func_0809CB78);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809CB78);
     }
 
     return 1;
@@ -268,7 +268,7 @@ u8 func_0809CB78(u8* work, void* a) {
     AnimInit(&work[0x2C], gUnk_09EEA164, gUnk_09EEA148);
     AnimStart(&work[0x2C], 0, 1);
     *(void**)&work[0x44] = AnimGetGfx(&work[0x2C]);
-    SetTaskUpdate(a, (void*)func_0809CBD0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_0809CBD0);
     return 1;
 }
 
@@ -316,9 +316,9 @@ const char gTaskName_09EE781C[] = "Premire Chance";
 
 TaskDesc gUnk_09EE781C = {
     gTaskName_09EE781C,
-    (void (*)(void*, void*))func_0809C534,
+    (TaskInitFunc)func_0809C534,
     func_0809C710,
-    (void (*)(void*))func_0809C78C,
-    (void (*)(void*))func_0809C98C,
+    (TaskFunc)func_0809C78C,
+    (TaskFunc)func_0809C98C,
     0x78,
 };

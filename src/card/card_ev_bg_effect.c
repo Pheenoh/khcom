@@ -147,7 +147,7 @@ u8 EV_BG_EFFECT_1(EventBgEffectWork* w, void* a) {
             func_080A1DAC(w);
 
             if (w->unk_15 != 0) {
-                SetTaskUpdate(a, (void*)func_080A2024);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_080A2024);
             }
         }
 
@@ -189,7 +189,7 @@ u8 func_080A2024(u8* work, void* a) {
                 (u16)((*(s32*)&gEventState[0x5C] >> 8) - (*(s32*)&p[8] >> 8)));
 
     if (func_080A207C(work) == 0) {
-        SetTaskUpdate(a, (void*)EV_BG_EFFECT_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)EV_BG_EFFECT_1);
     }
 
     return 1;
@@ -251,9 +251,9 @@ const char gTaskNameEVBGEFFECT[] = "EV_BG_EFFECT";
 
 TaskDesc gTaskDescEVBGEFFECT = {
     gTaskNameEVBGEFFECT,
-    (void (*)(void*, void*))EV_BG_EFFECT_0,
+    (TaskInitFunc)EV_BG_EFFECT_0,
     EV_BG_EFFECT_1,
-    (void (*)(void*))EV_BG_EFFECT_2,
-    (void (*)(void*))EV_BG_EFFECT_3,
+    (TaskFunc)EV_BG_EFFECT_2,
+    (TaskFunc)EV_BG_EFFECT_3,
     0x18,
 };

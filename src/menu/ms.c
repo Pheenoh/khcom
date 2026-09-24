@@ -59,9 +59,9 @@ const char gTaskNameMsShopHosi[] = "task_ms_shop_hosi";
 
 TaskDesc gTaskDescMsShopHosi = {
     gTaskNameMsShopHosi,
-    (void (*)(void*, void*))task_ms_shop_hosi_0,
+    (TaskInitFunc)task_ms_shop_hosi_0,
     task_ms_shop_hosi_1,
-    (void (*)(void*))task_ms_shop_hosi_2,
-    (void (*)(void*))task_ms_shop_hosi_3,
+    (TaskFunc)task_ms_shop_hosi_2,
+    (TaskFunc)task_ms_shop_hosi_3,
     0x20,
 };

@@ -2325,7 +2325,7 @@ u8 StockInfo_1(u8* work, void* a) {
     } else {
         m4aSongNumStart(SONG_SYS_CHAGEF2);
         CreateStockMesDispTask(&work[0x18], gUnk_0903BFBC[gGameState.progression.unk_80], 0, 0, 0x50);
-        SetTaskUpdate(a, (void*)func_080A22A4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A22A4);
     }
 
     return 1;
@@ -2494,9 +2494,9 @@ const char gTaskNameStockInfo[] = "StockInfo";
 
 TaskDesc gTaskDescStockInfo = {
     gTaskNameStockInfo,
-    (void (*)(void*, void*))StockInfo_0,
+    (TaskInitFunc)StockInfo_0,
     StockInfo_1,
-    (void (*)(void*))StockInfo_2,
-    (void (*)(void*))StockInfo_3,
+    (TaskFunc)StockInfo_2,
+    (TaskFunc)StockInfo_3,
     0x2C,
 };

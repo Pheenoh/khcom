@@ -229,7 +229,7 @@ u8 deckexchange_1(u8* work, void* a) {
     case 15:
         RequestDma3Clear(GetBgCharBase(3) + 0x3000, 0x1000);
         work[0x715] = 0;
-        SetTaskUpdate(a, (void*)func_080A7914);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A7914);
         return 1;
     }
 
@@ -278,7 +278,7 @@ u8 func_080A7914(u8* work, void* a) {
         break;
     case 12:
         work[0x715] = 0;
-        SetTaskUpdate(a, (void*)func_080A7ABC);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A7ABC);
         return 1;
     }
 
@@ -332,7 +332,7 @@ u8 func_080A7ABC(UnkStruct_0808C940* w, void* a) {
         w->unk_6D2 = v;
         ApproachValue(&w->x2, gUnk_09041F04[w->unk_6D0] << 8, w->unk_6F6);
         ApproachValue(&w->y2, gUnk_09041F0A[w->unk_6D2] << 8, w->unk_6F6);
-        SetTaskUpdate(a, (void*)func_080A82E0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A82E0);
         w->unk_6F0 = 1;
         func_080A9AE8((u8*)w);
         func_080AA328((u8*)w);
@@ -360,7 +360,7 @@ u8 func_080A7C80(u8* work, void* a) {
 
     if (work[0x710] != 0) {
         if ((u8)func_080AAC40(work) != 0 && (u8)func_080AAC8C(work) != 0) {
-            SetTaskUpdate(a, (void*)func_080A8C20);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
@@ -442,7 +442,7 @@ u8 func_080A7C80(u8* work, void* a) {
         *(s32*)&work[0x698] = gUnk_09035964[*(s16*)&work[0x6D2]] << 8;
         func_080AA450(work);
         work[0x6F0] = 9;
-        SetTaskUpdate(a, (void*)func_080A86F4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A86F4);
         return 1;
     case A_BUTTON:
         if ((u8)func_080AAB08((UnkStruct_080AAB08*)work) == 0) {
@@ -455,13 +455,13 @@ u8 func_080A7C80(u8* work, void* a) {
         func_0808CC58(*(u16*)&work[0x6E4], 1);
         func_0808CC58(*(u16*)&work[0x6E6], 2);
         func_0808CC58(*(u16*)&work[0x6E8], 3);
-        SetTaskUpdate(a, (void*)func_080A8BD8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A8BD8);
         func_080AA680(work);
         work[0x6F6] = 4;
         break;
     case START_BUTTON:
         if ((u8)func_080AAC40(work) != 0 && (u8)func_080AAC8C(work) != 0) {
-            SetTaskUpdate(a, (void*)func_080A8C20);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
         }
@@ -585,7 +585,7 @@ u8 func_080A82E0(UnkStruct_080A82E0* work, void* a) {
     func_080AAA8C((u8*)work, 0);
     func_080A9968((u8*)work);
     work->unk_715 = 0;
-    SetTaskUpdate(a, (void*)func_080A8430);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A8430);
     work->unk_6C4 = 0xFFFE;
     work->unk_6C6 = 142;
     work->unk_6C8 = 142;
@@ -803,7 +803,7 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
 u8 func_080A8BD8(u8* work, void* a) {
     FadeStartOut(0, 16);
     work[0x701] = 0;
-    SetTaskUpdate(a, (void*)func_080A8C20);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
     TaskPoolUpdate(&work[0x614]);
     TaskPoolUpdate(&work[0x628]);
     return 1;
@@ -2006,10 +2006,10 @@ const char gTaskNameDeckexchange[] = "deckexchange";
 
 TaskDesc gTaskDescDeckexchange = {
     gTaskNameDeckexchange,
-    (void (*)(void*, void*))deckexchange_0,
+    (TaskInitFunc)deckexchange_0,
     deckexchange_1,
-    (void (*)(void*))deckexchange_2,
-    (void (*)(void*))deckexchange_3,
+    (TaskFunc)deckexchange_2,
+    (TaskFunc)deckexchange_3,
     0x718,
 };
 #endif

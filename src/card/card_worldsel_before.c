@@ -169,9 +169,9 @@ const char gTaskNameWorldSelBefore[] = "WorldSel Before";
 
 TaskDesc gTaskDescWorldSelBefore = {
     gTaskNameWorldSelBefore,
-    (void (*)(void*, void*))WorldSel_Before_0,
+    (TaskInitFunc)WorldSel_Before_0,
     WorldSel_Before_1,
-    (void (*)(void*))WorldSel_Before_2,
-    (void (*)(void*))WorldSel_Before_3,
+    (TaskFunc)WorldSel_Before_2,
+    (TaskFunc)WorldSel_Before_3,
     0xB8,
 };

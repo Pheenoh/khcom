@@ -1260,10 +1260,10 @@ const char gTaskNameMapAnim[] = "map_anim";
 
 TaskDesc gTaskDescMapAnim = {
     gTaskNameMapAnim,
-    (void (*)(void*, void*))map_anim_0,
+    (TaskInitFunc)map_anim_0,
     map_anim_1,
-    (void (*)(void*))map_anim_2,
-    (void (*)(void*))map_anim_3,
+    (TaskFunc)map_anim_2,
+    (TaskFunc)map_anim_3,
     0x18,
 };
 

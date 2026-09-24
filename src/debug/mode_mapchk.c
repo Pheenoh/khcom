@@ -123,7 +123,7 @@ const char gModeNameMapChk[] = "Mode_MapChk";
 
 Mode gModeMapChk = {
     gModeNameMapChk,
-    (void (*)(s32))Mode_MapChk_0,
+    (ModeInitFunc)Mode_MapChk_0,
     Mode_MapChk_1,
     Mode_MapChk_2,
 };

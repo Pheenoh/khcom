@@ -2241,28 +2241,28 @@ const char gTaskNameWlogoBksObj[] = "task_wlogo_bks_obj";
 
 TaskDesc gTaskDescWlogoMons = {
     gTaskNameWlogoMons,
-    (void (*)(void*, void*))task_wlogo_mons_0,
+    (TaskInitFunc)task_wlogo_mons_0,
     task_wlogo_mons_1,
-    (void (*)(void*))task_wlogo_mons_2,
-    (void (*)(void*))task_wlogo_mons_3,
+    (TaskFunc)task_wlogo_mons_2,
+    (TaskFunc)task_wlogo_mons_3,
     0x30,
 };
 
 TaskDesc gTaskDescWlogoHwt = {
     gTaskNameWlogoHwt,
-    (void (*)(void*, void*))task_wlogo_hwt_0,
+    (TaskInitFunc)task_wlogo_hwt_0,
     task_wlogo_hwt_1,
-    (void (*)(void*))task_wlogo_hwt_2,
-    (void (*)(void*))task_wlogo_hwt_3,
+    (TaskFunc)task_wlogo_hwt_2,
+    (TaskFunc)task_wlogo_hwt_3,
     0x8,
 };
 
 TaskDesc gTaskDescWlogoHwtObj = {
     gTaskNameWlogoHwtObj,
-    (void (*)(void*, void*))task_wlogo_hwt_obj_0,
+    (TaskInitFunc)task_wlogo_hwt_obj_0,
     task_wlogo_hwt_obj_1,
-    (void (*)(void*))task_wlogo_hwt_obj_2,
-    (void (*)(void*))task_wlogo_hwt_obj_3,
+    (TaskFunc)task_wlogo_hwt_obj_2,
+    (TaskFunc)task_wlogo_hwt_obj_3,
     0x4C,
 };
 
@@ -2317,73 +2317,73 @@ s32 gUnk_09EF180C[20] = {
 
 TaskDesc gTaskDescWlogoWon = {
     gTaskNameWlogoWon,
-    (void (*)(void*, void*))task_wlogo_won_0,
+    (TaskInitFunc)task_wlogo_won_0,
     task_wlogo_won_1,
-    (void (*)(void*))task_wlogo_won_2,
-    (void (*)(void*))task_wlogo_won_3,
+    (TaskFunc)task_wlogo_won_2,
+    (TaskFunc)task_wlogo_won_3,
     0x108,
 };
 
 TaskDesc gTaskDescWlogoAtl = {
     gTaskNameWlogoAtl,
-    (void (*)(void*, void*))task_wlogo_atl_0,
+    (TaskInitFunc)task_wlogo_atl_0,
     task_wlogo_atl_1,
-    (void (*)(void*))task_wlogo_atl_2,
-    (void (*)(void*))task_wlogo_atl_3,
+    (TaskFunc)task_wlogo_atl_2,
+    (TaskFunc)task_wlogo_atl_3,
     0xC,
 };
 
 TaskDesc gTaskDescWlogoNvl = {
     gTaskNameWlogoNvl,
-    (void (*)(void*, void*))task_wlogo_nvl_0,
+    (TaskInitFunc)task_wlogo_nvl_0,
     task_wlogo_nvl_1,
-    (void (*)(void*))task_wlogo_nvl_2,
-    (void (*)(void*))task_wlogo_nvl_3,
+    (TaskFunc)task_wlogo_nvl_2,
+    (TaskFunc)task_wlogo_nvl_3,
     0xC,
 };
 
 TaskDesc gTaskDescWlogoNvlMov = {
     gTaskNameWlogoNvlMov,
-    (void (*)(void*, void*))task_wlogo_nvl_mov_0,
+    (TaskInitFunc)task_wlogo_nvl_mov_0,
     task_wlogo_nvl_mov_1,
-    (void (*)(void*))task_wlogo_nvl_mov_2,
-    (void (*)(void*))task_wlogo_nvl_mov_3,
+    (TaskFunc)task_wlogo_nvl_mov_2,
+    (TaskFunc)task_wlogo_nvl_mov_3,
     0x4C,
 };
 
 TaskDesc gTaskDescWlogoNvlObj = {
     gTaskNameWlogoNvlObj,
-    (void (*)(void*, void*))task_wlogo_nvl_obj_0,
+    (TaskInitFunc)task_wlogo_nvl_obj_0,
     task_wlogo_nvl_obj_1,
-    (void (*)(void*))task_wlogo_nvl_obj_2,
-    (void (*)(void*))task_wlogo_nvl_obj_3,
+    (TaskFunc)task_wlogo_nvl_obj_2,
+    (TaskFunc)task_wlogo_nvl_obj_3,
     0x30,
 };
 
 TaskDesc gTaskDescWlogoCol = {
     gTaskNameWlogoCol,
-    (void (*)(void*, void*))task_wlogo_col_0,
+    (TaskInitFunc)task_wlogo_col_0,
     task_wlogo_col_1,
-    (void (*)(void*))task_wlogo_col_2,
-    (void (*)(void*))task_wlogo_col_3,
+    (TaskFunc)task_wlogo_col_2,
+    (TaskFunc)task_wlogo_col_3,
     0x34,
 };
 
 TaskDesc gTaskDescWlogoHlw = {
     gTaskNameWlogoHlw,
-    (void (*)(void*, void*))task_wlogo_hlw_0,
+    (TaskInitFunc)task_wlogo_hlw_0,
     task_wlogo_hlw_1,
-    (void (*)(void*))task_wlogo_hlw_2,
-    (void (*)(void*))task_wlogo_hlw_3,
+    (TaskFunc)task_wlogo_hlw_2,
+    (TaskFunc)task_wlogo_hlw_3,
     0x8,
 };
 
 TaskDesc gTaskDescWlogoDil = {
     gTaskNameWlogoDil,
-    (void (*)(void*, void*))task_wlogo_dil_0,
+    (TaskInitFunc)task_wlogo_dil_0,
     task_wlogo_dil_1,
-    (void (*)(void*))task_wlogo_dil_2,
-    (void (*)(void*))task_wlogo_dil_3,
+    (TaskFunc)task_wlogo_dil_2,
+    (TaskFunc)task_wlogo_dil_3,
     0x18,
 };
 
@@ -2412,55 +2412,55 @@ WlogoAgrEntry gWlogoAgrEntries[20] = {
 
 TaskDesc gTaskDescWlogoAgr = {
     gTaskNameWlogoAgr,
-    (void (*)(void*, void*))task_wlogo_agr_0,
+    (TaskInitFunc)task_wlogo_agr_0,
     task_wlogo_agr_1,
-    (void (*)(void*))task_wlogo_agr_2,
-    (void (*)(void*))task_wlogo_agr_3,
+    (TaskFunc)task_wlogo_agr_2,
+    (TaskFunc)task_wlogo_agr_3,
     0x18,
 };
 
 TaskDesc gTaskDescWlogoAgrSmoke = {
     gTaskNameWlogoAgrSmoke,
-    (void (*)(void*, void*))task_wlogo_agr_smoke_0,
+    (TaskInitFunc)task_wlogo_agr_smoke_0,
     task_wlogo_agr_smoke_1,
-    (void (*)(void*))task_wlogo_agr_smoke_2,
-    (void (*)(void*))task_wlogo_agr_smoke_3,
+    (TaskFunc)task_wlogo_agr_smoke_2,
+    (TaskFunc)task_wlogo_agr_smoke_3,
     0x38,
 };
 
 TaskDesc gTaskDescWlogoAgrFlash0 = {
     gTaskNameWlogoAgrFlash0,
-    (void (*)(void*, void*))task_wlogo_agr_flash0_0,
+    (TaskInitFunc)task_wlogo_agr_flash0_0,
     task_wlogo_agr_flash0_1,
-    (void (*)(void*))task_wlogo_agr_flash0_2,
-    (void (*)(void*))task_wlogo_agr_flash0_3,
+    (TaskFunc)task_wlogo_agr_flash0_2,
+    (TaskFunc)task_wlogo_agr_flash0_3,
     0x2C,
 };
 
 TaskDesc gTaskDescWlogoAgrFlash1 = {
     gTaskNameWlogoAgrFlash1,
-    (void (*)(void*, void*))task_wlogo_agr_flash1_0,
+    (TaskInitFunc)task_wlogo_agr_flash1_0,
     task_wlogo_agr_flash1_1,
-    (void (*)(void*))task_wlogo_agr_flash1_2,
-    (void (*)(void*))task_wlogo_agr_flash1_3,
+    (TaskFunc)task_wlogo_agr_flash1_2,
+    (TaskFunc)task_wlogo_agr_flash1_3,
     0x2C,
 };
 
 TaskDesc gTaskDescWlogoTvt = {
     gTaskNameWlogoTvt,
-    (void (*)(void*, void*))task_wlogo_tvt_0,
+    (TaskInitFunc)task_wlogo_tvt_0,
     task_wlogo_tvt_1,
-    (void (*)(void*))task_wlogo_tvt_2,
-    (void (*)(void*))task_wlogo_tvt_3,
+    (TaskFunc)task_wlogo_tvt_2,
+    (TaskFunc)task_wlogo_tvt_3,
     0x34,
 };
 
 TaskDesc gTaskDescWlogoPoo = {
     gTaskNameWlogoPoo,
-    (void (*)(void*, void*))task_wlogo_poo_0,
+    (TaskInitFunc)task_wlogo_poo_0,
     task_wlogo_poo_1,
-    (void (*)(void*))task_wlogo_poo_2,
-    (void (*)(void*))task_wlogo_poo_3,
+    (TaskFunc)task_wlogo_poo_2,
+    (TaskFunc)task_wlogo_poo_3,
     0xC,
 };
 
@@ -2468,10 +2468,10 @@ u8 gUnk_09EF1AEC[4] = { 0, 0, 2, 2 };
 
 TaskDesc gTaskDescWlogoPooObj = {
     gTaskNameWlogoPooObj,
-    (void (*)(void*, void*))task_wlogo_poo_obj_0,
+    (TaskInitFunc)task_wlogo_poo_obj_0,
     task_wlogo_poo_obj_1,
-    (void (*)(void*))task_wlogo_poo_obj_2,
-    (void (*)(void*))task_wlogo_poo_obj_3,
+    (TaskFunc)task_wlogo_poo_obj_2,
+    (TaskFunc)task_wlogo_poo_obj_3,
     0x44,
 };
 
@@ -2481,19 +2481,19 @@ WlogoTtMotion gWlogoTtMotion =
 
 TaskDesc gTaskDescWlogoTt = {
     gTaskNameWlogoTt,
-    (void (*)(void*, void*))task_wlogo_tt_0,
+    (TaskInitFunc)task_wlogo_tt_0,
     task_wlogo_tt_1,
-    (void (*)(void*))task_wlogo_tt_2,
-    (void (*)(void*))task_wlogo_tt_3,
+    (TaskFunc)task_wlogo_tt_2,
+    (TaskFunc)task_wlogo_tt_3,
     0x128,
 };
 
 TaskDesc gTaskDescWlogoTtObj = {
     gTaskNameWlogoTtObj,
-    (void (*)(void*, void*))task_wlogo_tt_obj_0,
+    (TaskInitFunc)task_wlogo_tt_obj_0,
     task_wlogo_tt_obj_1,
-    (void (*)(void*))task_wlogo_tt_obj_2,
-    (void (*)(void*))task_wlogo_tt_obj_3,
+    (TaskFunc)task_wlogo_tt_obj_2,
+    (TaskFunc)task_wlogo_tt_obj_3,
     0x30,
 };
 
@@ -2535,10 +2535,10 @@ s16 gUnk_09EF1B68[33][3] = {
 
 TaskDesc gTaskDescWlogoTtLine = {
     gTaskNameWlogoTtLine,
-    (void (*)(void*, void*))task_wlogo_tt_line_0,
+    (TaskInitFunc)task_wlogo_tt_line_0,
     task_wlogo_tt_line_1,
-    (void (*)(void*))task_wlogo_tt_line_2,
-    (void (*)(void*))task_wlogo_tt_line_3,
+    (TaskFunc)task_wlogo_tt_line_2,
+    (TaskFunc)task_wlogo_tt_line_3,
     0x1C,
 };
 
@@ -2564,10 +2564,10 @@ s8 gUnk_09EF1C50[8] = {
 
 TaskDesc gTaskDescWlogoBks = {
     gTaskNameWlogoBks,
-    (void (*)(void*, void*))task_wlogo_bks_0,
+    (TaskInitFunc)task_wlogo_bks_0,
     task_wlogo_bks_1,
-    (void (*)(void*))task_wlogo_bks_2,
-    (void (*)(void*))task_wlogo_bks_3,
+    (TaskFunc)task_wlogo_bks_2,
+    (TaskFunc)task_wlogo_bks_3,
     0x50,
 };
 
@@ -2658,9 +2658,9 @@ u16 gUnk_09EF1D0A[14] = {
 
 TaskDesc gTaskDescWlogoBksObj = {
     gTaskNameWlogoBksObj,
-    (void (*)(void*, void*))task_wlogo_bks_obj_0,
+    (TaskInitFunc)task_wlogo_bks_obj_0,
     task_wlogo_bks_obj_1,
-    (void (*)(void*))task_wlogo_bks_obj_2,
-    (void (*)(void*))task_wlogo_bks_obj_3,
+    (TaskFunc)task_wlogo_bks_obj_2,
+    (TaskFunc)task_wlogo_bks_obj_3,
     0x4C,
 };

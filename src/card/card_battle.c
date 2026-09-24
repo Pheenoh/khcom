@@ -782,17 +782,17 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
         case 11:
             w->unk_A6 = 60;
             gUnk_02034A9C = 0;
-            SetTaskUpdate(task, (u32)func_0807B578);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_0807B578);
             break;
         case 12:
             w->unk_A6 = 180;
             gUnk_02034A9C = 0;
-            SetTaskUpdate(task, (u32)func_0807B578);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_0807B578);
             break;
         case 13:
             w->unk_A6 = 300;
             gUnk_02034A9C = 0;
-            SetTaskUpdate(task, (u32)func_0807B578);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_0807B578);
             break;
         default:
             gUnk_02034A9C = 0;
@@ -1077,7 +1077,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
                     func_080789E4(w);
                     w->unk_C0[w->unk_B8] = 0;
                     w->unk_C4[0] = 1;
-                    SetTaskUpdate(task, (u32)func_08077F44);
+                    SetTaskUpdate(task, (TaskUpdateFunc)func_08077F44);
                     TaskPoolUpdate((TaskPool*)w);
                     TaskPoolUpdate(&gUnk_02039DD4->tasks);
                     args.slot = w->unk_B8;
@@ -1089,7 +1089,7 @@ s32 func_08076F80(UnkStruct_08080268* w, u8* task) {
             } else {
                 func_080789E4(w);
                 w->unk_C0[w->unk_B8] = 0;
-                SetTaskUpdate(task, (u32)func_08077F44);
+                SetTaskUpdate(task, (TaskUpdateFunc)func_08077F44);
                 TaskPoolUpdate((TaskPool*)w);
                 TaskPoolUpdate(&gUnk_02039DD4->tasks);
                 return 1;
@@ -1355,7 +1355,7 @@ s32 func_08077F44(UnkStruct_08080268* w, u8* task) {
             w->unk_C4[0] = 0;
             m4aSongNumStop(SONG_SYS_RELOAD);
             gUnk_02034A9C = 0;
-            SetTaskUpdate(task, (u32)func_08076F80);
+            SetTaskUpdate(task, (TaskUpdateFunc)func_08076F80);
         }
     }
 
@@ -1380,9 +1380,9 @@ const char gTaskNameCardBattleSora[] = "cardbattle";
 
 TaskDesc gTaskDescCardBattleSora = {
     gTaskNameCardBattleSora,
-    (void (*)(void*, void*))func_08076CB4,
+    (TaskInitFunc)func_08076CB4,
     func_08076F80,
-    (void (*)(void*))func_08077E10,
-    (void (*)(void*))func_08077E98,
+    (TaskFunc)func_08077E10,
+    (TaskFunc)func_08077E98,
     0xCC,
 };

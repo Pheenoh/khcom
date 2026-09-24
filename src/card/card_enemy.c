@@ -134,7 +134,7 @@ u8 card_enemy_1(CardDisplayWork* p, void* a) {
 
     if (p->unk_78 & 0x10) {
         p->unk_9C = 8;
-        SetTaskUpdate(a, (void*)func_0809075C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809075C);
     } else if (!(p->unk_78 & 0x1000)) {
         func_08090864(p);
         p->unk_5F += 4;
@@ -142,7 +142,7 @@ u8 card_enemy_1(CardDisplayWork* p, void* a) {
 
         if (!(p->unk_78 & 0x20)) {
             p->unk_78 &= ~0x40;
-            SetTaskUpdate(a, (void*)func_08090808);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08090808);
         }
     }
 
@@ -204,14 +204,14 @@ u8 func_08090550(CardDisplayWork* p, void* a) {
         gBtlWork->flags &= ~0x20;
         gBtlWork->flags &= ~0x80;
         gBtlWork->flags &= ~0x10000000;
-        SetTaskUpdate(a, (void*)func_08090940);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090940);
     } else if (p->unk_78 & 0x200000) {
         p->unk_A0 -= 4;
         p->unk_84 = 0x500;
         p->unk_9C = 0x100;
         p->unk_7C = (u16)(GetRandom() % 33) - 16;
         p->unk_9E = GetRandom() % 5 + 254;
-        SetTaskUpdate(a, (void*)func_08090DB0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090DB0);
     }
 
     return 1;
@@ -229,7 +229,7 @@ u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
     if (gBtlWork->flags & 0x80) {
         if (p->unk_78 & 0x2000) {
             if ((s16)p->unk_9C == 0) {
-                SetTaskUpdate(a, (void*)func_08090550);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_08090550);
             }
         } else if ((s16)p->unk_9C <= 2) {
             p->unk_A0 -= 4;
@@ -237,7 +237,7 @@ u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
             p->unk_9C = 0x100;
             p->unk_7C = (u16)(GetRandom() % 33) - 16;
             p->unk_9E = GetRandom() % 5 + 254;
-            SetTaskUpdate(a, (void*)func_080909A4);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080909A4);
             return 1;
         }
     } else if ((s16)p->unk_9C <= 2) {
@@ -246,7 +246,7 @@ u8 EnemyUsecard_1(CardDisplayWork* p, void* a) {
         p->unk_9C = 0x100;
         p->unk_7C = (u16)(GetRandom() % 33) - 16;
         p->unk_9E = GetRandom() % 5 + 254;
-        SetTaskUpdate(a, (void*)func_080909A4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080909A4);
     }
 
     return 1;
@@ -262,7 +262,7 @@ u8 func_0809075C(CardDisplayWork* p, void* a) {
     if ((s16)p->unk_9C <= 1) {
         p->unk_9C = 0;
         p->unk_78 &= ~0x10;
-        SetTaskUpdate(a, (void*)card_enemy_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)card_enemy_1);
     }
 
     return 1;
@@ -278,7 +278,7 @@ u8 func_08090808(u8* work, void* a) {
     *(s32*)&work[0x50] += (gUnk_09035978[9] - *(s32*)&work[0x50]) >> 1;
 
     if (*(s32*)&work[0x78] & 0x20) {
-        SetTaskUpdate(a, (void*)card_enemy_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)card_enemy_1);
     }
 
     return 1;
@@ -364,12 +364,12 @@ void func_08090A54(CardDisplayWork* p, void* a) {
     } else {
         p->unk_9E = 0;
         p->unk_78 &= ~0x800;
-        SetTaskUpdate(a, (void*)card_enemy_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)card_enemy_1);
     }
 
     if (!(p->unk_78 & 0x20)) {
         p->unk_78 &= ~0x40;
-        SetTaskUpdate(a, (void*)func_08090808);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090808);
     }
 }
 
@@ -383,12 +383,12 @@ void func_08090ACC(CardDisplayWork* p, void* a) {
         p->unk_9E = 0x80;
         p->unk_78 &= ~4;
         p->unk_A0 = 100;
-        SetTaskUpdate(a, (void*)func_08090A54);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090A54);
     }
 
     if (!(p->unk_78 & 0x20)) {
         p->unk_78 &= ~0x40;
-        SetTaskUpdate(a, (void*)func_08090808);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090808);
     }
 }
 
@@ -397,12 +397,12 @@ void func_08090B50(CardDisplayWork* p, void* a) {
     case 5:
         p->unk_9C = 16;
         p->unk_A0 -= 4;
-        SetTaskUpdate(a, (void*)EnemyUsecard_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)EnemyUsecard_1);
         break;
     case 6:
         p->unk_9C = 8;
         p->unk_A0 -= 4;
-        SetTaskUpdate(a, (void*)func_08090C3C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090C3C);
         break;
     case 8:
         p->unk_A0 -= 4;
@@ -410,19 +410,19 @@ void func_08090B50(CardDisplayWork* p, void* a) {
         p->unk_9C = 0x100;
         p->unk_7C = (u16)(GetRandom() % 33) - 16;
         p->unk_9E = GetRandom() % 5 + 254;
-        SetTaskUpdate(a, (void*)func_080909A4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080909A4);
         break;
     case 7:
         p->unk_84 = 0x500;
         p->unk_9C = 0x100;
         p->unk_7C = (u16)(GetRandom() % 33) - 16;
         p->unk_9E = GetRandom() % 5 + 254;
-        SetTaskUpdate(a, (void*)func_080909A4);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080909A4);
         break;
     case 9:
         p->unk_9E = 0;
         p->unk_A0 -= 4;
-        SetTaskUpdate(a, (void*)func_08090ACC);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08090ACC);
         p->unk_A1 = 0;
         break;
     }
@@ -458,7 +458,7 @@ u8 func_08090C3C(CardDisplayWork* p, void* a) {
         }
 
         if (p->unk_78 & 0x8000) {
-            SetTaskUpdate(a, (void*)func_0807CF4C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0807CF4C);
         } else {
             p->unk_9C = 15;
             p->unk_88 = 0x800;
@@ -467,7 +467,7 @@ u8 func_08090C3C(CardDisplayWork* p, void* a) {
             p->unk_7C = 0;
             p->unk_8C = p->x;
             p->unk_90 = p->y;
-            SetTaskUpdate(a, (void*)func_0807CFA8);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0807CFA8);
         }
     }
 
@@ -1043,10 +1043,10 @@ const char gTaskNameCardEnemy[] = "card_enemy";
 
 TaskDesc gTaskDescCardEnemy = {
     gTaskNameCardEnemy,
-    (void (*)(void*, void*))card_enemy_0,
+    (TaskInitFunc)card_enemy_0,
     card_enemy_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
+    (TaskFunc)func_08090374,
+    (TaskFunc)func_08090530,
     0xA8,
 };
 
@@ -1054,27 +1054,27 @@ const char gTaskNameEnemyUsecard[] = "EnemyUsecard";
 
 TaskDesc gUnk_09EE4B58 = {
     gTaskNameEnemyUsecard,
-    (void (*)(void*, void*))func_08090EA0,
+    (TaskInitFunc)func_08090EA0,
     EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
+    (TaskFunc)func_08090374,
+    (TaskFunc)func_08090530,
     0xA8,
 };
 
 TaskDesc gUnk_09EE4B70 = {
     gTaskNameEnemyUsecard,
-    (void (*)(void*, void*))func_08091048,
+    (TaskInitFunc)func_08091048,
     EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
+    (TaskFunc)func_08090374,
+    (TaskFunc)func_08090530,
     0xA8,
 };
 
 TaskDesc gUnk_09EE4B88 = {
     gTaskNameEnemyUsecard,
-    (void (*)(void*, void*))func_08091138,
+    (TaskInitFunc)func_08091138,
     EnemyUsecard_1,
-    (void (*)(void*))func_08090374,
-    (void (*)(void*))func_08090530,
+    (TaskFunc)func_08090374,
+    (TaskFunc)func_08090530,
     0xA8,
 };

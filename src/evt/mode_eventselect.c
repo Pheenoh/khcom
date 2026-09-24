@@ -906,124 +906,124 @@ const char gTaskNameEventDebug[] = "Event_Debug";
 
 Mode gModeEventselect = {
     gModeNameEventselect,
-    (void (*)(s32))mode_eventselect_0,
+    (ModeInitFunc)mode_eventselect_0,
     mode_eventselect_1,
     mode_eventselect_2,
 };
 
 TaskDesc gTaskDescHanabira = {
     gTaskNameHanabira,
-    (void (*)(void*, void*))Hanabira_0,
+    (TaskInitFunc)Hanabira_0,
     Hanabira_1,
-    (void (*)(void*))Hanabira_2,
-    (void (*)(void*))Hanabira_3,
+    (TaskFunc)Hanabira_2,
+    (TaskFunc)Hanabira_3,
     0x60,
 };
 
 TaskDesc gTaskDescHanabiraC = {
     gTaskNameHanabiraC,
-    (void (*)(void*, void*))Hanabira_c_0,
+    (TaskInitFunc)Hanabira_c_0,
     Hanabira_c_1,
-    (void (*)(void*))Hanabira_c_2,
-    (void (*)(void*))Hanabira_c_3,
+    (TaskFunc)Hanabira_c_2,
+    (TaskFunc)Hanabira_c_3,
     0x60,
 };
 
 TaskDesc gTaskDescSmoke = {
     gTaskNameSmoke,
-    (void (*)(void*, void*))smoke_0,
+    (TaskInitFunc)smoke_0,
     func_08075720,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gTaskDescExclamation = {
     gTaskNameExclamation,
-    (void (*)(void*, void*))Exclamation_0,
+    (TaskInitFunc)Exclamation_0,
     Exclamation_1,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gTaskDescBalloon = {
     gTaskNameBalloon,
-    (void (*)(void*, void*))balloon_0,
+    (TaskInitFunc)balloon_0,
     func_08075720,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gTaskDescQuestion = {
     gTaskNameQuestion,
-    (void (*)(void*, void*))Question_0,
+    (TaskInitFunc)Question_0,
     Question_1,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gUnk_09EE484C = {
     gTaskNameGlowNose,
-    (void (*)(void*, void*))func_080758D0,
+    (TaskInitFunc)func_080758D0,
     func_080759B0,
-    (void (*)(void*))func_080759E0,
-    (void (*)(void*))func_08075A54,
+    (TaskFunc)func_080759E0,
+    (TaskFunc)func_08075A54,
     0x60,
 };
 
 TaskDesc gTaskDescGlowNose = {
     gTaskNameGlowNose,
-    (void (*)(void*, void*))GlowNose_0,
+    (TaskInitFunc)GlowNose_0,
     GlowNose_1,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gTaskDescGlowNose2 = {
     gTaskNameGlowNose,
-    (void (*)(void*, void*))GlowNose2_0,
+    (TaskInitFunc)GlowNose2_0,
     GlowNose2_1,
-    (void (*)(void*))EffectDrawObj,
-    (void (*)(void*))EffectReleaseObj,
+    (TaskFunc)EffectDrawObj,
+    (TaskFunc)EffectReleaseObj,
     0x60,
 };
 
 TaskDesc gTaskDescDown = {
     gTaskNameDown,
-    (void (*)(void*, void*))down_0,
+    (TaskInitFunc)down_0,
     down_1,
-    (void (*)(void*))down_2,
-    (void (*)(void*))down_3,
+    (TaskFunc)down_2,
+    (TaskFunc)down_3,
     0x60,
 };
 
 TaskDesc gTaskDescTinkerbell = {
     gTaskNameTinkerbell,
-    (void (*)(void*, void*))Tinkerbell_0,
+    (TaskInitFunc)Tinkerbell_0,
     Tinkerbell_1,
-    (void (*)(void*))Tinkerbell_2,
-    (void (*)(void*))Tinkerbell_3,
+    (TaskFunc)Tinkerbell_2,
+    (TaskFunc)Tinkerbell_3,
     0x60,
 };
 
 TaskDesc gTaskDescEvSound = {
     gTaskNameEvSound,
-    (void (*)(void*, void*))EV_SOUND_0,
+    (TaskInitFunc)EV_SOUND_0,
     EV_SOUND_1,
-    (void (*)(void*))EV_SOUND_2,
-    (void (*)(void*))EV_SOUND_3,
+    (TaskFunc)EV_SOUND_2,
+    (TaskFunc)EV_SOUND_3,
     0xC,
 };
 
 TaskDesc gTaskDescEventDebug = {
     gTaskNameEventDebug,
-    (void (*)(void*, void*))Event_Debug_0,
+    (TaskInitFunc)Event_Debug_0,
     Event_Debug_1,
-    (void (*)(void*))Event_Debug_2,
-    (void (*)(void*))Event_Debug_3,
+    (TaskFunc)Event_Debug_2,
+    (TaskFunc)Event_Debug_3,
     0x2C,
 };

@@ -139,7 +139,7 @@ u8 PrizeCard_1(PrizeCardWork* w, void* a) {
             func_08084458(w->cardId);
         }
 
-        SetTaskUpdate(a, (void*)func_0809612C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809612C);
         x = (w->unk_A8 >> 8) - (gFieldState->x >> 8);
         y = (w->unk_AC >> 8) + (*(s32*)&w->unk_B0[0] >> 8) - (gFieldState->y >> 8);
         w->unk_A8 = x << 8;
@@ -200,7 +200,7 @@ u8 func_0809612C(PrizeCardWork* w, void* a) {
         if (w->unk_DC <= 0x7FF) {
             w->unk_FA = 0;
             w->unk_F6 = 0;
-            SetTaskUpdate(a, (void*)func_08096288);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08096288);
 #ifdef VERSION_EU
             CreateCardNameDisplay(&w->unk_20, eu_0805E924(gCardDefs[w->cardId].name));
 #else
@@ -260,11 +260,11 @@ u8 func_08096288(PrizeCardWork* w, void* a) {
     if (w->cardId > 0x1C2) {
         if (w->unk_FB == 120) {
             w->unk_FB = 0;
-            SetTaskUpdate(a, (void*)func_08096390);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_08096390);
         }
     } else if (w->unk_FB == 30) {
         w->unk_FB = 0;
-        SetTaskUpdate(a, (void*)func_08096390);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08096390);
     }
 
     TaskPoolUpdate(&w->unk_20);
@@ -393,9 +393,9 @@ const char gTaskName_09EE75D8[] = "PrizeCard";
 
 TaskDesc gUnk_09EE75D8 = {
     gTaskName_09EE75D8,
-    (void (*)(void*, void*))PrizeCard_0,
+    (TaskInitFunc)PrizeCard_0,
     PrizeCard_1,
-    (void (*)(void*))PrizeCard_2,
-    (void (*)(void*))PrizeCard_3,
+    (TaskFunc)PrizeCard_2,
+    (TaskFunc)PrizeCard_3,
     0x100,
 };

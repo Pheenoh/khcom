@@ -1030,7 +1030,7 @@ const char gModeNameWorldinspect[] = "mode_worldinspect";
 
 Mode gModeWorldinspect = {
     gModeNameWorldinspect,
-    (void (*)(s32))mode_worldinspect_0,
+    (ModeInitFunc)mode_worldinspect_0,
     mode_worldinspect_1,
     mode_worldinspect_2,
 };

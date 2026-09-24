@@ -4939,10 +4939,10 @@ const char gTaskNameBosJf[] = "task_bos_jf";
 
 TaskDesc gTaskDescBosJf = {
     gTaskNameBosJf,
-    (void (*)(void*, void*))task_bos_jf_0,
+    (TaskInitFunc)task_bos_jf_0,
     task_bos_jf_1,
-    (void (*)(void*))task_bos_jf_2,
-    (void (*)(void*))task_bos_jf_3,
+    (TaskFunc)task_bos_jf_2,
+    (TaskFunc)task_bos_jf_3,
     0x26C,
 };
 
@@ -4987,7 +4987,7 @@ const char gTaskNameBosJfMap[] = "task_bos_jf_map";
 
 TaskDesc gTaskDescBosJfMap = {
     gTaskNameBosJfMap,
-    (void (*)(void*, void*))task_bos_jf_map_0,
+    (TaskInitFunc)task_bos_jf_map_0,
     task_bos_jf_map_1,
     0,
     0,
@@ -5028,10 +5028,10 @@ const u16 gUnk_0961A710[16][3] = {
 
 TaskDesc gTaskDescBosJfLamp = {
     gTaskNameBosJfLamp,
-    (void (*)(void*, void*))task_bos_jf_lamp_0,
+    (TaskInitFunc)task_bos_jf_lamp_0,
     task_bos_jf_lamp_1,
-    (void (*)(void*))task_bos_jf_lamp_2,
-    (void (*)(void*))task_bos_jf_lamp_3,
+    (TaskFunc)task_bos_jf_lamp_2,
+    (TaskFunc)task_bos_jf_lamp_3,
     0x58,
 };
 
@@ -5169,10 +5169,10 @@ const EmyKind gBosDsdEmyKind = { 38, 1000, 16, 16, 40, 60, 0 };
 
 TaskDesc gTaskDescBosJfMajin = {
     gTaskNameBosJfMajin,
-    (void (*)(void*, void*))task_bos_jf_majin_0,
+    (TaskInitFunc)task_bos_jf_majin_0,
     task_bos_jf_majin_1,
-    (void (*)(void*))task_bos_jf_majin_2,
-    (void (*)(void*))task_bos_jf_majin_3,
+    (TaskFunc)task_bos_jf_majin_2,
+    (TaskFunc)task_bos_jf_majin_3,
     0x84,
 };
 
@@ -5216,28 +5216,28 @@ const char gTaskNameBosDsdEnergy2[] = "task_bos_dsd_energy2";
 
 TaskDesc gTaskDescBosJfRock = {
     gTaskNameBosJfRock,
-    (void (*)(void*, void*))task_bos_jf_rock_0,
+    (TaskInitFunc)task_bos_jf_rock_0,
     task_bos_jf_rock_1,
-    (void (*)(void*))task_bos_jf_rock_2,
-    (void (*)(void*))task_bos_jf_rock_3,
+    (TaskFunc)task_bos_jf_rock_2,
+    (TaskFunc)task_bos_jf_rock_3,
     0x198,
 };
 
 TaskDesc gTaskDescBosJfBorderline = {
     gTaskNameBosJfBorderline,
-    (void (*)(void*, void*))task_bos_jf_borderline_0,
+    (TaskInitFunc)task_bos_jf_borderline_0,
     task_bos_jf_borderline_1,
-    (void (*)(void*))task_bos_jf_borderline_2,
-    (void (*)(void*))task_bos_jf_borderline_3,
+    (TaskFunc)task_bos_jf_borderline_2,
+    (TaskFunc)task_bos_jf_borderline_3,
     0xB8,
 };
 
 TaskDesc gTaskDescBosDsd = {
     gTaskNameBosDsd,
-    (void (*)(void*, void*))task_bos_dsd_0,
+    (TaskInitFunc)task_bos_dsd_0,
     task_bos_dsd_1,
-    (void (*)(void*))task_bos_dsd_2,
-    (void (*)(void*))task_bos_dsd_3,
+    (TaskFunc)task_bos_dsd_2,
+    (TaskFunc)task_bos_dsd_3,
     0x394,
 };
 
@@ -5360,10 +5360,10 @@ void* gUnk_09EF2E4C = 0;
 
 TaskDesc gTaskDescBosDsdMain = {
     gTaskNameBosDsdMain,
-    (void (*)(void*, void*))task_bos_dsd_main_0,
+    (TaskInitFunc)task_bos_dsd_main_0,
     task_bos_dsd_main_1,
-    (void (*)(void*))task_bos_dsd_main_2,
-    (void (*)(void*))task_bos_dsd_main_3,
+    (TaskFunc)task_bos_dsd_main_2,
+    (TaskFunc)task_bos_dsd_main_3,
     0x190,
 };
 
@@ -5388,7 +5388,7 @@ const u16* gUnk_09EF2E68[4] = {
 
 TaskDesc gTaskDescBosDsdMap = {
     gTaskNameBosDsdMap,
-    (void (*)(void*, void*))task_bos_dsd_map_0,
+    (TaskInitFunc)task_bos_dsd_map_0,
     task_bos_dsd_map_1,
     0,
     0,
@@ -5397,45 +5397,45 @@ TaskDesc gTaskDescBosDsdMap = {
 
 TaskDesc gTaskDescBosDsdIta = {
     gTaskNameBosDsdIta,
-    (void (*)(void*, void*))task_bos_dsd_ita_0,
+    (TaskInitFunc)task_bos_dsd_ita_0,
     task_bos_dsd_ita_1,
-    (void (*)(void*))task_bos_dsd_ita_2,
-    (void (*)(void*))task_bos_dsd_ita_3,
+    (TaskFunc)task_bos_dsd_ita_2,
+    (TaskFunc)task_bos_dsd_ita_3,
     0x90,
 };
 
 TaskDesc gTaskDescBosDsdRock = {
     gTaskNameBosDsdRock,
-    (void (*)(void*, void*))task_bos_dsd_rock_0,
+    (TaskInitFunc)task_bos_dsd_rock_0,
     task_bos_dsd_rock_1,
-    (void (*)(void*))task_bos_dsd_rock_2,
-    (void (*)(void*))task_bos_dsd_rock_3,
+    (TaskFunc)task_bos_dsd_rock_2,
+    (TaskFunc)task_bos_dsd_rock_3,
     0x24,
 };
 
 TaskDesc gTaskDescBosDsdCircle = {
     gTaskNameBosDsdCircle,
-    (void (*)(void*, void*))task_bos_dsd_circle_0,
+    (TaskInitFunc)task_bos_dsd_circle_0,
     task_bos_dsd_circle_1,
-    (void (*)(void*))task_bos_dsd_circle_2,
-    (void (*)(void*))task_bos_dsd_circle_3,
+    (TaskFunc)task_bos_dsd_circle_2,
+    (TaskFunc)task_bos_dsd_circle_3,
     0x20,
 };
 
 TaskDesc gTaskDescBosDsdEnergy1 = {
     gTaskNameBosDsdEnergy1,
-    (void (*)(void*, void*))task_bos_dsd_energy1_0,
+    (TaskInitFunc)task_bos_dsd_energy1_0,
     task_bos_dsd_energy1_1,
-    (void (*)(void*))task_bos_dsd_energy1_2,
-    (void (*)(void*))task_bos_dsd_energy1_3,
+    (TaskFunc)task_bos_dsd_energy1_2,
+    (TaskFunc)task_bos_dsd_energy1_3,
     0x4C,
 };
 
 TaskDesc gTaskDescBosDsdEnergy2 = {
     gTaskNameBosDsdEnergy2,
-    (void (*)(void*, void*))task_bos_dsd_energy2_0,
+    (TaskInitFunc)task_bos_dsd_energy2_0,
     task_bos_dsd_energy2_1,
-    (void (*)(void*))task_bos_dsd_energy2_2,
-    (void (*)(void*))task_bos_dsd_energy2_3,
+    (TaskFunc)task_bos_dsd_energy2_2,
+    (TaskFunc)task_bos_dsd_energy2_3,
     0x40,
 };

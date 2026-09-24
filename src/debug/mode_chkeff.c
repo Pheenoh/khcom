@@ -267,4 +267,4 @@ BgAnimationDef* gUnk_09ED9A1C[83] = {
     &gUnk_09EDADB0,
 };
 
-Mode gModeChkeff = { gModeNameChkeff, (void (*)(s32))mode_chkeff_0, mode_chkeff_1, mode_chkeff_2 };
+Mode gModeChkeff = { gModeNameChkeff, (ModeInitFunc)mode_chkeff_0, mode_chkeff_1, mode_chkeff_2 };
