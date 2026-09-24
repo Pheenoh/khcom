@@ -87,6 +87,11 @@ class Manifest:
             return None
         return ROOT / "assets" / version / self.group / f"{entry['name']}.{SOURCE_EXT[entry['format']]}"
 
+    def binary(self, entry, version):
+        if "record" in entry or entry.get("tiles"):
+            return None
+        return ROOT / "build" / version / "gen" / self.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
+
     def sources(self, entry, version):
         source = self.source(entry, version)
         if source is None:
@@ -122,7 +127,8 @@ class Manifest:
     def symbols(self, entry, version):
         if entry.get("format") != "sprite_sheet":
             return [self.symbol(entry, version)]
-        return list(self.names(entry, version).values()) + [self.symbol(entry, version)]
+        block = [] if entry.get("tiles") else [self.symbol(entry, version)]
+        return list(self.names(entry, version).values()) + block
 
     def anim_type(self):
         names = [name for name, rtype in self.types.items() if rtype.get("kind") == "anim"]
@@ -199,19 +205,38 @@ def entry_lookup(manifests):
     return lookup
 
 
+def lender(lookup, entry, version):
+    name = entry["tiles"]
+    if name not in lookup or version not in lookup[name].by_name[name]:
+        raise ManifestError(f"{entry['name']}: borrows tiles from {name}, which has no {version} entry")
+    owner = lookup[name]
+    target = owner.by_name[name]
+    if target.get("tiles") or target.get("format") not in ("tiles4", "sprite_sheet") or target[version].get("compress"):
+        raise ManifestError(f"{entry['name']}: {name} is not an uncompressed tile block of its own")
+    return owner, target
+
+
 def plan(version, manifests=None):
     manifests = load_manifests() if manifests is None else manifests
+    lookup = {e["name"]: m for m in manifests for e in m.entries}
     out = {}
     for manifest in manifests:
         members = manifest.members(version)
         gen = ROOT / "build" / version / "gen"
         objects = {}
         for obj in manifest.objects.get(version, []):
-            objects[obj["name"]] = {"source": gen / obj["name"], "members": members[obj["name"]]}
-        sources = sorted({path for e in manifest.entries if version in e and "record" not in e
-                          for path in manifest.sources(e, version)}, key=str)
-        binaries = sorted({gen / manifest.group / f"{e['name']}.{BINARY_EXT[e['format']]}"
-                           for e in manifest.entries if version in e and "record" not in e}, key=str)
+            objects[obj["name"]] = {"source": gen / obj["name"], "members": members[obj["name"]],
+                                    "binaries": [manifest.binary(e, version) for e in members[obj["name"]]
+                                                 if manifest.binary(e, version) is not None]}
+        sources = {path for e in manifest.entries if version in e and "record" not in e
+                   for path in manifest.sources(e, version)}
+        for e in manifest.entries:
+            if version in e and e.get("format") == "sprite_sheet" and e.get("tiles"):
+                owner, target = lender(lookup, e, version)
+                sources.update(owner.sources(target, version))
+        sources = sorted(sources, key=str)
+        binaries = sorted({manifest.binary(e, version) for e in manifest.entries
+                           if version in e and manifest.binary(e, version) is not None}, key=str)
         out[manifest.group] = {"manifest": manifest, "objects": objects, "header": gen / f"{manifest.group}.h",
                                "sources": sources, "binaries": binaries}
     return out
@@ -300,7 +325,14 @@ def decode_one(manifest, entry, version, data, tmp, palette_bytes):
     return png.read_bytes()
 
 
-def encode_sheet(manifest, entry, version, main=None, extra=None):
+def borrowed_block(lookup, entry, version, tmp):
+    owner, target = lender(lookup, entry, version)
+    if target["format"] == "sprite_sheet":
+        return encode_sheet(owner, target, version)[2]
+    return encode(owner, target, version, tmp)
+
+
+def encode_sheet(manifest, entry, version, main=None, extra=None, borrowed=None):
     layout = manifest.sheet(entry, version)
     if main is None:
         paths = manifest.sources(entry, version)
@@ -311,7 +343,13 @@ def encode_sheet(manifest, entry, version, main=None, extra=None):
         extra = paths[1].read_bytes() if len(paths) > 1 else None
     animations = manifest.animations(entry, version)
     try:
-        oam, block = sprite_sheet.encode(layout, sprite_sheet.read_sheets(layout, main, extra))
+        layers = sprite_sheet.read_sheets(layout, main, extra)
+        if entry.get("tiles"):
+            if borrowed is None:
+                raise ManifestError(f"{entry['name']}: {version} needs the tiles of {entry['tiles']}")
+            oam, block = sprite_sheet.encode_view(layout, layers, borrowed), b""
+        else:
+            oam, block = sprite_sheet.encode(layout, layers)
         size = len(sprite_sheet.record_bytes(oam, animations)) + len(block)
     except sprite_sheet.SheetError as error:
         raise ManifestError(f"{entry['name']}: {version} {error}")
@@ -320,18 +358,23 @@ def encode_sheet(manifest, entry, version, main=None, extra=None):
     return oam, animations, block
 
 
-def decode_sheet(manifest, entry, version, data, palette_bytes):
+def decode_sheet(manifest, entry, version, data, palette_bytes, borrowed=None):
     layout = manifest.sheet(entry, version)
     animations = manifest.animations(entry, version)
     try:
         oam, anims, block = sprite_sheet.parse_records(data, len(layout["frames"]), len(animations))
         if anims != [{"fields": anim["fields"], "frames": anim["frames"]} for anim in animations]:
             raise ManifestError(f"{entry['name']}: {version} animation headers differ from the description")
-        layout, layers = sprite_sheet.decode(oam, block, layout)
+        if entry.get("tiles"):
+            if block or borrowed is None:
+                raise ManifestError(f"{entry['name']}: {version} borrows tiles but holds a block or has no lender")
+            layout, layers = sprite_sheet.decode_view(oam, borrowed, layout)
+        else:
+            layout, layers = sprite_sheet.decode(oam, block, layout)
         main, extra = sprite_sheet.write_sheets(layout, layers, palette_bytes)
     except sprite_sheet.SheetError as error:
         raise ManifestError(f"{entry['name']}: {version} {error}")
-    oam_out, animations, block_out = encode_sheet(manifest, entry, version, main, extra)
+    oam_out, animations, block_out = encode_sheet(manifest, entry, version, main, extra, borrowed)
     if sprite_sheet.record_bytes(oam_out, animations) + block_out != data:
         raise ManifestError(f"{entry['name']}: {version} sheet does not re-encode to the ROM bytes")
     return dict(zip(manifest.sources(entry, version), (main, extra)))
@@ -359,7 +402,14 @@ def decode(manifest, version, rom, rom_base=0x08000000, lookup=None):
             palette = palettes.get(entry.get("palette"))
             palette_bytes = rom_bytes(palette) if palette is not None and version in palette else b""
             if entry["format"] == "sprite_sheet":
-                files = decode_sheet(manifest, entry, version, data, palette_bytes)
+                borrowed = None
+                if entry.get("tiles"):
+                    owner, target = lender(lookup or {e["name"]: manifest for e in manifest.entries}, entry, version)
+                    borrowed = rom_bytes(target)
+                    if target["format"] == "sprite_sheet":
+                        frames, anims = owner.frames(target, version), owner.animations(target, version)
+                        borrowed = sprite_sheet.parse_records(borrowed, len(frames), len(anims))[2]
+                files = decode_sheet(manifest, entry, version, data, palette_bytes, borrowed)
             else:
                 decoded = decode_one(manifest, entry, version, data, tmp, palette_bytes)
                 source = manifest.source(entry, version)
@@ -492,7 +542,9 @@ def emit_sheet(manifest, entry, version, sheet, lines):
         lines.append(f"\t.hword {anim['fields']['unk_00']}, {anim['fields']['unk_02']}, {len(anim['frames'])}")
         for frame in anim["frames"]:
             lines.append(f"\t.hword {words(frame)}")
-    binary = ROOT / "build" / version / "gen" / manifest.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
+    binary = manifest.binary(entry, version)
+    if binary is None:
+        return
     write_if_changed(binary, block)
     symbol = manifest.symbol(entry, version)
     lines.append(f"\t.global {symbol}")
@@ -534,7 +586,7 @@ def emit_s(manifest, version, members, out_path, tmp, obj, sheets):
             for frame in frames:
                 lines.append(f"\t.hword {words(frame)}")
         else:
-            binary = ROOT / "build" / version / "gen" / manifest.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
+            binary = manifest.binary(entry, version)
             data = encode(manifest, entry, version, tmp)
             binary.parent.mkdir(parents=True, exist_ok=True)
             write_if_changed(binary, data)
@@ -568,7 +620,7 @@ def emit_header(manifest, version, members_by_object, out_path, sheets):
                 for anim in manifest.animations(entry, version):
                     if anim.get("declare") is not False:
                         lines.append(f"extern {manifest.anim_type()} {manifest.item_symbol(anim, version)};")
-                if entry.get("declare") is not False:
+                if entry.get("declare") is not False and not entry.get("tiles"):
                     lines.append(f"extern u8 {manifest.symbol(entry, version)}[{len(sheets[entry['name']][2])}];")
                 continue
             if entry.get("declare") is False:
@@ -626,10 +678,12 @@ def generate(version, manifest_path, all_manifests=None):
     gen = ROOT / "build" / version / "gen"
     gen.mkdir(parents=True, exist_ok=True)
     objects = {obj["name"]: obj for obj in manifest.objects.get(version, [])}
-    sheets = {e["name"]: encode_sheet(manifest, e, version) for members in members_by_object.values()
-              for e in members if e.get("format") == "sprite_sheet"}
+    lookup = {e["name"]: m for m in all_manifests for e in m.entries}
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = Path(tmpdir)
+        sheets = {e["name"]: encode_sheet(manifest, e, version,
+                                          borrowed=borrowed_block(lookup, e, version, tmp) if e.get("tiles") else None)
+                  for members in members_by_object.values() for e in members if e.get("format") == "sprite_sheet"}
         for name, members in members_by_object.items():
             if name.endswith(".c"):
                 emit_c(manifest, version, members, gen / name, all_manifests)

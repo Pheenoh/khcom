@@ -8,7 +8,7 @@ SHAPES = {
 }
 SHAPE_CODES = {size: code for code, size in SHAPES.items()}
 FLAGS = ("hflip", "vflip", "fresh")
-ATTRIBUTES = ("hflip", "vflip", "pal", "prio", "layer", "fresh", "same")
+ATTRIBUTES = ("hflip", "vflip", "pal", "prio", "layer", "fresh", "same", "tile")
 PLACEMENT = ("w", "h", "x", "y", "hflip", "vflip", "pal", "prio")
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
@@ -44,7 +44,7 @@ def piece_to_yaml(piece):
     attrs = {}
     for name in ATTRIBUTES:
         value = piece.get(name)
-        if value:
+        if value or (name == "tile" and value is not None):
             attrs[name] = list(value) if name == "same" else True if name in FLAGS else value
     if attrs:
         item.append(attrs)
@@ -75,6 +75,10 @@ def piece_from_yaml(item):
         piece["same"] = tuple(int(v) for v in attrs["same"])
         if len(piece["same"]) != 2 or piece["layer"]:
             raise SheetError(f"piece {item} must name its tile owner as [frame, piece] and has no layer")
+    if "tile" in attrs:
+        piece["tile"] = int(attrs["tile"])
+        if not 0 <= piece["tile"] < 1024 or piece["layer"] or "same" in piece or piece.get("fresh"):
+            raise SheetError(f"piece {item} names a tile outside 0-1023 or mixes it with packing attributes")
     return piece
 
 
@@ -297,6 +301,8 @@ def layer_count(layout):
 def encode(layout, layers):
     frames = layout["frames"]
     sheet = Sheet(layout)
+    if any("tile" in p for frame in frames for p in frame):
+        raise SheetError("a sheet that packs its own tiles does not name tile numbers")
     if len(layers) != layer_count(layout):
         raise SheetError(f"the set needs {layer_count(layout)} layers, the sheets hold {len(layers)}")
     if any(len(layer) != sheet.width * sheet.height for layer in layers):
@@ -329,6 +335,46 @@ def encode(layout, layers):
     tiles, block = pack(frames, stored)
     oam = [[oam_from_piece(p, tile) for p, tile in zip(frame, numbers)] for frame, numbers in zip(frames, tiles)]
     return oam, block
+
+
+def decode_view(oam_frames, block, layout=None):
+    frames = [[piece_from_oam(a) for a in frame] for frame in oam_frames]
+    if layout is None:
+        pieces = [p for frame in frames for p in frame]
+        if not pieces:
+            raise SheetError("the set has no pieces")
+        x0 = min(p["x"] for p in pieces)
+        y0 = min(p["y"] for p in pieces)
+        layout = {"cell": [max(p["x"] + p["w"] for p in pieces) - x0, max(p["y"] + p["h"] for p in pieces) - y0],
+                  "anchor": [-x0, -y0], "columns": min(len(frames), 8), "frames": [[dict(p) for p in frame] for frame in frames]}
+    elif len(layout["frames"]) != len(frames) or any(len(a) != len(b) for a, b in zip(layout["frames"], frames)):
+        raise SheetError("the description has a different number of frames or pieces than the ROM")
+    for index, (described, found) in enumerate(zip(layout["frames"], frames)):
+        for position, (piece, rom) in enumerate(zip(described, found)):
+            if any(piece.get(k) != rom[k] for k in PLACEMENT + ("tile",)):
+                raise SheetError(f"frame {index} piece {position} is not where, or not what, the ROM places")
+    sheet = Sheet(layout)
+    main = sheet.blank()
+    for index, frame in enumerate(layout["frames"]):
+        for p in reversed(frame):
+            sheet.write(main, index, p, colours(tile_rows(block, p["tile"], p["w"], p["h"]), p), True)
+    return layout, [main]
+
+
+def encode_view(layout, layers, block):
+    sheet = Sheet(layout)
+    if len(layers) != 1 or len(layers[0]) != sheet.width * sheet.height:
+        raise SheetError(f"a sheet that borrows its tiles is one {sheet.width}x{sheet.height} layer")
+    composite = sheet.blank()
+    for index, frame in enumerate(layout["frames"]):
+        for position, p in enumerate(frame):
+            if "tile" not in p or p["layer"] or "same" in p:
+                raise SheetError(f"frame {index} piece {position} of a sheet that borrows its tiles needs a tile number and nothing else")
+        for p in reversed(frame):
+            sheet.write(composite, index, p, colours(tile_rows(block, p["tile"], p["w"], p["h"]), p), True)
+        if sheet.cell_rows(composite, index) != sheet.cell_rows(layers[0], index):
+            raise SheetError(f"frame {index} of the sheet differs from what its pieces draw from the borrowed tiles")
+    return [[oam_from_piece(p, p["tile"]) for p in frame] for frame in layout["frames"]]
 
 
 def parse_records(data, frame_count, anim_count):

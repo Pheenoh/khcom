@@ -12,7 +12,7 @@ sys.path.append(str(Path(__file__).parent / "tools"))
 import ninja_syntax
 from assembler_flags import software_fp_flags
 from asset_objects import materialize_assets
-from assetgen import BINARY_EXT, ManifestError
+from assetgen import ManifestError
 from assetgen import plan as asset_plan
 from regional_data import asset_symbols, load_sidecars
 
@@ -242,8 +242,7 @@ for src, obj, flags in units:
         group_name, unit = generated[src.name]
         deps += [rel(groups[group_name]["header"])]
         if rule == "as":
-            deps += [f"{build_dir}/gen/{group_name}/{entry['name']}.{BINARY_EXT[entry['format']]}"
-                     for entry in unit["members"] if "format" in entry]
+            deps += [rel(path) for path in unit["binaries"]]
         else:
             deps += headers + generated_headers + ["tools/legacy/bin/arm-elf-as"]
         edges.append((obj, rule, src, deps, variables))
