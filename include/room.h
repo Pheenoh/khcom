@@ -24,7 +24,6 @@
 #include "anim.h"
 #include "text_types.h"
 #include "taskpool.h"
-#include "room_api.h"
 #include "btl_api.h"
 
 typedef struct RoomNameWork {
@@ -51,30 +50,6 @@ typedef struct RoomNameWork {
 } RoomNameWork;
 
 extern u8 gUnk_099910C4[];
-
-extern GaWork* gGaWork;
-
-typedef struct RoomObjResource {
-    void* unk_00;
-    u16 refCount;
-    u16 unk_06;
-    u16 unk_08;
-    u16 unk_0A;
-    u8 unk_0C[0x10];
-    u8 unk_1C[0x04];
-    u32 unk_20;
-} RoomObjResource;
-
-s32 func_080F7F70(GaWork* work, s16 i);
-s32 func_080F7F94(GaWork* work, s16 i);
-s32 func_080F7FAC(GaWork* work, s16 i);
-s32 func_080F7FC8(GaWork* work, s16 i);
-s32 func_080F7FE4(GaWork* work, s16 i);
-void func_080F800C(GaWork* work, s32 i);
-void func_080F80C0(GaWork* work);
-void func_080F83BC(void);
-
-u16 func_080F7DD8(s32 a);
 
 void task_room_name_0(RoomNameWork* work, s32 arg);
 u8 task_room_name_1(RoomNameWork* work);

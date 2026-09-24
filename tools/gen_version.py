@@ -2117,7 +2117,7 @@ TARGET_DATA_SIZE = {
     "eu": {
         ("mode_sio.c", ".rodata"): 0x92,
         ("sroll.c", ".rodata"): 0x257,
-        ("bos5.c", ".rodata"): 0x102D,
+        ("bos5.c", ".rodata"): 0x11B5,
         ("btl_hud_localized_data.c", ".data"): 0x31C,
         ("actor_localized_data.c", ".data"): 0x124,
         ("card_picture_sprite_data.c", ".data"): 0x1458,

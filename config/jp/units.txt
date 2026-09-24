@@ -415,7 +415,6 @@ sprites_map_tasks_palettes.s
 sprites_evt_palettes_2.s
 sprite_palettes_13.s
 sprites_map_palettes.s
-room_data.c
 bos5.c
 mode_worldinspect_rodata.s
 mode_worldinspect.c

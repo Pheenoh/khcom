@@ -37,7 +37,6 @@
 #include "anim.h"
 #include "bos4_api.h"
 #include "poo_api.h"
-#include "room_api.h"
 #include "btl_api.h"
 
 typedef struct GaEntryDesc {
@@ -295,6 +294,8 @@ void func_080FDA28(s16 model, s16 slot);
 s16 func_080FDA98(s16 model, s16 slot);
 extern u32 gFrameCounter;
 
+extern GaWork* gGaWork;
+
 void task_bos_ga_2(GaWork* work);
 void task_bos_ga_3(GaWork* work);
 void task_bos_md_hahen_3(MdHahenWork* work);
@@ -329,13 +330,34 @@ extern const EmyKind gBosMdFireEmyKind;
 extern u8 gUnk_09A3C99C[];
 void task_bos_md_dai_2(MdDaiWork* work);
 u8 task_bos_ga_1(GaWork* work);
-void func_080FB000(GaWork* work, GaEntryWork* p);
+u16 func_080F7DD8(s32 a);
+s32 func_080F7E0C(s32 x0, s32 y0, s32 x1, s32 y1);
+void func_080F7E84(GaEntryWork* e);
+void func_080F7F54(GaWork* work, s32 state);
+s32 func_080F7F70(GaWork* work, s16 i);
+s32 func_080F7F94(GaWork* work, s16 i);
+s32 func_080F7FAC(GaWork* work, s16 i);
+s32 func_080F7FC8(GaWork* work, s16 i);
+s32 func_080F7FE4(GaWork* work, s16 i);
+void func_080F800C(GaWork* work, s32 i);
+void func_080F80C0(GaWork* work);
+void func_080F80FC(GaWork* work, u32 i, s32 c);
+void func_080F8374(GaEntryWork* e);
+void func_080F83BC(void);
+void func_080F83E0(GaWork* work, GaEntryWork* e);
 u8 func_080F854C(GaWork* work);
+u8 func_080F8958(GaWork* work);
 u8 func_080F8AC8(GaWork* work);
 u8 func_080F8F9C(GaWork* work);
+u8 func_080F9744(GaWork* work);
+u8 func_080F99C0(GaWork* work);
+u8 func_080F9C2C(GaWork* work);
 u8 func_080F9EDC(GaWork* work);
+u8 func_080FA2B4(GaWork* work);
 u8 func_080FA644(GaWork* work);
+u8 func_080FAA18(GaWork* work);
 u8 func_080FABE4(GaWork* work);
+void func_080FB000(GaWork* work, GaEntryWork* p);
 extern u8 gUnk_09A3C89C[];
 void func_080FB930(MdWork* work, u16 id);
 void func_080FB8DC(MdWork* work, s32 state);

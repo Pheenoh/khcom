@@ -90,4 +90,15 @@ typedef struct GaWork {
     u8 unk_A53;
 } GaWork;
 
+typedef struct RoomObjResource {
+    void* unk_00;
+    u16 refCount;
+    u16 unk_06;
+    u16 unk_08;
+    u16 unk_0A;
+    u8 unk_0C[0x10];
+    u8 unk_1C[0x04];
+    u32 unk_20;
+} RoomObjResource;
+
 #endif
