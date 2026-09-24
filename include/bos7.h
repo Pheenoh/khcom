@@ -381,6 +381,8 @@ s32 func_0811089C(s32 x);
 s32 func_081108A4(s32 x);
 s32 func_08112410(s32 x);
 s32 func_08112418(s32 x);
+s32 func_0810FE84(s32 x);
+s32 func_0810FE8C(s32 x);
 s32 func_08110658(s32 x);
 s32 func_08110660(s32 x);
 s32 func_0811156C(s32 x);

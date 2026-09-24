@@ -464,9 +464,14 @@ sprite_palettes_16.s
 sprites_worldinspect_palettes_2.s
 sprites_moogle_shop_palettes.s
 sprite_palettes_17.s
-bos6_rodata.s
+bos_pc_rodata.s
 transform.s
-bos6.c
+bos_pc.c
+bos_pc_event.c
+bos_pc_fld.c
+bos_pc_flt.c
+bos_pc_acd.c
+bos_lst.c
 bos7_tables.s
 bos7.c
 staff_roll_script_text.s

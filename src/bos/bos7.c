@@ -138,6 +138,14 @@ s16 gUnk_02036016;
 s16 gUnk_02036018;
 s32 gUnk_0203601C;
 
+s32 func_0810FE84(s32 x) {
+    return x * x;
+}
+
+s32 func_0810FE8C(s32 x) {
+    return x * x;
+}
+
 void func_0810FE94(void) {
     gUnk_02036014 = 0;
     gUnk_02036016 = 0;

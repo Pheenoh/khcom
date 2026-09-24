@@ -2109,7 +2109,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFABB0
   layer: 1
-  provenance: bos6.c func_0810C494 maps state0..6 to paired animations0..13; source state7 selects the independent AD74/ADBC pair via gUnk_09A4D14C[7]. bos6.c func_0810C494 state7 selects this pair and computes animation (7*2 xor facing)-14, exactly0..1. bos6.c func_0810F064 uses substate*2 plus facing0/1. Substate setters and cases range0..6; state6 assignment at3455 proves animation13. bos6.c func_0810F064 swaps this pair with ADC4/AE1C by side and uses the same substate0..6/facing0..1 bound. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: bos_lst.c func_0810C494 maps state0..6 to paired animations0..13; source state7 selects the independent AD74/ADBC pair via gUnk_09A4D14C[7]. bos_lst.c func_0810C494 state7 selects this pair and computes animation (7*2 xor facing)-14, exactly0..1. bos_lst.c func_0810F064 uses substate*2 plus facing0/1. Substate setters and cases range0..6; state6 assignment at3455 proves animation13. bos_lst.c func_0810F064 swaps this pair with ADC4/AE1C by side and uses the same substate0..6/facing0..1 bound. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efabb0'
   targets:
     jp: '0x9ed20bc'
@@ -2139,7 +2139,7 @@ tables:
   pointer_offsets: [0]
 - name: animation_resources_09EFBBBC
   layer: 1
-  provenance: bos6.c PcFlt explicit animations0..9 use gfx0..11. func_0810BA74 indexes the12 canonical8-byte gUnk_09A4CEDC records by that gfxId and uses field+6 as the next animation; maximum20 occurs at gfx9. All21 animation headers close this gfx-index graph within0..11. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
+  provenance: bos_pc_flt.c PcFlt explicit animations0..9 use gfx0..11. func_0810BA74 indexes the12 canonical8-byte gUnk_09A4CEDC records by that gfxId and uses field+6 as the next animation; maximum20 occurs at gfx9. All21 animation headers close this gfx-index graph within0..11. Canonical frameCount/frames prove gfx maxima; exact complete animation payloads agree across regions. Individual bases are directly used by independently mapped code consumers.
   us: '0x9efbbbc'
   targets:
     jp: '0x9ed3134'
@@ -5649,7 +5649,7 @@ tables:
   pointer_offsets: [0]
 - name: actor_animation_resources_09EFAB68
   layer: 1
-  provenance: bos6.c task_bos_pc_acd_0 and task_bos_pc_acd_1 select only animation0/1. task_bos_pc_acd_2 directly indexes gfxIndex+5, proving all15 gfx entries. One further header pointer is a neutral scalar before independently referenced09EFABB0. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
+  provenance: bos_pc_acd.c task_bos_pc_acd_0 and task_bos_pc_acd_1 select only animation0/1. task_bos_pc_acd_2 directly indexes gfxIndex+5, proving all15 gfx entries. One further header pointer is a neutral scalar before independently referenced09EFABB0. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code or the independently proved PoohAnim records.
   us: '0x9efab68'
   targets:
     jp: '0x9ed2074'

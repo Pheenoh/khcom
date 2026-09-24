@@ -297,7 +297,6 @@ typedef struct PcWork {
 
 extern u8 gUnk_09D69274[];
 
-s32 func_08109EA8(s32 a);
 u16 func_08109FF0(PcWork* work, s32 a);
 u16 func_0810A000(PcWork* work, s32 a, s32 b);
 
@@ -507,10 +506,6 @@ s32 func_0810BF1C(s32 x);
 s32 func_0810C2B4(s32 x);
 s32 func_0810C2BC(s32 x);
 
-s32 func_0810B348(s32 x);
-s32 func_0810B368(s32 x);
-s32 func_0810FE84(s32 x);
-s32 func_0810FE8C(s32 x);
 void func_0810B370(u8** p, u8 v);
 
 void func_08109EF8(PcWork* work, s32 a);
