@@ -27,10 +27,6 @@ void task_monsgage_3(MonsgageWork* work);
 void* eu_0805E924(const void* strings);
 void* eu_0805E968(void* text);
 s32 eu_0805E9AC(void* text);
-void eu_0805E9F0(MonsgageWork* work);
-s32 eu_0805EA44(MonsgageWork* work);
-void eu_0805EC60(MonsgageWork* work);
-void eu_0805ECE4(MonsgageWork* work);
 #endif
 
 #endif /* GUARD_MONSGAGE_H */
