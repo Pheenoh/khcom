@@ -1049,7 +1049,7 @@ const char gTaskNameBtlPopCb[] = "task_btl_pop_cb";
 TaskDesc gTaskDescBtlPopCb = {
     gTaskNameBtlPopCb,
     (TaskInitFunc)task_btl_pop_cb_0,
-    task_btl_pop_cb_1,
+    (TaskUpdateFunc)task_btl_pop_cb_1,
     (TaskFunc)task_btl_pop_cb_2,
     (TaskFunc)task_btl_pop_cb_3,
     0x1C,
@@ -1060,7 +1060,7 @@ const char gTaskNameBtlExp[] = "task_btl_exp";
 TaskDesc gTaskDescBtlExp = {
     gTaskNameBtlExp,
     (TaskInitFunc)task_btl_exp_0,
-    task_btl_exp_1,
+    (TaskUpdateFunc)task_btl_exp_1,
     (TaskFunc)task_btl_exp_2,
     (TaskFunc)task_btl_exp_3,
     0x4C,
@@ -1071,7 +1071,7 @@ const char gTaskNameBtlVslockon[] = "task_btl_vslockon";
 TaskDesc gTaskDescBtlVslockon = {
     gTaskNameBtlVslockon,
     (TaskInitFunc)task_btl_vslockon_0,
-    task_btl_vslockon_1,
+    (TaskUpdateFunc)task_btl_vslockon_1,
     (TaskFunc)task_btl_vslockon_2,
     (TaskFunc)task_btl_vslockon_3,
     0x24,
@@ -1082,7 +1082,7 @@ const char gTaskNameBtlHpoth[] = "task_btl_hpoth";
 TaskDesc gTaskDescBtlHpoth = {
     gTaskNameBtlHpoth,
     (TaskInitFunc)task_btl_hpoth_0,
-    task_btl_hpoth_1,
+    (TaskUpdateFunc)task_btl_hpoth_1,
     (TaskFunc)task_btl_hpoth_2,
     (TaskFunc)task_btl_hpoth_3,
     0x6C,

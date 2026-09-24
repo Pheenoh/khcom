@@ -445,7 +445,7 @@ const char gTaskNameWLogo[] = "task_wLogo";
 TaskDesc gTaskDescWLogo = {
     gTaskNameWLogo,
     (TaskInitFunc)task_wLogo_0,
-    task_wLogo_1,
+    (TaskUpdateFunc)task_wLogo_1,
     (TaskFunc)task_wLogo_2,
     (TaskFunc)task_wLogo_3,
     0xC,

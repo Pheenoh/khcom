@@ -85,7 +85,7 @@ const char gTaskNameBosJfShadow[] = "task_bos_jf_shadow";
 TaskDesc gTaskDescBosJfShadow = {
     gTaskNameBosJfShadow,
     (TaskInitFunc)task_bos_jf_shadow_0,
-    task_bos_jf_shadow_1,
+    (TaskUpdateFunc)task_bos_jf_shadow_1,
     (TaskFunc)task_bos_jf_shadow_2,
     (TaskFunc)task_bos_jf_shadow_3,
     0x10,

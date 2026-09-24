@@ -252,7 +252,7 @@ const char gTaskNameEVBGEFFECT[] = "EV_BG_EFFECT";
 TaskDesc gTaskDescEVBGEFFECT = {
     gTaskNameEVBGEFFECT,
     (TaskInitFunc)EV_BG_EFFECT_0,
-    EV_BG_EFFECT_1,
+    (TaskUpdateFunc)EV_BG_EFFECT_1,
     (TaskFunc)EV_BG_EFFECT_2,
     (TaskFunc)EV_BG_EFFECT_3,
     0x18,

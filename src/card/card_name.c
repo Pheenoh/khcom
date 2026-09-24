@@ -493,7 +493,7 @@ const char gTaskNameCardName[] = "CardName";
 TaskDesc gTaskDescCardName = {
     gTaskNameCardName,
     (TaskInitFunc)CardName_0,
-    CardName_1,
+    (TaskUpdateFunc)CardName_1,
     (TaskFunc)CardName_2,
     (TaskFunc)CardName_3,
 #ifdef VERSION_EU
@@ -508,7 +508,7 @@ const char gTaskNamePremireEFFECT[] = "Premire_EFFECT";
 TaskDesc gUnk_09EE784C = {
     gTaskNamePremireEFFECT,
     (TaskInitFunc)func_0809CE88,
-    func_0809D040,
+    (TaskUpdateFunc)func_0809D040,
     (TaskFunc)func_0809D0CC,
     (TaskFunc)func_0809D0FC,
     0x54,
@@ -519,7 +519,7 @@ const char gTaskNamePremireEFFECT2[] = "Premire_EFFECT2";
 TaskDesc gTaskDescPremireEFFECT2 = {
     gTaskNamePremireEFFECT2,
     (TaskInitFunc)func_0809CE88,
-    Premire_EFFECT2_1,
+    (TaskUpdateFunc)Premire_EFFECT2_1,
     (TaskFunc)func_0809D0CC,
     (TaskFunc)func_0809D0FC,
     0x54,
@@ -528,7 +528,7 @@ TaskDesc gTaskDescPremireEFFECT2 = {
 TaskDesc gUnk_09EE787C = {
     gTaskNamePremireEFFECT,
     (TaskInitFunc)func_0809CF64,
-    func_0809D09C,
+    (TaskUpdateFunc)func_0809D09C,
     (TaskFunc)func_0809D0CC,
     (TaskFunc)func_0809D0FC,
     0x54,

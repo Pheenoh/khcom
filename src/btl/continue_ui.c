@@ -304,7 +304,7 @@ void Continue_3(ContinueWork* p) {
 TaskDesc gUnk_09EE2834 = {
     gTaskNameContinue,
     (TaskInitFunc)func_0806CD60,
-    Continue_1,
+    (TaskUpdateFunc)Continue_1,
     (TaskFunc)Continue_2,
     (TaskFunc)Continue_3,
     0x6C,
@@ -313,7 +313,7 @@ TaskDesc gUnk_09EE2834 = {
 TaskDesc gUnk_09EE284C = {
     gTaskNameContinue,
     (TaskInitFunc)func_0806CF04,
-    Continue_1,
+    (TaskUpdateFunc)Continue_1,
     (TaskFunc)Continue_2,
     (TaskFunc)Continue_3,
     0x6C,

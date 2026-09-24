@@ -309,12 +309,12 @@ TaskDesc gTaskDescMonsgage = {
     gTaskNameMonsgage,
 #ifdef VERSION_EU
     (TaskInitFunc)eu_0805E9F0,
-    eu_0805EA44,
+    (TaskUpdateFunc)eu_0805EA44,
     (TaskFunc)eu_0805EC60,
     (TaskFunc)eu_0805ECE4,
 #else
     (TaskInitFunc)task_monsgage_0,
-    task_monsgage_1,
+    (TaskUpdateFunc)task_monsgage_1,
     (TaskFunc)task_monsgage_2,
     (TaskFunc)task_monsgage_3,
 #endif

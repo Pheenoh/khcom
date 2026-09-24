@@ -2873,7 +2873,7 @@ void task_bos_tm_tbl_3(TmTblWork* work) {
 TaskDesc gTaskDescBosTm = {
     gTaskNameBosTm,
     (TaskInitFunc)task_bos_tm_0,
-    task_bos_tm_1,
+    (TaskUpdateFunc)task_bos_tm_1,
     (TaskFunc)task_bos_tm_2,
     (TaskFunc)task_bos_tm_3,
     0x64,
@@ -2943,7 +2943,7 @@ s8 gUnk_09EF2194[4] = { 1, 3, 9, 4 };
 TaskDesc gTaskDescBosTmBody = {
     gTaskNameBosTmBody,
     (TaskInitFunc)task_bos_tm_body_0,
-    task_bos_tm_body_1,
+    (TaskUpdateFunc)task_bos_tm_body_1,
     (TaskFunc)task_bos_tm_body_2,
     (TaskFunc)task_bos_tm_body_3,
     0x494,
@@ -3014,7 +3014,7 @@ TmFootStep gUnk_09EF26C4 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, { 0, 0, 0, 0 }, 0, 0,
 TaskDesc gTaskDescBosTmFoot = {
     gTaskNameBosTmFoot,
     (TaskInitFunc)task_bos_tm_foot_0,
-    task_bos_tm_foot_1,
+    (TaskUpdateFunc)task_bos_tm_foot_1,
     (TaskFunc)task_bos_tm_foot_2,
     (TaskFunc)task_bos_tm_foot_3,
     0x484,
@@ -3023,7 +3023,7 @@ TaskDesc gTaskDescBosTmFoot = {
 TaskDesc gTaskDescBosTmClb = {
     gTaskNameBosTmClb,
     (TaskInitFunc)task_bos_tm_clb_0,
-    task_bos_tm_clb_1,
+    (TaskUpdateFunc)task_bos_tm_clb_1,
     (TaskFunc)task_bos_tm_clb_2,
     (TaskFunc)task_bos_tm_clb_3,
     0x1C,
@@ -3032,7 +3032,7 @@ TaskDesc gTaskDescBosTmClb = {
 TaskDesc gTaskDescBosTmArm = {
     gTaskNameBosTmArm,
     (TaskInitFunc)task_bos_tm_arm_0,
-    task_bos_tm_arm_1,
+    (TaskUpdateFunc)task_bos_tm_arm_1,
     (TaskFunc)task_bos_tm_arm_2,
     (TaskFunc)task_bos_tm_arm_3,
     0x258,
@@ -3041,7 +3041,7 @@ TaskDesc gTaskDescBosTmArm = {
 TaskDesc gTaskDescBosTmTbl = {
     gTaskNameBosTmTbl,
     (TaskInitFunc)task_bos_tm_tbl_0,
-    task_bos_tm_tbl_1,
+    (TaskUpdateFunc)task_bos_tm_tbl_1,
     0,
     (TaskFunc)task_bos_tm_tbl_3,
     0x6C,

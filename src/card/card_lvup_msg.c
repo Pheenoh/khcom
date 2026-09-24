@@ -127,7 +127,7 @@ void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
 }
 
 s32 Lvup_msg_1(LvupMsgWork* w, void* a) {
-    SetTaskUpdate(a, func_080A25E0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A25E0);
     w->unk_2B1++;
     return 1;
 }
@@ -223,7 +223,7 @@ const char gTaskNameLvupMsg[] = "Lvup msg";
 TaskDesc gTaskDescLvupMsg = {
     gTaskNameLvupMsg,
     (TaskInitFunc)Lvup_msg_0,
-    Lvup_msg_1,
+    (TaskUpdateFunc)Lvup_msg_1,
     (TaskFunc)Lvup_msg_2,
     (TaskFunc)Lvup_msg_3,
 #ifdef VERSION_JP

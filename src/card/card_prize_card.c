@@ -394,7 +394,7 @@ const char gTaskName_09EE75D8[] = "PrizeCard";
 TaskDesc gUnk_09EE75D8 = {
     gTaskName_09EE75D8,
     (TaskInitFunc)PrizeCard_0,
-    PrizeCard_1,
+    (TaskUpdateFunc)PrizeCard_1,
     (TaskFunc)PrizeCard_2,
     (TaskFunc)PrizeCard_3,
     0x100,

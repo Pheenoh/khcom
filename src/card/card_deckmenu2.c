@@ -1318,7 +1318,7 @@ u8 func_08086650(UnkStruct_0808DB04* w, void* a) {
         w->x2 = 0x4800;
         w->y2 = 0x2800;
         w->unk_886 = w->unk_8C0;
-        SetTaskUpdate(a, func_0808686C);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0808686C);
         w->unk_8B1 = 1;
         func_0808CD48((u8*)w);
         func_0808D6C4((u8*)w);
@@ -3602,10 +3602,10 @@ u8 func_0808A910(UnkStruct_0808DB04* w, void* a) {
         func_0808D828((u8*)w);
 
         if (w->unk_8D4 != 0) {
-            SetTaskUpdate(a, func_0808AB48);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0808AB48);
         } else {
             w->unk_8B1 = 10;
-            SetTaskUpdate(a, func_080882DC);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080882DC);
             w->unk_884 = w->unk_8C1;
             w->unk_8B7 = 1;
         }
@@ -7274,7 +7274,7 @@ const char gTaskName_09EE4AF4[] = "Deckmenu2";
 TaskDesc gUnk_09EE4AF4 = {
     gTaskName_09EE4AF4,
     (TaskInitFunc)func_08085FB4,
-    func_080863C0,
+    (TaskUpdateFunc)func_080863C0,
     (TaskFunc)func_0808B66C,
     (TaskFunc)func_0808C2F0,
 #ifdef VERSION_EU

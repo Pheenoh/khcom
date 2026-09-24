@@ -411,7 +411,7 @@ const char gTaskNameDeckEquip[] = "Deck Equip";
 TaskDesc gTaskDescDeckEquip = {
     gTaskNameDeckEquip,
     (TaskInitFunc)Deck_Equip_0,
-    func_080A2DE4,
+    (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -422,7 +422,7 @@ const char gTaskNameDeckYesNo[] = "Deck_Yes_No";
 TaskDesc gTaskDescDeckYesNo = {
     gTaskNameDeckYesNo,
     (TaskInitFunc)Deck_Yes_No_0,
-    func_080A30C0,
+    (TaskUpdateFunc)func_080A30C0,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -433,7 +433,7 @@ const char gTaskNameDeckClear[] = "Deck_Clear";
 TaskDesc gTaskDescDeckClear = {
     gTaskNameDeckClear,
     (TaskInitFunc)Deck_Clear_0,
-    func_080A30C0,
+    (TaskUpdateFunc)func_080A30C0,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -444,7 +444,7 @@ const char gTaskNameDeckError[] = "Deck Error";
 TaskDesc gUnk_09EE7FA8 = {
     gTaskNameDeckError,
     (TaskInitFunc)func_080A2980,
-    func_080A2DE4,
+    (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -453,7 +453,7 @@ TaskDesc gUnk_09EE7FA8 = {
 TaskDesc gUnk_09EE7FC0 = {
     gTaskNameDeckError,
     (TaskInitFunc)func_080A2A80,
-    func_080A2DE4,
+    (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -462,7 +462,7 @@ TaskDesc gUnk_09EE7FC0 = {
 TaskDesc gUnk_09EE7FD8 = {
     gTaskNameDeckError,
     (TaskInitFunc)func_080A2BA4,
-    func_080A2DE4,
+    (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,
@@ -471,7 +471,7 @@ TaskDesc gUnk_09EE7FD8 = {
 TaskDesc gUnk_09EE7FF0 = {
     gTaskNameDeckError,
     (TaskInitFunc)func_080A2CC4,
-    func_080A2DE4,
+    (TaskUpdateFunc)func_080A2DE4,
     (TaskFunc)func_080A2E14,
     (TaskFunc)func_080A2EF8,
     0x7A8,

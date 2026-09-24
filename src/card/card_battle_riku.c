@@ -963,7 +963,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
                 w->unk_C0[w->unk_B8] = 0;
                 w->unk_C4[0] = 1;
                 gUnk_02039B9C->flags |= 0x80000000;
-                SetTaskUpdate(a, func_0807FB5C);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_0807FB5C);
                 gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 | 0x834) & ~0x1000;
                 TaskPoolUpdate(w);
 #ifndef VERSION_EU
@@ -980,7 +980,7 @@ u8 func_0807EDEC(UnkStruct_08080268* w, void* a) {
             func_08080994(w);
             w->unk_C0[w->unk_B8] = 0;
             gUnk_02039B9C->flags |= 0x80000000;
-            SetTaskUpdate(a, func_0807FB5C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0807FB5C);
             gUnk_02034AAC->unk_78 = (gUnk_02034AAC->unk_78 | 0x834) & ~0x1000;
             TaskPoolUpdate(w);
 #ifndef VERSION_EU
@@ -2960,13 +2960,13 @@ u8 func_080827E0(CardDisplayWork* p, void* a) {
         if (p->unk_78 & 0x10000000) {
             p->unk_9C = p->unk_9F * 8;
             fn = func_08082618;
-            SetTaskUpdate(a, fn);
+            SetTaskUpdate(a, (TaskUpdateFunc)fn);
             return fn(p, a);
         }
     }
 
     if (p->unk_78 & 0x40000000) {
-        SetTaskUpdate(a, func_08082FF0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08082FF0);
         return 1;
     }
 
@@ -2991,7 +2991,7 @@ u8 func_080827E0(CardDisplayWork* p, void* a) {
             fn = func_080824C8;
         }
 
-        SetTaskUpdate(a, fn);
+        SetTaskUpdate(a, (TaskUpdateFunc)fn);
         p->unk_78 &= ~0x200;
         func_08082F24(p);
         return fn(p, a);
@@ -3042,12 +3042,12 @@ u8 func_08082A64(CardDisplayWork* p, void* a) {
     if (p->unk_78 & 0x20) {
         if (p->unk_78 & 0x100000) {
             fn = Reload_Card_1;
-            SetTaskUpdate(a, fn);
+            SetTaskUpdate(a, (TaskUpdateFunc)fn);
             return fn(p, a);
         } else {
             do {
                 fn = func_08081B70;
-                SetTaskUpdate(a, fn);
+                SetTaskUpdate(a, (TaskUpdateFunc)fn);
             } while (0);
 
             return fn(p, a);
@@ -3775,7 +3775,7 @@ const char gTaskNameCardBattleRiku[] = "cardbattle";
 TaskDesc gTaskDescCardBattleRiku = {
     gTaskNameCardBattleRiku,
     (TaskInitFunc)func_0807E8F4,
-    func_0807EDEC,
+    (TaskUpdateFunc)func_0807EDEC,
     (TaskFunc)func_0807F99C,
     (TaskFunc)func_0807FA0C,
     0xCC,
@@ -3786,7 +3786,7 @@ const char gTaskName_09EE49CC[] = "card";
 TaskDesc gUnk_09EE49CC = {
     gTaskName_09EE49CC,
     (TaskInitFunc)func_08081A3C,
-    func_08081B70,
+    (TaskUpdateFunc)func_08081B70,
     (TaskFunc)func_08081C98,
     (TaskFunc)func_080820F4,
     0xA8,
@@ -3797,7 +3797,7 @@ const char gTaskNameNOCard[] = "NO_Card";
 TaskDesc gTaskDescNOCard = {
     gTaskNameNOCard,
     (TaskInitFunc)func_08081A3C,
-    func_08081B70,
+    (TaskUpdateFunc)func_08081B70,
     (TaskFunc)NO_Card_2,
     (TaskFunc)func_080820F4,
     0xA8,
@@ -3808,7 +3808,7 @@ const char gTaskNameReloadCard[] = "Reload_Card";
 TaskDesc gTaskDescReloadCard = {
     gTaskNameReloadCard,
     (TaskInitFunc)Reload_Card_0,
-    Reload_Card_1,
+    (TaskUpdateFunc)Reload_Card_1,
     (TaskFunc)Reload_Card_2,
     (TaskFunc)Reload_Card_3,
     0xA8,
@@ -3819,7 +3819,7 @@ const char gTaskNameBosscard[] = "Bosscard";
 TaskDesc gTaskDescBosscard = {
     gTaskNameBosscard,
     (TaskInitFunc)Bosscard_0,
-    Bosscard_1,
+    (TaskUpdateFunc)Bosscard_1,
     (TaskFunc)Bosscard_2,
     (TaskFunc)Bosscard_3,
     0x38,

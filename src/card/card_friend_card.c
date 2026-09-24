@@ -509,7 +509,7 @@ s32 func_0809AD60(UnkStruct_0809A02C* w, void* a) {
     w->unk_1C4 += 1;
 
     if (w->unk_1C4 == 60) {
-        SetTaskUpdate(a, func_0809ACDC);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809ACDC);
     }
 
     TaskPoolUpdate(&w->tasks);
@@ -1430,7 +1430,7 @@ const char gTaskNameFriendCard[] = "Friend card";
 TaskDesc gTaskDescFriendCard = {
     gTaskNameFriendCard,
     (TaskInitFunc)Friend_card_0,
-    Friend_card_1,
+    (TaskUpdateFunc)Friend_card_1,
     (TaskFunc)func_0809B200,
     (TaskFunc)func_0809B59C,
     0x1D4,
@@ -1441,7 +1441,7 @@ const char gTaskNameHeartlessCard[] = "Heartless card";
 TaskDesc gTaskDescHeartlessCard = {
     gTaskNameHeartlessCard,
     (TaskInitFunc)Heartless_card_0,
-    Heartless_card_1,
+    (TaskUpdateFunc)Heartless_card_1,
     (TaskFunc)Heartless_card_2,
     (TaskFunc)Heartless_card_3,
     0x1D4,
@@ -1452,7 +1452,7 @@ const char gTaskNameGimmickCard[] = "Gimmick card";
 TaskDesc gTaskDescGimmickCard = {
     gTaskNameGimmickCard,
     (TaskInitFunc)Gimmick_card_0,
-    Gimmick_card_1,
+    (TaskUpdateFunc)Gimmick_card_1,
     (TaskFunc)func_0809B200,
     (TaskFunc)func_0809B59C,
     0x1D4,
@@ -1463,7 +1463,7 @@ const char gTaskNameStockName[] = "StockName";
 TaskDesc gUnk_09EE77D4 = {
     gTaskNameStockName,
     (TaskInitFunc)func_0809B76C,
-    func_0809B840,
+    (TaskUpdateFunc)func_0809B840,
     (TaskFunc)func_0809B8F0,
     (TaskFunc)func_0809BB18,
     0x34,
@@ -1472,7 +1472,7 @@ TaskDesc gUnk_09EE77D4 = {
 TaskDesc gUnk_09EE77EC = {
     gTaskNameStockName,
     (TaskInitFunc)func_0809B920,
-    func_0809B9F4,
+    (TaskUpdateFunc)func_0809B9F4,
     (TaskFunc)func_0809BAA4,
     (TaskFunc)func_0809BAE4,
     0x34,
@@ -1486,7 +1486,7 @@ const char gTaskName_09EE7804[] = "Premire Chance";
 TaskDesc gUnk_09EE7804 = {
     gTaskName_09EE7804,
     (TaskInitFunc)func_0809BB4C,
-    func_0809C078,
+    (TaskUpdateFunc)func_0809C078,
     (TaskFunc)func_0809C110,
     (TaskFunc)func_0809C1EC,
     0x90,

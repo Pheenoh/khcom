@@ -389,7 +389,7 @@ const MdAnimDef gMdAnimDefs[11] = {
 TaskDesc gTaskDescBosGa = {
     gTaskNameBosGa,
     (TaskInitFunc)task_bos_ga_0,
-    task_bos_ga_1,
+    (TaskUpdateFunc)task_bos_ga_1,
     (TaskFunc)task_bos_ga_2,
     (TaskFunc)task_bos_ga_3,
     0xA54,
@@ -400,7 +400,7 @@ const char gTaskNameBosMd[] = "task_bos_md";
 TaskDesc gTaskDescBosMd = {
     gTaskNameBosMd,
     (TaskInitFunc)task_bos_md_0,
-    task_bos_md_1,
+    (TaskUpdateFunc)task_bos_md_1,
     (TaskFunc)task_bos_md_2,
     (TaskFunc)task_bos_md_3,
     0x1B8,
@@ -428,7 +428,7 @@ const EmyKind gBosMdFireEmyKind = { 37, 1000, 16, 16, 0, 60, 1 };
 TaskDesc gTaskDescBosMdMap = {
     gTaskNameBosMdMap,
     (TaskInitFunc)task_bos_md_map_0,
-    task_bos_md_map_1,
+    (TaskUpdateFunc)task_bos_md_map_1,
     0,
     0,
     0x4,
@@ -439,7 +439,7 @@ const char gTaskNameBosMdFire[] = "task_bos_md_fire";
 TaskDesc gTaskDescBosMdFire = {
     gTaskNameBosMdFire,
     (TaskInitFunc)task_bos_md_fire_0,
-    task_bos_md_fire_1,
+    (TaskUpdateFunc)task_bos_md_fire_1,
     (TaskFunc)task_bos_md_fire_2,
     (TaskFunc)task_bos_md_fire_3,
     0x170,
@@ -450,7 +450,7 @@ const char gTaskNameBosMdDai[] = "task_bos_md_dai";
 TaskDesc gTaskDescBosMdDai = {
     gTaskNameBosMdDai,
     (TaskInitFunc)task_bos_md_dai_0,
-    task_bos_md_dai_1,
+    (TaskUpdateFunc)task_bos_md_dai_1,
     (TaskFunc)task_bos_md_dai_2,
     (TaskFunc)task_bos_md_dai_3,
     0x84,
@@ -461,7 +461,7 @@ const char gTaskNameBosMdHahen[] = "task_bos_md_hahen";
 TaskDesc gTaskDescBosMdHahen = {
     gTaskNameBosMdHahen,
     (TaskInitFunc)task_bos_md_hahen_0,
-    task_bos_md_hahen_1,
+    (TaskUpdateFunc)task_bos_md_hahen_1,
     (TaskFunc)task_bos_md_hahen_2,
     (TaskFunc)task_bos_md_hahen_3,
     0x28,

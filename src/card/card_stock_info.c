@@ -2495,7 +2495,7 @@ const char gTaskNameStockInfo[] = "StockInfo";
 TaskDesc gTaskDescStockInfo = {
     gTaskNameStockInfo,
     (TaskInitFunc)StockInfo_0,
-    StockInfo_1,
+    (TaskUpdateFunc)StockInfo_1,
     (TaskFunc)StockInfo_2,
     (TaskFunc)StockInfo_3,
     0x2C,

@@ -1941,7 +1941,7 @@ const s32 gUnk_09A5430C[16] = { -1, -2, -3, -4, -5, -6, -7, -8, -7, -6, -5, -4, 
 TaskDesc gTaskDescSrollAName = {
     gTaskNameSrollAName,
     (TaskInitFunc)task_sroll_a_name_0,
-    task_sroll_a_name_1,
+    (TaskUpdateFunc)task_sroll_a_name_1,
     (TaskFunc)task_sroll_a_name_2,
     (TaskFunc)task_sroll_a_name_3,
     0x38,
@@ -1952,7 +1952,7 @@ const char gTaskNameSrollBChar[] = "task_sroll_b_char";
 TaskDesc gTaskDescSrollBChar = {
     gTaskNameSrollBChar,
     (TaskInitFunc)task_sroll_b_char_0,
-    task_sroll_b_char_1,
+    (TaskUpdateFunc)task_sroll_b_char_1,
     (TaskFunc)task_sroll_b_char_2,
     (TaskFunc)task_sroll_b_char_3,
     0x40,
@@ -2035,7 +2035,7 @@ void* const gUnk_09A54374[][4] = {
 TaskDesc gTaskDescSrollBLogo = {
     gTaskNameSrollBLogo,
     (TaskInitFunc)task_sroll_b_logo_0,
-    task_sroll_b_logo_1,
+    (TaskUpdateFunc)task_sroll_b_logo_1,
     (TaskFunc)task_sroll_b_logo_2,
     (TaskFunc)task_sroll_b_logo_3,
     0x30,
@@ -2046,7 +2046,7 @@ const char gTaskNameSrollBSecn[] = "task_sroll_b_secn";
 TaskDesc gTaskDescSrollBSecn = {
     gTaskNameSrollBSecn,
     (TaskInitFunc)task_sroll_b_secn_0,
-    task_sroll_b_secn_1,
+    (TaskUpdateFunc)task_sroll_b_secn_1,
     (TaskFunc)task_sroll_b_secn_2,
     (TaskFunc)task_sroll_b_secn_3,
     0x4C,
@@ -2057,7 +2057,7 @@ const char gTaskNameSrollBCrtn[] = "task_sroll_b_crtn";
 TaskDesc gTaskDescSrollBCrtn = {
     gTaskNameSrollBCrtn,
     (TaskInitFunc)task_sroll_b_crtn_0,
-    task_sroll_b_crtn_1,
+    (TaskUpdateFunc)task_sroll_b_crtn_1,
     (TaskFunc)task_sroll_b_crtn_2,
     (TaskFunc)task_sroll_b_crtn_3,
     0x30,
@@ -2068,7 +2068,7 @@ const char gTaskNameSrollCChar[] = "task_sroll_c_char";
 TaskDesc gTaskDescSrollCChar = {
     gTaskNameSrollCChar,
     (TaskInitFunc)task_sroll_c_char_0,
-    task_sroll_c_char_1,
+    (TaskUpdateFunc)task_sroll_c_char_1,
     (TaskFunc)task_sroll_c_char_2,
     (TaskFunc)task_sroll_c_char_3,
     0x98,
@@ -2079,7 +2079,7 @@ const char gTaskNameSrollTmr[] = "task_sroll_tmr";
 TaskDesc gTaskDescSrollTmr = {
     gTaskNameSrollTmr,
     (TaskInitFunc)task_sroll_tmr_0,
-    task_sroll_tmr_1,
+    (TaskUpdateFunc)task_sroll_tmr_1,
     (TaskFunc)task_sroll_tmr_2,
     (TaskFunc)task_sroll_tmr_3,
     0x10,

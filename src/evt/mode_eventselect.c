@@ -914,7 +914,7 @@ Mode gModeEventselect = {
 TaskDesc gTaskDescHanabira = {
     gTaskNameHanabira,
     (TaskInitFunc)Hanabira_0,
-    Hanabira_1,
+    (TaskUpdateFunc)Hanabira_1,
     (TaskFunc)Hanabira_2,
     (TaskFunc)Hanabira_3,
     0x60,
@@ -923,7 +923,7 @@ TaskDesc gTaskDescHanabira = {
 TaskDesc gTaskDescHanabiraC = {
     gTaskNameHanabiraC,
     (TaskInitFunc)Hanabira_c_0,
-    Hanabira_c_1,
+    (TaskUpdateFunc)Hanabira_c_1,
     (TaskFunc)Hanabira_c_2,
     (TaskFunc)Hanabira_c_3,
     0x60,
@@ -932,7 +932,7 @@ TaskDesc gTaskDescHanabiraC = {
 TaskDesc gTaskDescSmoke = {
     gTaskNameSmoke,
     (TaskInitFunc)smoke_0,
-    func_08075720,
+    (TaskUpdateFunc)func_08075720,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -941,7 +941,7 @@ TaskDesc gTaskDescSmoke = {
 TaskDesc gTaskDescExclamation = {
     gTaskNameExclamation,
     (TaskInitFunc)Exclamation_0,
-    Exclamation_1,
+    (TaskUpdateFunc)Exclamation_1,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -950,7 +950,7 @@ TaskDesc gTaskDescExclamation = {
 TaskDesc gTaskDescBalloon = {
     gTaskNameBalloon,
     (TaskInitFunc)balloon_0,
-    func_08075720,
+    (TaskUpdateFunc)func_08075720,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -959,7 +959,7 @@ TaskDesc gTaskDescBalloon = {
 TaskDesc gTaskDescQuestion = {
     gTaskNameQuestion,
     (TaskInitFunc)Question_0,
-    Question_1,
+    (TaskUpdateFunc)Question_1,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -968,7 +968,7 @@ TaskDesc gTaskDescQuestion = {
 TaskDesc gUnk_09EE484C = {
     gTaskNameGlowNose,
     (TaskInitFunc)func_080758D0,
-    func_080759B0,
+    (TaskUpdateFunc)func_080759B0,
     (TaskFunc)func_080759E0,
     (TaskFunc)func_08075A54,
     0x60,
@@ -977,7 +977,7 @@ TaskDesc gUnk_09EE484C = {
 TaskDesc gTaskDescGlowNose = {
     gTaskNameGlowNose,
     (TaskInitFunc)GlowNose_0,
-    GlowNose_1,
+    (TaskUpdateFunc)GlowNose_1,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -986,7 +986,7 @@ TaskDesc gTaskDescGlowNose = {
 TaskDesc gTaskDescGlowNose2 = {
     gTaskNameGlowNose,
     (TaskInitFunc)GlowNose2_0,
-    GlowNose2_1,
+    (TaskUpdateFunc)GlowNose2_1,
     (TaskFunc)EffectDrawObj,
     (TaskFunc)EffectReleaseObj,
     0x60,
@@ -995,7 +995,7 @@ TaskDesc gTaskDescGlowNose2 = {
 TaskDesc gTaskDescDown = {
     gTaskNameDown,
     (TaskInitFunc)down_0,
-    down_1,
+    (TaskUpdateFunc)down_1,
     (TaskFunc)down_2,
     (TaskFunc)down_3,
     0x60,
@@ -1004,7 +1004,7 @@ TaskDesc gTaskDescDown = {
 TaskDesc gTaskDescTinkerbell = {
     gTaskNameTinkerbell,
     (TaskInitFunc)Tinkerbell_0,
-    Tinkerbell_1,
+    (TaskUpdateFunc)Tinkerbell_1,
     (TaskFunc)Tinkerbell_2,
     (TaskFunc)Tinkerbell_3,
     0x60,
@@ -1013,7 +1013,7 @@ TaskDesc gTaskDescTinkerbell = {
 TaskDesc gTaskDescEvSound = {
     gTaskNameEvSound,
     (TaskInitFunc)EV_SOUND_0,
-    EV_SOUND_1,
+    (TaskUpdateFunc)EV_SOUND_1,
     (TaskFunc)EV_SOUND_2,
     (TaskFunc)EV_SOUND_3,
     0xC,
@@ -1022,7 +1022,7 @@ TaskDesc gTaskDescEvSound = {
 TaskDesc gTaskDescEventDebug = {
     gTaskNameEventDebug,
     (TaskInitFunc)Event_Debug_0,
-    Event_Debug_1,
+    (TaskUpdateFunc)Event_Debug_1,
     (TaskFunc)Event_Debug_2,
     (TaskFunc)Event_Debug_3,
     0x2C,

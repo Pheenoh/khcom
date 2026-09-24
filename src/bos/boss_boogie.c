@@ -483,7 +483,7 @@ const char gTaskNameBosBoogie[] = "task_bos_boogie";
 TaskDesc gTaskDescBosBoogie = {
     gTaskNameBosBoogie,
     (TaskInitFunc)task_bos_boogie_0,
-    task_bos_boogie_1,
+    (TaskUpdateFunc)task_bos_boogie_1,
     (TaskFunc)task_bos_boogie_2,
     (TaskFunc)task_bos_boogie_3,
     0x178,

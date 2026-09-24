@@ -665,7 +665,7 @@ u8 func_0809753C(UnkStruct_08096F94* w, void* a) {
 
     if (w->unk_E3 == 30) {
         w->unk_E3 = 0;
-        SetTaskUpdate(a, func_08097600);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_08097600);
     }
 
     TaskPoolUpdate(&w->tasks);
@@ -1424,7 +1424,7 @@ const char gTaskNamePrizeCardInit[] = "PrizeCardInit";
 TaskDesc gTaskDescPrizeCardInit = {
     gTaskNamePrizeCardInit,
     (TaskInitFunc)func_08096714,
-    PrizeCardInit_1,
+    (TaskUpdateFunc)PrizeCardInit_1,
     func_08096C20,
     func_08096C2C,
     0x38,
@@ -1435,7 +1435,7 @@ const char gTaskNamePrizeCardInitBoss[] = "PrizeCardInit_Boss";
 TaskDesc gTaskDescPrizeCardInitBoss = {
     gTaskNamePrizeCardInitBoss,
     (TaskInitFunc)func_08096714,
-    PrizeCardInit_Boss_1,
+    (TaskUpdateFunc)PrizeCardInit_Boss_1,
     func_08096C20,
     func_08096C2C,
     0x38,
@@ -1446,7 +1446,7 @@ const char gTaskNameDispCardname[] = "DispCardname";
 TaskDesc gTaskDescDispCardname = {
     gTaskNameDispCardname,
     (TaskInitFunc)DispCardname_0,
-    DispCardname_1,
+    (TaskUpdateFunc)DispCardname_1,
     (TaskFunc)DispCardname_2,
     (TaskFunc)DispCardname_3,
     0x110,
@@ -1457,7 +1457,7 @@ const char gTaskNameVersion[] = "Version";
 TaskDesc gTaskDescVersion = {
     gTaskNameVersion,
     (TaskInitFunc)Version_0,
-    Version_1,
+    (TaskUpdateFunc)Version_1,
     (TaskFunc)Version_2,
     (TaskFunc)Version_3,
     0x2C,
@@ -1468,7 +1468,7 @@ const char gTaskName_09EE7650[] = "PrizeCard";
 TaskDesc gUnk_09EE7650 = {
     gTaskName_09EE7650,
     (TaskInitFunc)func_08096F94,
-    func_08097138,
+    (TaskUpdateFunc)func_08097138,
     (TaskFunc)func_08097688,
     (TaskFunc)func_08097834,
     0xEC,
@@ -1479,7 +1479,7 @@ const char gTaskNameSpotLight[] = "SpotLight";
 TaskDesc gTaskDescSpotLight = {
     gTaskNameSpotLight,
     (TaskInitFunc)SpotLight_0,
-    SpotLight_1,
+    (TaskUpdateFunc)SpotLight_1,
     (TaskFunc)SpotLight_2,
     (TaskFunc)SpotLight_3,
     0x18,
@@ -1497,7 +1497,7 @@ const char gTaskNameSELMAPEVKEY[] = "SELMAP_EVKEY";
 TaskDesc gTaskDescSELMAPEVKEY = {
     gTaskNameSELMAPEVKEY,
     (TaskInitFunc)SELMAP_EVKEY_0,
-    SELMAP_EVKEY_1,
+    (TaskUpdateFunc)SELMAP_EVKEY_1,
     (TaskFunc)SELMAP_EVKEY_2,
     (TaskFunc)SELMAP_EVKEY_3,
     0x124,

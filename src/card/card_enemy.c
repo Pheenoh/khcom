@@ -1044,7 +1044,7 @@ const char gTaskNameCardEnemy[] = "card_enemy";
 TaskDesc gTaskDescCardEnemy = {
     gTaskNameCardEnemy,
     (TaskInitFunc)card_enemy_0,
-    card_enemy_1,
+    (TaskUpdateFunc)card_enemy_1,
     (TaskFunc)func_08090374,
     (TaskFunc)func_08090530,
     0xA8,
@@ -1055,7 +1055,7 @@ const char gTaskNameEnemyUsecard[] = "EnemyUsecard";
 TaskDesc gUnk_09EE4B58 = {
     gTaskNameEnemyUsecard,
     (TaskInitFunc)func_08090EA0,
-    EnemyUsecard_1,
+    (TaskUpdateFunc)EnemyUsecard_1,
     (TaskFunc)func_08090374,
     (TaskFunc)func_08090530,
     0xA8,
@@ -1064,7 +1064,7 @@ TaskDesc gUnk_09EE4B58 = {
 TaskDesc gUnk_09EE4B70 = {
     gTaskNameEnemyUsecard,
     (TaskInitFunc)func_08091048,
-    EnemyUsecard_1,
+    (TaskUpdateFunc)EnemyUsecard_1,
     (TaskFunc)func_08090374,
     (TaskFunc)func_08090530,
     0xA8,
@@ -1073,7 +1073,7 @@ TaskDesc gUnk_09EE4B70 = {
 TaskDesc gUnk_09EE4B88 = {
     gTaskNameEnemyUsecard,
     (TaskInitFunc)func_08091138,
-    EnemyUsecard_1,
+    (TaskUpdateFunc)EnemyUsecard_1,
     (TaskFunc)func_08090374,
     (TaskFunc)func_08090530,
     0xA8,

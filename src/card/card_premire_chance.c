@@ -121,11 +121,11 @@ u8 func_0809C620(u8* work, void* a) {
         gCardListWork->unk_29 = 0;
         work[0x53] = 8;
         fn = func_0809CB0C;
-        SetTaskUpdate(a, fn);
+        SetTaskUpdate(a, (TaskUpdateFunc)fn);
         return fn(work, a);
     case 3:
         work[0x53] = 10;
-        SetTaskUpdate(a, func_0809CBF8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0809CBF8);
         break;
     }
 
@@ -317,7 +317,7 @@ const char gTaskName_09EE781C[] = "Premire Chance";
 TaskDesc gUnk_09EE781C = {
     gTaskName_09EE781C,
     (TaskInitFunc)func_0809C534,
-    func_0809C710,
+    (TaskUpdateFunc)func_0809C710,
     (TaskFunc)func_0809C78C,
     (TaskFunc)func_0809C98C,
     0x78,

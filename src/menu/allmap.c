@@ -1207,7 +1207,7 @@ void* func_080D5960(u8 a) {
 TaskDesc gTaskDescAllmapRoom = {
     gTaskNameAllmapRoom,
     (TaskInitFunc)task_allmap_room_0,
-    task_allmap_room_1,
+    (TaskUpdateFunc)task_allmap_room_1,
     (TaskFunc)task_allmap_room_2,
     (TaskFunc)task_allmap_room_3,
     0xA0,
@@ -1216,7 +1216,7 @@ TaskDesc gTaskDescAllmapRoom = {
 TaskDesc gTaskDescAllmapCursor = {
     gTaskNameAllmapCursor,
     (TaskInitFunc)task_allmap_cursor_0,
-    task_allmap_cursor_1,
+    (TaskUpdateFunc)task_allmap_cursor_1,
     (TaskFunc)task_allmap_cursor_2,
     (TaskFunc)task_allmap_cursor_3,
     0x48,
@@ -1225,7 +1225,7 @@ TaskDesc gTaskDescAllmapCursor = {
 TaskDesc gTaskDescAllmapRoomname = {
     gTaskNameAllmapRoomname,
     (TaskInitFunc)task_allmap_roomname_0,
-    task_allmap_roomname_1,
+    (TaskUpdateFunc)task_allmap_roomname_1,
     (TaskFunc)task_allmap_roomname_2,
     (TaskFunc)task_allmap_roomname_3,
 #ifdef VERSION_EU
@@ -1256,7 +1256,7 @@ void* gUnkEu_09F80138[5] = {
 TaskDesc gTaskDescAllmapBar = {
     gTaskNameAllmapBar,
     (TaskInitFunc)task_allmap_bar_0,
-    task_allmap_bar_1,
+    (TaskUpdateFunc)task_allmap_bar_1,
     (TaskFunc)task_allmap_bar_2,
     (TaskFunc)task_allmap_bar_3,
     0x830,
@@ -1265,7 +1265,7 @@ TaskDesc gTaskDescAllmapBar = {
 TaskDesc gTaskDescAllmapDoorinfo = {
     gTaskNameAllmapDoorinfo,
     (TaskInitFunc)task_allmap_doorinfo_0,
-    task_allmap_doorinfo_1,
+    (TaskUpdateFunc)task_allmap_doorinfo_1,
     (TaskFunc)task_allmap_doorinfo_2,
     (TaskFunc)task_allmap_doorinfo_3,
     0x118,
@@ -1274,7 +1274,7 @@ TaskDesc gTaskDescAllmapDoorinfo = {
 TaskDesc gTaskDescAllmapPusha = {
     gTaskNameAllmapPusha,
     (TaskInitFunc)task_allmap_pusha_0,
-    task_allmap_pusha_1,
+    (TaskUpdateFunc)task_allmap_pusha_1,
     (TaskFunc)task_allmap_pusha_2,
     (TaskFunc)task_allmap_pusha_3,
     0x30,

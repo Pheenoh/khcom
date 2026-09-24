@@ -1968,7 +1968,7 @@ u8 func_0809486C(MapcardWork* w, void* a) {
     w->unk_6F--;
 
     if (w->unk_6F == 0) {
-        SetTaskUpdate(a, Mapcard_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)Mapcard_1);
     }
 
     if (w->unk_6C & 0x100) {
@@ -1991,7 +1991,7 @@ s32 func_080948F0(MapcardWork* w, void* a) {
 
     if (t == 0) {
         w->unk_6C &= 0xFFF3;
-        SetTaskUpdate(a, Mapcard_1);
+        SetTaskUpdate(a, (TaskUpdateFunc)Mapcard_1);
     }
 
     return 1;
@@ -2782,7 +2782,7 @@ const char gTaskNameMapSelect[] = "MapSelect";
 TaskDesc gTaskDescMapSelect = {
     gTaskNameMapSelect,
     (TaskInitFunc)MapSelect_0,
-    MapSelect_1,
+    (TaskUpdateFunc)MapSelect_1,
     (TaskFunc)MapSelect_2,
     (TaskFunc)MapSelect_3,
     0x2E4,
@@ -3087,7 +3087,7 @@ const char gTaskNameMapcard[] = "Mapcard";
 TaskDesc gTaskDescMapcard = {
     gTaskNameMapcard,
     (TaskInitFunc)Mapcard_0,
-    Mapcard_1,
+    (TaskUpdateFunc)Mapcard_1,
     (TaskFunc)Mapcard_2,
     (TaskFunc)Mapcard_3,
     0x78,
@@ -3098,7 +3098,7 @@ const char gTaskNameReloadGage[] = "Reload Gage";
 TaskDesc gTaskDescReloadGage = {
     gTaskNameReloadGage,
     (TaskInitFunc)Reload_Gage_0,
-    Reload_Gage_1,
+    (TaskUpdateFunc)Reload_Gage_1,
     (TaskFunc)Reload_Gage_2,
     (TaskFunc)Reload_Gage_3,
     0xA8,

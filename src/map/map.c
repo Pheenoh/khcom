@@ -9841,7 +9841,7 @@ Mode gModeMenuMsg = {
 TaskDesc gTaskDescMapRnd = {
     gTaskNameMapRnd,
     (TaskInitFunc)Task_MapRnd_0,
-    Task_MapRnd_1,
+    (TaskUpdateFunc)Task_MapRnd_1,
     (TaskFunc)Task_MapRnd_2,
     (TaskFunc)Task_MapRnd_3,
     0x14,
@@ -9850,7 +9850,7 @@ TaskDesc gTaskDescMapRnd = {
 TaskDesc gTaskDescMapFix = {
     gTaskNameMapFix,
     (TaskInitFunc)Task_MapFix_0,
-    Task_MapFix_1,
+    (TaskUpdateFunc)Task_MapFix_1,
     (TaskFunc)Task_MapFix_2,
     (TaskFunc)Task_MapFix_3,
 #ifdef VERSION_EU
@@ -9863,7 +9863,7 @@ TaskDesc gTaskDescMapFix = {
 TaskDesc gTaskDescMapDoor = {
     gTaskNameMapDoor,
     (TaskInitFunc)Task_MapDoor_0,
-    Task_MapDoor_1,
+    (TaskUpdateFunc)Task_MapDoor_1,
     (TaskFunc)Task_MapDoor_2,
     (TaskFunc)Task_MapDoor_3,
     0x88,
@@ -9872,7 +9872,7 @@ TaskDesc gTaskDescMapDoor = {
 TaskDesc gTaskDescMapMenu = {
     gTaskNameMapMenu,
     (TaskInitFunc)Task_MapMenu_0,
-    Task_MapMenu_1,
+    (TaskUpdateFunc)Task_MapMenu_1,
     (TaskFunc)Task_MapMenu_2,
     (TaskFunc)Task_MapMenu_3,
 #ifdef VERSION_EU
@@ -9885,7 +9885,7 @@ TaskDesc gTaskDescMapMenu = {
 TaskDesc gTaskDescMapSave = {
     gTaskNameMapSave,
     (TaskInitFunc)Task_MapSave_0,
-    Task_MapSave_1,
+    (TaskUpdateFunc)Task_MapSave_1,
     (TaskFunc)Task_MapSave_2,
     (TaskFunc)Task_MapSave_3,
 #ifdef VERSION_EU
@@ -9898,7 +9898,7 @@ TaskDesc gTaskDescMapSave = {
 TaskDesc gTaskDescMapAnm = {
     gTaskNameMapAnm,
     (TaskInitFunc)Task_MapAnm_0,
-    Task_MapAnm_1,
+    (TaskUpdateFunc)Task_MapAnm_1,
     (TaskFunc)Task_MapAnm_2,
     (TaskFunc)Task_MapAnm_3,
     0xE0,

@@ -5627,7 +5627,7 @@ const char gTaskNameMapFloor[] = "Task_MapFloor";
 TaskDesc gTaskDescMapEnm00 = {
     gTaskNameMapEnm00,
     (TaskInitFunc)Task_MapEnm00_0,
-    Task_MapEnm00_1,
+    (TaskUpdateFunc)Task_MapEnm00_1,
     (TaskFunc)Task_MapEnm00_2,
     (TaskFunc)Task_MapEnm00_3,
     0xF8,
@@ -5636,7 +5636,7 @@ TaskDesc gTaskDescMapEnm00 = {
 TaskDesc gTaskDescMapEnm01 = {
     gTaskNameMapEnm01,
     (TaskInitFunc)Task_MapEnm01_0,
-    Task_MapEnm01_1,
+    (TaskUpdateFunc)Task_MapEnm01_1,
     (TaskFunc)Task_MapEnm01_2,
     (TaskFunc)Task_MapEnm01_3,
     0xFC,
@@ -5645,7 +5645,7 @@ TaskDesc gTaskDescMapEnm01 = {
 TaskDesc gTaskDescMapEnm02 = {
     gTaskNameMapEnm02,
     (TaskInitFunc)Task_MapEnm02_0,
-    Task_MapEnm02_1,
+    (TaskUpdateFunc)Task_MapEnm02_1,
     (TaskFunc)Task_MapEnm02_2,
     (TaskFunc)Task_MapEnm02_3,
     0xF8,
@@ -5654,7 +5654,7 @@ TaskDesc gTaskDescMapEnm02 = {
 TaskDesc gTaskDescMapEnm03 = {
     gTaskNameMapEnm03,
     (TaskInitFunc)Task_MapEnm03_0,
-    Task_MapEnm03_1,
+    (TaskUpdateFunc)Task_MapEnm03_1,
     (TaskFunc)Task_MapEnm03_2,
     (TaskFunc)Task_MapEnm03_3,
     0x108,
@@ -5663,7 +5663,7 @@ TaskDesc gTaskDescMapEnm03 = {
 TaskDesc gTaskDescMapEnm04 = {
     gTaskNameMapEnm04,
     (TaskInitFunc)Task_MapEnm04_0,
-    Task_MapEnm04_1,
+    (TaskUpdateFunc)Task_MapEnm04_1,
     (TaskFunc)Task_MapEnm04_2,
     (TaskFunc)Task_MapEnm04_3,
     0xFC,
@@ -5672,7 +5672,7 @@ TaskDesc gTaskDescMapEnm04 = {
 TaskDesc gTaskDescMapEnm05 = {
     gTaskNameMapEnm05,
     (TaskInitFunc)Task_MapEnm05_0,
-    Task_MapEnm05_1,
+    (TaskUpdateFunc)Task_MapEnm05_1,
     (TaskFunc)Task_MapEnm05_2,
     (TaskFunc)Task_MapEnm05_3,
     0xF8,
@@ -5681,7 +5681,7 @@ TaskDesc gTaskDescMapEnm05 = {
 TaskDesc gTaskDescMapEnm06 = {
     gTaskNameMapEnm06,
     (TaskInitFunc)Task_MapEnm06_0,
-    Task_MapEnm06_1,
+    (TaskUpdateFunc)Task_MapEnm06_1,
     (TaskFunc)Task_MapEnm06_2,
     (TaskFunc)Task_MapEnm06_3,
     0xF8,
@@ -5692,7 +5692,7 @@ u8 gUnk_09EF6C38[] = "_";
 TaskDesc gTaskDescMapDbg = {
     gTaskNameMapDbg,
     (TaskInitFunc)Task_MapDbg_0,
-    Task_MapDbg_1,
+    (TaskUpdateFunc)Task_MapDbg_1,
     (TaskFunc)Task_MapDbg_2,
     (TaskFunc)Task_MapDbg_3,
     0x48,
@@ -5701,7 +5701,7 @@ TaskDesc gTaskDescMapDbg = {
 TaskDesc gTaskDescMapGmkJump = {
     gTaskNameMapGmkJump,
     (TaskInitFunc)Task_MapGmk_Jump_0,
-    Task_MapGmk_Jump_1,
+    (TaskUpdateFunc)Task_MapGmk_Jump_1,
     (TaskFunc)Task_MapGmk_Jump_2,
     (TaskFunc)Task_MapGmk_Jump_3,
     0xCC,
@@ -5710,7 +5710,7 @@ TaskDesc gTaskDescMapGmkJump = {
 TaskDesc gTaskDescMapGmkEnm = {
     gTaskNameMapGmkEnm,
     (TaskInitFunc)Task_MapGmk_Enm_0,
-    Task_MapGmk_Enm_1,
+    (TaskUpdateFunc)Task_MapGmk_Enm_1,
     (TaskFunc)Task_MapGmk_Enm_2,
     (TaskFunc)Task_MapGmk_Enm_3,
     0x74,
@@ -5719,7 +5719,7 @@ TaskDesc gTaskDescMapGmkEnm = {
 TaskDesc gTaskDescMapGmkDmy = {
     gTaskNameMapGmkDmy,
     (TaskInitFunc)Task_MapGmk_Dmy_0,
-    Task_MapGmk_Dmy_1,
+    (TaskUpdateFunc)Task_MapGmk_Dmy_1,
     (TaskFunc)Task_MapGmk_Dmy_2,
     (TaskFunc)Task_MapGmk_Dmy_3,
     0x4,
@@ -5728,7 +5728,7 @@ TaskDesc gTaskDescMapGmkDmy = {
 TaskDesc gTaskDescMapGmkTutorial = {
     gTaskNameMapGmkTutorial,
     (TaskInitFunc)Task_MapGmk_Tutorial_0,
-    Task_MapGmk_Tutorial_1,
+    (TaskUpdateFunc)Task_MapGmk_Tutorial_1,
     (TaskFunc)Task_MapGmk_Tutorial_2,
     (TaskFunc)Task_MapGmk_Tutorial_3,
     0xC4,
@@ -5737,7 +5737,7 @@ TaskDesc gTaskDescMapGmkTutorial = {
 TaskDesc gTaskDescMapGmkSpider = {
     gTaskNameMapGmkSpider,
     (TaskInitFunc)Task_MapGmk_Spider_0,
-    Task_MapGmk_Spider_1,
+    (TaskUpdateFunc)Task_MapGmk_Spider_1,
     (TaskFunc)Task_MapGmk_Spider_2,
     (TaskFunc)Task_MapGmk_Spider_3,
     0xC8,
@@ -5746,7 +5746,7 @@ TaskDesc gTaskDescMapGmkSpider = {
 TaskDesc gTaskDescMapGmkGP00 = {
     gTaskNameMapGmkGP00,
     (TaskInitFunc)Task_MapGmk_GP00_0,
-    Task_MapGmk_GP00_1,
+    (TaskUpdateFunc)Task_MapGmk_GP00_1,
     (TaskFunc)Task_MapGmk_GP00_2,
     (TaskFunc)Task_MapGmk_GP00_3,
     0xCC,
@@ -5755,7 +5755,7 @@ TaskDesc gTaskDescMapGmkGP00 = {
 TaskDesc gTaskDescMapGmkGP01 = {
     gTaskNameMapGmkGP01,
     (TaskInitFunc)Task_MapGmk_GP01_0,
-    Task_MapGmk_GP01_1,
+    (TaskUpdateFunc)Task_MapGmk_GP01_1,
     (TaskFunc)Task_MapGmk_GP01_2,
     (TaskFunc)Task_MapGmk_GP01_3,
     0xCC,
@@ -5764,7 +5764,7 @@ TaskDesc gTaskDescMapGmkGP01 = {
 TaskDesc gTaskDescMapGmkGP02 = {
     gTaskNameMapGmkGP02,
     (TaskInitFunc)Task_MapGmk_GP02_0,
-    Task_MapGmk_GP02_1,
+    (TaskUpdateFunc)Task_MapGmk_GP02_1,
     (TaskFunc)Task_MapGmk_GP02_2,
     (TaskFunc)Task_MapGmk_GP02_3,
     0xCC,
@@ -5773,7 +5773,7 @@ TaskDesc gTaskDescMapGmkGP02 = {
 TaskDesc gTaskDescMapGmkGP03 = {
     gTaskNameMapGmkGP03,
     (TaskInitFunc)Task_MapGmk_GP03_0,
-    Task_MapGmk_GP03_1,
+    (TaskUpdateFunc)Task_MapGmk_GP03_1,
     (TaskFunc)Task_MapGmk_GP03_2,
     (TaskFunc)Task_MapGmk_GP03_3,
     0xCC,
@@ -5782,7 +5782,7 @@ TaskDesc gTaskDescMapGmkGP03 = {
 TaskDesc gTaskDescMapGmkGP04 = {
     gTaskNameMapGmkGP04,
     (TaskInitFunc)Task_MapGmk_GP04_0,
-    Task_MapGmk_GP04_1,
+    (TaskUpdateFunc)Task_MapGmk_GP04_1,
     (TaskFunc)Task_MapGmk_GP04_2,
     (TaskFunc)Task_MapGmk_GP04_3,
     0xCC,
@@ -5791,7 +5791,7 @@ TaskDesc gTaskDescMapGmkGP04 = {
 TaskDesc gTaskDescMapGmkGP05 = {
     gTaskNameMapGmkGP05,
     (TaskInitFunc)Task_MapGmk_GP05_0,
-    Task_MapGmk_GP05_1,
+    (TaskUpdateFunc)Task_MapGmk_GP05_1,
     (TaskFunc)Task_MapGmk_GP05_2,
     (TaskFunc)Task_MapGmk_GP05_3,
     0xCC,
@@ -5800,7 +5800,7 @@ TaskDesc gTaskDescMapGmkGP05 = {
 TaskDesc gTaskDescMapGmkGP06 = {
     gTaskNameMapGmkGP06,
     (TaskInitFunc)Task_MapGmk_GP06_0,
-    Task_MapGmk_GP06_1,
+    (TaskUpdateFunc)Task_MapGmk_GP06_1,
     (TaskFunc)Task_MapGmk_GP06_2,
     (TaskFunc)Task_MapGmk_GP06_3,
     0xCC,
@@ -5809,7 +5809,7 @@ TaskDesc gTaskDescMapGmkGP06 = {
 TaskDesc gTaskDescMapGmkGP07 = {
     gTaskNameMapGmkGP07,
     (TaskInitFunc)Task_MapGmk_GP07_0,
-    Task_MapGmk_GP07_1,
+    (TaskUpdateFunc)Task_MapGmk_GP07_1,
     (TaskFunc)Task_MapGmk_GP07_2,
     (TaskFunc)Task_MapGmk_GP07_3,
     0xC8,
@@ -5818,7 +5818,7 @@ TaskDesc gTaskDescMapGmkGP07 = {
 TaskDesc gTaskDescMapGmkGP08 = {
     gTaskNameMapGmkGP08,
     (TaskInitFunc)Task_MapGmk_GP08_0,
-    Task_MapGmk_GP08_1,
+    (TaskUpdateFunc)Task_MapGmk_GP08_1,
     (TaskFunc)Task_MapGmk_GP08_2,
     (TaskFunc)Task_MapGmk_GP08_3,
     0xD0,
@@ -5827,7 +5827,7 @@ TaskDesc gTaskDescMapGmkGP08 = {
 TaskDesc gTaskDescMapGmkGP09 = {
     gTaskNameMapGmkGP09,
     (TaskInitFunc)Task_MapGmk_GP09_0,
-    Task_MapGmk_GP09_1,
+    (TaskUpdateFunc)Task_MapGmk_GP09_1,
     (TaskFunc)Task_MapGmk_GP09_2,
     (TaskFunc)Task_MapGmk_GP09_3,
     0xD0,
@@ -5836,7 +5836,7 @@ TaskDesc gTaskDescMapGmkGP09 = {
 TaskDesc gTaskDescMapGmk00 = {
     gTaskNameMapGmk00,
     (TaskInitFunc)Task_MapGmk00_0,
-    Task_MapGmk00_1,
+    (TaskUpdateFunc)Task_MapGmk00_1,
     (TaskFunc)Task_MapGmk00_2,
     (TaskFunc)Task_MapGmk00_3,
     0xCC,
@@ -5845,7 +5845,7 @@ TaskDesc gTaskDescMapGmk00 = {
 TaskDesc gTaskDescMapGmk01 = {
     gTaskNameMapGmk01,
     (TaskInitFunc)Task_MapGmk01_0,
-    Task_MapGmk01_1,
+    (TaskUpdateFunc)Task_MapGmk01_1,
     (TaskFunc)Task_MapGmk01_2,
     (TaskFunc)Task_MapGmk01_3,
     0xCC,
@@ -5854,7 +5854,7 @@ TaskDesc gTaskDescMapGmk01 = {
 TaskDesc gTaskDescMapGmkBarrel = {
     gTaskNameMapGmkBarrel,
     (TaskInitFunc)Task_MapGmk_Barrel_0,
-    Task_MapGmk_Barrel_1,
+    (TaskUpdateFunc)Task_MapGmk_Barrel_1,
     (TaskFunc)Task_MapGmk_Barrel_2,
     (TaskFunc)Task_MapGmk_Barrel_3,
     0xCC,
@@ -5863,7 +5863,7 @@ TaskDesc gTaskDescMapGmkBarrel = {
 TaskDesc gTaskDescMapGmk04 = {
     gTaskNameMapGmk04,
     (TaskInitFunc)Task_MapGmk04_0,
-    Task_MapGmk04_1,
+    (TaskUpdateFunc)Task_MapGmk04_1,
     (TaskFunc)Task_MapGmk04_2,
     (TaskFunc)Task_MapGmk04_3,
     0xDC,
@@ -5872,7 +5872,7 @@ TaskDesc gTaskDescMapGmk04 = {
 TaskDesc gTaskDescMapGmk05 = {
     gTaskNameMapGmk05,
     (TaskInitFunc)Task_MapGmk05_0,
-    Task_MapGmk05_1,
+    (TaskUpdateFunc)Task_MapGmk05_1,
     (TaskFunc)Task_MapGmk05_2,
     (TaskFunc)Task_MapGmk05_3,
     0xF4,
@@ -5881,7 +5881,7 @@ TaskDesc gTaskDescMapGmk05 = {
 TaskDesc gTaskDescMapGmk06 = {
     gTaskNameMapGmk06,
     (TaskInitFunc)Task_MapGmk06_0,
-    Task_MapGmk06_1,
+    (TaskUpdateFunc)Task_MapGmk06_1,
     (TaskFunc)Task_MapGmk06_2,
     (TaskFunc)Task_MapGmk06_3,
     0xDC,
@@ -5890,7 +5890,7 @@ TaskDesc gTaskDescMapGmk06 = {
 TaskDesc gTaskDescMapPrize = {
     gTaskNameMapPrize,
     (TaskInitFunc)Task_MapPrize_0,
-    Task_MapPrize_1,
+    (TaskUpdateFunc)Task_MapPrize_1,
     (TaskFunc)Task_MapPrize_2,
     (TaskFunc)Task_MapPrize_3,
     0x98,
@@ -5899,7 +5899,7 @@ TaskDesc gTaskDescMapPrize = {
 TaskDesc gTaskDescMapPrzCard = {
     gTaskNameMapPrzCard,
     (TaskInitFunc)Task_MapPrzCard_0,
-    Task_MapPrzCard_1,
+    (TaskUpdateFunc)Task_MapPrzCard_1,
     (TaskFunc)Task_MapPrzCard_2,
     (TaskFunc)Task_MapPrzCard_3,
     0xE8,
@@ -5908,7 +5908,7 @@ TaskDesc gTaskDescMapPrzCard = {
 TaskDesc gTaskDescMapPrzStock = {
     gTaskNameMapPrzStock,
     (TaskInitFunc)Task_MapPrzStock_0,
-    Task_MapPrzStock_1,
+    (TaskUpdateFunc)Task_MapPrzStock_1,
     (TaskFunc)Task_MapPrzStock_2,
     (TaskFunc)Task_MapPrzStock_3,
     0x1C,
@@ -5917,7 +5917,7 @@ TaskDesc gTaskDescMapPrzStock = {
 TaskDesc gTaskDescMapMsg = {
     gTaskNameMapMsg,
     (TaskInitFunc)func_080F58C4,
-    Task_MapMsg_1,
+    (TaskUpdateFunc)Task_MapMsg_1,
     (TaskFunc)func_080F596C,
     (TaskFunc)func_080F59A0,
     0x18C,
@@ -5926,7 +5926,7 @@ TaskDesc gTaskDescMapMsg = {
 TaskDesc gTaskDescMapMsg2 = {
     gTaskNameMapMsg2,
     (TaskInitFunc)func_080F58C4,
-    Task_MapMsg2_1,
+    (TaskUpdateFunc)Task_MapMsg2_1,
     (TaskFunc)func_080F596C,
     (TaskFunc)func_080F59A0,
     0x18C,
@@ -5935,7 +5935,7 @@ TaskDesc gTaskDescMapMsg2 = {
 TaskDesc gTaskDescMapSpark = {
     gTaskNameMapSpark,
     (TaskInitFunc)Task_MapSpark_0,
-    Task_MapSpark_1,
+    (TaskUpdateFunc)Task_MapSpark_1,
     (TaskFunc)Task_MapSpark_2,
     (TaskFunc)Task_MapSpark_3,
     0x28,
@@ -5944,7 +5944,7 @@ TaskDesc gTaskDescMapSpark = {
 TaskDesc gTaskDescMapTalk = {
     gTaskNameMapTalk,
     (TaskInitFunc)Task_MapTalk_0,
-    Task_MapTalk_1,
+    (TaskUpdateFunc)Task_MapTalk_1,
     (TaskFunc)Task_MapTalk_2,
     (TaskFunc)Task_MapTalk_3,
     0x2C,
@@ -5953,7 +5953,7 @@ TaskDesc gTaskDescMapTalk = {
 TaskDesc gTaskDescMapDonald = {
     gTaskNameMapDonald,
     (TaskInitFunc)Task_MapDonald_0,
-    Task_MapDonald_1,
+    (TaskUpdateFunc)Task_MapDonald_1,
     (TaskFunc)Task_MapDonald_2,
     (TaskFunc)Task_MapDonald_3,
     0xEC,
@@ -5962,7 +5962,7 @@ TaskDesc gTaskDescMapDonald = {
 TaskDesc gTaskDescMapGoofy = {
     gTaskNameMapGoofy,
     (TaskInitFunc)Task_MapGoofy_0,
-    Task_MapGoofy_1,
+    (TaskUpdateFunc)Task_MapGoofy_1,
     (TaskFunc)Task_MapGoofy_2,
     (TaskFunc)Task_MapGoofy_3,
     0xEC,
@@ -5971,7 +5971,7 @@ TaskDesc gTaskDescMapGoofy = {
 TaskDesc gTaskDescMapNamine = {
     gTaskNameMapNamine,
     (TaskInitFunc)Task_MapNamine_0,
-    Task_MapNamine_1,
+    (TaskUpdateFunc)Task_MapNamine_1,
     (TaskFunc)Task_MapNamine_2,
     (TaskFunc)Task_MapNamine_3,
     0xF0,
@@ -5980,7 +5980,7 @@ TaskDesc gTaskDescMapNamine = {
 TaskDesc gTaskDescMapNiseriku = {
     gTaskNameMapNiseriku,
     (TaskInitFunc)Task_MapNiseriku_0,
-    Task_MapNiseriku_1,
+    (TaskUpdateFunc)Task_MapNiseriku_1,
     (TaskFunc)Task_MapNiseriku_2,
     (TaskFunc)Task_MapNiseriku_3,
     0xEC,
@@ -5989,7 +5989,7 @@ TaskDesc gTaskDescMapNiseriku = {
 TaskDesc gTaskDescMapMickey = {
     gTaskNameMapMickey,
     (TaskInitFunc)Task_MapMickey_0,
-    Task_MapMickey_1,
+    (TaskUpdateFunc)Task_MapMickey_1,
     (TaskFunc)Task_MapMickey_2,
     (TaskFunc)Task_MapMickey_3,
     0xEC,
@@ -5998,7 +5998,7 @@ TaskDesc gTaskDescMapMickey = {
 TaskDesc gTaskDescMapTutorial = {
     gTaskNameMapTutorial,
     (TaskInitFunc)Task_MapTutorial_0,
-    Task_MapTutorial_1,
+    (TaskUpdateFunc)Task_MapTutorial_1,
     (TaskFunc)Task_MapTutorial_2,
     (TaskFunc)Task_MapTutorial_3,
     0xF0,
@@ -6007,7 +6007,7 @@ TaskDesc gTaskDescMapTutorial = {
 TaskDesc gTaskDescMapStair = {
     gTaskNameMapStair,
     (TaskInitFunc)Task_MapStair_0,
-    Task_MapStair_1,
+    (TaskUpdateFunc)Task_MapStair_1,
     (TaskFunc)Task_MapStair_2,
     (TaskFunc)Task_MapStair_3,
     0x64,
@@ -6016,7 +6016,7 @@ TaskDesc gTaskDescMapStair = {
 TaskDesc gTaskDescMapFaint = {
     gTaskNameMapFaint,
     (TaskInitFunc)Task_MapFaint_0,
-    Task_MapFaint_1,
+    (TaskUpdateFunc)Task_MapFaint_1,
     (TaskFunc)Task_MapFaint_2,
     (TaskFunc)Task_MapFaint_3,
     0x28,
@@ -6025,7 +6025,7 @@ TaskDesc gTaskDescMapFaint = {
 TaskDesc gTaskDescMapDmg = {
     gTaskNameMapDmg,
     (TaskInitFunc)Task_MapDmg_0,
-    Task_MapDmg_1,
+    (TaskUpdateFunc)Task_MapDmg_1,
     (TaskFunc)Task_MapDmg_2,
     (TaskFunc)Task_MapDmg_3,
     0xC,
@@ -6123,7 +6123,7 @@ MapNameText* gUnk_09EF7000[12] = {
 TaskDesc gTaskDescMapFloor = {
     gTaskNameMapFloor,
     (TaskInitFunc)Task_MapFloor_0,
-    Task_MapFloor_1,
+    (TaskUpdateFunc)Task_MapFloor_1,
     (TaskFunc)Task_MapFloor_2,
     (TaskFunc)Task_MapFloor_3,
 #ifdef VERSION_EU

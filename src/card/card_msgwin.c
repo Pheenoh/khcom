@@ -378,10 +378,10 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
                 AnimStart(w->anim, 1, e[w->messageDef->unk_08].unk_11);
             }
             w->unk_148 = 0;
-            SetTaskUpdate(a, func_080A3A98);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3A98);
         } else if (!(w->messageDef->flags & 1)) {
             AnimStart(w->anim2, 3, 1);
-            SetTaskUpdate(a, func_080A3DD0);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3DD0);
             w->unk_13E = 0;
             w->unk_140 = 8;
         } else {
@@ -410,7 +410,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             w->unk_146[1] = LoadTextSlots(gUnk_08159E18, w->unk_070);
 #endif
             w->unk_0C0 = (s32)_08066468(1);
-            SetTaskUpdate(a, func_080A3E8C);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A3E8C);
         }
     }
     return 1;
@@ -2951,7 +2951,7 @@ const char gTaskName_09EE8E18[] = "msgwin";
 TaskDesc gUnk_09EE8E18 = {
     gTaskName_09EE8E18,
     (TaskInitFunc)func_080A33C4,
-    func_080A3640,
+    (TaskUpdateFunc)func_080A3640,
     (TaskFunc)func_080A3848,
     (TaskFunc)func_080A3A04,
     0x150,

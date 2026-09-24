@@ -2582,7 +2582,7 @@ u8 func_0807BD64(CardDisplayWork* p, void* a) {
         if (p->unk_78 & 0x10) {
             p->unk_9C = 8;
             func_0807E018(p);
-            SetTaskUpdate(a, func_0807CB24);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_0807CB24);
             return 1;
         }
     }
@@ -2597,7 +2597,7 @@ u8 func_0807BD64(CardDisplayWork* p, void* a) {
             func_0807C33C(p);
             p->unk_78 |= 0x80;
             fn = func_0807BE54;
-            SetTaskUpdate(a, fn);
+            SetTaskUpdate(a, (TaskUpdateFunc)fn);
             return fn(p, a);
         }
     }
@@ -2608,7 +2608,7 @@ u8 func_0807BD64(CardDisplayWork* p, void* a) {
 
     if (!(p->unk_78 & 0x20)) {
         p->unk_78 &= ~0x40;
-        SetTaskUpdate(a, func_0807CBC0);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0807CBC0);
     }
 
     func_0807CC2C(p);
@@ -2920,12 +2920,12 @@ u8 func_0807C75C(CardDisplayWork* p, void* a) {
 
     if (!(p->unk_78 & 0x10000000)) {
         fn = func_0807C934;
-        SetTaskUpdate(a, fn);
+        SetTaskUpdate(a, (TaskUpdateFunc)fn);
         return fn(p, a);
     }
 
     if (p->unk_78 & 0x40000000) {
-        SetTaskUpdate(a, func_0807D810);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0807D810);
         return 1;
     }
 
@@ -2951,7 +2951,7 @@ u8 func_0807C75C(CardDisplayWork* p, void* a) {
             fn = func_0807CFA8;
         }
 
-        SetTaskUpdate(a, fn);
+        SetTaskUpdate(a, (TaskUpdateFunc)fn);
         p->unk_78 &= ~0x200;
         func_0807D4B8(p);
         return fn(p, a);
@@ -3024,13 +3024,13 @@ u8 func_0807C934(CardDisplayWork* p, void* a) {
         if (p->unk_78 & 0x10000000) {
             p->unk_9C = p->unk_9F * 8;
             fn = func_0807C75C;
-            SetTaskUpdate(a, fn);
+            SetTaskUpdate(a, (TaskUpdateFunc)fn);
             return fn(p, a);
         }
     }
 
     if (p->unk_78 & 0x40000000) {
-        SetTaskUpdate(a, func_0807D810);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_0807D810);
         return 1;
     }
 
@@ -3055,7 +3055,7 @@ u8 func_0807C934(CardDisplayWork* p, void* a) {
             fn = func_0807CFA8;
         }
 
-        SetTaskUpdate(a, fn);
+        SetTaskUpdate(a, (TaskUpdateFunc)fn);
         p->unk_78 &= ~0x200;
         func_0807D4B8(p);
         return fn(p, a);
@@ -4132,7 +4132,7 @@ const char gTaskName_09EE496C[] = "card";
 TaskDesc gUnk_09EE496C = {
     gTaskName_09EE496C,
     (TaskInitFunc)func_0807BC24,
-    func_0807BD64,
+    (TaskUpdateFunc)func_0807BD64,
     (TaskFunc)func_0807BEC0,
     (TaskFunc)func_0807C2E0,
     0xA8,
@@ -4143,7 +4143,7 @@ const char gTaskNameCardNotHave[] = "card_not_have";
 TaskDesc gTaskDescCardNotHave = {
     gTaskNameCardNotHave,
     (TaskInitFunc)func_0807BC24,
-    func_0807BD64,
+    (TaskUpdateFunc)func_0807BD64,
     (TaskFunc)card_not_have_2,
     (TaskFunc)func_0807C2E0,
     0xA8,
@@ -4154,7 +4154,7 @@ const char gTaskNameCardReload[] = "card_reload";
 TaskDesc gTaskDescCardReload = {
     gTaskNameCardReload,
     (TaskInitFunc)card_reload_0,
-    card_reload_1,
+    (TaskUpdateFunc)card_reload_1,
     (TaskFunc)card_reload_2,
     (TaskFunc)card_reload_3,
     0xA8,

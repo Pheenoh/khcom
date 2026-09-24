@@ -542,7 +542,7 @@ const char gTaskNameTutorial[] = "task_tutorial";
 TaskDesc gTaskDescTutorial = {
     gTaskNameTutorial,
     (TaskInitFunc)task_tutorial_0,
-    task_tutorial_1,
+    (TaskUpdateFunc)task_tutorial_1,
     (TaskFunc)task_tutorial_2,
     (TaskFunc)task_tutorial_3,
     0x38,

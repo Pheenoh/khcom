@@ -221,7 +221,7 @@ const char gTaskNameLvupLogo[] = "Lvup_Logo";
 TaskDesc gTaskDescLvupLogo = {
     gTaskNameLvupLogo,
     (TaskInitFunc)Lvup_Logo_0,
-    Lvup_Logo_1,
+    (TaskUpdateFunc)Lvup_Logo_1,
     (TaskFunc)Lvup_Logo_2,
     (TaskFunc)Lvup_Logo_3,
     0xAC,
@@ -232,7 +232,7 @@ const char gTaskNameEvMapObj[] = "Ev_mapObj";
 TaskDesc gTaskDescEvMapObj = {
     gTaskNameEvMapObj,
     (TaskInitFunc)Ev_mapObj_0,
-    Ev_mapObj_1,
+    (TaskUpdateFunc)Ev_mapObj_1,
     (TaskFunc)Ev_mapObj_2,
     (TaskFunc)Ev_mapObj_3,
     0x5C,

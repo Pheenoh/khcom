@@ -1381,7 +1381,7 @@ const char gTaskNameCardBattleSora[] = "cardbattle";
 TaskDesc gTaskDescCardBattleSora = {
     gTaskNameCardBattleSora,
     (TaskInitFunc)func_08076CB4,
-    func_08076F80,
+    (TaskUpdateFunc)func_08076F80,
     (TaskFunc)func_08077E10,
     (TaskFunc)func_08077E98,
     0xCC,

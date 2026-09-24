@@ -466,7 +466,7 @@ const char gTaskNameHCEffectName[] = "HCEffectName";
 TaskDesc gTaskDescHCEffectName = {
     gTaskNameHCEffectName,
     (TaskInitFunc)HCEffectName_0,
-    HCEffectName_1,
+    (TaskUpdateFunc)HCEffectName_1,
     (TaskFunc)HCEffectName_2,
     (TaskFunc)HCEffectName_3,
     0x28,
@@ -477,7 +477,7 @@ const char gTaskNameNumberPlus[] = "NumberPlus";
 TaskDesc gTaskDescNumberPlus = {
     gTaskNameNumberPlus,
     (TaskInitFunc)NumberPlus_0,
-    NumberPlus_1,
+    (TaskUpdateFunc)NumberPlus_1,
     (TaskFunc)NumberPlus_2,
     (TaskFunc)NumberPlus_3,
     0x2C,

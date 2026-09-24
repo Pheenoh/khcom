@@ -1116,7 +1116,7 @@ u8 func_080D8F04(void* a) {
 TaskDesc gTaskDescStatus = {
     gTaskNameStatus,
     (TaskInitFunc)task_status_0,
-    task_status_1,
+    (TaskUpdateFunc)task_status_1,
     (TaskFunc)task_status_2,
     (TaskFunc)task_status_3,
     0x20,
@@ -1143,7 +1143,7 @@ void** gUnkEu_09F8029C[5] = {
 TaskDesc gTaskDescStatusBar = {
     gTaskNameStatusBar,
     (TaskInitFunc)task_status_bar_0,
-    task_status_bar_1,
+    (TaskUpdateFunc)task_status_bar_1,
     (TaskFunc)task_status_bar_2,
     (TaskFunc)task_status_bar_3,
     0x2C,
@@ -1170,7 +1170,7 @@ void** gUnkEu_09F802DC[5] = {
 TaskDesc gTaskDescStatusTab = {
     gTaskNameStatusTab,
     (TaskInitFunc)task_status_tab_0,
-    task_status_tab_1,
+    (TaskUpdateFunc)task_status_tab_1,
     (TaskFunc)task_status_tab_2,
     (TaskFunc)task_status_tab_3,
     0x1C,
@@ -1179,7 +1179,7 @@ TaskDesc gTaskDescStatusTab = {
 TaskDesc gTaskDescStatusSora = {
     gTaskNameStatusSora,
     (TaskInitFunc)task_status_sora_0,
-    task_status_sora_1,
+    (TaskUpdateFunc)task_status_sora_1,
     (TaskFunc)task_status_sora_2,
     (TaskFunc)task_status_sora_3,
     0x24,
@@ -1188,7 +1188,7 @@ TaskDesc gTaskDescStatusSora = {
 TaskDesc gTaskDescStatusDeckname = {
     gTaskNameStatusDeckname,
     (TaskInitFunc)task_status_deckname_0,
-    task_status_deckname_1,
+    (TaskUpdateFunc)task_status_deckname_1,
     (TaskFunc)task_status_deckname_2,
     (TaskFunc)task_status_deckname_3,
     0x5C,
@@ -1197,7 +1197,7 @@ TaskDesc gTaskDescStatusDeckname = {
 TaskDesc gTaskDescStatusCursor = {
     gTaskNameStatusCursor,
     (TaskInitFunc)task_status_cursor_0,
-    task_status_cursor_1,
+    (TaskUpdateFunc)task_status_cursor_1,
     (TaskFunc)task_status_cursor_2,
     (TaskFunc)task_status_cursor_3,
     0x60,
@@ -1224,7 +1224,7 @@ void* gUnkEu_09F80364[5] = {
 TaskDesc gTaskDescStatusStocklist = {
     gTaskNameStatusStocklist,
     (TaskInitFunc)task_status_stocklist_0,
-    task_status_stocklist_1,
+    (TaskUpdateFunc)task_status_stocklist_1,
     (TaskFunc)task_status_stocklist_2,
     (TaskFunc)task_status_stocklist_3,
     0x4CC,
@@ -1233,7 +1233,7 @@ TaskDesc gTaskDescStatusStocklist = {
 TaskDesc gTaskDescStatusScrollcursor = {
     gTaskNameStatusScrollcursor,
     (TaskInitFunc)task_status_scrollcursor_0,
-    task_status_scrollcursor_1,
+    (TaskUpdateFunc)task_status_scrollcursor_1,
     (TaskFunc)task_status_scrollcursor_2,
     (TaskFunc)task_status_scrollcursor_3,
     0x14,
@@ -1242,7 +1242,7 @@ TaskDesc gTaskDescStatusScrollcursor = {
 TaskDesc gTaskDescStatusMeswindow = {
     gTaskNameStatusMeswindow,
     (TaskInitFunc)task_status_meswindow_0,
-    task_status_meswindow_1,
+    (TaskUpdateFunc)task_status_meswindow_1,
     (TaskFunc)task_status_meswindow_2,
     (TaskFunc)task_status_meswindow_3,
     0x24,
@@ -1251,7 +1251,7 @@ TaskDesc gTaskDescStatusMeswindow = {
 TaskDesc gTaskDescStatusMessage = {
     gTaskNameStatusMessage,
     (TaskInitFunc)task_status_message_0,
-    task_status_message_1,
+    (TaskUpdateFunc)task_status_message_1,
     (TaskFunc)task_status_message_2,
     (TaskFunc)task_status_message_3,
     0x330,
@@ -1260,7 +1260,7 @@ TaskDesc gTaskDescStatusMessage = {
 TaskDesc gTaskDescStatusFriend = {
     gTaskNameStatusFriend,
     (TaskInitFunc)task_status_friend_0,
-    task_status_friend_1,
+    (TaskUpdateFunc)task_status_friend_1,
     (TaskFunc)task_status_friend_2,
     (TaskFunc)task_status_friend_3,
     0x28,
@@ -1269,7 +1269,7 @@ TaskDesc gTaskDescStatusFriend = {
 TaskDesc gTaskDescStockMesDisp = {
     gTaskNameStockMesDisp,
     (TaskInitFunc)stock_mes_disp_0,
-    stock_mes_disp_1,
+    (TaskUpdateFunc)stock_mes_disp_1,
     (TaskFunc)stock_mes_disp_2,
     (TaskFunc)stock_mes_disp_3,
     0x48,

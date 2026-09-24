@@ -841,7 +841,7 @@ const char gTaskNameLockon[] = "task_lockon";
 TaskDesc gTaskDescLockon = {
     gTaskNameLockon,
     (TaskInitFunc)task_lockon_0,
-    task_lockon_1,
+    (TaskUpdateFunc)task_lockon_1,
     (TaskFunc)task_lockon_2,
     (TaskFunc)task_lockon_3,
     0x50,

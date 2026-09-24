@@ -278,7 +278,7 @@ u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a) {
     func_080A6E3C((u8*)w);
     w->unk_509 = 0;
     w->unk_4EC = 16;
-    SetTaskUpdate(a, func_080A5EA0);
+    SetTaskUpdate(a, (TaskUpdateFunc)func_080A5EA0);
     return 1;
 }
 
@@ -1082,7 +1082,7 @@ const char gTaskName_09EE8EF0[] = "Deckmenu2";
 TaskDesc gUnk_09EE8EF0 = {
     gTaskName_09EE8EF0,
     (TaskInitFunc)func_080A584C,
-    func_080A5C9C,
+    (TaskUpdateFunc)func_080A5C9C,
     (TaskFunc)func_080A6500,
     (TaskFunc)func_080A676C,
     0x510,

@@ -412,7 +412,7 @@ const char gTaskNameDarkPoint[] = "DarkPoint";
 TaskDesc gTaskDescDarkPoint = {
     gTaskNameDarkPoint,
     (TaskInitFunc)DarkPoint_0,
-    DarkPoint_1,
+    (TaskUpdateFunc)DarkPoint_1,
     (TaskFunc)DarkPoint_2,
     (TaskFunc)DarkPoint_3,
     0x10,

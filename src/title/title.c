@@ -807,7 +807,7 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
 TaskDesc gTaskDescTitleLogo = {
     gTaskNameTitleLogo,
     (TaskInitFunc)task_title_logo_0,
-    task_title_logo_1,
+    (TaskUpdateFunc)task_title_logo_1,
     (TaskFunc)task_title_logo_2,
     (TaskFunc)task_title_logo_3,
     0x54,
@@ -816,7 +816,7 @@ TaskDesc gTaskDescTitleLogo = {
 TaskDesc gTaskDescTitleObj = {
     gTaskNameTitleObj,
     (TaskInitFunc)task_title_obj_0,
-    task_title_obj_1,
+    (TaskUpdateFunc)task_title_obj_1,
     (TaskFunc)task_title_obj_2,
     (TaskFunc)task_title_obj_3,
     0x64,
@@ -835,7 +835,7 @@ void** gUnkEu_09F801D4[5] = {
 TaskDesc gTaskDescTitleMenu = {
     gTaskNameTitleMenu,
     (TaskInitFunc)task_title_menu_0,
-    task_title_menu_1,
+    (TaskUpdateFunc)task_title_menu_1,
     (TaskFunc)task_title_menu_2,
     (TaskFunc)task_title_menu_3,
     0x64,
@@ -862,7 +862,7 @@ void** gUnkEu_09F80214[5] = {
 TaskDesc gTaskDescTitleLumichange = {
     gTaskNameTitleLumichange,
     (TaskInitFunc)task_title_lumichange_0,
-    task_title_lumichange_1,
+    (TaskUpdateFunc)task_title_lumichange_1,
     (TaskFunc)task_title_lumichange_2,
     (TaskFunc)task_title_lumichange_3,
     0xC,

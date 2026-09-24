@@ -521,7 +521,7 @@ u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
             m4aSongNumStart(SONG_SYS_CLICKI04B);
             func_080AA450((u8*)w);
             w->unk_6F0 = 9;
-            SetTaskUpdate(a, func_080A86F4);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A86F4);
             w->x = 0xA000;
             w->y = 0x2800;
             w->unk_6EC = 4;
@@ -537,18 +537,18 @@ u8 func_080A8020(UnkStruct_0808C940* w, void* a) {
             m4aSongNumStart(SONG_SYS_CLICKI04B);
             func_080AA450((u8*)w);
             w->unk_6F0 = 9;
-            SetTaskUpdate(a, func_080A86F4);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A86F4);
             w->x = 0xA000;
             w->y = 0x2800;
             w->unk_6EC = 4;
             return 1;
         }
-        SetTaskUpdate(a, func_080A8BD8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A8BD8);
         m4aSongNumStart(SONG_SYS_CLOSE);
         return 1;
     case START_BUTTON:
         if ((u8)func_080AAC40((u8*)w) != 0 && (u8)func_080AAC8C((u8*)w) != 0) {
-            SetTaskUpdate(a, func_080A8C20);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
         }
@@ -646,12 +646,12 @@ u8 func_080A8430(UnkStruct_0808C940* w, void* a) {
         w->unk_6D2 = 0;
         func_080AA450((u8*)w);
         if (w->unk_716 != 0) {
-            SetTaskUpdate(a, func_080A86F4);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A86F4);
         } else {
             w->unk_6D0 = w->unk_701;
             w->unk_6F6 = 4;
             w->unk_6F0 = 10;
-            SetTaskUpdate(a, func_080A8020);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8020);
         }
         break;
     }
@@ -675,7 +675,7 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
     }
     if (w->unk_710 != 0) {
         if ((u8)func_080AAC40((u8*)w) != 0 && (u8)func_080AAC8C((u8*)w) != 0) {
-            SetTaskUpdate(a, func_080A8C20);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
             return 1;
@@ -700,7 +700,7 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
                 for (i = 0; i < 10; i++) {
                     func_0808DD20(0, i);
                 }
-                SetTaskUpdate(a, func_080A8020);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_080A8020);
                 return 1;
             }
             func_080AAF20(w);
@@ -755,7 +755,7 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
                 func_080AA680((u8*)w);
                 w->x2 = gUnk_09041F30[w->unk_6D0] << 8;
                 w->y2 = (gUnk_09041F34[w->unk_6D2] - 16) << 8;
-                SetTaskUpdate(a, func_080A7C80);
+                SetTaskUpdate(a, (TaskUpdateFunc)func_080A7C80);
                 return 1;
             }
             w->unk_6D0 = (s8)w->unk_6F4;
@@ -768,12 +768,12 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
         m4aSongNumStart(SONG_SYS_BEEP);
         return 1;
     case B_BUTTON:
-        SetTaskUpdate(a, func_080A8BD8);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A8BD8);
         m4aSongNumStart(SONG_SYS_CLOSE);
         return 1;
     case START_BUTTON:
         if ((u8)func_080AAC40((u8*)w) != 0 && (u8)func_080AAC8C((u8*)w) != 0) {
-            SetTaskUpdate(a, func_080A8C20);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A8C20);
             FadeStartOut(0, 4);
             m4aSongNumStart(SONG_SYS_CANSEL);
         }
@@ -788,7 +788,7 @@ u8 func_080A86F4(UnkStruct_0808C940* w, void* a) {
         w->unk_6EC = 4;
         m4aSongNumStart(SONG_SYS_CLICKI04B);
         w->unk_6F0 = 10;
-        SetTaskUpdate(a, func_080A8020);
+        SetTaskUpdate(a, (TaskUpdateFunc)func_080A8020);
         return 1;
     }
     if (w->unk_6F6 != 0) {
@@ -2007,7 +2007,7 @@ const char gTaskNameDeckexchange[] = "deckexchange";
 TaskDesc gTaskDescDeckexchange = {
     gTaskNameDeckexchange,
     (TaskInitFunc)deckexchange_0,
-    deckexchange_1,
+    (TaskUpdateFunc)deckexchange_1,
     (TaskFunc)deckexchange_2,
     (TaskFunc)deckexchange_3,
     0x718,

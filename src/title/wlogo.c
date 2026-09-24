@@ -2242,7 +2242,7 @@ const char gTaskNameWlogoBksObj[] = "task_wlogo_bks_obj";
 TaskDesc gTaskDescWlogoMons = {
     gTaskNameWlogoMons,
     (TaskInitFunc)task_wlogo_mons_0,
-    task_wlogo_mons_1,
+    (TaskUpdateFunc)task_wlogo_mons_1,
     (TaskFunc)task_wlogo_mons_2,
     (TaskFunc)task_wlogo_mons_3,
     0x30,
@@ -2251,7 +2251,7 @@ TaskDesc gTaskDescWlogoMons = {
 TaskDesc gTaskDescWlogoHwt = {
     gTaskNameWlogoHwt,
     (TaskInitFunc)task_wlogo_hwt_0,
-    task_wlogo_hwt_1,
+    (TaskUpdateFunc)task_wlogo_hwt_1,
     (TaskFunc)task_wlogo_hwt_2,
     (TaskFunc)task_wlogo_hwt_3,
     0x8,
@@ -2260,7 +2260,7 @@ TaskDesc gTaskDescWlogoHwt = {
 TaskDesc gTaskDescWlogoHwtObj = {
     gTaskNameWlogoHwtObj,
     (TaskInitFunc)task_wlogo_hwt_obj_0,
-    task_wlogo_hwt_obj_1,
+    (TaskUpdateFunc)task_wlogo_hwt_obj_1,
     (TaskFunc)task_wlogo_hwt_obj_2,
     (TaskFunc)task_wlogo_hwt_obj_3,
     0x4C,
@@ -2318,7 +2318,7 @@ s32 gUnk_09EF180C[20] = {
 TaskDesc gTaskDescWlogoWon = {
     gTaskNameWlogoWon,
     (TaskInitFunc)task_wlogo_won_0,
-    task_wlogo_won_1,
+    (TaskUpdateFunc)task_wlogo_won_1,
     (TaskFunc)task_wlogo_won_2,
     (TaskFunc)task_wlogo_won_3,
     0x108,
@@ -2327,7 +2327,7 @@ TaskDesc gTaskDescWlogoWon = {
 TaskDesc gTaskDescWlogoAtl = {
     gTaskNameWlogoAtl,
     (TaskInitFunc)task_wlogo_atl_0,
-    task_wlogo_atl_1,
+    (TaskUpdateFunc)task_wlogo_atl_1,
     (TaskFunc)task_wlogo_atl_2,
     (TaskFunc)task_wlogo_atl_3,
     0xC,
@@ -2336,7 +2336,7 @@ TaskDesc gTaskDescWlogoAtl = {
 TaskDesc gTaskDescWlogoNvl = {
     gTaskNameWlogoNvl,
     (TaskInitFunc)task_wlogo_nvl_0,
-    task_wlogo_nvl_1,
+    (TaskUpdateFunc)task_wlogo_nvl_1,
     (TaskFunc)task_wlogo_nvl_2,
     (TaskFunc)task_wlogo_nvl_3,
     0xC,
@@ -2345,7 +2345,7 @@ TaskDesc gTaskDescWlogoNvl = {
 TaskDesc gTaskDescWlogoNvlMov = {
     gTaskNameWlogoNvlMov,
     (TaskInitFunc)task_wlogo_nvl_mov_0,
-    task_wlogo_nvl_mov_1,
+    (TaskUpdateFunc)task_wlogo_nvl_mov_1,
     (TaskFunc)task_wlogo_nvl_mov_2,
     (TaskFunc)task_wlogo_nvl_mov_3,
     0x4C,
@@ -2354,7 +2354,7 @@ TaskDesc gTaskDescWlogoNvlMov = {
 TaskDesc gTaskDescWlogoNvlObj = {
     gTaskNameWlogoNvlObj,
     (TaskInitFunc)task_wlogo_nvl_obj_0,
-    task_wlogo_nvl_obj_1,
+    (TaskUpdateFunc)task_wlogo_nvl_obj_1,
     (TaskFunc)task_wlogo_nvl_obj_2,
     (TaskFunc)task_wlogo_nvl_obj_3,
     0x30,
@@ -2363,7 +2363,7 @@ TaskDesc gTaskDescWlogoNvlObj = {
 TaskDesc gTaskDescWlogoCol = {
     gTaskNameWlogoCol,
     (TaskInitFunc)task_wlogo_col_0,
-    task_wlogo_col_1,
+    (TaskUpdateFunc)task_wlogo_col_1,
     (TaskFunc)task_wlogo_col_2,
     (TaskFunc)task_wlogo_col_3,
     0x34,
@@ -2372,7 +2372,7 @@ TaskDesc gTaskDescWlogoCol = {
 TaskDesc gTaskDescWlogoHlw = {
     gTaskNameWlogoHlw,
     (TaskInitFunc)task_wlogo_hlw_0,
-    task_wlogo_hlw_1,
+    (TaskUpdateFunc)task_wlogo_hlw_1,
     (TaskFunc)task_wlogo_hlw_2,
     (TaskFunc)task_wlogo_hlw_3,
     0x8,
@@ -2381,7 +2381,7 @@ TaskDesc gTaskDescWlogoHlw = {
 TaskDesc gTaskDescWlogoDil = {
     gTaskNameWlogoDil,
     (TaskInitFunc)task_wlogo_dil_0,
-    task_wlogo_dil_1,
+    (TaskUpdateFunc)task_wlogo_dil_1,
     (TaskFunc)task_wlogo_dil_2,
     (TaskFunc)task_wlogo_dil_3,
     0x18,
@@ -2413,7 +2413,7 @@ WlogoAgrEntry gWlogoAgrEntries[20] = {
 TaskDesc gTaskDescWlogoAgr = {
     gTaskNameWlogoAgr,
     (TaskInitFunc)task_wlogo_agr_0,
-    task_wlogo_agr_1,
+    (TaskUpdateFunc)task_wlogo_agr_1,
     (TaskFunc)task_wlogo_agr_2,
     (TaskFunc)task_wlogo_agr_3,
     0x18,
@@ -2422,7 +2422,7 @@ TaskDesc gTaskDescWlogoAgr = {
 TaskDesc gTaskDescWlogoAgrSmoke = {
     gTaskNameWlogoAgrSmoke,
     (TaskInitFunc)task_wlogo_agr_smoke_0,
-    task_wlogo_agr_smoke_1,
+    (TaskUpdateFunc)task_wlogo_agr_smoke_1,
     (TaskFunc)task_wlogo_agr_smoke_2,
     (TaskFunc)task_wlogo_agr_smoke_3,
     0x38,
@@ -2431,7 +2431,7 @@ TaskDesc gTaskDescWlogoAgrSmoke = {
 TaskDesc gTaskDescWlogoAgrFlash0 = {
     gTaskNameWlogoAgrFlash0,
     (TaskInitFunc)task_wlogo_agr_flash0_0,
-    task_wlogo_agr_flash0_1,
+    (TaskUpdateFunc)task_wlogo_agr_flash0_1,
     (TaskFunc)task_wlogo_agr_flash0_2,
     (TaskFunc)task_wlogo_agr_flash0_3,
     0x2C,
@@ -2440,7 +2440,7 @@ TaskDesc gTaskDescWlogoAgrFlash0 = {
 TaskDesc gTaskDescWlogoAgrFlash1 = {
     gTaskNameWlogoAgrFlash1,
     (TaskInitFunc)task_wlogo_agr_flash1_0,
-    task_wlogo_agr_flash1_1,
+    (TaskUpdateFunc)task_wlogo_agr_flash1_1,
     (TaskFunc)task_wlogo_agr_flash1_2,
     (TaskFunc)task_wlogo_agr_flash1_3,
     0x2C,
@@ -2449,7 +2449,7 @@ TaskDesc gTaskDescWlogoAgrFlash1 = {
 TaskDesc gTaskDescWlogoTvt = {
     gTaskNameWlogoTvt,
     (TaskInitFunc)task_wlogo_tvt_0,
-    task_wlogo_tvt_1,
+    (TaskUpdateFunc)task_wlogo_tvt_1,
     (TaskFunc)task_wlogo_tvt_2,
     (TaskFunc)task_wlogo_tvt_3,
     0x34,
@@ -2458,7 +2458,7 @@ TaskDesc gTaskDescWlogoTvt = {
 TaskDesc gTaskDescWlogoPoo = {
     gTaskNameWlogoPoo,
     (TaskInitFunc)task_wlogo_poo_0,
-    task_wlogo_poo_1,
+    (TaskUpdateFunc)task_wlogo_poo_1,
     (TaskFunc)task_wlogo_poo_2,
     (TaskFunc)task_wlogo_poo_3,
     0xC,
@@ -2469,7 +2469,7 @@ u8 gUnk_09EF1AEC[4] = { 0, 0, 2, 2 };
 TaskDesc gTaskDescWlogoPooObj = {
     gTaskNameWlogoPooObj,
     (TaskInitFunc)task_wlogo_poo_obj_0,
-    task_wlogo_poo_obj_1,
+    (TaskUpdateFunc)task_wlogo_poo_obj_1,
     (TaskFunc)task_wlogo_poo_obj_2,
     (TaskFunc)task_wlogo_poo_obj_3,
     0x44,
@@ -2482,7 +2482,7 @@ WlogoTtMotion gWlogoTtMotion =
 TaskDesc gTaskDescWlogoTt = {
     gTaskNameWlogoTt,
     (TaskInitFunc)task_wlogo_tt_0,
-    task_wlogo_tt_1,
+    (TaskUpdateFunc)task_wlogo_tt_1,
     (TaskFunc)task_wlogo_tt_2,
     (TaskFunc)task_wlogo_tt_3,
     0x128,
@@ -2491,7 +2491,7 @@ TaskDesc gTaskDescWlogoTt = {
 TaskDesc gTaskDescWlogoTtObj = {
     gTaskNameWlogoTtObj,
     (TaskInitFunc)task_wlogo_tt_obj_0,
-    task_wlogo_tt_obj_1,
+    (TaskUpdateFunc)task_wlogo_tt_obj_1,
     (TaskFunc)task_wlogo_tt_obj_2,
     (TaskFunc)task_wlogo_tt_obj_3,
     0x30,
@@ -2536,7 +2536,7 @@ s16 gUnk_09EF1B68[33][3] = {
 TaskDesc gTaskDescWlogoTtLine = {
     gTaskNameWlogoTtLine,
     (TaskInitFunc)task_wlogo_tt_line_0,
-    task_wlogo_tt_line_1,
+    (TaskUpdateFunc)task_wlogo_tt_line_1,
     (TaskFunc)task_wlogo_tt_line_2,
     (TaskFunc)task_wlogo_tt_line_3,
     0x1C,
@@ -2565,7 +2565,7 @@ s8 gUnk_09EF1C50[8] = {
 TaskDesc gTaskDescWlogoBks = {
     gTaskNameWlogoBks,
     (TaskInitFunc)task_wlogo_bks_0,
-    task_wlogo_bks_1,
+    (TaskUpdateFunc)task_wlogo_bks_1,
     (TaskFunc)task_wlogo_bks_2,
     (TaskFunc)task_wlogo_bks_3,
     0x50,
@@ -2659,7 +2659,7 @@ u16 gUnk_09EF1D0A[14] = {
 TaskDesc gTaskDescWlogoBksObj = {
     gTaskNameWlogoBksObj,
     (TaskInitFunc)task_wlogo_bks_obj_0,
-    task_wlogo_bks_obj_1,
+    (TaskUpdateFunc)task_wlogo_bks_obj_1,
     (TaskFunc)task_wlogo_bks_obj_2,
     (TaskFunc)task_wlogo_bks_obj_3,
     0x4C,

@@ -4940,7 +4940,7 @@ const char gTaskNameBosJf[] = "task_bos_jf";
 TaskDesc gTaskDescBosJf = {
     gTaskNameBosJf,
     (TaskInitFunc)task_bos_jf_0,
-    task_bos_jf_1,
+    (TaskUpdateFunc)task_bos_jf_1,
     (TaskFunc)task_bos_jf_2,
     (TaskFunc)task_bos_jf_3,
     0x26C,
@@ -4988,7 +4988,7 @@ const char gTaskNameBosJfMap[] = "task_bos_jf_map";
 TaskDesc gTaskDescBosJfMap = {
     gTaskNameBosJfMap,
     (TaskInitFunc)task_bos_jf_map_0,
-    task_bos_jf_map_1,
+    (TaskUpdateFunc)task_bos_jf_map_1,
     0,
     0,
     0x4,
@@ -5029,7 +5029,7 @@ const u16 gUnk_0961A710[16][3] = {
 TaskDesc gTaskDescBosJfLamp = {
     gTaskNameBosJfLamp,
     (TaskInitFunc)task_bos_jf_lamp_0,
-    task_bos_jf_lamp_1,
+    (TaskUpdateFunc)task_bos_jf_lamp_1,
     (TaskFunc)task_bos_jf_lamp_2,
     (TaskFunc)task_bos_jf_lamp_3,
     0x58,
@@ -5170,7 +5170,7 @@ const EmyKind gBosDsdEmyKind = { 38, 1000, 16, 16, 40, 60, 0 };
 TaskDesc gTaskDescBosJfMajin = {
     gTaskNameBosJfMajin,
     (TaskInitFunc)task_bos_jf_majin_0,
-    task_bos_jf_majin_1,
+    (TaskUpdateFunc)task_bos_jf_majin_1,
     (TaskFunc)task_bos_jf_majin_2,
     (TaskFunc)task_bos_jf_majin_3,
     0x84,
@@ -5217,7 +5217,7 @@ const char gTaskNameBosDsdEnergy2[] = "task_bos_dsd_energy2";
 TaskDesc gTaskDescBosJfRock = {
     gTaskNameBosJfRock,
     (TaskInitFunc)task_bos_jf_rock_0,
-    task_bos_jf_rock_1,
+    (TaskUpdateFunc)task_bos_jf_rock_1,
     (TaskFunc)task_bos_jf_rock_2,
     (TaskFunc)task_bos_jf_rock_3,
     0x198,
@@ -5226,7 +5226,7 @@ TaskDesc gTaskDescBosJfRock = {
 TaskDesc gTaskDescBosJfBorderline = {
     gTaskNameBosJfBorderline,
     (TaskInitFunc)task_bos_jf_borderline_0,
-    task_bos_jf_borderline_1,
+    (TaskUpdateFunc)task_bos_jf_borderline_1,
     (TaskFunc)task_bos_jf_borderline_2,
     (TaskFunc)task_bos_jf_borderline_3,
     0xB8,
@@ -5235,7 +5235,7 @@ TaskDesc gTaskDescBosJfBorderline = {
 TaskDesc gTaskDescBosDsd = {
     gTaskNameBosDsd,
     (TaskInitFunc)task_bos_dsd_0,
-    task_bos_dsd_1,
+    (TaskUpdateFunc)task_bos_dsd_1,
     (TaskFunc)task_bos_dsd_2,
     (TaskFunc)task_bos_dsd_3,
     0x394,
@@ -5361,7 +5361,7 @@ void* gUnk_09EF2E4C = 0;
 TaskDesc gTaskDescBosDsdMain = {
     gTaskNameBosDsdMain,
     (TaskInitFunc)task_bos_dsd_main_0,
-    task_bos_dsd_main_1,
+    (TaskUpdateFunc)task_bos_dsd_main_1,
     (TaskFunc)task_bos_dsd_main_2,
     (TaskFunc)task_bos_dsd_main_3,
     0x190,
@@ -5389,7 +5389,7 @@ const u16* gUnk_09EF2E68[4] = {
 TaskDesc gTaskDescBosDsdMap = {
     gTaskNameBosDsdMap,
     (TaskInitFunc)task_bos_dsd_map_0,
-    task_bos_dsd_map_1,
+    (TaskUpdateFunc)task_bos_dsd_map_1,
     0,
     0,
     0x4,
@@ -5398,7 +5398,7 @@ TaskDesc gTaskDescBosDsdMap = {
 TaskDesc gTaskDescBosDsdIta = {
     gTaskNameBosDsdIta,
     (TaskInitFunc)task_bos_dsd_ita_0,
-    task_bos_dsd_ita_1,
+    (TaskUpdateFunc)task_bos_dsd_ita_1,
     (TaskFunc)task_bos_dsd_ita_2,
     (TaskFunc)task_bos_dsd_ita_3,
     0x90,
@@ -5407,7 +5407,7 @@ TaskDesc gTaskDescBosDsdIta = {
 TaskDesc gTaskDescBosDsdRock = {
     gTaskNameBosDsdRock,
     (TaskInitFunc)task_bos_dsd_rock_0,
-    task_bos_dsd_rock_1,
+    (TaskUpdateFunc)task_bos_dsd_rock_1,
     (TaskFunc)task_bos_dsd_rock_2,
     (TaskFunc)task_bos_dsd_rock_3,
     0x24,
@@ -5416,7 +5416,7 @@ TaskDesc gTaskDescBosDsdRock = {
 TaskDesc gTaskDescBosDsdCircle = {
     gTaskNameBosDsdCircle,
     (TaskInitFunc)task_bos_dsd_circle_0,
-    task_bos_dsd_circle_1,
+    (TaskUpdateFunc)task_bos_dsd_circle_1,
     (TaskFunc)task_bos_dsd_circle_2,
     (TaskFunc)task_bos_dsd_circle_3,
     0x20,
@@ -5425,7 +5425,7 @@ TaskDesc gTaskDescBosDsdCircle = {
 TaskDesc gTaskDescBosDsdEnergy1 = {
     gTaskNameBosDsdEnergy1,
     (TaskInitFunc)task_bos_dsd_energy1_0,
-    task_bos_dsd_energy1_1,
+    (TaskUpdateFunc)task_bos_dsd_energy1_1,
     (TaskFunc)task_bos_dsd_energy1_2,
     (TaskFunc)task_bos_dsd_energy1_3,
     0x4C,
@@ -5434,7 +5434,7 @@ TaskDesc gTaskDescBosDsdEnergy1 = {
 TaskDesc gTaskDescBosDsdEnergy2 = {
     gTaskNameBosDsdEnergy2,
     (TaskInitFunc)task_bos_dsd_energy2_0,
-    task_bos_dsd_energy2_1,
+    (TaskUpdateFunc)task_bos_dsd_energy2_1,
     (TaskFunc)task_bos_dsd_energy2_2,
     (TaskFunc)task_bos_dsd_energy2_3,
     0x40,

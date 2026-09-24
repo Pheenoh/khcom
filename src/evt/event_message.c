@@ -7424,7 +7424,7 @@ void func_08075010(EventCameraWork* p) {
 TaskDesc gTaskDescEventSeq = {
     gTaskNameEventSeq,
     (TaskInitFunc)event_seq_0,
-    event_seq_1,
+    (TaskUpdateFunc)event_seq_1,
     (TaskFunc)event_seq_2,
     (TaskFunc)event_seq_3,
 #ifdef VERSION_EU
@@ -7437,7 +7437,7 @@ TaskDesc gTaskDescEventSeq = {
 TaskDesc gTaskDescEventChara = {
     gTaskNameEventChara,
     (TaskInitFunc)event_chara_0,
-    event_chara_1,
+    (TaskUpdateFunc)event_chara_1,
     (TaskFunc)event_chara_2,
     (TaskFunc)event_chara_3,
     0x1BC,
@@ -7460,7 +7460,7 @@ void* gUnk_09EE4724[4] = {
 TaskDesc gTaskDescMsgwin = {
     gTaskNameMsgwin,
     (TaskInitFunc)func_08072D98,
-    func_08072EAC,
+    (TaskUpdateFunc)func_08072EAC,
     (TaskFunc)func_08073238,
     (TaskFunc)func_08073274,
     0x44,
@@ -7470,7 +7470,7 @@ TaskDesc gTaskDescMsgface[3] = {
     {
         gTaskNameMsgface,
         (TaskInitFunc)msgface_0,
-        msgface_1,
+        (TaskUpdateFunc)msgface_1,
         (TaskFunc)msgface_2,
         (TaskFunc)msgface_3,
         0x3C,
@@ -7478,7 +7478,7 @@ TaskDesc gTaskDescMsgface[3] = {
     {
         gTaskNameMsgwait,
         (TaskInitFunc)msgwait_0,
-        msgwait_1,
+        (TaskUpdateFunc)msgwait_1,
         (TaskFunc)msgwait_2,
         (TaskFunc)msgwait_3,
         0x108,
@@ -7486,7 +7486,7 @@ TaskDesc gTaskDescMsgface[3] = {
     {
         gTaskNameMsgwaitYesno,
         (TaskInitFunc)msgwait_yesno_0,
-        msgwait_yesno_1,
+        (TaskUpdateFunc)msgwait_yesno_1,
         (TaskFunc)msgwait_yesno_2,
         (TaskFunc)msgwait_yesno_3,
         0x108,
@@ -7496,7 +7496,7 @@ TaskDesc gTaskDescMsgface[3] = {
 TaskDesc gTaskDescView = {
     gTaskNameView,
     (TaskInitFunc)view_0,
-    view_1,
+    (TaskUpdateFunc)view_1,
     (TaskFunc)view_2,
     (TaskFunc)view_3,
     0x15C,

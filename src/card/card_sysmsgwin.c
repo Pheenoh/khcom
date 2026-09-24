@@ -252,7 +252,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
         } else if (!(w->messageDef->flags & 1)) {
             AnimStart(w->anim2, 3, 1);
             w->unk_142 = 0;
-            SetTaskUpdate(a, func_080A4910);
+            SetTaskUpdate(a, (TaskUpdateFunc)func_080A4910);
             ((s16*)&w->gfx3)[1] = 0;
             w->unk_138[0] = 8;
         } else {
@@ -835,7 +835,7 @@ const char gTaskNameSysmsgwin[] = "sysmsgwin";
 TaskDesc gUnk_09EE8E30 = {
     gTaskNameSysmsgwin,
     (TaskInitFunc)func_080A430C,
-    func_080A4578,
+    (TaskUpdateFunc)func_080A4578,
     (TaskFunc)func_080A4A50,
     (TaskFunc)func_080A4C1C,
     0x148,
@@ -844,7 +844,7 @@ TaskDesc gUnk_09EE8E30 = {
 TaskDesc gUnk_09EE8E48 = {
     gTaskNameSysmsgwin,
     (TaskInitFunc)func_080A4DCC,
-    func_080A4F14,
+    (TaskUpdateFunc)func_080A4F14,
     (TaskFunc)func_080A52BC,
     (TaskFunc)func_080A53E4,
     0x148,

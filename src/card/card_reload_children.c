@@ -99,7 +99,7 @@ u8 RELOAD_CHILDREN_1(ReloadChildWork* w, void* a) {
         if (w->unk_46 == 30) {
             w->unk_44 = 8;
             fn = func_08098AE4;
-            SetTaskUpdate(a, fn);
+            SetTaskUpdate(a, (TaskUpdateFunc)fn);
             return fn(w, a);
         }
     }
@@ -1018,7 +1018,7 @@ const char gTaskNameReloadChildren[] = "RELOAD_CHILDREN";
 TaskDesc gTaskDescReloadChildren = {
     gTaskNameReloadChildren,
     (TaskInitFunc)RELOAD_CHILDREN_0,
-    RELOAD_CHILDREN_1,
+    (TaskUpdateFunc)RELOAD_CHILDREN_1,
     (TaskFunc)RELOAD_CHILDREN_2,
     (TaskFunc)RELOAD_CHILDREN_3,
     0x48,
@@ -1051,7 +1051,7 @@ const char gTaskNameREVCOUNT[] = "REV_COUNT";
 TaskDesc gTaskDescREVCOUNT = {
     gTaskNameREVCOUNT,
     (TaskInitFunc)REV_COUNT_0,
-    REV_COUNT_1,
+    (TaskUpdateFunc)REV_COUNT_1,
     (TaskFunc)REV_COUNT_2,
     (TaskFunc)REV_COUNT_3,
     0x44,
@@ -1080,7 +1080,7 @@ const char gTaskNameRELOAD[] = "RELOAD";
 TaskDesc gTaskDescRELOAD = {
     gTaskNameRELOAD,
     (TaskInitFunc)RELOAD_0,
-    RELOAD_1,
+    (TaskUpdateFunc)RELOAD_1,
     (TaskFunc)RELOAD_2,
     (TaskFunc)RELOAD_3,
     0x38,
@@ -1091,7 +1091,7 @@ const char gTaskNamePrizeBoss[] = "PrizeBoss";
 TaskDesc gTaskDescPrizeBoss = {
     gTaskNamePrizeBoss,
     (TaskInitFunc)PrizeBoss_0,
-    PrizeBoss_1,
+    (TaskUpdateFunc)PrizeBoss_1,
     (TaskFunc)PrizeBoss_2,
     (TaskFunc)PrizeBoss_3,
     0xF0,
@@ -1102,7 +1102,7 @@ const char gTaskNameCardEFFECT[] = "Card_EFFECT";
 TaskDesc gTaskDescCardEFFECT = {
     gTaskNameCardEFFECT,
     (TaskInitFunc)Card_EFFECT_0,
-    Card_EFFECT_1,
+    (TaskUpdateFunc)Card_EFFECT_1,
     (TaskFunc)Card_EFFECT_2,
     (TaskFunc)Card_EFFECT_3,
     0x4C,
@@ -1113,7 +1113,7 @@ const char gTaskNameScrollbar[] = "scrollbar";
 TaskDesc gTaskDescScrollbar = {
     gTaskNameScrollbar,
     (TaskInitFunc)scrollbar_0,
-    scrollbar_1,
+    (TaskUpdateFunc)scrollbar_1,
     (TaskFunc)scrollbar_2,
     (TaskFunc)scrollbar_3,
     0x18,

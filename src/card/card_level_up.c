@@ -2033,7 +2033,7 @@ const char gTaskNameLevelUp[] = "Level_Up";
 TaskDesc gTaskDescLevelUp = {
     gTaskNameLevelUp,
     (TaskInitFunc)Level_Up_0,
-    Level_Up_1,
+    (TaskUpdateFunc)Level_Up_1,
     (TaskFunc)Level_Up_2,
     (TaskFunc)Level_Up_3,
 #ifdef VERSION_EU
@@ -2065,7 +2065,7 @@ const char gTaskNameLVUPEFFECT[] = "LVUP_EFFECT";
 TaskDesc gTaskDescLVUPEFFECT = {
     gTaskNameLVUPEFFECT,
     (TaskInitFunc)LVUP_EFFECT_0,
-    LVUP_EFFECT_1,
+    (TaskUpdateFunc)LVUP_EFFECT_1,
     (TaskFunc)LVUP_EFFECT_2,
     (TaskFunc)LVUP_EFFECT_3,
     0xAC,

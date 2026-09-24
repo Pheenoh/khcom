@@ -435,7 +435,7 @@ const char gTaskNamePrint[] = "task_print";
 TaskDesc gTaskDescPrint = {
     gTaskNamePrint,
     (TaskInitFunc)task_print_0,
-    task_print_1,
+    (TaskUpdateFunc)task_print_1,
     (TaskFunc)task_print_2,
     (TaskFunc)task_print_3,
     0x4,
