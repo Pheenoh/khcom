@@ -316,16 +316,12 @@ void eu_08061698(FrdPoohWork* work) {
 #endif
 
 #ifndef VERSION_EU
-const char gModeNameTest[] = "mode_test";
-
-Mode gModeTest = { gModeNameTest, (ModeInitFunc)mode_test_0, mode_test_1, mode_test_2 };
+Mode gModeTest = { "mode_test", (ModeInitFunc)mode_test_0, mode_test_1, mode_test_2 };
 #endif
 
 #ifdef VERSION_EU
-const char gTaskNameFrdPoohEu[] = "task_frd_pooh";
-
 TaskDesc gTaskDescFrdPoohEu = {
-    gTaskNameFrdPoohEu,
+    "task_frd_pooh",
     (TaskInitFunc)eu_08060C8C,
     (TaskUpdateFunc)eu_08060DF8,
     (TaskFunc)eu_08061588,

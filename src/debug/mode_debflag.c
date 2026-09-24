@@ -125,6 +125,4 @@ void mode_debflag_2(void) {
     func_080609A0();
 }
 
-const char gModeNameDebflag[16] = "mode_debflag";
-
-Mode gModeDebflag = { gModeNameDebflag, mode_debflag_0, mode_debflag_1, mode_debflag_2 };
+Mode gModeDebflag = { "mode_debflag", mode_debflag_0, mode_debflag_1, mode_debflag_2 };

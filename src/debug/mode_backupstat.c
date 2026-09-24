@@ -150,10 +150,8 @@ void mode_backupstat_2(void) {
     func_080609A0();
 }
 
-const char gModeNameBackupstat[] = "mode_backupstat";
-
 Mode gModeBackupstat = {
-    gModeNameBackupstat,
+    "mode_backupstat",
     (ModeInitFunc)mode_backupstat_0,
     mode_backupstat_1,
     mode_backupstat_2,

@@ -119,10 +119,8 @@ void (*gUnk_09EF69A8[10])(MapChkWork*) = {
     func_080DE6A8,
 };
 
-const char gModeNameMapChk[] = "Mode_MapChk";
-
 Mode gModeMapChk = {
-    gModeNameMapChk,
+    "Mode_MapChk",
     (ModeInitFunc)Mode_MapChk_0,
     Mode_MapChk_1,
     Mode_MapChk_2,

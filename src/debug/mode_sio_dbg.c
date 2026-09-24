@@ -35,8 +35,6 @@ extern const char gUnk_0961A9C8[];
 extern const char gUnk_0961A9CC[];
 extern const char gUnk_0961A9E8[];
 
-const char gModeNameSioDbgFlg[] = "mode_sio_dbg_flg";
-
 const char* gUnk_09EF34F0[] = {
 #if defined(VERSION_US)
     gDebugMenuTextUs_0961A994,
@@ -86,7 +84,7 @@ const char* gSioUnusedFlagLabelEu_09F7E754 = gDebugMenuTextEu_095DBD58;
 #endif
 
 Mode gModeSioDbgFlg = {
-    gModeNameSioDbgFlg,
+    "mode_sio_dbg_flg",
     mode_sio_dbg_flg_0,
     mode_sio_dbg_flg_1,
     mode_sio_dbg_flg_2,

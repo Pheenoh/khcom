@@ -1770,8 +1770,6 @@ void mode_chkobj_2(void) {
     func_080609A0();
 }
 
-const char gModeNameChkobj[12] = "mode_chkobj";
-
 ObjDef gUnk_09ECEB74[] = {
     { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 2, 0, gUnk_08F683A4, gUnk_08128978, gUnk_0812896C, 32, 0 },
     { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 8, 0, gUnk_08F683A4, gUnk_0812895C, gUnk_0812896C, 32, 0 },
@@ -3042,4 +3040,4 @@ ObjDef gUnk_09ED82D4[] = {
     { gUnk_09EDF748, gUnk_09EDF760, gUnk_0894EC7C, 1, 0, gUnk_09618118, gUnk_0812E5F4, gUnk_0812B91C, 32, 0 },
 };
 
-Mode gModeChkobj = { gModeNameChkobj, (ModeInitFunc)mode_chkobj_0, mode_chkobj_1, mode_chkobj_2 };
+Mode gModeChkobj = { "mode_chkobj", (ModeInitFunc)mode_chkobj_0, mode_chkobj_1, mode_chkobj_2 };

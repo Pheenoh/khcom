@@ -714,8 +714,6 @@ void mode_chksnd_2(void) {
     TaskPoolDestroy(&gChkSndPool);
 }
 
-const char gModeNameChksnd[12] = "mode_chksnd";
-
 ChkSndEntry gChkSndEntries[] = {
     { gUnk_081309A0, SONG_BGM_ALICE_BTL },
     { gUnk_08130990, SONG_BGM_ALICE_FIELD },
@@ -1352,4 +1350,4 @@ ChkSndEntry gChkSndEntries[] = {
     { gUnk_0812E8F8, SONG_SND_970 },
 };
 
-Mode gModeChksnd = { gModeNameChksnd, (ModeInitFunc)mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };
+Mode gModeChksnd = { "mode_chksnd", (ModeInitFunc)mode_chksnd_0, mode_chksnd_1, mode_chksnd_2 };

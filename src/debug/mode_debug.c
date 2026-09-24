@@ -382,6 +382,4 @@ void func_0800B30C(ObjDef* def) {
     gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);
 }
 
-const char gModeNameDebug[12] = "mode_debug";
-
-Mode gModeDebug = { gModeNameDebug, mode_debug_0, mode_debug_1, mode_debug_2 };
+Mode gModeDebug = { "mode_debug", mode_debug_0, mode_debug_1, mode_debug_2 };

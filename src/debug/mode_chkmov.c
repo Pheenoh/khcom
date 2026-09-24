@@ -11,14 +11,8 @@
 
 MovieDebugWork* gUnkEu_020348C4;
 
-extern const char gMovieDebugTextEu_0812F6A8[];
-extern const char gMovieDebugTextEu_0812F6B4[];
-extern const char gMovieDebugTextEu_0812F6BC[];
-extern const char gMovieDebugTextEu_0812F6C4[];
-extern const char gMovieDebugTextEu_0812F6CC[];
 extern const char gMovieDebugTextEu_0812F6D4[];
 extern const char gMovieDebugTextEu_0812F6F4[];
-extern const char gMovieDebugTextEu_0812F6F8[];
 
 extern const MovieDebugEntry gMovieDebugEntriesEu[5];
 
@@ -73,31 +67,19 @@ void eu_0800C898(void) {
 }
 
 const MovieDebugEntry gMovieDebugEntriesEu[5] = {
-    {1, gMovieDebugTextEu_0812F6CC},
-    {2, gMovieDebugTextEu_0812F6C4},
-    {3, gMovieDebugTextEu_0812F6BC},
-    {4, gMovieDebugTextEu_0812F6B4},
-    {5, gMovieDebugTextEu_0812F6A8},
+    {1, "OPENING"},
+    {2, "6F_GOAL"},
+    {3, "12F_E2"},
+    {4, "ENDING"},
+    {5, "RIKU_ENDING"},
 };
-
-const char gMovieDebugTextEu_0812F6A8[] = "RIKU_ENDING";
-
-const char gMovieDebugTextEu_0812F6B4[] = "ENDING";
-
-const char gMovieDebugTextEu_0812F6BC[] = "12F_E2";
-
-const char gMovieDebugTextEu_0812F6C4[] = "6F_GOAL";
-
-const char gMovieDebugTextEu_0812F6CC[] = "OPENING";
 
 const char gMovieDebugTextEu_0812F6D4[] = "                              ";
 
 const char gMovieDebugTextEu_0812F6F4[] = ": ";
 
-const char gMovieDebugTextEu_0812F6F8[] = "mode_chkmov";
-
 Mode gModeMovieDebugEu = {
-    gMovieDebugTextEu_0812F6F8,
+    "mode_chkmov",
     eu_0800C76C,
     eu_0800C7A0,
     eu_0800C898,

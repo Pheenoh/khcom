@@ -452,8 +452,6 @@ void func_0800ABD8(void) {
     gUnk_02039B8C = 0x1A2;
 }
 
-const char gModeNameChkbtl[12] = "mode_chkbtl";
-
 ChkBtlWork* gChkBtlWork = &gUnk_02034890;
 
-Mode gModeChkbtl = { gModeNameChkbtl, mode_chkbtl_0, mode_chkbtl_1, mode_chkbtl_2 };
+Mode gModeChkbtl = { "mode_chkbtl", mode_chkbtl_0, mode_chkbtl_1, mode_chkbtl_2 };

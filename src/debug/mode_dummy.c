@@ -122,6 +122,4 @@ void mode_dummy_2(void) {
     func_080609A0();
 }
 
-const char gModeNameDummy[12] = "mode_dummy";
-
-Mode gModeDummy = { gModeNameDummy, (ModeInitFunc)mode_dummy_0, mode_dummy_1, mode_dummy_2 };
+Mode gModeDummy = { "mode_dummy", (ModeInitFunc)mode_dummy_0, mode_dummy_1, mode_dummy_2 };
