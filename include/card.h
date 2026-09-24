@@ -2583,7 +2583,6 @@ extern s16 gUnk_09EE4BC2[2];
 extern u16 gUnk_09EE4BE0[10];
 
 extern Mode gModePremire;
-extern const char gUnk_09037F80[];
 #ifdef VERSION_EU
 extern void* gUnkEu_09F72CB0[5];
 extern void** gUnkEu_09F72CC4[5];
