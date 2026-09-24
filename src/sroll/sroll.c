@@ -1947,10 +1947,8 @@ TaskDesc gTaskDescSrollAName = {
     0x38,
 };
 
-const char gTaskNameSrollBChar[] = "task_sroll_b_char";
-
 TaskDesc gTaskDescSrollBChar = {
-    gTaskNameSrollBChar,
+    "task_sroll_b_char",
     (TaskInitFunc)task_sroll_b_char_0,
     (TaskUpdateFunc)task_sroll_b_char_1,
     (TaskFunc)task_sroll_b_char_2,
@@ -2041,10 +2039,8 @@ TaskDesc gTaskDescSrollBLogo = {
     0x30,
 };
 
-const char gTaskNameSrollBSecn[] = "task_sroll_b_secn";
-
 TaskDesc gTaskDescSrollBSecn = {
-    gTaskNameSrollBSecn,
+    "task_sroll_b_secn",
     (TaskInitFunc)task_sroll_b_secn_0,
     (TaskUpdateFunc)task_sroll_b_secn_1,
     (TaskFunc)task_sroll_b_secn_2,
@@ -2052,10 +2048,8 @@ TaskDesc gTaskDescSrollBSecn = {
     0x4C,
 };
 
-const char gTaskNameSrollBCrtn[] = "task_sroll_b_crtn";
-
 TaskDesc gTaskDescSrollBCrtn = {
-    gTaskNameSrollBCrtn,
+    "task_sroll_b_crtn",
     (TaskInitFunc)task_sroll_b_crtn_0,
     (TaskUpdateFunc)task_sroll_b_crtn_1,
     (TaskFunc)task_sroll_b_crtn_2,
@@ -2063,10 +2057,8 @@ TaskDesc gTaskDescSrollBCrtn = {
     0x30,
 };
 
-const char gTaskNameSrollCChar[] = "task_sroll_c_char";
-
 TaskDesc gTaskDescSrollCChar = {
-    gTaskNameSrollCChar,
+    "task_sroll_c_char",
     (TaskInitFunc)task_sroll_c_char_0,
     (TaskUpdateFunc)task_sroll_c_char_1,
     (TaskFunc)task_sroll_c_char_2,
@@ -2074,10 +2066,8 @@ TaskDesc gTaskDescSrollCChar = {
     0x98,
 };
 
-const char gTaskNameSrollTmr[] = "task_sroll_tmr";
-
 TaskDesc gTaskDescSrollTmr = {
-    gTaskNameSrollTmr,
+    "task_sroll_tmr",
     (TaskInitFunc)task_sroll_tmr_0,
     (TaskUpdateFunc)task_sroll_tmr_1,
     (TaskFunc)task_sroll_tmr_2,
