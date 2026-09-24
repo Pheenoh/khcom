@@ -1798,9 +1798,9 @@ typedef struct UnkStruct_08094CE4_B {
     u16 tilesSize;
 } UnkStruct_08094CE4_B;
 
-extern s16 gUnk_090361B0[];
-extern s16 gUnk_090361B8[];
-extern s16 gUnk_090361C0[];
+extern const s16 gUnk_090361B0[];
+extern const s16 gUnk_090361B8[];
+extern const s16 gUnk_090361C0[];
 
 typedef struct BossCardWork {
     CardDef* cardDef;

@@ -164,7 +164,6 @@ card_enemy.c
 card_worldselect.c
 card_prize_card.c
 card_prize_card_init.c
-card_reload_children_rodata.s
 card_reload_children.c
 card_friend_card_rodata.s
 card_friend_card.c

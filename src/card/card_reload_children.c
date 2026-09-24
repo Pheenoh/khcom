@@ -58,6 +58,12 @@ s16 func_08084458(u16 cardId);
 void _08085D04(u8 a);
 void CreateCardNameDisplay(void* a, void* b);
 
+const s16 gUnk_090361B0[4] = { 16, 29, 42, 51 };
+
+const s16 gUnk_090361B8[4] = { -16, -29, -42, -51 };
+
+const s16 gUnk_090361C0[4] = { 0, 0, 0, 24 };
+
 void RELOAD_CHILDREN_0(ReloadChildWork* w, ReloadChildArgs* a) {
     *(ReloadChildArgs*)&w->unk_0C = *a;
     w->tiles = LoadObjTiles(gUnk_09EE7698[w->unk_19], 128);
