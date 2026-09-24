@@ -64,10 +64,8 @@ def movie_extent(data):
 
 def load_movie_assets(path, version, rom):
     value = load_yaml(Path(path).read_text())
-    if set(value) != {'version', 'provenance', 'regions'} or value['version'] != 1:
+    if set(value) != {'version', 'regions'} or value['version'] != 1:
         raise ValueError('invalid movie asset manifest')
-    if not isinstance(value['provenance'], str) or not value['provenance'].strip():
-        raise ValueError('movie asset provenance is required')
     if set(value['regions']) != {'us', 'jp', 'eu'}:
         raise ValueError('movie asset manifest requires all regions')
     result = []

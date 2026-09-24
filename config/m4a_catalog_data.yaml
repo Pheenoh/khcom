@@ -1,10 +1,4 @@
 version: 1
-provenance:
-  dispatch: MPlayJumpTableCopy explicitly copies36 function pointers. The twelve XCMD entries end where the independent ToneData bank begins. Every pointer names the actual mapped Thumb function in each region; the scale/frequency tables have180 and12 entries, matching MidiKeyToFreq key clamp178 and key+1 lookup.
-  players: m4aSoundInit iterates NUM_MUSIC_PLAYERS=26. Each12-byte MusicPlayer descriptor names a compiler-owned MusicPlayerInfo and its actual count-bounded MusicPlayerTrack array. Slots13..15 are native zero descriptors. The23 track arrays total51 records at80-byte stride and exactly fill the previously unallocated4080-byte RAM span before sio_link_header_state, with regional addresses verified from all26 native table records.
-  songs: 962 complete8-byte Song records end at the separately referenced zero-track song header. All ms/me selectors agree across versions and remain within26 player slots. Native sequence headers are complete encoded music asset bindings (4-byte zero-track sentinel or8+4*trackCount), not claimed as source-owned C metadata. Duplicate headers use a single canonical binding per native address.
-  native_engine_tables: The driver dispatch template, pitch lookup tables, CGB/noise/timing tables and XCMD dispatch form one consecutive driver-data run in all three regions. Existing driver consumers distinguish these fixed algorithm tables from game-specific player/song records. A shared engine-data translation unit is a reconstruction assumption supported by this common role, unchanged order and native four-byte alignment; the three bytes after the 49-byte clock table are the natural gap before the XCMD pointer array. Every original object extent and pointer relocation is preserved.
-  native_game_catalog: The 26 player descriptors and 962 song records are consecutive game-specific catalog data in all three regions, while their 23 track work arrays remain in the existing unchanged RAM allocation. Ordinary readonly definitions preserve both catalog object offsets and all pointer targets without per-symbol section attributes.
 regions:
   us:
     binary_assets:

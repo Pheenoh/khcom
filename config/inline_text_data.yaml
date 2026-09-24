@@ -1,9 +1,4 @@
 version: 1
-provenance:
-  event_dialogue_us: US event 22 uses EventSequenceDef 08FD791C, whose MessageScriptEntry array is 08FD7018. Entries 4 through 12 each point at one of nine contiguous null-terminated 16-bit game-text passages at 09EE3844..09EE3C9E. func_08073508 passes the text field to the regional text renderer. JP counterparts are Shift-JIS literals inside the native event script; EU counterparts are already owned LocalizedText wrappers at 09F64CA4..09F64D58. These US asset slices are not a cross-region blob mapping.
-  jiminy_prefix_us: US 0813FE39..0813FE3C is three zero alignment bytes following the 25-byte save signature. The 16-byte null-terminated NO TEXT placeholder at 0813FE3C has no aligned ROM pointer reference. It is structurally a 16-bit game-text literal immediately followed by already bound Jiminy literals. 0813FE4C..08140000 is existing Jiminy text payload; the final literal begins at 0813FFDC and terminates at 0814000A in the following already-classified script slice. No pointer tables or other program metadata occur in this exact prefix.
-  alignment: US 09EE3C9E..09EE3CA0 is exactly two zero alignment bytes between the last terminated passage and the independently owned 4-byte-aligned event background index. Together with the three zero bytes before the Jiminy text, the five padding bytes are separately sliced and never described as text.
-  encoding: The utf16le binding describes 16-bit little-endian game-text storage, not Unicode normalization. These strings retain newline code unit 000A and game-specific glyph values including 0085, 0092 and E000 exactly as stored. Every declared literal length includes its first 0000 terminator, with no earlier zero code unit. The asset slices preserve encoded payload bytes directly rather than recreating C byte arrays.
 regions:
   us:
     named_assets:

@@ -1,13 +1,4 @@
 version: 1
-provenance:
-  native_catalog: The complete EU-only five-language wrapper catalog is one contiguous native initialized-data run. Ordinary LocalizedText definitions preserve all 3371 original object extents, the complete 16855-pointer order and every encoded asset target without changing qualifiers or regional guards. The previous custom readonly section name did not establish a const source qualifier; no US or JP wrapper definitions are added.
-  extent: EU [09F5D828,09F6DF84) consists of 3371 independent 20-byte five-language wrappers. The start immediately follows two independently identified Continue TaskDesc objects. The end is followed by graphics resource pointers, not text. No common US/JP wrapper table exists; those scripts reference region-native text directly.
-  layout: All 16855 pointer targets are distinct nonoverlapping first-NUL-terminated singlebyte text assets, in consistent English, French, German, Italian and Spanish slots. Slot role is corroborated by direct gLanguage indexing and the LANGSTR macro. Payload lengths are 3..321 bytes; encoded payload remains binary assets.
-  event_message: 2883 unique wrappers are reached from EventSequenceDef.unk_0C via MessageScriptEntry.unk_10. msg.c func_08073508 passes LANGSTR(entry.unk_10) to the text renderer; LANGSTR selects pointer[gLanguage] on EU. Script-index scanning is bounded to each rooted message block before its next explicit sequence-field object.
-  card_help: card.c GetCardHelpText checks its line index against CardHelpDef.textCount and selects LANGSTR(record.texts[index]). The regional parent index resolves to explicit pointer-and-count records.
-  system_message: card.c system-message handlers select the record at gCardMessageDefs[index], read its pointer at offset12 and pass LANGSTR(pointer) to the renderer. This is an independently typed field, not a guessed pointer scan.
-  card_description: card.c func_0808D7EC and func_080A5C60 select gUnk_09EE8F48[CardDef.unk_1C], then LANGSTR. mode_ms2.c and bos5.c select the two following description subarrays and use the same language-pointer view.
-  unused: 'Five wrappers have no exact aligned incoming ROM pointer: 09F60AA0,09F66040,09F66054,09F6607C,09F66090. Each has five coherent localized strings, the identical 20-byte layout, and lies inside the fully corroborated sequence. They remain named scalar metadata; no runtime use is claimed.'
 regions:
   eu:
     assets:

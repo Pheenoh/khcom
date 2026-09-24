@@ -1,7 +1,4 @@
 version: 1
-provenance:
-  card_messages: CreateCardMessageTask/CreateSysmsgwinTask select these20-byte message definitions. All fields are independently read by the card message tasks:portrait/position/frame/timing at0/4/8/A, encoded text atC, flags at10. map.c Mode_MenuMsg_0 explicitly uses final index0xB3 US/JP and0xB2 EU. The immediately following independently owned gUnk_09EE8E18 TaskDesc has a ROM name pointer where a message would require portrait ID1..62. Native count is180 US/JP and179 EU; no unused EU placeholder is created. JP differs only in flag4 support besides text bindings; EU scalar fields match US at every existing ordinal.
-  native_catalog: The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.
 regions:
   us:
     named_assets:

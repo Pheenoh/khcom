@@ -40,16 +40,14 @@ def data_symbol_map(evidence, version, us, target, seed, us_code_end, target_cod
         raise ValueError('invalid ROM data evidence tables or target version')
     spans = []
     names = set()
-    required = {'name', 'provenance', 'us', 'targets', 'size', 'stride', 'pointer_offsets'}
+    required = {'name', 'us', 'targets', 'size', 'stride', 'pointer_offsets'}
     for table in evidence['tables']:
         if not isinstance(table, dict) or not required <= set(table) <= required | {'layer'}:
-            raise ValueError('each evidence table requires name, provenance, us, targets, size, stride and pointer_offsets')
+            raise ValueError('each evidence table requires name, us, targets, size, stride and pointer_offsets')
         name = table['name']
         if not isinstance(name, str) or not name.strip() or name in names:
             raise ValueError('evidence table names must be nonempty and unique')
         names.add(name)
-        if not isinstance(table['provenance'], str) or not table['provenance'].strip():
-            raise ValueError(f'{name}: independent span provenance is required')
         layer = table.get('layer', 0)
         if type(layer) is not int or layer < 0:
             raise ValueError(f'{name}: evidence layer must be a nonnegative integer')

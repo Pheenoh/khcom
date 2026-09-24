@@ -1,7 +1,4 @@
 version: 1
-provenance:
-  card_descriptions: Three independently referenced native description lists have98/26/14 text pointers and end at the already-owned RikuBtlTutorial Mode. All260 MapCardDef category fields cover0..25; the14 WorldinspectMsg/MdMsg records selected by mode_worldinspect_0 i<=13 cover description selectors0..13 in both modes. CardDef rows0..654 use selectors0..97; row655 is the first out-of-range selector98, and later placeholder rows reach141. Live collection code does not establish those placeholders unreachable. Original mode_ms2 <=26 allows a cross-object read into world description0; card selectors139..141 would read following Mode callbacks. Definitions preserve true physical extents and public externs remain unsized; no false larger bounds or behavior fixes are claimed. US UTF16 and JP Shift-JIS text remain named binary assets; EU entries refer existing compiler-owned five-language LocalizedText wrappers.
-  native_catalog: The existing generated catalog is retained as one source-level data owner. Ordinary initialized definitions emit its complete original contiguous data run in source order in all three regions. This reconstruction treats the homogeneous catalog as a legitimate data-only translation unit; no stronger claim about original filenames is made. Every object address, physical extent, initializer and relocation target is preserved; no padding, qualification or regional-bound changes are introduced.
 regions:
   us:
     named_assets:

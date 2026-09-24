@@ -1,10 +1,4 @@
 version: 1
-provenance:
-  native_sections: The 34 interpreter command streams are read only through the two 17-entry selectors and StaffRollWork. Ordinary const command definitions and mutable pointer indexes reproduce their separate complete native runs in every region. Const command storage is a reconstruction inference from the reader and binary grouping, without claiming an original source filename. Existing element types, bounds, values, regional text lists and assets are preserved.
-  text: func_08113180 reads the literal-pool-linked text pointer array until the actual NULL entry. Native lengths are632US,704JP,688EU including NULL; different regional staff lists are kept, not interpolated.
-  selectors: The same consumer explicitly permits indexes0..16 into each of two actor-script selectors. Their34 targets have matching native-relative offsets and identical full interpreter command streams in every region.
-  commands: func_08112768 interprets signed32-bit words as opcode,length,time and opcode-specific arguments. Every command has exactly the consumed word count, each of34 streams ends in{0,0,-1}, and the streams meet each other and the next StaffRollScene boundary without padding. All8720 bytes are identical across regions.
-  strings: SrollTextEnqueueString and SrollTextMeasureWidth consume a high-bit lead byte with the following byte, otherwise a single-byte character. All exact NUL-terminated literals validate as Shift-JIS. Native text assets have no inferred cross-region aliases.
 regions:
   us:
     named_assets:

@@ -49,19 +49,14 @@ def disjoint(spans, label):
 
 
 def normalize_sidecar(document, roms=None):
-    fields(document, {'version', 'regions'}, {'provenance'}, 'regional data sidecar')
+    fields(document, {'version', 'regions'}, set(), 'regional data sidecar')
     if type(document['version']) is not int or document['version'] != 1:
         raise ValueError('unsupported regional data sidecar version')
-    provenance = document.get('provenance', {})
-    if not isinstance(provenance, dict) or any(not isinstance(key, str) or not key.strip()
-                                              or not isinstance(value, str) or not value.strip()
-                                              for key, value in provenance.items()):
-        raise ValueError('regional data provenance must contain nonempty explanatory strings')
     regions = document['regions']
     if not isinstance(regions, dict) or not set(regions) <= set(VERSIONS):
         raise ValueError('regional data regions must be US, JP and/or EU')
     roms = {} if roms is None else roms
-    result = {'version': 1, 'provenance': dict(provenance), 'regions': {}}
+    result = {'version': 1, 'regions': {}}
     for version in VERSIONS:
         region = regions.get(version, {})
         fields(region, set(), {'assets', 'named_assets', 'binary_assets'}, version)
@@ -180,13 +175,11 @@ def load_sidecar(path, roms=None):
 
 
 def load_sidecars(directory, roms=None):
-    combined = {'version': 1, 'provenance': {}, 'regions': {version: {
+    combined = {'version': 1, 'regions': {version: {
         'assets': [], 'named_assets': [], 'binary_assets': []} for version in VERSIONS}}
     for path in sorted(Path(directory).glob('*_data.yaml')):
         document = load_yaml(path.read_text())
         normalize_sidecar(document, roms)
-        for key, value in document.get('provenance', {}).items():
-            combined['provenance'][path.name + ':' + key] = value
         for version, region in document['regions'].items():
             for key in ('assets', 'named_assets', 'binary_assets'):
                 combined['regions'][version][key].extend(region.get(key, []))
