@@ -1162,6 +1162,7 @@ extern const u16 gUnk_09033FC8[];
 extern const s32 gUnk_0903401C[][2];
 extern const s32 gUnk_0903404C[];
 extern const s32 gUnk_09034054[];
+extern const s32 gUnk_09035978[];
 extern u8 gUnk_096144D8[];
 extern u8 gUnk_096FBA04[];
 extern u8 gUnk_09628DC0[];

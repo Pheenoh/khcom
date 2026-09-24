@@ -167,7 +167,6 @@ card_battle_riku.c
 card_map_anim.c
 card_deckmenu2.c
 card_deckcard2.c
-card_enemy_rodata.s
 card_enemy.c
 card_worldselect.c
 card_prize_card_rodata.s

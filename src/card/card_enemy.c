@@ -52,7 +52,6 @@ u8 gUnkEu_02034AD4[4];
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
-extern s32 gUnk_09035978[];
 void func_0807CD48(CardDisplayWork* p);
 u8 func_0807CF4C(u8* work, void* a);
 u8 func_0809075C(CardDisplayWork* p, void* a);
@@ -66,6 +65,10 @@ void func_0807CD48(CardDisplayWork* p);
 u8 func_0807CE68(CardDisplayWork* p);
 u8 func_0807CF4C(u8* work, void* a);
 u8 func_0807CFA8(CardDisplayWork* p, void* a);
+
+const s32 gUnk_09035978[10] = {
+    0x11000, 0xBC00, 0xDC00, 0x5800, 0xDC00, 0x4400, 0xDC00, 0x3000, 0x10400, 0xB800,
+};
 
 void func_080901E0(s32* a, u8* b, u8 c) {
     s32* t;
