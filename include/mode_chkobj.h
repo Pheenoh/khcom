@@ -4,8 +4,6 @@
 
 #include "card_api.h"
 
-#include "mode_debug_api.h"
-
 #include "mode_test_api.h"
 
 #include "display.h"
@@ -28,6 +26,7 @@ typedef struct ChkObjEntry {
     const char* name;
 } ChkObjEntry;
 
+void func_0800B30C(ObjDef* def);
 void mode_chkobj_0(void);
 void mode_chkobj_1(void);
 void mode_chkobj_2(void);

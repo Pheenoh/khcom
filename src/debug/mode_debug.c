@@ -1,19 +1,12 @@
 #include "mode_continue.h"
 #include "mode_battle_data.h"
 #include "mode_chkmov.h"
-#include "registration_data.h"
 #include "system_state.h"
-#include "mode_debug_api.h"
-#include "m4a_song.h"
-#include "pallet.h"
-#include "display.h"
 #include "mode_debug.h"
 #include "game_state.h"
-#include "gba/keys.h"
 #include "sprites_mode_debug.h"
 
 DebugWork* gDebugWork;
-ChkObjWork* gChkObjWork;
 
 #ifdef VERSION_US
 const char gUnk_081283C0[12] = "N041001a";
@@ -373,13 +366,6 @@ void mode_debug_2(void) {
     ReleaseObjTiles(gDebugWork->tiles);
     ReleaseObjPalette(gDebugWork->palette);
     EwramFree(gDebugWork);
-}
-
-void func_0800B30C(ObjDef* def) {
-    AnimChangeWithTables(&gChkObjWork->anim, gChkObjWork->animId, 0, def->anims, def->gfxTable);
-    SetObjTileSource(gChkObjWork->tiles, def->tiles);
-    ReleaseObjPalette(gChkObjWork->palette);
-    gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);
 }
 
 Mode gModeDebug = { "mode_debug", mode_debug_0, mode_debug_1, mode_debug_2 };

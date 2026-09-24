@@ -1,7 +1,6 @@
 #include "mode_chkobj_assets.h"
 #include "mode_chkobj.h"
 #include "mode_chkbtl.h"
-#include "gba/keys.h"
 #include "sprites_bos4.h"
 #include "sprites_btl.h"
 #include "sprites_card.h"
@@ -21,6 +20,8 @@
 #include "sprites_riku.h"
 #include "sprites_smn.h"
 #include "sprites_sora.h"
+
+ChkObjWork* gChkObjWork;
 
 ObjDef gUnk_09ECEB74[] = {
     { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 2, 0, gUnk_08F683A4, "sor1ff00.aob", "sora.acl", 32, 0 },
@@ -1310,6 +1311,13 @@ const ChkObjEntry gChkObjEntries[10] = {
     { gUnk_09ED76F4, CHKOBJ_ETC_COUNT, 0, "\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x81\x40\x82\x64\x82\x73\x82\x62" },
     { gUnk_09ED77D4, 0x58, 0, "\x81\x40\x82\x6f\x82\x6e\x82\x6e\x82\x67\x82\x66\x82\x60\x82\x6c\x82\x64" },
 };
+
+void func_0800B30C(ObjDef* def) {
+    AnimChangeWithTables(&gChkObjWork->anim, gChkObjWork->animId, 0, def->anims, def->gfxTable);
+    SetObjTileSource(gChkObjWork->tiles, def->tiles);
+    ReleaseObjPalette(gChkObjWork->palette);
+    gChkObjWork->palette = LoadObjPalette(def->palette, def->paletteSize);
+}
 
 void mode_chkobj_0(void) {
     SetBgMode0();
