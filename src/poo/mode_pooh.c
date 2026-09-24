@@ -7,10 +7,8 @@
 #include "sprites_pooh.h"
 #include "world_types.h"
 
-const char gModeNamePooh[] = "mode_pooh";
-
 Mode gModePooh = {
-    gModeNamePooh,
+    "mode_pooh",
     mode_pooh_0,
     mode_pooh_1,
     mode_pooh_2,
