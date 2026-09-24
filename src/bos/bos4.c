@@ -3279,7 +3279,7 @@ u8 func_080DDDEC(UnkStruct_080DDDDC* p, const UnkStruct_096FE034* q, u8 a) {
     if (a == 0) {
         if (p->unk_00 == 0 || p->unk_04 != 0) {
             RequestDma3Copy((u8*)q->unk_08 + q->unk_10 * q->unk_00[p->unk_02].unk_02,
-                (u8*)GetBgCharBase(q->unk_14) + q->unk_0C, q->unk_0E);
+                (u8*)GetBgCharBase(q->bg) + q->unk_0C, q->unk_0E);
             p->unk_04 = 0;
         }
     } else if (p->unk_00 == 0) {

@@ -12,9 +12,9 @@ typedef LocalizedText CardMessageText;
 #endif
 
 typedef struct CardMessageDef {
-    s32 unk_00;
-    s32 unk_04;
-    u16 unk_08;
+    s32 portraitId;
+    s32 positionIndex;
+    u16 expressionId;
     u8 unk_0A;
     u8 unk_0B;
     const CardMessageText* text;

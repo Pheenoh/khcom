@@ -75,7 +75,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     vu32 zero = 0;
 
     CpuSet((void*)&zero, w, 0x05000052);
-    *(u64*)&w->unk_10C = *(u64*)a;
+    *(u64*)&w->bg = *(u64*)a;
     w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     if (w->messageDef->flags & 4) {
         w->unk_134 = func_0806BA74(1, 1);
@@ -107,23 +107,23 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     w->unk_145 = 0;
     w->unk_146[0] = 1;
 #ifdef VERSION_JP
-    w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->unk_04],
+    w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->positionIndex],
                                    (s32)w->messageDef->text, (s32*)&w->unk_130);
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->unk_04] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
                                        (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->unk_04] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                        (s32)w->messageDef->text, (s32*)&w->unk_130);
 #endif
     } else {
 #ifdef VERSION_EU
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->unk_04] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
                                        (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->unk_04] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                        (s32)w->messageDef->text, (s32*)&w->unk_130);
 #endif
     }
@@ -142,10 +142,10 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
         AnimInit(w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
         AnimStart(w->anim, 2, 1);
         w->gfx = (s32)AnimGetGfx(w->anim);
-        SetBgPriority(w->unk_10C, 0);
+        SetBgPriority(w->bg, 0);
         break;
     case 1:
-        SetBgPriority(w->unk_10C, 0);
+        SetBgPriority(w->bg, 0);
         break;
     case 2:
         w->tiles = AllocObjTiles(0x40, 0);
@@ -167,27 +167,27 @@ u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
     case 0:
     case 1:
         pal = &gUnk_050001C0[0x20];
-        LoadBgTiles(w->unk_10C, gUnk_0950E2F8, 0x140);
-        LoadBgMap(w->unk_10C, gUnk_096112B8, 0x800);
+        LoadBgTiles(w->bg, gUnk_0950E2F8, 0x140);
+        LoadBgMap(w->bg, gUnk_096112B8, 0x800);
         LoadPalette(gUnk_09611AB8, pal, 32);
 
-        switch ((u32)w->messageDef->unk_04) {
+        switch ((u32)w->messageDef->positionIndex) {
         case 0:
         case 2:
-            SetBgScroll(w->unk_10C, (u16)-24, 0);
+            SetBgScroll(w->bg, (u16)-24, 0);
             break;
         case 1:
         case 3:
-            SetBgScroll(w->unk_10C, (u16)-24, (u16)-94);
+            SetBgScroll(w->bg, (u16)-24, (u16)-94);
             break;
         default:
-            SetBgScroll(w->unk_10C, (u16)-24, (u16)-94);
+            SetBgScroll(w->bg, (u16)-24, (u16)-94);
             break;
         }
         break;
     case 2:
     case 3:
-        switch ((u32)w->messageDef->unk_04) {
+        switch ((u32)w->messageDef->positionIndex) {
         case 0:
         case 2:
             w->unk_120 = 0x7800;
@@ -239,13 +239,13 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
         m4aSongNumStart(SONG_SYS_KETTEI);
         if (w->gfx2 != 0) {
 #ifdef VERSION_JP
-            w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->unk_04],
+            w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->positionIndex],
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #elif defined(VERSION_EU)
-            w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->unk_04] - 0x200,
+            w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #else
-            w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->unk_04] - 0x200,
+            w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #endif
             w->unk_138[1] = w->unk_138[3];
@@ -374,7 +374,7 @@ void func_080A4A50(UnkStruct_080A3F5C* w) {
 
     if (w->tiles3 != 0) {
         if (w->unk_141 != 0) {
-            DrawSprite(120, gUnk_09033D08[w->messageDef->unk_04][1] >> 8, *(void**)&w->gfx4,
+            DrawSprite(120, gUnk_09033D08[w->messageDef->positionIndex][1] >> 8, *(void**)&w->gfx4,
                        w->tiles3, w->palette, 0, 0, 5);
         }
     }
@@ -395,7 +395,7 @@ void func_080A4A50(UnkStruct_080A3F5C* w) {
 
 void func_080A4C1C(UnkStruct_080A3F5C* w) {
     if (w->unk_113 <= 1) {
-        DisableBg(w->unk_10C);
+        DisableBg(w->bg);
     }
 
     func_0806C34C();
@@ -458,12 +458,12 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
         if (*p != 0) {
             w->unk_138[3] = func_0806BB44(
                 0x2E00,
-                gUnk_09041E80[w->messageDef->unk_04] - 0x200,
+                gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                 *p, p);
         } else {
             w->unk_138[3] = func_0806BB44(
                 0x2E00,
-                gUnk_09041E80[w->messageDef->unk_04] - 0x200,
+                gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                 (s32)LANGSTR(w->messageDef->text),
                 p);
         }
@@ -485,7 +485,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
         w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
         w->unk_138[3] = func_0806BDB8(
             0x2E00,
-            gUnk_09033CB8[w->messageDef->unk_04],
+            gUnk_09033CB8[w->messageDef->positionIndex],
             (s32)(w->messageDef->text),
             (s32*)&w->gfx2);
         w->unk_138[1] = w->unk_138[3];
@@ -517,7 +517,7 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
     vu32 zero = 0;
 
     CpuSet((void*)&zero, w, 0x05000052);
-    *(u64*)&w->unk_10C = *(u64*)a;
+    *(u64*)&w->bg = *(u64*)a;
     w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     w->unk_134 = func_0806BA74(1, 0);
     FadeSetPaletteExcluded(w->unk_134 + 16, 1);
@@ -609,26 +609,26 @@ u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
     case 0:
     case 1:
         pal = (void*)0x050001E0;
-        LoadBgTiles(w->unk_10C, gUnk_099597E4, 0x140);
-        LoadBgMap(w->unk_10C, gUnk_09985F44, 0x800);
+        LoadBgTiles(w->bg, gUnk_099597E4, 0x140);
+        LoadBgMap(w->bg, gUnk_09985F44, 0x800);
         LoadPalette(gUnk_09611AB8, pal, 32);
-        switch ((u32)w->messageDef->unk_04) {
+        switch ((u32)w->messageDef->positionIndex) {
         case 0:
         case 2:
-            SetBgScroll(w->unk_10C, 0, 0);
+            SetBgScroll(w->bg, 0, 0);
             break;
         case 1:
         case 3:
-            SetBgScroll(w->unk_10C, 0, 0);
+            SetBgScroll(w->bg, 0, 0);
             break;
         default:
-            SetBgScroll(w->unk_10C, 0, 0);
+            SetBgScroll(w->bg, 0, 0);
             break;
         }
         break;
     case 2:
     case 3:
-        switch ((u32)w->messageDef->unk_04) {
+        switch ((u32)w->messageDef->positionIndex) {
         case 0:
         case 2:
             w->unk_120 = 0x7800;
@@ -770,7 +770,7 @@ void func_080A52BC(UnkStruct_080A3F5C* w) {
     }
 
     if (w->tiles3 != 0 && w->unk_141 != 0) {
-        DrawSprite(120, gUnk_09033D08[w->messageDef->unk_04][1] >> 8, w->gfx4, w->tiles3, w->palette, 0, 0, 10);
+        DrawSprite(120, gUnk_09033D08[w->messageDef->positionIndex][1] >> 8, w->gfx4, w->tiles3, w->palette, 0, 0, 10);
     }
 
     if (w->tiles4 != 0) {
@@ -783,7 +783,7 @@ void func_080A52BC(UnkStruct_080A3F5C* w) {
 
 void func_080A53E4(UnkStruct_080A3F5C* w) {
     if (w->unk_113 <= 1) {
-        DisableBg(w->unk_10C);
+        DisableBg(w->bg);
     }
 
     func_0806C34C();

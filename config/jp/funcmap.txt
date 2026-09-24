@@ -3616,7 +3616,7 @@ stock_mes_disp_1	0x080d8d30	160	0x080d8d50	global
 stock_mes_disp_2	0x080d8dd0	172	0x080d8df0	global
 stock_mes_disp_3	0x080d8e7c	56	0x080d8e9c	global
 CreateStockMesDispTask	0x080d8eb4	80	0x080d8ed4	global
-func_080D8F04	0x080d8f04	16	0x080d8f24	body
+GetStockMesDispTextIndex	0x080d8f04	16	0x080d8f24	body
 func_080D8F14	0x080d8f14	248	0x080d8f34	global
 SetBoogieAnimation	0x080d900c	76	0x080d902c	global
 ClampBoogiePosition	0x080d9058	80	0x080d9078	global

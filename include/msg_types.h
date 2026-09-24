@@ -17,9 +17,9 @@ typedef struct EventCameraKeyframe {
 } EventCameraKeyframe;
 
 typedef struct MessageScriptEntry {
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
+    u32 portraitId;
+    u32 expressionId;
+    u32 positionIndex;
     u8 unk_0C;
     u8 unk_0D[3];
     u32 unk_10;

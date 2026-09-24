@@ -143,11 +143,11 @@ typedef struct StatusFriendWork {
 } StatusFriendWork;
 
 typedef struct StatusMesParam {
-    u32 unk_00_00 : 16;
-    u32 unk_00_16 : 16;
-    u32 unk_04_00 : 8;
+    u32 x : 16;
+    u32 y : 16;
+    u32 textIndex : 8;
     u32 unk_04_08 : 8;
-    u32 unk_04_16 : 16;
+    u32 helpIndex : 16;
 } StatusMesParam;
 
 typedef struct StatusFriendEntry {
@@ -174,10 +174,10 @@ typedef struct StockMesDispWork {
     void* task;
     u16 x;
     u16 y;
-    u8 unk_40;
+    u8 textIndex;
     u8 unk_41;
-    u16 unk_42;
-    u8 unk_44;
+    u16 helpIndex;
+    u8 textCount;
     u8 unk_45[3];
 } StockMesDispWork;
 
@@ -246,7 +246,7 @@ s32 func_080D85F8(s32 a);
 s16 func_080D885C(StatusScrollcursorWork* work);
 void func_080D8374(void);
 void* CreateStockMesDispTask(void* a, u16 b, u8 c, u16 d, s32 e);
-u8 func_080D8F04(void* a);
+u8 GetStockMesDispTextIndex(void* a);
 
 void func_080D78B8(StatusBarWork* work);
 u8 func_080D7890(void);

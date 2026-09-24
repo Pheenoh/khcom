@@ -2378,7 +2378,7 @@ const MsgFaceAnim gUnk_090336F4[5] = {
     },
 };
 
-const MsgFaceAnim* gUnk_09EE45DC[62] = {
+const MsgFaceAnim* gMsgFaceAnims[62] = {
     gUnk_09032484,
     gUnk_09032524,
     gUnk_09032600,
@@ -6030,14 +6030,14 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     }
 
     if (gUnk_09EE3CA0[p->unk_28] != NULL) {
-        p->unk_38 = 0;
+        p->bg = 0;
     } else {
-        p->unk_38 = 2;
+        p->bg = 2;
     }
-    LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
-    LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
-    LoadBgMap(p->unk_38, gUnk_08125E24, 0x800);
-    SetBgPriority(p->unk_38, 0);
+    LoadBgTiles(p->bg, gUnk_094233B8, 0x500);
+    LoadBgPalette(p->bg, gUnk_096148D8, 32);
+    LoadBgMap(p->bg, gUnk_08125E24, 0x800);
+    SetBgPriority(p->bg, 0);
     t = gUnk_09EE3FB4[p->unk_28];
     p->palette = NULL;
     p->unk_1E = 0;
@@ -6055,7 +6055,7 @@ void func_08072D98(MsgWinWork* p, u8* arg) {
     gEventState->unk_7D = 0;
     gEventState->unk_8B = 0;
     TaskPoolInit(p, 2);
-    CreateMsgfaceTask(p, &p->face, p->script->unk_00, p->script->unk_04, p->script->unk_08);
+    CreateMsgfaceTask(p, &p->face, p->script->portraitId, p->script->expressionId, p->script->positionIndex);
 }
 
 u8 func_08072EAC(MsgWinWork* p, void* a) {
@@ -6078,12 +6078,12 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             } else {
                 e = &p->script[p->unk_27];
 
-                if (e->unk_00 == 62) {
+                if (e->portraitId == 62) {
                     void* pal;
 
                     pal = (void*)0x050001E0;
-                    LoadBgTiles(p->unk_38, gUnk_0950E2F8, 0x140);
-                    LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
+                    LoadBgTiles(p->bg, gUnk_0950E2F8, 0x140);
+                    LoadBgMap(p->bg, gUnk_096112B8, 0x800);
                     LoadPalette(gUnk_09611AB8, pal, 32);
 
                     if ((e->flags & 0x80) != 0) {
@@ -6091,14 +6091,14 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     }
                     gEventState->unk_81 = 1;
 
-                    switch (e->unk_08) {
+                    switch (e->positionIndex) {
                     case 0:
                     case 2:
-                        SetBgScroll(p->unk_38, (u16)-0x28, 0);
+                        SetBgScroll(p->bg, (u16)-0x28, 0);
                         break;
                     case 1:
                     case 3:
-                        SetBgScroll(p->unk_38, (u16)-0x28, (u16)-0x60);
+                        SetBgScroll(p->bg, (u16)-0x28, (u16)-0x60);
                         break;
                     }
 
@@ -6113,10 +6113,10 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
                     SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
                     gEventState->unk_8B = 1;
                 } else {
-                    LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
-                    LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
-                    SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
-                    RedrawBgMapAt(p->unk_38, p->unk_18, 0);
+                    LoadBgTiles(p->bg, gUnk_094233B8, 0x500);
+                    LoadBgPalette(p->bg, gUnk_096148D8, 32);
+                    SetBgMapBlocks(p->bg, gUnk_09EE4724[p->unk_20], 2, 1);
+                    RedrawBgMapAt(p->bg, p->unk_18, 0);
                     SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
                     _08073E6C(&p->face);
                     gEventState->unk_81 = 1;
@@ -6131,12 +6131,12 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
         } else {
         e = &p->script[p->unk_27];
 
-        if (e->unk_00 == 62) {
+        if (e->portraitId == 62) {
             void* pal;
 
             pal = (void*)0x050001E0;
-            LoadBgTiles(p->unk_38, gUnk_0950E2F8, 0x140);
-            LoadBgMap(p->unk_38, gUnk_096112B8, 0x800);
+            LoadBgTiles(p->bg, gUnk_0950E2F8, 0x140);
+            LoadBgMap(p->bg, gUnk_096112B8, 0x800);
             LoadPalette(gUnk_09611AB8, pal, 32);
 
             if ((e->flags & 0x80) != 0) {
@@ -6144,14 +6144,14 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             }
             gEventState->unk_81 = 1;
 
-            switch (e->unk_08) {
+            switch (e->positionIndex) {
             case 0:
             case 2:
-                SetBgScroll(p->unk_38, (u16)-0x18, 0);
+                SetBgScroll(p->bg, (u16)-0x18, 0);
                 break;
             case 1:
             case 3:
-                SetBgScroll(p->unk_38, (u16)-0x18, (u16)-0x60);
+                SetBgScroll(p->bg, (u16)-0x18, (u16)-0x60);
                 break;
             }
 
@@ -6166,10 +6166,10 @@ u8 func_08072EAC(MsgWinWork* p, void* a) {
             SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
             gEventState->unk_8B = 1;
         } else {
-            LoadBgTiles(p->unk_38, gUnk_094233B8, 0x500);
-            LoadBgPalette(p->unk_38, gUnk_096148D8, 32);
-            SetBgMapBlocks(p->unk_38, gUnk_09EE4724[p->unk_20], 2, 1);
-            RedrawBgMapAt(p->unk_38, p->unk_18, 0);
+            LoadBgTiles(p->bg, gUnk_094233B8, 0x500);
+            LoadBgPalette(p->bg, gUnk_096148D8, 32);
+            SetBgMapBlocks(p->bg, gUnk_09EE4724[p->unk_20], 2, 1);
+            RedrawBgMapAt(p->bg, p->unk_18, 0);
             SetTaskUpdate(a, (TaskUpdateFunc)func_08073294);
             _08073E6C(&p->face);
             gEventState->unk_81 = 1;
@@ -6233,7 +6233,7 @@ u8 func_08073170(MsgWinWork* p, void* a) {
 void func_08073238(MsgWinWork* p) {
     const MessageScriptEntry* e = &p->script[p->unk_27];
 
-    if (e->unk_00 != 62) {
+    if (e->portraitId != 62) {
         func_080658B8(p->unk_24);
     } else {
         _0806C3A0(p->unk_24, p->palette);
@@ -6252,8 +6252,8 @@ u8 func_08073294(MsgWinWork* p, void* a) {
 
     ApproachValue(&p->unk_18, gUnk_09033CA0[p->unk_20], p->unk_1E);
 
-    if (e->unk_00 != 62) {
-        ScrollBgMapTo(p->unk_38, p->unk_18, 0);
+    if (e->portraitId != 62) {
+        ScrollBgMapTo(p->bg, p->unk_18, 0);
     }
 
     if (p->unk_1E != 0) {
@@ -6274,7 +6274,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
 
     func_0807361C(p);
 
-    if (e->unk_00 == 62) {
+    if (e->portraitId == 62) {
         p->unk_24 = p->unk_26;
     } else if (GetKeysPressed() & A_BUTTON) {
         if (p->unk_24 < p->unk_26) {
@@ -6294,7 +6294,7 @@ u8 func_08073318(MsgWinWork* p, void* a) {
             _08065994();
 
             if ((e->flags & 0x8000) == 0) {
-                if (p->script[p->unk_27 + 1].unk_08 != 4) {
+                if (p->script[p->unk_27 + 1].positionIndex != 4) {
                     p->unk_1E = 8;
                     func_08073E74(&p->face);
                     SetTaskUpdate(a, (TaskUpdateFunc)func_0807344C);
@@ -6327,10 +6327,10 @@ u8 func_0807344C(MsgWinWork* p, void* a) {
 
     ApproachValue(&p->unk_18, gUnk_09033C98[p->unk_20], p->unk_1E);
 
-    if (e->unk_00 != 62) {
-        ScrollBgMapTo(p->unk_38, p->unk_18, 0);
+    if (e->portraitId != 62) {
+        ScrollBgMapTo(p->bg, p->unk_18, 0);
     } else {
-        DisableBg(p->unk_38);
+        DisableBg(p->bg);
     }
 
     if (p->unk_1E != 0) {
@@ -6357,7 +6357,7 @@ void func_08073508(MsgWinWork* p) {
     const MessageScriptEntry* e = &p->script[p->unk_27];
     s32 n;
 
-    n = e->unk_08;
+    n = e->positionIndex;
 
     if (n != 4) {
         p->unk_20 = n;
@@ -6369,16 +6369,16 @@ void func_08073508(MsgWinWork* p) {
     } else {
         p->face.unk_03 = 0;
     }
-    func_08073E34(&p->face, e->unk_00, e->unk_04, p->unk_20);
+    func_08073E34(&p->face, e->portraitId, e->expressionId, p->unk_20);
 
 #ifdef VERSION_JP
-    if (e->unk_00 == 62) {
+    if (e->portraitId == 62) {
         p->unk_26 = func_080653D4(0x2E00, gUnk_09033CB8[p->unk_20], (u8*)e->unk_10);
     } else {
         p->unk_26 = func_080653D4(gUnk_09033CA8[p->unk_20], gUnk_09033CB8[p->unk_20], (u8*)e->unk_10);
     }
 #else
-    if (e->unk_00 == 62) {
+    if (e->portraitId == 62) {
         if (p->unk_40 != 0) {
             p->unk_26 = func_08064EF4(0x2E00, gUnk_09033CB8[p->unk_20] - 0x200, p->unk_40, &p->unk_40);
         } else {
@@ -6411,9 +6411,9 @@ void func_0807361C(MsgWinWork* p) {
             if (p->unk_2B == 0) {
                 if ((p->script[p->unk_27].flags & 0x8000) == 0) {
                     if ((p->script[p->unk_27].flags & 0x40) == 0) {
-                        TaskCreate(p, &gTaskDescMsgface[1], &p->script[p->unk_27 + 1].unk_08);
+                        TaskCreate(p, &gTaskDescMsgface[1], &p->script[p->unk_27 + 1].positionIndex);
                     } else {
-                        TaskCreate(p, &gTaskDescMsgface[2], &p->script[p->unk_27 + 1].unk_08);
+                        TaskCreate(p, &gTaskDescMsgface[2], &p->script[p->unk_27 + 1].positionIndex);
                     }
                 } else {
                     v = 0;
@@ -6443,7 +6443,7 @@ void func_080736F8(MsgWinWork* p) {
 
             if ((e->flags & 0x10) != 0) {
                 gEventState->unk_7C = 1;
-                gEventState->unk_88 = e->unk_00;
+                gEventState->unk_88 = e->portraitId;
                 gEventState->unk_89 = 32;
             } else {
                 gEventState->unk_7C = 0;
@@ -6467,9 +6467,9 @@ void msgface_0(MsgFaceWork* p, MsgFaceControl* ctl) {
     p->unk_34 = 1;
 
     if (p->face->portraitId != 62) {
-        anim = gUnk_09EE45DC[p->face->portraitId];
+        anim = gMsgFaceAnims[p->face->portraitId];
     } else {
-        anim = gUnk_09EE45DC[0];
+        anim = gMsgFaceAnims[0];
     }
 
     if (p->face->positionIndex <= 1) {
@@ -6497,7 +6497,7 @@ u8 msgface_1(MsgFaceWork* p, void* a) {
     u32 n;
 
     if (p->face->portraitId != 62) {
-        anim = gUnk_09EE45DC[p->face->portraitId];
+        anim = gMsgFaceAnims[p->face->portraitId];
         p->unk_34 = 1;
     } else {
         p->unk_34 = 0;
@@ -6618,7 +6618,7 @@ u8 func_08073B9C(MsgFaceWork* p, void* a) {
     t = NULL;
 
     if (p->face->portraitId != 62) {
-        t = gUnk_09EE45DC[p->face->portraitId];
+        t = gMsgFaceAnims[p->face->portraitId];
         p->unk_34 = 1;
     } else {
         p->unk_34 = 0;
@@ -6662,7 +6662,7 @@ u8 func_08073CA4(MsgFaceWork* p, void* a) {
         t = NULL;
 
         if (p->face->portraitId != 62) {
-            t = gUnk_09EE45DC[p->face->portraitId];
+            t = gMsgFaceAnims[p->face->portraitId];
         }
 
         if (p->face->positionIndex <= 1) {

@@ -19,7 +19,7 @@ typedef struct UnkStruct_096FE034 {
     u16 unk_0E;
     u16 unk_10;
     u16 unk_12;
-    s32 unk_14;
+    s32 bg;
 } UnkStruct_096FE034;
 
 

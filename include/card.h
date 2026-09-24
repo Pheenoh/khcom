@@ -389,12 +389,12 @@ extern u8 gUnk_09614438[];
 extern u8 gUnk_09320796[];
 extern u8 gUnk_08F69BE4[];
 
-typedef struct UnkStruct_080A4188 {
-    u32 unk_00;
-    u32 unk_04 : 16;
+typedef struct CardMessageArgs {
+    u32 bg;
+    u32 messageId : 16;
     u32 unk_06 : 8;
     u32 unk_07 : 8;
-} UnkStruct_080A4188;
+} CardMessageArgs;
 
 typedef struct UnkStruct_0807B410 {
     u32 unk_00;
@@ -1702,7 +1702,7 @@ typedef struct UnkStruct_080A4DCC {
     u8 unk_0C4[0x18];
     u8 anim[0x18];
     u8 unk_0F4[0x18];
-    s32 unk_10C;
+    s32 bg;
     u8 unk_110[0x03];
     u8 unk_113;
     CardMessageDef* messageDef;
@@ -1742,7 +1742,7 @@ typedef struct UnkStruct_080A3F5C {
     u8 anim[0x18];
     u8 anim2[0x18];
     u8 anim3[0x18];
-    s32 unk_10C;
+    s32 bg;
     u8 unk_110[0x03];
     u8 unk_113;
     CardMessageDef* messageDef;

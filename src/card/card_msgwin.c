@@ -78,7 +78,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     zero = 0;
     CpuSet((void*)&zero, w, 0x05000054);
     ((UnkStruct_02034AFC*)w)->unk_13C = func_0806BA74(0, 0);
-    *(u64*)&w->unk_10C = *(u64*)a;
+    *(u64*)&w->bg = *(u64*)a;
     w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     w->tiles3 = 0;
     w->palette = 0;
@@ -89,7 +89,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     w->tiles2 = 0;
     w->palette4 = 0;
     w->unk_0C0 = 0;
-    w->x = gUnk_09033C98[w->messageDef->unk_04];
+    w->x = gUnk_09033C98[w->messageDef->positionIndex];
     w->unk_11C = 0;
     w->unk_120 = 0;
     w->unk_124 = 0;
@@ -117,7 +117,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     w->unk_14E = 0;
     w->unk_14F = 1;
 
-    switch ((u32)w->messageDef->unk_04) {
+    switch ((u32)w->messageDef->positionIndex) {
     case 0:
     case 1:
         w->unk_14D = 1;
@@ -130,12 +130,12 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
 
     gUnk_0203A9D4 = 1;
     gUnk_0203A9D8 = 0;
-    SetBgScroll(w->unk_10C, 0, 0);
+    SetBgScroll(w->bg, 0, 0);
 
     switch (w->unk_113) {
     case 0:
     case 1:
-        SetBgPriority(w->unk_10C, 0);
+        SetBgPriority(w->bg, 0);
         break;
     case 2:
     case 3:
@@ -148,18 +148,18 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
 u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
     const MsgFaceAnim* tbl;
 
-    ApproachValue(&w->x, gUnk_09033CA0[w->messageDef->unk_04], w->unk_140);
-    ApproachValue(&w->unk_11C, gUnk_09033CE0[w->messageDef->unk_04], w->unk_140);
-    ScrollBgMapTo(w->unk_10C, w->x, 0);
+    ApproachValue(&w->x, gUnk_09033CA0[w->messageDef->positionIndex], w->unk_140);
+    ApproachValue(&w->unk_11C, gUnk_09033CE0[w->messageDef->positionIndex], w->unk_140);
+    ScrollBgMapTo(w->bg, w->x, 0);
     w->gfx = AnimUpdate(w->anim);
 
     if (w->unk_140 != 0) {
         w->unk_140--;
     } else {
-        tbl = gUnk_09EE45DC[w->messageDef->unk_00];
+        tbl = gMsgFaceAnims[w->messageDef->portraitId];
 
-        if (tbl[w->messageDef->unk_08].unk_10 > 1) {
-            AnimStart(w->anim, 1, tbl[w->messageDef->unk_08].unk_11);
+        if (tbl[w->messageDef->expressionId].unk_10 > 1) {
+            AnimStart(w->anim, 1, tbl[w->messageDef->expressionId].unk_11);
         }
 
         switch (w->unk_113) {
@@ -176,18 +176,18 @@ u8 func_080A3558(UnkStruct_080A3F5C* w, void* a) {
 }
 
 u8 func_080A3640(UnkStruct_080A3F5C* w, void* a) {
-    LoadBgTiles(w->unk_10C, gUnk_094233B8, 1280);
-    LoadBgPalette(w->unk_10C, gUnk_096148D8, 32);
-    SetBgMapBlocks(w->unk_10C, gUnk_09EE4724[((NumberPlusArgs*)w->messageDef)->unk_04], 2, 1);
-    ScrollBgMapTo(w->unk_10C, *(u16*)&w->x, 0);
+    LoadBgTiles(w->bg, gUnk_094233B8, 1280);
+    LoadBgPalette(w->bg, gUnk_096148D8, 32);
+    SetBgMapBlocks(w->bg, gUnk_09EE4724[((NumberPlusArgs*)w->messageDef)->unk_04], 2, 1);
+    ScrollBgMapTo(w->bg, *(u16*)&w->x, 0);
     SetTaskUpdate(a, (TaskUpdateFunc)func_080A36B0);
     return 1;
 }
 
 u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
 #ifdef VERSION_JP
-    w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
-                               gUnk_09033CB8[w->messageDef->unk_04],
+    w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->positionIndex],
+                               gUnk_09033CB8[w->messageDef->positionIndex],
                                (s32)w->messageDef->text,
                                (s32*)&w->unk_138);
 #else
@@ -196,12 +196,12 @@ u8 func_080A36B0(UnkStruct_080A3F5C* w, void* a) {
     p = (s32*)&w->unk_138;
 
     if (*p != 0) {
-        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
-                                   gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
+        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->positionIndex],
+                                   gUnk_09033CB8[w->messageDef->positionIndex] - 0x200,
                                    *p, p);
     } else {
-        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
-                                   gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
+        w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->positionIndex],
+                                   gUnk_09033CB8[w->messageDef->positionIndex] - 0x200,
                                    (s32)LANGSTR(w->messageDef->text), p);
     }
 #endif
@@ -219,16 +219,16 @@ u8 func_080A3754(UnkStruct_080A3F5C* w, void* a) {
     w->unk_149 = 1;
     sel = w->messageDef;
 
-    if (sel->unk_00 != 62) {
-        e = gUnk_09EE45DC[sel->unk_00];
+    if (sel->portraitId != 62) {
+        e = gMsgFaceAnims[sel->portraitId];
         w->tiles3 = AllocObjTiles(0xD80, 0);
-        w->palette = LoadObjPalette(e[w->messageDef->unk_08].palette, 32);
-        SetObjTileSource(w->tiles3, e[w->messageDef->unk_08].tiles);
-        AnimInit(w->anim, e[w->messageDef->unk_08].anims, e[w->messageDef->unk_08].gfxTable);
-        AnimStart(w->anim, 0, e[w->messageDef->unk_08].unk_11);
+        w->palette = LoadObjPalette(e[w->messageDef->expressionId].palette, 32);
+        SetObjTileSource(w->tiles3, e[w->messageDef->expressionId].tiles);
+        AnimInit(w->anim, e[w->messageDef->expressionId].anims, e[w->messageDef->expressionId].gfxTable);
+        AnimStart(w->anim, 0, e[w->messageDef->expressionId].unk_11);
         w->gfx = AnimGetGfx(w->anim);
-        w->unk_11C = gUnk_09033CD0[w->messageDef->unk_04];
-        w->unk_120 = gUnk_09033CF0[w->messageDef->unk_04];
+        w->unk_11C = gUnk_09033CD0[w->messageDef->positionIndex];
+        w->unk_120 = gUnk_09033CF0[w->messageDef->positionIndex];
     } else {
         w->tiles3 = 0;
         w->palette = 0;
@@ -252,7 +252,7 @@ void func_080A3848(UnkStruct_080A3F5C* w) {
         }
 
         if (w->tiles4 != 0 && w->unk_148 != 0) {
-            DrawSprite(gUnk_09033D08[w->messageDef->unk_04][0] >> 8, gUnk_09033D08[w->messageDef->unk_04][1] >> 8,
+            DrawSprite(gUnk_09033D08[w->messageDef->positionIndex][0] >> 8, gUnk_09033D08[w->messageDef->positionIndex][1] >> 8,
                        w->gfx2, w->tiles4, w->palette2, 0, 0, 10);
         }
     }
@@ -332,8 +332,8 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
             w->unk_141++;
             m4aSongNumStart(SONG_SYS_MESSAGE);
         } else {
-            e = gUnk_09EE45DC[sel->unk_00];
-            AnimStart(w->anim, 0, e[sel->unk_08].unk_11);
+            e = gMsgFaceAnims[sel->portraitId];
+            AnimStart(w->anim, 0, e[sel->expressionId].unk_11);
 
             if (w->tiles4 == 0) {
                 w->tiles4 = AllocObjTiles(0x40, 0);
@@ -363,19 +363,19 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
         m4aSongNumStart(SONG_SYS_KETTEI);
         if (*(s32*)w->unk_138 != 0) {
 #ifdef VERSION_JP
-            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
-                                      gUnk_09033CB8[w->messageDef->unk_04],
+            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BDB8(gUnk_09033CA8[w->messageDef->positionIndex],
+                                      gUnk_09033CB8[w->messageDef->positionIndex],
                                       *(s32*)w->unk_138, (s32*)w->unk_138);
 #else
-            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
-                                      gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
+            *((u8*)w + offsetof(UnkStruct_080A3F5C, unk_143)) = func_0806BB44(gUnk_09033CA8[w->messageDef->positionIndex],
+                                      gUnk_09033CB8[w->messageDef->positionIndex] - 0x200,
                                       *(s32*)w->unk_138, (s32*)w->unk_138);
 #endif
             w->unk_142 = 0;
             w->unk_141 = 0;
-            e = gUnk_09EE45DC[w->messageDef->unk_00];
-            if (e[w->messageDef->unk_08].unk_10 > 1) {
-                AnimStart(w->anim, 1, e[w->messageDef->unk_08].unk_11);
+            e = gMsgFaceAnims[w->messageDef->portraitId];
+            if (e[w->messageDef->expressionId].unk_10 > 1) {
+                AnimStart(w->anim, 1, e[w->messageDef->expressionId].unk_11);
             }
             w->unk_148 = 0;
             SetTaskUpdate(a, (TaskUpdateFunc)func_080A3A98);
@@ -427,9 +427,9 @@ u8 func_080A3DD0(UnkStruct_080A3F5C* w) {
     if (w->unk_13E > 15) {
         w->unk_149 = 0;
         w->unk_148 = 0;
-        ApproachValue(&w->x, gUnk_09033C98[w->messageDef->unk_04], w->unk_140);
-        ApproachValue(&w->unk_11C, gUnk_09033CD0[w->messageDef->unk_04], w->unk_140);
-        ScrollBgMapTo(w->unk_10C, w->x, 0);
+        ApproachValue(&w->x, gUnk_09033C98[w->messageDef->positionIndex], w->unk_140);
+        ApproachValue(&w->unk_11C, gUnk_09033CD0[w->messageDef->positionIndex], w->unk_140);
+        ScrollBgMapTo(w->bg, w->x, 0);
 
         if (w->unk_140 == 0) {
             return 0;
@@ -489,8 +489,8 @@ u8 func_080A3F5C(UnkStruct_080A3F5C* w, void* a) {
             w->unk_141++;
             m4aSongNumStart(SONG_SYS_MESSAGE);
         } else {
-            e = gUnk_09EE45DC[w->messageDef->unk_00];
-            AnimStart(w->anim, 0, e[w->messageDef->unk_08].unk_11);
+            e = gMsgFaceAnims[w->messageDef->portraitId];
+            AnimStart(w->anim, 0, e[w->messageDef->expressionId].unk_11);
             SetTaskUpdate(a, (TaskUpdateFunc)func_080A4010);
         }
 
@@ -512,18 +512,18 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
         w->unk_14E = 0;
         w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
 #ifdef VERSION_JP
-        w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
-                                   gUnk_09033CB8[w->messageDef->unk_04],
+        w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->positionIndex],
+                                   gUnk_09033CB8[w->messageDef->positionIndex],
                                    (s32)w->messageDef->text, (s32*)&w->unk_138);
 #else
         p = (s32*)&w->unk_138;
 
         if (*p != 0) {
-            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
-                                       gUnk_09033CB8[w->messageDef->unk_04] - 0x200, *p, p);
+            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->positionIndex],
+                                       gUnk_09033CB8[w->messageDef->positionIndex] - 0x200, *p, p);
         } else {
-            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->unk_04],
-                                       gUnk_09033CB8[w->messageDef->unk_04] - 0x200,
+            w->unk_143 = func_0806BB44(gUnk_09033CA8[w->messageDef->positionIndex],
+                                       gUnk_09033CB8[w->messageDef->positionIndex] - 0x200,
                                        (s32)LANGSTR(w->messageDef->text), p);
         }
 #endif
@@ -546,13 +546,13 @@ s32 func_080A40EC(u64* src) {
 }
 
 void CreateCardMessageTask(void* pool, u32 a, u16 b) {
-    UnkStruct_080A4188 args;
+    CardMessageArgs args;
 
-    args.unk_00 = a;
-    args.unk_04 = b;
+    args.bg = a;
+    args.messageId = b;
     args.unk_07 = 0;
 
-    if (gCardMessageDefs[b].unk_00 == 62) {
+    if (gCardMessageDefs[b].portraitId == 62) {
         if (gCardMessageDefs[b].flags & 2) {
             TaskCreate(pool, &gUnk_09EE8E48, &args);
         } else {
@@ -564,10 +564,10 @@ void CreateCardMessageTask(void* pool, u32 a, u16 b) {
 }
 
 void CreateSysmsgwinTask(void* pool, u16 b) {
-    UnkStruct_080A4188 args;
+    CardMessageArgs args;
 
-    args.unk_00 = 0;
-    args.unk_04 = b;
+    args.bg = 0;
+    args.messageId = b;
     args.unk_07 = 2;
 
     if (gCardMessageDefs[b].flags & 2) {
@@ -578,27 +578,27 @@ void CreateSysmsgwinTask(void* pool, u16 b) {
 }
 
 void func_080A41F0(void* pool, u16 a) {
-    UnkStruct_080A4188 args;
+    CardMessageArgs args;
 
     func_080A42C8();
-    args.unk_00 = 0;
-    args.unk_04 = a;
+    args.bg = 0;
+    args.messageId = a;
     args.unk_07 = 3;
     TaskCreate(pool, &gUnk_09EE8E30, &args);
 }
 
 void func_080A4234(void* pool, u32 a, u16 b) {
-    UnkStruct_080A4188 args;
+    CardMessageArgs args;
 
-    args.unk_00 = a;
-    args.unk_04 = b;
+    args.bg = a;
+    args.messageId = b;
     args.unk_07 = 1;
 
     if (func_080A42C8() != 0) {
         if ((u8)func_080A40EC((u64*)&args) == 0) {
             func_080A4D7C((u64*)&args);
         }
-    } else if (gCardMessageDefs[b].unk_00 == 62) {
+    } else if (gCardMessageDefs[b].portraitId == 62) {
         TaskCreate(pool, &gUnk_09EE8E30, &args);
     } else {
         TaskCreate(pool, &gUnk_09EE8E18, &args);

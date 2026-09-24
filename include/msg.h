@@ -169,7 +169,7 @@ typedef struct MsgWinWork {
     u8 unk_2A;
     u8 unk_2B;
     MsgFaceControl face;
-    u8 unk_38;
+    u8 bg;
     u8 unk_39[3];
     const MessageScriptEntry* script;
     s32 unk_40;

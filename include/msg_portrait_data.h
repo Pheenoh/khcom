@@ -13,6 +13,6 @@ typedef struct MsgFaceAnim {
     u8 unk_12[2];
 } MsgFaceAnim;
 
-extern const MsgFaceAnim* gUnk_09EE45DC[62];
+extern const MsgFaceAnim* gMsgFaceAnims[62];
 
 #endif
