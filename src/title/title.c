@@ -8,7 +8,6 @@
 #include "sprites_title.h"
 
 #ifdef VERSION_EU
-extern void** gUnkEu_09F801D4[5];
 extern void** gUnkEu_09F80200[5];
 extern void** gUnkEu_09F80214[5];
 #endif
@@ -49,13 +48,44 @@ extern u8 gUnkEu_09740536[];
 extern u8 gUnkEu_0973EEFE[];
 #endif
 
-const char gTaskNameTitleLogo[] = "task_title_logo";
+TaskDesc gTaskDescTitleLogo = {
+    "task_title_logo",
+    (TaskInitFunc)task_title_logo_0,
+    (TaskUpdateFunc)task_title_logo_1,
+    (TaskFunc)task_title_logo_2,
+    (TaskFunc)task_title_logo_3,
+    0x54,
+};
 
-const char gTaskNameTitleObj[] = "task_title_obj";
+TaskDesc gTaskDescTitleObj = {
+    "task_title_obj",
+    (TaskInitFunc)task_title_obj_0,
+    (TaskUpdateFunc)task_title_obj_1,
+    (TaskFunc)task_title_obj_2,
+    (TaskFunc)task_title_obj_3,
+    0x64,
+};
 
 const s32 gUnk_096FDCC8[4] = {4, 5, 1, 2};
 
-const char gTaskNameTitleMenu[] = "task_title_menu";
+#ifdef VERSION_EU
+void** gUnkEu_09F801D4[5] = {
+    gUnkEu_09F81B78,
+    gUnkEu_09F81B94,
+    gUnkEu_09F81BE8,
+    gUnkEu_09F81BCC,
+    gUnkEu_09F81BB0,
+};
+#endif
+
+TaskDesc gTaskDescTitleMenu = {
+    "task_title_menu",
+    (TaskInitFunc)task_title_menu_0,
+    (TaskUpdateFunc)task_title_menu_1,
+    (TaskFunc)task_title_menu_2,
+    (TaskFunc)task_title_menu_3,
+    0x64,
+};
 
 const s16 gUnk_096FDCE8[3] = {-7, 0, 3};
 
@@ -801,43 +831,6 @@ void task_title_lumichange_3(TitleLumiChangeWork* work) {
     ReleaseObjTiles(work->tiles);
     ReleaseObjPalette(work->palette);
 }
-
-TaskDesc gTaskDescTitleLogo = {
-    gTaskNameTitleLogo,
-    (TaskInitFunc)task_title_logo_0,
-    (TaskUpdateFunc)task_title_logo_1,
-    (TaskFunc)task_title_logo_2,
-    (TaskFunc)task_title_logo_3,
-    0x54,
-};
-
-TaskDesc gTaskDescTitleObj = {
-    gTaskNameTitleObj,
-    (TaskInitFunc)task_title_obj_0,
-    (TaskUpdateFunc)task_title_obj_1,
-    (TaskFunc)task_title_obj_2,
-    (TaskFunc)task_title_obj_3,
-    0x64,
-};
-
-#ifdef VERSION_EU
-void** gUnkEu_09F801D4[5] = {
-    gUnkEu_09F81B78,
-    gUnkEu_09F81B94,
-    gUnkEu_09F81BE8,
-    gUnkEu_09F81BCC,
-    gUnkEu_09F81BB0,
-};
-#endif
-
-TaskDesc gTaskDescTitleMenu = {
-    gTaskNameTitleMenu,
-    (TaskInitFunc)task_title_menu_0,
-    (TaskUpdateFunc)task_title_menu_1,
-    (TaskFunc)task_title_menu_2,
-    (TaskFunc)task_title_menu_3,
-    0x64,
-};
 
 #ifdef VERSION_EU
 void** gUnkEu_09F80200[5] = {
