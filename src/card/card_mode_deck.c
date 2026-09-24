@@ -42,6 +42,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_card.h"
+#include "card_ids.h"
 
 #ifndef VERSION_EU
 u8 gUnk_02034B08[20];
@@ -156,29 +157,29 @@ void func_080AB228(void) {
         gCardCollection[n++] = i;
     }
 
-    gCardCollection[n++] = 528;
+    gCardCollection[n++] = CARD_WHITE_MUSHROOM_2;
     gCardCollection[n++] = 529;
-    gCardCollection[n++] = 532;
-    gCardCollection[n++] = 535;
-    gCardCollection[n++] = 538;
-    gCardCollection[n++] = 541;
-    gCardCollection[n++] = 543;
-    gCardCollection[n++] = 542;
-    gCardCollection[n++] = 544;
-    gCardCollection[n++] = 545;
-    gCardCollection[n++] = 551;
-    gCardCollection[n++] = 552;
-    gCardCollection[n++] = 553;
-    gCardCollection[n++] = 554;
-    gCardCollection[n++] = 555;
-    gCardCollection[n++] = 556;
-    gCardCollection[n++] = 557;
-    gCardCollection[n++] = 558;
-    gCardCollection[n++] = 559;
-    gCardCollection[n++] = 560;
-    gCardCollection[n++] = 561;
-    gCardCollection[n++] = 563;
-    gCardCollection[n++] = 564;
+    gCardCollection[n++] = CARD_CREEPER_PLANT_2;
+    gCardCollection[n++] = CARD_TORNADO_STEP_2;
+    gCardCollection[n++] = CARD_CRESCENDO_2;
+    gCardCollection[n++] = CARD_GUARD_ARMOR_1;
+    gCardCollection[n++] = CARD_TRICKMASTER_1;
+    gCardCollection[n++] = CARD_PARASITE_CAGE_1;
+    gCardCollection[n++] = CARD_DARKSIDE_1;
+    gCardCollection[n++] = CARD_CARD_SOLDIER_2;
+    gCardCollection[n++] = CARD_HADES_9;
+    gCardCollection[n++] = CARD_JAFAR_1;
+    gCardCollection[n++] = CARD_OOGIE_BOOGIE_1;
+    gCardCollection[n++] = CARD_URSULA_1;
+    gCardCollection[n++] = CARD_HOOK_9;
+    gCardCollection[n++] = CARD_DRAGON_MALEFICENT_1;
+    gCardCollection[n++] = CARD_RIKU_9;
+    gCardCollection[n++] = CARD_AXEL_9;
+    gCardCollection[n++] = CARD_LARXENE_9;
+    gCardCollection[n++] = CARD_VEXEN_9;
+    gCardCollection[n++] = CARD_MARLUXIA_9;
+    gCardCollection[n++] = CARD_LEXAEUS_9;
+    gCardCollection[n++] = CARD_ANSEM_9;
 
     for (i = 0; i < 170; i++) {
         if (n < 999) {
@@ -193,7 +194,7 @@ void func_080AB228(void) {
     }
 
     for (i = 0; i < 95; i++) {
-        gCardCollection[n++] = 6;
+        gCardCollection[n++] = CARD_KINGDOM_KEY_6;
     }
 }
 #else
@@ -235,26 +236,26 @@ void func_080AB22C(u8 a) {
 }
 
 void func_080AB334(u8 a) {
-    func_080AB1F8(a, func_08084458(5));
-    func_080AB1F8(a, func_08084458(7));
-    func_080AB1F8(a, func_08084458(4));
-    func_080AB1F8(a, func_08084458(5));
-    func_080AB1F8(a, func_08084458(4));
-    func_080AB1F8(a, func_08084458(3));
-    func_080AB1F8(a, func_08084458(4));
-    func_080AB1F8(a, func_08084458(5));
-    func_080AB1F8(a, func_08084458(6));
-    func_080AB1F8(a, func_08084458(7));
-    func_080AB1F8(a, func_08084458(6));
-    func_080AB1F8(a, func_08084458(5));
-    func_080AB1F8(a, func_08084458(4));
-    func_080AB1F8(a, func_08084458(3));
-    func_080AB1F8(a, func_08084458(4));
-    func_080AB1F8(a, func_08084458(5));
-    func_080AB1F8(a, func_08084458(186));
-    func_080AB1F8(a, func_08084458(185));
-    func_080AB1F8(a, func_08084458(207));
-    func_080AB1F8(a, func_08084458(205));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_5));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_7));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_4));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_5));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_4));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_3));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_4));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_5));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_6));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_7));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_6));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_5));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_4));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_3));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_4));
+    func_080AB1F8(a, func_08084458(CARD_KINGDOM_KEY_5));
+    func_080AB1F8(a, func_08084458(CARD_BLIZZARD_6));
+    func_080AB1F8(a, func_08084458(CARD_BLIZZARD_5));
+    func_080AB1F8(a, func_08084458(CARD_CURE_7));
+    func_080AB1F8(a, func_08084458(CARD_CURE_5));
 }
 
 void func_080AB4AC(u8 a) {
@@ -357,21 +358,21 @@ void func_080AB4AC(u8 a) {
 }
 
 void func_080AB880(void) {
-    func_08084458(7);
-    func_08084458(6);
-    func_08084458(5);
-    func_08084458(5);
-    func_08084458(4);
-    func_08084458(3);
-    func_08084458(4);
-    func_08084458(3);
-    func_08084458(2);
-    func_08084458(2);
-    func_08084458(1);
-    func_08084458(0);
-    func_08084458(185);
-    func_08084458(386);
-    func_08084458(207);
+    func_08084458(CARD_KINGDOM_KEY_7);
+    func_08084458(CARD_KINGDOM_KEY_6);
+    func_08084458(CARD_KINGDOM_KEY_5);
+    func_08084458(CARD_KINGDOM_KEY_5);
+    func_08084458(CARD_KINGDOM_KEY_4);
+    func_08084458(CARD_KINGDOM_KEY_3);
+    func_08084458(CARD_KINGDOM_KEY_4);
+    func_08084458(CARD_KINGDOM_KEY_3);
+    func_08084458(CARD_KINGDOM_KEY_2);
+    func_08084458(CARD_KINGDOM_KEY_2);
+    func_08084458(CARD_KINGDOM_KEY_1);
+    func_08084458(CARD_KINGDOM_KEY_0);
+    func_08084458(CARD_BLIZZARD_5);
+    func_08084458(CARD_POTION_6);
+    func_08084458(CARD_CURE_7);
 }
 
 void func_080AB8E4(void) {

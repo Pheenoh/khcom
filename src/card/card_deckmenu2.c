@@ -44,6 +44,7 @@
 #include "sprites_card.h"
 #include "sprites_deck_menu.h"
 #include "sprites_card_pictures.h"
+#include "card_ids.h"
 
 u8 gActiveDeck;
 
@@ -911,20 +912,20 @@ void func_08085DA0(u8 a) {
         AddCardToActiveDeck(j);
     }
 
-    gCardCollection[200] = 0x21D;
-    gCardCollection[201] = 0x21E;
-    gCardCollection[202] = 0x21F;
-    gCardCollection[203] = 0x220;
-    gCardCollection[204] = 0x227;
-    gCardCollection[205] = 0x228;
-    gCardCollection[206] = 0x229;
-    gCardCollection[207] = 0x22A;
-    gCardCollection[208] = 0x22B;
-    gCardCollection[209] = 0x22C;
-    gCardCollection[210] = 0x22D;
-    gCardCollection[211] = 0x230;
-    gCardCollection[212] = 0x233;
-    gCardCollection[213] = 0x234;
+    gCardCollection[200] = CARD_GUARD_ARMOR_1;
+    gCardCollection[201] = CARD_PARASITE_CAGE_1;
+    gCardCollection[202] = CARD_TRICKMASTER_1;
+    gCardCollection[203] = CARD_DARKSIDE_1;
+    gCardCollection[204] = CARD_HADES_9;
+    gCardCollection[205] = CARD_JAFAR_1;
+    gCardCollection[206] = CARD_OOGIE_BOOGIE_1;
+    gCardCollection[207] = CARD_URSULA_1;
+    gCardCollection[208] = CARD_HOOK_9;
+    gCardCollection[209] = CARD_DRAGON_MALEFICENT_1;
+    gCardCollection[210] = CARD_RIKU_9;
+    gCardCollection[211] = CARD_VEXEN_9;
+    gCardCollection[212] = CARD_LEXAEUS_9;
+    gCardCollection[213] = CARD_ANSEM_9;
 
     if (func_0800FC5C(38) != 0) {
         AddCardToActiveDeck(200);

@@ -8,6 +8,7 @@
 #include "gba/keys.h"
 #include "sprites_fld.h"
 #include "sprites_status.h"
+#include "card_ids.h"
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F80288[5];
@@ -51,14 +52,14 @@ const char gTaskNameStatusMessage[] = "task_status_message";
 const char gTaskNameStatusFriend[] = "task_status_friend";
 
 const StatusFriendTable gStatusFriendTable = {{
-    {2, 240},
-    {1, 250},
-    {4, 330},
-    {8, 340},
-    {16, 350},
-    {32, 360},
-    {64, 370},
-    {128, 670},
+    {2, CARD_DONALD_DUCK_0},
+    {1, CARD_GOOFY_0},
+    {4, CARD_ALADDIN_0},
+    {8, CARD_ARIEL_0},
+    {16, CARD_JACK_0},
+    {32, CARD_PETER_PAN_0},
+    {64, CARD_THE_BEAST_0},
+    {128, CARD_THE_KING_0},
 }};
 
 static StatusWork* gStatusWork;

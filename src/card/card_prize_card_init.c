@@ -47,6 +47,7 @@
 #include "sprites_card_pictures.h"
 #include "sprites_card.h"
 #include "gba/io_reg.h"
+#include "card_ids.h"
 
 extern UnkStruct_09EE752C gUnk_09EE752C[7];
 #ifdef VERSION_EU
@@ -202,83 +203,83 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
 
         switch (gBtlWork->unk_10C) {
         case 148:
-            args.cardId = 0x21D;
+            args.cardId = CARD_GUARD_ARMOR_1;
             break;
         case 149:
-            args.cardId = 0x228;
+            args.cardId = CARD_JAFAR_1;
             break;
         case 150:
-            args.cardId = 0x21F;
+            args.cardId = CARD_TRICKMASTER_1;
             break;
         case 151:
-            args.cardId = 0x22A;
+            args.cardId = CARD_URSULA_1;
             break;
         case 152:
-            args.cardId = 0x21E;
+            args.cardId = CARD_PARASITE_CAGE_1;
             break;
         case 153:
-            args.cardId = 0x22C;
+            args.cardId = CARD_DRAGON_MALEFICENT_1;
             break;
         case 154:
-            args.cardId = 0x220;
+            args.cardId = CARD_DARKSIDE_1;
             break;
         case 155:
-            args.cardId = 0x229;
+            args.cardId = CARD_OOGIE_BOOGIE_1;
             break;
         case 156:
-            args.cardId = 0x232;
+            args.cardId = CARD_MARLUXIA_1;
             break;
         case 120:
-            args.cardId = 0x221;
+            args.cardId = CARD_CARD_SOLDIER_2;
             break;
         case 162:
-            args.cardId = 0xAF;
+            args.cardId = CARD_FIRE_5;
             break;
         case 163:
-            args.cardId = 0xC5;
+            args.cardId = CARD_THUNDER_7;
             break;
         case 161:
-            args.cardId = 0xEC;
+            args.cardId = CARD_AERO_6;
             break;
         case 157:
         case 158:
-            args.cardId = 0x22B;
+            args.cardId = CARD_HOOK_9;
             break;
         case 159:
-            args.cardId = 0x189;
+            args.cardId = CARD_HI_POTION_3;
             break;
         case 160:
-            args.cardId = 0x227;
+            args.cardId = CARD_HADES_9;
             break;
         case 165:
-            args.cardId = 0x231;
+            args.cardId = CARD_MARLUXIA_9;
             break;
         case 164:
-            args.cardId = 0x1A8;
+            args.cardId = CARD_MEGA_ETHER_4;
             break;
         case 169:
-            args.cardId = 0x192;
+            args.cardId = CARD_MEGA_POTION_2;
             break;
         case 170:
-            args.cardId = 0x22D;
+            args.cardId = CARD_RIKU_9;
             break;
         case 173:
-            args.cardId = 0x22E;
+            args.cardId = CARD_AXEL_9;
             break;
         case 174:
-            args.cardId = 0x22F;
+            args.cardId = CARD_LARXENE_9;
             break;
         case 175:
-            args.cardId = 0x230;
+            args.cardId = CARD_VEXEN_9;
             break;
         case 121:
-            args.cardId = 0x125;
+            args.cardId = CARD_DUMBO_3;
             break;
         case 124:
-            args.cardId = 0x19D;
+            args.cardId = CARD_ETHER_3;
             break;
         case 167:
-            args.cardId = 0x233;
+            args.cardId = CARD_LEXAEUS_9;
             break;
         default:
             w->unk_14 = 1;

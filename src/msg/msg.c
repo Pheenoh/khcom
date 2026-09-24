@@ -13,6 +13,7 @@
 #include "anim.h"
 #include "msg.h"
 #include "sprites_msg.h"
+#include "card_ids.h"
 
 #ifdef VERSION_EU
 extern void* gUnkEu_08890E1C[];
@@ -427,7 +428,7 @@ void func_0806250C(void) {
         gGameState.unk_180 = 0x200;
         break;
     case 5:
-        func_08084458(266);
+        func_08084458(CARD_SIMBA_6);
         break;
     case 11:
         gGameState.unk_180 = 61;
@@ -443,10 +444,10 @@ void func_0806250C(void) {
         break;
     case 60:
         gGameState.unk_180 = 0x1000;
-        func_08084458(136);
+        func_08084458(CARD_OBLIVION_6);
         break;
     case 57:
-        func_08084458(124);
+        func_08084458(CARD_OATHKEEPER_4);
         break;
     case 3:
     case 44:
@@ -493,23 +494,23 @@ void func_0806250C(void) {
         AddMapCard(241);
         break;
     case 114:
-        func_08084458(276);
+        func_08084458(CARD_GENIE_6);
         break;
     case 119:
-        func_08084458(304);
+        func_08084458(CARD_TINKER_BELL_4);
         break;
     case 126:
-        func_08084458(324);
+        func_08084458(CARD_CLOUD_4);
         break;
     case MSG_CODE(137):
-        func_08084458(64);
+        func_08084458(CARD_SPELLBINDER_4);
         break;
     case MSG_CODE(139):
-        func_08084458(431);
+        func_08084458(CARD_ELIXIR_1);
         break;
     case MSG_CODE(143):
     case MSG_CODE(144):
-        func_08084458(285);
+        func_08084458(CARD_BAMBI_5);
         break;
     case MSG_CODE(149):
         gGameState.unk_180 = 128;
