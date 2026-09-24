@@ -182,7 +182,6 @@ card_message_text.s
 card_msgwin.c
 card_sysmsgwin.c
 card_worldsel_before.c
-card_deckmenu2_2_rodata.s
 card_deckmenu2_2.c
 card_deckexchange_rodata.s
 card_deckexchange.c

@@ -46,10 +46,7 @@
 
 #ifdef VERSION_EU
 extern void* gUnkEu_09F7434C[];
-extern u16 gUnkEu_090D1DF4[];
 extern u8* gUnkEu_09F74374[];
-extern s16 gUnkEu_090D1DFE[];
-extern s16 gUnkEu_090D1E04[];
 
 #define LANGSTR(x) (((void**)(x))[gLanguage])
 #else
@@ -80,6 +77,26 @@ u16 func_080857D4(u8 slot);
 u16 GetDeckCardCount(u8 index);
 u8 GetActiveDeckIndex(void);
 void func_08090170(DeckCard2Work* node);
+
+#ifdef VERSION_EU
+const u16 gUnkEu_090D1DF4[5] = { 0x320, 0x320, 0x320, 0x320, 0x320 };
+#endif
+
+const s16 gUnk_09041EB4[3] = { 116, 116, 116 };
+
+const s16 gUnk_09041EBA[3] = { 56, 104, 148 };
+
+const s16 gUnk_09041EC0[5] = { 12, 28, 42, 56, 70 };
+
+const s16 gUnk_09041ECA[6] = { 172, 172, 188, 202, 216, 230 };
+
+const s16 gUnk_09041ED6[5] = { 64, 82, 100, 118, 136 };
+
+const s16 gUnk_09041EE0[2] = { 80, 128 };
+
+const s16 gUnk_09041EE4[5] = { 80, 88, 96, 104, 112 };
+
+const u16 gUnk_09041EEE[4] = { 45, 93, 141, 30 };
 
 static void Deckmenu2_0(u8* work, void* a) {
     u16 v;
@@ -266,13 +283,8 @@ u8 func_080A5D3C(UnkStruct_080A5D3C* w, void* a) {
     w->unk_494 = 0x4800;
     w->unk_498 = 0x2800;
     w->unk_4C8[1] = w->unk_4F8;
-#ifdef VERSION_EU
-    ApproachValue(&w->unk_48C, gUnkEu_090D1DFE[w->unk_4C8[0]] << 8, w->unk_4EC);
-    ApproachValue(&w->unk_490, gUnkEu_090D1E04[w->unk_4C8[1]] << 8, w->unk_4EC);
-#else
     ApproachValue(&w->unk_48C, gUnk_09041EB4[w->unk_4C8[0]] << 8, w->unk_4EC);
     ApproachValue(&w->unk_490, gUnk_09041EBA[w->unk_4C8[1]] << 8, w->unk_4EC);
-#endif
     w->unk_4E6 = 1;
     func_080A6BB4((u8*)w);
     func_080A6E3C((u8*)w);
