@@ -399,6 +399,8 @@ map_runtime_rodata.s
 map_runtime.c
 map.c
 map_tasks.c
+map_donald.c
+map_goofy.c
 room.c
 map_room_tables.s
 map_rooms.c
