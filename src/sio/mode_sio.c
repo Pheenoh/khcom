@@ -2455,9 +2455,9 @@ void func_080B1E70(void) {
             gSioChgCardWork->unk_0A5[i] = 0;
             gSioChgCardWork->x2[i] = gUnk_09EF150C[i].unk_00 << 8;
             gSioChgCardWork->y2[i] = gUnk_09EF150C[i].unk_02 << 8;
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[CARD_KINGDOM_KEY_0].tiles2, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[CARD_KINGDOM_KEY_0].palette2, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[CARD_KINGDOM_KEY_0].gfx2;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[0];
             gSioChgCardWork->unk_1A8[i] = 0x100;
             gSioChgCardWork->unk_1D0[i] = 0x100;
@@ -2486,7 +2486,7 @@ void func_080B1E70(void) {
     gSioChgCardWork->x3 = 68;
     gSioChgCardWork->y3 = 124;
     InitTextSlots(gSioChgCardWork->textSlots2, 20);
-    gSioChgCardWork->textSlotCount2 = LoadTextSlots(gCardDefs[CARD_KINGDOM_KEY_0].name, gSioChgCardWork->textSlots2);
+    gSioChgCardWork->textSlotCount2 = LoadTextSlots(gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].name, gSioChgCardWork->textSlots2);
     gSioChgCardWork->unk_360 = 0;
     TaskPoolInit(gSioChgCardWork->tasks, 11);
     gUnk_02039B58[3] = ((gUnk_0203AB10 & 15) << 12) | ((gSioChgCardWork->unk_202 + 1) & 0x0FFF);
@@ -2886,9 +2886,9 @@ void func_080B2FEC(u16 a) {
             gSioChgCardWork->unk_0A5[i] = 0;
             ReleaseObjTiles(gSioChgCardWork->tiles3[i]);
             ReleaseObjPalette(gSioChgCardWork->palette3[i]);
-            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[CARD_KINGDOM_KEY_0].tiles2, 0x200);
-            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[CARD_KINGDOM_KEY_0].palette2, 32);
-            gSioChgCardWork->gfx4[i] = gCardDefs[CARD_KINGDOM_KEY_0].gfx2;
+            gSioChgCardWork->tiles3[i] = LoadObjTiles(gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].tiles2, 0x200);
+            gSioChgCardWork->palette3[i] = LoadObjPalette(gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].palette2, 32);
+            gSioChgCardWork->gfx4[i] = gCardDefs[CARD_ID(CARD_KINGDOM_KEY, 0)].gfx2;
             gSioChgCardWork->gfx5[i] = gUnk_09EE981C[0];
             gUnk_0203AB20[i] = slot;
 

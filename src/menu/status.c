@@ -52,14 +52,14 @@ const char gTaskNameStatusMessage[] = "task_status_message";
 const char gTaskNameStatusFriend[] = "task_status_friend";
 
 const StatusFriendTable gStatusFriendTable = {{
-    {2, CARD_DONALD_DUCK_0},
-    {1, CARD_GOOFY_0},
-    {4, CARD_ALADDIN_0},
-    {8, CARD_ARIEL_0},
-    {16, CARD_JACK_0},
-    {32, CARD_PETER_PAN_0},
-    {64, CARD_THE_BEAST_0},
-    {128, CARD_THE_KING_0},
+    {2, CARD_ID(CARD_DONALD_DUCK, 0)},
+    {1, CARD_ID(CARD_GOOFY, 0)},
+    {4, CARD_ID(CARD_ALADDIN, 0)},
+    {8, CARD_ID(CARD_ARIEL, 0)},
+    {16, CARD_ID(CARD_JACK, 0)},
+    {32, CARD_ID(CARD_PETER_PAN, 0)},
+    {64, CARD_ID(CARD_THE_BEAST, 0)},
+    {128, CARD_ID(CARD_THE_KING, 0)},
 }};
 
 static StatusWork* gStatusWork;

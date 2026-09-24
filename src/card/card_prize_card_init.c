@@ -116,12 +116,12 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
                         *(PrizeCardArgs*)args = w->args;
 #ifdef VERSION_EU
                         if (func_08093B38() <= 98) {
-                            args[8] = GetRandom() % 10 + 210;
+                            args[8] = CARD_ID(CARD_GRAVITY, GetRandom() % 10);
                         } else {
                             args[8] = 0xFFFF;
                         }
 #else
-                        args[8] = GetRandom() % 10 + 210;
+                        args[8] = CARD_ID(CARD_GRAVITY, GetRandom() % 10);
 #endif
                     } else {
                         *(PrizeCardArgs*)args = w->args;
@@ -147,12 +147,12 @@ s32 PrizeCardInit_1(PrizeCardInitWork* w) {
 #ifdef VERSION_EU
                 if (func_08093B38() <= 98) {
                     *(PrizeCardArgs*)args = w->args;
-                    args[8] = GetRandom() % 10 + 160;
+                    args[8] = CARD_ID(CARD_ULTIMA_WEAPON, GetRandom() % 10);
                     func_0809797C(w, args);
                 }
 #else
                 *(PrizeCardArgs*)args = w->args;
-                args[8] = GetRandom() % 10 + 160;
+                args[8] = CARD_ID(CARD_ULTIMA_WEAPON, GetRandom() % 10);
                 func_0809797C(w, args);
 #endif
             } else {
@@ -233,20 +233,20 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
             args.cardId = CARD_CARD_SOLDIER_2;
             break;
         case 162:
-            args.cardId = CARD_FIRE_5;
+            args.cardId = CARD_ID(CARD_FIRE, 5);
             break;
         case 163:
-            args.cardId = CARD_THUNDER_7;
+            args.cardId = CARD_ID(CARD_THUNDER, 7);
             break;
         case 161:
-            args.cardId = CARD_AERO_6;
+            args.cardId = CARD_ID(CARD_AERO, 6);
             break;
         case 157:
         case 158:
             args.cardId = CARD_HOOK_9;
             break;
         case 159:
-            args.cardId = CARD_HI_POTION_3;
+            args.cardId = CARD_ID(CARD_HI_POTION, 3);
             break;
         case 160:
             args.cardId = CARD_HADES_9;
@@ -255,10 +255,10 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
             args.cardId = CARD_MARLUXIA_9;
             break;
         case 164:
-            args.cardId = CARD_MEGA_ETHER_4;
+            args.cardId = CARD_ID(CARD_MEGA_ETHER, 4);
             break;
         case 169:
-            args.cardId = CARD_MEGA_POTION_2;
+            args.cardId = CARD_ID(CARD_MEGA_POTION, 2);
             break;
         case 170:
             args.cardId = CARD_RIKU_9;
@@ -273,10 +273,10 @@ s32 PrizeCardInit_Boss_1(PrizeCardInitWork* w, void* a) {
             args.cardId = CARD_VEXEN_9;
             break;
         case 121:
-            args.cardId = CARD_DUMBO_3;
+            args.cardId = CARD_ID(CARD_DUMBO, 3);
             break;
         case 124:
-            args.cardId = CARD_ETHER_3;
+            args.cardId = CARD_ID(CARD_ETHER, 3);
             break;
         case 167:
             args.cardId = CARD_LEXAEUS_9;

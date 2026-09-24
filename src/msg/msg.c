@@ -428,7 +428,7 @@ void func_0806250C(void) {
         gGameState.unk_180 = 0x200;
         break;
     case 5:
-        func_08084458(CARD_SIMBA_6);
+        func_08084458(CARD_ID(CARD_SIMBA, 6));
         break;
     case 11:
         gGameState.unk_180 = 61;
@@ -444,10 +444,10 @@ void func_0806250C(void) {
         break;
     case 60:
         gGameState.unk_180 = 0x1000;
-        func_08084458(CARD_OBLIVION_6);
+        func_08084458(CARD_ID(CARD_OBLIVION, 6));
         break;
     case 57:
-        func_08084458(CARD_OATHKEEPER_4);
+        func_08084458(CARD_ID(CARD_OATHKEEPER, 4));
         break;
     case 3:
     case 44:
@@ -494,23 +494,23 @@ void func_0806250C(void) {
         AddMapCard(241);
         break;
     case 114:
-        func_08084458(CARD_GENIE_6);
+        func_08084458(CARD_ID(CARD_GENIE, 6));
         break;
     case 119:
-        func_08084458(CARD_TINKER_BELL_4);
+        func_08084458(CARD_ID(CARD_TINKER_BELL, 4));
         break;
     case 126:
-        func_08084458(CARD_CLOUD_4);
+        func_08084458(CARD_ID(CARD_CLOUD, 4));
         break;
     case MSG_CODE(137):
-        func_08084458(CARD_SPELLBINDER_4);
+        func_08084458(CARD_ID(CARD_SPELLBINDER, 4));
         break;
     case MSG_CODE(139):
-        func_08084458(CARD_ELIXIR_1);
+        func_08084458(CARD_ID(CARD_ELIXIR, 1));
         break;
     case MSG_CODE(143):
     case MSG_CODE(144):
-        func_08084458(CARD_BAMBI_5);
+        func_08084458(CARD_ID(CARD_BAMBI, 5));
         break;
     case MSG_CODE(149):
         gGameState.unk_180 = 128;
