@@ -60,7 +60,6 @@ Deck* sub_08083EFC(void);
 void func_08081740(UnkStruct_08080268* w, u16 n);
 void func_08081744(UnkStruct_08080268* w);
 void func_08080228(UnkStruct_08080268* w);
-extern s32 gUnk_09034054[];
 u8 func_080827E0(CardDisplayWork* p, void* a);
 void func_08083340(CardDisplayWork* p);
 void func_080838CC(void);

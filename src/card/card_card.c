@@ -50,6 +50,31 @@ u32 gUnk_02034AA8;
 
 CardDisplayWork* gUnk_02034AAC;
 
+const s32 gUnk_09033FF4[5][2] = {
+    { -0x3A00, 0xD400 },
+    { 0x4000, 0x1800 },
+    { 0x3400, 0x1800 },
+    { 0x2800, 0x1800 },
+    { -0x1400, 0xB800 },
+};
+
+const s32 gUnk_0903401C[6][2] = {
+    { 0x12A00, 0xD400 },
+    { 0xB000, 0x1800 },
+    { 0xBC00, 0x1800 },
+    { 0xC800, 0x1800 },
+    { 0x10400, 0xB800 },
+    { 0xD800, 0x8000 },
+};
+
+const s32 gUnk_0903404C[2] = {
+    0x7800, 0x8C00,
+};
+
+const s32 gUnk_09034054[3] = {
+    0x5A00, 0, 0xAC00,
+};
+
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
@@ -60,7 +85,6 @@ void func_0807B458(UnkStruct_08080268* w, u16 value);
 void func_0807B45C(UnkStruct_08080268* w);
 void func_0807B478(CardDisplayWork* w);
 u8 func_0807C5D8(CardDisplayWork* w, void* a);
-extern s32 gUnk_09034054[];
 void func_0807CC2C(CardDisplayWork* p);
 u8 func_0807D194(CardDisplayWork* p, void* a);
 u8 func_0807D584(CardDisplayWork* p, void* a);

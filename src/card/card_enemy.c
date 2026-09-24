@@ -52,7 +52,6 @@ u8 gUnkEu_02034AD4[4];
 u8 func_0807CE68(CardDisplayWork* p);
 void func_0807C39C(CardDisplayWork* p);
 void func_0807C33C(CardDisplayWork* p);
-extern s32 gUnk_09034054[];
 extern s32 gUnk_09035978[];
 void func_0807CD48(CardDisplayWork* p);
 u8 func_0807CF4C(u8* work, void* a);

@@ -155,7 +155,6 @@ event_name_text.s
 event_message.c
 mode_eventselect.c
 card_battle.c
-card_card_rodata.s
 card_card.c
 card_battle_riku_rodata.s
 card_battle_riku.c
