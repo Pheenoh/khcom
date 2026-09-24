@@ -53,7 +53,6 @@ u8 gUnk_02034B04[4];
 #endif
 
 #ifdef VERSION_EU
-extern s32 gUnkEu_090D1DC0[];
 extern void* gUnkEu_08890E1C[];
 extern void* gUnkEu_08890E44[];
 
@@ -71,6 +70,9 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d);
 #ifdef VERSION_JP
 u8 func_0806BDB8(s32 x, s32 y, s32 s, s32* d);
 #endif
+
+const s32 gUnk_09041E80[4] = { 0xE00, 0x6C00, 0xE00, 0x6C00 };
+
 void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     vu32 zero = 0;
 
@@ -112,7 +114,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
 #else
     if (w->unk_130 != 0) {
 #ifdef VERSION_EU
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                        (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
@@ -120,7 +122,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
 #endif
     } else {
 #ifdef VERSION_EU
-        w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
+        w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                        (s32)LANGSTR(w->messageDef->text), (s32*)&w->unk_130);
 #else
         w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
@@ -242,7 +244,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
             w->unk_138[3] = func_0806BDB8(0x2E00, gUnk_09033CB8[w->messageDef->positionIndex],
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #elif defined(VERSION_EU)
-            w->unk_138[3] = func_0806BB44(0x2E00, gUnkEu_090D1DC0[w->messageDef->positionIndex] - 0x200,
+            w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
                                            (s32)w->gfx2, (s32*)&w->gfx2);
 #else
             w->unk_138[3] = func_0806BB44(0x2E00, gUnk_09041E80[w->messageDef->positionIndex] - 0x200,
@@ -834,3 +836,5 @@ TaskDesc gUnk_09EE8E48 = {
     (TaskFunc)func_080A53E4,
     0x148,
 };
+
+const s32 gUnk_09041E9C[2] = { 0x5000, 0x8000 };

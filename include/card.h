@@ -367,8 +367,8 @@ typedef struct WorldSelAnim {
 
 extern WorldSelAnim gWorldSelAnims[30];
 extern u8 gUnk_09619378[];
-extern s32 gUnk_09041E80[];
-extern s32 gUnk_09041E9C[];
+extern const s32 gUnk_09041E80[];
+extern const s32 gUnk_09041E9C[];
 extern s16 gUnk_09041EB4[];
 extern s16 gUnk_09041F30[];
 extern s16 gUnk_09041F34[];

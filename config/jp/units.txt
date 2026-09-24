@@ -179,9 +179,7 @@ card_lvup_msg.c
 card_deck_equip.c
 card_message_text.s
 card_msgwin.c
-card_sysmsgwin_rodata.s
 card_sysmsgwin.c
-card_sysmsgwin_tables.s
 card_worldsel_before.c
 card_deckmenu2_2_rodata.s
 card_deckmenu2_2.c
