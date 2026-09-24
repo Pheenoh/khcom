@@ -73,103 +73,70 @@ entries:
     address: 0x09EC1570
   eu:
     address: 0x09F75F94
-- name: gUnk_0908BB54
-  record: Sprite
+- name: gUnk_0908BB80
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 32768, 0]
-  - [16384, 32800, 8]
-  - [16384, 32832, 16]
-  - [0, 16480, 24]
-  - [32768, 112, 28]
+  cell: [120, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnk_0908BB54
+    pieces:
+    - [32x16, 0, 0]
+    - [32x16, 32, 0]
+    - [32x16, 64, 0]
+    - [16x16, 96, 0]
+    - [8x16, 112, 0]
+  animations:
+  - symbol: gUnk_0908BB76
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x0908BB54
+    size: 1004
   jp:
     address: 0x090473C4
+    size: 1004
   eu:
     address: 0x09161E28
-- name: gUnk_0908BB76
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0908BB76
-  jp:
-    address: 0x090473E6
-  eu:
-    address: 0x09161E4A
-- name: gUnk_0908BB80
-  format: tiles4
-  width: 1
-  us:
-    address: 0x0908BB80
-    size: 960
-  jp:
-    address: 0x090473F0
-    size: 960
-  eu:
-    address: 0x09161E54
-    size: 960
-- name: gUnk_0908BF40
-  record: Sprite
+    size: 1004
+- name: gUnk_0908BFB2
+  format: sprite_sheet
   align: 4
-  oam:
-  - [16384, 16776, 0]
-  - [16384, 16808, 4]
-  - [16384, 16840, 8]
-  - [16384, 16872, 12]
-  - [16384, 16392, 16]
-  - [16384, 16424, 20]
-  - [16384, 16456, 24]
-  - [16384, 104, 28]
+  cell: [240, 8]
+  anchor: [120, 0]
+  columns: 2
+  frames:
+  - symbol: gUnk_0908BF40
+    pieces:
+    - [32x8, -120, 0]
+    - [32x8, -88, 0, {fresh: true}]
+    - [32x8, -56, 0, {fresh: true}]
+    - [32x8, -24, 0, {fresh: true}]
+    - [32x8, 8, 0, {fresh: true}]
+    - [32x8, 40, 0, {fresh: true}]
+    - [32x8, 72, 0, {fresh: true}]
+    - [16x8, 104, 0]
+  - symbol: gUnk_0908BF74
+    pieces:
+    - [32x8, -120, 0, {vflip: true, same: [0, 0]}]
+    - [32x8, -88, 0, {vflip: true, same: [0, 1]}]
+    - [32x8, -56, 0, {vflip: true, same: [0, 2]}]
+    - [32x8, -24, 0, {vflip: true, same: [0, 3]}]
+    - [32x8, 8, 0, {vflip: true, same: [0, 4]}]
+    - [32x8, 40, 0, {vflip: true, same: [0, 5]}]
+    - [32x8, 72, 0, {vflip: true}]
+    - [16x8, 104, 0, {vflip: true}]
+  animations:
+  - symbol: gUnk_0908BFA8
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x0908BF40
+    size: 1074
   jp:
     address: 0x090477B0
+    size: 1074
   eu:
     address: 0x09162214
-- name: gUnk_0908BF74
-  record: Sprite
-  oam:
-  - [16384, 24968, 0]
-  - [16384, 25000, 4]
-  - [16384, 25032, 8]
-  - [16384, 25064, 12]
-  - [16384, 24584, 16]
-  - [16384, 24616, 20]
-  - [16384, 24648, 24]
-  - [16384, 8296, 28]
-  us:
-    address: 0x0908BF74
-  jp:
-    address: 0x090477E4
-  eu:
-    address: 0x09162248
-- name: gUnk_0908BFA8
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  us:
-    address: 0x0908BFA8
-  jp:
-    address: 0x09047818
-  eu:
-    address: 0x0916227C
-- name: gUnk_0908BFB2
-  format: tiles4
-  width: 1
-  us:
-    address: 0x0908BFB2
-    size: 960
-  jp:
-    address: 0x09047822
-    size: 960
-  eu:
-    address: 0x09162286
-    size: 960
+    size: 1074
