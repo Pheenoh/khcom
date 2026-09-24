@@ -301,17 +301,15 @@ void Event_2(void) {
 }
 
 
-const char gModeNameEvent[] = "Event";
-
 Mode gUnk_09EE273C = {
-    gModeNameEvent,
+    "Event",
     Event_0,
     func_0806119C,
     Event_2,
 };
 
 Mode gUnk_09EE274C = {
-    gModeNameEvent,
+    "Event",
     Event_0,
     func_08061248,
     Event_2,

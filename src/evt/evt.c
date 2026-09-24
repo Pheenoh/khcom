@@ -6,8 +6,6 @@
 
 const char gTaskNameEvtObj[] = "task_evt_obj";
 
-const char gTaskNameEvtShadow[] = "task_evt_shadow";
-
 EventState* gEventState EWRAM_COMMON(4);
 
 void EvtObjSetAnim(EvtObj* obj, s32 anim) {
@@ -193,4 +191,4 @@ void task_evt_shadow_3(EvtShadowWork* work) {
 
 TaskDesc gTaskDescEvtObj = { gTaskNameEvtObj, task_evt_obj_0, task_evt_obj_1, task_evt_obj_2, task_evt_obj_3, 0x38 };
 
-TaskDesc gTaskDescEvtShadow = { gTaskNameEvtShadow, task_evt_shadow_0, task_evt_shadow_1, task_evt_shadow_2, task_evt_shadow_3, 0x14 };
+TaskDesc gTaskDescEvtShadow = { "task_evt_shadow", task_evt_shadow_0, task_evt_shadow_1, task_evt_shadow_2, task_evt_shadow_3, 0x14 };

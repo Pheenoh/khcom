@@ -880,39 +880,15 @@ void Event_Debug_3(s32* p) {
     FreeSmallFontResources(p[0], p[1]);
 }
 
-const char gModeNameEventselect[] = "mode_eventselect";
-
-const char gTaskNameHanabira[] = "Hanabira";
-
-const char gTaskNameHanabiraC[] = "Hanabira_c";
-
-const char gTaskNameSmoke[] = "smoke";
-
-const char gTaskNameExclamation[] = "Exclamation";
-
-const char gTaskNameBalloon[] = "balloon";
-
-const char gTaskNameQuestion[] = "Question";
-
-const char gTaskNameGlowNose[] = "GlowNose";
-
-const char gTaskNameDown[] = "down";
-
-const char gTaskNameTinkerbell[] = "Tinkerbell";
-
-const char gTaskNameEvSound[] = "EV_SOUND";
-
-const char gTaskNameEventDebug[] = "Event_Debug";
-
 Mode gModeEventselect = {
-    gModeNameEventselect,
+    "mode_eventselect",
     (ModeInitFunc)mode_eventselect_0,
     mode_eventselect_1,
     mode_eventselect_2,
 };
 
 TaskDesc gTaskDescHanabira = {
-    gTaskNameHanabira,
+    "Hanabira",
     (TaskInitFunc)Hanabira_0,
     (TaskUpdateFunc)Hanabira_1,
     (TaskFunc)Hanabira_2,
@@ -921,7 +897,7 @@ TaskDesc gTaskDescHanabira = {
 };
 
 TaskDesc gTaskDescHanabiraC = {
-    gTaskNameHanabiraC,
+    "Hanabira_c",
     (TaskInitFunc)Hanabira_c_0,
     (TaskUpdateFunc)Hanabira_c_1,
     (TaskFunc)Hanabira_c_2,
@@ -930,7 +906,7 @@ TaskDesc gTaskDescHanabiraC = {
 };
 
 TaskDesc gTaskDescSmoke = {
-    gTaskNameSmoke,
+    "smoke",
     (TaskInitFunc)smoke_0,
     (TaskUpdateFunc)func_08075720,
     (TaskFunc)EffectDrawObj,
@@ -939,7 +915,7 @@ TaskDesc gTaskDescSmoke = {
 };
 
 TaskDesc gTaskDescExclamation = {
-    gTaskNameExclamation,
+    "Exclamation",
     (TaskInitFunc)Exclamation_0,
     (TaskUpdateFunc)Exclamation_1,
     (TaskFunc)EffectDrawObj,
@@ -948,7 +924,7 @@ TaskDesc gTaskDescExclamation = {
 };
 
 TaskDesc gTaskDescBalloon = {
-    gTaskNameBalloon,
+    "balloon",
     (TaskInitFunc)balloon_0,
     (TaskUpdateFunc)func_08075720,
     (TaskFunc)EffectDrawObj,
@@ -957,7 +933,7 @@ TaskDesc gTaskDescBalloon = {
 };
 
 TaskDesc gTaskDescQuestion = {
-    gTaskNameQuestion,
+    "Question",
     (TaskInitFunc)Question_0,
     (TaskUpdateFunc)Question_1,
     (TaskFunc)EffectDrawObj,
@@ -966,7 +942,7 @@ TaskDesc gTaskDescQuestion = {
 };
 
 TaskDesc gUnk_09EE484C = {
-    gTaskNameGlowNose,
+    "GlowNose",
     (TaskInitFunc)func_080758D0,
     (TaskUpdateFunc)func_080759B0,
     (TaskFunc)func_080759E0,
@@ -975,7 +951,7 @@ TaskDesc gUnk_09EE484C = {
 };
 
 TaskDesc gTaskDescGlowNose = {
-    gTaskNameGlowNose,
+    "GlowNose",
     (TaskInitFunc)GlowNose_0,
     (TaskUpdateFunc)GlowNose_1,
     (TaskFunc)EffectDrawObj,
@@ -984,7 +960,7 @@ TaskDesc gTaskDescGlowNose = {
 };
 
 TaskDesc gTaskDescGlowNose2 = {
-    gTaskNameGlowNose,
+    "GlowNose",
     (TaskInitFunc)GlowNose2_0,
     (TaskUpdateFunc)GlowNose2_1,
     (TaskFunc)EffectDrawObj,
@@ -993,7 +969,7 @@ TaskDesc gTaskDescGlowNose2 = {
 };
 
 TaskDesc gTaskDescDown = {
-    gTaskNameDown,
+    "down",
     (TaskInitFunc)down_0,
     (TaskUpdateFunc)down_1,
     (TaskFunc)down_2,
@@ -1002,7 +978,7 @@ TaskDesc gTaskDescDown = {
 };
 
 TaskDesc gTaskDescTinkerbell = {
-    gTaskNameTinkerbell,
+    "Tinkerbell",
     (TaskInitFunc)Tinkerbell_0,
     (TaskUpdateFunc)Tinkerbell_1,
     (TaskFunc)Tinkerbell_2,
@@ -1011,7 +987,7 @@ TaskDesc gTaskDescTinkerbell = {
 };
 
 TaskDesc gTaskDescEvSound = {
-    gTaskNameEvSound,
+    "EV_SOUND",
     (TaskInitFunc)EV_SOUND_0,
     (TaskUpdateFunc)EV_SOUND_1,
     (TaskFunc)EV_SOUND_2,
@@ -1020,7 +996,7 @@ TaskDesc gTaskDescEvSound = {
 };
 
 TaskDesc gTaskDescEventDebug = {
-    gTaskNameEventDebug,
+    "Event_Debug",
     (TaskInitFunc)Event_Debug_0,
     (TaskUpdateFunc)Event_Debug_1,
     (TaskFunc)Event_Debug_2,

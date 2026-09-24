@@ -280,17 +280,6 @@ extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
 extern const char gTaskNameLockon[];
-extern const char gModeNameEventselect[];
-extern const char gTaskNameHanabira[];
-extern const char gTaskNameHanabiraC[];
-extern const char gTaskNameSmoke[];
-extern const char gTaskNameExclamation[];
-extern const char gTaskNameBalloon[];
-extern const char gTaskNameQuestion[];
-extern const char gTaskNameGlowNose[];
-extern const char gTaskNameDown[];
-extern const char gTaskNameTinkerbell[];
-extern const char gTaskNameEvSound[];
 extern const char gModeNameSioBattle[];
 extern const char gModeNameSioBtlConnect[];
 extern const char gModeNameSioBtlOption[];
@@ -422,7 +411,6 @@ extern TaskDesc gUnk_09EE8E30;
 extern TaskDesc gUnk_09EE8E48;
 extern TaskDesc gUnk_09EE8EF0;
 extern TaskDesc gTaskDescDarkPoint;
-extern const char gTaskNameEventDebug[];
 extern const char gTaskNameStockInfo[];
 
 extern TaskDesc gTaskDescBosJfRock;
@@ -482,8 +470,6 @@ extern const char gTaskNamePooButterflyRight[];
 extern const char gTaskNamePooButterflyLeft[];
 extern const char gTaskNamePooMapbeeborn[];
 extern const char gTaskNamePooMapbutterflyborn[];
-
-extern const char gModeNameEvent[];
 
 extern Mode gModeWORLDSELECT;
 extern const char gUnk_090359BC[];

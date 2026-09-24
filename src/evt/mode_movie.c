@@ -538,10 +538,8 @@ u16 gUnk_02034968[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
 u16 gUnk_020349B8[MOVIE_SUB_MAX_CHARS] __attribute__((aligned(8)));
 #endif
 
-const char gModeNameMovie[] = "mode_movie";
-
 Mode gModeMovie = {
-    gModeNameMovie,
+    "mode_movie",
     mode_movie_0,
     mode_movie_1,
     mode_movie_2,
