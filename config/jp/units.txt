@@ -396,6 +396,7 @@ mode_mapchk_rodata.s
 mode_mapchk.c
 map_runtime_rodata.s
 map_runtime.c
+map_cell.c
 map.c
 map_tasks.c
 map_donald.c

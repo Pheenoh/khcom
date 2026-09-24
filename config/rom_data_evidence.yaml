@@ -1895,7 +1895,7 @@ tables:
   stride: 40
   pointer_offsets: [0, 4, 8, 12, 16, 20]
 - name: gUnk_09EF70D0
-  provenance: map.c indexes this table by room theme, with 14 entries including the repeated initial theme at13; the following bytes are independently distinct scalar tile-classification data, not another room pointer.
+  provenance: map_cell.c and map.c index this table by room theme, with 14 entries including the repeated initial theme at13; the following bytes are independently distinct scalar tile-classification data, not another room pointer.
   us: '0x9ef70d0'
   targets:
     jp: '0x9ece4bc'
@@ -2753,7 +2753,7 @@ tables:
   pointer_offsets: [0]
 - name: direct_animation_resources_09EF8414
   layer: 1
-  provenance: Canonical UnkStruct_080E7D80 gUnk_0984C158 fields +0C/+10 contain the independently corresponding table bases. Its TaskDesc +24 callback Task_MapGmk01_0 initializes animations 0/1 and callback func_080F3A74 explicitly starts 1. Both full headers and frames agree across regions. map.c tutorial func_080F6DE8 starts animation 0 and func_080F6F1C starts 1. map.c MapGmkJump initialization and callbacks func_080F1460/14C4/1544 explicitly select animation 0,1,2. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
+  provenance: Canonical UnkStruct_080E7D80 gUnk_0984C158 fields +0C/+10 contain the independently corresponding table bases. Its TaskDesc +24 callback Task_MapGmk01_0 initializes animations 0/1 and callback func_080F3A74 explicitly starts 1. Both full headers and frames agree across regions. map_goofy.c tutorial func_080F6DE8 starts animation 0 and func_080F6F1C starts 1. map_tasks.c MapGmkJump initialization and callbacks func_080F1460/14C4/1544 explicitly select animation 0,1,2. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
   us: '0x9ef8414'
   targets:
     jp: '0x9ecf800'
@@ -2763,7 +2763,7 @@ tables:
   pointer_offsets: [0]
 - name: direct_animation_resources_09EF8CA0
   layer: 1
-  provenance: map.c Task_MapSpark_0 selects animation 0/1 by game-state flag. poo.c shares these same tables. map.c Task_MapTalk_1 selects animation 0/1 by relative position. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
+  provenance: map_tasks.c Task_MapSpark_0 selects animation 0/1 by game-state flag. poo.c shares these same tables. map_tasks.c Task_MapTalk_1 selects animation 0/1 by relative position. Complete animation headers/frames and minimum consumed sprite/OAM bytes agree in every region. Table bases are independently referenced by matched code.
   us: '0x9ef8ca0'
   targets:
     jp: '0x9ed008c'

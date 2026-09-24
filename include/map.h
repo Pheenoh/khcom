@@ -1301,6 +1301,7 @@ u16 func_080E83C4(void);
 void func_080E83DC(s32 a, s32 b, s32 c);
 void func_080E55E4(const u8* src);
 void func_080E5800(void);
+void func_080E5868(UnkStruct_09EF8370* p);
 void func_080E8864(UnkStruct_080E8864* p);
 u8 func_080E87EC(s16 x, s16 y, const UnkStruct_080E87EC* p);
 void func_080E8724(s16 x, s16 y, const u8* p, u16* base);
