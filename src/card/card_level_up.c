@@ -68,13 +68,30 @@ u8 func_080A0A44(struct LevelUpWork* w, void* a);
 u8 func_080A11CC(LevelUpWork* w, void* a);
 extern u8 gUnk_0908CAEC[];
 extern u8 gUnk_0908D05E[];
-extern s16 gUnk_09037FB4[];
 extern u8 gUnk_08F683A4[];
 extern u8 gUnk_09618118[];
 #ifdef VERSION_EU
 extern void* gUnkEu_09F72D1C[];
-extern u16 gUnkEu_090D1328[];
 #endif
+
+#ifdef VERSION_EU
+const u16 gUnkEu_090D1328[5] = { 0x500, 0x500, 0x580, 0x500, 0x500 };
+
+const u16 gUnkEu_090D1332[5] = { 0xE80, 0x1140, 0x1280, 0xF00, 0xF60 };
+
+const u8 gUnk_09037FAC[] = "\x19\x19\x19";
+
+const u8* const gUnkEu_090D1340[5] = { gUnk_09037FAC, gUnk_09037FAC, gUnk_09037FAC, gUnk_09037FAC, gUnk_09037FAC };
+#elif defined(VERSION_JP)
+const u8 gUnk_09037FAC[] = "\x81\x7c\x81\x7c\x81\x7c";
+#else
+const u16 gUnk_09037FAC[4] = { 0xE000, 0xE000, 0xE000, 0 };
+#endif
+
+const s16 gUnk_09037FB4[3] = { 30, 78, 128 };
+
+const s16 gUnk_09037FBA[20] = { 2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95 };
+
 void Level_Up_0(LevelUpWork* w) {
     s16 x;
     s16 y;
@@ -2019,9 +2036,9 @@ void** gUnkEu_09F72D58[5] = {
 };
 #endif
 #ifndef VERSION_EU
-u16* gUnk_09EE78D4[7] = { gUnk_0815A066, gUnk_0815A0BA, gUnk_0815B1D2, gUnk_0815A078, gUnk_0815A0CC, gUnk_0815B1A8, gUnk_09037FAC };
+u16* gUnk_09EE78D4[7] = { gUnk_0815A066, gUnk_0815A0BA, gUnk_0815B1D2, gUnk_0815A078, gUnk_0815A0CC, gUnk_0815B1A8, (u16*)gUnk_09037FAC };
 
-u16* gUnk_09EE78F0[7] = { gUnk_0815A066, gUnk_0815A116, gUnk_0815A158, gUnk_0815A0F4, gUnk_0815A130, gUnk_0815A176, gUnk_09037FAC };
+u16* gUnk_09EE78F0[7] = { gUnk_0815A066, gUnk_0815A116, gUnk_0815A158, gUnk_0815A0F4, gUnk_0815A130, gUnk_0815A176, (u16*)gUnk_09037FAC };
 #endif
 
 const void* gUnk_09EE790C[2] = { gUnk_08125E24, gUnk_0950F2B8 };
@@ -2066,3 +2083,9 @@ TaskDesc gTaskDescLVUPEFFECT = {
     (TaskFunc)LVUP_EFFECT_3,
     0xAC,
 };
+
+const s32 gUnk_09037FFC[4] = { -0xF000, 0xF000, 0, 0 };
+
+const s32 gUnk_0903800C[4] = { 0, 0, -0xF000, 0xF000 };
+
+const u16 gUnk_0903801C[4] = { 0, 128, 64, 192 };

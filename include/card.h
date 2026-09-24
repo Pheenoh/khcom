@@ -350,10 +350,11 @@ typedef struct UnkStruct_02034AFC {
     u8 unk_14F;
 } UnkStruct_02034AFC;
 
-extern s16 gUnk_09037FBA[];
-extern s32 gUnk_09037FFC[];
-extern s32 gUnk_0903800C[];
-extern u16 gUnk_0903801C[];
+extern const s16 gUnk_09037FB4[];
+extern const s16 gUnk_09037FBA[];
+extern const s32 gUnk_09037FFC[];
+extern const s32 gUnk_0903800C[];
+extern const u16 gUnk_0903801C[];
 extern u16 gUnk_09EE48F4[47];
 extern const s32 gUnk_090352E4[];
 extern const s16 gUnk_090352F4[];
@@ -2603,7 +2604,11 @@ extern u8 gUnkEu_094DB664[];
 extern u8 gUnkEu_094D9FE4[];
 extern u8 gUnkEu_094D8964[];
 #else
-extern u16 gUnk_09037FAC[];
+#ifdef VERSION_JP
+extern const u8 gUnk_09037FAC[];
+#else
+extern const u16 gUnk_09037FAC[];
+#endif
 extern u16 gUnk_0815A066[];
 extern u16 gUnk_0815A0BA[];
 extern u16 gUnk_0815B1D2[];

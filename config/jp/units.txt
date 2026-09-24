@@ -170,9 +170,7 @@ card_premire_chance.c
 card_name.c
 premium_card_effect_tiles.s
 card_mode_premire.c
-card_level_up_rodata.s
 card_level_up.c
-card_level_up_tables.s
 card_lvup_logo.c
 card_ev_bg_effect_rodata.s
 card_ev_bg_effect.c

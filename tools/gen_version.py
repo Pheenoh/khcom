@@ -1841,7 +1841,6 @@ TARGET_ONLY_SYMBOLS = {
         "gUnkEu_08891714": 0x08891714,
         "gUnkEu_08895EDC": 0x08895EDC,
         "gUnkEu_090D1DC0": 0x090D1DC0,
-        "gUnkEu_090D1328": 0x090D1328,
         "gUnkEu_08891580": 0x08891580,
         "gUnkEu_099AEE98": 0x099AEE98,
         "gUnkEu_092D1F74": 0x092D1F74,
@@ -2173,6 +2172,7 @@ TARGET_DATA_SIZE = {
         ("card_deckmenu2.c", ".rodata"): 0x30c,
         ("card_prize_card_init.c", ".rodata"): 0x7ad,
         ("card_name.c", ".rodata"): 0x34,
+        ("card_level_up.c", ".rodata"): 0x9c,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,
@@ -2207,6 +2207,7 @@ TARGET_DATA_ADDR = {
         ("sroll_tmr.c", ".rodata"): 0x09a093c0,
         ("card_deckmenu2.c", ".rodata"): 0x090089b0,
         ("card_name.c", ".rodata"): 0x09009748,
+        ("card_level_up.c", ".rodata"): 0x0900b438,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2243,6 +2244,7 @@ TARGET_DATA_ADDR = {
         ("mode_mapinspect.c", ".data"): 0x09f85008,
         ("card_deckmenu2.c", ".rodata"): 0x090ce9e0,
         ("card_name.c", ".rodata"): 0x090cf648,
+        ("card_level_up.c", ".rodata"): 0x090d1328,
     },
 }
 
