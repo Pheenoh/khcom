@@ -2191,6 +2191,7 @@ TARGET_DATA_SIZE = {
         ("mode_jiminy.c", ".rodata"): 0x48a8,
         ("card_deckmenu2.c", ".rodata"): 0x442,
         ("card_name.c", ".rodata"): 0x44,
+        ("card_lvup_msg.c", ".rodata"): 0x9,
     },
 }
 
@@ -2208,6 +2209,7 @@ TARGET_DATA_ADDR = {
         ("card_deckmenu2.c", ".rodata"): 0x090089b0,
         ("card_name.c", ".rodata"): 0x09009748,
         ("card_level_up.c", ".rodata"): 0x0900b438,
+        ("card_lvup_msg.c", ".rodata"): 0x0900d480,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,

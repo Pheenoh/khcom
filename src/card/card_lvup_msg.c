@@ -53,6 +53,13 @@ extern u8 gUnk_0815A0A0[];
 #ifdef VERSION_EU
 extern u8 gUnkEu_08895EDC[];
 #endif
+
+#ifdef VERSION_EU
+const u8 gUnk_0903BFF8[] = ".";
+#elif defined(VERSION_US)
+const u16 gUnk_0903BFF8[2] = { '.', 0 };
+#endif
+
 void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
     struct UnkStruct_080A23A0_Packed args = *(struct UnkStruct_080A23A0_Packed*)a;
 
@@ -61,7 +68,7 @@ void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
     InitTextSlots(w->textSlots3, 20);
 #ifndef VERSION_JP
     InitTextSlots(w->textSlots4, 20);
-    w->textSlotCount4 = LoadTextSlots((u8*)gUnk_0903BFD4 + 0x24, w->textSlots4);
+    w->textSlotCount4 = LoadTextSlots((u16*)gUnk_0903BFF8, w->textSlots4);
 #endif
     w->unk_28C = a->unk_04 >> 16;
     w->unk_2B4 = a->unk_00;
