@@ -427,7 +427,7 @@ with out.open("w") as f:
         n.build(
             outputs,
             "assetgen",
-            implicit=manifests + ["tools/assetgen.py", "tools/gbagfx/gbagfx", assets_stamp]
+            implicit=manifests + ["tools/assetgen.py", "tools/sprite_sheet.py", "tools/gbagfx/gbagfx", assets_stamp]
             + [rel(path) for path in group["sources"]],
             implicit_outputs=[rel(path) for path in group["binaries"]],
             variables={"version": version, "manifest": rel(group["manifest"].path)},

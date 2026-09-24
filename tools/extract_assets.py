@@ -199,7 +199,8 @@ def decoded_sources(root, version):
         for entry in manifest.entries:
             if "record" in entry or version not in entry:
                 continue
-            refs[manifest.source(entry, version).relative_to(root).as_posix()] = manifest
+            for source in manifest.sources(entry, version):
+                refs[source.relative_to(root).as_posix()] = manifest
     return refs
 
 

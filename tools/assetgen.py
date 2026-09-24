@@ -8,6 +8,8 @@ from pathlib import Path
 
 import yaml
 
+import sprite_sheet
+
 YAML_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 
@@ -18,8 +20,9 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_DIR = ROOT / "config" / "assets"
 GBAGFX = ROOT / "tools" / "gbagfx" / "gbagfx"
 VERSIONS = ("us", "jp", "eu")
-SOURCE_EXT = {"tiles4": "png", "tiles8": "png", "palette": "pal", "tilemap": "bin", "raw": "bin"}
-BINARY_EXT = {"tiles4": "4bpp", "tiles8": "8bpp", "palette": "gbapal", "tilemap": "bin", "raw": "bin"}
+SOURCE_EXT = {"tiles4": "png", "tiles8": "png", "palette": "pal", "tilemap": "bin", "raw": "bin", "sprite_sheet": "png"}
+BINARY_EXT = {"tiles4": "4bpp", "tiles8": "8bpp", "palette": "gbapal", "tilemap": "bin", "raw": "bin",
+              "sprite_sheet": "4bpp"}
 ASM_KINDS = ("sprite", "anim")
 
 
@@ -83,6 +86,35 @@ class Manifest:
         if "record" in entry:
             return None
         return ROOT / "assets" / version / self.group / f"{entry['name']}.{SOURCE_EXT[entry['format']]}"
+
+    def sources(self, entry, version):
+        source = self.source(entry, version)
+        if source is None:
+            return []
+        if entry["format"] == "sprite_sheet" and sprite_sheet.layer_count(self.sheet(entry, version)) > 1:
+            return [source, source.with_name(f"{entry['name']}.layers.png")]
+        return [source]
+
+    def sheet(self, entry, version):
+        try:
+            return {"cell": self.data(entry, version, "cell"), "anchor": self.data(entry, version, "anchor"),
+                    "columns": self.data(entry, version, "columns"),
+                    "frames": [[sprite_sheet.piece_from_yaml(item) for item in frame["pieces"]]
+                               for frame in self.data(entry, version, "frames")]}
+        except sprite_sheet.SheetError as error:
+            raise ManifestError(f"{self.group}: {entry['name']}: {error}")
+
+    def symbols(self, entry, version):
+        if entry.get("format") != "sprite_sheet":
+            return [self.symbol(entry, version)]
+        return ([frame["symbol"] for frame in self.data(entry, version, "frames")]
+                + [anim["symbol"] for anim in self.data(entry, version, "animations")] + [self.symbol(entry, version)])
+
+    def anim_type(self):
+        names = [name for name, rtype in self.types.items() if rtype.get("kind") == "anim"]
+        if not names:
+            raise ManifestError(f"{self.group}: a sprite sheet with animations needs an anim record type")
+        return names[0]
 
     def members(self, version):
         objects = self.objects.get(version, [])
@@ -160,8 +192,8 @@ def plan(version, manifests=None):
         objects = {}
         for obj in manifest.objects.get(version, []):
             objects[obj["name"]] = {"source": gen / obj["name"], "members": members[obj["name"]]}
-        sources = sorted({manifest.source(e, version) for e in manifest.entries
-                          if version in e and "record" not in e}, key=str)
+        sources = sorted({path for e in manifest.entries if version in e and "record" not in e
+                          for path in manifest.sources(e, version)}, key=str)
         binaries = sorted({gen / manifest.group / f"{e['name']}.{BINARY_EXT[e['format']]}"
                            for e in manifest.entries if version in e and "record" not in e}, key=str)
         out[manifest.group] = {"manifest": manifest, "objects": objects, "header": gen / f"{manifest.group}.h",
@@ -252,6 +284,43 @@ def decode_one(manifest, entry, version, data, tmp, palette_bytes):
     return png.read_bytes()
 
 
+def encode_sheet(manifest, entry, version, main=None, extra=None):
+    layout = manifest.sheet(entry, version)
+    if main is None:
+        paths = manifest.sources(entry, version)
+        for path in paths:
+            if not path.exists():
+                raise ManifestError(f"{path} is missing; run python3 tools/extract_assets.py")
+        main = paths[0].read_bytes()
+        extra = paths[1].read_bytes() if len(paths) > 1 else None
+    animations = manifest.data(entry, version, "animations")
+    try:
+        oam, block = sprite_sheet.encode(layout, sprite_sheet.read_sheets(layout, main, extra))
+        size = len(sprite_sheet.record_bytes(oam, animations)) + len(block)
+    except sprite_sheet.SheetError as error:
+        raise ManifestError(f"{entry['name']}: {version} {error}")
+    if size != entry[version]["size"]:
+        raise ManifestError(f"{entry['name']}: {version} sheet encodes to {size} bytes, manifest says {entry[version]['size']}")
+    return oam, animations, block
+
+
+def decode_sheet(manifest, entry, version, data, palette_bytes):
+    layout = manifest.sheet(entry, version)
+    animations = manifest.data(entry, version, "animations")
+    try:
+        oam, anims, block = sprite_sheet.parse_records(data, len(layout["frames"]), len(animations))
+        if anims != [{"fields": anim["fields"], "frames": anim["frames"]} for anim in animations]:
+            raise ManifestError(f"{entry['name']}: {version} animation headers differ from the description")
+        layout, layers = sprite_sheet.decode(oam, block, layout)
+        main, extra = sprite_sheet.write_sheets(layout, layers, palette_bytes)
+    except sprite_sheet.SheetError as error:
+        raise ManifestError(f"{entry['name']}: {version} {error}")
+    oam_out, animations, block_out = encode_sheet(manifest, entry, version, main, extra)
+    if sprite_sheet.record_bytes(oam_out, animations) + block_out != data:
+        raise ManifestError(f"{entry['name']}: {version} sheet does not re-encode to the ROM bytes")
+    return dict(zip(manifest.sources(entry, version), (main, extra)))
+
+
 def decode(manifest, version, rom, rom_base=0x08000000, lookup=None):
     written = checked = 0
     palettes = {name: owner.by_name[name] for name, owner in lookup.items()} if lookup else manifest.by_name
@@ -273,17 +342,22 @@ def decode(manifest, version, rom, rom_base=0x08000000, lookup=None):
             data = rom_bytes(entry)
             palette = palettes.get(entry.get("palette"))
             palette_bytes = rom_bytes(palette) if palette is not None and version in palette else b""
-            decoded = decode_one(manifest, entry, version, data, tmp, palette_bytes)
-            source = manifest.source(entry, version)
-            probe = probe_dir / source.name
-            probe.write_bytes(decoded)
-            if encode(manifest, entry, version, tmp, probe) != data:
-                raise ManifestError(f"{entry['name']}: {version} {entry['format']} source does not re-encode to the ROM bytes")
+            if entry["format"] == "sprite_sheet":
+                files = decode_sheet(manifest, entry, version, data, palette_bytes)
+            else:
+                decoded = decode_one(manifest, entry, version, data, tmp, palette_bytes)
+                source = manifest.source(entry, version)
+                probe = probe_dir / source.name
+                probe.write_bytes(decoded)
+                if encode(manifest, entry, version, tmp, probe) != data:
+                    raise ManifestError(f"{entry['name']}: {version} {entry['format']} source does not re-encode to the ROM bytes")
+                files = {source: decoded}
             checked += 1
-            if not source.exists() or source.read_bytes() != decoded:
-                source.parent.mkdir(parents=True, exist_ok=True)
-                source.write_bytes(decoded)
-                written += 1
+            for source, decoded in files.items():
+                if not source.exists() or source.read_bytes() != decoded:
+                    source.parent.mkdir(parents=True, exist_ok=True)
+                    source.write_bytes(decoded)
+                    written += 1
     return checked, written
 
 
@@ -383,7 +457,31 @@ def words(values):
     return ", ".join(str(v) for v in values)
 
 
-def emit_s(manifest, version, members, out_path, tmp, obj):
+def emit_sheet(manifest, entry, version, sheet, lines):
+    oam, animations, block = sheet
+    for frame, attrs_list in zip(manifest.data(entry, version, "frames"), oam):
+        lines.append(f"\t.global {frame['symbol']}")
+        lines.append(f"{frame['symbol']}:")
+        lines.append(f"\t.hword {len(attrs_list)}")
+        for attrs in attrs_list:
+            lines.append(f"\t.hword {words(attrs)}")
+        if attrs_list:
+            lines.append("\t.hword 0")
+    for anim in animations:
+        lines.append(f"\t.global {anim['symbol']}")
+        lines.append(f"{anim['symbol']}:")
+        lines.append(f"\t.hword {anim['fields']['unk_00']}, {anim['fields']['unk_02']}, {len(anim['frames'])}")
+        for frame in anim["frames"]:
+            lines.append(f"\t.hword {words(frame)}")
+    binary = ROOT / "build" / version / "gen" / manifest.group / f"{entry['name']}.{BINARY_EXT[entry['format']]}"
+    write_if_changed(binary, block)
+    symbol = manifest.symbol(entry, version)
+    lines.append(f"\t.global {symbol}")
+    lines.append(f"{symbol}:")
+    lines.append(f'\t.incbin "{binary.relative_to(ROOT).as_posix()}"')
+
+
+def emit_s(manifest, version, members, out_path, tmp, obj, sheets):
     lines = ["\t.section .rodata"]
     position = obj["start"]
     if position % 4 == 0:
@@ -396,6 +494,10 @@ def emit_s(manifest, version, members, out_path, tmp, obj):
         if pad:
             lines.append(f"\t.byte {words([0] * pad)}")
             position += pad
+        if entry.get("format") == "sprite_sheet":
+            emit_sheet(manifest, entry, version, sheets[entry["name"]], lines)
+            position += manifest.size(entry, version)
+            continue
         lines.append(f"\t.global {symbol}")
         lines.append(f"{symbol}:")
         kind = manifest.kind(entry)
@@ -424,11 +526,15 @@ def emit_s(manifest, version, members, out_path, tmp, obj):
     write_if_changed(out_path, "\n".join(lines) + "\n")
 
 
-def emit_header(manifest, version, members_by_object, out_path):
+def emit_header(manifest, version, members_by_object, out_path, sheets):
     guard = "GUARD_GEN_" + manifest.group.upper() + "_H"
     lines = [f"#ifndef {guard}", f"#define {guard}", ""]
-    headers = sorted({manifest.types[e["record"]].get("header") for members in members_by_object.values()
-                      for e in members if "record" in e} - {None})
+    headers = {manifest.types[e["record"]].get("header") for members in members_by_object.values()
+               for e in members if "record" in e}
+    if any(manifest.data(e, version, "animations") for members in members_by_object.values()
+           for e in members if e.get("format") == "sprite_sheet"):
+        headers.add(manifest.types[manifest.anim_type()].get("header"))
+    headers = sorted(headers - {None})
     if not headers:
         headers = ["types.h"]
     for header in headers:
@@ -452,6 +558,12 @@ def emit_header(manifest, version, members_by_object, out_path):
                 lines.append(f"extern {entry['record']} {symbol};")
             elif kind == "sprite":
                 lines.append(f"extern u8 {symbol}[];")
+            elif entry.get("format") == "sprite_sheet":
+                for frame in manifest.data(entry, version, "frames"):
+                    lines.append(f"extern u8 {frame['symbol']}[];")
+                for anim in manifest.data(entry, version, "animations"):
+                    lines.append(f"extern {manifest.anim_type()} {anim['symbol']};")
+                lines.append(f"extern u8 {symbol}[{len(sheets[entry['name']][2])}];")
             elif name.endswith(".s"):
                 lines.append(f"extern u8 {symbol}[{entry[version]['size']}];")
     lines += ["", "#endif"]
@@ -475,8 +587,8 @@ def check_symbols(manifest, version, members_by_object):
         line = line.split("#")[0].strip()
         if line:
             ledger.add(line.split("=")[0].strip())
-    clashes = sorted(manifest.symbol(e, version) for members in members_by_object.values()
-                     for e in members if manifest.symbol(e, version) in ledger)
+    clashes = sorted(symbol for members in members_by_object.values()
+                     for e in members for symbol in manifest.symbols(e, version) if symbol in ledger)
     if clashes:
         raise ManifestError(f"{manifest.group}: {version} symbols.txt still defines {', '.join(clashes[:5])}")
 
@@ -491,14 +603,16 @@ def generate(version, manifest_path, all_manifests=None):
     gen = ROOT / "build" / version / "gen"
     gen.mkdir(parents=True, exist_ok=True)
     objects = {obj["name"]: obj for obj in manifest.objects.get(version, [])}
+    sheets = {e["name"]: encode_sheet(manifest, e, version) for members in members_by_object.values()
+              for e in members if e.get("format") == "sprite_sheet"}
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = Path(tmpdir)
         for name, members in members_by_object.items():
             if name.endswith(".c"):
                 emit_c(manifest, version, members, gen / name, all_manifests)
             else:
-                emit_s(manifest, version, members, gen / name, tmp, objects[name])
-    emit_header(manifest, version, members_by_object, gen / f"{manifest.group}.h")
+                emit_s(manifest, version, members, gen / name, tmp, objects[name], sheets)
+    emit_header(manifest, version, members_by_object, gen / f"{manifest.group}.h", sheets)
 
 
 def main():
