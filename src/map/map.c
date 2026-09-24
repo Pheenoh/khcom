@@ -9683,14 +9683,6 @@ const UnkStruct_0984B968 gUnk_0984B968[14] = {
     { gUnk_09991224, gUnk_0994DF64, gUnk_0994E364, gUnk_0994D764, gUnk_0994DB64, gUnk_0994EF64, gUnk_0994F364, gUnk_0994E764, gUnk_0994EB64 },
 };
 
-const char gTaskNameMapDoor[] = "Task_MapDoor";
-
-const char gTaskNameMapMenu[] = "Task_MapMenu";
-
-const char gTaskNameMapSave[] = "Task_MapSave";
-
-const char gTaskNameMapAnm[] = "Task_MapAnm";
-
 u8 gUnk_09EF6A34[14] = {
     40,
     40,
@@ -9861,7 +9853,7 @@ TaskDesc gTaskDescMapFix = {
 };
 
 TaskDesc gTaskDescMapDoor = {
-    gTaskNameMapDoor,
+    "Task_MapDoor",
     (TaskInitFunc)Task_MapDoor_0,
     (TaskUpdateFunc)Task_MapDoor_1,
     (TaskFunc)Task_MapDoor_2,
@@ -9870,7 +9862,7 @@ TaskDesc gTaskDescMapDoor = {
 };
 
 TaskDesc gTaskDescMapMenu = {
-    gTaskNameMapMenu,
+    "Task_MapMenu",
     (TaskInitFunc)Task_MapMenu_0,
     (TaskUpdateFunc)Task_MapMenu_1,
     (TaskFunc)Task_MapMenu_2,
@@ -9883,7 +9875,7 @@ TaskDesc gTaskDescMapMenu = {
 };
 
 TaskDesc gTaskDescMapSave = {
-    gTaskNameMapSave,
+    "Task_MapSave",
     (TaskInitFunc)Task_MapSave_0,
     (TaskUpdateFunc)Task_MapSave_1,
     (TaskFunc)Task_MapSave_2,
@@ -9896,7 +9888,7 @@ TaskDesc gTaskDescMapSave = {
 };
 
 TaskDesc gTaskDescMapAnm = {
-    gTaskNameMapAnm,
+    "Task_MapAnm",
     (TaskInitFunc)Task_MapAnm_0,
     (TaskUpdateFunc)Task_MapAnm_1,
     (TaskFunc)Task_MapAnm_2,

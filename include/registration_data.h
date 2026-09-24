@@ -279,7 +279,6 @@ extern TaskDesc gTaskDescSrollBSecn;
 extern TaskDesc gTaskDescSrollBCrtn;
 extern TaskDesc gTaskDescSrollCChar;
 
-extern const char gTaskNameLockon[];
 extern const char gModeNameSioBattle[];
 extern const char gModeNameSioBtlConnect[];
 extern const char gModeNameSioBtlOption[];
@@ -362,10 +361,6 @@ extern const char gModeNameMenuLoad[];
 extern const char gModeNameMenuMsg[];
 extern const char gTaskNameMapRnd[];
 extern const char gTaskNameMapFix[];
-extern const char gTaskNameMapDoor[];
-extern const char gTaskNameMapMenu[];
-extern const char gTaskNameMapSave[];
-extern const char gTaskNameMapAnm[];
 extern const char gModeNameMsTop[];
 
 extern TaskDesc gUnk_09EE484C;

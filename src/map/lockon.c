@@ -836,10 +836,8 @@ u16 GetCardMooglePointValue(u16 a) {
     return v;
 }
 
-const char gTaskNameLockon[] = "task_lockon";
-
 TaskDesc gTaskDescLockon = {
-    gTaskNameLockon,
+    "task_lockon",
     (TaskInitFunc)task_lockon_0,
     (TaskUpdateFunc)task_lockon_1,
     (TaskFunc)task_lockon_2,

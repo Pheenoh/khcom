@@ -5607,23 +5607,6 @@ const u8 gUnk_0984C310[28] __attribute__((aligned(4))) = {
     39, 40, 41, 42, 43, 44, 45, 46, 46, 46, 47, 47, 48, 48,
 };
 
-const char gTaskNameMapGoofy[] = "Task_MapGoofy";
-
-const char gTaskNameMapNamine[] = "Task_MapNamine";
-
-const char gTaskNameMapNiseriku[] = "Task_MapNiseriku";
-
-const char gTaskNameMapMickey[] = "Task_MapMickey";
-
-const char gTaskNameMapTutorial[] = "Task_MapTutorial";
-
-const char gTaskNameMapStair[] = "Task_MapStair";
-
-const char gTaskNameMapFaint[] = "Task_MapFaint";
-
-const char gTaskNameMapDmg[] = "Task_MapDmg";
-
-const char gTaskNameMapFloor[] = "Task_MapFloor";
 TaskDesc gTaskDescMapEnm00 = {
     gTaskNameMapEnm00,
     (TaskInitFunc)Task_MapEnm00_0,
@@ -5960,7 +5943,7 @@ TaskDesc gTaskDescMapDonald = {
 };
 
 TaskDesc gTaskDescMapGoofy = {
-    gTaskNameMapGoofy,
+    "Task_MapGoofy",
     (TaskInitFunc)Task_MapGoofy_0,
     (TaskUpdateFunc)Task_MapGoofy_1,
     (TaskFunc)Task_MapGoofy_2,
@@ -5969,7 +5952,7 @@ TaskDesc gTaskDescMapGoofy = {
 };
 
 TaskDesc gTaskDescMapNamine = {
-    gTaskNameMapNamine,
+    "Task_MapNamine",
     (TaskInitFunc)Task_MapNamine_0,
     (TaskUpdateFunc)Task_MapNamine_1,
     (TaskFunc)Task_MapNamine_2,
@@ -5978,7 +5961,7 @@ TaskDesc gTaskDescMapNamine = {
 };
 
 TaskDesc gTaskDescMapNiseriku = {
-    gTaskNameMapNiseriku,
+    "Task_MapNiseriku",
     (TaskInitFunc)Task_MapNiseriku_0,
     (TaskUpdateFunc)Task_MapNiseriku_1,
     (TaskFunc)Task_MapNiseriku_2,
@@ -5987,7 +5970,7 @@ TaskDesc gTaskDescMapNiseriku = {
 };
 
 TaskDesc gTaskDescMapMickey = {
-    gTaskNameMapMickey,
+    "Task_MapMickey",
     (TaskInitFunc)Task_MapMickey_0,
     (TaskUpdateFunc)Task_MapMickey_1,
     (TaskFunc)Task_MapMickey_2,
@@ -5996,7 +5979,7 @@ TaskDesc gTaskDescMapMickey = {
 };
 
 TaskDesc gTaskDescMapTutorial = {
-    gTaskNameMapTutorial,
+    "Task_MapTutorial",
     (TaskInitFunc)Task_MapTutorial_0,
     (TaskUpdateFunc)Task_MapTutorial_1,
     (TaskFunc)Task_MapTutorial_2,
@@ -6005,7 +5988,7 @@ TaskDesc gTaskDescMapTutorial = {
 };
 
 TaskDesc gTaskDescMapStair = {
-    gTaskNameMapStair,
+    "Task_MapStair",
     (TaskInitFunc)Task_MapStair_0,
     (TaskUpdateFunc)Task_MapStair_1,
     (TaskFunc)Task_MapStair_2,
@@ -6014,7 +5997,7 @@ TaskDesc gTaskDescMapStair = {
 };
 
 TaskDesc gTaskDescMapFaint = {
-    gTaskNameMapFaint,
+    "Task_MapFaint",
     (TaskInitFunc)Task_MapFaint_0,
     (TaskUpdateFunc)Task_MapFaint_1,
     (TaskFunc)Task_MapFaint_2,
@@ -6023,7 +6006,7 @@ TaskDesc gTaskDescMapFaint = {
 };
 
 TaskDesc gTaskDescMapDmg = {
-    gTaskNameMapDmg,
+    "Task_MapDmg",
     (TaskInitFunc)Task_MapDmg_0,
     (TaskUpdateFunc)Task_MapDmg_1,
     (TaskFunc)Task_MapDmg_2,
@@ -6121,7 +6104,7 @@ MapNameText* gUnk_09EF7000[12] = {
 };
 
 TaskDesc gTaskDescMapFloor = {
-    gTaskNameMapFloor,
+    "Task_MapFloor",
     (TaskInitFunc)Task_MapFloor_0,
     (TaskUpdateFunc)Task_MapFloor_1,
     (TaskFunc)Task_MapFloor_2,

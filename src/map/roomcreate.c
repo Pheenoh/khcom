@@ -3,8 +3,6 @@
 #include "m4a_song.h"
 #include "roomcreate.h"
 
-const char gTaskNameRoomcreate[] = "task_roomcreate";
-
 void task_roomcreate_0(RoomCreateWork* work) {
     FldActor* act;
 
@@ -185,4 +183,4 @@ void task_roomcreate_3(RoomCreateWork* work) {
     TaskPoolDestroy(&work->tasks);
 }
 
-TaskDesc gTaskDescRoomcreate = { gTaskNameRoomcreate, task_roomcreate_0, task_roomcreate_1, task_roomcreate_2, task_roomcreate_3, 0x44 };
+TaskDesc gTaskDescRoomcreate = { "task_roomcreate", task_roomcreate_0, task_roomcreate_1, task_roomcreate_2, task_roomcreate_3, 0x44 };

@@ -3,10 +3,6 @@
 #include "romcri.h"
 #include "romcri_backgrounds.h"
 
-const char gTaskNameRomcriEff[] = "task_romcri_eff";
-
-const char gTaskNameRomcriEff2[] = "task_romcri_eff2";
-
 void task_romcri_eff_0(RomcriEffWork* work, s32 arg) {
     SetupBg(1, 0, 23, 12);
     work->angle = arg;
@@ -278,6 +274,6 @@ u16 func_0803FDC8(const BtlFormEntry* list) {
     return total;
 }
 
-TaskDesc gTaskDescRomcriEff = { gTaskNameRomcriEff, task_romcri_eff_0, task_romcri_eff_1, 0, task_romcri_eff_3, 0x4 };
+TaskDesc gTaskDescRomcriEff = { "task_romcri_eff", task_romcri_eff_0, task_romcri_eff_1, 0, task_romcri_eff_3, 0x4 };
 
-TaskDesc gTaskDescRomcriEff2 = { gTaskNameRomcriEff2, task_romcri_eff2_0, task_romcri_eff2_1, 0, task_romcri_eff2_3, 0x4 };
+TaskDesc gTaskDescRomcriEff2 = { "task_romcri_eff2", task_romcri_eff2_0, task_romcri_eff2_1, 0, task_romcri_eff2_3, 0x4 };

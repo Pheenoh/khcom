@@ -70,10 +70,6 @@ const u16 gUnk_0813D28C[8][8] = {
     { 109, 110, 111, 112, 122, 123, 135, 0 },
 };
 
-const char gTaskNameFldRiku[] = "task_fld_riku";
-
-const char gTaskNameFldShadow[] = "task_fld_shadow";
-
 void func_08031BC4(FldActor* act) {
     if ((GetKeysHeld() & DPAD_LEFT) && (GetKeysHeld() & DPAD_DOWN)) {
         act->angle = 173;
@@ -3505,6 +3501,6 @@ void task_fld_shadow_3(FldShadowWork* work) {
 
 TaskDesc gTaskDescFldSora = { gTaskNameFldSora, task_fld_sora_0, task_fld_sora_1, task_fld_sora_2, task_fld_sora_3, 0xC0 };
 
-TaskDesc gTaskDescFldRiku = { gTaskNameFldRiku, task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
+TaskDesc gTaskDescFldRiku = { "task_fld_riku", task_fld_riku_0, task_fld_riku_1, task_fld_riku_2, task_fld_riku_3, 0xC0 };
 
-TaskDesc gTaskDescFldShadow = { gTaskNameFldShadow, task_fld_shadow_0, task_fld_shadow_1, task_fld_shadow_2, task_fld_shadow_3, 0x2C };
+TaskDesc gTaskDescFldShadow = { "task_fld_shadow", task_fld_shadow_0, task_fld_shadow_1, task_fld_shadow_2, task_fld_shadow_3, 0x2C };
