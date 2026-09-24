@@ -15,7 +15,7 @@
 #include "sprites_level_up.h"
 #include "sprites_smn.h"
 
-const s16 gUnk_09033D50[147] = {
+const s16 gSoraEventIds[147] = {
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
     24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
@@ -37,7 +37,7 @@ const s16 gUnk_09033D50[147] = {
     -1,
 };
 
-const s16 gUnk_09033E76[49] = {
+const s16 gRikuEventIds[49] = {
 #ifdef VERSION_EU
     147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158,
     159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
@@ -62,8 +62,8 @@ const char gUnk_09033EF8[] = "\x82\x64\x82\x75\x82\x64\x82\x6d\x82\x73\x81\x40\x
 
 const char gUnk_09033F10[] = "\x82\x6d\x82\x8f\x81\x40\x81\x81";
 
-s16 gUnk_02034A94 __attribute__((aligned(4)));
-static u8 gUnk_02034A96;
+s16 gEventSelectIndex __attribute__((aligned(4)));
+static u8 sEventSelectList;
 UnkStruct_02039DD0* gUnk_02039DD0 EWRAM_COMMON(4);
 
 s16 func_08075064(u8 a) {
@@ -71,12 +71,12 @@ s16 func_08075064(u8 a) {
 
     switch (a) {
     case 0:
-        while (gUnk_09033D50[n] != -1) {
+        while (gSoraEventIds[n] != -1) {
             n++;
         }
         break;
     case 1:
-        while (gUnk_09033E76[n] != -1) {
+        while (gRikuEventIds[n] != -1) {
             n++;
         }
         break;
@@ -97,22 +97,22 @@ void mode_eventselect_0(void) {
 
 void mode_eventselect_1(void) {
     if (GetKeysRepeat() & DPAD_UP) {
-        if (gUnk_02034A96 != 0) {
-            gUnk_02034A96--;
+        if (sEventSelectList != 0) {
+            sEventSelectList--;
         } else {
-            gUnk_02034A96 = 1;
+            sEventSelectList = 1;
         }
     }
 
     if (GetKeysRepeat() & DPAD_DOWN) {
-        if (gUnk_02034A96 == 0) {
-            gUnk_02034A96++;
+        if (sEventSelectList == 0) {
+            sEventSelectList++;
         } else {
-            gUnk_02034A96 = 0;
+            sEventSelectList = 0;
         }
     }
 
-    switch (gUnk_02034A96) {
+    switch (sEventSelectList) {
     case 0:
         func_0805FCB0(0, 0, 2, gUnk_09033ED8);
         func_0805FCB0(0, 10, 2, gUnk_09033EDC);
@@ -126,49 +126,49 @@ void mode_eventselect_1(void) {
     }
 
     if (GetKeysRepeat() & DPAD_RIGHT) {
-        gUnk_02034A94++;
+        gEventSelectIndex++;
     }
 
     if (GetKeysRepeat() & DPAD_LEFT) {
-        gUnk_02034A94--;
+        gEventSelectIndex--;
     }
 
-    if (func_08075064(gUnk_02034A96) - 1 < gUnk_02034A94) {
-        gUnk_02034A94 = 0;
+    if (func_08075064(sEventSelectList) - 1 < gEventSelectIndex) {
+        gEventSelectIndex = 0;
     }
 
-    if (gUnk_02034A94 < 0) {
-        gUnk_02034A94 = func_08075064(gUnk_02034A96) - 1;
+    if (gEventSelectIndex < 0) {
+        gEventSelectIndex = func_08075064(sEventSelectList) - 1;
     }
 
     func_0805FCB0(10, 0, 2, gUnk_09033EE0);
     func_0805FCB0(10, 10, 2, gUnk_09033EF8);
     func_0805FCB0(20, 40, 2, gUnk_09033F10);
-    func_0805FC04(100, 40, 2, gUnk_02034A94 + 1);
+    func_0805FC04(100, 40, 2, gEventSelectIndex + 1);
 
-    switch (gUnk_02034A96) {
+    switch (sEventSelectList) {
     case 0:
-        func_0805FCB0(20, 80, 2, gEventNames[gUnk_09033D50[gUnk_02034A94]]);
+        func_0805FCB0(20, 80, 2, gEventNames[gSoraEventIds[gEventSelectIndex]]);
         break;
     case 1:
-        func_0805FCB0(20, 80, 2, gEventNames[gUnk_09033E76[gUnk_02034A94]]);
+        func_0805FCB0(20, 80, 2, gEventNames[gRikuEventIds[gEventSelectIndex]]);
         break;
     }
 
     if (GetKeysPressed() & A_BUTTON) {
-        switch (gUnk_02034A96) {
+        switch (sEventSelectList) {
         case 0:
 #ifdef VERSION_EU
-            ModeRequest(&gUnkEu_09F5D6EC, gUnk_09033D50[gUnk_02034A94] | 0x8000);
+            ModeRequest(&gUnkEu_09F5D6EC, gSoraEventIds[gEventSelectIndex] | 0x8000);
 #else
-            func_0806180C(gUnk_09033D50[gUnk_02034A94]);
+            func_0806180C(gSoraEventIds[gEventSelectIndex]);
 #endif
             break;
         case 1:
 #ifdef VERSION_EU
-            ModeRequest(&gUnkEu_09F5D6EC, gUnk_09033E76[gUnk_02034A94] | 0x8000);
+            ModeRequest(&gUnkEu_09F5D6EC, gRikuEventIds[gEventSelectIndex] | 0x8000);
 #else
-            func_0806180C(gUnk_09033E76[gUnk_02034A94]);
+            func_0806180C(gRikuEventIds[gEventSelectIndex]);
 #endif
             break;
         }

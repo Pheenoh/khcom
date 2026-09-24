@@ -997,7 +997,7 @@ void task_btl_hpoth_3(BtlHpothWork* work) {
 
 void func_0805DA64(u16 a) {
     gDispCnt = (gDispCnt & ~DISPCNT_MODE_MASK) | DISPCNT_MODE_1;
-    func_080A411C(&gBtlWork->taskPools[1], 0, a);
+    CreateCardMessageTask(&gBtlWork->taskPools[1], 0, a);
 }
 
 void func_0805DA98(u16 a) {

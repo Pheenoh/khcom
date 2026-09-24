@@ -5055,7 +5055,7 @@ void mode_worldselect_1(void) {
         if (gUnk_020350C2 <= 0) {
             if (gUnk_020350EE != 0) {
                 gUnk_020350EC = 0;
-                func_080A411C(&gWorldselectTaskPool, 2, 70);
+                CreateCardMessageTask(&gWorldselectTaskPool, 2, 70);
                 gUnk_020350C0 = 2;
             } else {
                 gUnk_020350C0 = 3;
@@ -5072,7 +5072,7 @@ void mode_worldselect_1(void) {
     case 2:
         if (func_080A42C8() == 0) {
             if (gUnk_020350EC == 0) {
-                func_080A411C(&gWorldselectTaskPool, 2, 71);
+                CreateCardMessageTask(&gWorldselectTaskPool, 2, 71);
                 gUnk_020350EC++;
             } else {
                 gGameState.progression.unk_82 |= 1;

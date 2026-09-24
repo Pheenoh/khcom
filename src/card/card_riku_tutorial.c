@@ -55,7 +55,7 @@ u8 gUnk_0203A9E0 EWRAM_COMMON(4);
 
 u8 func_080ABEF8(u32* a, u8* b);
 s32 func_080AC140(s32 a);
-void func_080A4188(void* pool, u16 b);
+void CreateSysmsgwinTask(void* pool, u16 b);
 u8 func_080A42C8(void);
 
 void func_080AB96C(void* a) {
@@ -79,7 +79,7 @@ void Mode_riku_deckTutorial_1(void) {
         switch (gUnk_0203A9E0) {
         case 0:
             if (!func_080A42C8() && gUnk_0203A9E0 == 0) {
-                func_080A4188(gUnk_02034B20, 0xB1);
+                CreateSysmsgwinTask(gUnk_02034B20, 0xB1);
                 gUnk_0203A9E0 = 1;
             }
             break;
@@ -2006,7 +2006,7 @@ s32 func_080AE28C(u32* p) {
     return 106;
 }
 
-void func_080A411C(void* pool, u32 a, u16 b);
+void CreateCardMessageTask(void* pool, u32 a, u16 b);
 u8 func_080A42C8(void);
 #ifdef VERSION_EU
 void eu_080AB9FC(void) {
@@ -2014,7 +2014,7 @@ void eu_080AB9FC(void) {
     SetBgMode0();
     SetupBg(0, 0, 28, 14);
     TaskPoolInit(&gUnkEu_02034B38, 1);
-    func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
+    CreateCardMessageTask(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
 }
 void eu_080ABA38(void) {
     if (func_080A42C8() == 0) {
@@ -2022,7 +2022,7 @@ void eu_080ABA38(void) {
         if (gUnkEu_02034B4C == 179) {
             gUnkEu_02034B4C = 0;
         }
-        func_080A411C(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
+        CreateCardMessageTask(&gUnkEu_02034B38, 0, gUnkEu_02034B4C);
     }
     TaskPoolUpdate(&gUnkEu_02034B38);
     TaskPoolDraw(&gUnkEu_02034B38);

@@ -22,6 +22,6 @@ typedef struct CardMessageDef {
     u16 unk_12;
 } CardMessageDef;
 
-extern CardMessageDef gUnk_09EE8008[];
+extern CardMessageDef gCardMessageDefs[];
 
 #endif

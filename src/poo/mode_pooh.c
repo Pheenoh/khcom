@@ -608,7 +608,7 @@ void func_080C7BCC(u16 a) {
     if (a == 0xFFFD || a == 0xFFFE) {
         a = 0x45;
     }
-    func_080A411C(&gUnk_02034D30, 0, a);
+    CreateCardMessageTask(&gUnk_02034D30, 0, a);
 }
 
 u16 func_080C7BF8(u8 kind, u8 count, s32 x, s32 y, s32 z) {

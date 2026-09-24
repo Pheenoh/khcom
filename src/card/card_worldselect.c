@@ -241,7 +241,7 @@ void MapSelect_0(MapSelectWork* w, u8* a) {
     InitTextSlots(&w->unk_040[12], 48);
     if (w->card != 0) {
         *(MapcardWork**)w->unk_1F0 = w->card;
-        w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
+        w->unk_287[0] = LoadTextSlots(GetRoomName(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
     }
     w->unk_244 = 0x19100;
     FadeSetPaletteExcluded((u16)((*(ObjPalette**)&w->unk_040[8])->index + 16), 1);
@@ -747,7 +747,7 @@ u8 func_08092A34(MapSelectWork* w, void* a) {
     if (w->unk_298 == 0) {
         if (w->card != *(MapcardWork**)w->unk_1F0) {
             if (w->card != 0) {
-                w->unk_287[0] = LoadTextSlots(func_08093C18(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
+                w->unk_287[0] = LoadTextSlots(GetRoomName(gUnk_09EE4C80[w->card->unk_20].unk_20), &w->unk_040[12]);
                 func_08093C44(w->card->unk_20, w);
             } else {
                 w->unk_287[0] = 0;
@@ -1425,11 +1425,11 @@ void func_08093C04(void) {
     gUnk_02034ACC = 0;
 }
 
-void* func_08093C18(u16 a) {
+void* GetRoomName(u16 a) {
 #ifdef VERSION_EU
-    return eu_0805E924(gUnk_09EF7048[a]);
+    return eu_0805E924(gRoomNames[a]);
 #else
-    return gUnk_09EF7048[a];
+    return gRoomNames[a];
 #endif
 }
 
@@ -1721,7 +1721,7 @@ u8 func_0809423C(MapSelectWork* w, void* a) {
             w->unk_286 = 0;
 
             if (w->unk_2C2 <= 98) {
-                func_080A4188((u8*)w, w->unk_2C2);
+                CreateSysmsgwinTask((u8*)w, w->unk_2C2);
                 w->unk_2C2++;
             } else {
                 n = (MapcardWork*)ListPoolFirst(&w->cards);
@@ -1765,7 +1765,7 @@ u8 func_0809438C(MapSelectWork* w, void* a) {
             w->unk_286 = 0;
 
             if (w->unk_2C2 <= 0x66) {
-                func_080A4188((u8*)w, w->unk_2C2);
+                CreateSysmsgwinTask((u8*)w, w->unk_2C2);
                 w->unk_2C2++;
             } else {
                 gGameState.progression.unk_82 |= 8;
@@ -1800,7 +1800,7 @@ u8 func_08094404(MapSelectWork* w, void* a) {
         if (w->unk_286 == 8) {
             w->unk_286 = 0;
             if (w->unk_2C2 <= 0x71) {
-                func_080A4188((u8*)w, w->unk_2C2);
+                CreateSysmsgwinTask((u8*)w, w->unk_2C2);
                 w->unk_2C2++;
             } else {
                 node = ListPoolFirst(&w->cards);

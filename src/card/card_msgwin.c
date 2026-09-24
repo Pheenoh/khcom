@@ -79,7 +79,7 @@ void func_080A33C4(UnkStruct_080A3F5C* w, void* a) {
     CpuSet((void*)&zero, w, 0x05000054);
     ((UnkStruct_02034AFC*)w)->unk_13C = func_0806BA74(0, 0);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     w->tiles3 = 0;
     w->palette = 0;
     w->tiles4 = 0;
@@ -510,7 +510,7 @@ u8 func_080A4010(UnkStruct_080A3F5C* w, void* a) {
         SetTaskUpdate(a, (TaskUpdateFunc)func_080A3DD0);
     } else if (w->unk_14E == 1) {
         w->unk_14E = 0;
-        w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
 #ifdef VERSION_JP
         w->unk_143 = func_0806BDB8(gUnk_09033CA8[w->messageDef->unk_04],
                                    gUnk_09033CB8[w->messageDef->unk_04],
@@ -545,15 +545,15 @@ s32 func_080A40EC(u64* src) {
     return 0;
 }
 
-void func_080A411C(void* pool, u32 a, u16 b) {
+void CreateCardMessageTask(void* pool, u32 a, u16 b) {
     UnkStruct_080A4188 args;
 
     args.unk_00 = a;
     args.unk_04 = b;
     args.unk_07 = 0;
 
-    if (gUnk_09EE8008[b].unk_00 == 62) {
-        if (gUnk_09EE8008[b].flags & 2) {
+    if (gCardMessageDefs[b].unk_00 == 62) {
+        if (gCardMessageDefs[b].flags & 2) {
             TaskCreate(pool, &gUnk_09EE8E48, &args);
         } else {
             TaskCreate(pool, &gUnk_09EE8E30, &args);
@@ -563,14 +563,14 @@ void func_080A411C(void* pool, u32 a, u16 b) {
     }
 }
 
-void func_080A4188(void* pool, u16 b) {
+void CreateSysmsgwinTask(void* pool, u16 b) {
     UnkStruct_080A4188 args;
 
     args.unk_00 = 0;
     args.unk_04 = b;
     args.unk_07 = 2;
 
-    if (gUnk_09EE8008[b].flags & 2) {
+    if (gCardMessageDefs[b].flags & 2) {
         TaskCreate(pool, &gUnk_09EE8E48, &args);
     } else {
         TaskCreate(pool, &gUnk_09EE8E30, &args);
@@ -598,7 +598,7 @@ void func_080A4234(void* pool, u32 a, u16 b) {
         if ((u8)func_080A40EC((u64*)&args) == 0) {
             func_080A4D7C((u64*)&args);
         }
-    } else if (gUnk_09EE8008[b].unk_00 == 62) {
+    } else if (gCardMessageDefs[b].unk_00 == 62) {
         TaskCreate(pool, &gUnk_09EE8E30, &args);
     } else {
         TaskCreate(pool, &gUnk_09EE8E18, &args);
@@ -627,7 +627,7 @@ u8 func_080A42E0(void) {
     return func_080A4DAC();
 }
 
-CardMessageDef gUnk_09EE8008[] = {
+CardMessageDef gCardMessageDefs[] = {
     {
         1, 3, 1, 3, 0,
 #if defined(VERSION_EU)

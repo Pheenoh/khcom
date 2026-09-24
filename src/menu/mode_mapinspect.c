@@ -313,7 +313,7 @@ void func_081073F0(void) {
         gUnk_02035F90 = p->category == 3;
         gUnk_02035E74 = LoadObjPalette(gUnk_09A3D2FC + p->category * 32, 32);
         q = &gUnk_02035F98;
-        *q = LoadTextSlots(func_08093C18(p->cardType), gUnk_02035F94);
+        *q = LoadTextSlots(GetRoomName(p->cardType), gUnk_02035F94);
 #ifdef VERSION_EU
         {
             u8** strings = gUnk_09EE90D0[p->cardType]->strings;

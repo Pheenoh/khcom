@@ -1330,7 +1330,7 @@ void func_080E0820(void);
 void* CreateAllmapRoomTask(void* pool);
 void func_080EC500(UnkStruct_02034FE4* w);
 void func_080EC544(UnkStruct_02034FE4* w);
-void func_080EC57C(s32 arg);
+void Mode_MenuMsg_0(s32 arg);
 void func_080104F4(void);
 void func_080E0878(void);
 void func_080E0900(MapCell* p, s32 a, s32 b);

@@ -11,7 +11,7 @@ typedef u8 MapNameText;
 typedef LocalizedText MapNameText;
 #endif
 
-extern MapNameText* gUnk_09EF7048[28];
+extern MapNameText* gRoomNames[28];
 
 
 #ifdef VERSION_EU

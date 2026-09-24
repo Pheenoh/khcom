@@ -1030,7 +1030,7 @@ u16 func_080D8B84(void** a, void** b, void** c) {
 void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     gStockMesDispWork = (u8*)work;
     *(StockMesDispParam*)&work->x = *arg;
-    work->unk_44 = func_080A235C(work->unk_42);
+    work->unk_44 = GetCardHelpTextCount(work->unk_42);
 
     if (work->unk_40 >= work->unk_44 - 1) {
         work->unk_40 = work->unk_44 - 1;
@@ -1039,7 +1039,7 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
     work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
     TaskPoolInit(&work->tasks, 1);
     work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16,
-                                        func_080A2334(work->unk_42, work->unk_40));
+                                        GetCardHelpText(work->unk_42, work->unk_40));
     work->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6948, 2), gUnk_097A2CF6);
     work->palette2 = LoadObjPalette(gUnk_0984B258, 0x20);
     work->gfx = gUnk_09EF6948[0];
@@ -1066,7 +1066,7 @@ u8 stock_mes_disp_1(StockMesDispWork* work) {
     if (changed) {
         m4aSongNumStart(SONG_SYS_CANSEL);
         func_08000DE8(&work->tasks, work->task);
-        work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, func_080A2334(work->unk_42, work->unk_40));
+        work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16, GetCardHelpText(work->unk_42, work->unk_40));
     }
 
     TaskPoolUpdate(&work->tasks);

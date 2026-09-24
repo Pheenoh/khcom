@@ -18,8 +18,8 @@
 #include "map_resource_assets.h"
 #include "map_text_data.h"
 
-extern MapNameText* gUnk_09EF6FCC[13];
-extern MapNameText* gUnk_09EF7000[12];
+extern MapNameText* gFloorNames[13];
+extern MapNameText* gBasementFloorNames[12];
 extern u8 gUnk_09EF6C38[2];
 
 #ifdef VERSION_EU
@@ -3423,12 +3423,12 @@ void func_080F41A4(MapGmk04Work* w) {
 
     if (state & 0x4000) {
         gFieldState->flags |= 0x1000;
-        func_080A411C(&w->tasks, 0, 0x69);
+        CreateCardMessageTask(&w->tasks, 0, 0x69);
         w->update = func_080F4258;
     } else if (gFieldState->unk_68 == (s32)&w->unk_004) {
         gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags = state | 0x4000;
-        func_080A411C(&w->tasks, 0, 0x67);
+        CreateCardMessageTask(&w->tasks, 0, 0x67);
         w->update = func_080F4224;
     }
 }
@@ -3623,7 +3623,7 @@ void func_080F46FC(MapGmk06Work* w) {
     if (gFieldState->unk_68 == (s32)&w->unk_004 && (gGameState.progression.unk_82 & 0x100) == 0) {
         gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags |= 0x4000;
-        func_080A411C(&w->tasks, 0, 0x84);
+        CreateCardMessageTask(&w->tasks, 0, 0x84);
         gFieldState->unk_6C = 30;
         w->update = func_080F47DC;
     } else if ((u8)func_080E03C0((s32)&w->unk_004) != 0 && (GetKeysPressed() & A_BUTTON)) {
@@ -4200,7 +4200,7 @@ void Task_MapPrzCard_3(MapPrzCardWork* w) {
 }
 
 void func_080F5800(MapPrzStockWork* w) {
-    func_080A411C(&w->tasks, 0, w->unk_00[1]);
+    CreateCardMessageTask(&w->tasks, 0, w->unk_00[1]);
     w->update = func_080F5820;
 }
 
@@ -4377,9 +4377,9 @@ void func_080F5C60(MapDonaldWork* w) {
         gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
-            func_080A411C(&w->tasks, 0, 24);
+            CreateCardMessageTask(&w->tasks, 0, 24);
         } else {
-            func_080A411C(&w->tasks, 0, gUnk_0984C2E4[gUnk_0203C590.unk_00]);
+            CreateCardMessageTask(&w->tasks, 0, gUnk_0984C2E4[gUnk_0203C590.unk_00]);
         }
 
         w->update = func_080F5CDC;
@@ -4492,9 +4492,9 @@ void func_080F5F88(MapGoofyWork* w) {
         gFieldState->flags |= 0x1000;
 
         if ((s8)gGameState.floor == 12 && gUnk_0203C590.unk_06 == 0xFD) {
-            func_080A411C(&w->tasks, 0, 49);
+            CreateCardMessageTask(&w->tasks, 0, 49);
         } else {
-            func_080A411C(&w->tasks, 0, gUnk_0984C310[gUnk_0203C590.unk_00]);
+            CreateCardMessageTask(&w->tasks, 0, gUnk_0984C310[gUnk_0203C590.unk_00]);
         }
 
         w->update = func_080F6004;
@@ -4607,9 +4607,9 @@ void func_080F62B0(MapNamineWork* w) {
         gFieldState->flags |= 0x1000;
 
         if (gUnk_0203C590.unk_00 == 27) {
-            func_080A411C(&w->tasks, 0, 0x33);
+            CreateCardMessageTask(&w->tasks, 0, 0x33);
         } else {
-            func_080A411C(&w->tasks, 0, 0x32);
+            CreateCardMessageTask(&w->tasks, 0, 0x32);
         }
         w->update = func_080F6314;
     }
@@ -4730,7 +4730,7 @@ void Task_MapNamine_3(MapNamineWork* w) {
 void func_080F65EC(MapNamineWork* w) {
     if (w->unk_0C1 != 0 && (GetKeysPressed() & A_BUTTON)) {
         gFieldState->flags |= 0x1000;
-        func_080A411C(&w->unk_0C4, 0, 0x34);
+        CreateCardMessageTask(&w->unk_0C4, 0, 0x34);
         w->update = func_080F6634;
     }
 }
@@ -4917,14 +4917,14 @@ void func_080F6A60(MapMickeyWork* w) {
 
         switch (gUnk_0203C590.unk_00) {
         case 20:
-            func_080A411C(&w->tasks, 0, 0x3F);
+            CreateCardMessageTask(&w->tasks, 0, 0x3F);
             break;
         case 22:
-            func_080A411C(&w->tasks, 0, 0x3D);
+            CreateCardMessageTask(&w->tasks, 0, 0x3D);
             break;
         case 23:
         default:
-            func_080A411C(&w->tasks, 0, 0x3E);
+            CreateCardMessageTask(&w->tasks, 0, 0x3E);
             break;
         }
 
@@ -5034,7 +5034,7 @@ void func_080F6D70(MapTutorialWork* w) {
         if (!(flags & 0x2000) && !(gUnk_0203C7AC->flags & 0x2000) && (gGameState.progression.unk_82 & 0x10)) {
             gUnk_0203C7AC->flags |= 0x4000;
             gFieldState->flags = flags | 0x1000;
-            func_080A411C(&w->tasks, 0, 0x6A);
+            CreateCardMessageTask(&w->tasks, 0, 0x6A);
             w->update = func_080F6DE8;
         }
     }
@@ -5107,7 +5107,7 @@ void func_080F6FC4(MapTutorialWork* w) {
     if ((gUnk_0203C7AC->flags & 0x10) == 0) {
         gGameState.progression.unk_82 |= 0x2000;
         gFieldState->flags |= 0x1000;
-        func_080A411C(&w->tasks, 0, 0x6B);
+        CreateCardMessageTask(&w->tasks, 0, 0x6B);
         w->update = func_080F7024;
     }
 }
@@ -5148,7 +5148,7 @@ void func_080F70F4(MapTutorialWork* w) {
     if (AnimIsFinished(a)) {
         AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
         SetObjTileSource(w->tiles, gUnk_08957290);
-        func_080A411C(&w->tasks, 0, 0x6C);
+        CreateCardMessageTask(&w->tasks, 0, 0x6C);
         w->update = func_080F7160;
     } else {
         w->gfx = AnimUpdate(a);
@@ -5328,7 +5328,7 @@ void func_080F7594(MapStairWork* w) {
     if ((u8)func_080F7488((UnkStruct_080DFF1C*)w, 0x3000) != 0) {
         gFieldState->flags |= 0x1000;
         gUnk_0203C7AC->flags |= 0x4000;
-        func_080A411C(&w->tasks, 0, 0xA7);
+        CreateCardMessageTask(&w->tasks, 0, 0xA7);
         w->update = func_080F75E4;
     }
 }
@@ -5490,14 +5490,14 @@ void Task_MapDmg_3(u8* work) {
 void* func_080F7AB4(void) {
 #ifdef VERSION_EU
     if (gGameState.flags & 8) {
-        return eu_0805E924(gUnk_09EF7000[(s8)gGameState.floor]);
+        return eu_0805E924(gBasementFloorNames[(s8)gGameState.floor]);
     }
-    return eu_0805E924(gUnk_09EF6FCC[(s8)gGameState.floor]);
+    return eu_0805E924(gFloorNames[(s8)gGameState.floor]);
 #else
     if (gGameState.flags & 8) {
-        return gUnk_09EF7000[(s8)gGameState.floor];
+        return gBasementFloorNames[(s8)gGameState.floor];
     }
-    return gUnk_09EF6FCC[(s8)gGameState.floor];
+    return gFloorNames[(s8)gGameState.floor];
 #endif
 }
 
@@ -6014,7 +6014,7 @@ TaskDesc gTaskDescMapDmg = {
     0xC,
 };
 
-MapNameText* gUnk_09EF6FCC[13] = {
+MapNameText* gFloorNames[13] = {
 #if defined(VERSION_US)
     gMapNameTextUs_0815B5F6,
     gMapNameTextUs_0815B630,
@@ -6060,7 +6060,7 @@ MapNameText* gUnk_09EF6FCC[13] = {
 #endif
 };
 
-MapNameText* gUnk_09EF7000[12] = {
+MapNameText* gBasementFloorNames[12] = {
 #if defined(VERSION_US)
     gMapNameTextUs_0815B906,
     gMapNameTextUs_0815B948,

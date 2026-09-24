@@ -67,7 +67,7 @@ s32 AddMapCard(u16 a);
 u16 func_08093B08(u16 a);
 u16 func_08093B38(void);
 u16 func_08093B58(void);
-void* func_08093C18(u16 a);
+void* GetRoomName(u16 a);
 u8 HasMapCard(u16 a);
 
 void func_08096714(PrizeCardInitWork* w, PrizeCardArgs* args) {
@@ -601,7 +601,7 @@ u8 func_08097404(UnkStruct_08096F94* w, void* a) {
             w->unk_E2 = 0;
             w->unk_DE = 0;
             SetTaskUpdate(a, (TaskUpdateFunc)func_0809753C);
-            CreateCardNameDisplay(&w->tasks, func_08093C18(w->cardDef->unk_20));
+            CreateCardNameDisplay(&w->tasks, GetRoomName(w->cardDef->unk_20));
         }
     }
 

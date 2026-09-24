@@ -2351,16 +2351,16 @@ void StockInfo_3(u8* work) {
     TaskPoolDestroy(&work[0x18]);
 }
 
-void* func_080A2334(u16 a, u8 b) {
-    if (b < gUnk_09EE7D84[a]->unk_04) {
-        return LANGSTR(gUnk_09EE7D84[a]->texts[b]);
+void* GetCardHelpText(u16 a, u8 b) {
+    if (b < gCardHelpDefs[a]->textCount) {
+        return LANGSTR(gCardHelpDefs[a]->texts[b]);
     }
 
     return 0;
 }
 
-u8 func_080A235C(u16 a) {
-    return gUnk_09EE7D84[a]->unk_04;
+u8 GetCardHelpTextCount(u16 a) {
+    return gCardHelpDefs[a]->textCount;
 }
 u8 func_080A2370(void) {
     if (gGameState.progression.level >= gUnk_0903BFD4[gGameState.progression.unk_80]) {
@@ -2370,7 +2370,7 @@ u8 func_080A2370(void) {
     return 0;
 }
 
-const CardHelpDef* gUnk_09EE7D84[] = {
+const CardHelpDef* gCardHelpDefs[] = {
     &gUnk_0903BD0C,
     &gUnk_0903BD14,
     &gUnk_0903BD1C,

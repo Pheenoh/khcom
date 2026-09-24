@@ -9,7 +9,7 @@
 #include "map_text_assets.h"
 #include "jiminy_data.h"
 
-MapNameText* gUnk_09EF7048[28] = {
+MapNameText* gRoomNames[28] = {
 #if defined(VERSION_US)
     gUnk_0815ADD2,
     gUnk_0815ADF4,
@@ -118,9 +118,9 @@ void task_room_name_0(RoomNameWork* work, s32 arg) {
     InitTextSlots(work->unk_3C, 0x24);
     work->palette2 = _08066468(1);
 #ifdef VERSION_EU
-    work->unk_34 = LoadTextSlots(eu_0805E924(gUnk_09EF7048[work->unk_30]), work->unk_3C);
+    work->unk_34 = LoadTextSlots(eu_0805E924(gRoomNames[work->unk_30]), work->unk_3C);
 #else
-    work->unk_34 = LoadTextSlots(gUnk_09EF7048[work->unk_30], work->unk_3C);
+    work->unk_34 = LoadTextSlots(gRoomNames[work->unk_30], work->unk_3C);
 #endif
 }
 

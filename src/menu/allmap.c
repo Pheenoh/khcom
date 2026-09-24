@@ -319,7 +319,7 @@ void task_allmap_roomname_0(AllmapRoomnameWork* work, u8* arg) {
 #else
     InitTextSlots(work, 24);
 #endif
-    work->unk_0CC = LoadTextSlots(func_08093C18(arg[0]), work);
+    work->unk_0CC = LoadTextSlots(GetRoomName(arg[0]), work);
     pal = func_080D3DCC(arg[0]);
     work->palette = LoadObjPalette(gUnk_0984A1F8 + pal, 32);
     LoadPalette(gUnk_0984A078 + pal, gUnk_05000160, 32);

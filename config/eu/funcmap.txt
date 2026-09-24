@@ -2124,7 +2124,7 @@ func_08093BE0	0x08093be0	12	0x08093edc	body
 func_08093BEC	0x08093bec	12	0x08093ee8	body
 func_08093BF8	0x08093bf8	12	0x08093ef4	body
 func_08093C04	0x08093c04	20	0x08093f00	body
-func_08093C18	0x08093c18	16	0x08093f14	xref
+GetRoomName	0x08093c18	16	0x08093f14	xref
 HasMapCard	0x08093c28	28	0x08093f2c	global
 func_08093C44	0x08093c44	228	0x08093f48	global
 func_08093D28	0x08093d28	268	0x0809402c	global
@@ -2408,8 +2408,8 @@ StockInfo_1	0x080a2230	116	0x080a2a38	global
 func_080A22A4	0x080a22a4	32	0x080a2aac	global
 StockInfo_2	0x080a22c4	64	0x080a2acc	global
 StockInfo_3	0x080a2304	48	0x080a2b0c	global
-func_080A2334	0x080a2334	40	0x080a2b3c	xref
-func_080A235C	0x080a235c	20	0x080a2b70	body
+GetCardHelpText	0x080a2334	40	0x080a2b3c	xref
+GetCardHelpTextCount	0x080a235c	20	0x080a2b70	body
 func_080A2370	0x080a2370	48	0x080a2b84	global
 Lvup_msg_0	0x080a23a0	536	0x080a2bb4	xref
 Lvup_msg_1	0x080a25b8	40	0x080a2e08	global
@@ -2445,8 +2445,8 @@ func_080A3E8C	0x080a3e8c	208	0x080a48b0	global
 func_080A3F5C	0x080a3f5c	180	0x080a4980	global
 func_080A4010	0x080a4010	220	0x080a4a34	xref
 func_080A40EC	0x080a40ec	48	0x080a4b1c	global
-func_080A411C	0x080a411c	108	0x080a4b4c	global
-func_080A4188	0x080a4188	104	0x080a4bb8	global
+CreateCardMessageTask	0x080a411c	108	0x080a4b4c	global
+CreateSysmsgwinTask	0x080a4188	104	0x080a4bb8	global
 func_080A41F0	0x080a41f0	68	0x080a4c20	global
 func_080A4234	0x080a4234	128	0x080a4c64	global
 func_080A42B4	0x080a42b4	20	0x080a4ce4	body
@@ -4099,7 +4099,7 @@ Mode_MenuLoad_1	0x080ec424	36	0x080e97b0	global
 Mode_MenuLoad_2	0x080ec448	184	0x080e97d4	global
 func_080EC500	0x080ec500	68	0x080e988c	global
 func_080EC544	0x080ec544	56	0x080e98d0	global
-func_080EC57C	0x080ec57c	156	0x080e9908	near
+Mode_MenuMsg_0	0x080ec57c	156	0x080e9908	near
 Mode_MenuMsg_1	0x080ec618	44	0x080e99a4	global
 Mode_MenuMsg_2	0x080ec644	28	0x080e99d0	global
 Task_MapRnd_0	0x080ec660	192	0x080e99ec	global

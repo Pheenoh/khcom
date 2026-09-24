@@ -632,11 +632,11 @@ void mode_ms_top_1(void) {
     if (gUnk_020358BC >= 0) {
         if (gUnk_020358C0 != 0) {
             if (func_080A42C8() == 0) {
-                func_080A411C(&gMsTopTaskPool, 3, gUnk_020358BC);
+                CreateCardMessageTask(&gMsTopTaskPool, 3, gUnk_020358BC);
                 gUnk_020358BC = -1;
             }
         } else {
-            func_080A411C(&gMsTopTaskPool, 3, gUnk_020358BC);
+            CreateCardMessageTask(&gMsTopTaskPool, 3, gUnk_020358BC);
             gUnk_020358BC = -1;
             gUnk_020358C0 = 1;
         }

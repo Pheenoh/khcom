@@ -7656,14 +7656,14 @@ void func_080EC544(UnkStruct_02034FE4* w) {
     }
 }
 
-void func_080EC57C(s32 arg) {
+void Mode_MenuMsg_0(s32 arg) {
     gUnk_02034FE4 = EwramAlloc(0x1C);
     gUnk_02034FE4->unk_00 = arg;
     SetBgMode0();
     TaskPoolInit(&gUnk_02034FE4->tasks, 1);
 
     if (gUnk_02034FE4->unk_00 == 0) {
-        func_080A4188(&gUnk_02034FE4->tasks, 0xB0);
+        CreateSysmsgwinTask(&gUnk_02034FE4->tasks, 0xB0);
         func_080C736C();
         func_080C73A4(0, 0, 0);
         func_080C7568(1, 16);
@@ -7671,9 +7671,9 @@ void func_080EC57C(s32 arg) {
         FadeLock();
     } else {
 #ifdef VERSION_EU
-        func_080A4188(&gUnk_02034FE4->tasks, 0xB2);
+        CreateSysmsgwinTask(&gUnk_02034FE4->tasks, 0xB2);
 #else
-        func_080A4188(&gUnk_02034FE4->tasks, 0xB3);
+        CreateSysmsgwinTask(&gUnk_02034FE4->tasks, 0xB3);
 #endif
         func_080C736C();
         func_080C73A4(0, 0, 0);
@@ -9825,7 +9825,7 @@ Mode gModeMenuLoad = {
 
 Mode gModeMenuMsg = {
     gModeNameMenuMsg,
-    func_080EC57C,
+    Mode_MenuMsg_0,
     Mode_MenuMsg_1,
     Mode_MenuMsg_2,
 };

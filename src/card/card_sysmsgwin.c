@@ -76,7 +76,7 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
 
     CpuSet((void*)&zero, w, 0x05000052);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     if (w->messageDef->flags & 4) {
         w->unk_134 = func_0806BA74(1, 1);
     } else {
@@ -452,7 +452,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     if (w->unk_145 == 1) {
         w->unk_145 = 0;
-        w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
         p = (s32*)&w->gfx2;
 
         if (*p != 0) {
@@ -482,7 +482,7 @@ u8 func_080A4CC8(UnkStruct_080A3F5C* w, void* a) {
 
     if (w->unk_145 == 1) {
         w->unk_145 = 0;
-        w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+        w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
         w->unk_138[3] = func_0806BDB8(
             0x2E00,
             gUnk_09033CB8[w->messageDef->unk_04],
@@ -518,7 +518,7 @@ void func_080A4DCC(UnkStruct_080A4DCC* w, void* a) {
 
     CpuSet((void*)&zero, w, 0x05000052);
     *(u64*)&w->unk_10C = *(u64*)a;
-    w->messageDef = &gUnk_09EE8008[*(u16*)&w->unk_110];
+    w->messageDef = &gCardMessageDefs[*(u16*)&w->unk_110];
     w->unk_134 = func_0806BA74(1, 0);
     FadeSetPaletteExcluded(w->unk_134 + 16, 1);
     w->unk_138[4] = 0;
