@@ -97,10 +97,8 @@ void func_080D733C(void) {
     }
 }
 
-const char gModeNameCopyright2[] = "mode_copyright2";
-
 Mode gModeCopyright2 = {
-    gModeNameCopyright2,
+    "mode_copyright2",
     mode_copyright2_0,
     mode_copyright2_1,
     mode_copyright2_2,

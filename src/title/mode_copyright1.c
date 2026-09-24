@@ -106,10 +106,8 @@ void mode_copyright1_1(void) {
 void mode_copyright1_2(void) {
 }
 
-const char gModeNameCopyright1[] = "mode_copyright1";
-
 Mode gModeCopyright1 = {
-    gModeNameCopyright1,
+    "mode_copyright1",
     mode_copyright1_0,
     mode_copyright1_1,
     mode_copyright1_2,

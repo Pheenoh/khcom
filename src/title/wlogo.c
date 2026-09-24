@@ -2227,18 +2227,6 @@ const WlogoPooObjStep gWlogoPooObjSteps[5][5] = {
     },
 };
 
-const char gTaskNameWlogoPooObj[] = "task_wlogo_poo_obj";
-
-const char gTaskNameWlogoTt[] = "task_wlogo_tt";
-
-const char gTaskNameWlogoTtObj[] = "task_wlogo_tt_obj";
-
-const char gTaskNameWlogoTtLine[] = "task_wlogo_tt_line";
-
-const char gTaskNameWlogoBks[] = "task_wlogo_bks";
-
-const char gTaskNameWlogoBksObj[] = "task_wlogo_bks_obj";
-
 TaskDesc gTaskDescWlogoMons = {
     gTaskNameWlogoMons,
     (TaskInitFunc)task_wlogo_mons_0,
@@ -2467,7 +2455,7 @@ TaskDesc gTaskDescWlogoPoo = {
 u8 gUnk_09EF1AEC[4] = { 0, 0, 2, 2 };
 
 TaskDesc gTaskDescWlogoPooObj = {
-    gTaskNameWlogoPooObj,
+    "task_wlogo_poo_obj",
     (TaskInitFunc)task_wlogo_poo_obj_0,
     (TaskUpdateFunc)task_wlogo_poo_obj_1,
     (TaskFunc)task_wlogo_poo_obj_2,
@@ -2480,7 +2468,7 @@ WlogoTtMotion gWlogoTtMotion =
 ;
 
 TaskDesc gTaskDescWlogoTt = {
-    gTaskNameWlogoTt,
+    "task_wlogo_tt",
     (TaskInitFunc)task_wlogo_tt_0,
     (TaskUpdateFunc)task_wlogo_tt_1,
     (TaskFunc)task_wlogo_tt_2,
@@ -2489,7 +2477,7 @@ TaskDesc gTaskDescWlogoTt = {
 };
 
 TaskDesc gTaskDescWlogoTtObj = {
-    gTaskNameWlogoTtObj,
+    "task_wlogo_tt_obj",
     (TaskInitFunc)task_wlogo_tt_obj_0,
     (TaskUpdateFunc)task_wlogo_tt_obj_1,
     (TaskFunc)task_wlogo_tt_obj_2,
@@ -2534,7 +2522,7 @@ s16 gUnk_09EF1B68[33][3] = {
 };
 
 TaskDesc gTaskDescWlogoTtLine = {
-    gTaskNameWlogoTtLine,
+    "task_wlogo_tt_line",
     (TaskInitFunc)task_wlogo_tt_line_0,
     (TaskUpdateFunc)task_wlogo_tt_line_1,
     (TaskFunc)task_wlogo_tt_line_2,
@@ -2563,7 +2551,7 @@ s8 gUnk_09EF1C50[8] = {
 };
 
 TaskDesc gTaskDescWlogoBks = {
-    gTaskNameWlogoBks,
+    "task_wlogo_bks",
     (TaskInitFunc)task_wlogo_bks_0,
     (TaskUpdateFunc)task_wlogo_bks_1,
     (TaskFunc)task_wlogo_bks_2,
@@ -2657,7 +2645,7 @@ u16 gUnk_09EF1D0A[14] = {
 };
 
 TaskDesc gTaskDescWlogoBksObj = {
-    gTaskNameWlogoBksObj,
+    "task_wlogo_bks_obj",
     (TaskInitFunc)task_wlogo_bks_obj_0,
     (TaskUpdateFunc)task_wlogo_bks_obj_1,
     (TaskFunc)task_wlogo_bks_obj_2,

@@ -59,8 +59,6 @@ const char gTaskNameTitleMenu[] = "task_title_menu";
 
 const s16 gUnk_096FDCE8[3] = {-7, 0, 3};
 
-const char gTaskNameTitleLumichange[] = "task_title_lumichange";
-
 u8 gUnk_02034ED0 __attribute__((aligned(4)));
 
 void task_title_logo_0(TitleLogoWork* work) {
@@ -860,7 +858,7 @@ void** gUnkEu_09F80214[5] = {
 #endif
 
 TaskDesc gTaskDescTitleLumichange = {
-    gTaskNameTitleLumichange,
+    "task_title_lumichange",
     (TaskInitFunc)task_title_lumichange_0,
     (TaskUpdateFunc)task_title_lumichange_1,
     (TaskFunc)task_title_lumichange_2,

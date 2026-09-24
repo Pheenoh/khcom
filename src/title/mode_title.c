@@ -434,10 +434,8 @@ void func_080D62A8(TitleLogoWork* work) {
     gUnk_02034ECC = 0;
 }
 
-const char gModeNameTitle[] = "mode_title";
-
 Mode gModeTitle = {
-    gModeNameTitle,
+    "mode_title",
     (ModeInitFunc)mode_title_0,
     mode_title_1,
     mode_title_2,

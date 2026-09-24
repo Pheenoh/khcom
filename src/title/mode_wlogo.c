@@ -431,19 +431,15 @@ void task_wLogo_3(WLogoTaskWork* work) {
     SetBgBlend(0, 0, 16);
 }
 
-const char gModeNameWLogo[] = "mode_wLogo";
-
 Mode gModeWLogo = {
-    gModeNameWLogo,
+    "mode_wLogo",
     mode_wLogo_0,
     mode_wLogo_1,
     mode_wLogo_2,
 };
 
-const char gTaskNameWLogo[] = "task_wLogo";
-
 TaskDesc gTaskDescWLogo = {
-    gTaskNameWLogo,
+    "task_wLogo",
     (TaskInitFunc)task_wLogo_0,
     (TaskUpdateFunc)task_wLogo_1,
     (TaskFunc)task_wLogo_2,
