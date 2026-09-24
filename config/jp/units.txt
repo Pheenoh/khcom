@@ -162,7 +162,6 @@ card_deckmenu2_deck_names.s
 card_deckmenu2_rodata.s
 card_deckmenu2.c
 card_deckmenu2_keyboard.s
-card_deckcard2_rodata.s
 card_deckcard2.c
 card_enemy_rodata.s
 card_enemy.c

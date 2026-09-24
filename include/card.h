@@ -1188,8 +1188,8 @@ extern u8 gUnkEu_095F0C6A[];
 extern u8 gUnkEu_095F12A2[];
 #endif
 
-extern s16 gUnk_09035950[];
-extern s16 gUnk_09035956[];
+extern const s16 gUnk_09035950[];
+extern const s16 gUnk_09035956[];
 extern s16 gUnk_090356EC[];
 extern s16 gUnk_090356F2[];
 extern s16 gUnk_09035702[];
@@ -1813,8 +1813,8 @@ typedef struct BossCardWork {
     u8 unk_34;
 } BossCardWork;
 
-extern s16 gUnk_0903595E[];
-extern s16 gUnk_09035964[];
+extern const s16 gUnk_0903595E[];
+extern const s16 gUnk_09035964[];
 
 typedef struct UnkStruct_080A97D4 {
     void* unk_00;

@@ -46,6 +46,14 @@
 void func_08090170(DeckCard2Work* node);
 u8 func_080901B8(u8* p);
 
+const s16 gUnk_09035950[3] = { 13, 36, 59 };
+
+const s16 gUnk_09035956[4] = { 47, 73, 99, 125 };
+
+const s16 gUnk_0903595E[3] = { 181, 204, 227 };
+
+const s16 gUnk_09035964[4] = { 47, 73, 99, 125 };
+
 void DeckCard2_0(DeckCard2Work* n, DeckCard2Args* a) {
     *(DeckCard2Args*)&n->pool = *a;
     n->tiles = 0;
