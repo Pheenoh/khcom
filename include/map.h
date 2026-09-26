@@ -1165,7 +1165,7 @@ extern u8 gUnk_0985BDEA[];
 extern UnkStruct_02034F7C gUnk_0984CECC[];
 extern const u8 gUnk_0984B8F8[13];
 extern const u8 gUnk_0984B905[13];
-extern u8 gUnk_0984B860[][8];
+extern const u8 gUnk_0984B860[][8];
 extern const u8 gUnk_0984D134[][8];
 extern const u8 gUnk_0984D314[][4];
 extern const u8 gUnk_0984D32C[][4];

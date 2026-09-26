@@ -18,6 +18,14 @@ extern u8 gUnk_09EF69E0[];
 extern u8 gUnk_09EF69EE[];
 extern const MapNameText* gUnk_09EF69FC[];
 
+const u8 gUnk_0984B844[13] = { 10, 13, 16, 19, 22, 25, 30, 33, 37, 40, 47, 58, 66 };
+
+#ifdef VERSION_EU
+const u8 gUnk_0984B851[13] = { 153, 255, 158, 255, 161, 255, 255, 255, 169, 255, 188, 191, 0 };
+#else
+const u8 gUnk_0984B851[13] = { 155, 255, 160, 255, 163, 255, 255, 255, 171, 255, 190, 193, 0 };
+#endif
+
 u8 func_080DEBAC(u8 a) {
     switch (a) {
     case 0:
