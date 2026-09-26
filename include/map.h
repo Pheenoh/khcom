@@ -2,7 +2,6 @@
 #include "task_descriptors.h"
 #include "card_def_data.h"
 #include "map_text_data.h"
-#include "map_ui_data.h"
 #include "card_lookup_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MAP_H

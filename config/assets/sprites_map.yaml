@@ -22,7 +22,7 @@ objects:
     end: 0x09EF1150
   - name: sprites_map_3.c
     start: 0x09EF8414
-    end: 0x09EF8D68
+    end: 0x09EF8E94
   - name: sprites_map_frames_1.s
     start: 0x093EDD44
     end: 0x093F2020
@@ -50,7 +50,7 @@ objects:
     end: 0x09EC853C
   - name: sprites_map_3.c
     start: 0x09ECF800
-    end: 0x09ED0154
+    end: 0x09ED0280
   - name: sprites_map_frames_1.s
     start: 0x093A926C
     end: 0x093AD548
@@ -78,7 +78,7 @@ objects:
     end: 0x09F7C334
   - name: sprites_map_3.c
     start: 0x09F83A84
-    end: 0x09F843D8
+    end: 0x09F84744
   - name: sprites_map_frames_1.s
     start: 0x094BD3CC
     end: 0x094C16A8
@@ -6144,6 +6144,857 @@ entries:
     address: 0x09ED0150
   eu:
     address: 0x09F843D4
+- name: gUnk_09EF8D68
+  record: SpriteTable
+  items: [gUnk_098A8728, gUnk_098A8738, gUnk_098A876C]
+  us:
+    address: 0x09EF8D68
+  jp:
+    address: 0x09ED0154
+  eu:
+    address: 0x09F84418
+- name: gUnk_09EF8D74
+  record: AnimTable
+  scalar: true
+  items: [gUnk_098A87A0]
+  us:
+    address: 0x09EF8D74
+  jp:
+    address: 0x09ED0160
+  eu:
+    address: 0x09F84424
+- name: gUnk_09EF8D78
+  record: SpriteTable
+  items: [gUnk_098A8A6C, gUnk_098A8A82, gUnk_098A8A98, gUnk_098A8AAE]
+  us:
+    address: 0x09EF8D78
+  jp:
+    address: 0x09ED0164
+  eu:
+    address: 0x09F84428
+- name: gUnk_09EF8D88
+  record: AnimTable
+  items: [gUnk_098A8AC4]
+  us:
+    address: 0x09EF8D88
+  jp:
+    address: 0x09ED0174
+  eu:
+    address: 0x09F84438
+- name: gUnk_09EF8D8C
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A8BE4, gMapUiSpriteUs_098A8BF4, gMapUiSpriteUs_098A8C28]
+  us:
+    address: 0x09EF8D8C
+  jp:
+    address: 0x09ED0178
+  eu:
+    address: 0x09F8443C
+- name: gUnk_09EF8D98
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A8C5C]
+  us:
+    address: 0x09EF8D98
+  jp:
+    address: 0x09ED0184
+  eu:
+    address: 0x09F84448
+    symbol: gUnkEu_09F84448
+- name: gUnk_09EF8D9C
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A8F28]
+  us:
+    address: 0x09EF8D9C
+  jp:
+    address: 0x09ED0188
+  eu:
+    address: 0x09F8448C
+    symbol: gUnkEu_09F8448C
+- name: gUnk_09EF8DA0
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A8F80]
+  us:
+    address: 0x09EF8DA0
+  jp:
+    address: 0x09ED018C
+  eu:
+    address: 0x09F84490
+    symbol: gUnkEu_09F84490
+- name: gUnk_09EF8DA4
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A944C]
+  us:
+    address: 0x09EF8DA4
+  jp:
+    address: 0x09ED0190
+  eu:
+    address: 0x09F84494
+- name: gUnk_09EF8DA8
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9480]
+  us:
+    address: 0x09EF8DA8
+  jp:
+    address: 0x09ED0194
+  eu:
+    address: 0x09F84498
+    symbol: gUnkEu_09F84498
+- name: gUnk_09EF8DAC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A948C]
+  us:
+    address: 0x09EF8DAC
+  jp:
+    address: 0x09ED0198
+  eu:
+    address: 0x09F8449C
+    symbol: gUnkEu_09F8449C
+- name: gUnk_09EF8DB0
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9496]
+  us:
+    address: 0x09EF8DB0
+  jp:
+    address: 0x09ED019C
+  eu:
+    address: 0x09F844A0
+    symbol: gUnkEu_09F844A0
+- name: gUnk_09EF8DB4
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A94A0]
+  us:
+    address: 0x09EF8DB4
+  jp:
+    address: 0x09ED01A0
+  eu:
+    address: 0x09F844A4
+    symbol: gUnkEu_09F844A4
+- name: gUnk_09EF8DB8
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A94AA]
+  us:
+    address: 0x09EF8DB8
+  jp:
+    address: 0x09ED01A4
+  eu:
+    address: 0x09F844A8
+    symbol: gUnkEu_09F844A8
+- name: gUnk_09EF8DBC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A94B4]
+  us:
+    address: 0x09EF8DBC
+  jp:
+    address: 0x09ED01A8
+  eu:
+    address: 0x09F844AC
+    symbol: gUnkEu_09F844AC
+- name: gUnk_09EF8DC0
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A94BE]
+  us:
+    address: 0x09EF8DC0
+  jp:
+    address: 0x09ED01AC
+  eu:
+    address: 0x09F844B0
+    symbol: gUnkEu_09F844B0
+- name: gUnk_09EF8DC4
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A94C8]
+  us:
+    address: 0x09EF8DC4
+  jp:
+    address: 0x09ED01B0
+  eu:
+    address: 0x09F844B4
+    symbol: gUnkEu_09F844B4
+- name: gUnk_09EF8DC8
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A94D2]
+  us:
+    address: 0x09EF8DC8
+  jp:
+    address: 0x09ED01B4
+  eu:
+    address: 0x09F844B8
+    symbol: gUnkEu_09F844B8
+- name: gUnk_09EF8DCC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A94DC]
+  us:
+    address: 0x09EF8DCC
+  jp:
+    address: 0x09ED01B8
+  eu:
+    address: 0x09F844BC
+    symbol: gUnkEu_09F844BC
+- name: gUnk_09EF8DD0
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A94F2]
+  us:
+    address: 0x09EF8DD0
+  jp:
+    address: 0x09ED01BC
+  eu:
+    address: 0x09F844C0
+    symbol: gUnkEu_09F844C0
+- name: gUnk_09EF8DD4
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A94FC]
+  us:
+    address: 0x09EF8DD4
+  jp:
+    address: 0x09ED01C0
+  eu:
+    address: 0x09F844C4
+    symbol: gUnkEu_09F844C4
+- name: gUnk_09EF8DD8
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9512]
+  us:
+    address: 0x09EF8DD8
+  jp:
+    address: 0x09ED01C4
+  eu:
+    address: 0x09F844C8
+    symbol: gUnkEu_09F844C8
+- name: gUnk_09EF8DDC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A951C]
+  us:
+    address: 0x09EF8DDC
+  jp:
+    address: 0x09ED01C8
+  eu:
+    address: 0x09F844CC
+    symbol: gUnkEu_09F844CC
+- name: gUnk_09EF8DE0
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9526]
+  us:
+    address: 0x09EF8DE0
+  jp:
+    address: 0x09ED01CC
+  eu:
+    address: 0x09F844D0
+    symbol: gUnkEu_09F844D0
+- name: gUnk_09EF8DE4
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9530]
+  us:
+    address: 0x09EF8DE4
+  jp:
+    address: 0x09ED01D0
+  eu:
+    address: 0x09F844D4
+    symbol: gUnkEu_09F844D4
+- name: gUnk_09EF8DE8
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A953A]
+  us:
+    address: 0x09EF8DE8
+  jp:
+    address: 0x09ED01D4
+  eu:
+    address: 0x09F844D8
+    symbol: gUnkEu_09F844D8
+- name: gUnk_09EF8DEC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9544]
+  us:
+    address: 0x09EF8DEC
+  jp:
+    address: 0x09ED01D8
+  eu:
+    address: 0x09F844DC
+    symbol: gUnkEu_09F844DC
+- name: gUnk_09EF8DF0
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A954E]
+  us:
+    address: 0x09EF8DF0
+  jp:
+    address: 0x09ED01DC
+  eu:
+    address: 0x09F844E0
+    symbol: gUnkEu_09F844E0
+- name: gUnk_09EF8DF4
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9558]
+  us:
+    address: 0x09EF8DF4
+  jp:
+    address: 0x09ED01E0
+  eu:
+    address: 0x09F844E4
+    symbol: gUnkEu_09F844E4
+- name: gUnk_09EF8DF8
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9562]
+  us:
+    address: 0x09EF8DF8
+  jp:
+    address: 0x09ED01E4
+  eu:
+    address: 0x09F844E8
+    symbol: gUnkEu_09F844E8
+- name: gUnk_09EF8DFC
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A956C]
+  us:
+    address: 0x09EF8DFC
+  jp:
+    address: 0x09ED01E8
+  eu:
+    address: 0x09F844EC
+    symbol: gUnkEu_09F844EC
+- name: gUnk_09EF8E00
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A958A]
+  us:
+    address: 0x09EF8E00
+  jp:
+    address: 0x09ED01EC
+  eu:
+    address: 0x09F844F0
+    symbol: gUnkEu_09F844F0
+- name: gUnk_09EF8E04
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A95A8]
+  us:
+    address: 0x09EF8E04
+  jp:
+    address: 0x09ED01F0
+  eu:
+    address: 0x09F844F4
+    symbol: gUnkEu_09F844F4
+- name: gUnk_09EF8E08
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A95C6]
+  us:
+    address: 0x09EF8E08
+  jp:
+    address: 0x09ED01F4
+  eu:
+    address: 0x09F844F8
+    symbol: gUnkEu_09F844F8
+- name: gUnk_09EF8E0C
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A95E4, gMapUiSpriteUs_098A9636, gMapUiSpriteUs_098A9658, gMapUiSpriteUs_098A967A]
+  us:
+    address: 0x09EF8E0C
+  jp:
+    address: 0x09ED01F8
+  eu:
+    address: 0x09F844FC
+    symbol: gUnkEu_09F844FC
+- name: gUnk_09EF8E1C
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9696]
+  us:
+    address: 0x09EF8E1C
+  jp:
+    address: 0x09ED0208
+  eu:
+    address: 0x09F8450C
+    symbol: gUnkEu_09F8450C
+- name: gUnk_09EF8E20
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A96A0, gMapUiSpriteUs_098A9710, gMapUiSpriteUs_098A9780, gMapUiSpriteUs_098A97F0, gMapUiSpriteUs_098A9860, gMapUiSpriteUs_098A98D0, gMapUiSpriteUs_098A9940, gMapUiSpriteUs_098A99B0]
+  us:
+    address: 0x09EF8E20
+  jp:
+    address: 0x09ED020C
+- name: gUnk_09EF8E40
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9A32]
+  us:
+    address: 0x09EF8E40
+  jp:
+    address: 0x09ED022C
+- name: gUnk_09EF8E44
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9A3C, gMapUiSpriteUs_098A9A52, gMapUiSpriteUs_098A9A68, gMapUiSpriteUs_098A9A7E, gMapUiSpriteUs_098A9A94, gMapUiSpriteUs_098A9AAA, gMapUiSpriteUs_098A9AC0]
+  us:
+    address: 0x09EF8E44
+  jp:
+    address: 0x09ED0230
+- name: gUnk_09EF8E60
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9AD6]
+  us:
+    address: 0x09EF8E60
+  jp:
+    address: 0x09ED024C
+  eu:
+    address: 0x09F8472C
+    symbol: gUnkEu_09F8472C
+- name: gUnk_09EF8E64
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9AE0]
+  us:
+    address: 0x09EF8E64
+  jp:
+    address: 0x09ED0250
+  eu:
+    address: 0x09F84730
+    symbol: gUnkEu_09F84730
+- name: gUnk_09EF8E68
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9B38]
+  us:
+    address: 0x09EF8E68
+  jp:
+    address: 0x09ED0254
+  eu:
+    address: 0x09F84734
+    symbol: gUnkEu_09F84734
+- name: gUnk_09EF8E6C
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9B44]
+  us:
+    address: 0x09EF8E6C
+  jp:
+    address: 0x09ED0258
+- name: gUnk_09EF8E70
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9B54]
+  us:
+    address: 0x09EF8E70
+  jp:
+    address: 0x09ED025C
+- name: gUnk_09EF8E74
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9B60, gMapUiSpriteUs_098A9B94]
+  us:
+    address: 0x09EF8E74
+  jp:
+    address: 0x09ED0260
+  eu:
+    address: 0x09F84738
+    symbol: gUnkEu_09F84738
+- name: gUnk_09EF8E7C
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9BC8]
+  us:
+    address: 0x09EF8E7C
+  jp:
+    address: 0x09ED0268
+  eu:
+    address: 0x09F84740
+    symbol: gUnkEu_09F84740
+- name: gUnk_09EF8E80
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9BD4, gMapUiSpriteUs_098A9C20, gMapUiSpriteUs_098A9C42]
+  us:
+    address: 0x09EF8E80
+  jp:
+    address: 0x09ED026C
+- name: gUnk_09EF8E8C
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteUs_098A9C5E]
+  us:
+    address: 0x09EF8E8C
+  jp:
+    address: 0x09ED0278
+- name: gUnk_09EF8E90
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimUs_098A9C7A]
+  us:
+    address: 0x09EF8E90
+  jp:
+    address: 0x09ED027C
+- name: gUnkEu_09F843D8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09885114, gMapUiSpriteEu_0988512A, gMapUiSpriteEu_0988515E]
+  eu:
+    address: 0x09F843D8
+- name: gUnkEu_09F843E4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09885192]
+  eu:
+    address: 0x09F843E4
+- name: gUnkEu_09F843E8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_0988549C, gMapUiSpriteEu_098854AC, gMapUiSpriteEu_098854E0]
+  eu:
+    address: 0x09F843E8
+- name: gUnkEu_09F843F4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09885514]
+  eu:
+    address: 0x09F843F4
+- name: gUnkEu_09F843F8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098857E0, gMapUiSpriteEu_098857F0, gMapUiSpriteEu_09885824]
+  eu:
+    address: 0x09F843F8
+- name: gUnkEu_09F84404
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09885858]
+  eu:
+    address: 0x09F84404
+- name: gUnkEu_09F84408
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09885B24, gMapUiSpriteEu_09885B34, gMapUiSpriteEu_09885B68]
+  eu:
+    address: 0x09F84408
+- name: gUnkEu_09F84414
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09885B9C]
+  eu:
+    address: 0x09F84414
+- name: gUnkEu_09F8444C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098867B4, gMapUiSpriteEu_098867CA, gMapUiSpriteEu_098867FE]
+  eu:
+    address: 0x09F8444C
+- name: gUnkEu_09F84458
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09886832]
+  eu:
+    address: 0x09F84458
+- name: gUnkEu_09F8445C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09886BFC, gMapUiSpriteEu_09886C0C, gMapUiSpriteEu_09886C40]
+  eu:
+    address: 0x09F8445C
+- name: gUnkEu_09F84468
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09886C74]
+  eu:
+    address: 0x09F84468
+- name: gUnkEu_09F8446C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09886F40, gMapUiSpriteEu_09886F56, gMapUiSpriteEu_09886F8A]
+  eu:
+    address: 0x09F8446C
+- name: gUnkEu_09F84478
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09886FBE]
+  eu:
+    address: 0x09F84478
+- name: gUnkEu_09F8447C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09887388, gMapUiSpriteEu_09887398, gMapUiSpriteEu_098873CC]
+  eu:
+    address: 0x09F8447C
+- name: gUnkEu_09F84488
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09887400]
+  eu:
+    address: 0x09F84488
+- name: gUnkEu_09F84510
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A96A0, gMapUiSpriteUs_098A9710, gMapUiSpriteUs_098A9780, gMapUiSpriteUs_098A97F0]
+  eu:
+    address: 0x09F84510
+- name: gUnkEu_09F84520
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09887EF6]
+  eu:
+    address: 0x09F84520
+- name: gUnkEu_09F84524
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09887F00, gMapUiSpriteEu_09887F52, gMapUiSpriteEu_09887F74, gMapUiSpriteEu_09887F96]
+  eu:
+    address: 0x09F84524
+- name: gUnkEu_09F84534
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09887FB2]
+  eu:
+    address: 0x09F84534
+- name: gUnkEu_09F84538
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09887FBC, gMapUiSpriteEu_0988800E, gMapUiSpriteEu_09888030, gMapUiSpriteEu_09888052]
+  eu:
+    address: 0x09F84538
+- name: gUnkEu_09F84548
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988806E]
+  eu:
+    address: 0x09F84548
+- name: gUnkEu_09F8454C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888078, gMapUiSpriteEu_098880CA, gMapUiSpriteEu_098880EC, gMapUiSpriteEu_0988810E]
+  eu:
+    address: 0x09F8454C
+- name: gUnkEu_09F8455C
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988812A]
+  eu:
+    address: 0x09F8455C
+- name: gUnkEu_09F84560
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888134, gMapUiSpriteEu_09888180, gMapUiSpriteEu_098881A2]
+  eu:
+    address: 0x09F84560
+- name: gUnkEu_09F8456C
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteEu_098881BE]
+  eu:
+    address: 0x09F8456C
+- name: gUnkEu_09F84570
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098881DA]
+  eu:
+    address: 0x09F84570
+- name: gUnkEu_09F84574
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098881E4, gMapUiSpriteEu_09888230, gMapUiSpriteEu_09888252]
+  eu:
+    address: 0x09F84574
+- name: gUnkEu_09F84580
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteEu_0988826E]
+  eu:
+    address: 0x09F84580
+- name: gUnkEu_09F84584
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988828A]
+  eu:
+    address: 0x09F84584
+- name: gUnkEu_09F84588
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888294, gMapUiSpriteEu_098882E0, gMapUiSpriteEu_09888302]
+  eu:
+    address: 0x09F84588
+- name: gUnkEu_09F84594
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteEu_0988831E]
+  eu:
+    address: 0x09F84594
+- name: gUnkEu_09F84598
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988833A]
+  eu:
+    address: 0x09F84598
+- name: gUnkEu_09F8459C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888344, gMapUiSpriteEu_09888390, gMapUiSpriteEu_098883B2]
+  eu:
+    address: 0x09F8459C
+- name: gUnkEu_09F845A8
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteEu_098883CE]
+  eu:
+    address: 0x09F845A8
+- name: gUnkEu_09F845AC
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098883EA]
+  eu:
+    address: 0x09F845AC
+- name: gUnkEu_09F845B0
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098883F4, gMapUiSpriteEu_09888440, gMapUiSpriteEu_09888462]
+  eu:
+    address: 0x09F845B0
+- name: gUnkEu_09F845BC
+  record: SpriteTable
+  scalar: true
+  items: [gMapUiSpriteEu_0988847E]
+  eu:
+    address: 0x09F845BC
+- name: gUnkEu_09F845C0
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988849A]
+  eu:
+    address: 0x09F845C0
+- name: gUnkEu_09F845C4
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098884A4, gMapUiSpriteEu_09888514, gMapUiSpriteEu_09888584, gMapUiSpriteEu_098885F4, gMapUiSpriteEu_09888664, gMapUiSpriteEu_098886D4, gMapUiSpriteEu_09888744, gMapUiSpriteEu_098887B4]
+  eu:
+    address: 0x09F845C4
+- name: gUnkEu_09F845E4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09888836]
+  eu:
+    address: 0x09F845E4
+- name: gUnkEu_09F845E8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888840, gMapUiSpriteEu_098888B0, gMapUiSpriteEu_09888920, gMapUiSpriteEu_09888990, gMapUiSpriteEu_09888A00, gMapUiSpriteEu_09888A70, gMapUiSpriteEu_09888AE0, gMapUiSpriteEu_09888B50]
+  eu:
+    address: 0x09F845E8
+- name: gUnkEu_09F84608
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09888BD2]
+  eu:
+    address: 0x09F84608
+- name: gUnkEu_09F8460C
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888BDC, gMapUiSpriteEu_09888C4C, gMapUiSpriteEu_09888CBC, gMapUiSpriteEu_09888D2C, gMapUiSpriteEu_09888D9C, gMapUiSpriteEu_09888E0C, gMapUiSpriteEu_09888E7C, gMapUiSpriteEu_09888EEC]
+  eu:
+    address: 0x09F8460C
+- name: gUnkEu_09F8462C
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09888F6E]
+  eu:
+    address: 0x09F8462C
+- name: gUnkEu_09F84630
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09888F78, gMapUiSpriteEu_09888FE8, gMapUiSpriteEu_09889058, gMapUiSpriteEu_098890C8, gMapUiSpriteEu_09889138, gMapUiSpriteEu_098891A8, gMapUiSpriteEu_09889218, gMapUiSpriteEu_09889288]
+  eu:
+    address: 0x09F84630
+- name: gUnkEu_09F84650
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988930A]
+  eu:
+    address: 0x09F84650
+- name: gUnkEu_09F84654
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09889314, gMapUiSpriteEu_09889384, gMapUiSpriteEu_098893F4, gMapUiSpriteEu_09889464, gMapUiSpriteEu_098894D4, gMapUiSpriteEu_09889544, gMapUiSpriteEu_098895B4, gMapUiSpriteEu_09889624]
+  eu:
+    address: 0x09F84654
+- name: gUnkEu_09F84674
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098896A6]
+  eu:
+    address: 0x09F84674
+- name: gUnkEu_09F84678
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098896B0, gMapUiSpriteEu_098896C6, gMapUiSpriteEu_098896DC, gMapUiSpriteEu_098896F2, gMapUiSpriteEu_09889708, gMapUiSpriteEu_0988971E, gMapUiSpriteEu_09889734]
+  eu:
+    address: 0x09F84678
+- name: gUnkEu_09F84694
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_0988974A]
+  eu:
+    address: 0x09F84694
+- name: gUnkEu_09F84698
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09889754, gMapUiSpriteEu_0988976A, gMapUiSpriteEu_09889780, gMapUiSpriteEu_09889796, gMapUiSpriteEu_098897AC, gMapUiSpriteEu_098897C2, gMapUiSpriteEu_098897D8]
+  eu:
+    address: 0x09F84698
+- name: gUnkEu_09F846B4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098897EE]
+  eu:
+    address: 0x09F846B4
+- name: gUnkEu_09F846B8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098897F8, gMapUiSpriteEu_0988980E, gMapUiSpriteEu_09889824, gMapUiSpriteEu_0988983A, gMapUiSpriteEu_09889850, gMapUiSpriteEu_09889866, gMapUiSpriteEu_0988987C]
+  eu:
+    address: 0x09F846B8
+- name: gUnkEu_09F846D4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09889892]
+  eu:
+    address: 0x09F846D4
+- name: gUnkEu_09F846D8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_0988989C, gMapUiSpriteEu_098898B2, gMapUiSpriteEu_098898C8, gMapUiSpriteEu_098898DE, gMapUiSpriteEu_098898F4, gMapUiSpriteEu_0988990A, gMapUiSpriteEu_09889920]
+  eu:
+    address: 0x09F846D8
+- name: gUnkEu_09F846F4
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09889936]
+  eu:
+    address: 0x09F846F4
+- name: gUnkEu_09F846F8
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09889940, gMapUiSpriteEu_09889956, gMapUiSpriteEu_0988996C, gMapUiSpriteEu_09889982, gMapUiSpriteEu_09889998, gMapUiSpriteEu_098899AE, gMapUiSpriteEu_098899C4]
+  eu:
+    address: 0x09F846F8
+- name: gUnkEu_09F84714
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098899DA]
+  eu:
+    address: 0x09F84714
+- name: gUnkEu_09F84718
+  record: SpriteTable
+  items: [gMapUiSpriteEu_098899E4]
+  eu:
+    address: 0x09F84718
+- name: gUnkEu_09F8471C
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_098899F4]
+  eu:
+    address: 0x09F8471C
+- name: gUnkEu_09F84720
+  record: SpriteTable
+  items: [gMapUiSpriteEu_09889A00]
+  eu:
+    address: 0x09F84720
+- name: gUnkEu_09F84724
+  record: AnimTable
+  scalar: true
+  items: [gMapUiAnimEu_09889A10]
+  eu:
+    address: 0x09F84724
+- name: gUnkEu_09F84728
+  record: SpriteTable
+  items: [gMapUiSpriteUs_098A9AC0]
+  eu:
+    address: 0x09F84728
 - name: gUnk_093EDD5E
   format: sprite_sheet
   align: 4

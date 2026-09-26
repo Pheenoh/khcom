@@ -4,6 +4,7 @@
 #include "monsgage.h"
 #include "room.h"
 #include "sprites_room.h"
+#include "sprites_map.h"
 #include "sprites_map_tasks.h"
 #include "map_text_data.h"
 #include "map_text_assets.h"
