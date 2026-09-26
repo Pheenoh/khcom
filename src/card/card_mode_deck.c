@@ -129,8 +129,8 @@ void func_080AB1F8(u8 a, u16 b) {
     AddCardToActiveDeck(b);
     SetActiveDeckIndex(saved);
 }
-#ifdef VERSION_EU
 void func_080AB228(void) {
+#ifdef VERSION_EU
     u16 i;
     u16 n;
 
@@ -196,11 +196,8 @@ void func_080AB228(void) {
     for (i = 0; i < 95; i++) {
         gCardCollection[n++] = CARD_ID(CARD_KINGDOM_KEY, 6);
     }
-}
-#else
-void func_080AB228(void) {
-}
 #endif
+}
 void func_080AB22C(u8 a) {
     func_080AB1F8(a, 0);
     func_080AB1F8(a, 1);
