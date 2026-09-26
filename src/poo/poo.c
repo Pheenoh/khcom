@@ -8559,6 +8559,8 @@ TaskDesc gTaskDescPooCabbageAfterEvent = {
     0x20,
 };
 
+const s32 gUnk_096FDA74[6] = { 0, 1, 2, 3, 4, 5 };
+
 #ifdef VERSION_EU
 u8* gUnkEu_09F800A4[5] = {
     gUnk_097B7218,

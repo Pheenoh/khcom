@@ -309,7 +309,6 @@ sprite_palettes_9.s
 link_menu_palettes.s
 mode_pooh.c
 poo.c
-poo_tables.s
 mode_allmap.c
 allmap.c
 mode_title.c
