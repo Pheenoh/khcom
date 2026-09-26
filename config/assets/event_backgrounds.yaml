@@ -41,6 +41,12 @@ types:
     - name: unk_2E
       type: u8
       count: 2
+  MapTable:
+    kind: table
+    type: const void*
+  SpriteTable:
+    kind: table
+    type: void*
 objects:
   us:
   - name: event_background_tiles_1.s
@@ -55,6 +61,8 @@ objects:
   - name: event_backgrounds.c
     start: 0x08F7DB10
     end: 0x08F7F66C
+    data_start: 0x09EE2864
+    data_end: 0x09EE3844
   - name: event_background_tiles_2.s
     start: 0x09443138
     end: 0x09468FF8
@@ -131,6 +139,8 @@ objects:
   - name: event_backgrounds.c
     start: 0x08F71018
     end: 0x08F72B74
+    data_start: 0x09EBA2E0
+    data_end: 0x09EBB2C0
   - name: event_background_tiles_2.s
     start: 0x093FB414
     end: 0x094212D4
@@ -207,6 +217,8 @@ objects:
   - name: event_backgrounds.c
     start: 0x09057CF0
     end: 0x0905984C
+    data_start: 0x09F6DF84
+    data_end: 0x09F6EF64
   - name: event_background_palettes_2.s
     start: 0x095480C4
     end: 0x09548E64
@@ -2546,6 +2558,1661 @@ entries:
     fields:
       tilesSize: 5592
       unk_2E: [3, 0]
+- name: gUnk_09EE2864
+  record: MapTable
+  items: [gUnk_0952EAB8, gUnk_0952F2B8, gUnk_0952FAB8, gUnk_095302B8]
+  us:
+    address: 0x09EE2864
+  jp:
+    address: 0x09EBA2E0
+  eu:
+    address: 0x09F6DF84
+- name: gUnk_09EE2874
+  record: MapTable
+  items: [gUnk_09530AB8, gUnk_08125E24, gUnk_095312B8, gUnk_08125E24]
+  us:
+    address: 0x09EE2874
+  jp:
+    address: 0x09EBA2F0
+  eu:
+    address: 0x09F6DF94
+    items: [gUnk_09530AB8, gUnkEu_08125144, gUnk_095312B8, gUnkEu_08125144]
+- name: gUnk_09EE2884
+  record: MapTable
+  items: [gUnk_09528AB8, gUnk_095292B8, gUnk_08125E24, gUnk_08125E24, gUnk_09529AB8, gUnk_0952A2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2884
+  jp:
+    address: 0x09EBA300
+  eu:
+    address: 0x09F6DFA4
+    items: [gUnk_09528AB8, gUnk_095292B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09529AB8, gUnk_0952A2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE28C4
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_0952AAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE28C4
+  jp:
+    address: 0x09EBA340
+  eu:
+    address: 0x09F6DFE4
+    items: [gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnk_0952AAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2904
+  record: MapTable
+  items: [gUnk_09531AB8, gUnk_095322B8, gUnk_09532AB8, gUnk_095332B8]
+  us:
+    address: 0x09EE2904
+  jp:
+    address: 0x09EBA380
+  eu:
+    address: 0x09F6E024
+- name: gUnk_09EE2914
+  record: MapTable
+  items: [gUnk_09533AB8, gUnk_095342B8, gUnk_09534AB8, gUnk_095352B8]
+  us:
+    address: 0x09EE2914
+  jp:
+    address: 0x09EBA390
+  eu:
+    address: 0x09F6E034
+- name: gUnk_09EE2924
+  record: MapTable
+  items: [gUnk_09535AB8, gUnk_095362B8, gUnk_08125E24, gUnk_08125E24, gUnk_09536AB8, gUnk_095372B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2924
+  jp:
+    address: 0x09EBA3A0
+  eu:
+    address: 0x09F6E044
+    items: [gUnk_09535AB8, gUnk_095362B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09536AB8, gUnk_095372B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2964
+  record: MapTable
+  items: [gUnk_09537AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2964
+  jp:
+    address: 0x09EBA3E0
+  eu:
+    address: 0x09F6E084
+    items: [gUnk_09537AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE29A4
+  record: MapTable
+  items: [gUnk_096BFC64]
+  us:
+    address: 0x09EE29A4
+  jp:
+    address: 0x09EBA420
+  eu:
+    address: 0x09F6E0C4
+- name: gUnk_09EE29A8
+  record: MapTable
+  items: [gUnk_09528AB8, gUnk_095292B8, gUnk_08125E24, gUnk_08125E24, gUnk_09529AB8, gUnk_0952A2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE29A8
+  jp:
+    address: 0x09EBA424
+  eu:
+    address: 0x09F6E0C8
+    items: [gUnk_09528AB8, gUnk_095292B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09529AB8, gUnk_0952A2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE29E8
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_0952AAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE29E8
+  jp:
+    address: 0x09EBA464
+  eu:
+    address: 0x09F6E108
+    items: [gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnk_0952AAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2A28
+  record: MapTable
+  items: [gUnk_09541AB8, gUnk_095422B8, gUnk_08125E24, gUnk_08125E24, gUnk_09542AB8, gUnk_095432B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2A28
+  jp:
+    address: 0x09EBA4A4
+  eu:
+    address: 0x09F6E148
+    items: [gUnk_09541AB8, gUnk_095422B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09542AB8, gUnk_095432B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2A68
+  record: MapTable
+  items: [gUnk_09543AB8, gUnk_095442B8, gUnk_08125E24, gUnk_08125E24, gUnk_09544AB8, gUnk_095452B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2A68
+  jp:
+    address: 0x09EBA4E4
+  eu:
+    address: 0x09F6E188
+    items: [gUnk_09543AB8, gUnk_095442B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09544AB8, gUnk_095452B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2AA8
+  record: MapTable
+  items: [gUnk_095382B8, gUnk_09538AB8, gUnk_08125E24, gUnk_08125E24, gUnk_095392B8, gUnk_09539AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2AA8
+  jp:
+    address: 0x09EBA524
+  eu:
+    address: 0x09F6E1C8
+    items: [gUnk_095382B8, gUnk_09538AB8, gUnkEu_08125144, gUnkEu_08125144, gUnk_095392B8, gUnk_09539AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2AE8
+  record: MapTable
+  items: [gUnk_0953A2B8, gUnk_0953AAB8, gUnk_08125E24, gUnk_08125E24, gUnk_0953B2B8, gUnk_0953BAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2AE8
+  jp:
+    address: 0x09EBA564
+  eu:
+    address: 0x09F6E208
+    items: [gUnk_0953A2B8, gUnk_0953AAB8, gUnkEu_08125144, gUnkEu_08125144, gUnk_0953B2B8, gUnk_0953BAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2B28
+  record: MapTable
+  items: [gUnk_0953C2B8]
+  us:
+    address: 0x09EE2B28
+  jp:
+    address: 0x09EBA5A4
+  eu:
+    address: 0x09F6E248
+- name: gUnk_09EE2B2C
+  record: MapTable
+  items: [gUnk_0953CAB8]
+  us:
+    address: 0x09EE2B2C
+  jp:
+    address: 0x09EBA5A8
+  eu:
+    address: 0x09F6E24C
+- name: gUnk_09EE2B30
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B30
+  jp:
+    address: 0x09EBA5AC
+  eu:
+    address: 0x09F6E250
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B34
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B34
+  jp:
+    address: 0x09EBA5B0
+  eu:
+    address: 0x09F6E254
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B38
+  record: MapTable
+  items: [gUnk_0953D2B8]
+  us:
+    address: 0x09EE2B38
+  jp:
+    address: 0x09EBA5B4
+  eu:
+    address: 0x09F6E258
+- name: gUnk_09EE2B3C
+  record: MapTable
+  items: [gUnk_0953DAB8]
+  us:
+    address: 0x09EE2B3C
+  jp:
+    address: 0x09EBA5B8
+  eu:
+    address: 0x09F6E25C
+- name: gUnk_09EE2B40
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B40
+  jp:
+    address: 0x09EBA5BC
+  eu:
+    address: 0x09F6E260
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B44
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B44
+  jp:
+    address: 0x09EBA5C0
+  eu:
+    address: 0x09F6E264
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B48
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B48
+  jp:
+    address: 0x09EBA5C4
+  eu:
+    address: 0x09F6E268
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B4C
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B4C
+  jp:
+    address: 0x09EBA5C8
+  eu:
+    address: 0x09F6E26C
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B50
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B50
+  jp:
+    address: 0x09EBA5CC
+  eu:
+    address: 0x09F6E270
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B54
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B54
+  jp:
+    address: 0x09EBA5D0
+  eu:
+    address: 0x09F6E274
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B58
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B58
+  jp:
+    address: 0x09EBA5D4
+  eu:
+    address: 0x09F6E278
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B5C
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B5C
+  jp:
+    address: 0x09EBA5D8
+  eu:
+    address: 0x09F6E27C
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B60
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B60
+  jp:
+    address: 0x09EBA5DC
+  eu:
+    address: 0x09F6E280
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B64
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2B64
+  jp:
+    address: 0x09EBA5E0
+  eu:
+    address: 0x09F6E284
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2B68
+  record: MapTable
+  items: [gUnk_08EFD384]
+  us:
+    address: 0x09EE2B68
+  jp:
+    address: 0x09EBA5E4
+  eu:
+    address: 0x09F6E288
+- name: gUnk_09EE2B6C
+  record: MapTable
+  items: [gUnk_08EF3384]
+  us:
+    address: 0x09EE2B6C
+  jp:
+    address: 0x09EBA5E8
+  eu:
+    address: 0x09F6E28C
+- name: gUnk_09EE2B70
+  record: MapTable
+  items: [gUnk_08EF2384]
+  us:
+    address: 0x09EE2B70
+  jp:
+    address: 0x09EBA5EC
+  eu:
+    address: 0x09F6E290
+- name: gUnk_09EE2B74
+  record: MapTable
+  items: [gUnk_08EF4384]
+  us:
+    address: 0x09EE2B74
+  jp:
+    address: 0x09EBA5F0
+  eu:
+    address: 0x09F6E294
+- name: gUnk_09EE2B78
+  record: MapTable
+  items: [gUnk_08EF7384]
+  us:
+    address: 0x09EE2B78
+  jp:
+    address: 0x09EBA5F4
+  eu:
+    address: 0x09F6E298
+- name: gUnk_09EE2B7C
+  record: MapTable
+  items: [gUnk_0954FAB8, gUnk_095502B8, gUnk_08125E24, gUnk_08125E24, gUnk_09550AB8, gUnk_095512B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2B7C
+  jp:
+    address: 0x09EBA5F8
+  eu:
+    address: 0x09F6E29C
+    items: [gUnk_0954FAB8, gUnk_095502B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09550AB8, gUnk_095512B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2BBC
+  record: MapTable
+  items: [gUnk_09551AB8, gUnk_095522B8, gUnk_08125E24, gUnk_08125E24, gUnk_09552AB8, gUnk_095532B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2BBC
+  jp:
+    address: 0x09EBA638
+  eu:
+    address: 0x09F6E2DC
+    items: [gUnk_09551AB8, gUnk_095522B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09552AB8, gUnk_095532B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2BFC
+  record: MapTable
+  items: [gUnk_09553AB8, gUnk_095542B8, gUnk_08125E24, gUnk_08125E24, gUnk_09554AB8, gUnk_095552B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2BFC
+  jp:
+    address: 0x09EBA678
+  eu:
+    address: 0x09F6E31C
+    items: [gUnk_09553AB8, gUnk_095542B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09554AB8, gUnk_095552B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2C3C
+  record: MapTable
+  items: [gUnk_09555AB8, gUnk_095562B8, gUnk_08125E24, gUnk_08125E24, gUnk_09556AB8, gUnk_095572B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2C3C
+  jp:
+    address: 0x09EBA6B8
+  eu:
+    address: 0x09F6E35C
+    items: [gUnk_09555AB8, gUnk_095562B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09556AB8, gUnk_095572B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2C7C
+  record: SpriteTable
+  items: [gUnk_09871288, gUnk_098729AC, gUnk_09872AC0, gUnk_09872BD4, gUnk_09872CE8, gUnk_098734FC, gUnk_09873D10, gUnk_09875260, gUnk_098767B0, gUnk_09877BD0, gUnk_098783E4, gUnk_09879000, gUnk_09879C1C, gUnk_0987B444, gUnk_0987C060, gUnk_0987D888, gUnk_0987E4A4, gUnk_0987FCCC]
+  us:
+    address: 0x09EE2C7C
+  jp:
+    address: 0x09EBA6F8
+  eu:
+    address: 0x09F6E39C
+- name: gUnk_09EE2CC4
+  record: SpriteTable
+  items: [gUnk_0919752C, gUnk_09197648]
+  us:
+    address: 0x09EE2CC4
+  jp:
+    address: 0x09EBA740
+  eu:
+    address: 0x09F6E3E4
+- name: gUnk_09EE2CCC
+  record: MapTable
+  items: [gUnk_09557AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2CCC
+  jp:
+    address: 0x09EBA748
+  eu:
+    address: 0x09F6E3EC
+    items: [gUnk_09557AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2CDC
+  record: MapTable
+  items: [gUnk_095582B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2CDC
+  jp:
+    address: 0x09EBA758
+  eu:
+    address: 0x09F6E3FC
+    items: [gUnk_095582B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2CEC
+  record: MapTable
+  items: [gUnk_0954BAB8, gUnk_0954C2B8, gUnk_08125E24, gUnk_08125E24, gUnk_0954CAB8, gUnk_0954D2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2CEC
+  jp:
+    address: 0x09EBA768
+  eu:
+    address: 0x09F6E40C
+    items: [gUnk_0954BAB8, gUnk_0954C2B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_0954CAB8, gUnk_0954D2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2D2C
+  record: MapTable
+  items: [gUnk_0954DAB8, gUnk_0954E2B8, gUnk_08125E24, gUnk_08125E24, gUnk_0954EAB8, gUnk_0954F2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2D2C
+  jp:
+    address: 0x09EBA7A8
+  eu:
+    address: 0x09F6E44C
+    items: [gUnk_0954DAB8, gUnk_0954E2B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_0954EAB8, gUnk_0954F2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2D6C
+  record: MapTable
+  items: [gUnk_0955BAB8]
+  us:
+    address: 0x09EE2D6C
+  jp:
+    address: 0x09EBA7E8
+  eu:
+    address: 0x09F6E48C
+- name: gUnk_09EE2D70
+  record: MapTable
+  items: [gUnk_0955C2B8]
+  us:
+    address: 0x09EE2D70
+  jp:
+    address: 0x09EBA7EC
+  eu:
+    address: 0x09F6E490
+- name: gUnk_09EE2D74
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D74
+  jp:
+    address: 0x09EBA7F0
+  eu:
+    address: 0x09F6E494
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D78
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D78
+  jp:
+    address: 0x09EBA7F4
+  eu:
+    address: 0x09F6E498
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D7C
+  record: MapTable
+  items: [gUnk_0955CAB8]
+  us:
+    address: 0x09EE2D7C
+  jp:
+    address: 0x09EBA7F8
+  eu:
+    address: 0x09F6E49C
+- name: gUnk_09EE2D80
+  record: MapTable
+  items: [gUnk_0955D2B8]
+  us:
+    address: 0x09EE2D80
+  jp:
+    address: 0x09EBA7FC
+  eu:
+    address: 0x09F6E4A0
+- name: gUnk_09EE2D84
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D84
+  jp:
+    address: 0x09EBA800
+  eu:
+    address: 0x09F6E4A4
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D88
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D88
+  jp:
+    address: 0x09EBA804
+  eu:
+    address: 0x09F6E4A8
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D8C
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D8C
+  jp:
+    address: 0x09EBA808
+  eu:
+    address: 0x09F6E4AC
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D90
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D90
+  jp:
+    address: 0x09EBA80C
+  eu:
+    address: 0x09F6E4B0
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D94
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D94
+  jp:
+    address: 0x09EBA810
+  eu:
+    address: 0x09F6E4B4
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D98
+  record: MapTable
+  items: [gUnk_08125E24]
+  us:
+    address: 0x09EE2D98
+  jp:
+    address: 0x09EBA814
+  eu:
+    address: 0x09F6E4B8
+    items: [gUnkEu_08125144]
+- name: gUnk_09EE2D9C
+  record: MapTable
+  items: [gUnk_09D33A74, gUnk_09D33274]
+  us:
+    address: 0x09EE2D9C
+  jp:
+    address: 0x09EBA818
+  eu:
+    address: 0x09F6E4BC
+- name: gUnk_09EE2DA4
+  record: SpriteTable
+  items: [gUnk_09755F34, gUnk_09756D16]
+  us:
+    address: 0x09EE2DA4
+  jp:
+    address: 0x09EBA820
+  eu:
+    address: 0x09F6E4C4
+- name: gUnk_09EE2DAC
+  record: SpriteTable
+  items: [gUnk_0986EA78, gUnk_0986F298]
+  us:
+    address: 0x09EE2DAC
+  jp:
+    address: 0x09EBA828
+  eu:
+    address: 0x09F6E4CC
+- name: gUnk_09EE2DB4
+  record: MapTable
+  items: [gUnk_095922B8, gUnk_09592AB8]
+  us:
+    address: 0x09EE2DB4
+  jp:
+    address: 0x09EBA830
+  eu:
+    address: 0x09F6E4D4
+- name: gUnk_09EE2DBC
+  record: MapTable
+  items: [gUnk_095932B8, gUnk_09593AB8]
+  us:
+    address: 0x09EE2DBC
+  jp:
+    address: 0x09EBA838
+  eu:
+    address: 0x09F6E4DC
+- name: gUnk_09EE2DC4
+  record: MapTable
+  items: [gUnk_0958B2B8, gUnk_0958BAB8, gUnk_0958C2B8, gUnk_0958CAB8]
+  us:
+    address: 0x09EE2DC4
+  jp:
+    address: 0x09EBA840
+  eu:
+    address: 0x09F6E4E4
+- name: gUnk_09EE2DD4
+  record: MapTable
+  items: [gUnk_0958D2B8, gUnk_0958DAB8, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2DD4
+  jp:
+    address: 0x09EBA850
+  eu:
+    address: 0x09F6E4F4
+    items: [gUnk_0958D2B8, gUnk_0958DAB8, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2DE4
+  record: MapTable
+  items: [gUnk_0958E2B8, gUnk_0958EAB8, gUnk_0958F2B8, gUnk_0958FAB8]
+  us:
+    address: 0x09EE2DE4
+  jp:
+    address: 0x09EBA860
+  eu:
+    address: 0x09F6E504
+- name: gUnk_09EE2DF4
+  record: MapTable
+  items: [gUnk_095902B8, gUnk_09590AB8, gUnk_095912B8, gUnk_09591AB8]
+  us:
+    address: 0x09EE2DF4
+  jp:
+    address: 0x09EBA870
+  eu:
+    address: 0x09F6E514
+- name: gUnk_09EE2E04
+  record: MapTable
+  items: [gUnk_0955DAB8, gUnk_0955E2B8, gUnk_08125E24, gUnk_08125E24, gUnk_0955EAB8, gUnk_0955F2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2E04
+  jp:
+    address: 0x09EBA880
+  eu:
+    address: 0x09F6E524
+    items: [gUnk_0955DAB8, gUnk_0955E2B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_0955EAB8, gUnk_0955F2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2E44
+  record: MapTable
+  items: [gUnk_0955FAB8, gUnk_095602B8, gUnk_08125E24, gUnk_08125E24, gUnk_09560AB8, gUnk_095612B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2E44
+  jp:
+    address: 0x09EBA8C0
+  eu:
+    address: 0x09F6E564
+    items: [gUnk_0955FAB8, gUnk_095602B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09560AB8, gUnk_095612B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2E84
+  record: SpriteTable
+  items: [gUnk_098693B8, gUnk_0986A2C0, gUnk_0986B424, gUnk_0986C588, gUnk_0986E280]
+  us:
+    address: 0x09EE2E84
+  jp:
+    address: 0x09EBA900
+  eu:
+    address: 0x09F6E5A4
+- name: gUnk_09EE2E98
+  record: MapTable
+  items: [gUnk_09558AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2E98
+  jp:
+    address: 0x09EBA914
+  eu:
+    address: 0x09F6E5B8
+    items: [gUnk_09558AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2EA8
+  record: MapTable
+  items: [gUnk_095592B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2EA8
+  jp:
+    address: 0x09EBA924
+  eu:
+    address: 0x09F6E5C8
+    items: [gUnk_095592B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2EB8
+  record: MapTable
+  items: [gUnk_09559AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2EB8
+  jp:
+    address: 0x09EBA934
+  eu:
+    address: 0x09F6E5D8
+    items: [gUnk_09559AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2EC8
+  record: MapTable
+  items: [gUnk_0955A2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2EC8
+  jp:
+    address: 0x09EBA944
+  eu:
+    address: 0x09F6E5E8
+    items: [gUnk_0955A2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2ED8
+  record: MapTable
+  items: [gUnk_0955AAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2ED8
+  jp:
+    address: 0x09EBA954
+  eu:
+    address: 0x09F6E5F8
+    items: [gUnk_0955AAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2EE8
+  record: MapTable
+  items: [gUnk_0955B2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2EE8
+  jp:
+    address: 0x09EBA964
+  eu:
+    address: 0x09F6E608
+    items: [gUnk_0955B2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2EF8
+  record: SpriteTable
+  items: [gUnk_09864E28, gUnk_09866668, gUnk_0986700C, gMapUiSpriteUs_098A94A0]
+  us:
+    address: 0x09EE2EF8
+  jp:
+    address: 0x09EBA974
+  eu:
+    address: 0x09F6E618
+- name: gUnk_09EE2F08
+  record: MapTable
+  items: [gUnk_09545AB8, gUnk_095462B8, gUnk_08125E24, gUnk_08125E24, gUnk_09546AB8, gUnk_095472B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2F08
+  jp:
+    address: 0x09EBA984
+  eu:
+    address: 0x09F6E628
+    items: [gUnk_09545AB8, gUnk_095462B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09546AB8, gUnk_095472B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2F48
+  record: MapTable
+  items: [gUnk_09547AB8, gUnk_095482B8, gUnk_08125E24, gUnk_08125E24, gUnk_09548AB8, gUnk_095492B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2F48
+  jp:
+    address: 0x09EBA9C4
+  eu:
+    address: 0x09F6E668
+    items: [gUnk_09547AB8, gUnk_095482B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09548AB8, gUnk_095492B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2F88
+  record: MapTable
+  items: [gUnk_09549AB8, gUnk_0954A2B8, gUnk_08125E24, gUnk_08125E24, gUnk_0954AAB8, gUnk_0954B2B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE2F88
+  jp:
+    address: 0x09EBAA04
+  eu:
+    address: 0x09F6E6A8
+    items: [gUnk_09549AB8, gUnk_0954A2B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_0954AAB8, gUnk_0954B2B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE2FC8
+  record: MapTable
+  items: [gUnk_0952B2B8, gUnk_0952BAB8, gUnk_0952C2B8, gUnk_0952CAB8]
+  us:
+    address: 0x09EE2FC8
+  jp:
+    address: 0x09EBAA44
+  eu:
+    address: 0x09F6E6E8
+- name: gUnk_09EE2FD8
+  record: MapTable
+  items: [gUnk_0952D2B8, gUnk_0952DAB8, gUnk_0952E2B8, gUnk_08125E24]
+  us:
+    address: 0x09EE2FD8
+  jp:
+    address: 0x09EBAA54
+  eu:
+    address: 0x09F6E6F8
+    items: [gUnk_0952D2B8, gUnk_0952DAB8, gUnk_0952E2B8, gUnkEu_08125144]
+- name: gUnk_09EE2FE8
+  record: SpriteTable
+  items: [gUnk_09860684, gUnk_09862924, gUnk_09863E00, gUnk_0985F660, gUnk_0985D208, gUnk_0985E638, gUnk_098635EC]
+  us:
+    address: 0x09EE2FE8
+  jp:
+    address: 0x09EBAA64
+  eu:
+    address: 0x09F6E708
+- name: gUnk_09EE3004
+  record: MapTable
+  items: [gUnk_0957D2B8, gUnk_0957DAB8, gUnk_0957E2B8, gUnk_0957EAB8]
+  us:
+    address: 0x09EE3004
+  jp:
+    address: 0x09EBAA80
+  eu:
+    address: 0x09F6E724
+- name: gUnk_09EE3014
+  record: MapTable
+  items: [gUnk_0957F2B8, gUnk_0957FAB8, gUnk_095802B8, gUnk_09580AB8]
+  us:
+    address: 0x09EE3014
+  jp:
+    address: 0x09EBAA90
+  eu:
+    address: 0x09F6E734
+- name: gUnk_09EE3024
+  record: MapTable
+  items: [gUnk_095812B8, gUnk_09581AB8, gUnk_095822B8, gUnk_09582AB8]
+  us:
+    address: 0x09EE3024
+  jp:
+    address: 0x09EBAAA0
+  eu:
+    address: 0x09F6E744
+- name: gUnk_09EE3034
+  record: MapTable
+  items: [gUnk_095832B8, gUnk_09583AB8, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3034
+  jp:
+    address: 0x09EBAAB0
+  eu:
+    address: 0x09F6E754
+    items: [gUnk_095832B8, gUnk_09583AB8, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3044
+  record: MapTable
+  items: [gUnk_095842B8]
+  us:
+    address: 0x09EE3044
+  jp:
+    address: 0x09EBAAC0
+  eu:
+    address: 0x09F6E764
+- name: gUnk_09EE3048
+  record: MapTable
+  items: [gUnk_09584AB8]
+  us:
+    address: 0x09EE3048
+  jp:
+    address: 0x09EBAAC4
+  eu:
+    address: 0x09F6E768
+- name: gUnk_09EE304C
+  record: MapTable
+  items: [gUnk_095852B8, gUnk_09585AB8, gUnk_095862B8, gUnk_09586AB8]
+  us:
+    address: 0x09EE304C
+  jp:
+    address: 0x09EBAAC8
+  eu:
+    address: 0x09F6E76C
+- name: gUnk_09EE305C
+  record: MapTable
+  items: [gUnk_095872B8, gUnk_09587AB8, gUnk_095882B8, gUnk_09588AB8]
+  us:
+    address: 0x09EE305C
+  jp:
+    address: 0x09EBAAD8
+  eu:
+    address: 0x09F6E77C
+- name: gUnk_09EE306C
+  record: SpriteTable
+  items: [gUnk_098894A4, gUnk_0988A5B0, gUnk_0988ABD0]
+  us:
+    address: 0x09EE306C
+  jp:
+    address: 0x09EBAAE8
+  eu:
+    address: 0x09F6E78C
+- name: gUnk_09EE3078
+  record: MapTable
+  items: [gUnk_095892B8]
+  us:
+    address: 0x09EE3078
+  jp:
+    address: 0x09EBAAF4
+  eu:
+    address: 0x09F6E798
+- name: gUnk_09EE307C
+  record: MapTable
+  items: [gUnk_09589AB8]
+  us:
+    address: 0x09EE307C
+  jp:
+    address: 0x09EBAAF8
+  eu:
+    address: 0x09F6E79C
+- name: gUnk_09EE3080
+  record: MapTable
+  items: [gUnk_0958A2B8]
+  us:
+    address: 0x09EE3080
+  jp:
+    address: 0x09EBAAFC
+  eu:
+    address: 0x09F6E7A0
+- name: gUnk_09EE3084
+  record: MapTable
+  items: [gUnk_0958AAB8]
+  us:
+    address: 0x09EE3084
+  jp:
+    address: 0x09EBAB00
+  eu:
+    address: 0x09F6E7A4
+- name: gUnk_09EE3088
+  record: MapTable
+  items: [gUnk_095942B8]
+  us:
+    address: 0x09EE3088
+  jp:
+    address: 0x09EBAB04
+  eu:
+    address: 0x09F6E7A8
+- name: gUnk_09EE308C
+  record: MapTable
+  items: [gUnk_09594AB8]
+  us:
+    address: 0x09EE308C
+  jp:
+    address: 0x09EBAB08
+  eu:
+    address: 0x09F6E7AC
+- name: gUnk_09EE3090
+  record: MapTable
+  items: [gUnk_095952B8, gUnk_09595AB8, gUnk_095962B8, gUnk_09596AB8]
+  us:
+    address: 0x09EE3090
+  jp:
+    address: 0x09EBAB0C
+  eu:
+    address: 0x09F6E7B0
+- name: gUnk_09EE30A0
+  record: MapTable
+  items: [gUnk_095972B8, gUnk_09597AB8, gUnk_095982B8, gUnk_09598AB8]
+  us:
+    address: 0x09EE30A0
+  jp:
+    address: 0x09EBAB1C
+  eu:
+    address: 0x09F6E7C0
+- name: gUnk_09EE30B0
+  record: SpriteTable
+  items: [gUnk_09890634, gUnk_0988FE88, gUnk_09891E7C, gUnk_0919CF38, gUnk_0919D74C, gUnk_09891664, gUnk_09890E4C, gUnk_0919DD68, gUnk_0919C91C, gUnk_0988F6DC]
+  us:
+    address: 0x09EE30B0
+  jp:
+    address: 0x09EBAB2C
+  eu:
+    address: 0x09F6E7D0
+- name: gUnk_09EE30D8
+  record: MapTable
+  items: [gUnk_09561AB8, gUnk_095622B8, gUnk_08125E24, gUnk_08125E24, gUnk_09562AB8, gUnk_095632B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE30D8
+  jp:
+    address: 0x09EBAB54
+  eu:
+    address: 0x09F6E7F8
+    items: [gUnk_09561AB8, gUnk_095622B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09562AB8, gUnk_095632B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3118
+  record: MapTable
+  items: [gUnk_09563AB8, gUnk_095642B8, gUnk_08125E24, gUnk_08125E24, gUnk_09564AB8, gUnk_095652B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3118
+  jp:
+    address: 0x09EBAB94
+  eu:
+    address: 0x09F6E838
+    items: [gUnk_09563AB8, gUnk_095642B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09564AB8, gUnk_095652B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3158
+  record: MapTable
+  items: [gUnk_09565AB8, gUnk_095662B8]
+  us:
+    address: 0x09EE3158
+  jp:
+    address: 0x09EBABD4
+  eu:
+    address: 0x09F6E878
+- name: gUnk_09EE3160
+  record: MapTable
+  items: [gUnk_09566AB8, gUnk_095672B8]
+  us:
+    address: 0x09EE3160
+  jp:
+    address: 0x09EBABDC
+  eu:
+    address: 0x09F6E880
+- name: gUnk_09EE3168
+  record: MapTable
+  items: [gUnk_09567AB8]
+  us:
+    address: 0x09EE3168
+  jp:
+    address: 0x09EBABE4
+  eu:
+    address: 0x09F6E888
+- name: gUnk_09EE316C
+  record: MapTable
+  items: [gUnk_095682B8]
+  us:
+    address: 0x09EE316C
+  jp:
+    address: 0x09EBABE8
+  eu:
+    address: 0x09F6E88C
+- name: gUnk_09EE3170
+  record: MapTable
+  items: [gUnk_09568AB8]
+  us:
+    address: 0x09EE3170
+  jp:
+    address: 0x09EBABEC
+  eu:
+    address: 0x09F6E890
+- name: gUnk_09EE3174
+  record: MapTable
+  items: [gUnk_095692B8]
+  us:
+    address: 0x09EE3174
+  jp:
+    address: 0x09EBABF0
+  eu:
+    address: 0x09F6E894
+- name: gUnk_09EE3178
+  record: MapTable
+  items: [gUnk_09569AB8]
+  us:
+    address: 0x09EE3178
+  jp:
+    address: 0x09EBABF4
+  eu:
+    address: 0x09F6E898
+- name: gUnk_09EE317C
+  record: MapTable
+  items: [gUnk_0956A2B8, gUnk_0956AAB8]
+  us:
+    address: 0x09EE317C
+  jp:
+    address: 0x09EBABF8
+  eu:
+    address: 0x09F6E89C
+- name: gUnk_09EE3184
+  record: MapTable
+  items: [gUnk_0956B2B8, gUnk_0956BAB8]
+  us:
+    address: 0x09EE3184
+  jp:
+    address: 0x09EBAC00
+  eu:
+    address: 0x09F6E8A4
+- name: gUnk_09EE318C
+  record: MapTable
+  items: [gUnk_0956C2B8, gUnk_0956CAB8]
+  us:
+    address: 0x09EE318C
+  jp:
+    address: 0x09EBAC08
+  eu:
+    address: 0x09F6E8AC
+- name: gUnk_09EE3194
+  record: MapTable
+  items: [gUnk_0956D2B8, gUnk_0956DAB8, gUnk_0956E2B8, gUnk_0956EAB8]
+  us:
+    address: 0x09EE3194
+  jp:
+    address: 0x09EBAC10
+  eu:
+    address: 0x09F6E8B4
+- name: gUnk_09EE31A4
+  record: MapTable
+  items: [gUnk_0956F2B8, gUnk_0956FAB8, gUnk_095702B8, gUnk_09570AB8]
+  us:
+    address: 0x09EE31A4
+  jp:
+    address: 0x09EBAC20
+  eu:
+    address: 0x09F6E8C4
+- name: gUnk_09EE31B4
+  record: SpriteTable
+  items: [gUnk_09896190, gUnk_09896EC8]
+  us:
+    address: 0x09EE31B4
+  jp:
+    address: 0x09EBAC30
+  eu:
+    address: 0x09F6E8D4
+- name: gUnk_09EE31BC
+  record: MapTable
+  items: [gUnk_095992B8, gUnk_09599AB8, gUnk_0959A2B8, gUnk_0959AAB8]
+  us:
+    address: 0x09EE31BC
+  jp:
+    address: 0x09EBAC38
+  eu:
+    address: 0x09F6E8DC
+- name: gUnk_09EE31CC
+  record: MapTable
+  items: [gUnk_0959B2B8, gUnk_0959BAB8, gUnk_0959C2B8, gUnk_0959CAB8]
+  us:
+    address: 0x09EE31CC
+  jp:
+    address: 0x09EBAC48
+  eu:
+    address: 0x09F6E8EC
+- name: gUnk_09EE31DC
+  record: MapTable
+  items: [gUnk_095A52B8, gUnk_095A5AB8, gUnk_095A62B8, gUnk_095A6AB8]
+  us:
+    address: 0x09EE31DC
+  jp:
+    address: 0x09EBAC58
+  eu:
+    address: 0x09F6E8FC
+- name: gUnk_09EE31EC
+  record: MapTable
+  items: [gUnk_0959D2B8, gUnk_0959DAB8, gUnk_0959E2B8, gUnk_0959EAB8]
+  us:
+    address: 0x09EE31EC
+  jp:
+    address: 0x09EBAC68
+  eu:
+    address: 0x09F6E90C
+- name: gUnk_09EE31FC
+  record: MapTable
+  items: [gUnk_0959F2B8, gUnk_0959FAB8, gUnk_095A02B8, gUnk_095A0AB8]
+  us:
+    address: 0x09EE31FC
+  jp:
+    address: 0x09EBAC78
+  eu:
+    address: 0x09F6E91C
+- name: gUnk_09EE320C
+  record: MapTable
+  items: [gUnk_095A12B8, gUnk_095A1AB8, gUnk_095A22B8, gUnk_095A2AB8]
+  us:
+    address: 0x09EE320C
+  jp:
+    address: 0x09EBAC88
+  eu:
+    address: 0x09F6E92C
+- name: gUnk_09EE321C
+  record: MapTable
+  items: [gUnk_095A32B8, gUnk_095A3AB8, gUnk_095A42B8, gUnk_095A4AB8]
+  us:
+    address: 0x09EE321C
+  jp:
+    address: 0x09EBAC98
+  eu:
+    address: 0x09F6E93C
+- name: gUnk_09EE322C
+  record: SpriteTable
+  items: [gUnk_098A12D8, gUnk_098A21E0, gUnk_098A24FC, gUnk_098A2D98, gUnk_098A3634, gUnk_098A3950]
+  us:
+    address: 0x09EE322C
+  jp:
+    address: 0x09EBACA8
+  eu:
+    address: 0x09F6E94C
+- name: gUnk_09EE3244
+  record: MapTable
+  items: [gUnk_095A72B8, gUnk_095A7AB8, gUnk_095A82B8, gUnk_095A8AB8, gUnk_095A92B8, gUnk_095A9AB8, gUnk_095AA2B8, gUnk_095AAAB8, gUnk_095AB2B8, gUnk_095ABAB8, gUnk_095AC2B8, gUnk_095ACAB8, gUnk_095AD2B8, gUnk_095ADAB8, gUnk_095AE2B8, gUnk_095AEAB8]
+  us:
+    address: 0x09EE3244
+  jp:
+    address: 0x09EBACC0
+  eu:
+    address: 0x09F6E964
+- name: gUnk_09EE3284
+  record: MapTable
+  items: [gUnk_095AF2B8, gUnk_095AFAB8, gUnk_095B02B8, gUnk_095B0AB8, gUnk_095B12B8, gUnk_095B22B8, gUnk_095B3AB8, gUnk_095B42B8, gUnk_095B4AB8, gUnk_095B52B8, gUnk_095B62B8, gUnk_095B6AB8, gUnk_095B72B8, gUnk_095B7AB8, gUnk_095B82B8, gUnk_095B8AB8]
+  us:
+    address: 0x09EE3284
+  jp:
+    address: 0x09EBAD00
+  eu:
+    address: 0x09F6E9A4
+- name: gUnk_09EE32C4
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_095B1AB8, gUnk_095B2AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_095B5AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE32C4
+  jp:
+    address: 0x09EBAD40
+  eu:
+    address: 0x09F6E9E4
+    items: [gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnk_095B1AB8, gUnk_095B2AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnk_095B5AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3304
+  record: MapTable
+  items: [gUnk_095CA2B8, gUnk_095CAAB8, gUnk_095CB2B8, gUnk_095CBAB8, gUnk_095CC2B8, gUnk_095CCAB8, gUnk_095CD2B8, gUnk_095CDAB8, gUnk_095CE2B8, gUnk_095CEAB8, gUnk_095CF2B8, gUnk_095CFAB8, gUnk_095D02B8, gUnk_095D0AB8, gUnk_095D12B8, gUnk_095D1AB8]
+  us:
+    address: 0x09EE3304
+  jp:
+    address: 0x09EBAD80
+  eu:
+    address: 0x09F6EA24
+- name: gUnk_09EE3344
+  record: MapTable
+  items: [gUnk_095D22B8, gUnk_095D2AB8, gUnk_095D32B8, gUnk_095D3AB8, gUnk_095D42B8, gUnk_095D4AB8, gUnk_095D52B8, gUnk_095D5AB8, gUnk_095D62B8, gUnk_095D6AB8, gUnk_095D72B8, gUnk_095D7AB8, gUnk_095D82B8, gUnk_095D8AB8, gUnk_095D92B8, gUnk_095D9AB8]
+  us:
+    address: 0x09EE3344
+  jp:
+    address: 0x09EBADC0
+  eu:
+    address: 0x09F6EA64
+- name: gUnk_09EE3384
+  record: MapTable
+  items: [gUnk_0953E2B8, gUnk_0953EAB8, gUnk_0953F2B8, gUnk_0953FAB8]
+  us:
+    address: 0x09EE3384
+  jp:
+    address: 0x09EBAE00
+  eu:
+    address: 0x09F6EAA4
+- name: gUnk_09EE3394
+  record: MapTable
+  items: [gUnk_095402B8, gUnk_09540AB8, gUnk_08125E24, gUnk_095412B8]
+  us:
+    address: 0x09EE3394
+  jp:
+    address: 0x09EBAE10
+  eu:
+    address: 0x09F6EAB4
+    items: [gUnk_095402B8, gUnk_09540AB8, gUnkEu_08125144, gUnk_095412B8]
+- name: gUnk_09EE33A4
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_095B9AB8, gUnk_095BA2B8, gUnk_095BAAB8, gUnk_08125E24, gUnk_095BBAB8, gUnk_095BC2B8, gUnk_095BCAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE33A4
+  jp:
+    address: 0x09EBAE20
+  eu:
+    address: 0x09F6EAC4
+    items: [gUnkEu_08125144, gUnk_095B9AB8, gUnk_095BA2B8, gUnk_095BAAB8, gUnkEu_08125144, gUnk_095BBAB8, gUnk_095BC2B8, gUnk_095BCAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE33E4
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_095C1AB8, gUnk_095C22B8, gUnk_095C2AB8, gUnk_08125E24, gUnk_095C3AB8, gUnk_095C42B8, gUnk_095C4AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE33E4
+  jp:
+    address: 0x09EBAE60
+  eu:
+    address: 0x09F6EB04
+    items: [gUnkEu_08125144, gUnk_095C1AB8, gUnk_095C22B8, gUnk_095C2AB8, gUnkEu_08125144, gUnk_095C3AB8, gUnk_095C42B8, gUnk_095C4AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3424
+  record: MapTable
+  items: [gUnk_08125E24, gUnk_095C1AB8, gUnk_095C22B8, gUnk_095C2AB8, gUnk_08125E24, gUnk_095C92B8, gUnk_095C9AB8, gUnk_095C4AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3424
+  jp:
+    address: 0x09EBAEA0
+  eu:
+    address: 0x09F6EB44
+    items: [gUnkEu_08125144, gUnk_095C1AB8, gUnk_095C22B8, gUnk_095C2AB8, gUnkEu_08125144, gUnk_095C92B8, gUnk_095C9AB8, gUnk_095C4AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3464
+  record: MapTable
+  items: [gUnk_095E8AB8, gUnk_095E92B8, gUnk_095E9AB8, gUnk_095EA2B8, gUnk_095EAAB8, gUnk_095EB2B8, gUnk_095EBAB8, gUnk_095EC2B8, gUnk_095ECAB8, gUnk_095ED2B8, gUnk_095EDAB8, gUnk_095EE2B8, gUnk_095EEAB8, gUnk_095EF2B8, gUnk_095EFAB8, gUnk_095F02B8]
+  us:
+    address: 0x09EE3464
+  jp:
+    address: 0x09EBAEE0
+  eu:
+    address: 0x09F6EB84
+- name: gUnk_09EE34A4
+  record: MapTable
+  items: [gUnk_095F0AB8, gUnk_095F12B8, gUnk_095F1AB8, gUnk_095F22B8, gUnk_095F3AB8, gUnk_095F42B8, gUnk_095F4AB8, gUnk_095F52B8, gUnk_095F5AB8, gUnk_095F62B8, gUnk_095F6AB8, gUnk_095F72B8, gUnk_095F7AB8, gUnk_095F82B8, gUnk_095F8AB8, gUnk_095F92B8]
+  us:
+    address: 0x09EE34A4
+  jp:
+    address: 0x09EBAF20
+  eu:
+    address: 0x09F6EBC4
+- name: gUnk_09EE34E4
+  record: MapTable
+  items: [gUnk_095F0AB8, gUnk_095F12B8, gUnk_095F1AB8, gUnk_095F2AB8, gUnk_095F3AB8, gUnk_095F42B8, gUnk_095F4AB8, gUnk_095F52B8, gUnk_095F5AB8, gUnk_095F62B8, gUnk_095F6AB8, gUnk_095F72B8, gUnk_095F7AB8, gUnk_095F82B8, gUnk_095F8AB8, gUnk_095F92B8]
+  us:
+    address: 0x09EE34E4
+  jp:
+    address: 0x09EBAF60
+  eu:
+    address: 0x09F6EC04
+- name: gUnk_09EE3524
+  record: MapTable
+  items: [gUnk_095F0AB8, gUnk_095F12B8, gUnk_095F1AB8, gUnk_095F32B8, gUnk_095F3AB8, gUnk_095F42B8, gUnk_095F4AB8, gUnk_095F52B8, gUnk_095F5AB8, gUnk_095F62B8, gUnk_095F6AB8, gUnk_095F72B8, gUnk_095F7AB8, gUnk_095F82B8, gUnk_095F8AB8, gUnk_095F92B8]
+  us:
+    address: 0x09EE3524
+  jp:
+    address: 0x09EBAFA0
+  eu:
+    address: 0x09F6EC44
+- name: gUnk_09EE3564
+  record: MapTable
+  items: [gUnk_095DB2B8, gUnk_095DBAB8, gUnk_095DC2B8, gUnk_095DCAB8]
+  us:
+    address: 0x09EE3564
+  jp:
+    address: 0x09EBAFE0
+  eu:
+    address: 0x09F6EC84
+- name: gUnk_09EE3574
+  record: MapTable
+  items: [gUnk_095DD2B8, gUnk_095DDAB8, gUnk_095DE2B8, gUnk_095DEAB8]
+  us:
+    address: 0x09EE3574
+  jp:
+    address: 0x09EBAFF0
+  eu:
+    address: 0x09F6EC94
+- name: gUnk_09EE3584
+  record: MapTable
+  items: [gUnk_095DF2B8, gUnk_095DFAB8, gUnk_095E02B8, gUnk_095E0AB8]
+  us:
+    address: 0x09EE3584
+  jp:
+    address: 0x09EBB000
+  eu:
+    address: 0x09F6ECA4
+- name: gUnk_09EE3594
+  record: MapTable
+  items: [gUnk_095E12B8, gUnk_095E1AB8, gUnk_095E22B8, gUnk_095E2AB8]
+  us:
+    address: 0x09EE3594
+  jp:
+    address: 0x09EBB010
+  eu:
+    address: 0x09F6ECB4
+- name: gUnk_09EE35A4
+  record: MapTable
+  items: [gUnk_095E32B8, gUnk_095E3AB8, gUnk_095E42B8, gUnk_095E4AB8]
+  us:
+    address: 0x09EE35A4
+  jp:
+    address: 0x09EBB020
+  eu:
+    address: 0x09F6ECC4
+- name: gUnk_09EE35B4
+  record: MapTable
+  items: [gUnk_095DA2B8]
+  us:
+    address: 0x09EE35B4
+  jp:
+    address: 0x09EBB030
+  eu:
+    address: 0x09F6ECD4
+- name: gUnk_09EE35B8
+  record: MapTable
+  items: [gUnk_095DAAB8]
+  us:
+    address: 0x09EE35B8
+  jp:
+    address: 0x09EBB034
+  eu:
+    address: 0x09F6ECD8
+- name: gUnk_09EE35BC
+  record: MapTable
+  items: [gUnk_095F9AB8, gUnk_095FA2B8, gUnk_095FAAB8, gUnk_095FB2B8]
+  us:
+    address: 0x09EE35BC
+  jp:
+    address: 0x09EBB038
+  eu:
+    address: 0x09F6ECDC
+- name: gUnk_09EE35CC
+  record: MapTable
+  items: [gUnk_095FBAB8, gUnk_095FC2B8, gUnk_095FCAB8, gUnk_095FD2B8]
+  us:
+    address: 0x09EE35CC
+  jp:
+    address: 0x09EBB048
+  eu:
+    address: 0x09F6ECEC
+- name: gUnk_09EE35DC
+  record: MapTable
+  items: [gUnk_095FDAB8, gUnk_095FE2B8, gUnk_095FEAB8, gUnk_095FF2B8]
+  us:
+    address: 0x09EE35DC
+  jp:
+    address: 0x09EBB058
+  eu:
+    address: 0x09F6ECFC
+- name: gUnk_09EE35EC
+  record: MapTable
+  items: [gUnk_095FFAB8, gUnk_096002B8, gUnk_09600AB8, gUnk_096012B8]
+  us:
+    address: 0x09EE35EC
+  jp:
+    address: 0x09EBB068
+  eu:
+    address: 0x09F6ED0C
+- name: gUnk_09EE35FC
+  record: MapTable
+  items: [gUnk_09601AB8]
+  us:
+    address: 0x09EE35FC
+  jp:
+    address: 0x09EBB078
+  eu:
+    address: 0x09F6ED1C
+- name: gUnk_09EE3600
+  record: MapTable
+  items: [gUnk_096022B8]
+  us:
+    address: 0x09EE3600
+  jp:
+    address: 0x09EBB07C
+  eu:
+    address: 0x09F6ED20
+- name: gUnk_09EE3604
+  record: MapTable
+  items: [gUnk_09602AB8]
+  us:
+    address: 0x09EE3604
+  jp:
+    address: 0x09EBB080
+  eu:
+    address: 0x09F6ED24
+- name: gUnk_09EE3608
+  record: MapTable
+  items: [gUnk_096032B8]
+  us:
+    address: 0x09EE3608
+  jp:
+    address: 0x09EBB084
+  eu:
+    address: 0x09F6ED28
+- name: gUnk_09EE360C
+  record: SpriteTable
+  items: [gUnk_0989AD5C, gUnk_0989B678]
+  us:
+    address: 0x09EE360C
+  jp:
+    address: 0x09EBB088
+  eu:
+    address: 0x09F6ED2C
+- name: gUnk_09EE3614
+  record: MapTable
+  items: [gUnk_09603AB8, gUnk_096042B8, gUnk_08125E24, gUnk_09604AB8, gUnk_096052B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3614
+  jp:
+    address: 0x09EBB090
+  eu:
+    address: 0x09F6ED34
+    items: [gUnk_09603AB8, gUnk_096042B8, gUnkEu_08125144, gUnk_09604AB8, gUnk_096052B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3638
+  record: MapTable
+  items: [gUnk_09605AB8, gUnk_08125E24, gUnk_08125E24, gUnk_096062B8, gUnk_09606AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3638
+  jp:
+    address: 0x09EBB0B4
+  eu:
+    address: 0x09F6ED58
+    items: [gUnk_09605AB8, gUnkEu_08125144, gUnkEu_08125144, gUnk_096062B8, gUnk_09606AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE365C
+  record: MapTable
+  items: [gUnk_096072B8, gUnk_09607AB8, gUnk_08125E24, gUnk_096082B8, gUnk_09608AB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE365C
+  jp:
+    address: 0x09EBB0D8
+  eu:
+    address: 0x09F6ED7C
+    items: [gUnk_096072B8, gUnk_09607AB8, gUnkEu_08125144, gUnk_096082B8, gUnk_09608AB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3680
+  record: MapTable
+  items: [gUnk_096092B8, gUnk_09609AB8, gUnk_08125E24, gUnk_0960A2B8, gUnk_0960AAB8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3680
+  jp:
+    address: 0x09EBB0FC
+  eu:
+    address: 0x09F6EDA0
+    items: [gUnk_096092B8, gUnk_09609AB8, gUnkEu_08125144, gUnk_0960A2B8, gUnk_0960AAB8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE36A4
+  record: MapTable
+  items: [gUnk_0960B2B8, gUnk_0960BAB8, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE36A4
+  jp:
+    address: 0x09EBB120
+  eu:
+    address: 0x09F6EDC4
+    items: [gUnk_0960B2B8, gUnk_0960BAB8, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE36B4
+  record: MapTable
+  items: [gUnk_0960C2B8, gUnk_0960CAB8, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE36B4
+  jp:
+    address: 0x09EBB130
+  eu:
+    address: 0x09F6EDD4
+    items: [gUnk_0960C2B8, gUnk_0960CAB8, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE36C4
+  record: MapTable
+  items: [gUnk_0960D2B8]
+  us:
+    address: 0x09EE36C4
+  jp:
+    address: 0x09EBB140
+  eu:
+    address: 0x09F6EDE4
+- name: gUnk_09EE36C8
+  record: MapTable
+  items: [gUnk_0960DAB8]
+  us:
+    address: 0x09EE36C8
+  jp:
+    address: 0x09EBB144
+  eu:
+    address: 0x09F6EDE8
+- name: gUnk_09EE36CC
+  record: SpriteTable
+  items: [gUnk_0989D0B8, gUnk_093E9F04]
+  us:
+    address: 0x09EE36CC
+  jp:
+    address: 0x09EBB148
+  eu:
+    address: 0x09F6EDEC
+- name: gUnk_09EE36D4
+  record: MapTable
+  items: [gUnk_095712B8, gUnk_09571AB8, gUnk_095722B8, gUnk_09572AB8]
+  us:
+    address: 0x09EE36D4
+  jp:
+    address: 0x09EBB150
+  eu:
+    address: 0x09F6EDF4
+- name: gUnk_09EE36E4
+  record: MapTable
+  items: [gUnk_095732B8, gUnk_09573AB8, gUnk_095742B8, gUnk_09574AB8]
+  us:
+    address: 0x09EE36E4
+  jp:
+    address: 0x09EBB160
+  eu:
+    address: 0x09F6EE04
+- name: gUnk_09EE36F4
+  record: MapTable
+  items: [gUnk_095752B8, gUnk_09575AB8, gUnk_095762B8, gUnk_09576AB8]
+  us:
+    address: 0x09EE36F4
+  jp:
+    address: 0x09EBB170
+  eu:
+    address: 0x09F6EE14
+- name: gUnk_09EE3704
+  record: MapTable
+  items: [gUnk_095772B8, gUnk_09577AB8, gUnk_095782B8, gUnk_09578AB8]
+  us:
+    address: 0x09EE3704
+  jp:
+    address: 0x09EBB180
+  eu:
+    address: 0x09F6EE24
+- name: gUnk_09EE3714
+  record: MapTable
+  items: [gUnk_095792B8, gUnk_09579AB8, gUnk_0957A2B8, gUnk_0957AAB8]
+  us:
+    address: 0x09EE3714
+  jp:
+    address: 0x09EBB190
+  eu:
+    address: 0x09F6EE34
+- name: gUnk_09EE3724
+  record: MapTable
+  items: [gUnk_0957B2B8, gUnk_0957BAB8, gUnk_0957C2B8, gUnk_0957CAB8]
+  us:
+    address: 0x09EE3724
+  jp:
+    address: 0x09EBB1A0
+  eu:
+    address: 0x09F6EE44
+- name: gUnk_09EE3734
+  record: MapTable
+  items: [gUnk_09522AB8, gUnk_095232B8, gUnk_08125E24, gUnk_08125E24, gUnk_09523AB8, gUnk_095242B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3734
+  jp:
+    address: 0x09EBB1B0
+  eu:
+    address: 0x09F6EE54
+    items: [gUnk_09522AB8, gUnk_095232B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09523AB8, gUnk_095242B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3774
+  record: MapTable
+  items: [gUnk_09524AB8, gUnk_095252B8, gUnk_08125E24, gUnk_08125E24, gUnk_09525AB8, gUnk_095262B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3774
+  jp:
+    address: 0x09EBB1F0
+  eu:
+    address: 0x09F6EE94
+    items: [gUnk_09524AB8, gUnk_095252B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09525AB8, gUnk_095262B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE37B4
+  record: MapTable
+  items: [gUnk_09526AB8, gUnk_095272B8, gUnk_08125E24, gUnk_08125E24, gUnk_09527AB8, gUnk_095282B8, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE37B4
+  jp:
+    address: 0x09EBB230
+  eu:
+    address: 0x09F6EED4
+    items: [gUnk_09526AB8, gUnk_095272B8, gUnkEu_08125144, gUnkEu_08125144, gUnk_09527AB8, gUnk_095282B8, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE37F4
+  record: SpriteTable
+  items: [gUnk_098A12D8, gUnk_098A21E0, gUnk_098A24FC, gUnk_098A2D98, gUnk_098A3634, gUnk_098A3950, gUnk_098A12D8, gUnk_098A21E0]
+  us:
+    address: 0x09EE37F4
+  jp:
+    address: 0x09EBB270
+  eu:
+    address: 0x09F6EF14
+- name: gUnk_09EE3814
+  record: MapTable
+  items: [gUnk_0960E2B8, gUnk_0960EAB8, gUnk_08125E24, gUnk_08125E24]
+  us:
+    address: 0x09EE3814
+  jp:
+    address: 0x09EBB290
+  eu:
+    address: 0x09F6EF34
+    items: [gUnk_0960E2B8, gUnk_0960EAB8, gUnkEu_08125144, gUnkEu_08125144]
+- name: gUnk_09EE3824
+  record: MapTable
+  items: [gUnk_095E52B8, gUnk_095E5AB8, gUnk_095E62B8, gUnk_095E6AB8]
+  us:
+    address: 0x09EE3824
+  jp:
+    address: 0x09EBB2A0
+  eu:
+    address: 0x09F6EF44
+- name: gUnk_09EE3834
+  record: MapTable
+  items: [gUnk_095E72B8, gUnk_095E7AB8, gUnk_08125E24, gUnk_095E82B8]
+  us:
+    address: 0x09EE3834
+  jp:
+    address: 0x09EBB2B0
+  eu:
+    address: 0x09F6EF54
+    items: [gUnk_095E72B8, gUnk_095E7AB8, gUnkEu_08125144, gUnk_095E82B8]
 - name: gUnk_08CB06E4
   format: tiles8
   width: 32

@@ -146,7 +146,6 @@ msg.c
 boss_card_data.c
 continue_ui.c
 event_backgrounds.c
-event_background_data.c
 event_index_data.c
 events_074_133.c
 events_000_073.c

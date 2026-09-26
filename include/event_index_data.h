@@ -1,7 +1,8 @@
 #ifndef GUARD_EVENT_INDEX_DATA_H
 #define GUARD_EVENT_INDEX_DATA_H
 
-#include "event_background_data.h"
+#include "event_background_types.h"
+#include "event_backgrounds.h"
 #include "msg_types.h"
 
 #ifdef VERSION_US

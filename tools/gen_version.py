@@ -2234,7 +2234,6 @@ TARGET_DATA_ADDR = {
         ("card_catalog.c", ".data"): 0x09f5d574,
         ("continue_ui.c", ".data"): 0x09f5d7e4,
         ("msg_localized_data.c", ".data"): 0x09f5d828,
-        ("event_background_data.c", ".data"): 0x09f6df84,
         ("mode_ms_top.c", ".data"): 0x09f84ee8,
         ("ms_charge.c", ".data"): 0x09f84fa8,
         ("mode_mapinspect.c", ".data"): 0x09f85008,
