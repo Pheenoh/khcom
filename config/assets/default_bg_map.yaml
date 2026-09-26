@@ -1,0 +1,33 @@
+group: default_bg_map
+types: {}
+objects:
+  us:
+  - name: default_bg_map.s
+    start: 0x08125E24
+    end: 0x08126624
+  jp:
+  - name: default_bg_map.s
+    start: 0x08125EA0
+    end: 0x081266A0
+  eu:
+  - name: default_bg_map.s
+    start: 0x08124944
+    end: 0x08125240
+entries:
+- name: gUnk_08125E24
+  format: tilemap
+  us:
+    address: 0x08125E24
+    size: 2048
+  jp:
+    address: 0x08125EA0
+    size: 2048
+  eu:
+    address: 0x08124944
+    size: 2048
+- name: gUnkEu_08125144
+  format: tilemap
+  eu:
+    address: 0x08125144
+    size: 252
+    compress: lz77

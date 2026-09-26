@@ -2108,7 +2108,7 @@ TARGET_DATA_SIZE = {
         ("mode_jiminy.c", ".rodata"): 0x4338,
         ("mode_chkobj.c", ".data"): 0x9A90,
         ("mode_sio.c", ".data"): 0x214,
-        ("mode_battle.c", ".rodata"): 0x914,
+        ("mode_battle.c", ".rodata"): 0x18,
         ("formation_data.c", ".data"): 0x940,
         ("mode_debug.c", ".rodata"): 0x1F4,
         ("mode_chkobj.c", ".rodata"): 0x6350,
@@ -2212,6 +2212,7 @@ TARGET_DATA_ADDR = {
         ("card_deck_equip.c", ".rodata"): 0x0900d48c,
         ("card_mode_deck.c", ".rodata"): 0x09010598,
         ("mode_sio_dbg.c", ".rodata"): 0x095d3420,
+        ("mode_battle.c", ".rodata"): 0x081266a0,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2253,6 +2254,7 @@ TARGET_DATA_ADDR = {
         ("card_deckmenu2_2.c", ".rodata"): 0x090d1df4,
         ("card_mode_deck.c", ".rodata"): 0x090d1e4c,
         ("mode_sio_dbg.c", ".rodata"): 0x095dbd58,
+        ("mode_battle.c", ".rodata"): 0x08125240,
     },
 }
 

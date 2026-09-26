@@ -12,6 +12,7 @@ pallet.c
 util.c
 save.c
 sram_error_screen.s
+default_bg_map.s
 mode_battle.c
 mode_chkbtl.c
 mode_debug.c
