@@ -282,7 +282,6 @@ bos_dsd_ita.c
 bos_dsd_circle.c
 chara.c
 bos3.c
-mode_sio_dbg_rodata.s
 mode_sio_dbg.c
 sprites_wlogo.c
 sprites_boss_tm.c

@@ -2171,6 +2171,7 @@ TARGET_DATA_SIZE = {
         ("card_deckmenu2_2.c", ".rodata"): 0x56,
         ("card_mode_deck.c", ".rodata"): 0xa,
         ("card_riku_tutorial.c", ".rodata"): 0x57,
+        ("mode_sio_dbg.c", ".rodata"): 0x185,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,
@@ -2210,6 +2211,7 @@ TARGET_DATA_ADDR = {
         ("card_lvup_msg.c", ".rodata"): 0x0900d480,
         ("card_deck_equip.c", ".rodata"): 0x0900d48c,
         ("card_mode_deck.c", ".rodata"): 0x09010598,
+        ("mode_sio_dbg.c", ".rodata"): 0x095d3420,
     },
     "eu": {
         ("mode_chkmov.c", ".rodata"): 0x0812f680,
@@ -2250,6 +2252,7 @@ TARGET_DATA_ADDR = {
         ("card_deck_equip.c", ".rodata"): 0x090d1884,
         ("card_deckmenu2_2.c", ".rodata"): 0x090d1df4,
         ("card_mode_deck.c", ".rodata"): 0x090d1e4c,
+        ("mode_sio_dbg.c", ".rodata"): 0x095dbd58,
     },
 }
 

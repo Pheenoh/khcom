@@ -21,13 +21,6 @@ extern const char gDebugMenuTextUs_0984B68C[15];
 extern const char gDebugMenuTextUs_0984B67C[15];
 extern const char gDebugMenuTextUs_0984B66C[15];
 extern const char gDebugMenuTextUs_0984B65C[15];
-extern const char gDebugMenuTextUs_0961A994[17];
-extern const char gDebugMenuTextUs_0961A980[17];
-extern const char gDebugMenuTextUs_0961A96C[17];
-extern const char gDebugMenuTextUs_0961A958[17];
-extern const char gDebugMenuTextUs_0961A944[17];
-extern const char gDebugMenuTextUs_0961A9B8[13];
-extern const char gDebugMenuTextUs_0961A9A8[13];
 #endif
 
 #ifdef VERSION_JP
@@ -49,13 +42,6 @@ extern const char gDebugMenuTextJp_098001A0[15];
 extern const char gDebugMenuTextJp_09800190[15];
 extern const char gDebugMenuTextJp_09800180[15];
 extern const char gDebugMenuTextJp_09800170[15];
-extern const char gDebugMenuTextJp_095D3470[17];
-extern const char gDebugMenuTextJp_095D345C[17];
-extern const char gDebugMenuTextJp_095D3448[17];
-extern const char gDebugMenuTextJp_095D3434[17];
-extern const char gDebugMenuTextJp_095D3420[17];
-extern const char gDebugMenuTextJp_095D3494[13];
-extern const char gDebugMenuTextJp_095D3484[13];
 #endif
 
 #ifdef VERSION_EU
@@ -77,18 +63,6 @@ extern const char gDebugMenuTextEu_09828060[15];
 extern const char gDebugMenuTextEu_09828050[15];
 extern const char gDebugMenuTextEu_09828040[15];
 extern const char gDebugMenuTextEu_09828030[15];
-extern const char gDebugMenuTextEu_095DBE8C[25];
-extern const char gDebugMenuTextEu_095DBE70[25];
-extern const char gDebugMenuTextEu_095DBE54[25];
-extern const char gDebugMenuTextEu_095DBE38[25];
-extern const char gDebugMenuTextEu_095DBE1C[25];
-extern const char gDebugMenuTextEu_095DBE00[25];
-extern const char gDebugMenuTextEu_095DBDE4[25];
-extern const char gDebugMenuTextEu_095DBDC8[25];
-extern const char gDebugMenuTextEu_095DBDAC[25];
-extern const char gDebugMenuTextEu_095DBD90[25];
-extern const char gDebugMenuTextEu_095DBD74[25];
-extern const char gDebugMenuTextEu_095DBD58[25];
 #endif
 
 #endif

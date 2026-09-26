@@ -74,34 +74,6 @@ regions:
       address: '0x984b65c'
       size: 15
       encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A994
-      address: '0x961a994'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A980
-      address: '0x961a980'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A96C
-      address: '0x961a96c'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A958
-      address: '0x961a958'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A944
-      address: '0x961a944'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A9B8
-      address: '0x961a9b8'
-      size: 13
-      encoding: shift_jis
-    - name: gDebugMenuTextUs_0961A9A8
-      address: '0x961a9a8'
-      size: 13
-      encoding: shift_jis
   jp:
     named_assets:
     - name: gDebugMenuTextJp_0980015C
@@ -176,34 +148,6 @@ regions:
       address: '0x9800170'
       size: 15
       encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3470
-      address: '0x95d3470'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D345C
-      address: '0x95d345c'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3448
-      address: '0x95d3448'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3434
-      address: '0x95d3434'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3420
-      address: '0x95d3420'
-      size: 17
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3494
-      address: '0x95d3494'
-      size: 13
-      encoding: shift_jis
-    - name: gDebugMenuTextJp_095D3484
-      address: '0x95d3484'
-      size: 13
-      encoding: shift_jis
   eu:
     named_assets:
     - name: gDebugMenuTextEu_0982801C
@@ -277,52 +221,4 @@ regions:
     - name: gDebugMenuTextEu_09828030
       address: '0x9828030'
       size: 15
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE8C
-      address: '0x95dbe8c'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE70
-      address: '0x95dbe70'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE54
-      address: '0x95dbe54'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE38
-      address: '0x95dbe38'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE1C
-      address: '0x95dbe1c'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBE00
-      address: '0x95dbe00'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBDE4
-      address: '0x95dbde4'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBDC8
-      address: '0x95dbdc8'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBDAC
-      address: '0x95dbdac'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBD90
-      address: '0x95dbd90'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBD74
-      address: '0x95dbd74'
-      size: 25
-      encoding: shift_jis
-    - name: gDebugMenuTextEu_095DBD58
-      address: '0x95dbd58'
-      size: 25
       encoding: shift_jis
