@@ -10581,68 +10581,68 @@ entries:
     address: 0x094CE7D0
     size: 304
 - name: gUnk_093FBA34
-  record: Sprite
-  oam:
-  - [0, 16384, 0]
+  format: sprite_sheet
+  tiles: gUnk_093FBAB8
+  cell: [16, 16]
+  anchor: [0, 0]
+  columns: 1
+  frames:
+  - symbol: gUnk_093FBA34
+    pieces:
+    - [16x16, 0, 0, {tile: 0}]
+  animations:
+  - symbol: gUnk_093FBA3E
+    declare: false
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x093FBA34
+    size: 20
   jp:
     address: 0x093B6D50
+    size: 20
   eu:
     address: 0x094CE900
-- name: gUnk_093FBA3E
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  declare: false
-  us:
-    address: 0x093FBA3E
-  jp:
-    address: 0x093B6D5A
-  eu:
-    address: 0x094CE90A
+    size: 20
 - name: gUnk_093FBA48
-  record: Sprite
-  oam:
-  - [16610, 33184, 0]
-  - [16626, 33184, 4]
-  - [16386, 33184, 4]
-  - [16402, 33184, 8]
-  - [16610, 32832, 16]
-  - [16626, 32832, 20]
-  - [16386, 32832, 20]
-  - [16402, 32832, 24]
-  - [226, 33216, 32]
-  - [2, 33216, 36]
-  - [226, 33248, 32]
-  - [2, 33248, 36]
-  - [226, 32768, 32]
-  - [2, 32768, 36]
-  - [226, 32800, 32]
-  - [2, 32800, 36]
+  format: sprite_sheet
+  tiles: gUnk_093F98AC
+  cell: [192, 64]
+  anchor: [96, 30]
+  columns: 1
+  frames:
+  - symbol: gUnk_093FBA48
+    pieces:
+    - [32x16, -96, -30, {tile: 0}]
+    - [32x16, -96, -14, {tile: 4}]
+    - [32x16, -96, 2, {tile: 4}]
+    - [32x16, -96, 18, {tile: 8}]
+    - [32x16, 64, -30, {tile: 16}]
+    - [32x16, 64, -14, {tile: 20}]
+    - [32x16, 64, 2, {tile: 20}]
+    - [32x16, 64, 18, {tile: 24}]
+    - [32x32, -64, -30, {tile: 32}]
+    - [32x32, -64, 2, {tile: 36}]
+    - [32x32, -32, -30, {tile: 32}]
+    - [32x32, -32, 2, {tile: 36}]
+    - [32x32, 0, -30, {tile: 32}]
+    - [32x32, 0, 2, {tile: 36}]
+    - [32x32, 32, -30, {tile: 32}]
+    - [32x32, 32, 2, {tile: 36}]
+  animations:
+  - symbol: gUnk_093FBAAC
+    declare: false
+    fields: {unk_00: 64, unk_02: 64}
+    frames: [[0, 4]]
   us:
     address: 0x093FBA48
+    size: 110
   jp:
     address: 0x093B6D64
+    size: 110
   eu:
     address: 0x094CE914
-- name: gUnk_093FBAAC
-  record: AnimHeader
-  fields:
-    unk_00: 64
-    unk_02: 64
-  frames:
-  - [0, 4]
-  declare: false
-  us:
-    address: 0x093FBAAC
-  jp:
-    address: 0x093B6DC8
-  eu:
-    address: 0x094CE978
+    size: 110
 - name: gUnk_093FBAB8
   format: tiles4
   width: 4
