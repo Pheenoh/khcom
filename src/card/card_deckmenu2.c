@@ -6449,9 +6449,10 @@ s32 func_0808F358(UnkStruct_0808F358* work) {
         return 0;
     }
 }
-#ifdef VERSION_JP
+#if defined(VERSION_JP) || defined(VERSION_EU)
 void func_jp_0808F240(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
+#ifdef VERSION_JP
     case 0:
         if (w->cursor.parts.y == 5 && (u16)(w->cursor.parts.x - 5) <= 4) {
             w->cursor.parts.x = 4;
@@ -6500,29 +6501,7 @@ void func_jp_0808F240(UnkStruct_0808F0C0* w) {
             break;
         }
         break;
-    }
-}
-void func_jp_0808F240(UnkStruct_0808F0C0* w);
-extern u8 gUnkJp_094D4594[];
-extern u8 gUnkJp_094D4D94[];
-void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
-    switch (w->unk_7C7) {
-    case 0:
-        LoadBgMap(3, gUnk_0951C2B8, 0x800);
-        break;
-    case 1:
-        LoadBgMap(3, gUnkJp_094D4594, 0x800);
-        break;
-    case 2:
-        LoadBgMap(3, gUnkJp_094D4D94, 0x800);
-        break;
-    }
-    func_jp_0808F240(w);
-}
-#endif
-#ifdef VERSION_EU
-void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
-    switch (w->unk_7C7) {
+#else
     case 2:
         switch (w->cursor.parts.y) {
         case 0:
@@ -6591,20 +6570,39 @@ void func_eu_0808EC78(UnkStruct_0808F0C0* w) {
             break;
         }
         break;
+#endif
     }
 }
-void func_eu_0808EC78(UnkStruct_0808F0C0* w);
+
+#ifdef VERSION_JP
+extern u8 gUnkJp_094D4594[];
+extern u8 gUnkJp_094D4D94[];
+#else
 extern u8 gUnkEu_0953C324[];
-void func_eu_0808EE08(UnkStruct_0808F0C0* w) {
+#endif
+
+void func_jp_0808F34C(UnkStruct_0808F0C0* w) {
     switch (w->unk_7C7) {
+#ifdef VERSION_JP
+    case 0:
+        LoadBgMap(3, gUnk_0951C2B8, 0x800);
+        break;
+    case 1:
+        LoadBgMap(3, gUnkJp_094D4594, 0x800);
+        break;
+    case 2:
+        LoadBgMap(3, gUnkJp_094D4D94, 0x800);
+        break;
+#else
     case 2:
         LoadBgMap(3, gUnk_0951C2B8, 0x800);
         break;
     case 3:
         LoadBgMap(3, gUnkEu_0953C324, 0x800);
         break;
+#endif
     }
-    func_eu_0808EC78(w);
+    func_jp_0808F240(w);
 }
 #endif
 extern u8 gUnk_096145B8[];
@@ -6737,64 +6735,44 @@ u8 func_0808F3E8(UnkStruct_0808F0C0* w, void* a) {
     TaskPoolUpdate(&w->cardpool);
     return 1;
 }
+#if defined(VERSION_JP) || defined(VERSION_EU)
 #ifdef VERSION_JP
-void func_jp_0808F34C(UnkStruct_0808F0C0* w);
 extern s16 gUnkJp_09008DEC[];
-u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
-    switch ((u16)GetKeysRepeat()) {
-    case DPAD_RIGHT:
-        if (w->unk_7C7 <= 1) {
-            w->unk_7C7++;
-            func_jp_0808F34C(w);
-            m4aSongNumStart(SONG_SYS_CANSEL);
-            w->unk_7C6 = 1;
-        }
-        break;
-    case DPAD_LEFT:
-        if (w->unk_7C7 != 0) {
-            w->unk_7C7--;
-            func_jp_0808F34C(w);
-            m4aSongNumStart(SONG_SYS_CANSEL);
-            w->unk_7C6 = 1;
-        }
-        break;
-    case SELECT_BUTTON:
-    case DPAD_DOWN:
-        w->unk_7C6 = 1;
-        SetTaskUpdate(a, (TaskUpdateFunc)func_0808F660);
-        w->unk_8B1 = 13;
-        m4aSongNumStart(SONG_SYS_CLICKI04B);
-        return 1;
-    }
-    ApproachValueHalf(&w->x2, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
-    ApproachValueHalf(&w->y2, 0x1A00);
-    w->gfx = AnimUpdate(&w->anim);
-    *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
-    TaskPoolUpdate(&w->taskpool);
-    TaskPoolUpdate(&w->cardpool);
-    return 1;
-}
-#elif defined(VERSION_EU)
+#else
 extern s16 gUnkEu_090CECE8[];
-u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
+#endif
+
+u8 func_jp_0808F638(UnkStruct_0808F0C0* w, void* a) {
+#ifdef VERSION_EU
     u8* mode = &w->unk_7C7;
 
     w->unk_8B0 = 1;
+#endif
     switch ((u16)GetKeysRepeat()) {
     case DPAD_RIGHT:
+#ifdef VERSION_EU
         w->unk_7C6 = 1;
         if (*mode <= 2) {
             (*mode)++;
-            func_eu_0808EE08(w);
+#else
+        if (w->unk_7C7 <= 1) {
+            w->unk_7C7++;
+#endif
+            func_jp_0808F34C(w);
             m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
         break;
     case DPAD_LEFT:
+#ifdef VERSION_EU
         w->unk_7C6 = 1;
         if (*mode > 2) {
             (*mode)--;
-            func_eu_0808EE08(w);
+#else
+        if (w->unk_7C7 != 0) {
+            w->unk_7C7--;
+#endif
+            func_jp_0808F34C(w);
             m4aSongNumStart(SONG_SYS_CANSEL);
             w->unk_7C6 = 1;
         }
@@ -6805,9 +6783,12 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
         SetTaskUpdate(a, (TaskUpdateFunc)func_0808F660);
         w->unk_8B1 = 13;
         m4aSongNumStart(SONG_SYS_CLICKI04B);
+#ifdef VERSION_EU
         w->unk_8B0 = 0;
+#endif
         return 1;
     }
+#ifdef VERSION_EU
     if (w->unk_7C6 != 0) {
         if (w->unk_7C8 == 1) {
             if (gLanguage == 2) {
@@ -6828,6 +6809,9 @@ u8 func_eu_0808F190(UnkStruct_0808F0C0* w, void* a) {
         w->unk_7C6--;
     }
     ApproachValueHalf(&w->x2, (gUnkEu_090CECE8[w->unk_7C7 - 2] + 8) << 8);
+#else
+    ApproachValueHalf(&w->x2, (gUnkJp_09008DEC[w->unk_7C7] + 8) << 8);
+#endif
     ApproachValueHalf(&w->y2, 0x1A00);
     w->gfx = AnimUpdate(&w->anim);
     *(void**)&w->unk_1E8[0x308] = AnimUpdate(&w->anim2);
@@ -6912,11 +6896,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         if (w->cursor.parts.y < 0) {
             w->unk_7C6 = 1;
             w->cursor.parts.y = 0;
-#ifdef VERSION_JP
             SetTaskUpdate(a, (TaskUpdateFunc)func_jp_0808F638);
-#else
-            SetTaskUpdate(a, (TaskUpdateFunc)func_eu_0808F190);
-#endif
             m4aSongNumStart(SONG_SYS_CLICKI04B);
             return 1;
         }
@@ -7040,11 +7020,7 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         if (w->unk_7C7 <= 2) {
 #endif
             w->unk_7C7++;
-#ifdef VERSION_JP
             func_jp_0808F34C(w);
-#else
-            func_eu_0808EE08(w);
-#endif
             m4aSongNumStart(SONG_SYS_CANSEL);
         }
         break;
@@ -7055,24 +7031,21 @@ u8 func_0808F660(UnkStruct_0808F0C0* w, void* a) {
         if (w->unk_7C7 > 2) {
 #endif
             w->unk_7C7--;
-#ifdef VERSION_JP
             func_jp_0808F34C(w);
-#else
-            func_eu_0808EE08(w);
-#endif
             m4aSongNumStart(SONG_SYS_CANSEL);
         }
         break;
     case SELECT_BUTTON:
         w->unk_7C6 = 1;
         m4aSongNumStart(SONG_SYS_CLICKI04B);
-#ifdef VERSION_JP
-        SetTaskUpdate(a, (TaskUpdateFunc)func_jp_0808F638);
-        return 1;
-#else
+#ifdef VERSION_EU
         w->x2 = (gUnkEu_090CECE8[w->unk_7C7] + 8) << 8;
         w->y2 = 0x1A00;
-        SetTaskUpdate(a, (TaskUpdateFunc)func_eu_0808F190);
+#endif
+        SetTaskUpdate(a, (TaskUpdateFunc)func_jp_0808F638);
+#ifdef VERSION_JP
+        return 1;
+#else
         break;
 #endif
 #endif
