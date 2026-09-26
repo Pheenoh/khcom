@@ -12,6 +12,10 @@ types:
   AnimHeader:
     kind: anim
     header: anim.h
+  PcSpriteTable:
+    kind: table
+    type: PcSpriteDef*
+    header: pc_sprite_types.h
 objects:
   us:
   - name: sprites_staff_roll_1.c
@@ -19,7 +23,7 @@ objects:
     end: 0x09EFAEF8
   - name: sprites_staff_roll_2.c
     start: 0x09EFAF60
-    end: 0x09EFBAE8
+    end: 0x09EFBBBC
   - name: sprites_staff_roll_3.c
     start: 0x09EFBC40
     end: 0x09EFBEC4
@@ -53,7 +57,7 @@ objects:
     end: 0x09ED2404
   - name: sprites_staff_roll_2.c
     start: 0x09ED246C
-    end: 0x09ED3060
+    end: 0x09ED3134
   - name: sprites_staff_roll_3.c
     start: 0x09ED31B8
     end: 0x09ED343C
@@ -87,7 +91,7 @@ objects:
     end: 0x09F86C44
   - name: sprites_staff_roll_2.c
     start: 0x09F86CAC
-    end: 0x09F882FC
+    end: 0x09F883D0
   - name: sprites_staff_roll_3.c
     start: 0x09F88454
     end: 0x09F886D8
@@ -3825,6 +3829,46 @@ entries:
     address: 0x09ED304C
   eu:
     address: 0x09F87848
+- name: gUnk_09EFBAE8
+  record: SpriteTable
+  items: [gUnk_09C9043C, gUnk_09C90446, gUnk_09C90450, gUnk_09C9045A, gUnk_09C90464, gUnk_09C9046E, gUnk_09C90478, gUnk_09C90482, gUnk_09C9048C, gUnk_09C90496, gUnk_09C904A0]
+  us:
+    address: 0x09EFBAE8
+  jp:
+    address: 0x09ED3060
+  eu:
+    address: 0x09F882FC
+- name: gUnkUs_09EFBB14
+  record: AnimTable
+  items: [gUnk_09C904AA]
+  us:
+    address: 0x09EFBB14
+  jp:
+    address: 0x09ED308C
+    symbol: gUnkJp_09ED308C
+  eu:
+    address: 0x09F88328
+    symbol: gUnkEu_09F88328
+- name: gUnk_09EFBB18
+  record: PcSpriteTable
+  items: [gUnk_09C90614, gUnk_09C9061E, gUnk_09C90628, gUnk_09C90632, gUnk_09C9063C, gUnk_09C90646, gUnk_09C90650, gUnk_09C9065A, gUnk_09C90664, gUnk_09C9066E, gUnk_09C90678, gUnk_09C90682, gUnk_09C9068C, gUnk_09C90696, gUnk_09C906A0, gUnk_09C906AA, gUnk_09C906B4, gUnk_09C906BE, gUnk_09C906C8, gUnk_09C906D2, gUnk_09C906DC, gUnk_09C906E6, gUnk_09C906F0, gUnk_09C906FA, gUnk_09C90704, gUnk_09C9070E, gUnk_09C90718, gUnk_09C90722, gUnk_09C9072C, gUnk_09C90736, gUnk_09C90740, gUnk_09C9074A, gUnk_09C90754, gUnk_09C9075E, gUnk_09C90768, gUnk_09C90772, gUnk_09C9077C, gUnk_09C90786, gUnk_09C90790, gUnk_09C9079A]
+  us:
+    address: 0x09EFBB18
+  jp:
+    address: 0x09ED3090
+  eu:
+    address: 0x09F8832C
+- name: gUnkUs_09EFBBB8
+  record: AnimTable
+  items: [gUnk_09C907A4]
+  us:
+    address: 0x09EFBBB8
+  jp:
+    address: 0x09ED3130
+    symbol: gUnkJp_09ED3130
+  eu:
+    address: 0x09F883CC
+    symbol: gUnkEu_09F883CC
 - name: gUnkUs_09EFBC40
   record: SpriteTable
   items: [gUnkUs_09C90A30, gUnkUs_09C90A3A, gUnkUs_09C90A44, gUnkUs_09C90A4E]

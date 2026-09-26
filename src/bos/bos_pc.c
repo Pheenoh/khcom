@@ -1,6 +1,7 @@
 #include "bos6.h"
 #include "sprites_bos6.h"
 #include "sprites_bos7.h"
+#include "sprites_staff_roll.h"
 #include "event_backgrounds.h"
 
 void task_bos_pc_3(PcWork* work);

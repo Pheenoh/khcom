@@ -462,7 +462,6 @@ sprites_bos6_1.c
 sprites_staff_roll_1.c
 sprites_bos7_1.c
 sprites_staff_roll_2.c
-staff_roll_timer_sprite_data.c
 sprites_bos6_2.c
 sprites_staff_roll_3.c
 sprites_bos7_2.c
