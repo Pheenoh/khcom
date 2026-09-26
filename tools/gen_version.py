@@ -2263,7 +2263,6 @@ TARGET_BLOB_REGIONS = {
         (0x08896522, "mode_test_rodata"),
         (0x08F8EA09, "msg_localized_text"),
         (0x090D1E59, "card_mode_deck_tables"),
-        (0x096C9356, "mode_pooh_tables"),
         (0x09F49910, "rodata_registrations"),
     ),
 }

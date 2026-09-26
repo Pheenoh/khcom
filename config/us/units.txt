@@ -308,7 +308,6 @@ sprites_bos2_palettes.s
 sprite_palettes_9.s
 link_menu_palettes.s
 mode_pooh.c
-mode_pooh_tables.s
 poo.c
 poo_tables.s
 mode_allmap.c

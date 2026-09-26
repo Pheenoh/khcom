@@ -63,7 +63,7 @@ extern u8 gUnk_09849AD8[];
 extern u8 gUnk_09849AF8[];
 extern u8 gUnk_09849B18[];
 extern const PoohHit gUnk_096FC010;
-extern const u8 gUnk_096FC01C[];
+extern const s8 gUnk_096FC01C[8][8];
 
 void func_080C75E0(u32 a, u16 b);
 void func_080C7608(u32 a, u16 b, u16 c);
