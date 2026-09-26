@@ -4402,8 +4402,9 @@ entries:
   eu:
     address: 0x099B68E0
     size: 32
-- name: gRoomAssetUs_099A899C
+- name: gUnk_099A897C
   format: sprite_sheet
+  tiles: gUnk_099F0E7C
   align: 4
   cell: [78, 70]
   anchor: [44, 25]
@@ -4411,23 +4412,35 @@ entries:
   frames:
   - symbol: gUnk_099A897C
     pieces:
-    - [64x64, -44, -25]
-    - [16x8, -12, 37, {layer: 1}]
-    - [16x32, 18, -9, {layer: 1}]
+    - [64x64, -44, -25, {tile: 0}]
+    - [16x8, -12, 37, {tile: 64}]
+    - [16x32, 18, -9, {tile: 66}]
   animations:
   - symbol: gUnk_099A8992
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
     address: 0x099A897C
-    size: 2400
+    size: 32
   jp:
     address: 0x0995D404
-    size: 2400
-    symbol: gRoomAssetJp_0995D424
+    size: 32
   eu:
     address: 0x099B6900
-    size: 2400
+    size: 32
+- name: gRoomAssetUs_099A899C
+  format: tiles4
+  width: 2
+  us:
+    address: 0x099A899C
+    size: 2368
+  jp:
+    address: 0x0995D424
+    size: 2368
+    symbol: gRoomAssetJp_0995D424
+  eu:
+    address: 0x099B6920
+    size: 2368
     symbol: gRoomAssetEu_099B6920
 - name: gUnkEu_099A924E
   format: sprite_sheet

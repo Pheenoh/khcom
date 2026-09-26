@@ -505,8 +505,9 @@ entries:
   eu:
     address: 0x09D018EC
     size: 32
-- name: gUnk_09C91754
+- name: gUnk_09C915E0
   format: sprite_sheet
+  tiles: gUnk_09CD1074
   align: 4
   cell: [16, 16]
   anchor: [8, 8]
@@ -514,76 +515,76 @@ entries:
   frames:
   - symbol: gUnk_09C915E0
     pieces:
-    - [8x8, -4, -4]
+    - [8x8, -4, -4, {tile: 0}]
   - symbol: gUnk_09C915EA
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 1}]
   - symbol: gUnk_09C915F4
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 2}]
   - symbol: gUnk_09C915FE
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 3}]
   - symbol: gUnk_09C91608
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 4}]
   - symbol: gUnk_09C91612
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 5}]
   - symbol: gUnk_09C9161C
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 6}]
   - symbol: gUnk_09C91626
     pieces:
-    - [8x8, -4, -4, {fresh: true}]
+    - [8x8, -4, -4, {tile: 7}]
   - symbol: gUnk_09C91630
     pieces:
-    - [16x8, -8, -4]
+    - [16x8, -8, -4, {tile: 8}]
   - symbol: gUnk_09C9163A
     pieces:
-    - [16x8, -8, -4, {fresh: true}]
+    - [16x8, -8, -4, {tile: 10}]
   - symbol: gUnk_09C91644
     pieces:
-    - [16x8, -8, -4, {fresh: true}]
+    - [16x8, -8, -4, {tile: 12}]
   - symbol: gUnk_09C9164E
     pieces:
-    - [16x8, -8, -4, {fresh: true}]
+    - [16x8, -8, -4, {tile: 14}]
   - symbol: gUnk_09C91658
     pieces:
-    - [8x16, -4, -8]
+    - [8x16, -4, -8, {tile: 16}]
   - symbol: gUnk_09C91662
     pieces:
-    - [8x16, -4, -8, {fresh: true}]
+    - [8x16, -4, -8, {tile: 18}]
   - symbol: gUnk_09C9166C
     pieces:
-    - [8x16, -4, -8, {fresh: true}]
+    - [8x16, -4, -8, {tile: 20}]
   - symbol: gUnk_09C91676
     pieces:
-    - [8x16, -4, -8, {fresh: true}]
+    - [8x16, -4, -8, {tile: 22}]
   - symbol: gUnk_09C91680
     pieces:
-    - [16x16, -8, -8]
+    - [16x16, -8, -8, {tile: 24}]
   - symbol: gUnk_09C9168A
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 28}]
   - symbol: gUnk_09C91694
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 32}]
   - symbol: gUnk_09C9169E
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 36}]
   - symbol: gUnk_09C916A8
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 40}]
   - symbol: gUnk_09C916B2
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 44}]
   - symbol: gUnk_09C916BC
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 48}]
   - symbol: gUnk_09C916C6
     pieces:
-    - [16x16, -8, -8, {fresh: true}]
+    - [16x16, -8, -8, {tile: 52}]
   animations:
   - symbol: gUnk_09C916D0
     fields: {unk_00: 64, unk_02: 64}
@@ -605,13 +606,25 @@ entries:
     frames: [[20, 7], [21, 7], [22, 7], [23, 7]]
   us:
     address: 0x09C915E0
-    size: 2164
+    size: 372
   jp:
     address: 0x09C6AAEC
-    size: 2164
+    size: 372
   eu:
     address: 0x09D0190C
-    size: 2164
+    size: 372
+- name: gUnk_09C91754
+  format: tiles4
+  width: 8
+  us:
+    address: 0x09C91754
+    size: 1792
+  jp:
+    address: 0x09C6AC60
+    size: 1792
+  eu:
+    address: 0x09D01A80
+    size: 1792
 - name: gUnk_09CD0334
   format: tiles4
   width: 8
