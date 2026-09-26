@@ -7,6 +7,7 @@
 #include "btl2.h"
 #include "gba/keys.h"
 #include "sprites_btl.h"
+#include "sprites_btl_hud.h"
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_08B4A680[];

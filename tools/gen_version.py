@@ -2102,7 +2102,6 @@ TARGET_DATA_SIZE = {
         ("mode_sio.c", ".rodata"): 0x92,
         ("sroll_b_secn.c", ".rodata"): 0x162,
         ("bos5.c", ".rodata"): 0x11B5,
-        ("btl_hud_localized_data.c", ".data"): 0x31C,
         ("actor_localized_data.c", ".data"): 0x124,
         ("mode_jiminy.c", ".rodata"): 0x4338,
         ("mode_chkobj.c", ".data"): 0x9A90,

@@ -1,5 +1,12 @@
 group: sprites_btl_hud
 types:
+  SpriteTable:
+    kind: table
+    type: void*
+  AnimTable:
+    kind: table
+    type: AnimHeader*
+    header: anim.h
   Sprite:
     kind: sprite
   AnimHeader:
@@ -10,14 +17,20 @@ objects:
   - name: sprites_btl_hud_frames.s
     start: 0x08B2556C
     end: 0x08B26854
+    data_start: 0x09EE1520
+    data_end: 0x09EE15FC
   jp:
   - name: sprites_btl_hud_frames.s
     start: 0x08B18B54
     end: 0x08B19E3C
+    data_start: 0x09EB8F9C
+    data_end: 0x09EB9078
   eu:
   - name: sprites_btl_hud_frames.s
     start: 0x08B4FB78
     end: 0x08B56804
+    data_start: 0x09F5C0EC
+    data_end: 0x09F5C408
 entries:
 - name: gUnk_08B255B4
   format: sprite_sheet
@@ -1242,3 +1255,1154 @@ entries:
   eu:
     address: 0x08B50040
     size: 1506
+- name: gUnkUs_09EE1520
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B2556C]
+  us:
+    address: 0x09EE1520
+  jp:
+    address: 0x09EB8F9C
+    symbol: gUnkJp_09EB8F9C
+  eu:
+    address: 0x09F5C0EC
+    symbol: gUnkEu_09F5C0EC
+- name: gUnkUs_09EE1524
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B2557C]
+  us:
+    address: 0x09EE1524
+  jp:
+    address: 0x09EB8FA0
+    symbol: gUnkJp_09EB8FA0
+  eu:
+    address: 0x09F5C0F0
+    symbol: gUnkEu_09F5C0F0
+- name: gUnkUs_09EE1528
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25586]
+  us:
+    address: 0x09EE1528
+  jp:
+    address: 0x09EB8FA4
+    symbol: gUnkJp_09EB8FA4
+  eu:
+    address: 0x09F5C0F4
+    symbol: gUnkEu_09F5C0F4
+- name: gUnkUs_09EE152C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25590]
+  us:
+    address: 0x09EE152C
+  jp:
+    address: 0x09EB8FA8
+    symbol: gUnkJp_09EB8FA8
+  eu:
+    address: 0x09F5C0F8
+    symbol: gUnkEu_09F5C0F8
+- name: gUnkUs_09EE1530
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B2559A]
+  us:
+    address: 0x09EE1530
+  jp:
+    address: 0x09EB8FAC
+    symbol: gUnkJp_09EB8FAC
+  eu:
+    address: 0x09F5C0FC
+    symbol: gUnkEu_09F5C0FC
+- name: gUnkUs_09EE1534
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B255AA]
+  us:
+    address: 0x09EE1534
+  jp:
+    address: 0x09EB8FB0
+    symbol: gUnkJp_09EB8FB0
+  eu:
+    address: 0x09F5C100
+    symbol: gUnkEu_09F5C100
+- name: gUnk_09EE1538
+  record: SpriteTable
+  us:
+    address: 0x09EE1538
+    items: [gUnk_08B25A34, gUnk_08B25A3E, gUnk_08B25A48, gUnk_08B25A52, gUnk_08B25A5C, gUnk_08B25A66, gUnk_08B25A70, gUnk_08B25A7A, gUnk_08B25A84, gUnk_08B25A8E, gUnk_08B25A98, gUnk_08B25AA2, gUnk_08B25AAC, gUnk_08B25AB6, gUnk_08B25AC0, gUnk_08B25ACA]
+  jp:
+    address: 0x09EB8FB4
+    items: [gUnk_08B25E40, gUnk_08B25E4A, gUnk_08B25E54, gUnk_08B25E5E, gUnk_08B25E6E, gUnk_08B25E78, gUnk_08B25E82, gUnk_08B25E8C, gUnk_08B25E96, gUnk_08B25EA0, gUnk_08B25EAA, gUnk_08B25EB4, gUnk_08B25EBE, gUnk_08B25EC8, gUnk_08B25ED2, gUnk_08B25ACA]
+  eu:
+    address: 0x09F5C140
+    items: [gUnk_08B25A34, gUnk_08B25A3E, gUnk_08B25A48, gUnk_08B25A52, gUnk_08B25A5C, gUnk_08B25A66, gUnk_08B25A70, gUnk_08B25A7A, gUnk_08B25A84, gUnk_08B25A8E, gUnk_08B25A98, gUnk_08B25AA2, gUnk_08B25AAC, gUnk_08B25AB6, gUnk_08B25AC0, gUnk_08B25ACA]
+- name: gUnkUs_09EE1578
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B25AD4]
+  us:
+    address: 0x09EE1578
+  jp:
+    address: 0x09EB8FF4
+    symbol: gUnkJp_09EB8FF4
+- name: gUnk_09EE157C
+  record: SpriteTable
+  us:
+    address: 0x09EE157C
+    items: [gUnk_08B25E40, gUnk_08B25E4A, gUnk_08B25E54, gUnk_08B25E5E, gUnk_08B25E6E, gUnk_08B25E78, gUnk_08B25E82, gUnk_08B25E8C, gUnk_08B25E96, gUnk_08B25EA0, gUnk_08B25EAA, gUnk_08B25EB4, gUnk_08B25EBE, gUnk_08B25EC8]
+  eu:
+    address: 0x09F5C394
+    items: [gUnkEu_08B55C58, gUnk_08B25E4A, gUnk_08B25E54, gUnk_08B25E5E, gUnk_08B25E6E, gUnk_08B25E78, gUnk_08B25E82, gUnk_08B25E8C, gUnk_08B25E96, gUnk_08B25EA0, gUnk_08B25EAA, gUnk_08B25EB4, gUnk_08B25EBE, gUnk_08B25EC8]
+- name: gUnkUs_09EE15B4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25ED2]
+  us:
+    address: 0x09EE15B4
+- name: gUnkUs_09EE15B8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25EDC]
+  us:
+    address: 0x09EE15B8
+  jp:
+    address: 0x09EB9034
+    symbol: gUnkJp_09EB9034
+- name: gUnkUs_09EE15BC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B25EE6]
+  us:
+    address: 0x09EE15BC
+  jp:
+    address: 0x09EB9038
+    symbol: gUnkJp_09EB9038
+- name: gUnk_09EE15C0
+  record: SpriteTable
+  items: [gUnk_08B26270, gUnk_08B26286, gUnk_08B2629C, gUnk_08B262B2]
+  us:
+    address: 0x09EE15C0
+  jp:
+    address: 0x09EB903C
+  eu:
+    address: 0x09F5C104
+- name: gUnkUs_09EE15D0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B262C8]
+  us:
+    address: 0x09EE15D0
+  jp:
+    address: 0x09EB904C
+    symbol: gUnkJp_09EB904C
+  eu:
+    address: 0x09F5C114
+    symbol: gUnkEu_09F5C114
+- name: gUnkUs_09EE15D4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B262DE]
+  us:
+    address: 0x09EE15D4
+  jp:
+    address: 0x09EB9050
+    symbol: gUnkJp_09EB9050
+  eu:
+    address: 0x09F5C118
+    symbol: gUnkEu_09F5C118
+- name: gUnkUs_09EE15D8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B262F4]
+  us:
+    address: 0x09EE15D8
+  jp:
+    address: 0x09EB9054
+    symbol: gUnkJp_09EB9054
+  eu:
+    address: 0x09F5C11C
+    symbol: gUnkEu_09F5C11C
+- name: gUnkUs_09EE15DC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B2630A]
+  us:
+    address: 0x09EE15DC
+  jp:
+    address: 0x09EB9058
+    symbol: gUnkJp_09EB9058
+  eu:
+    address: 0x09F5C120
+    symbol: gUnkEu_09F5C120
+- name: gUnkUs_09EE15E0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B26320]
+  us:
+    address: 0x09EE15E0
+  jp:
+    address: 0x09EB905C
+    symbol: gUnkJp_09EB905C
+  eu:
+    address: 0x09F5C124
+    symbol: gUnkEu_09F5C124
+- name: gUnkUs_09EE15E4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B26336]
+  us:
+    address: 0x09EE15E4
+  jp:
+    address: 0x09EB9060
+    symbol: gUnkJp_09EB9060
+  eu:
+    address: 0x09F5C128
+    symbol: gUnkEu_09F5C128
+- name: gUnkUs_09EE15E8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B2634C]
+  us:
+    address: 0x09EE15E8
+  jp:
+    address: 0x09EB9064
+    symbol: gUnkJp_09EB9064
+  eu:
+    address: 0x09F5C12C
+    symbol: gUnkEu_09F5C12C
+- name: gUnkUs_09EE15EC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B26362]
+  us:
+    address: 0x09EE15EC
+  jp:
+    address: 0x09EB9068
+    symbol: gUnkJp_09EB9068
+  eu:
+    address: 0x09F5C130
+    symbol: gUnkEu_09F5C130
+- name: gUnk_09EE15F0
+  record: AnimTable
+  items: [gUnk_08B26378]
+  us:
+    address: 0x09EE15F0
+  jp:
+    address: 0x09EB906C
+  eu:
+    address: 0x09F5C134
+- name: gUnkUs_09EE15F4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B26396]
+  us:
+    address: 0x09EE15F4
+  jp:
+    address: 0x09EB9070
+    symbol: gUnkJp_09EB9070
+  eu:
+    address: 0x09F5C138
+    symbol: gUnkEu_09F5C138
+- name: gUnkUs_09EE15F8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B263B4]
+  us:
+    address: 0x09EE15F8
+  jp:
+    address: 0x09EB9074
+    symbol: gUnkJp_09EB9074
+  eu:
+    address: 0x09F5C13C
+    symbol: gUnkEu_09F5C13C
+- name: gUnkJp_09EB8FF8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A34]
+  jp:
+    address: 0x09EB8FF8
+- name: gUnkJp_09EB8FFC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A3E]
+  jp:
+    address: 0x09EB8FFC
+- name: gUnkJp_09EB9000
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A48]
+  jp:
+    address: 0x09EB9000
+- name: gUnkJp_09EB9004
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A52]
+  jp:
+    address: 0x09EB9004
+- name: gUnkJp_09EB9008
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A66]
+  jp:
+    address: 0x09EB9008
+- name: gUnkJp_09EB900C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A70]
+  jp:
+    address: 0x09EB900C
+- name: gUnkJp_09EB9010
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A7A]
+  jp:
+    address: 0x09EB9010
+- name: gUnkJp_09EB9014
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A84]
+  jp:
+    address: 0x09EB9014
+- name: gUnkJp_09EB9018
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A8E]
+  jp:
+    address: 0x09EB9018
+- name: gUnkJp_09EB901C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25A98]
+  jp:
+    address: 0x09EB901C
+- name: gUnkJp_09EB9020
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25AA2]
+  jp:
+    address: 0x09EB9020
+- name: gUnkJp_09EB9024
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25AAC]
+  jp:
+    address: 0x09EB9024
+- name: gUnkJp_09EB9028
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25AB6]
+  jp:
+    address: 0x09EB9028
+- name: gUnkJp_09EB902C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25AC0]
+  jp:
+    address: 0x09EB902C
+- name: gUnkJp_09EB9030
+  record: SpriteTable
+  scalar: true
+  items: [gUnkJp_08B194BA]
+  jp:
+    address: 0x09EB9030
+- name: gUnkEu_09F5C180
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B25AD4]
+  eu:
+    address: 0x09F5C180
+- name: gUnkEu_09F5C184
+  record: SpriteTable
+  items: [gUnk_08B25E40]
+  eu:
+    address: 0x09F5C184
+- name: gUnkEu_09F5C188
+  record: AnimTable
+  items: [gUnkEu_08B50A40]
+  eu:
+    address: 0x09F5C188
+- name: gUnkEu_09F5C18C
+  record: SpriteTable
+  items: [gUnkEu_08B50BCC]
+  eu:
+    address: 0x09F5C18C
+- name: gUnkEu_09F5C190
+  record: AnimTable
+  items: [gUnkEu_08B50BDC]
+  eu:
+    address: 0x09F5C190
+- name: gUnkEu_09F5C194
+  record: SpriteTable
+  items: [gUnkEu_08B50D68]
+  eu:
+    address: 0x09F5C194
+- name: gUnkEu_09F5C198
+  record: AnimTable
+  items: [gUnkEu_08B50D78]
+  eu:
+    address: 0x09F5C198
+- name: gUnkEu_09F5C19C
+  record: SpriteTable
+  items: [gUnkEu_08B50F04]
+  eu:
+    address: 0x09F5C19C
+- name: gUnkEu_09F5C1A0
+  record: AnimTable
+  items: [gUnkEu_08B50F0E]
+  eu:
+    address: 0x09F5C1A0
+- name: gUnkEu_09F5C1A4
+  record: SpriteTable
+  items: [gUnkEu_08B51018]
+  eu:
+    address: 0x09F5C1A4
+- name: gUnkEu_09F5C1A8
+  record: AnimTable
+  items: [gUnkEu_08B51022]
+  eu:
+    address: 0x09F5C1A8
+- name: gUnkEu_09F5C1AC
+  record: SpriteTable
+  items: [gUnkEu_08B5112C]
+  eu:
+    address: 0x09F5C1AC
+- name: gUnkEu_09F5C1B0
+  record: AnimTable
+  items: [gUnkEu_08B51136]
+  eu:
+    address: 0x09F5C1B0
+- name: gUnkEu_09F5C1B4
+  record: SpriteTable
+  items: [gUnkEu_08B51240]
+  eu:
+    address: 0x09F5C1B4
+- name: gUnkEu_09F5C1B8
+  record: AnimTable
+  items: [gUnkEu_08B5124A]
+  eu:
+    address: 0x09F5C1B8
+- name: gUnkEu_09F5C1BC
+  record: SpriteTable
+  items: [gUnkEu_08B51354]
+  eu:
+    address: 0x09F5C1BC
+- name: gUnkEu_09F5C1C0
+  record: AnimTable
+  items: [gUnkEu_08B5135E]
+  eu:
+    address: 0x09F5C1C0
+- name: gUnkEu_09F5C1C4
+  record: SpriteTable
+  items: [gUnkEu_08B51468]
+  eu:
+    address: 0x09F5C1C4
+- name: gUnkEu_09F5C1C8
+  record: AnimTable
+  items: [gUnkEu_08B51472]
+  eu:
+    address: 0x09F5C1C8
+- name: gUnkEu_09F5C1CC
+  record: SpriteTable
+  items: [gUnkEu_08B5157C]
+  eu:
+    address: 0x09F5C1CC
+- name: gUnkEu_09F5C1D0
+  record: AnimTable
+  items: [gUnkEu_08B51586]
+  eu:
+    address: 0x09F5C1D0
+- name: gUnkEu_09F5C1D4
+  record: SpriteTable
+  items: [gUnkEu_08B51690]
+  eu:
+    address: 0x09F5C1D4
+- name: gUnkEu_09F5C1D8
+  record: AnimTable
+  items: [gUnkEu_08B5169A]
+  eu:
+    address: 0x09F5C1D8
+- name: gUnkEu_09F5C1DC
+  record: SpriteTable
+  items: [gUnkEu_08B517A4]
+  eu:
+    address: 0x09F5C1DC
+- name: gUnkEu_09F5C1E0
+  record: AnimTable
+  items: [gUnkEu_08B517AE]
+  eu:
+    address: 0x09F5C1E0
+- name: gUnkEu_09F5C1E4
+  record: SpriteTable
+  items: [gUnkEu_08B518B8]
+  eu:
+    address: 0x09F5C1E4
+- name: gUnkEu_09F5C1E8
+  record: AnimTable
+  items: [gUnkEu_08B518C2]
+  eu:
+    address: 0x09F5C1E8
+- name: gUnkEu_09F5C1EC
+  record: SpriteTable
+  items: [gUnkEu_08B519CC]
+  eu:
+    address: 0x09F5C1EC
+- name: gUnkEu_09F5C1F0
+  record: AnimTable
+  items: [gUnkEu_08B519D6]
+  eu:
+    address: 0x09F5C1F0
+- name: gUnkEu_09F5C1F4
+  record: SpriteTable
+  items: [gUnkEu_08B51A60]
+  eu:
+    address: 0x09F5C1F4
+- name: gUnkEu_09F5C1F8
+  record: AnimTable
+  items: [gUnkEu_08B51A6A]
+  eu:
+    address: 0x09F5C1F8
+- name: gUnkEu_09F5C1FC
+  record: SpriteTable
+  items: [gUnkEu_08B51B74, gUnkEu_08B51B84]
+  eu:
+    address: 0x09F5C1FC
+- name: gUnkEu_09F5C204
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B51B94]
+  eu:
+    address: 0x09F5C204
+- name: gUnkEu_09F5C208
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B51B9E]
+  eu:
+    address: 0x09F5C208
+- name: gUnkEu_09F5C20C
+  record: SpriteTable
+  items: [gUnkEu_08B51D28, gUnkEu_08B51D32, gUnkEu_08B51D3C]
+  eu:
+    address: 0x09F5C20C
+- name: gUnkEu_09F5C218
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B51D46]
+  eu:
+    address: 0x09F5C218
+- name: gUnkEu_09F5C21C
+  record: SpriteTable
+  items: [gUnkEu_08B51F90, gUnkEu_08B51F9A, gUnkEu_08B51FA4]
+  eu:
+    address: 0x09F5C21C
+- name: gUnkEu_09F5C228
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B51FAE]
+  eu:
+    address: 0x09F5C228
+- name: gUnkEu_09F5C22C
+  record: SpriteTable
+  items: [gUnkEu_08B521F8, gUnkEu_08B52202, gUnkEu_08B5220C]
+  eu:
+    address: 0x09F5C22C
+- name: gUnkEu_09F5C238
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B52216]
+  eu:
+    address: 0x09F5C238
+- name: gUnkEu_09F5C23C
+  record: SpriteTable
+  items: [gUnkEu_08B52460, gUnkEu_08B5246A, gUnkEu_08B52474]
+  eu:
+    address: 0x09F5C23C
+- name: gUnkEu_09F5C248
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B5247E]
+  eu:
+    address: 0x09F5C248
+- name: gUnkEu_09F5C24C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B526C8]
+  eu:
+    address: 0x09F5C24C
+- name: gUnkEu_09F5C250
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B526D8]
+  eu:
+    address: 0x09F5C250
+- name: gUnkEu_09F5C254
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B526E8]
+  eu:
+    address: 0x09F5C254
+- name: gUnkEu_09F5C258
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B526F8]
+  eu:
+    address: 0x09F5C258
+- name: gUnkEu_09F5C25C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52708]
+  eu:
+    address: 0x09F5C25C
+- name: gUnkEu_09F5C260
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52718]
+  eu:
+    address: 0x09F5C260
+- name: gUnkEu_09F5C264
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52728]
+  eu:
+    address: 0x09F5C264
+- name: gUnkEu_09F5C268
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52738]
+  eu:
+    address: 0x09F5C268
+- name: gUnkEu_09F5C26C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52748]
+  eu:
+    address: 0x09F5C26C
+- name: gUnkEu_09F5C270
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52758]
+  eu:
+    address: 0x09F5C270
+- name: gUnkEu_09F5C274
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B52768]
+  eu:
+    address: 0x09F5C274
+- name: gUnkEu_09F5C278
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B52778]
+  eu:
+    address: 0x09F5C278
+- name: gUnkEu_09F5C27C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53304]
+  eu:
+    address: 0x09F5C27C
+- name: gUnkEu_09F5C280
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53314]
+  eu:
+    address: 0x09F5C280
+- name: gUnkEu_09F5C284
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53324]
+  eu:
+    address: 0x09F5C284
+- name: gUnkEu_09F5C288
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53334]
+  eu:
+    address: 0x09F5C288
+- name: gUnkEu_09F5C28C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53344]
+  eu:
+    address: 0x09F5C28C
+- name: gUnkEu_09F5C290
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53354]
+  eu:
+    address: 0x09F5C290
+- name: gUnkEu_09F5C294
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53364]
+  eu:
+    address: 0x09F5C294
+- name: gUnkEu_09F5C298
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53374]
+  eu:
+    address: 0x09F5C298
+- name: gUnkEu_09F5C29C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53384]
+  eu:
+    address: 0x09F5C29C
+- name: gUnkEu_09F5C2A0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53394]
+  eu:
+    address: 0x09F5C2A0
+- name: gUnkEu_09F5C2A4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B533A4]
+  eu:
+    address: 0x09F5C2A4
+- name: gUnkEu_09F5C2A8
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B533B4]
+  eu:
+    address: 0x09F5C2A8
+- name: gUnkEu_09F5C2AC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F40]
+  eu:
+    address: 0x09F5C2AC
+- name: gUnkEu_09F5C2B0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F50]
+  eu:
+    address: 0x09F5C2B0
+- name: gUnkEu_09F5C2B4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F60]
+  eu:
+    address: 0x09F5C2B4
+- name: gUnkEu_09F5C2B8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F70]
+  eu:
+    address: 0x09F5C2B8
+- name: gUnkEu_09F5C2BC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F80]
+  eu:
+    address: 0x09F5C2BC
+- name: gUnkEu_09F5C2C0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53F90]
+  eu:
+    address: 0x09F5C2C0
+- name: gUnkEu_09F5C2C4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53FA0]
+  eu:
+    address: 0x09F5C2C4
+- name: gUnkEu_09F5C2C8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53FB0]
+  eu:
+    address: 0x09F5C2C8
+- name: gUnkEu_09F5C2CC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53FC0]
+  eu:
+    address: 0x09F5C2CC
+- name: gUnkEu_09F5C2D0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53FD0]
+  eu:
+    address: 0x09F5C2D0
+- name: gUnkEu_09F5C2D4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B53FE0]
+  eu:
+    address: 0x09F5C2D4
+- name: gUnkEu_09F5C2D8
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B53FF0]
+  eu:
+    address: 0x09F5C2D8
+- name: gUnkEu_09F5C2DC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54B7C]
+  eu:
+    address: 0x09F5C2DC
+- name: gUnkEu_09F5C2E0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54B86]
+  eu:
+    address: 0x09F5C2E0
+- name: gUnkEu_09F5C2E4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54B96]
+  eu:
+    address: 0x09F5C2E4
+- name: gUnkEu_09F5C2E8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BA6]
+  eu:
+    address: 0x09F5C2E8
+- name: gUnkEu_09F5C2EC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BB6]
+  eu:
+    address: 0x09F5C2EC
+- name: gUnkEu_09F5C2F0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BC6]
+  eu:
+    address: 0x09F5C2F0
+- name: gUnkEu_09F5C2F4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BDC]
+  eu:
+    address: 0x09F5C2F4
+- name: gUnkEu_09F5C2F8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BF2]
+  eu:
+    address: 0x09F5C2F8
+- name: gUnkEu_09F5C2FC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54BFC]
+  eu:
+    address: 0x09F5C2FC
+- name: gUnkEu_09F5C300
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C06]
+  eu:
+    address: 0x09F5C300
+- name: gUnkEu_09F5C304
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C10]
+  eu:
+    address: 0x09F5C304
+- name: gUnkEu_09F5C308
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C26]
+  eu:
+    address: 0x09F5C308
+- name: gUnkEu_09F5C30C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C3C]
+  eu:
+    address: 0x09F5C30C
+- name: gUnkEu_09F5C310
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C52]
+  eu:
+    address: 0x09F5C310
+- name: gUnkEu_09F5C314
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C5C]
+  eu:
+    address: 0x09F5C314
+- name: gUnkEu_09F5C318
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C6C]
+  eu:
+    address: 0x09F5C318
+- name: gUnkEu_09F5C31C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C7C]
+  eu:
+    address: 0x09F5C31C
+- name: gUnkEu_09F5C320
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C8C]
+  eu:
+    address: 0x09F5C320
+- name: gUnkEu_09F5C324
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54C9C]
+  eu:
+    address: 0x09F5C324
+- name: gUnkEu_09F5C328
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54CB2]
+  eu:
+    address: 0x09F5C328
+- name: gUnkEu_09F5C32C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54CC8]
+  eu:
+    address: 0x09F5C32C
+- name: gUnkEu_09F5C330
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54CDE]
+  eu:
+    address: 0x09F5C330
+- name: gUnkEu_09F5C334
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54CF4]
+  eu:
+    address: 0x09F5C334
+- name: gUnkEu_09F5C338
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D0A]
+  eu:
+    address: 0x09F5C338
+- name: gUnkEu_09F5C33C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D1A]
+  eu:
+    address: 0x09F5C33C
+- name: gUnkEu_09F5C340
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D2A]
+  eu:
+    address: 0x09F5C340
+- name: gUnkEu_09F5C344
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D3A]
+  eu:
+    address: 0x09F5C344
+- name: gUnkEu_09F5C348
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D4A]
+  eu:
+    address: 0x09F5C348
+- name: gUnkEu_09F5C34C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D60]
+  eu:
+    address: 0x09F5C34C
+- name: gUnkEu_09F5C350
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D76]
+  eu:
+    address: 0x09F5C350
+- name: gUnkEu_09F5C354
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54D8C]
+  eu:
+    address: 0x09F5C354
+- name: gUnkEu_09F5C358
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DA2]
+  eu:
+    address: 0x09F5C358
+- name: gUnkEu_09F5C35C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DB8]
+  eu:
+    address: 0x09F5C35C
+- name: gUnkEu_09F5C360
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DC8]
+  eu:
+    address: 0x09F5C360
+- name: gUnkEu_09F5C364
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DD8]
+  eu:
+    address: 0x09F5C364
+- name: gUnkEu_09F5C368
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DE8]
+  eu:
+    address: 0x09F5C368
+- name: gUnkEu_09F5C36C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54DF8]
+  eu:
+    address: 0x09F5C36C
+- name: gUnkEu_09F5C370
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54E0E]
+  eu:
+    address: 0x09F5C370
+- name: gUnkEu_09F5C374
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54E24]
+  eu:
+    address: 0x09F5C374
+- name: gUnkEu_09F5C378
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54E3A]
+  eu:
+    address: 0x09F5C378
+- name: gUnkEu_09F5C37C
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B54E50]
+  eu:
+    address: 0x09F5C37C
+- name: gUnkEu_09F5C380
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B54E66]
+  eu:
+    address: 0x09F5C380
+- name: gUnkEu_09F5C384
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B54E70]
+  eu:
+    address: 0x09F5C384
+- name: gUnkEu_09F5C388
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B54E7A]
+  eu:
+    address: 0x09F5C388
+- name: gUnkEu_09F5C38C
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B54E84]
+  eu:
+    address: 0x09F5C38C
+- name: gUnkEu_09F5C390
+  record: AnimTable
+  scalar: true
+  items: [gUnkEu_08B54E8E]
+  eu:
+    address: 0x09F5C390
+- name: gUnkEu_09F5C3CC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25ED2]
+  eu:
+    address: 0x09F5C3CC
+- name: gUnkEu_09F5C3D0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_08B25EDC]
+  eu:
+    address: 0x09F5C3D0
+- name: gUnkEu_09F5C3D4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55CFE]
+  eu:
+    address: 0x09F5C3D4
+- name: gUnkEu_09F5C3D8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D08]
+  eu:
+    address: 0x09F5C3D8
+- name: gUnkEu_09F5C3DC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D18]
+  eu:
+    address: 0x09F5C3DC
+- name: gUnkEu_09F5C3E0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D22]
+  eu:
+    address: 0x09F5C3E0
+- name: gUnkEu_09F5C3E4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D32]
+  eu:
+    address: 0x09F5C3E4
+- name: gUnkEu_09F5C3E8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D3C]
+  eu:
+    address: 0x09F5C3E8
+- name: gUnkEu_09F5C3EC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D4C]
+  eu:
+    address: 0x09F5C3EC
+- name: gUnkEu_09F5C3F0
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D56]
+  eu:
+    address: 0x09F5C3F0
+- name: gUnkEu_09F5C3F4
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D66]
+  eu:
+    address: 0x09F5C3F4
+- name: gUnkEu_09F5C3F8
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D70]
+  eu:
+    address: 0x09F5C3F8
+- name: gUnkEu_09F5C3FC
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D80]
+  eu:
+    address: 0x09F5C3FC
+- name: gUnkEu_09F5C400
+  record: SpriteTable
+  scalar: true
+  items: [gUnkEu_08B55D8A]
+  eu:
+    address: 0x09F5C400
+- name: gUnkEu_09F5C404
+  record: AnimTable
+  scalar: true
+  items: [gUnk_08B25EE6]
+  eu:
+    address: 0x09F5C404

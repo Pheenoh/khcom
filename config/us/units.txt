@@ -83,10 +83,6 @@ sprites_map_tasks_1.c
 sprites_emy_2.c
 sprites_btl_3.c
 sprites_mode_test_1.c
-btl_hud_localized_data.c
-sprites_hum_1.c
-actor_localized_data.c
-sprites_hum_2.c
 sprites_frd_frames.s
 sprites_cloud_frames.s
 sprites_smn_frames.s
@@ -105,6 +101,9 @@ sprites_emy_frames_2.s
 sprites_btl_frames_3.s
 sprites_mode_test_frames_1.s
 sprites_btl_hud_frames.s
+sprites_hum_1.c
+actor_localized_data.c
+sprites_hum_2.c
 sprites_hum_frames_1.s
 sprites_emy_frames_3.s
 jiminy_journal_frames.s
