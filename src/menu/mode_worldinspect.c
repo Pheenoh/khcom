@@ -51,12 +51,17 @@ extern u8 gUnkEu_099A5A58[];
 extern u8 gUnkEu_099A5A8C[];
 #endif
 
-extern WorldinspectConn gUnk_099930BC[];
 extern u8 gUnk_09A3CE7C[];
 extern u8 gUnk_09A3D07C[];
 extern u8 gUnk_0999CFC6[];
 extern u8 gUnk_0999D41A[];
 extern u8 gUnk_0999D8A8[];
+
+const WorldinspectConn gUnk_099930BC[3] = {
+    { 2, 1, 20, 2 },
+    { 2, 5, 0, 13 },
+    { 2, 5, 3, 13 },
+};
 
 static s16 gUnk_02035118;
 static u8 gUnk_0203511A;
@@ -843,7 +848,7 @@ void mode_worldinspect_0(void) {
 
     for (i = 0; i < gUnk_020350FA - 1; i++) {
         if (gUnk_02035100[i] != 0 && gUnk_02035100[i + 1] != 0) {
-            WorldinspectConn* conn = gUnk_099930BC;
+            const WorldinspectConn* conn = gUnk_099930BC;
             id = gWorldinspectNavs[i].rect;
             WorldInspectCopyTilemapRect(conn[id].width, conn[id].height, gUnk_09A333DC, conn[id].x, conn[id].y, gUnk_020354D4, gWorldinspectNavs[i].x2, gWorldinspectNavs[i].y2);
         }

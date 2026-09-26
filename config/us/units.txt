@@ -393,7 +393,6 @@ sprites_evt_palettes_2.s
 sprite_palettes_13.s
 sprites_map_palettes.s
 bos5.c
-mode_worldinspect_rodata.s
 mode_worldinspect.c
 mode_worldwarp.c
 mode_ms_top.c

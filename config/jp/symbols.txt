@@ -117,7 +117,6 @@ gUnk_0815A0A0 = 0x0814ef2c
 
 MovieVideoCodecEnd = 0x08119eec
 MovieVideoCodecConstants = 0x08119730
-gUnk_099930BC = 0x09947bd0
 gUnk_0984D2D4 = 0x09801de8
 gUnk_0815A066 = 0x0814ec80
 gUnk_0815A0BA = 0x0814ec8c
