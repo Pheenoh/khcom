@@ -22,92 +22,92 @@ TaskDesc gTaskDescBtlLockon = { "task_btl_lockon", task_btl_lockon_0, task_btl_l
 TaskDesc gTaskDescBtlArea = { "task_btl_area", task_btl_area_0, task_btl_area_1, task_btl_area_2, task_btl_area_3, 0xC };
 
 const AnimDef gBtlSoraAnimDefs[77] = {
-    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 0, { 0, 0, 0 } },
-    { gUnk_09EDEE08, gUnk_09EDEE14, gUnk_088E33C2, 0, { 0, 0, 0 } },
-    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 4, { 0, 0, 0 } },
-    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 3, { 0, 0, 0 } },
-    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 0, { 0, 0, 0 } },
-    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 1, { 0, 0, 0 } },
-    { gUnk_09EDEE40, gUnk_09EDEE54, gUnk_088E56C6, 2, { 0, 0, 0 } },
-    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 4, { 0, 0, 0 } },
-    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 3, { 0, 0, 0 } },
-    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 0, { 0, 0, 0 } },
-    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 1, { 0, 0, 0 } },
-    { gUnk_09EDEE68, gUnk_09EDEE7C, gUnk_088E67B6, 2, { 0, 0, 0 } },
-    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 4, { 0, 0, 0 } },
-    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 3, { 0, 0, 0 } },
-    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 0, { 0, 0, 0 } },
-    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 1, { 0, 0, 0 } },
-    { gUnk_09EDEF38, gUnk_09EDEF50, gUnk_088ED77A, 2, { 0, 0, 0 } },
-    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 4, { 0, 0, 0 } },
-    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 3, { 0, 0, 0 } },
-    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 0, { 0, 0, 0 } },
-    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 1, { 0, 0, 0 } },
-    { gUnk_09EDEE90, gUnk_09EDEEB0, gUnk_088E7974, 2, { 0, 0, 0 } },
-    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 4, { 0, 0, 0 } },
-    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 3, { 0, 0, 0 } },
-    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 0, { 0, 0, 0 } },
-    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 1, { 0, 0, 0 } },
-    { gUnk_09EDEFA8, gUnk_09EDEFBC, gUnk_088F19DC, 2, { 0, 0, 0 } },
-    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 5, { 0, 0, 0 } },
-    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 4, { 0, 0, 0 } },
-    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 1, { 0, 0, 0 } },
-    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 2, { 0, 0, 0 } },
-    { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 3, { 0, 0, 0 } },
-    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 4, { 0, 0, 0 } },
-    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 3, { 0, 0, 0 } },
-    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 0, { 0, 0, 0 } },
-    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 1, { 0, 0, 0 } },
-    { gUnk_09EDEFD0, gUnk_09EDEFF0, gUnk_088F2F5C, 2, { 0, 0, 0 } },
-    { gUnk_09EDEEC4, gUnk_09EDEEEC, gUnk_088E967C, 0, { 0, 0, 0 } },
-    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 2, { 0, 0, 0 } },
-    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 3, { 0, 0, 0 } },
-    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 4, { 0, 0, 0 } },
-    { gUnk_09EDEDB8, gUnk_09EDEDEC, gUnk_088E0BC0, 6, { 0, 0, 0 } },
-    { gUnk_09EDEEF4, gUnk_09EDEF08, gUnk_088EAF1C, 0, { 0, 0, 0 } },
-    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 0, { 0, 0, 0 } },
-    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 1, { 0, 0, 0 } },
-    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 2, { 0, 0, 0 } },
-    { gUnk_09EDEF0C, gUnk_09EDEF28, gUnk_088EBFDA, 3, { 0, 0, 0 } },
-    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 3, { 0, 0, 0 } },
-    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 2, { 0, 0, 0 } },
-    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 0, { 0, 0, 0 } },
-    { gUnk_09EDEF84, gUnk_09EDEF98, gUnk_088F05DC, 1, { 0, 0, 0 } },
-    { gUnk_09EDEF64, gUnk_09EDEF80, gUnk_088EEAD4, 0, { 0, 0, 0 } },
-    { gUnk_09EDEAEC, gUnk_09EDEB08, gUnk_088CA102, 0, { 0, 0, 0 } },
-    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 0, { 0, 0, 0 } },
-    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 0, { 0, 0, 0 } },
-    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 1, { 0, 0, 0 } },
-    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 2, { 0, 0, 0 } },
-    { gUnk_09EDF0D4, gUnk_09EDF114, gUnk_088FDE7A, 3, { 0, 0, 0 } },
-    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 1, { 0, 0, 0 } },
-    { gUnk_09EDF0AC, gUnk_09EDF0C4, gUnk_088FCCCE, 3, { 0, 0, 0 } },
-    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 0, { 0, 0, 0 } },
-    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 1, { 0, 0, 0 } },
-    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 2, { 0, 0, 0 } },
-    { gUnk_09EDF158, gUnk_09EDF1B0, gUnk_08902C3C, 3, { 0, 0, 0 } },
-    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 0, { 0, 0, 0 } },
-    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 1, { 0, 0, 0 } },
-    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 2, { 0, 0, 0 } },
-    { gUnk_09EDF1C0, gUnk_09EDF1F8, gUnk_08908DE6, 3, { 0, 0, 0 } },
-    { gUnk_09EDF20C, gUnk_09EDF244, gUnk_0890C34E, 0, { 0, 0, 0 } },
-    { gUnk_09EDF248, gUnk_09EDF268, gUnk_0890FCE0, 0, { 0, 0, 0 } },
-    { gUnk_09EDF26C, gUnk_09EDF290, gUnk_08911BC8, 0, { 0, 0, 0 } },
-    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 0, { 0, 0, 0 } },
-    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 1, { 0, 0, 0 } },
-    { gUnk_09EDF294, gUnk_09EDF2C4, gUnk_08914288, 2, { 0, 0, 0 } },
-    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 1, { 0, 0, 0 } },
-    { gUnk_09EDF2D0, gUnk_09EDF2FC, gUnk_089173FC, 2, { 0, 0, 0 } },
+    { gSor1ll50Frames, gSor1ll50Anims, gSor1ll50Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll51Frames, gSor1ll51Anims, gSor1ll51Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll55Frames, gSor1ll55Anims, gSor1ll55Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll55Frames, gSor1ll55Anims, gSor1ll55Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll55Frames, gSor1ll55Anims, gSor1ll55Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll55Frames, gSor1ll55Anims, gSor1ll55Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll55Frames, gSor1ll55Anims, gSor1ll55Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll57Frames, gSor1ll57Anims, gSor1ll57Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll57Frames, gSor1ll57Anims, gSor1ll57Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll57Frames, gSor1ll57Anims, gSor1ll57Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll57Frames, gSor1ll57Anims, gSor1ll57Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll57Frames, gSor1ll57Anims, gSor1ll57Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll56Frames, gSor1ll56Anims, gSor1ll56Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll56Frames, gSor1ll56Anims, gSor1ll56Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll56Frames, gSor1ll56Anims, gSor1ll56Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll56Frames, gSor1ll56Anims, gSor1ll56Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll56Frames, gSor1ll56Anims, gSor1ll56Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll58Frames, gSor1ll58Anims, gSor1ll58Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll58Frames, gSor1ll58Anims, gSor1ll58Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll58Frames, gSor1ll58Anims, gSor1ll58Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll58Frames, gSor1ll58Anims, gSor1ll58Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll58Frames, gSor1ll58Anims, gSor1ll58Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll59Frames, gSor1ll59Anims, gSor1ll59Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll59Frames, gSor1ll59Anims, gSor1ll59Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll59Frames, gSor1ll59Anims, gSor1ll59Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll59Frames, gSor1ll59Anims, gSor1ll59Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll59Frames, gSor1ll59Anims, gSor1ll59Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 5, { 0, 0, 0 } },
+    { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll60Frames, gSor1ll60Anims, gSor1ll60Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll60Frames, gSor1ll60Anims, gSor1ll60Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll60Frames, gSor1ll60Anims, gSor1ll60Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll60Frames, gSor1ll60Anims, gSor1ll60Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll60Frames, gSor1ll60Anims, gSor1ll60Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll65Frames, gSor1ll65Anims, gSor1ll65Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll50Frames, gSor1ll50Anims, gSor1ll50Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll50Frames, gSor1ll50Anims, gSor1ll50Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll50Frames, gSor1ll50Anims, gSor1ll50Tiles, 4, { 0, 0, 0 } },
+    { gSor1ll50Frames, gSor1ll50Anims, gSor1ll50Tiles, 6, { 0, 0, 0 } },
+    { gSor1ll08Frames, gSor1ll08Anims, gSor1ll08Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll09Frames, gSor1ll09Anims, gSor1ll09Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll09Frames, gSor1ll09Anims, gSor1ll09Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll09Frames, gSor1ll09Anims, gSor1ll09Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll09Frames, gSor1ll09Anims, gSor1ll09Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll54Frames, gSor1ll54Anims, gSor1ll54Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll54Frames, gSor1ll54Anims, gSor1ll54Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll54Frames, gSor1ll54Anims, gSor1ll54Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll54Frames, gSor1ll54Anims, gSor1ll54Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll66Frames, gSor1ll66Anims, gSor1ll66Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll07Frames, gSor1ll07Anims, gSor1ll07Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll67Frames, gSor1ll67Anims, gSor1ll67Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll68Frames, gSor1ll68Anims, gSor1ll68Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll68Frames, gSor1ll68Anims, gSor1ll68Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll68Frames, gSor1ll68Anims, gSor1ll68Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll68Frames, gSor1ll68Anims, gSor1ll68Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll67Frames, gSor1ll67Anims, gSor1ll67Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll67Frames, gSor1ll67Anims, gSor1ll67Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll69Frames, gSor1ll69Anims, gSor1ll69Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll69Frames, gSor1ll69Anims, gSor1ll69Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll69Frames, gSor1ll69Anims, gSor1ll69Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll69Frames, gSor1ll69Anims, gSor1ll69Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll70Frames, gSor1ll70Anims, gSor1ll70Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll70Frames, gSor1ll70Anims, gSor1ll70Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll70Frames, gSor1ll70Anims, gSor1ll70Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll70Frames, gSor1ll70Anims, gSor1ll70Tiles, 3, { 0, 0, 0 } },
+    { gSor1ll71Frames, gSor1ll71Anims, gSor1ll71Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll72Frames, gSor1ll72Anims, gSor1ll72Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll73Frames, gSor1ll73Anims, gSor1ll73Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll74Frames, gSor1ll74Anims, gSor1ll74Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll74Frames, gSor1ll74Anims, gSor1ll74Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll74Frames, gSor1ll74Anims, gSor1ll74Tiles, 2, { 0, 0, 0 } },
+    { gSor1ll75Frames, gSor1ll75Anims, gSor1ll75Tiles, 0, { 0, 0, 0 } },
+    { gSor1ll75Frames, gSor1ll75Anims, gSor1ll75Tiles, 1, { 0, 0, 0 } },
+    { gSor1ll75Frames, gSor1ll75Anims, gSor1ll75Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813BEFC[6][5] = {
-    { { gUnk_09EDE944, gUnk_09EDE964, gUnk_088BC6DE, 0, { 0, 0, 0 } }, { gUnk_09EDED60, gUnk_09EDED80, gUnk_088DDAF6, 0, { 0, 0, 0 } }, { gUnk_09EDEA10, gUnk_09EDEA30, gUnk_088C2D72, 0, { 0, 0, 0 } }, { gUnk_09EDEA94, gUnk_09EDEAB4, gUnk_088C75A0, 0, { 0, 0, 0 } }, { gUnk_09EDEB8C, gUnk_09EDEBAC, gUnk_088CF9CE, 0, { 0, 0, 0 } } },
-    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 0, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 0, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 0, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 0, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 0, { 0, 0, 0 } } },
-    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 1, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 1, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 1, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 1, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 1, { 0, 0, 0 } } },
-    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 2, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 2, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 2, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 2, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 2, { 0, 0, 0 } } },
-    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 3, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 3, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 3, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 3, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 3, { 0, 0, 0 } } },
-    { { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 4, { 0, 0, 0 } }, { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 4, { 0, 0, 0 } }, { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 4, { 0, 0, 0 } }, { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 4, { 0, 0, 0 } }, { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 4, { 0, 0, 0 } } },
+    { { gSor1ff02Frames, gSor1ff02Anims, gSor1ff02Tiles, 0, { 0, 0, 0 } }, { gSor1bb02Frames, gSor1bb02Anims, gSor1bb02Tiles, 0, { 0, 0, 0 } }, { gSor1fl02Frames, gSor1fl02Anims, gSor1fl02Tiles, 0, { 0, 0, 0 } }, { gSor1ll02Frames, gSor1ll02Anims, gSor1ll02Tiles, 0, { 0, 0, 0 } }, { gSor1bl02Frames, gSor1bl02Anims, gSor1bl02Tiles, 0, { 0, 0, 0 } } },
+    { { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 0, { 0, 0, 0 } }, { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 0, { 0, 0, 0 } }, { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 0, { 0, 0, 0 } }, { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 0, { 0, 0, 0 } }, { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 0, { 0, 0, 0 } } },
+    { { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 1, { 0, 0, 0 } }, { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 1, { 0, 0, 0 } }, { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 1, { 0, 0, 0 } }, { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 1, { 0, 0, 0 } }, { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 1, { 0, 0, 0 } } },
+    { { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 2, { 0, 0, 0 } }, { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 2, { 0, 0, 0 } }, { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 2, { 0, 0, 0 } }, { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 2, { 0, 0, 0 } }, { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 2, { 0, 0, 0 } } },
+    { { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 3, { 0, 0, 0 } }, { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 3, { 0, 0, 0 } }, { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 3, { 0, 0, 0 } }, { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 3, { 0, 0, 0 } }, { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 3, { 0, 0, 0 } } },
+    { { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 4, { 0, 0, 0 } }, { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 4, { 0, 0, 0 } }, { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 4, { 0, 0, 0 } }, { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 4, { 0, 0, 0 } }, { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 4, { 0, 0, 0 } } },
 };
 
 const u16 gUnk_0813C0DC[4][4] = {
@@ -152,50 +152,50 @@ const u8 gUnk_0813C294[5] = {
 TaskDesc gTaskDescBtlSora = { "task_btl_sora", task_btl_sora_0, task_btl_sora_1, task_btl_sora_2, task_btl_sora_3, 0x1AC };
 
 const AnimDef gBtlRikuAnimDefs[35] = {
-    { gUnk_09EDF374, gUnk_09EDF38C, gUnk_0891ED26, 0, { 0, 0, 0 } },
-    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 1, { 0, 0, 0 } },
-    { gUnk_09EDF404, gUnk_09EDF418, gUnk_08927806, 3, { 0, 0, 0 } },
-    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 2, { 0, 0, 0 } },
-    { gUnk_09EDF474, gUnk_09EDF498, gUnk_0892E268, 0, { 0, 0, 0 } },
-    { gUnk_09EDF428, gUnk_09EDF464, gUnk_0892935E, 2, { 0, 0, 0 } },
-    { gUnk_09EDF4A0, gUnk_09EDF4B8, gUnk_089315B4, 1, { 0, 0, 0 } },
-    { gUnk_09EDF390, gUnk_09EDF3A8, gUnk_089209A6, 0, { 0, 0, 0 } },
-    { gUnk_09EDF390, gUnk_09EDF3A8, gUnk_089209A6, 1, { 0, 0, 0 } },
-    { gUnk_09EDF3B0, gUnk_09EDF3C4, gUnk_08922670, 0, { 0, 0, 0 } },
-    { gUnk_09EDF3C8, gUnk_09EDF3E4, gUnk_08923C74, 0, { 0, 0, 0 } },
+    { gRikuBt00Frames, gRikuBt00Anims, gRikuBt00Tiles, 0, { 0, 0, 0 } },
+    { gRikuBt11Frames, gRikuBt11Anims, gRikuBt11Tiles, 1, { 0, 0, 0 } },
+    { gRikuBt10Frames, gRikuBt10Anims, gRikuBt10Tiles, 3, { 0, 0, 0 } },
+    { gRikuBt11Frames, gRikuBt11Anims, gRikuBt11Tiles, 2, { 0, 0, 0 } },
+    { gRikuBt13Frames, gRikuBt13Anims, gRikuBt13Tiles, 0, { 0, 0, 0 } },
+    { gRikuBt11Frames, gRikuBt11Anims, gRikuBt11Tiles, 2, { 0, 0, 0 } },
+    { gRikuLl17Frames, gRikuLl17Anims, gRikuLl17Tiles, 1, { 0, 0, 0 } },
+    { gRikuBt02Frames, gRikuBt02Anims, gRikuBt02Tiles, 0, { 0, 0, 0 } },
+    { gRikuBt02Frames, gRikuBt02Anims, gRikuBt02Tiles, 1, { 0, 0, 0 } },
+    { gRikuBt04Frames, gRikuBt04Anims, gRikuBt04Tiles, 0, { 0, 0, 0 } },
+    { gRikuBt05Frames, gRikuBt05Anims, gRikuBt05Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EDF3E8, gUnk_09EDF400, gUnk_08925B44, 0, { 0, 0, 0 } },
-    { gUnk_09EE23B8, gUnk_09EE23D0, gUnk_08C492E2, 0, { 0, 0, 0 } },
-    { gUnk_09EE23D8, gUnk_09EE23F8, gUnk_08C4AEA0, 0, { 0, 0, 0 } },
-    { gUnk_09EE23FC, gUnk_09EE2410, gUnk_08C4D30E, 0, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 0, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 1, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 2, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 3, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 4, { 0, 0, 0 } },
-    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 0, { 0, 0, 0 } },
-    { gUnk_09EE2490, gUnk_09EE24C0, gUnk_08C5411E, 0, { 0, 0, 0 } },
-    { gUnk_09EE24C8, gUnk_09EE24E4, gUnk_08C579A4, 0, { 0, 0, 0 } },
-    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 0, { 0, 0, 0 } },
-    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 2, { 0, 0, 0 } },
-    { gUnk_09EE25A8, gUnk_09EE25CC, gUnk_08C63E3C, 0, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 0, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 1, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 2, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 0, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 1, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 2, { 0, 0, 0 } },
-    { gUnk_09EE2584, gUnk_09EE25A4, gUnk_08C61980, 0, { 0, 0, 0 } },
-    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 1, { 0, 0, 0 } },
-    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 3, { 0, 0, 0 } },
+    { gNiserikuIdolFrames, gNiserikuIdolAnims, gNiserikuIdolTiles, 0, { 0, 0, 0 } },
+    { gNiserikuRunFrames, gNiserikuRunAnims, gNiserikuRunTiles, 0, { 0, 0, 0 } },
+    { gNiserikuDamageFrames, gNiserikuDamageAnims, gNiserikuDamageTiles, 0, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 0, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 1, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 2, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 3, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 4, { 0, 0, 0 } },
+    { gNiserikuDashFrames, gNiserikuDashAnims, gNiserikuDashTiles, 0, { 0, 0, 0 } },
+    { gNiserikuFuriharaiFrames, gNiserikuFuriharaiAnims, gNiserikuFuriharaiTiles, 0, { 0, 0, 0 } },
+    { gNiserikuTategiriFrames, gNiserikuTategiriAnims, gNiserikuTategiriTiles, 0, { 0, 0, 0 } },
+    { gNiserikuKabutoFrames, gNiserikuKabutoAnims, gNiserikuKabutoTiles, 0, { 0, 0, 0 } },
+    { gNiserikuKabutoFrames, gNiserikuKabutoAnims, gNiserikuKabutoTiles, 2, { 0, 0, 0 } },
+    { gNiserikuDarkfigaFrames, gNiserikuDarkfigaAnims, gNiserikuDarkfigaTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 1, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 2, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 1, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 2, { 0, 0, 0 } },
+    { gNiserikuYamiEndFrames, gNiserikuYamiEndAnims, gNiserikuYamiEndTiles, 0, { 0, 0, 0 } },
+    { gNiserikuDashFrames, gNiserikuDashAnims, gNiserikuDashTiles, 1, { 0, 0, 0 } },
+    { gNiserikuDashFrames, gNiserikuDashAnims, gNiserikuDashTiles, 3, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813C4DC[6][5] = {
-    { { gUnk_09EEFA70, gUnk_09EEFA90, gUnk_092FF906, 0, { 0, 0, 0 } }, { gUnk_09EEFA4C, gUnk_09EEFA6C, gUnk_092FDDC6, 0, { 0, 0, 0 } }, { gUnk_09EEF93C, gUnk_09EEF95C, gUnk_092F31E0, 0, { 0, 0, 0 } }, { gUnk_09EEF994, gUnk_09EEF9B4, gUnk_092F65A2, 0, { 0, 0, 0 } }, { gUnk_09EEF9B8, gUnk_09EEF9D8, gUnk_092F881A, 0, { 0, 0, 0 } } },
-    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 0, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 0, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 0, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 0, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 0, { 0, 0, 0 } } },
-    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 1, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 1, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 1, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 1, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 1, { 0, 0, 0 } } },
-    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 2, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 2, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 2, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 2, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 2, { 0, 0, 0 } } },
-    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 3, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 3, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 3, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 3, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 3, { 0, 0, 0 } } },
-    { { gUnk_09EDF518, gUnk_09EDF530, gUnk_0893757C, 4, { 0, 0, 0 } }, { gUnk_09EDF544, gUnk_09EDF55C, gUnk_08938A14, 4, { 0, 0, 0 } }, { gUnk_09EDF570, gUnk_09EDF588, gUnk_08939F00, 4, { 0, 0, 0 } }, { gUnk_09EDF59C, gUnk_09EDF5B4, gUnk_0893B3D2, 4, { 0, 0, 0 } }, { gUnk_09EDF5C8, gUnk_09EDF5E0, gUnk_0893C7C6, 4, { 0, 0, 0 } } },
+    { { gRik1ff02Frames, gRik1ff02Anims, gRik1ff02Tiles, 0, { 0, 0, 0 } }, { gRik1bb02Frames, gRik1bb02Anims, gRik1bb02Tiles, 0, { 0, 0, 0 } }, { gRik1fl02Frames, gRik1fl02Anims, gRik1fl02Tiles, 0, { 0, 0, 0 } }, { gRik1ll02Frames, gRik1ll02Anims, gRik1ll02Tiles, 0, { 0, 0, 0 } }, { gRik1bl02Frames, gRik1bl02Anims, gRik1bl02Tiles, 0, { 0, 0, 0 } } },
+    { { gRik1ff03Frames, gRik1ff03Anims, gRik1ff03Tiles, 0, { 0, 0, 0 } }, { gRik1bb03Frames, gRik1bb03Anims, gRik1bb03Tiles, 0, { 0, 0, 0 } }, { gRik1fl03Frames, gRik1fl03Anims, gRik1fl03Tiles, 0, { 0, 0, 0 } }, { gRik1ll03Frames, gRik1ll03Anims, gRik1ll03Tiles, 0, { 0, 0, 0 } }, { gRik1bl03Frames, gRik1bl03Anims, gRik1bl03Tiles, 0, { 0, 0, 0 } } },
+    { { gRik1ff03Frames, gRik1ff03Anims, gRik1ff03Tiles, 1, { 0, 0, 0 } }, { gRik1bb03Frames, gRik1bb03Anims, gRik1bb03Tiles, 1, { 0, 0, 0 } }, { gRik1fl03Frames, gRik1fl03Anims, gRik1fl03Tiles, 1, { 0, 0, 0 } }, { gRik1ll03Frames, gRik1ll03Anims, gRik1ll03Tiles, 1, { 0, 0, 0 } }, { gRik1bl03Frames, gRik1bl03Anims, gRik1bl03Tiles, 1, { 0, 0, 0 } } },
+    { { gRik1ff03Frames, gRik1ff03Anims, gRik1ff03Tiles, 2, { 0, 0, 0 } }, { gRik1bb03Frames, gRik1bb03Anims, gRik1bb03Tiles, 2, { 0, 0, 0 } }, { gRik1fl03Frames, gRik1fl03Anims, gRik1fl03Tiles, 2, { 0, 0, 0 } }, { gRik1ll03Frames, gRik1ll03Anims, gRik1ll03Tiles, 2, { 0, 0, 0 } }, { gRik1bl03Frames, gRik1bl03Anims, gRik1bl03Tiles, 2, { 0, 0, 0 } } },
+    { { gRik1ff03Frames, gRik1ff03Anims, gRik1ff03Tiles, 3, { 0, 0, 0 } }, { gRik1bb03Frames, gRik1bb03Anims, gRik1bb03Tiles, 3, { 0, 0, 0 } }, { gRik1fl03Frames, gRik1fl03Anims, gRik1fl03Tiles, 3, { 0, 0, 0 } }, { gRik1ll03Frames, gRik1ll03Anims, gRik1ll03Tiles, 3, { 0, 0, 0 } }, { gRik1bl03Frames, gRik1bl03Anims, gRik1bl03Tiles, 3, { 0, 0, 0 } } },
+    { { gRik1ff03Frames, gRik1ff03Anims, gRik1ff03Tiles, 4, { 0, 0, 0 } }, { gRik1bb03Frames, gRik1bb03Anims, gRik1bb03Tiles, 4, { 0, 0, 0 } }, { gRik1fl03Frames, gRik1fl03Anims, gRik1fl03Tiles, 4, { 0, 0, 0 } }, { gRik1ll03Frames, gRik1ll03Anims, gRik1ll03Tiles, 4, { 0, 0, 0 } }, { gRik1bl03Frames, gRik1bl03Anims, gRik1bl03Tiles, 4, { 0, 0, 0 } } },
 };
 
 const u16 gUnk_0813C6BC[4][4] = {
@@ -229,7 +229,7 @@ void func_0807B3C4(s32 a);
 
 void task_btl_lockon_0(BtlLockonWork* work) {
     work->tiles = LoadObjTiles(gUnk_08B1D8BC, 0x180);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     AnimInit(&work->anim, gUnk_09EE10F8, gUnk_09EE10EC);
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
@@ -351,7 +351,7 @@ void task_btl_lockon_3(BtlLockonWork* work) {
 
 void task_btl_area_0(BtlAreaWork* work) {
     work->unk_008 = 0;
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->tiles = LoadObjTiles(gUnk_08B1EA00, 0xE0);
     work->timer = 0;
     work->unk_009 = 1;
@@ -598,7 +598,7 @@ void func_0801DEB8(BtlSoraWork* work) {
     work->tiles = work->actor.btl->tiles;
 
     if (work->unk_172 != 0) {
-        work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
+        work->palette = LoadObjPalette(gSoraPalette, 0x20);
     } else {
         work->palette = LoadObjPalette(gUnk_096FAC64, 0x20);
     }
@@ -6318,7 +6318,7 @@ void task_btl_sora_2(BtlSoraWork* work) {
         work->unk_15A = t;
 
         if (work->unk_172 != 0) {
-            LoadObjPaletteBank(work->palette->index, gUnk_08F683A4);
+            LoadObjPaletteBank(work->palette->index, gSoraPalette);
         } else {
             LoadObjPaletteBank(work->palette->index, gUnk_096FAC64);
         }
@@ -6798,7 +6798,7 @@ void task_btl_riku_0(BtlRikuWork* work, BtlTaskArg* arg) {
     gBtlWork->unk_130 = e->x;
     gBtlWork->unk_134 = e->y;
     gBtlWork->unk_138 = e->z;
-    work->unk_1AC = gUnk_09618118;
+    work->unk_1AC = gRikuPalette;
     work->tiles = AllocObjTiles(0x640, 0);
     func_080277A8(work);
     e->btl->actor = e;
@@ -7043,8 +7043,8 @@ u16 func_08028428(u16 a, u16 b, u16 c) {
 
 void func_08028468(BtlRikuWork* work) {
     if (gBtlWork->flags & 0x800000000000) {
-        work->unk_1AC = gUnk_09618118;
-        LoadObjPaletteBank(work->palette->index, gUnk_09618118);
+        work->unk_1AC = gRikuPalette;
+        LoadObjPaletteBank(work->palette->index, gRikuPalette);
         gBtlWork->flags &= ~0x800000000000;
         gBtlWork->flags |= 0x80000000000000;
     }

@@ -79,7 +79,7 @@ void Lvup_Logo_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
 #else
     w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-    LoadObjPalette(gUnk_09611AB8, 32);
+    LoadObjPalette(gCard00Palette, 32);
     w->tiles = a->unk_10;
     w->palette = a->unk_14;
     FadeSetPaletteExcluded(*(u16*)(a->unk_14 + 6) + 16, 1);

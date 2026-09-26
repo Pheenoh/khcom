@@ -982,9 +982,9 @@ u8 func_080DA73C(void) {
 
 void task_bos_boogie_saku_0(BoogieSakuWork* work, void* arg) {
     work->unk_024 = (u32)arg;
-    work->tiles = (u32)LoadObjTiles(gUnk_09799CBA, 0x2E0);
-    work->palette = (u32)LoadObjPalette(gUnk_0984AF78, 32);
-    AnimInit(&work->anim, gUnk_09EF680C, gUnk_09EF67FC);
+    work->tiles = (u32)LoadObjTiles(gSakuTiles, 0x2E0);
+    work->palette = (u32)LoadObjPalette(gBoss02objPalette, 32);
+    AnimInit(&work->anim, gSakuAnims, gSakuFrames);
     AnimStart(&work->anim, 0, 0);
     work->unk_020 = 0;
     TaskPoolInit(&work->tasks, 1);
@@ -1217,10 +1217,10 @@ void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg) {
     e = -0x1000;
     func_0801B37C(&work->unk_040, &gBosBoogieDiskEmyKind, x, d, e);
     work->unk_074 |= 0x400;
-    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF6824, 8), gUnk_0979A426);
-    work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
+    work->tiles = (u32)AllocObjTiles(GetMaxSpriteTileBytes(gNokogiriFrames, 8), gNokogiriTiles);
+    work->palette = (u32)LoadObjPalette(gKaifukuPalette, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
-    AnimInit(&work->anim, gUnk_09EF6844, gUnk_09EF6824);
+    AnimInit(&work->anim, gNokogiriAnims, gNokogiriFrames);
     AnimStart(&work->anim, 0, 1);
     TaskPoolInit(&work->tasks, 1);
     TaskCreate(&work->tasks, &gTaskDescBosShadow, &work->unk_040);
@@ -1385,10 +1385,10 @@ void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg) {
     work->unk_038 = -0xC000;
     work->unk_030 = *arg;
     ColliderInit(&work->collider, 8, gUnk_096FE0C0.unk_08, gUnk_096FE0C0.unk_06);
-    work->tiles = (u32)LoadObjTiles(gUnk_0979C44E, 0xC40);
-    work->palette = (u32)LoadObjPalette(gUnk_0984AFD8, 32);
+    work->tiles = (u32)LoadObjTiles(gKnifeTiles, 0xC40);
+    work->palette = (u32)LoadObjPalette(gKnifePalette, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
-    AnimInit(&work->anim, gUnk_09EF684C, gUnk_09EF6848);
+    AnimInit(&work->anim, gKnifeAnims, gKnifeFrames);
     AnimStart(&work->anim, 0, 1);
 }
 u8 task_bos_boogie_knife_1(BoogieKnifeWork* work) {
@@ -1650,10 +1650,10 @@ void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg) {
     e = arg->unk_04C - 0x7C00;
     func_0801B37C(&work->unk_040, &gBosBoogieKaihukuEmyKind, c, d, e);
     work->unk_074 |= 0x400;
-    work->tiles = (u32)LoadObjTiles(gUnk_09799FB0, 0x400);
-    work->palette = (u32)LoadObjPalette(gUnk_0984AFB8, 32);
+    work->tiles = (u32)LoadObjTiles(gKaifukuTiles, 0x400);
+    work->palette = (u32)LoadObjPalette(gKaifukuPalette, 32);
     work->palette2 = (u32)LoadObjPalette(gUnk_08F69BC4, 32);
-    AnimInit(&work->anim, gUnk_09EF6820, gUnk_09EF681C);
+    AnimInit(&work->anim, gKaifukuAnims, gKaifukuFrames);
     AnimStart(&work->anim, 0, 1);
     func_0801BCD4(&work->unk_040);
 }

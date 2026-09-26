@@ -335,8 +335,8 @@ u8 func_080A3A98(UnkStruct_080A3F5C* w, void* a) {
             if (w->tiles4 == 0) {
                 w->tiles4 = AllocObjTiles(0x40, 0);
                 w->palette2 = LoadObjPalette(gUnk_08F69BE4, 32);
-                SetObjTileSource(w->tiles4, gUnk_09320796);
-                AnimInit(w->anim2, gUnk_09EEFD38, gUnk_09EEFCAC);
+                SetObjTileSource(w->tiles4, gFEventTiles);
+                AnimInit(w->anim2, gFEventAnims, gFEventFrames);
                 AnimStart(w->anim2, 2, 1);
                 w->gfx2 = AnimGetGfx(w->anim2);
             }
@@ -395,7 +395,7 @@ u8 func_080A3BB0(UnkStruct_080A3F5C* w, void* a) {
             AnimStart(w->anim3, 2, 1);
             w->gfx3 = AnimGetGfx(w->anim3);
             w->tiles2 = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
-            w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette4 = LoadObjPalette(gCard00Palette, 32);
             w->unk_144 = 0;
             w->unk_124 = 0x5800;
             w->gfx4 = gUnk_09033D28[w->unk_144];

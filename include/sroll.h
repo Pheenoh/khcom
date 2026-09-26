@@ -287,7 +287,7 @@ extern void (*gUnk_09A54CB8[])(u32*, u8*, u32*, s32);
 extern void (*gUnk_09A54CDC[])(u32*, u8*, u32*, s32);
 extern u8 gUnk_05000220[];
 extern u8 gUnk_08F69BE4[];
-extern u8 gUnk_09320796[];
+extern u8 gFEventTiles[];
 extern u8 gUnk_09C8D47A[];
 extern u8 gUnk_09C8F1FA[];
 extern u8 gUnk_09D6CF34[];

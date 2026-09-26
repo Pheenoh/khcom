@@ -1066,7 +1066,7 @@ static void Deckmenu2_0(u8* work, void* a) {
 #ifdef VERSION_EU
     *(void**)&work[0x4B8] = LoadObjTiles(gUnkEu_09F6FD8C[gLanguage], gUnkEu_090CE9E0[gLanguage]);
 #else
-    *(void**)&work[0x4B8] = LoadObjTiles(&gUnk_090A0C86[0x132C], 0x280);
+    *(void**)&work[0x4B8] = LoadObjTiles(&gRiCardF0RedTiles[0x132C], 0x280);
 #endif
 #ifdef VERSION_EU
     *(void**)&work[0x4E8] = gUnkEu_09F6FDA0[gLanguage][0];
@@ -1079,7 +1079,7 @@ static void Deckmenu2_0(u8* work, void* a) {
     func_0808E364(work, 0);
     *(void**)&work[0x4C4] = LoadObjPalette(gUnk_09614438, 32);
     gCardUiSpriteState.tiles = AllocObjTiles(0x100, 0);
-    gCardUiSpriteState.palette = LoadObjPalette(gUnk_09611AB8, 32);
+    gCardUiSpriteState.palette = LoadObjPalette(gCard00Palette, 32);
     SetObjTileSource(gCardUiSpriteState.tiles, gUnk_0908C3CE);
     AnimInit(&gCardUiSpriteState.anim, gUnk_09EEA198, gUnk_09EEA180);
     AnimStart(&gCardUiSpriteState.anim, 0, 1);
@@ -5001,7 +5001,7 @@ s32 func_0808D828(u8* work) {
         *(void**)&work[0x1C] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 0x300);
         *(void**)&work[0x20] = LoadObjTiles(def->tiles, 0x200);
         *(void**)&work[0x34] = LoadObjPalette(def->palette, 32);
-        *(void**)&work[0x30] = LoadObjPalette(gUnk_09611AB8, 32);
+        *(void**)&work[0x30] = LoadObjPalette(gCard00Palette, 32);
         *(void**)&work[0x4DC] = gUnk_08F709B0[def->unk_2A].gfx;
         *(void**)&work[0x4E0] = def->gfx;
 
@@ -5133,7 +5133,7 @@ void func_0808DB50(UnkStruct_0808DB04* w) {
         w->tiles2 = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 768);
         w->tiles3 = LoadObjTiles(def->tiles, 512);
         w->palette2 = LoadObjPalette(def->palette, 32);
-        w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+        w->palette = LoadObjPalette(gCard00Palette, 32);
         w->gfx2 = gUnk_08F709B0[def->unk_2A].gfx;
         w->gfx3 = def->gfx;
 

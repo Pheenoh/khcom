@@ -10,7 +10,7 @@ void task_bos_jf_shadow_0(JfShadowWork* work, BtlObj* obj) {
     work->actor = obj;
     work->tiles = LoadObjTiles(gUnk_08B22EFE, 0x140);
     work->gfx = gUnk_08B22EE4;
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
 }
 
 s32 task_bos_jf_shadow_1(void) {

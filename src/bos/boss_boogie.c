@@ -18,7 +18,7 @@
 #include "sprites_evt.h"
 #include "sprites_title.h"
 
-extern u8 gUnk_0984AF78[];
+extern u8 gBoss02objPalette[];
 extern u8 gUnk_08F69BC4[];
 
 static BoogieWork* gBoogieWork;
@@ -200,7 +200,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     work->unk_150 = 0;
     work->unk_154 = 0;
     work->unk_158 = 0;
-    work->palette = LoadObjPalette(gUnk_0984AF78, 0x20);
+    work->palette = LoadObjPalette(gBoss02objPalette, 0x20);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 0x20);
     sz = 0;
 

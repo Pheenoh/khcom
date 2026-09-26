@@ -169,13 +169,13 @@ typedef struct FrdBeastWork {
     s32 unk_15C;
 } FrdBeastWork;
 
-extern u8 gUnk_09617C58[];
-extern u8 gUnk_08F68384[];
-extern u8 gUnk_09617DF8[];
-extern u8 gUnk_09617DB8[];
-extern u8 gUnk_09617DD8[];
-extern u8 gUnk_09617D98[];
-extern u8 gUnk_09617E18[];
+extern u8 gDonaldPalette[];
+extern u8 gGoofyPalette[];
+extern u8 gArielPalette[];
+extern u8 gJackPalette[];
+extern u8 gPeterPalette[];
+extern u8 gAladdinPalette[];
+extern u8 gBeastPalette[];
 
 u8 func_080474A8(FrdJackWork* work);
 void func_08048A68(FrdPanWork* work);

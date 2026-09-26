@@ -124,10 +124,10 @@ typedef struct BtlAiWork {
     s16 unk_16C;
 } BtlAiWork;
 
-extern u8 gUnk_08901C8A[];
-extern u8 gUnk_08F683A4[];
-extern u8 gUnk_08F69BA4[];
-extern u8 gUnk_09611AB8[];
+extern u8 gSor1ll68wTiles[];
+extern u8 gSoraPalette[];
+extern u8 gBStatesPalette[];
+extern u8 gCard00Palette[];
 extern u8 gUnk_096FAC64[];
 
 void func_08040150(BtlRaidWork* work, s32* outX, s32* outY, s32* outZ);

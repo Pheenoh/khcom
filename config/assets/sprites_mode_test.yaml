@@ -47,16 +47,16 @@ objects:
     start: 0x091A72D8
     end: 0x091A748C
 entries:
-- name: gUnk_09EE14D4
+- name: gBHpgagEFrames
   record: SpriteTable
-  items: [gUnk_08B24C98, gUnk_08B24CA2, gUnk_08B24CB2, gUnk_08B24CC2, gUnk_08B24CD2, gUnk_08B24CE2, gUnk_08B24CF8, gUnk_08B24D0E, gUnk_08B24D18, gUnk_08B24D22, gUnk_08B24D2C, gUnk_08B24D42, gUnk_08B24D58, gUnk_08B24D6E]
+  items: [gBHpgagEFrame0, gBHpgagEFrame1, gBHpgagEFrame2, gBHpgagEFrame3, gBHpgagEFrame4, gBHpgagEFrame5, gBHpgagEFrame6, gBHpgagEFrame7, gBHpgagEFrame8, gBHpgagEFrame9, gBHpgagEFrame10, gBHpgagEFrame11, gBHpgagEFrame12, gBHpgagEFrame13]
   us:
     address: 0x09EE14D4
   jp:
     address: 0x09EB8F50
-- name: gUnk_09EE150C
+- name: gBHpgagEAnims
   record: AnimTable
-  items: [gUnk_08B24D78, gUnk_08B24D82, gUnk_08B24D8C, gUnk_08B24D96, gUnk_08B24DA0]
+  items: [gBHpgagEAnim0, gBHpgagEAnim1, gBHpgagEAnim2, gBHpgagEAnim3, gBHpgagEAnim4]
   us:
     address: 0x09EE150C
   jp:
@@ -82,82 +82,82 @@ entries:
 - name: b_hpgag_e
   format: sprite_sheet
   palette: b_states
-  symbol: gUnk_08B24DAA
+  symbol: gBHpgagETiles
   align: 4
   cell: [80, 12]
   anchor: [80, 4]
   columns: 8
   frames:
-  - symbol: gUnk_08B24C98
+  - symbol: gBHpgagEFrame0
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnk_08B24CA2
+  - symbol: gBHpgagEFrame1
     pieces:
     - [32x8, -32, 0]
     - [8x8, -40, 0, {hflip: true}]
-  - symbol: gUnk_08B24CB2
+  - symbol: gBHpgagEFrame2
     pieces:
     - [32x8, -32, 0]
     - [16x8, -48, 0, {hflip: true}]
-  - symbol: gUnk_08B24CC2
+  - symbol: gBHpgagEFrame3
     pieces:
     - [32x8, -32, 0]
     - [32x8, -56, 0, {hflip: true}]
-  - symbol: gUnk_08B24CD2
+  - symbol: gBHpgagEFrame4
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0, {hflip: true}]
-  - symbol: gUnk_08B24CE2
+  - symbol: gBHpgagEFrame5
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0, {hflip: true}]
     - [8x8, -72, 0, {hflip: true}]
-  - symbol: gUnk_08B24CF8
+  - symbol: gBHpgagEFrame6
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
-  - symbol: gUnk_08B24D0E
+  - symbol: gBHpgagEFrame7
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnk_08B24D18
+  - symbol: gBHpgagEFrame8
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnk_08B24D22
+  - symbol: gBHpgagEFrame9
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnk_08B24D2C
+  - symbol: gBHpgagEFrame10
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
-  - symbol: gUnk_08B24D42
+  - symbol: gBHpgagEFrame11
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0]
-  - symbol: gUnk_08B24D58
+  - symbol: gBHpgagEFrame12
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0]
-  - symbol: gUnk_08B24D6E
+  - symbol: gBHpgagEFrame13
     pieces:
     - [8x8, -24, 0]
   animations:
-  - symbol: gUnk_08B24D78
+  - symbol: gBHpgagEAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_08B24D82
+  - symbol: gBHpgagEAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnk_08B24D8C
+  - symbol: gBHpgagEAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnk_08B24D96
+  - symbol: gBHpgagEAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 4]]
-  - symbol: gUnk_08B24DA0
+  - symbol: gBHpgagEAnim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 4]]
   us:

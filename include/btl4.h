@@ -106,7 +106,7 @@ extern u8 gUnk_08B1FD3C[];
 extern u8 gUnk_08B1FD4C[];
 extern u8 gUnk_08B1FD66[];
 extern u8 gUnk_08B25EF0[];
-extern u8 gUnk_08F69BA4[];
+extern u8 gBStatesPalette[];
 extern u8 gUnk_096FAC64[];
 
 void func_080A41F0(void* a, u16 b);

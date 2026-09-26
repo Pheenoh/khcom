@@ -226,15 +226,15 @@ typedef struct Emy83sWork {
     s16 unk_022;
 } Emy83sWork;
 
-extern u8 gUnk_08A20BCE[];
-extern u8 gUnk_08A23630[];
-extern u8 gUnk_08B1D828[];
-extern u8 gUnk_08B1D832[];
-extern u8 gUnk_08B1D846[];
-extern u8 gUnk_08B1B854[];
-extern u8 gUnk_08F698C4[];
-extern u8 gUnk_08F699C4[];
-extern u8 gUnk_08F69B84[];
+extern u8 gEmy1610bTiles[];
+extern u8 gEmy1611bTiles[];
+extern u8 gEmy8311bFrame0[];
+extern u8 gEmy8311bFrame1[];
+extern u8 gEmy8311bTiles[];
+extern u8 gEmy8310bTiles[];
+extern u8 gEmy07mPalette[];
+extern u8 gEmy16Palette[];
+extern u8 gEmy83Palette[];
 extern u32 gFrameCounter;
 
 void func_0803B468(Emy29Work* work, s16 anim, s16 dx, s16 dy, s16 dz);

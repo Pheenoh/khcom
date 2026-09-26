@@ -5336,18 +5336,18 @@ entries:
     address: 0x09EC232C
   eu:
     address: 0x09F76FA8
-- name: gUnk_09EEAF4C
+- name: gRiCardF0RedFrames
   record: SpriteTable
-  items: [gUnk_090A0ACC, gUnk_090A0ADC, gUnk_090A0AE6, gUnk_090A0AF0, gUnk_090A0AFA, gUnk_090A0B04, gUnk_090A0B0E, gUnk_090A0B18, gUnk_090A0B22, gUnk_090A0B2C, gUnk_090A0B36, gUnk_090A0B40, gUnk_090A0B4A, gUnk_090A0B54, gUnk_090A0B5E, gUnk_090A0B68, gUnk_090A0B72, gUnk_090A0B7C, gUnk_090A0B86, gUnk_090A0B90, gUnk_090A0B9A, gUnk_090A0BA4, gUnk_090A0BAE, gUnk_090A0BB8, gUnk_090A0BC2]
+  items: [gRiCardF0RedFrame0, gRiCardF0RedFrame1, gRiCardF0RedFrame2, gRiCardF0RedFrame3, gRiCardF0RedFrame4, gRiCardF0RedFrame5, gRiCardF0RedFrame6, gRiCardF0RedFrame7, gRiCardF0RedFrame8, gRiCardF0RedFrame9, gRiCardF0RedFrame10, gRiCardF0RedFrame11, gRiCardF0RedFrame12, gRiCardF0RedFrame13, gRiCardF0RedFrame14, gRiCardF0RedFrame15, gRiCardF0RedFrame16, gRiCardF0RedFrame17, gRiCardF0RedFrame18, gRiCardF0RedFrame19, gRiCardF0RedFrame20, gRiCardF0RedFrame21, gRiCardF0RedFrame22, gRiCardF0RedFrame23, gRiCardF0RedFrame24]
   us:
     address: 0x09EEAF4C
   jp:
     address: 0x09EC2340
   eu:
     address: 0x09F76FBC
-- name: gUnk_09EEAFB0
+- name: gRiCardF0RedAnims
   record: AnimTable
-  items: [gUnk_090A0BCC, gUnk_090A0BD6, gUnk_090A0BEC, gUnk_090A0C02, gUnk_090A0C18, gUnk_090A0C2E, gUnk_090A0C44, gUnk_090A0C5A, gUnk_090A0C70]
+  items: [gRiCardF0RedAnim0, gRiCardF0RedAnim1, gRiCardF0RedAnim2, gRiCardF0RedAnim3, gRiCardF0RedAnim4, gRiCardF0RedAnim5, gRiCardF0RedAnim6, gRiCardF0RedAnim7, gRiCardF0RedAnim8]
   us:
     address: 0x09EEAFB0
   jp:
@@ -5443,114 +5443,114 @@ entries:
 - name: ri_card_f0_red
   format: sprite_sheet
   palette: card_00
-  symbol: gUnk_090A0C86
+  symbol: gRiCardF0RedTiles
   align: 4
   cell: [32, 51]
   anchor: [16, 32]
   columns: 8
   frames:
-  - symbol: gUnk_090A0ACC
+  - symbol: gRiCardF0RedFrame0
     pieces:
     - [32x32, -16, -20]
     - [32x8, -16, 11]
-  - symbol: gUnk_090A0ADC
+  - symbol: gRiCardF0RedFrame1
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_090A0AE6
+  - symbol: gRiCardF0RedFrame2
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_090A0AF0
+  - symbol: gRiCardF0RedFrame3
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_090A0AFA
+  - symbol: gRiCardF0RedFrame4
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B04
+  - symbol: gRiCardF0RedFrame5
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B0E
+  - symbol: gRiCardF0RedFrame6
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B18
+  - symbol: gRiCardF0RedFrame7
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B22
+  - symbol: gRiCardF0RedFrame8
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B2C
+  - symbol: gRiCardF0RedFrame9
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B36
+  - symbol: gRiCardF0RedFrame10
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B40
+  - symbol: gRiCardF0RedFrame11
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B4A
+  - symbol: gRiCardF0RedFrame12
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B54
+  - symbol: gRiCardF0RedFrame13
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B5E
+  - symbol: gRiCardF0RedFrame14
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B68
+  - symbol: gRiCardF0RedFrame15
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B72
+  - symbol: gRiCardF0RedFrame16
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B7C
+  - symbol: gRiCardF0RedFrame17
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B86
+  - symbol: gRiCardF0RedFrame18
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B90
+  - symbol: gRiCardF0RedFrame19
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0B9A
+  - symbol: gRiCardF0RedFrame20
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0BA4
+  - symbol: gRiCardF0RedFrame21
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0BAE
+  - symbol: gRiCardF0RedFrame22
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0BB8
+  - symbol: gRiCardF0RedFrame23
     pieces:
     - [32x8, -16, -16]
-  - symbol: gUnk_090A0BC2
+  - symbol: gRiCardF0RedFrame24
     pieces:
     - [32x8, -16, -16]
   animations:
-  - symbol: gUnk_090A0BCC
+  - symbol: gRiCardF0RedAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_090A0BD6
+  - symbol: gRiCardF0RedAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 1], [2, 4], [3, 5], [2, 3]]
-  - symbol: gUnk_090A0BEC
+  - symbol: gRiCardF0RedAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 1], [5, 4], [6, 5], [5, 3]]
-  - symbol: gUnk_090A0C02
+  - symbol: gRiCardF0RedAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[7, 1], [8, 4], [9, 5], [8, 3]]
-  - symbol: gUnk_090A0C18
+  - symbol: gRiCardF0RedAnim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[10, 1], [11, 4], [12, 5], [11, 3]]
-  - symbol: gUnk_090A0C2E
+  - symbol: gRiCardF0RedAnim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[13, 1], [14, 4], [15, 5], [14, 3]]
-  - symbol: gUnk_090A0C44
+  - symbol: gRiCardF0RedAnim6
     fields: {unk_00: 64, unk_02: 64}
     frames: [[16, 1], [17, 4], [18, 5], [17, 3]]
-  - symbol: gUnk_090A0C5A
+  - symbol: gRiCardF0RedAnim7
     fields: {unk_00: 64, unk_02: 64}
     frames: [[19, 1], [20, 4], [21, 5], [20, 3]]
-  - symbol: gUnk_090A0C70
+  - symbol: gRiCardF0RedAnim8
     fields: {unk_00: 64, unk_02: 64}
     frames: [[22, 1], [23, 4], [24, 5], [23, 3]]
   us:

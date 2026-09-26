@@ -127,7 +127,7 @@ void Lvup_msg_0(LvupMsgWork* w, LvupMsgArgs* a) {
 #else
     w->tiles = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
 #endif
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
 }
 
 s32 Lvup_msg_1(LvupMsgWork* w, void* a) {

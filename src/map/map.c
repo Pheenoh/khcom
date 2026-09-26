@@ -3545,14 +3545,14 @@ void func_080EAF10(void) {
         gNewGameSlotMenuWork->palette2, 0, 0xC00, 90);
 
     if (gNewGameSlotMenuWork->unk_33D == 0) {
-        DrawSprite(56, 112, ((void**)gUnk_09EDE8CC)[0], gNewGameSlotMenuWork->tiles4,
+        DrawSprite(56, 112, ((void**)gSor1ff00Frames)[0], gNewGameSlotMenuWork->tiles4,
             gNewGameSlotMenuWork->palette4, 0, 0x400, 80);
-        DrawSprite(72, 96, gUnk_09EEFF84[0], gNewGameSlotMenuWork->tiles5, gNewGameSlotMenuWork->palette5, 0,
+        DrawSprite(72, 96, gDona2Fl00Frames[0], gNewGameSlotMenuWork->tiles5, gNewGameSlotMenuWork->palette5, 0,
             0x401, 81);
-        DrawSprite(40, 96, gUnk_09EEFEC0[0], gNewGameSlotMenuWork->tiles6, gNewGameSlotMenuWork->palette6, 0,
+        DrawSprite(40, 96, gGoofy2Fl00Frames[0], gNewGameSlotMenuWork->tiles6, gNewGameSlotMenuWork->palette6, 0,
             0x400, 81);
     } else {
-        DrawSprite(56, 112, gUnk_09EEF89C[0], gNewGameSlotMenuWork->tiles7, gNewGameSlotMenuWork->palette7, 0,
+        DrawSprite(56, 112, gRikuFf00Frames[0], gNewGameSlotMenuWork->tiles7, gNewGameSlotMenuWork->palette7, 0,
             0x400, 81);
     }
 
@@ -3709,14 +3709,14 @@ void Mode_MenuNew_0(void) {
     gNewGameSlotMenuWork->tiles2 = LoadObjTiles(gUnk_098A8C66, 0x2C0);
     gNewGameSlotMenuWork->y = -0x800;
     gNewGameSlotMenuWork->y2 = 0xA000;
-    gNewGameSlotMenuWork->tiles4 = AllocObjTiles(0x340, gUnk_088B6560);
-    gNewGameSlotMenuWork->palette4 = LoadObjPalette(gUnk_08F683A4, 32);
-    gNewGameSlotMenuWork->tiles5 = AllocObjTiles(0x280, gUnk_0932EDD8);
-    gNewGameSlotMenuWork->palette5 = LoadObjPalette(gUnk_096181D8, 32);
-    gNewGameSlotMenuWork->tiles6 = AllocObjTiles(0x400, gUnk_09322F50);
-    gNewGameSlotMenuWork->palette6 = LoadObjPalette(gUnk_096181B8, 32);
-    gNewGameSlotMenuWork->tiles7 = AllocObjTiles(0x400, gUnk_092EB78A);
-    gNewGameSlotMenuWork->palette7 = LoadObjPalette(gUnk_09618118, 32);
+    gNewGameSlotMenuWork->tiles4 = AllocObjTiles(0x340, gSor1ff00Tiles);
+    gNewGameSlotMenuWork->palette4 = LoadObjPalette(gSoraPalette, 32);
+    gNewGameSlotMenuWork->tiles5 = AllocObjTiles(0x280, gDona2Fl00Tiles);
+    gNewGameSlotMenuWork->palette5 = LoadObjPalette(gDonald2Palette, 32);
+    gNewGameSlotMenuWork->tiles6 = AllocObjTiles(0x400, gGoofy2Fl00Tiles);
+    gNewGameSlotMenuWork->palette6 = LoadObjPalette(gGoofy2Palette, 32);
+    gNewGameSlotMenuWork->tiles7 = AllocObjTiles(0x400, gRikuFf00Tiles);
+    gNewGameSlotMenuWork->palette7 = LoadObjPalette(gRikuPalette, 32);
     gNewGameSlotMenuWork->palette3 = LoadObjPalette(gUnk_09991D24, 32);
     gNewGameSlotMenuWork->tiles3 = LoadObjTiles(&gMapUiSpriteUs_098A8F28[0x62], 0x4C0);
     gNewGameSlotMenuWork->palette = LoadObjPalette(gUnk_09991BE4, 32);
@@ -4064,14 +4064,14 @@ void func_080EBB24(void) {
 #endif
 
     if (gLoadGameMenuWork->selectedSlot <= 1) {
-        DrawSprite(56, 112, ((void**)gUnk_09EDE8CC)[0], gLoadGameMenuWork->tiles3,
+        DrawSprite(56, 112, ((void**)gSor1ff00Frames)[0], gLoadGameMenuWork->tiles3,
             gLoadGameMenuWork->palette3, 0, 0x400, 80);
-        DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], gLoadGameMenuWork->tiles4,
+        DrawSprite(72, 96, ((void**)gDonaFl00Frames)[0], gLoadGameMenuWork->tiles4,
             gLoadGameMenuWork->palette4, 0, 0x401, 81);
-        DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], gLoadGameMenuWork->tiles5,
+        DrawSprite(40, 96, ((void**)gGoofyFl00Frames)[0], gLoadGameMenuWork->tiles5,
             gLoadGameMenuWork->palette5, 0, 0x400, 81);
     } else {
-        DrawSprite(56, 112, gUnk_09EEF89C[0], gLoadGameMenuWork->tiles6, gLoadGameMenuWork->palette6, 0,
+        DrawSprite(56, 112, gRikuFf00Frames[0], gLoadGameMenuWork->tiles6, gLoadGameMenuWork->palette6, 0,
             0x400, 81);
     }
 
@@ -4343,14 +4343,14 @@ void Mode_MenuLoad_0(s32 arg) {
     gLoadGameMenuWork->y = -0x800;
     gLoadGameMenuWork->y2 = 0xA000;
     gLoadGameMenuWork->x = -0x8000;
-    gLoadGameMenuWork->tiles3 = AllocObjTiles(0x340, gUnk_088B6560);
-    gLoadGameMenuWork->palette3 = LoadObjPalette(gUnk_08F683A4, 32);
-    gLoadGameMenuWork->tiles4 = AllocObjTiles(0x280, gUnk_0919FDF8);
-    gLoadGameMenuWork->palette4 = LoadObjPalette(gUnk_09617C58, 32);
-    gLoadGameMenuWork->tiles5 = AllocObjTiles(0x400, gUnk_091ABDB8);
-    gLoadGameMenuWork->palette5 = LoadObjPalette(gUnk_08F68384, 32);
-    gLoadGameMenuWork->tiles6 = AllocObjTiles(0x400, gUnk_092EB78A);
-    gLoadGameMenuWork->palette6 = LoadObjPalette(gUnk_09618118, 32);
+    gLoadGameMenuWork->tiles3 = AllocObjTiles(0x340, gSor1ff00Tiles);
+    gLoadGameMenuWork->palette3 = LoadObjPalette(gSoraPalette, 32);
+    gLoadGameMenuWork->tiles4 = AllocObjTiles(0x280, gDonaFl00Tiles);
+    gLoadGameMenuWork->palette4 = LoadObjPalette(gDonaldPalette, 32);
+    gLoadGameMenuWork->tiles5 = AllocObjTiles(0x400, gGoofyFl00Tiles);
+    gLoadGameMenuWork->palette5 = LoadObjPalette(gGoofyPalette, 32);
+    gLoadGameMenuWork->tiles6 = AllocObjTiles(0x400, gRikuFf00Tiles);
+    gLoadGameMenuWork->palette6 = LoadObjPalette(gRikuPalette, 32);
     gLoadGameMenuWork->palette = LoadObjPalette(gUnk_09991BE4, 32);
 #ifdef VERSION_EU
     gLoadGameMenuWork->tiles = AllocObjTiles(0x120, &gUnk_098A8628[0x120E]);
@@ -4984,7 +4984,7 @@ void func_080ED250(u8* work) {
 
     LoadBgTiles(0, gUnk_099597E4, 0x140);
     LoadBgMap(0, gUnk_09985F44, 0x800);
-    LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 0x20);
+    LoadPalette(gCard00Palette, &gUnk_050001C0[0x20], 0x20);
     FadeSetPaletteExcluded(15, 1);
     SetBgScroll(0, 0, 0);
     *(void**)&work[0x17C] = _08066468(1);
@@ -5032,9 +5032,9 @@ s32 func_080ED35C(MapMenuWork* w) {
     w->y2 = 0xA000;
 
     if (gGameState.flags & 8) {
-        w->tiles8 = AllocObjTiles(0x400, gUnk_092EB78A);
+        w->tiles8 = AllocObjTiles(0x400, gRikuFf00Tiles);
     } else {
-        w->tiles8 = AllocObjTiles(0x340, gUnk_088B6560);
+        w->tiles8 = AllocObjTiles(0x340, gSor1ff00Tiles);
     }
 
     w->tiles7 = LoadObjTiles(gUnk_08B22BBC, 0x100);
@@ -5448,9 +5448,9 @@ void Task_MapMenu_0(MapMenuWork* w) {
     gFieldState->flags |= 0x2000;
 
     if (gGameState.flags & 8) {
-        w->palette6 = LoadObjPalette(gUnk_09618118, 32);
+        w->palette6 = LoadObjPalette(gRikuPalette, 32);
     } else {
-        w->palette6 = LoadObjPalette(gUnk_08F683A4, 32);
+        w->palette6 = LoadObjPalette(gSoraPalette, 32);
     }
 
     FadeSetPaletteExcluded(w->palette6->index + 0x10, 1);
@@ -5500,10 +5500,10 @@ void Task_MapMenu_2(MapMenuWork* w) {
 #endif
         (gUnk_0203C7AC->flags & 0x1000)) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->x8 >> 8, w->y4 >> 8, gUnk_09EEF89C[0], w->tiles8, w->palette6,
+            DrawSprite(w->x8 >> 8, w->y4 >> 8, gRikuFf00Frames[0], w->tiles8, w->palette6,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->x8 >> 8, w->y4 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles8,
+            DrawSprite(w->x8 >> 8, w->y4 >> 8, ((void**)gSor1ff00Frames)[0], w->tiles8,
                 w->palette6, 0, 0x400, 80);
         }
 
@@ -6033,8 +6033,8 @@ s32 func_080EE824(MapSaveWork* w) {
         }
 
         SetBgScroll(0, 0, 0xFFFB);
-        w->tiles5 = AllocObjTiles(0x280, gUnk_0919FDF8);
-        w->tiles6 = AllocObjTiles(0x400, gUnk_091ABDB8);
+        w->tiles5 = AllocObjTiles(0x280, gDonaFl00Tiles);
+        w->tiles6 = AllocObjTiles(0x400, gGoofyFl00Tiles);
         w->palette3 = LoadObjPalette(gUnk_09991D24, 32);
         w->tiles3 = LoadObjTiles(gUnk_098A8F8A, 0x4C0);
         w->palette = LoadObjPalette(gUnk_099919A4, 32);
@@ -6201,15 +6201,15 @@ void Task_MapSave_0(MapSaveWork* w) {
     w->x = -0x8000;
 
     if (gGameState.flags & 8) {
-        w->tiles4 = AllocObjTiles(0x400, gUnk_092EB78A);
-        w->palette5 = LoadObjPalette(gUnk_09618118, 32);
+        w->tiles4 = AllocObjTiles(0x400, gRikuFf00Tiles);
+        w->palette5 = LoadObjPalette(gRikuPalette, 32);
     } else {
-        w->tiles4 = AllocObjTiles(0x340, gUnk_088B6560);
-        w->palette5 = LoadObjPalette(gUnk_08F683A4, 32);
+        w->tiles4 = AllocObjTiles(0x340, gSor1ff00Tiles);
+        w->palette5 = LoadObjPalette(gSoraPalette, 32);
     }
 
-    w->palette6 = LoadObjPalette(gUnk_09617C58, 32);
-    w->palette7 = LoadObjPalette(gUnk_08F68384, 32);
+    w->palette6 = LoadObjPalette(gDonaldPalette, 32);
+    w->palette7 = LoadObjPalette(gGoofyPalette, 32);
     w->unk_178 = gFieldState->actor.fieldPosition.x - gFieldState->x;
     w->unk_17C = gFieldState->actor.fieldPosition.y + gFieldState->actor.fieldPosition.z - gFieldState->y;
     w->x3 = w->unk_178;
@@ -6278,18 +6278,18 @@ void Task_MapSave_2(MapSaveWork* w) {
 
     if (gUnk_0203C7AC->flags & 0x1000) {
         if (gGameState.flags & 8) {
-            DrawSprite(w->x3 >> 8, w->y3 >> 8, gUnk_09EEF89C[0], w->tiles4, w->palette5,
+            DrawSprite(w->x3 >> 8, w->y3 >> 8, gRikuFf00Frames[0], w->tiles4, w->palette5,
                 0, 0x400, 80);
         } else {
-            DrawSprite(w->x3 >> 8, w->y3 >> 8, ((void**)gUnk_09EDE8CC)[0], w->tiles4,
+            DrawSprite(w->x3 >> 8, w->y3 >> 8, ((void**)gSor1ff00Frames)[0], w->tiles4,
                 w->palette5, 0, 0x400, 80);
         }
     }
 
     if (w->unk_2F8 != 0) {
         if (!(gGameState.flags & 8)) {
-            DrawSprite(72, 96, ((void**)gUnk_09EEE03C)[0], w->tiles5, w->palette6, 0, 0x401, 81);
-            DrawSprite(40, 96, ((void**)gUnk_09EEE1C8)[0], w->tiles6, w->palette7, 0, 0x400, 81);
+            DrawSprite(72, 96, ((void**)gDonaFl00Frames)[0], w->tiles5, w->palette6, 0, 0x401, 81);
+            DrawSprite(40, 96, ((void**)gGoofyFl00Frames)[0], w->tiles6, w->palette7, 0, 0x400, 81);
         }
 
         DrawSprite(0, 16, gMapUiSpriteUs_098A8F28, w->tiles3, w->palette3, 0, 0x400, 90);

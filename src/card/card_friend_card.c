@@ -114,12 +114,12 @@ void Friend_card_0(UnkStruct_0809A02C* w, s32* args) {
         w->unk_1CE = w->cardDef->unk_2A;
     }
 
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles2 = LoadObjTiles(w->cardDef->tiles, 0x300);
     w->palette2 = LoadObjPalette(w->cardDef->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette3 = LoadObjPalette(gBStatesPalette, 32);
     p = w->unk_144;
     ColliderInit(p, 5, 8, 10);
     ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
@@ -158,12 +158,12 @@ void Heartless_card_0(UnkStruct_0809A02C* w, s32* args) {
     }
 
     w->tiles = LoadObjTiles(gUnk_08F709B0[w->unk_1CE].tiles, 0x280);
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles2 = LoadObjTiles(w->cardDef->tiles, 0x300);
     w->palette2 = LoadObjPalette(w->cardDef->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette3 = LoadObjPalette(gBStatesPalette, 32);
     p = w->unk_144;
     ColliderInit(p, 5, 8, 10);
     ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
@@ -195,12 +195,12 @@ void Gimmick_card_0(UnkStruct_0809A02C* w, GimmickCardArgs* args) {
     w->unk_1CD = 1;
     w->cardDef = &gCardDefs[args->cardId];
     w->unk_1CE = w->cardDef->unk_2A;
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles2 = LoadObjTiles(w->cardDef->tiles, 0x300);
     w->palette2 = LoadObjPalette(w->cardDef->palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette3 = LoadObjPalette(gBStatesPalette, 32);
     p = w->unk_144;
     ColliderInit(p, 5, 8, 10);
     ColliderSetPosition(p, w->unk_38, w->unk_3C, w->unk_40);
@@ -867,7 +867,7 @@ void func_0809B76C(u8* work, void** src) {
 #endif
     }
 
-    *(void**)&work[0xC] = LoadObjPalette(gUnk_08F69BA4, 32);
+    *(void**)&work[0xC] = LoadObjPalette(gBStatesPalette, 32);
     work[0x31] = 1;
     *(u32*)&work[0x14] = gUnk_02039DD4->unk_0C4;
 }
@@ -968,7 +968,7 @@ void func_0809B920(u8* work, void** src) {
 #endif
     }
 
-    *(void**)&work[0xC] = LoadObjPalette(gUnk_08F69BA4, 32);
+    *(void**)&work[0xC] = LoadObjPalette(gBStatesPalette, 32);
     work[0x31] = 1;
     *(u32*)&work[0x14] = gUnk_02039DD4->unk_0C6;
 }
@@ -1083,7 +1083,7 @@ void func_0809BB4C(UnkStruct_0809BB4C* w) {
     AnimStart(&w->anim2, 0, 1);
     w->gfx2 = AnimGetGfx(&w->anim2);
     w->tiles4 = LoadObjTiles(gUnk_0905F03C, 0x80);
-    w->palette4 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette4 = LoadObjPalette(gBStatesPalette, 32);
     FadeToAmount(0, 16, 16);
     FadeSetPaletteExcluded((u16)(w->palette->index + 16), 1);
     FadeSetPaletteExcluded((u16)(w->palette3->index + 16), 1);

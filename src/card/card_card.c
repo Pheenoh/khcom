@@ -3785,15 +3785,15 @@ void func_0807DAD0(CardDisplayWork* p) {
     p->tiles2 = LoadObjTiles(gUnk_0909FDCA, 0x280);
     p->unk_18 = 0;
     p->tiles3 = AllocObjTiles(0x200, 0);
-    SetObjTileSource(p->tiles3, gUnk_090A0C86);
+    SetObjTileSource(p->tiles3, gRiCardF0RedTiles);
     p->tiles4 = AllocObjTiles(0x80, 0);
-    SetObjTileSource(p->tiles4, gUnk_090A0C86);
-    AnimInit(&d[0x28], gUnk_09EEAFB0, gUnk_09EEAF4C);
+    SetObjTileSource(p->tiles4, gRiCardF0RedTiles);
+    AnimInit(&d[0x28], gRiCardF0RedAnims, gRiCardF0RedFrames);
     AnimStart(&d[0x28], 1, 1);
-    *(void**)&d[0x58] = gUnk_09EEAF4C[3];
-    AnimInit(&d[0x40], gUnk_09EEAFB0, gUnk_09EEAF4C);
+    *(void**)&d[0x58] = gRiCardF0RedFrames[3];
+    AnimInit(&d[0x40], gRiCardF0RedAnims, gRiCardF0RedFrames);
     AnimStart(&d[0x40], gUnk_02039DD4->unk_104, 1);
-    *(void**)&d[0x5C] = gUnk_09EEAF4C[gUnk_02039DD4->unk_100 + 2];
+    *(void**)&d[0x5C] = gRiCardF0RedFrames[gUnk_02039DD4->unk_100 + 2];
 }
 void card_reload_2(CardDisplayWork* p) {
     u8* w;
@@ -3856,8 +3856,8 @@ void func_0807DDA8(u8* p) {
     AnimStart(&p[0x40], 2, 5);
 }
 void func_0807DDCC(u8* p, void* a) {
-    *(void**)&p[0x58] = gUnk_09EEAF4C[3];
-    *(void**)&p[0x5C] = gUnk_09EEAF4C[gUnk_02039DD4->unk_100 + 2];
+    *(void**)&p[0x58] = gRiCardF0RedFrames[3];
+    *(void**)&p[0x5C] = gRiCardF0RedFrames[gUnk_02039DD4->unk_100 + 2];
 }
 void func_0807DDF4(u8* p, void* a) {
     *(void**)&p[0x58] = AnimUpdate(&p[0x28]);

@@ -564,7 +564,7 @@ static void cardbattle_0(UnkStruct_08080268* w) {
     CpuSet((void*)&zero, w, 0x05000033);
     gUnk_02039DD4->unk_060 = (u32)w;
     w->tiles = AllocSpriteFrameTiles(0x80);
-    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gBStatesPalette, 32);
     UpdateSpriteFrameTiles((UnkStruct_080038C8*)w->tiles, gUnk_09EF12E8[0], gUnk_093FBAB8);
     TaskPoolInit((TaskPool*)w, 30);
     w->unk_B9 = 0;
@@ -3600,8 +3600,8 @@ void func_080832B0(u8* p) {
     AnimStart(&p[0x40], 2, 5);
 }
 void func_080832D0(u8* p, void* a) {
-    *(void**)&p[0x58] = gUnk_09EEAF4C[3];
-    *(void**)&p[0x5C] = gUnk_09EEAF4C[gUnk_02039DD4->unk_102 + 2];
+    *(void**)&p[0x58] = gRiCardF0RedFrames[3];
+    *(void**)&p[0x5C] = gRiCardF0RedFrames[gUnk_02039DD4->unk_102 + 2];
 }
 void func_080832F8(u8* p, void* a) {
     *(void**)&p[0x58] = AnimUpdate(&p[0x28]);
@@ -3775,15 +3775,15 @@ void func_08083714(UnkStruct_08083B20* w) {
     w->tiles2 = LoadObjTiles(gUnk_0909FDCA, 0x280);
     w->unk_18 = 0;
     w->tiles3 = AllocObjTiles(0x200, 0);
-    SetObjTileSource(w->tiles3, gUnk_090A0C86);
+    SetObjTileSource(w->tiles3, gRiCardF0RedTiles);
     w->tiles4 = AllocObjTiles(128, 0);
-    SetObjTileSource(w->tiles4, gUnk_090A0C86);
-    AnimInit(q->anim2, gUnk_09EEAFB0, gUnk_09EEAF4C);
+    SetObjTileSource(w->tiles4, gRiCardF0RedTiles);
+    AnimInit(q->anim2, gRiCardF0RedAnims, gRiCardF0RedFrames);
     AnimStart(q->anim2, 1, 1);
-    q->gfx = gUnk_09EEAF4C[3];
-    AnimInit(q->anim3, gUnk_09EEAFB0, gUnk_09EEAF4C);
+    q->gfx = gRiCardF0RedFrames[3];
+    AnimInit(q->anim3, gRiCardF0RedAnims, gRiCardF0RedFrames);
     AnimStart(q->anim3, gUnk_02039DD4->unk_106, 1);
-    q->gfx2 = gUnk_09EEAF4C[gUnk_02039DD4->unk_102 + 2];
+    q->gfx2 = gRiCardF0RedFrames[gUnk_02039DD4->unk_102 + 2];
 }
 
 void func_080837FC(CardDisplayWork* p) {

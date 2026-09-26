@@ -869,7 +869,7 @@ entries:
   fields:
     tiles: gUnk_09C91754
     tiles2: 0
-    palette: gUnk_09D69274
+    palette: gBosPcBgPalette
     maps: gUnk_09EE2D9C
     maps2: 0
     maps3: 0
@@ -3130,7 +3130,7 @@ entries:
     address: 0x09F6E4BC
 - name: gUnk_09EE2DA4
   record: SpriteTable
-  items: [gUnk_09755F34, gUnk_09756D16]
+  items: [gUnk_09755F34, gRaVegetablesFrame9]
   us:
     address: 0x09EE2DA4
   jp:

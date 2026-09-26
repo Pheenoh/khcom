@@ -293,7 +293,7 @@ typedef struct PcWork {
     PcOam oam[24];
 } PcWork;
 
-extern u8 gUnk_09D69274[];
+extern u8 gBosPcBgPalette[];
 
 u16 func_08109FF0(PcWork* work, s32 a);
 u16 func_0810A000(PcWork* work, s32 a, s32 b);

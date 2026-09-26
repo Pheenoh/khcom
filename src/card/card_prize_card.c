@@ -71,10 +71,10 @@ static void PrizeCard_0(PrizeCardWork* w, PrizeCardTaskArgs* p) {
 
     w->tiles2 = LoadObjTiles(back->tiles, 0x280);
     w->tiles3 = LoadObjTiles(back->tiles3, 0x600);
-    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gCard00Palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette3 = LoadObjPalette(gBStatesPalette, 32);
     w->unk_A8 = args.x;
     w->unk_AC = args.y;
     *(s32*)&w->unk_B0[0] = args.z;

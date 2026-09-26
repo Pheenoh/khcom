@@ -211,7 +211,7 @@ typedef struct StatusStocklistWork {
 
 extern s32 gUnk_0203C550;
 
-extern u8 gUnk_08F69BA4[];
+extern u8 gBStatesPalette[];
 extern u8 gUnk_097A2CF6[];
 extern u8 gUnk_097A2E16[];
 extern u8 gUnk_097A2DF8[];
@@ -221,10 +221,10 @@ extern u8 gUnk_097A1864[];
 extern u8 gUnk_097A1898[];
 extern u8 gUnk_097A24A6[];
 extern u8 gUnk_097A28DA[];
-extern u8 gUnk_09618118[];
-extern u8 gUnk_0891ED26[];
-extern u8 gUnk_08F683A4[];
-extern u8 gUnk_088E33C2[];
+extern u8 gRikuPalette[];
+extern u8 gRikuBt00Tiles[];
+extern u8 gSoraPalette[];
+extern u8 gSor1ll51Tiles[];
 extern u8 gUnk_097A1C54[];
 extern u8 gUnk_097A2394[];
 

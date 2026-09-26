@@ -1906,7 +1906,7 @@ void task_poo_sora_0(PooSoraWork* w) {
     gUnk_0203C410 = &w->node;
     gPooSoraWork = w;
     w->tiles = AllocObjTiles(0xA00, 0);
-    w->palette = LoadObjPalette(gUnk_08F683A4, 32);
+    w->palette = LoadObjPalette(gSoraPalette, 32);
     a->unk_1A = 16;
     w->unk_AC = 0;
     w->timer = 0;
@@ -2708,9 +2708,9 @@ void task_poo_balloon_0(PooBalloonObjWork* w, PooPos* p) {
         AnimInit(w->anim, gUnk_09EF5E44, gUnk_09EF5E38);
         AnimStart(w->anim, 0, 1);
     } else {
-        w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AD0, 4), gUnk_09732FB6);
+        w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gTrap0006Frames, 4), gTrap0006Tiles);
         w->palette = LoadObjPalette(gUnk_09849B78, 0x20);
-        AnimInit(w->anim, gUnk_09EF5AE0, gUnk_09EF5AD0);
+        AnimInit(w->anim, gTrap0006Anims, gTrap0006Frames);
         AnimStart(w->anim, 0, 1);
     }
     w->gfx = AnimGetGfx(w->anim);
@@ -2863,14 +2863,14 @@ void task_poo_freeballoon_0(PooFreeBalloonWork* w, PooPos* p) {
     w->pos3 = *p;
     w->pos5 = *p;
     w->pos = p;
-    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AA0, 4), gUnk_09732272);
-    w->palette = LoadObjPalette(gUnk_09849B38, 0x20);
-    AnimInit(w->anim, gUnk_09EF5AB4, gUnk_09EF5AA0);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gTrap0004Frames, 4), gTrap0004Tiles);
+    w->palette = LoadObjPalette(gTrap0004Palette, 0x20);
+    AnimInit(w->anim, gTrap0004Anims, gTrap0004Frames);
     AnimStart(w->anim, 0, 1);
     w->gfx = AnimGetGfx(w->anim);
-    w->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5AB8, 4), gUnk_0973291E);
+    w->tiles2 = AllocObjTiles(GetMaxSpriteTileBytes(gTrap0005Frames, 4), gTrap0005Tiles);
     w->palette2 = LoadObjPalette(gUnk_09849B58, 0x20);
-    AnimInit(w->anim2, gUnk_09EF5ACC, gUnk_09EF5AB8);
+    AnimInit(w->anim2, gTrap0005Anims, gTrap0005Frames);
     AnimStart(w->anim2, 0, 1);
     w->gfx2 = AnimGetGfx(w->anim2);
     w->unk_90 = 0;
@@ -2968,8 +2968,8 @@ s32 func_080CC488(u16 x) {
 void task_poo_gauge_0(PooGaugeWork* w) {
     w->unk_12 = 0;
     w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5B2C, 4), gUnk_097356F4);
-    w->palette = LoadObjPalette(gUnk_09849B98, 0x20);
-    w->unk_0C = gUnk_09849B98;
+    w->palette = LoadObjPalette(gPoohGaugePalette, 0x20);
+    w->unk_0C = gPoohGaugePalette;
     w->gfx = gUnk_09EF5B2C[func_080CC488(w->unk_12)];
     w->unk_10 = 0;
 }
@@ -2992,9 +2992,9 @@ u8 task_poo_gauge_1(PooGaugeWork* w) {
     }
 
     if (w->unk_10 == 0) {
-        if (w->unk_0C != gUnk_09849B98) {
-            LoadObjPaletteBank(w->palette->index, gUnk_09849B98);
-            w->unk_0C = gUnk_09849B98;
+        if (w->unk_0C != gPoohGaugePalette) {
+            LoadObjPaletteBank(w->palette->index, gPoohGaugePalette);
+            w->unk_0C = gPoohGaugePalette;
         }
     }
     return 1;
@@ -3013,9 +3013,9 @@ void task_poo_trapballoon_0(PooBalloonWork* w, PooPos* p) {
     w->pos = *p;
     w->pos.z = 0;
     w->pos.unk_0C = 0;
-    w->unk_CC = GetMaxSpriteTileBytes(gUnk_09EF5AD0, 4);
+    w->unk_CC = GetMaxSpriteTileBytes(gTrap0006Frames, 4);
     w->palette = 0;
-    AnimInit(w->anim, gUnk_09EF5AE0, gUnk_09EF5AD0);
+    AnimInit(w->anim, gTrap0006Anims, gTrap0006Frames);
     AnimStart(w->anim, 0, 1);
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 3);
@@ -3100,7 +3100,7 @@ void task_poo_trapballoon_2(PooBalloonWork* w) {
             }
         } else {
             if (w->palette == 0) {
-                w->tiles = AllocObjTiles(w->unk_CC, gUnk_09732FB6);
+                w->tiles = AllocObjTiles(w->unk_CC, gTrap0006Tiles);
                 w->palette = LoadObjPalette(gUnk_09849B78, 0x20);
                 ColliderInit(w->collider, 10, 8, 16);
                 func_080CCB90(&w->node, 0x400, &w->pos);
@@ -3275,8 +3275,8 @@ void task_poo_honey_0(PooHoneyWork* w, PooPos* p) {
     w->pos.y = p->y;
     w->pos.z = 0;
     w->palette = 0;
-    w->unk_20 = GetMaxSpriteTileBytes(gUnk_09EF5AE4, 14);
-    AnimInit(w->anim, gUnk_09EF5B1C, gUnk_09EF5AE4);
+    w->unk_20 = GetMaxSpriteTileBytes(gPoohHoneyFrames, 14);
+    AnimInit(w->anim, gPoohHoneyAnims, gPoohHoneyFrames);
     AnimStart(w->anim, 3, 1);
     ColliderSetPosition(w->collider, w->pos.x, w->pos.y, w->pos.z);
     w->pos2 = w->pos;
@@ -3395,8 +3395,8 @@ void task_poo_honey_2(PooHoneyWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = AllocObjTiles(w->unk_20, gUnk_097339E8);
-            w->palette = LoadObjPalette(gUnk_09849B98, 0x20);
+            w->tiles = AllocObjTiles(w->unk_20, gPoohHoneyTiles);
+            w->palette = LoadObjPalette(gPoohGaugePalette, 0x20);
             ColliderInit(w->collider, 10, 8, 16);
             func_080CCB90(&w->node, 0x1FA4, &w->pos2);
         }
@@ -3926,7 +3926,7 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     w->y = 0x47E00;
     w->z = 0;
     w->unk_30 = 0;
-    w->unk_A8 = GetMaxSpriteTileBytes(gUnk_09EF5D68, 0x10);
+    w->unk_A8 = GetMaxSpriteTileBytes(gEeyoreFl00Frames, 0x10);
     w->tiles = 0;
     w->palette = 0;
 
@@ -3935,7 +3935,7 @@ void task_poo_eeyore_0(PooEeyoreWork* w) {
     } else {
         w->unk_A4 = 4;
     }
-    AnimInit(w->anim, gUnk_09EF5DA8, gUnk_09EF5D68);
+    AnimInit(w->anim, gEeyoreFl00Anims, gEeyoreFl00Frames);
     AnimStart(w->anim, w->unk_A4, 1);
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 1);
@@ -4015,8 +4015,8 @@ void task_poo_eeyore_2(PooEeyoreWork* w) {
         ColliderSetPosition(w->collider, w->x, w->y, w->z);
         w->gfx = AnimUpdate(w->anim);
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849C58, 0x20);
-            w->tiles = AllocObjTiles(w->unk_A8, gUnk_097448BA);
+            w->palette = LoadObjPalette(gEeyorePalette, 0x20);
+            w->tiles = AllocObjTiles(w->unk_A8, gEeyoreFl00Tiles);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->y >> 8) * 4);
         TaskPoolUpdate(&w->tasks);
@@ -4041,10 +4041,10 @@ void task_poo_owl_0(PooOwlWork* w) {
     w->pos.y = 0x20700;
     w->pos.z = -0x3000;
     w->pos.unk_0C = 0;
-    w->unk_4C = GetMaxSpriteTileBytes(gUnk_09EF5DC4, 18);
+    w->unk_4C = GetMaxSpriteTileBytes(gOwlFl00Frames, 18);
     w->palette = 0;
-    w->gfx = gUnk_09746EDC;
-    AnimInit(w->unk_0C, gUnk_09EF5E24, gUnk_09EF5DC4);
+    w->gfx = gOwlFl00Frame0;
+    AnimInit(w->unk_0C, gOwlFl00Anims, gOwlFl00Frames);
     w->unk_48 = 0;
     w->unk_49 = 0;
     gUnk_02034E08.x = 0x3FD00;
@@ -4113,8 +4113,8 @@ void task_poo_owl_2(PooOwlWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = AllocObjTiles(w->unk_4C, gUnk_097471E2);
-            w->palette = LoadObjPalette(gUnk_09849C78, 0x20);
+            w->tiles = AllocObjTiles(w->unk_4C, gOwlFl00Tiles);
+            w->palette = LoadObjPalette(gOwlPalette, 0x20);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - ((w->pos.y + w->pos.z) >> 8) * 4);
     }
@@ -4264,7 +4264,7 @@ void task_poo_rabbit_2(PooRabbitWork* w) {
         pool = &w->tasks;
         TaskPoolUpdate(pool);
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849CB8, 0x40);
+            w->palette = LoadObjPalette(gRabbitPalette, 0x40);
             ColliderInit(w->collider, 10, 4, 48);
             func_080D2E70(w->unk_AE, 1);
         }
@@ -4528,11 +4528,11 @@ void task_poo_tiggerroo_2(PooTiggerWork* w) {
     } else {
         if (w->palette == 0) {
             if (w->unk_D1 != 0) {
-                w->palette = LoadObjPalette(gUnk_09849BD8, 0x20);
+                w->palette = LoadObjPalette(gTiggerPalette, 0x20);
                 ColliderInit(w->unk_38, 4, 8, 8);
             } else {
-                w->palette = LoadObjPalette(gUnk_09849CF8, 0x20);
-                w->tiles = AllocObjTiles(w->unk_D2, gUnk_09753154);
+                w->palette = LoadObjPalette(gRooPalette, 0x20);
+                w->tiles = AllocObjTiles(w->unk_D2, gRooFl00Tiles);
                 ColliderInit(w->unk_38, 4, 8, 8);
             }
         }
@@ -4591,8 +4591,8 @@ void task_poo_tiggerroo_0(PooTiggerWork* w) {
     w->unk_D1 = 0;
     w->palette = 0;
     w->tiles = 0;
-    w->unk_D2 = GetMaxSpriteTileBytes(gUnk_09EF5EF8, 18);
-    AnimInit(w->anim, gUnk_09EF5FA0, gUnk_09EF5EF8);
+    w->unk_D2 = GetMaxSpriteTileBytes(gRooFl00Frames, 18);
+    AnimInit(w->anim, gRooFl00Anims, gRooFl00Frames);
     w->unk_26 = 4;
     func_080CE710(w, 0);
     func_080CE8B4(w);
@@ -4607,9 +4607,9 @@ void task_poo_tiggerroo_0(PooTiggerWork* w) {
 void task_poo_roo_0(PooRooWork* w, PooPos* p) {
     gStockMesDispWork = w;
     w->srcPos = p;
-    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gUnk_09EF5EF8, 8), gUnk_09753154);
-    w->palette = LoadObjPalette(gUnk_09849CF8, 0x20);
-    AnimInit(w->anim, gUnk_09EF5FA0, gUnk_09EF5EF8);
+    w->tiles = AllocObjTiles(GetMaxSpriteTileBytes(gRooFl00Frames, 8), gRooFl00Tiles);
+    w->palette = LoadObjPalette(gRooPalette, 0x20);
+    AnimInit(w->anim, gRooFl00Anims, gRooFl00Frames);
 
     if (func_080D2D50(5) != 0) {
         w->pos.x = 0x95F00;
@@ -4730,13 +4730,13 @@ void task_poo_roo_footmark_0(PooFootmarkWork* w) {
     w->unk_0C = 0x4A700;
     w->unk_10 = 0x28E00;
     w->unk_14 = 0;
-    w->tiles = LoadObjTiles(gUnk_09755A34, 0x500);
+    w->tiles = LoadObjTiles(gRoFootmarkTiles, 0x500);
     w->palette = 0;
 
     if (func_080D2D50(5) == 0) {
-        w->gfx = gUnk_097559F4;
+        w->gfx = gRoFootmarkFrame0;
     } else {
-        w->gfx = gUnk_09755A04;
+        w->gfx = gRoFootmarkFrame1;
     }
 }
 
@@ -4759,7 +4759,7 @@ void task_poo_roo_footmark_2(PooFootmarkWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849D18, 0x20);
+            w->palette = LoadObjPalette(gRoFootmarkPalette, 0x20);
             n = &w->node;
             func_080CCB90(n, 0x240, &w->unk_0C);
             if (func_080D2D50(5) != 0) {
@@ -4984,9 +4984,9 @@ void task_poo_eeyoretail_0(PooEeyoreTailWork* w) {
     w->unk_10 = 0x49E00;
     w->unk_14 = -0x2000;
     w->unk_18 = 0;
-    w->unk_1C = GetMaxSpriteTileBytes(gUnk_09EF5D68, 0x10);
+    w->unk_1C = GetMaxSpriteTileBytes(gEeyoreFl00Frames, 0x10);
     w->palette = 0;
-    w->gfx = gUnk_09744842;
+    w->gfx = gEeyoreFl00Frame15;
     TaskPoolInit(&w->tasks, 1);
     CreatePooShadowscaleTask(&w->tasks, &w->unk_0C, 0x66);
     gUnk_02034E18 = 0x1E;
@@ -5024,8 +5024,8 @@ void task_poo_eeyoretail_2(PooEeyoreTailWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = AllocObjTiles(w->unk_1C, gUnk_097448BA);
-            w->palette = LoadObjPalette(gUnk_09849C58, 0x20);
+            w->tiles = AllocObjTiles(w->unk_1C, gEeyoreFl00Tiles);
+            w->palette = LoadObjPalette(gEeyorePalette, 0x20);
         }
         if (func_080CFA70() != 0) {
             pr = 0x800;
@@ -5061,9 +5061,9 @@ void task_poo_honeycomb_0(PooHoneycombWork* w) {
     w->y = 0x46600;
     w->unk_2C = -0xA00;
     w->unk_30 = 0;
-    w->unk_34 = GetMaxSpriteTileBytes(gUnk_09EF5FF0, 1);
+    w->unk_34 = GetMaxSpriteTileBytes(gEeHoneycombFrames, 1);
     w->palette = 0;
-    w->gfx = gUnk_097567FC;
+    w->gfx = gEeHoneycombFrame0;
     ColliderSetPosition(w->collider, w->x, w->y, 0);
     w->unk_9C = 0;
     gUnk_02034E1C = 0;
@@ -5128,8 +5128,8 @@ void task_poo_honeycomb_2(PooHoneycombWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849D78, 0x20);
-            w->tiles = AllocObjTiles(w->unk_34, gUnk_09756810);
+            w->palette = LoadObjPalette(gEeHoneycombPalette, 0x20);
+            w->tiles = AllocObjTiles(w->unk_34, gEeHoneycombTiles);
         }
         p = &w->unk_9C;
         if (*p == 0) {
@@ -5163,9 +5163,9 @@ void task_poo_vegetable_0(PooVegetableWork* w) {
     w->y = 0x18000;
     w->z = 0;
     w->unk_30 = 0;
-    w->unk_34 = GetMaxSpriteTileBytes(gUnk_09EF602C, 1);
+    w->unk_34 = GetMaxSpriteTileBytes(gRaVegetablesFrames, 1);
     w->palette = 0;
-    w->gfx = gUnk_09756C50;
+    w->gfx = gRaVegetablesFrame0;
     ColliderSetPosition(w->collider, w->x, w->y, w->z);
 }
 
@@ -5193,8 +5193,8 @@ void task_poo_vegetable_2(PooVegetableWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = AllocObjTiles(w->unk_34, gUnk_09756E28);
-            w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
+            w->tiles = AllocObjTiles(w->unk_34, gRaVegetablesTiles);
+            w->palette = LoadObjPalette(gRaVegetablesPalette, 0x20);
             ColliderInit(w->collider, 7, 0x26, 12);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->y >> 8) * 4);
@@ -5440,9 +5440,9 @@ void task_poo_wagon_0(PooCamera* w) {
         w->pos.y += 0xC00;
     }
     w->palette = 0;
-    w->gfx = gUnk_09758C04;
-    w->gfx2 = gUnk_09758B70;
-    w->gfx3 = gUnk_09758C20;
+    w->gfx = gRaWagonFrame11;
+    w->gfx2 = gRaWagonFrame1;
+    w->gfx3 = gRaWagonFrame12;
     w->unk_3C = 0;
     w->timer = 0;
     w->angle = 0;
@@ -5539,10 +5539,10 @@ void task_poo_wagon_2(PooCamera* w) {
     }
 
     if (w->palette == 0) {
-        w->tiles = AllocObjTiles(0x560, gUnk_09758C94);
-        w->tiles2 = AllocObjTiles(0x4C0, gUnk_09758C94);
-        w->tiles3 = AllocObjTiles(160, gUnk_09758C94);
-        w->palette = LoadObjPalette(gUnk_09849DD8, 32);
+        w->tiles = AllocObjTiles(0x560, gRaWagonTiles);
+        w->tiles2 = AllocObjTiles(0x4C0, gRaWagonTiles);
+        w->tiles3 = AllocObjTiles(160, gRaWagonTiles);
+        w->palette = LoadObjPalette(gRaWagonPalette, 32);
     }
     n = func_080CBB7C();
 
@@ -5607,20 +5607,20 @@ void task_poo_wagonwheel_0(PooWheelWork* w) {
         w->unk_24 = 0x2A800;
         w->unk_28 = 0x18D00;
         w->unk_36 = 2;
-        w->gfx = gUnk_09758B9C;
+        w->gfx = gRaWagonFrame3;
     } else {
         func_080D2CF4(&x, &y);
         w->unk_24 = x << 8;
         w->unk_28 = y << 8;
         w->unk_36 = 4;
-        w->gfx = gUnk_09758BF4;
+        w->gfx = gRaWagonFrame10;
     }
     w->unk_3C = w->unk_24;
     w->unk_2C = 0;
     w->unk_30 = 0;
     w->unk_34 = 0x180;
     w->palette = 0;
-    AnimInit(w->anim, gUnk_09EF60AC, gUnk_09EF6078);
+    AnimInit(w->anim, gRaWagonAnims, gRaWagonFrames);
     AnimStart(w->anim, w->unk_36, 1);
     w->unk_38 = 0;
     w->unk_40 = 0;
@@ -5666,13 +5666,13 @@ void task_poo_wagonwheel_2(PooWheelWork* w) {
 
             if (w->unk_36 == 3) {
                 w->unk_36 = 4;
-                w->gfx = gUnk_09758BF4;
+                w->gfx = gRaWagonFrame10;
             }
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = AllocObjTiles(w->unk_34, gUnk_09758C94);
-            w->palette = LoadObjPalette(gUnk_09849DD8, 0x20);
+            w->tiles = AllocObjTiles(w->unk_34, gRaWagonTiles);
+            w->palette = LoadObjPalette(gRaWagonPalette, 0x20);
         }
 
         if (func_080D2D50(6) == 0) {
@@ -5737,8 +5737,8 @@ void task_poo_bee_0(PooBeeWork* w) {
     w->unk_AC = -0xA00;
     w->unk_B0 = 0;
     i = 0;
-    a = gUnk_09EF6024;
-    b = gUnk_09EF5FF8;
+    a = gEeBeeAnims;
+    b = gEeBeeFrames;
 
     for (; i < 4; i++) {
         w->sub[i].unk_00 = -0x500;
@@ -5830,8 +5830,8 @@ void task_poo_bee_2(PooBeeWork* w) {
     }
 
     if (w->palette == 0) {
-        w->palette = LoadObjPalette(gUnk_09849D98, 32);
-        w->tiles = LoadObjTiles(gUnk_09756ACE, 0x180);
+        w->palette = LoadObjPalette(gEeBeePalette, 32);
+        w->tiles = LoadObjTiles(gEeBeeTiles, 0x180);
     }
 
     for (i = 0; i < gUnk_02034E2C + 1 && i <= 3; i++) {
@@ -5861,10 +5861,10 @@ void task_poo_beeAfterEvent_0(PooBeeAfterEventWork* w) {
     w->unk_48 = 0x46600;
     w->unk_4C = -0xA00;
     w->unk_50 = 0;
-    AnimInit(w->anim, gUnk_09EF6024, gUnk_09EF5FF8);
+    AnimInit(w->anim, gEeBeeAnims, gEeBeeFrames);
     AnimStart(w->anim, 1, 1);
     w->gfx = AnimGetGfx(w->anim);
-    AnimInit(w->anim2, gUnk_09EF6024, gUnk_09EF5FF8);
+    AnimInit(w->anim2, gEeBeeAnims, gEeBeeFrames);
     AnimStart(w->anim2, 0, 1);
     w->gfx2 = AnimGetGfx(w->anim2);
     w->palette = 0;
@@ -5895,9 +5895,9 @@ void task_poo_beeAfterEvent_2(PooBeeAfterEventWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849D98, 0x20);
-            w->tiles = LoadObjTiles(gUnk_09756ACE, 0x180);
-            w->tiles2 = LoadObjTiles(gUnk_09756ACE, 0x180);
+            w->palette = LoadObjPalette(gEeBeePalette, 0x20);
+            w->tiles = LoadObjTiles(gEeBeeTiles, 0x180);
+            w->tiles2 = LoadObjTiles(gEeBeeTiles, 0x180);
             m4aSongNumStart(SONG_SND_386);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1002 - (w->unk_48 >> 8) * 4);
@@ -5947,7 +5947,7 @@ void task_poo_cabbage_0(PooCabbageWork* w) {
     w->angle = (r & 15) + 88;
     w->unk_C0 = 0x1CC;
     w->palette = 0;
-    AnimInit(w->anim, gUnk_09EF6060, gUnk_09EF602C);
+    AnimInit(w->anim, gRaVegetablesAnims, gRaVegetablesFrames);
     w->state = 2;
     AnimStart(w->anim, 2, 1);
     w->gfx = AnimGetGfx(w->anim);
@@ -6054,14 +6054,14 @@ u8 task_poo_cabbage_1(PooCabbageWork* w) {
                 w->x = 0xAB300;
                 w->y = 0x57100;
                 w->z = 0;
-                w->gfx = gUnk_09756D86;
+                w->gfx = gRaVegetablesFrame10;
             } else if (w->unk_D4 == 8) {
                 w->x = 0xAB300;
                 w->y = 0x57100;
                 w->z = 0;
-                w->gfx = gUnk_09756D90;
+                w->gfx = gRaVegetablesFrame11;
             } else {
-                w->gfx = gUnk_09756C78;
+                w->gfx = gRaVegetablesFrame1;
             }
         }
         break;
@@ -6092,8 +6092,8 @@ void task_poo_cabbage_2(PooCabbageWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->tiles = LoadObjTiles(gUnk_09756E28, 0x1D20);
-            w->palette = LoadObjPalette(gUnk_09849DB8, 32);
+            w->tiles = LoadObjTiles(gRaVegetablesTiles, 0x1D20);
+            w->palette = LoadObjPalette(gRaVegetablesPalette, 32);
         }
 
         if (w->unk_D2 != 0) {
@@ -6483,9 +6483,9 @@ void task_poo_prize_3(PooPrizeWork* w) {
 
 void task_poo_zzz_0(PooZzzWork* w, u8* arg) {
     w->unk_24 = gUnk_0203C3EC;
-    w->tiles = AllocObjTiles(0x100, gUnk_097257D8);
-    w->palette = LoadObjPalette(gUnk_09849A98, 0x20);
-    AnimInit(w->anim, gUnk_09EF5904, gUnk_09EF5844);
+    w->tiles = AllocObjTiles(0x100, gPoohFl05Tiles);
+    w->palette = LoadObjPalette(gPoohPalette, 0x20);
+    AnimInit(w->anim, gPoohFl05Anims, gPoohFl05Frames);
 
     if (*arg != 0) {
         AnimStart(w->anim, 8, 1);
@@ -6585,7 +6585,7 @@ void task_poo_butterfly_0(PooButterflyWork* w, PooPos* p) {
     w->unk_D4 = p->x;
     w->unk_D8 = p->y;
     w->unk_DC = p->z - 0xE00;
-    w->palette = LoadObjPalette(gUnk_09849C38, 0x20);
+    w->palette = LoadObjPalette(gTrap0100Palette, 0x20);
     w->unk_00[0].unk_20 = w->unk_D4 - 0x1000;
     w->unk_00[0].unk_24 = w->unk_D8;
     w->unk_00[0].unk_28 = w->unk_DC;
@@ -6901,8 +6901,8 @@ void task_poo_rabbitAfterEvent_0(PooRabbitAfterEventWork* w) {
     w->z = 0;
     w->unk_30 = 0;
     w->palette = 0;
-    w->unk_A4 = GetMaxSpriteTileBytes(gUnk_09EF5EA8, 15);
-    AnimInit(w->anim, gUnk_09EF5EE4, gUnk_09EF5EA8);
+    w->unk_A4 = GetMaxSpriteTileBytes(gRabbitBl00Frames, 15);
+    AnimInit(w->anim, gRabbitBl00Anims, gRabbitBl00Frames);
     AnimStart(w->anim, 0, 1);
     w->gfx = AnimGetGfx(w->anim);
     TaskPoolInit(&w->tasks, 1);
@@ -6940,8 +6940,8 @@ void task_poo_rabbitAfterEvent_2(PooRabbitAfterEventWork* w) {
         TaskPoolUpdate(&w->tasks);
 
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849CB8, 0x40);
-            w->tiles = AllocObjTiles(w->unk_A4, gUnk_0974FB26);
+            w->palette = LoadObjPalette(gRabbitPalette, 0x40);
+            w->tiles = AllocObjTiles(w->unk_A4, gRabbitBl00Tiles);
             ColliderInit(w->collider, 10, 4, 48);
             func_080D2E70(w->unk_A6, 1);
         }
@@ -6965,8 +6965,8 @@ void task_poo_cabbageAfterEvent_0(PooCabbageAfterEventWork* w) {
     w->unk_14 = 0;
     w->unk_18 = 0;
     w->palette = 0;
-    w->unk_1C = GetMaxSpriteTileBytes(gUnk_09EF602C, 13);
-    w->gfx = gUnk_09756D16;
+    w->unk_1C = GetMaxSpriteTileBytes(gRaVegetablesFrames, 13);
+    w->gfx = gRaVegetablesFrame9;
 }
 
 u8 task_poo_cabbageAfterEvent_1(PooCabbageAfterEventWork* w) {
@@ -6988,8 +6988,8 @@ void task_poo_cabbageAfterEvent_2(PooCabbageAfterEventWork* w) {
         }
     } else {
         if (w->palette == 0) {
-            w->palette = LoadObjPalette(gUnk_09849DB8, 0x20);
-            w->tiles = AllocObjTiles(w->unk_1C, gUnk_09756E28);
+            w->palette = LoadObjPalette(gRaVegetablesPalette, 0x20);
+            w->tiles = AllocObjTiles(w->unk_1C, gRaVegetablesTiles);
         }
         DrawSprite(x, y, w->gfx, w->tiles, w->palette, 0, 0x800, -0x1004 - (w->unk_10 >> 8) * 4);
     }
@@ -7443,81 +7443,81 @@ const char gTaskNamePooMap[] = "task_poo_map";
 
 const PooAnimDesc gUnk_096FCF54[11][5] = {
     {
-        { gUnk_09EDED34, gUnk_09EDED38, gUnk_088DBD58, 0, 0 },
-        { gUnk_09EDE8CC, gUnk_09EDE918, gUnk_088B6560, 0, 0 },
-        { gUnk_09EDE99C, gUnk_09EDE9CC, gUnk_088BF162, 0, 0 },
-        { gUnk_09EDEA68, gUnk_09EDEA6C, gUnk_088C56C6, 0, 0 },
-        { gUnk_09EDEB0C, gUnk_09EDEB40, gUnk_088CBAA2, 0, 0 },
+        { gSor1bb00Frames, gSor1bb00Anims, gSor1bb00Tiles, 0, 0 },
+        { gSor1ff00Frames, gSor1ff00Anims, gSor1ff00Tiles, 0, 0 },
+        { gSor1fl00Frames, gSor1fl00Anims, gSor1fl00Tiles, 0, 0 },
+        { gSor1ll00Frames, gSor1ll00Anims, gSor1ll00Tiles, 0, 0 },
+        { gSor1bl00Frames, gSor1bl00Anims, gSor1bl00Tiles, 0, 0 },
     },
     {
-        { gUnk_09EDED3C, gUnk_09EDED5C, gUnk_088DC192, 0, 0 },
-        { gUnk_09EDE920, gUnk_09EDE940, gUnk_088BAC36, 0, 0 },
-        { gUnk_09EDE9EC, gUnk_09EDEA0C, gUnk_088C1388, 0, 0 },
-        { gUnk_09EDEA70, gUnk_09EDEA90, gUnk_088C5AAA, 0, 0 },
-        { gUnk_09EDEB68, gUnk_09EDEB88, gUnk_088CE0C2, 0, 0 },
+        { gSor1bb01Frames, gSor1bb01Anims, gSor1bb01Tiles, 0, 0 },
+        { gSor1ff01Frames, gSor1ff01Anims, gSor1ff01Tiles, 0, 0 },
+        { gSor1fl01Frames, gSor1fl01Anims, gSor1fl01Tiles, 0, 0 },
+        { gSor1ll01Frames, gSor1ll01Anims, gSor1ll01Tiles, 0, 0 },
+        { gSor1bl01Frames, gSor1bl01Anims, gSor1bl01Tiles, 0, 0 },
     },
     {
-        { gUnk_09EDED60, gUnk_09EDED80, gUnk_088DDAF6, 0, 0 },
-        { gUnk_09EDE944, gUnk_09EDE964, gUnk_088BC6DE, 0, 0 },
-        { gUnk_09EDEA10, gUnk_09EDEA30, gUnk_088C2D72, 0, 0 },
-        { gUnk_09EDEA94, gUnk_09EDEAB4, gUnk_088C75A0, 0, 0 },
-        { gUnk_09EDEB8C, gUnk_09EDEBAC, gUnk_088CF9CE, 0, 0 },
+        { gSor1bb02Frames, gSor1bb02Anims, gSor1bb02Tiles, 0, 0 },
+        { gSor1ff02Frames, gSor1ff02Anims, gSor1ff02Tiles, 0, 0 },
+        { gSor1fl02Frames, gSor1fl02Anims, gSor1fl02Tiles, 0, 0 },
+        { gSor1ll02Frames, gSor1ll02Anims, gSor1ll02Tiles, 0, 0 },
+        { gSor1bl02Frames, gSor1bl02Anims, gSor1bl02Tiles, 0, 0 },
     },
     {
-        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 0, 0 },
-        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 0, 0 },
-        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 0, 0 },
-        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 0, 0 },
-        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 0, 0 },
+        { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 0, 0 },
+        { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 0, 0 },
+        { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 0, 0 },
+        { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 0, 0 },
+        { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 0, 0 },
     },
     {
-        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 1, 0 },
-        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 1, 0 },
-        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 1, 0 },
-        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 1, 0 },
-        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 1, 0 },
+        { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 1, 0 },
+        { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 1, 0 },
+        { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 1, 0 },
+        { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 1, 0 },
+        { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 1, 0 },
     },
     {
-        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 2, 0 },
-        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 2, 0 },
-        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 2, 0 },
-        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 2, 0 },
-        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 2, 0 },
+        { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 2, 0 },
+        { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 2, 0 },
+        { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 2, 0 },
+        { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 2, 0 },
+        { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 2, 0 },
     },
     {
-        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 3, 0 },
-        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 3, 0 },
-        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 3, 0 },
-        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 3, 0 },
-        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 3, 0 },
+        { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 3, 0 },
+        { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 3, 0 },
+        { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 3, 0 },
+        { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 3, 0 },
+        { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 3, 0 },
     },
     {
-        { gUnk_09EDED84, gUnk_09EDEDA0, gUnk_088DF374, 4, 0 },
-        { gUnk_09EDE968, gUnk_09EDE984, gUnk_088BDB36, 4, 0 },
-        { gUnk_09EDEA34, gUnk_09EDEA50, gUnk_088C439E, 4, 0 },
-        { gUnk_09EDEAB8, gUnk_09EDEAD4, gUnk_088C8DB2, 4, 0 },
-        { gUnk_09EDEBB0, gUnk_09EDEBCC, gUnk_088D1294, 4, 0 },
+        { gSor1bb03Frames, gSor1bb03Anims, gSor1bb03Tiles, 4, 0 },
+        { gSor1ff03Frames, gSor1ff03Anims, gSor1ff03Tiles, 4, 0 },
+        { gSor1fl03Frames, gSor1fl03Anims, gSor1fl03Tiles, 4, 0 },
+        { gSor1ll03Frames, gSor1ll03Anims, gSor1ll03Tiles, 4, 0 },
+        { gSor1bl03Frames, gSor1bl03Anims, gSor1bl03Tiles, 4, 0 },
     },
     {
-        { gUnk_09EDEC38, gUnk_09EDEC44, gUnk_088D5AB0, 2, 0 },
-        { gUnk_09EDECA8, gUnk_09EDECB4, gUnk_088D7CCE, 2, 0 },
-        { gUnk_09EDEC88, gUnk_09EDEC9C, gUnk_088D702C, 2, 0 },
-        { gUnk_09EDEC50, gUnk_09EDEC5C, gUnk_088D5E98, 2, 0 },
-        { gUnk_09EDEC68, gUnk_09EDEC7C, gUnk_088D6282, 2, 0 },
+        { gSor1bb15Frames, gSor1bb15Anims, gSor1bb15Tiles, 2, 0 },
+        { gSor1ff15Frames, gSor1ff15Anims, gSor1ff15Tiles, 2, 0 },
+        { gSor1fl15Frames, gSor1fl15Anims, gSor1fl15Tiles, 2, 0 },
+        { gSor1ll15Frames, gSor1ll15Anims, gSor1ll15Tiles, 2, 0 },
+        { gSor1bl15Frames, gSor1bl15Anims, gSor1bl15Tiles, 2, 0 },
     },
     {
-        { gUnk_09EDF360, gUnk_09EDF370, gUnk_0891DFC4, 0, 0 },
-        { gUnk_09EDF34C, gUnk_09EDF35C, gUnk_0891D344, 0, 0 },
-        { gUnk_09EDF308, gUnk_09EDF31C, gUnk_0891A166, 0, 0 },
-        { gUnk_09EDF338, gUnk_09EDF348, gUnk_0891C1E8, 0, 0 },
-        { gUnk_09EDF320, gUnk_09EDF334, gUnk_0891B26C, 0, 0 },
+        { gSor1bb10Frames, gSor1bb10Anims, gSor1bb10Tiles, 0, 0 },
+        { gSor1ff10Frames, gSor1ff10Anims, gSor1ff10Tiles, 0, 0 },
+        { gSor1fl10Frames, gSor1fl10Anims, gSor1fl10Tiles, 0, 0 },
+        { gSor1ll10Frames, gSor1ll10Anims, gSor1ll10Tiles, 0, 0 },
+        { gSor1bl10Frames, gSor1bl10Anims, gSor1bl10Tiles, 0, 0 },
     },
     {
-        { gUnk_09EDF090, gUnk_09EDF0A8, gUnk_088FB5F2, 0, 0 },
-        { gUnk_09EDF004, gUnk_09EDF01C, gUnk_088F5298, 0, 0 },
-        { gUnk_09EDF020, gUnk_09EDF03C, gUnk_088F695C, 0, 0 },
-        { gUnk_09EDF040, gUnk_09EDF05C, gUnk_088F8678, 0, 0 },
-        { gUnk_09EDF074, gUnk_09EDF08C, gUnk_088FA0DA, 0, 0 },
+        { gSor1bb61Frames, gSor1bb61Anims, gSor1bb61Tiles, 0, 0 },
+        { gSor1ff61Frames, gSor1ff61Anims, gSor1ff61Tiles, 0, 0 },
+        { gSor1fl61Frames, gSor1fl61Anims, gSor1fl61Tiles, 0, 0 },
+        { gSor1ll61Frames, gSor1ll61Anims, gSor1ll61Tiles, 0, 0 },
+        { gSor1bl61Frames, gSor1bl61Anims, gSor1bl61Tiles, 0, 0 },
     },
 };
 
@@ -8168,18 +8168,18 @@ TaskDesc gTaskDescPooEeyore = {
 const char gTaskNamePooOwl[] = "task_poo_owl";
 
 const PooAnimDesc gPooRabbitAnimDescs[7] = {
-    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 0, 0 },
-    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 1, 0 },
-    { gUnk_09EF5E98, gUnk_09EF5E48, gUnk_0974C196, 2, 0 },
-    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 0, 0 },
-    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 2, 0 },
-    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 3, 0 },
-    { gUnk_09EF5EE4, gUnk_09EF5EA8, gUnk_0974FB26, 4, 0 },
+    { gRabbitFl00Anims, gRabbitFl00Frames, gRabbitFl00Tiles, 0, 0 },
+    { gRabbitFl00Anims, gRabbitFl00Frames, gRabbitFl00Tiles, 1, 0 },
+    { gRabbitFl00Anims, gRabbitFl00Frames, gRabbitFl00Tiles, 2, 0 },
+    { gRabbitBl00Anims, gRabbitBl00Frames, gRabbitBl00Tiles, 0, 0 },
+    { gRabbitBl00Anims, gRabbitBl00Frames, gRabbitBl00Tiles, 2, 0 },
+    { gRabbitBl00Anims, gRabbitBl00Frames, gRabbitBl00Tiles, 3, 0 },
+    { gRabbitBl00Anims, gRabbitBl00Frames, gRabbitBl00Tiles, 4, 0 },
 };
 
 const PooGfxDesc gPooRabbitGfxDescs[2] = {
-    { gUnk_09EF5E48, 14, 0 },
-    { gUnk_09EF5EA8, 15, 0 },
+    { gRabbitFl00Frames, 14, 0 },
+    { gRabbitBl00Frames, 15, 0 },
 };
 
 TaskDesc gTaskDescPooOwl = {
@@ -8194,17 +8194,17 @@ TaskDesc gTaskDescPooOwl = {
 const char gTaskNamePooRabbit[] = "task_poo_rabbit";
 
 const PooAnimDesc gUnk_096FD59C[4] = {
-    { gUnk_09EF5B58, gUnk_09EF5B54, gUnk_0973700E, 0, 0 },
-    { gUnk_09EF5B80, gUnk_09EF5B5C, gUnk_097373D6, 0, 0 },
-    { gUnk_09EF5BA4, gUnk_09EF5B84, gUnk_0973900E, 0, 0 },
-    { gUnk_09EF5BCC, gUnk_09EF5BAC, gUnk_0973AC64, 0, 0 },
+    { gTiggerFl00Anims, gTiggerFl00Frames, gTiggerFl00Tiles, 0, 0 },
+    { gTiggerFl01Anims, gTiggerFl01Frames, gTiggerFl01Tiles, 0, 0 },
+    { gTiggerFl02Anims, gTiggerFl02Frames, gTiggerFl02Tiles, 0, 0 },
+    { gTiggerBl02Anims, gTiggerBl02Frames, gTiggerBl02Tiles, 0, 0 },
 };
 
 const PooGfxDesc gPooTiggerGfxDescs[4] = {
-    { gUnk_09EF5B54, 1, 0 },
-    { gUnk_09EF5B5C, 9, 0 },
-    { gUnk_09EF5B84, 8, 0 },
-    { gUnk_09EF5BAC, 8, 0 },
+    { gTiggerFl00Frames, 1, 0 },
+    { gTiggerFl01Frames, 9, 0 },
+    { gTiggerFl02Frames, 8, 0 },
+    { gTiggerBl02Frames, 8, 0 },
 };
 
 const s32 gUnk_096FD5FC[8] = { 428288, 232704, 411904, 240896, 428288, 249088, 444672, 240896 };
@@ -8471,11 +8471,11 @@ TaskDesc gTaskDescPooZzz = {
 };
 
 AnimDef gUnk_09EF4C88[5] = {
-    { gUnk_09EF5D54, gUnk_09EF5D64, gUnk_0974465A, 0, { 0, 0, 0 } },
-    { gUnk_09EF5D04, gUnk_09EF5D14, gUnk_0974431A, 0, { 0, 0, 0 } },
-    { gUnk_09EF5D18, gUnk_09EF5D28, gUnk_0974441A, 0, { 0, 0, 0 } },
-    { gUnk_09EF5D2C, gUnk_09EF5D3C, gUnk_097444DA, 0, { 0, 0, 0 } },
-    { gUnk_09EF5D40, gUnk_09EF5D50, gUnk_0974459A, 0, { 0, 0, 0 } },
+    { gTrap01Bb00Frames, gTrap01Bb00Anims, gTrap01Bb00Tiles, 0, { 0, 0, 0 } },
+    { gTrap01Ff00Frames, gTrap01Ff00Anims, gTrap01Ff00Tiles, 0, { 0, 0, 0 } },
+    { gTrap01Fl00Frames, gTrap01Fl00Anims, gTrap01Fl00Tiles, 0, { 0, 0, 0 } },
+    { gTrap01Ll00Frames, gTrap01Ll00Anims, gTrap01Ll00Tiles, 0, { 0, 0, 0 } },
+    { gTrap01Bl00Frames, gTrap01Bl00Anims, gTrap01Bl00Tiles, 0, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescPooButterfly = {

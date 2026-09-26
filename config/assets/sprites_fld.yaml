@@ -71,513 +71,513 @@ objects:
     start: 0x089694EC
     end: 0x0897C180
 entries:
-- name: gUnk_09EDECFC
+- name: gSor1bb11Frames
   record: SpriteTable
-  items: [gUnk_088D9B40, gUnk_088D9B5C, gUnk_088D9B78, gUnk_088D9B8E, gUnk_088D9BAA, gUnk_088D9BC6, gUnk_088D9BE2, gUnk_088D9BF8, gUnk_088D9C08, gUnk_088D9C12, gUnk_088D9C22]
+  items: [gSor1bb11Frame0, gSor1bb11Frame1, gSor1bb11Frame2, gSor1bb11Frame3, gSor1bb11Frame4, gSor1bb11Frame5, gSor1bb11Frame6, gSor1bb11Frame7, gSor1bb11Frame8, gSor1bb11Frame9, gSor1bb11Frame10]
   us:
     address: 0x09EDECFC
   jp:
     address: 0x09EB6778
   eu:
     address: 0x09F59954
-- name: gUnk_09EDED28
+- name: gSor1bb11Anims
   record: AnimTable
-  items: [gUnk_088D9C38, gUnk_088D9C52, gUnk_088D9C5C]
+  items: [gSor1bb11Anim0, gSor1bb11Anim1, gSor1bb11Anim2]
   us:
     address: 0x09EDED28
   jp:
     address: 0x09EB67A4
   eu:
     address: 0x09F59980
-- name: gUnk_09EDED34
+- name: gSor1bb00Frames
   record: SpriteTable
-  items: [gUnk_088DBD38]
+  items: [gSor1bb00Frame0]
   us:
     address: 0x09EDED34
   jp:
     address: 0x09EB67B0
   eu:
     address: 0x09F5998C
-- name: gUnk_09EDED38
+- name: gSor1bb00Anims
   record: AnimTable
-  items: [gUnk_088DBD4E]
+  items: [gSor1bb00Anim0]
   us:
     address: 0x09EDED38
   jp:
     address: 0x09EB67B4
   eu:
     address: 0x09F59990
-- name: gUnk_09EDED3C
+- name: gSor1bb01Frames
   record: SpriteTable
-  items: [gUnk_088DC098, gUnk_088DC0B4, gUnk_088DC0D0, gUnk_088DC0EC, gUnk_088DC102, gUnk_088DC11E, gUnk_088DC13A, gUnk_088DC156]
+  items: [gSor1bb01Frame0, gSor1bb01Frame1, gSor1bb01Frame2, gSor1bb01Frame3, gSor1bb01Frame4, gSor1bb01Frame5, gSor1bb01Frame6, gSor1bb01Frame7]
   us:
     address: 0x09EDED3C
   jp:
     address: 0x09EB67B8
   eu:
     address: 0x09F59994
-- name: gUnk_09EDED5C
+- name: gSor1bb01Anims
   record: AnimTable
-  items: [gUnk_088DC16C]
+  items: [gSor1bb01Anim0]
   us:
     address: 0x09EDED5C
   jp:
     address: 0x09EB67D8
   eu:
     address: 0x09F599B4
-- name: gUnk_09EDED60
+- name: gSor1bb02Frames
   record: SpriteTable
-  items: [gUnk_088DDA14, gUnk_088DDA24, gUnk_088DDA40, gUnk_088DDA5C, gUnk_088DDA72, gUnk_088DDA82, gUnk_088DDA9E, gUnk_088DDABA]
+  items: [gSor1bb02Frame0, gSor1bb02Frame1, gSor1bb02Frame2, gSor1bb02Frame3, gSor1bb02Frame4, gSor1bb02Frame5, gSor1bb02Frame6, gSor1bb02Frame7]
   us:
     address: 0x09EDED60
   jp:
     address: 0x09EB67DC
   eu:
     address: 0x09F599B8
-- name: gUnk_09EDED80
+- name: gSor1bb02Anims
   record: AnimTable
-  items: [gUnk_088DDAD0]
+  items: [gSor1bb02Anim0]
   us:
     address: 0x09EDED80
   jp:
     address: 0x09EB67FC
   eu:
     address: 0x09F599D8
-- name: gUnk_09EDED84
+- name: gSor1bb03Frames
   record: SpriteTable
-  items: [gUnk_088DF278, gUnk_088DF28E, gUnk_088DF2A4, gUnk_088DF2C0, gUnk_088DF2D6, gUnk_088DF2EC, gUnk_088DF308]
+  items: [gSor1bb03Frame0, gSor1bb03Frame1, gSor1bb03Frame2, gSor1bb03Frame3, gSor1bb03Frame4, gSor1bb03Frame5, gSor1bb03Frame6]
   us:
     address: 0x09EDED84
   jp:
     address: 0x09EB6800
   eu:
     address: 0x09F599DC
-- name: gUnk_09EDEDA0
+- name: gSor1bb03Anims
   record: AnimTable
-  items: [gUnk_088DF318, gUnk_088DF326, gUnk_088DF330, gUnk_088DF33A, gUnk_088DF344, gUnk_088DF352]
+  items: [gSor1bb03Anim0, gSor1bb03Anim1, gSor1bb03Anim2, gSor1bb03Anim3, gSor1bb03Anim4, gSor1bb03Anim5]
   us:
     address: 0x09EDEDA0
   jp:
     address: 0x09EB681C
   eu:
     address: 0x09F599F8
-- name: gUnk_09EDEDB8
+- name: gSor1ll50Frames
   record: SpriteTable
-  items: [gUnk_088E09F4, gUnk_088E0A0A, gUnk_088E0A2C, gUnk_088E0A42, gUnk_088E0A58, gUnk_088E0A7A, gUnk_088E0A90, gUnk_088E0AAC, gUnk_088E0AB6, gUnk_088E0ACC, gUnk_088E0AE2, gUnk_088E0AF8, gUnk_088E0B14]
+  items: [gSor1ll50Frame0, gSor1ll50Frame1, gSor1ll50Frame2, gSor1ll50Frame3, gSor1ll50Frame4, gSor1ll50Frame5, gSor1ll50Frame6, gSor1ll50Frame7, gSor1ll50Frame8, gSor1ll50Frame9, gSor1ll50Frame10, gSor1ll50Frame11, gSor1ll50Frame12]
   us:
     address: 0x09EDEDB8
   jp:
     address: 0x09EB6834
   eu:
     address: 0x09F59A10
-- name: gUnk_09EDEDEC
+- name: gSor1ll50Anims
   record: AnimTable
-  items: [gUnk_088E0B2A, gUnk_088E0B40, gUnk_088E0B52, gUnk_088E0B74, gUnk_088E0B8A, gUnk_088E0BA0, gUnk_088E0BAA]
+  items: [gSor1ll50Anim0, gSor1ll50Anim1, gSor1ll50Anim2, gSor1ll50Anim3, gSor1ll50Anim4, gSor1ll50Anim5, gSor1ll50Anim6]
   us:
     address: 0x09EDEDEC
   jp:
     address: 0x09EB6868
   eu:
     address: 0x09F59A44
-- name: gUnk_09EDEE08
+- name: gSor1ll51Frames
   record: SpriteTable
-  items: [gUnk_088E3360, gUnk_088E3376, gUnk_088E338C]
+  items: [gSor1ll51Frame0, gSor1ll51Frame1, gSor1ll51Frame2]
   us:
     address: 0x09EDEE08
   jp:
     address: 0x09EB6884
   eu:
     address: 0x09F59A60
-- name: gUnk_09EDEE14
+- name: gSor1ll51Anims
   record: AnimTable
-  items: [gUnk_088E33A2, gUnk_088E33B8]
+  items: [gSor1ll51Anim0, gSor1ll51Anim1]
   us:
     address: 0x09EDEE14
   jp:
     address: 0x09EB6890
   eu:
     address: 0x09F59A6C
-- name: gUnk_09EDEE1C
+- name: gSor1ll53Frames
   record: SpriteTable
-  items: [gUnk_088E3D84, gUnk_088E3DA0, gUnk_088E3DB0, gUnk_088E3DCC, gUnk_088E3DE8, gUnk_088E3E04, gUnk_088E3E1A, gUnk_088E3E36]
+  items: [gSor1ll53Frame0, gSor1ll53Frame1, gSor1ll53Frame2, gSor1ll53Frame3, gSor1ll53Frame4, gSor1ll53Frame5, gSor1ll53Frame6, gSor1ll53Frame7]
   us:
     address: 0x09EDEE1C
   jp:
     address: 0x09EB6898
   eu:
     address: 0x09F59A74
-- name: gUnk_09EDEE3C
+- name: gSor1ll53Anims
   record: AnimTable
-  items: [gUnk_088E3E52]
+  items: [gSor1ll53Anim0]
   us:
     address: 0x09EDEE3C
   jp:
     address: 0x09EB68B8
   eu:
     address: 0x09F59A94
-- name: gUnk_09EDEE40
+- name: gSor1ll55Frames
   record: SpriteTable
-  items: [gUnk_088E55B8, gUnk_088E55CE, gUnk_088E55EA, gUnk_088E5606, gUnk_088E5628]
+  items: [gSor1ll55Frame0, gSor1ll55Frame1, gSor1ll55Frame2, gSor1ll55Frame3, gSor1ll55Frame4]
   us:
     address: 0x09EDEE40
   jp:
     address: 0x09EB68BC
   eu:
     address: 0x09F59A98
-- name: gUnk_09EDEE54
+- name: gSor1ll55Anims
   record: AnimTable
-  items: [gUnk_088E5644, gUnk_088E565E, gUnk_088E5678, gUnk_088E5692, gUnk_088E56AC]
+  items: [gSor1ll55Anim0, gSor1ll55Anim1, gSor1ll55Anim2, gSor1ll55Anim3, gSor1ll55Anim4]
   us:
     address: 0x09EDEE54
   jp:
     address: 0x09EB68D0
   eu:
     address: 0x09F59AAC
-- name: gUnk_09EDEE68
+- name: gSor1ll57Frames
   record: SpriteTable
-  items: [gUnk_088E66A8, gUnk_088E66BE, gUnk_088E66DA, gUnk_088E66F6, gUnk_088E6718]
+  items: [gSor1ll57Frame0, gSor1ll57Frame1, gSor1ll57Frame2, gSor1ll57Frame3, gSor1ll57Frame4]
   us:
     address: 0x09EDEE68
   jp:
     address: 0x09EB68E4
   eu:
     address: 0x09F59AC0
-- name: gUnk_09EDEE7C
+- name: gSor1ll57Anims
   record: AnimTable
-  items: [gUnk_088E6734, gUnk_088E674E, gUnk_088E6768, gUnk_088E6782, gUnk_088E679C]
+  items: [gSor1ll57Anim0, gSor1ll57Anim1, gSor1ll57Anim2, gSor1ll57Anim3, gSor1ll57Anim4]
   us:
     address: 0x09EDEE7C
   jp:
     address: 0x09EB68F8
   eu:
     address: 0x09F59AD4
-- name: gUnk_09EDEE90
+- name: gSor1ll58Frames
   record: SpriteTable
-  items: [gUnk_088E7818, gUnk_088E7828, gUnk_088E783E, gUnk_088E785A, gUnk_088E7870, gUnk_088E788C, gUnk_088E789C, gUnk_088E78A6]
+  items: [gSor1ll58Frame0, gSor1ll58Frame1, gSor1ll58Frame2, gSor1ll58Frame3, gSor1ll58Frame4, gSor1ll58Frame5, gSor1ll58Frame6, gSor1ll58Frame7]
   us:
     address: 0x09EDEE90
   jp:
     address: 0x09EB690C
   eu:
     address: 0x09F59AE8
-- name: gUnk_09EDEEB0
+- name: gSor1ll58Anims
   record: AnimTable
-  items: [gUnk_088E78B6, gUnk_088E78DC, gUnk_088E7902, gUnk_088E7928, gUnk_088E794E]
+  items: [gSor1ll58Anim0, gSor1ll58Anim1, gSor1ll58Anim2, gSor1ll58Anim3, gSor1ll58Anim4]
   us:
     address: 0x09EDEEB0
   jp:
     address: 0x09EB692C
   eu:
     address: 0x09F59B08
-- name: gUnk_09EDEEC4
+- name: gSor1ll65Frames
   record: SpriteTable
-  items: [gUnk_088E9474, gUnk_088E9490, gUnk_088E94AC, gUnk_088E94C2, gUnk_088E94D8, gUnk_088E94FA, gUnk_088E951C, gUnk_088E9538, gUnk_088E9578, gUnk_088E95B8]
+  items: [gSor1ll65Frame0, gSor1ll65Frame1, gSor1ll65Frame2, gSor1ll65Frame3, gSor1ll65Frame4, gSor1ll65Frame5, gSor1ll65Frame6, gSor1ll65Frame7, gSor1ll65Frame8, gSor1ll65Frame9]
   us:
     address: 0x09EDEEC4
   jp:
     address: 0x09EB6940
   eu:
     address: 0x09F59B1C
-- name: gUnk_09EDEEEC
+- name: gSor1ll65Anims
   record: AnimTable
-  items: [gUnk_088E95F8, gUnk_088E9672]
+  items: [gSor1ll65Anim0, gSor1ll65Anim1]
   us:
     address: 0x09EDEEEC
   jp:
     address: 0x09EB6968
   eu:
     address: 0x09F59B44
-- name: gUnk_09EDEEF4
+- name: gSor1ll08Frames
   record: SpriteTable
-  items: [gUnk_088EAE7C, gUnk_088EAE98, gUnk_088EAEBA, gUnk_088EAED0, gUnk_088EAEEC]
+  items: [gSor1ll08Frame0, gSor1ll08Frame1, gSor1ll08Frame2, gSor1ll08Frame3, gSor1ll08Frame4]
   us:
     address: 0x09EDEEF4
   jp:
     address: 0x09EB6970
   eu:
     address: 0x09F59B4C
-- name: gUnk_09EDEF08
+- name: gSor1ll08Anims
   record: AnimTable
-  items: [gUnk_088EAF02]
+  items: [gSor1ll08Anim0]
   us:
     address: 0x09EDEF08
   jp:
     address: 0x09EB6984
   eu:
     address: 0x09F59B60
-- name: gUnk_09EDEF0C
+- name: gSor1ll09Frames
   record: SpriteTable
-  items: [gUnk_088EBEBC, gUnk_088EBED2, gUnk_088EBEE8, gUnk_088EBEFE, gUnk_088EBF14, gUnk_088EBF30, gUnk_088EBF4C]
+  items: [gSor1ll09Frame0, gSor1ll09Frame1, gSor1ll09Frame2, gSor1ll09Frame3, gSor1ll09Frame4, gSor1ll09Frame5, gSor1ll09Frame6]
   us:
     address: 0x09EDEF0C
   jp:
     address: 0x09EB6988
   eu:
     address: 0x09F59B64
-- name: gUnk_09EDEF28
+- name: gSor1ll09Anims
   record: AnimTable
-  items: [gUnk_088EBF6E, gUnk_088EBF90, gUnk_088EBFB2, gUnk_088EBFD0]
+  items: [gSor1ll09Anim0, gSor1ll09Anim1, gSor1ll09Anim2, gSor1ll09Anim3]
   us:
     address: 0x09EDEF28
   jp:
     address: 0x09EB69A4
   eu:
     address: 0x09F59B80
-- name: gUnk_09EDEF38
+- name: gSor1ll56Frames
   record: SpriteTable
-  items: [gUnk_088ED63C, gUnk_088ED65E, gUnk_088ED67A, gUnk_088ED696, gUnk_088ED6B8, gUnk_088ED6CE]
+  items: [gSor1ll56Frame0, gSor1ll56Frame1, gSor1ll56Frame2, gSor1ll56Frame3, gSor1ll56Frame4, gSor1ll56Frame5]
   us:
     address: 0x09EDEF38
   jp:
     address: 0x09EB69B4
   eu:
     address: 0x09F59B90
-- name: gUnk_09EDEF50
+- name: gSor1ll56Anims
   record: AnimTable
-  items: [gUnk_088ED6E4, gUnk_088ED702, gUnk_088ED720, gUnk_088ED73E, gUnk_088ED75C]
+  items: [gSor1ll56Anim0, gSor1ll56Anim1, gSor1ll56Anim2, gSor1ll56Anim3, gSor1ll56Anim4]
   us:
     address: 0x09EDEF50
   jp:
     address: 0x09EB69CC
   eu:
     address: 0x09F59BA8
-- name: gUnk_09EDEF64
+- name: gSor1ll66Frames
   record: SpriteTable
-  items: [gUnk_088EEA3C, gUnk_088EEA52, gUnk_088EEA6E, gUnk_088EEA84, gUnk_088EEA8E, gUnk_088EEA98, gUnk_088EEAA8]
+  items: [gSor1ll66Frame0, gSor1ll66Frame1, gSor1ll66Frame2, gSor1ll66Frame3, gSor1ll66Frame4, gSor1ll66Frame5, gSor1ll66Frame6]
   us:
     address: 0x09EDEF64
   jp:
     address: 0x09EB69E0
   eu:
     address: 0x09F59BBC
-- name: gUnk_09EDEF80
+- name: gSor1ll66Anims
   record: AnimTable
-  items: [gUnk_088EEAB2]
+  items: [gSor1ll66Anim0]
   us:
     address: 0x09EDEF80
   jp:
     address: 0x09EB69FC
   eu:
     address: 0x09F59BD8
-- name: gUnk_09EDEF84
+- name: gSor1ll54Frames
   record: SpriteTable
-  items: [gUnk_088F04F4, gUnk_088F050A, gUnk_088F0526, gUnk_088F0542, gUnk_088F055E]
+  items: [gSor1ll54Frame0, gSor1ll54Frame1, gSor1ll54Frame2, gSor1ll54Frame3, gSor1ll54Frame4]
   us:
     address: 0x09EDEF84
   jp:
     address: 0x09EB6A00
   eu:
     address: 0x09F59BDC
-- name: gUnk_09EDEF98
+- name: gSor1ll54Anims
   record: AnimTable
-  items: [gUnk_088F0574, gUnk_088F058E, gUnk_088F05A8, gUnk_088F05C2]
+  items: [gSor1ll54Anim0, gSor1ll54Anim1, gSor1ll54Anim2, gSor1ll54Anim3]
   us:
     address: 0x09EDEF98
   jp:
     address: 0x09EB6A14
   eu:
     address: 0x09F59BF0
-- name: gUnk_09EDEFA8
+- name: gSor1ll59Frames
   record: SpriteTable
-  items: [gUnk_088F18BC, gUnk_088F18DE, gUnk_088F18F4, gUnk_088F1916, gUnk_088F1938]
+  items: [gSor1ll59Frame0, gSor1ll59Frame1, gSor1ll59Frame2, gSor1ll59Frame3, gSor1ll59Frame4]
   us:
     address: 0x09EDEFA8
   jp:
     address: 0x09EB6A24
   eu:
     address: 0x09F59C00
-- name: gUnk_09EDEFBC
+- name: gSor1ll59Anims
   record: AnimTable
-  items: [gUnk_088F195A, gUnk_088F1974, gUnk_088F198E, gUnk_088F19A8, gUnk_088F19C2]
+  items: [gSor1ll59Anim0, gSor1ll59Anim1, gSor1ll59Anim2, gSor1ll59Anim3, gSor1ll59Anim4]
   us:
     address: 0x09EDEFBC
   jp:
     address: 0x09EB6A38
   eu:
     address: 0x09F59C14
-- name: gUnk_09EDEFD0
+- name: gSor1ll60Frames
   record: SpriteTable
-  items: [gUnk_088F2DDC, gUnk_088F2DF2, gUnk_088F2E08, gUnk_088F2E1E, gUnk_088F2E2E, gUnk_088F2E4A, gUnk_088F2E60, gUnk_088F2E82]
+  items: [gSor1ll60Frame0, gSor1ll60Frame1, gSor1ll60Frame2, gSor1ll60Frame3, gSor1ll60Frame4, gSor1ll60Frame5, gSor1ll60Frame6, gSor1ll60Frame7]
   us:
     address: 0x09EDEFD0
   jp:
     address: 0x09EB6A4C
   eu:
     address: 0x09F59C28
-- name: gUnk_09EDEFF0
+- name: gSor1ll60Anims
   record: AnimTable
-  items: [gUnk_088F2E9E, gUnk_088F2EC4, gUnk_088F2EEA, gUnk_088F2F10, gUnk_088F2F36]
+  items: [gSor1ll60Anim0, gSor1ll60Anim1, gSor1ll60Anim2, gSor1ll60Anim3, gSor1ll60Anim4]
   us:
     address: 0x09EDEFF0
   jp:
     address: 0x09EB6A6C
   eu:
     address: 0x09F59C48
-- name: gUnk_09EDF004
+- name: gSor1ff61Frames
   record: SpriteTable
-  items: [gUnk_088F51FC, gUnk_088F520C, gUnk_088F5216, gUnk_088F5226, gUnk_088F5242, gUnk_088F525E]
+  items: [gSor1ff61Frame0, gSor1ff61Frame1, gSor1ff61Frame2, gSor1ff61Frame3, gSor1ff61Frame4, gSor1ff61Frame5]
   us:
     address: 0x09EDF004
   jp:
     address: 0x09EB6A80
   eu:
     address: 0x09F59C5C
-- name: gUnk_09EDF01C
+- name: gSor1ff61Anims
   record: AnimTable
-  items: [gUnk_088F527A]
+  items: [gSor1ff61Anim0]
   us:
     address: 0x09EDF01C
   jp:
     address: 0x09EB6A98
   eu:
     address: 0x09F59C74
-- name: gUnk_09EDF020
+- name: gSor1fl61Frames
   record: SpriteTable
-  items: [gUnk_088F6898, gUnk_088F68A8, gUnk_088F68B8, gUnk_088F68CE, gUnk_088F68EA, gUnk_088F6906, gUnk_088F6922]
+  items: [gSor1fl61Frame0, gSor1fl61Frame1, gSor1fl61Frame2, gSor1fl61Frame3, gSor1fl61Frame4, gSor1fl61Frame5, gSor1fl61Frame6]
   us:
     address: 0x09EDF020
   jp:
     address: 0x09EB6A9C
   eu:
     address: 0x09F59C78
-- name: gUnk_09EDF03C
+- name: gSor1fl61Anims
   record: AnimTable
-  items: [gUnk_088F693E]
+  items: [gSor1fl61Anim0]
   us:
     address: 0x09EDF03C
   jp:
     address: 0x09EB6AB8
   eu:
     address: 0x09F59C94
-- name: gUnk_09EDF040
+- name: gSor1ll61Frames
   record: SpriteTable
-  items: [gUnk_088F851C, gUnk_088F853E, gUnk_088F854E, gUnk_088F855E, gUnk_088F8574, gUnk_088F858A, gUnk_088F85A0]
+  items: [gSor1ll61Frame0, gSor1ll61Frame1, gSor1ll61Frame2, gSor1ll61Frame3, gSor1ll61Frame4, gSor1ll61Frame5, gSor1ll61Frame6]
   us:
     address: 0x09EDF040
   jp:
     address: 0x09EB6ABC
   eu:
     address: 0x09F59C98
-- name: gUnk_09EDF05C
+- name: gSor1ll61Anims
   record: AnimTable
-  items: [gUnk_088F85B0, gUnk_088F85CE, gUnk_088F85F0, gUnk_088F8612, gUnk_088F8634, gUnk_088F8656]
+  items: [gSor1ll61Anim0, gSor1ll61Anim1, gSor1ll61Anim2, gSor1ll61Anim3, gSor1ll61Anim4, gSor1ll61Anim5]
   us:
     address: 0x09EDF05C
   jp:
     address: 0x09EB6AD8
   eu:
     address: 0x09F59CB4
-- name: gUnk_09EDF074
+- name: gSor1bl61Frames
   record: SpriteTable
-  items: [gUnk_088FA038, gUnk_088FA054, gUnk_088FA05E, gUnk_088FA06E, gUnk_088FA08A, gUnk_088FA0A6]
+  items: [gSor1bl61Frame0, gSor1bl61Frame1, gSor1bl61Frame2, gSor1bl61Frame3, gSor1bl61Frame4, gSor1bl61Frame5]
   us:
     address: 0x09EDF074
   jp:
     address: 0x09EB6AF0
   eu:
     address: 0x09F59CCC
-- name: gUnk_09EDF08C
+- name: gSor1bl61Anims
   record: AnimTable
-  items: [gUnk_088FA0BC]
+  items: [gSor1bl61Anim0]
   us:
     address: 0x09EDF08C
   jp:
     address: 0x09EB6B08
   eu:
     address: 0x09F59CE4
-- name: gUnk_09EDF090
+- name: gSor1bb61Frames
   record: SpriteTable
-  items: [gUnk_088FB55C, gUnk_088FB566, gUnk_088FB570, gUnk_088FB586, gUnk_088FB5A2, gUnk_088FB5BE]
+  items: [gSor1bb61Frame0, gSor1bb61Frame1, gSor1bb61Frame2, gSor1bb61Frame3, gSor1bb61Frame4, gSor1bb61Frame5]
   us:
     address: 0x09EDF090
   jp:
     address: 0x09EB6B0C
   eu:
     address: 0x09F59CE8
-- name: gUnk_09EDF0A8
+- name: gSor1bb61Anims
   record: AnimTable
-  items: [gUnk_088FB5D4]
+  items: [gSor1bb61Anim0]
   us:
     address: 0x09EDF0A8
   jp:
     address: 0x09EB6B24
   eu:
     address: 0x09F59D00
-- name: gUnk_09EDF0AC
+- name: gSor1ll67Frames
   record: SpriteTable
-  items: [gUnk_088FCC14, gUnk_088FCC2A, gUnk_088FCC40, gUnk_088FCC50, gUnk_088FCC60, gUnk_088FCC70]
+  items: [gSor1ll67Frame0, gSor1ll67Frame1, gSor1ll67Frame2, gSor1ll67Frame3, gSor1ll67Frame4, gSor1ll67Frame5]
   us:
     address: 0x09EDF0AC
   jp:
     address: 0x09EB6B28
   eu:
     address: 0x09F59D04
-- name: gUnk_09EDF0C4
+- name: gSor1ll67Anims
   record: AnimTable
-  items: [gUnk_088FCC86, gUnk_088FCCA4, gUnk_088FCCB6, gUnk_088FCCC0]
+  items: [gSor1ll67Anim0, gSor1ll67Anim1, gSor1ll67Anim2, gSor1ll67Anim3]
   us:
     address: 0x09EDF0C4
   jp:
     address: 0x09EB6B40
   eu:
     address: 0x09F59D1C
-- name: gUnk_09EDF0D4
+- name: gSor1ll68Frames
   record: SpriteTable
-  items: [gUnk_088FDCB0, gUnk_088FDCC0, gUnk_088FDCD6, gUnk_088FDCE6, gUnk_088FDD08, gUnk_088FDD2A, gUnk_088FDD3A, gUnk_088FDD50, gUnk_088FDD66, gUnk_088FDD7C, gUnk_088FDD92, gUnk_088FDDB4, gUnk_088FDDCA, gUnk_088FDDDA, gUnk_088FDDF0, gUnk_088FDE0C]
+  items: [gSor1ll68Frame0, gSor1ll68Frame1, gSor1ll68Frame2, gSor1ll68Frame3, gSor1ll68Frame4, gSor1ll68Frame5, gSor1ll68Frame6, gSor1ll68Frame7, gSor1ll68Frame8, gSor1ll68Frame9, gSor1ll68Frame10, gSor1ll68Frame11, gSor1ll68Frame12, gSor1ll68Frame13, gSor1ll68Frame14, gSor1ll68Frame15]
   us:
     address: 0x09EDF0D4
   jp:
     address: 0x09EB6B50
   eu:
     address: 0x09F59D2C
-- name: gUnk_09EDF114
+- name: gSor1ll68Anims
   record: AnimTable
-  items: [gUnk_088FDE22, gUnk_088FDE38, gUnk_088FDE52, gUnk_088FDE5C]
+  items: [gSor1ll68Anim0, gSor1ll68Anim1, gSor1ll68Anim2, gSor1ll68Anim3]
   us:
     address: 0x09EDF114
   jp:
     address: 0x09EB6B90
   eu:
     address: 0x09F59D6C
-- name: gUnk_09EDF124
+- name: gSor1ll68wFrames
   record: SpriteTable
-  items: [gUnk_08901B7C, gUnk_08901B8C, gUnk_08901B9C, gUnk_08901BAC, gUnk_08901BBC, gUnk_08901BCC, gUnk_08901BDC, gUnk_08901BEC, gUnk_08901C02, gUnk_08901C18, gUnk_08901C28, gUnk_08901C3E]
+  items: [gSor1ll68wFrame0, gSor1ll68wFrame1, gSor1ll68wFrame2, gSor1ll68wFrame3, gSor1ll68wFrame4, gSor1ll68wFrame5, gSor1ll68wFrame6, gSor1ll68wFrame7, gSor1ll68wFrame8, gSor1ll68wFrame9, gSor1ll68wFrame10, gSor1ll68wFrame11]
   us:
     address: 0x09EDF124
   jp:
     address: 0x09EB6BA0
   eu:
     address: 0x09F59D7C
-- name: gUnk_09EDF154
+- name: gSor1ll68wAnims
   record: AnimTable
-  items: [gUnk_08901C54]
+  items: [gSor1ll68wAnim0]
   us:
     address: 0x09EDF154
   jp:
     address: 0x09EB6BD0
   eu:
     address: 0x09F59DAC
-- name: gUnk_09EDF158
+- name: gSor1ll69Frames
   record: SpriteTable
-  items: [gUnk_089029AC, gUnk_089029C8, gUnk_089029DE, gUnk_089029F4, gUnk_089029FE, gUnk_08902A14, gUnk_08902A2A, gUnk_08902A40, gUnk_08902A56, gUnk_08902A6C, gUnk_08902A82, gUnk_08902A9E, gUnk_08902AB4, gUnk_08902AD6, gUnk_08902AF2, gUnk_08902B0E, gUnk_08902B36, gUnk_08902B52, gUnk_08902B68, gUnk_08902B7E, gUnk_08902B9A, gUnk_08902BB6]
+  items: [gSor1ll69Frame0, gSor1ll69Frame1, gSor1ll69Frame2, gSor1ll69Frame3, gSor1ll69Frame4, gSor1ll69Frame5, gSor1ll69Frame6, gSor1ll69Frame7, gSor1ll69Frame8, gSor1ll69Frame9, gSor1ll69Frame10, gSor1ll69Frame11, gSor1ll69Frame12, gSor1ll69Frame13, gSor1ll69Frame14, gSor1ll69Frame15, gSor1ll69Frame16, gSor1ll69Frame17, gSor1ll69Frame18, gSor1ll69Frame19, gSor1ll69Frame20, gSor1ll69Frame21]
   us:
     address: 0x09EDF158
   jp:
     address: 0x09EB6BD4
   eu:
     address: 0x09F59DB0
-- name: gUnk_09EDF1B0
+- name: gSor1ll69Anims
   record: AnimTable
-  items: [gUnk_08902BCC, gUnk_08902BDE, gUnk_08902C24, gUnk_08902C2E]
+  items: [gSor1ll69Anim0, gSor1ll69Anim1, gSor1ll69Anim2, gSor1ll69Anim3]
   us:
     address: 0x09EDF1B0
   jp:
     address: 0x09EB6C2C
   eu:
     address: 0x09F59E08
-- name: gUnk_09EDF308
+- name: gSor1fl10Frames
   record: SpriteTable
-  items: [gUnk_0891A0DC, gUnk_0891A0F2, gUnk_0891A108, gUnk_0891A124]
+  items: [gSor1fl10Frame0, gSor1fl10Frame1, gSor1fl10Frame2, gSor1fl10Frame3]
   us:
     address: 0x09EDF308
   jp:
@@ -587,25 +587,25 @@ entries:
 - name: gUnk_09EDF318
   record: SpriteTable
   scalar: true
-  items: [gUnk_0891A13A]
+  items: [gSor1fl10Frame4]
   us:
     address: 0x09EDF318
   jp:
     address: 0x09EB6D94
   eu:
     address: 0x09F59F70
-- name: gUnk_09EDF31C
+- name: gSor1fl10Anims
   record: AnimTable
-  items: [gUnk_0891A150]
+  items: [gSor1fl10Anim0]
   us:
     address: 0x09EDF31C
   jp:
     address: 0x09EB6D98
   eu:
     address: 0x09F59F74
-- name: gUnk_09EDF320
+- name: gSor1bl10Frames
   record: SpriteTable
-  items: [gUnk_0891B1E8, gUnk_0891B1FE, gUnk_0891B214, gUnk_0891B22A]
+  items: [gSor1bl10Frame0, gSor1bl10Frame1, gSor1bl10Frame2, gSor1bl10Frame3]
   us:
     address: 0x09EDF320
   jp:
@@ -615,142 +615,142 @@ entries:
 - name: gUnk_09EDF330
   record: SpriteTable
   scalar: true
-  items: [gUnk_0891B240]
+  items: [gSor1bl10Frame4]
   us:
     address: 0x09EDF330
   jp:
     address: 0x09EB6DAC
   eu:
     address: 0x09F59F88
-- name: gUnk_09EDF334
+- name: gSor1bl10Anims
   record: AnimTable
-  items: [gUnk_0891B256]
+  items: [gSor1bl10Anim0]
   us:
     address: 0x09EDF334
   jp:
     address: 0x09EB6DB0
   eu:
     address: 0x09F59F8C
-- name: gUnk_09EDF338
+- name: gSor1ll10Frames
   record: SpriteTable
-  items: [gUnk_0891C18C, gUnk_0891C196, gUnk_0891C1AC, gUnk_0891C1C2]
+  items: [gSor1ll10Frame0, gSor1ll10Frame1, gSor1ll10Frame2, gSor1ll10Frame3]
   us:
     address: 0x09EDF338
   jp:
     address: 0x09EB6DB4
   eu:
     address: 0x09F59F90
-- name: gUnk_09EDF348
+- name: gSor1ll10Anims
   record: AnimTable
-  items: [gUnk_0891C1D2]
+  items: [gSor1ll10Anim0]
   us:
     address: 0x09EDF348
   jp:
     address: 0x09EB6DC4
   eu:
     address: 0x09F59FA0
-- name: gUnk_09EDF34C
+- name: gSor1ff10Frames
   record: SpriteTable
-  items: [gUnk_0891D2E8, gUnk_0891D2FE, gUnk_0891D30E, gUnk_0891D31E]
+  items: [gSor1ff10Frame0, gSor1ff10Frame1, gSor1ff10Frame2, gSor1ff10Frame3]
   us:
     address: 0x09EDF34C
   jp:
     address: 0x09EB6DC8
   eu:
     address: 0x09F59FA4
-- name: gUnk_09EDF35C
+- name: gSor1ff10Anims
   record: AnimTable
-  items: [gUnk_0891D32E]
+  items: [gSor1ff10Anim0]
   us:
     address: 0x09EDF35C
   jp:
     address: 0x09EB6DD8
   eu:
     address: 0x09F59FB4
-- name: gUnk_09EDF360
+- name: gSor1bb10Frames
   record: SpriteTable
-  items: [gUnk_0891DF44, gUnk_0891DF5A, gUnk_0891DF7C, gUnk_0891DF98]
+  items: [gSor1bb10Frame0, gSor1bb10Frame1, gSor1bb10Frame2, gSor1bb10Frame3]
   us:
     address: 0x09EDF360
   jp:
     address: 0x09EB6DDC
   eu:
     address: 0x09F59FB8
-- name: gUnk_09EDF370
+- name: gSor1bb10Anims
   record: AnimTable
-  items: [gUnk_0891DFAE]
+  items: [gSor1bb10Anim0]
   us:
     address: 0x09EDF370
   jp:
     address: 0x09EB6DEC
   eu:
     address: 0x09F59FC8
-- name: gUnk_09EDF374
+- name: gRikuBt00Frames
   record: SpriteTable
-  items: [gUnk_0891EC84, gUnk_0891EC9A, gUnk_0891ECB0, gUnk_0891ECC6, gUnk_0891ECDC, gUnk_0891ECF2]
+  items: [gRikuBt00Frame0, gRikuBt00Frame1, gRikuBt00Frame2, gRikuBt00Frame3, gRikuBt00Frame4, gRikuBt00Frame5]
   us:
     address: 0x09EDF374
   jp:
     address: 0x09EB6DF0
   eu:
     address: 0x09F59FCC
-- name: gUnk_09EDF38C
+- name: gRikuBt00Anims
   record: AnimTable
-  items: [gUnk_0891ED08]
+  items: [gRikuBt00Anim0]
   us:
     address: 0x09EDF38C
   jp:
     address: 0x09EB6E08
   eu:
     address: 0x09F59FE4
-- name: gUnk_09EDF390
+- name: gRikuBt02Frames
   record: SpriteTable
-  items: [gUnk_08920908, gUnk_08920918, gUnk_0892092E, gUnk_0892093E, gUnk_08920954, gUnk_08920964]
+  items: [gRikuBt02Frame0, gRikuBt02Frame1, gRikuBt02Frame2, gRikuBt02Frame3, gRikuBt02Frame4, gRikuBt02Frame5]
   us:
     address: 0x09EDF390
   jp:
     address: 0x09EB6E0C
   eu:
     address: 0x09F59FE8
-- name: gUnk_09EDF3A8
+- name: gRikuBt02Anims
   record: AnimTable
-  items: [gUnk_0892097A, gUnk_08920994]
+  items: [gRikuBt02Anim0, gRikuBt02Anim1]
   us:
     address: 0x09EDF3A8
   jp:
     address: 0x09EB6E24
   eu:
     address: 0x09F5A000
-- name: gUnk_09EDF3B0
+- name: gRikuBt04Frames
   record: SpriteTable
-  items: [gUnk_089225E8, gUnk_089225F8, gUnk_08922614, gUnk_0892262A, gUnk_08922640]
+  items: [gRikuBt04Frame0, gRikuBt04Frame1, gRikuBt04Frame2, gRikuBt04Frame3, gRikuBt04Frame4]
   us:
     address: 0x09EDF3B0
   jp:
     address: 0x09EB6E2C
   eu:
     address: 0x09F5A008
-- name: gUnk_09EDF3C4
+- name: gRikuBt04Anims
   record: AnimTable
-  items: [gUnk_08922656]
+  items: [gRikuBt04Anim0]
   us:
     address: 0x09EDF3C4
   jp:
     address: 0x09EB6E40
   eu:
     address: 0x09F5A01C
-- name: gUnk_09EDF3C8
+- name: gRikuBt05Frames
   record: SpriteTable
-  items: [gUnk_08923BD0, gUnk_08923BE0, gUnk_08923BF6, gUnk_08923C0C, gUnk_08923C22, gUnk_08923C2C, gUnk_08923C42]
+  items: [gRikuBt05Frame0, gRikuBt05Frame1, gRikuBt05Frame2, gRikuBt05Frame3, gRikuBt05Frame4, gRikuBt05Frame5, gRikuBt05Frame6]
   us:
     address: 0x09EDF3C8
   jp:
     address: 0x09EB6E44
   eu:
     address: 0x09F5A020
-- name: gUnk_09EDF3E4
+- name: gRikuBt05Anims
   record: AnimTable
-  items: [gUnk_08923C52]
+  items: [gRikuBt05Anim0]
   us:
     address: 0x09EDF3E4
   jp:
@@ -877,144 +877,144 @@ entries:
     address: 0x09EB710C
   eu:
     address: 0x09F5A2E8
-- name: gUnk_09EDF694
+- name: gRik1ff10Frames
   record: SpriteTable
-  items: [gUnk_08943F68, gUnk_08943F7E, gUnk_08943F94, gUnk_08943FB0, gUnk_08943FC6]
+  items: [gRik1ff10Frame0, gRik1ff10Frame1, gRik1ff10Frame2, gRik1ff10Frame3, gRik1ff10Frame4]
   us:
     address: 0x09EDF694
   jp:
     address: 0x09EB7110
   eu:
     address: 0x09F5A2EC
-- name: gUnk_09EDF6A8
+- name: gRik1ff10Anims
   record: AnimTable
-  items: [gUnk_08943FE2]
+  items: [gRik1ff10Anim0]
   us:
     address: 0x09EDF6A8
   jp:
     address: 0x09EB7124
   eu:
     address: 0x09F5A300
-- name: gUnk_09EDF6AC
+- name: gRik1bb10Frames
   record: SpriteTable
-  items: [gUnk_089452BC, gUnk_089452D8, gUnk_089452EE, gUnk_08945304, gUnk_08945320]
+  items: [gRik1bb10Frame0, gRik1bb10Frame1, gRik1bb10Frame2, gRik1bb10Frame3, gRik1bb10Frame4]
   us:
     address: 0x09EDF6AC
   jp:
     address: 0x09EB7128
   eu:
     address: 0x09F5A304
-- name: gUnk_09EDF6C0
+- name: gRik1bb10Anims
   record: AnimTable
-  items: [gUnk_0894533C]
+  items: [gRik1bb10Anim0]
   us:
     address: 0x09EDF6C0
   jp:
     address: 0x09EB713C
   eu:
     address: 0x09F5A318
-- name: gUnk_09EDF6C4
+- name: gRik1fl10Frames
   record: SpriteTable
-  items: [gUnk_089464B8, gUnk_089464D4, gUnk_089464F0, gUnk_0894650C, gUnk_08946528]
+  items: [gRik1fl10Frame0, gRik1fl10Frame1, gRik1fl10Frame2, gRik1fl10Frame3, gRik1fl10Frame4]
   us:
     address: 0x09EDF6C4
   jp:
     address: 0x09EB7140
   eu:
     address: 0x09F5A31C
-- name: gUnk_09EDF6D8
+- name: gRik1fl10Anims
   record: AnimTable
-  items: [gUnk_08946538]
+  items: [gRik1fl10Anim0]
   us:
     address: 0x09EDF6D8
   jp:
     address: 0x09EB7154
   eu:
     address: 0x09F5A330
-- name: gUnk_09EDF6DC
+- name: gRik1bl10Frames
   record: SpriteTable
-  items: [gUnk_08947AB4, gUnk_08947AC4, gUnk_08947AD4, gUnk_08947AEA, gUnk_08947B06]
+  items: [gRik1bl10Frame0, gRik1bl10Frame1, gRik1bl10Frame2, gRik1bl10Frame3, gRik1bl10Frame4]
   us:
     address: 0x09EDF6DC
   jp:
     address: 0x09EB7158
   eu:
     address: 0x09F5A334
-- name: gUnk_09EDF6F0
+- name: gRik1bl10Anims
   record: AnimTable
-  items: [gUnk_08947B1C]
+  items: [gRik1bl10Anim0]
   us:
     address: 0x09EDF6F0
   jp:
     address: 0x09EB716C
   eu:
     address: 0x09F5A348
-- name: gUnk_09EDF6F4
+- name: gRikuFf17Frames
   record: SpriteTable
-  items: [gUnk_08949278, gUnk_08949288, gUnk_08949298, gUnk_089492A2, gUnk_089492B2, gUnk_089492C8]
+  items: [gRikuFf17Frame0, gRikuFf17Frame1, gRikuFf17Frame2, gRikuFf17Frame3, gRikuFf17Frame4, gRikuFf17Frame5]
   us:
     address: 0x09EDF6F4
   jp:
     address: 0x09EB7170
   eu:
     address: 0x09F5A34C
-- name: gUnk_09EDF70C
+- name: gRikuFf17Anims
   record: AnimTable
-  items: [gUnk_089492DE]
+  items: [gRikuFf17Anim0]
   us:
     address: 0x09EDF70C
   jp:
     address: 0x09EB7188
   eu:
     address: 0x09F5A364
-- name: gUnk_09EDF710
+- name: gRikuFl17Frames
   record: SpriteTable
-  items: [gUnk_0894B2FC, gUnk_0894B312, gUnk_0894B328, gUnk_0894B33E, gUnk_0894B34E, gUnk_0894B358]
+  items: [gRikuFl17Frame0, gRikuFl17Frame1, gRikuFl17Frame2, gRikuFl17Frame3, gRikuFl17Frame4, gRikuFl17Frame5]
   us:
     address: 0x09EDF710
   jp:
     address: 0x09EB718C
   eu:
     address: 0x09F5A368
-- name: gUnk_09EDF728
+- name: gRikuFl17Anims
   record: AnimTable
-  items: [gUnk_0894B368]
+  items: [gRikuFl17Anim0]
   us:
     address: 0x09EDF728
   jp:
     address: 0x09EB71A4
   eu:
     address: 0x09F5A380
-- name: gUnk_09EDF72C
+- name: gRikuBl17Frames
   record: SpriteTable
-  items: [gUnk_0894CE28, gUnk_0894CE38, gUnk_0894CE4E, gUnk_0894CE64, gUnk_0894CE7A, gUnk_0894CE90]
+  items: [gRikuBl17Frame0, gRikuBl17Frame1, gRikuBl17Frame2, gRikuBl17Frame3, gRikuBl17Frame4, gRikuBl17Frame5]
   us:
     address: 0x09EDF72C
   jp:
     address: 0x09EB71A8
   eu:
     address: 0x09F5A384
-- name: gUnk_09EDF744
+- name: gRikuBl17Anims
   record: AnimTable
-  items: [gUnk_0894CEAC]
+  items: [gRikuBl17Anim0]
   us:
     address: 0x09EDF744
   jp:
     address: 0x09EB71C0
   eu:
     address: 0x09F5A39C
-- name: gUnk_09EDF748
+- name: gRikuBb17Frames
   record: SpriteTable
-  items: [gUnk_0894EBEC, gUnk_0894EBFC, gUnk_0894EC12, gUnk_0894EC22, gUnk_0894EC38, gUnk_0894EC48]
+  items: [gRikuBb17Frame0, gRikuBb17Frame1, gRikuBb17Frame2, gRikuBb17Frame3, gRikuBb17Frame4, gRikuBb17Frame5]
   us:
     address: 0x09EDF748
   jp:
     address: 0x09EB71C4
   eu:
     address: 0x09F5A3A0
-- name: gUnk_09EDF760
+- name: gRikuBb17Anims
   record: AnimTable
-  items: [gUnk_0894EC5E]
+  items: [gRikuBb17Anim0]
   us:
     address: 0x09EDF760
   jp:
@@ -1024,76 +1024,76 @@ entries:
 - name: sor1bb11
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088D9C76
+  symbol: gSor1bb11Tiles
   align: 4
   cell: [49, 71]
   anchor: [23, 56]
   columns: 8
   frames:
-  - symbol: gUnk_088D9B40
+  - symbol: gSor1bb11Frame0
     pieces:
     - [32x32, -14, -47]
     - [32x16, -14, -15]
     - [16x8, -6, -55]
     - [8x8, 18, -33]
-  - symbol: gUnk_088D9B5C
+  - symbol: gSor1bb11Frame1
     pieces:
     - [32x32, -16, -48]
     - [32x16, -16, -16]
     - [32x8, -16, 0]
     - [8x8, -8, -56]
-  - symbol: gUnk_088D9B78
+  - symbol: gSor1bb11Frame2
     pieces:
     - [32x32, -22, -41]
     - [32x16, -22, -9]
     - [16x8, -12, -49]
-  - symbol: gUnk_088D9B8E
+  - symbol: gSor1bb11Frame3
     pieces:
     - [32x32, -16, -46]
     - [32x16, -16, -14]
     - [32x8, -16, 2]
     - [8x8, -6, -54]
-  - symbol: gUnk_088D9BAA
+  - symbol: gSor1bb11Frame4
     pieces:
     - [32x32, -11, -46]
     - [32x16, -11, -14]
     - [32x8, -11, 2]
     - [8x8, -6, -54, {fresh: true}]
-  - symbol: gUnk_088D9BC6
+  - symbol: gSor1bb11Frame5
     pieces:
     - [32x32, -14, -41]
     - [32x16, -14, -9]
     - [16x8, -6, -49]
     - [8x8, 2, 7]
-  - symbol: gUnk_088D9BE2
+  - symbol: gSor1bb11Frame6
     pieces:
     - [32x32, -16, -32]
     - [32x8, -16, 0]
     - [16x8, -8, -40]
-  - symbol: gUnk_088D9BF8
+  - symbol: gSor1bb11Frame7
     pieces:
     - [32x32, -14, -33]
     - [16x8, 2, -1]
-  - symbol: gUnk_088D9C08
+  - symbol: gSor1bb11Frame8
     pieces:
     - [32x32, -14, -39]
-  - symbol: gUnk_088D9C12
+  - symbol: gSor1bb11Frame9
     pieces:
     - [32x32, -16, -40]
     - [8x8, 0, -8]
-  - symbol: gUnk_088D9C22
+  - symbol: gSor1bb11Frame10
     pieces:
     - [32x32, -15, -40]
     - [32x8, -15, -8]
     - [8x16, -23, -32]
   animations:
-  - symbol: gUnk_088D9C38
+  - symbol: gSor1bb11Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 8], [3, 12], [4, 10]]
-  - symbol: gUnk_088D9C52
+  - symbol: gSor1bb11Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 4]]
-  - symbol: gUnk_088D9C5C
+  - symbol: gSor1bb11Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[6, 4], [7, 5], [8, 5], [9, 5], [10, 6]]
   us:
@@ -1108,19 +1108,19 @@ entries:
 - name: sor1bb00
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088DBD58
+  symbol: gSor1bb00Tiles
   align: 4
   cell: [32, 56]
   anchor: [16, 48]
   columns: 1
   frames:
-  - symbol: gUnk_088DBD38
+  - symbol: gSor1bb00Frame0
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
     - [16x8, -8, -48]
   animations:
-  - symbol: gUnk_088DBD4E
+  - symbol: gSor1bb00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1135,60 +1135,60 @@ entries:
 - name: sor1bb01
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088DC192
+  symbol: gSor1bb01Tiles
   align: 4
   cell: [32, 56]
   anchor: [16, 48]
   columns: 8
   frames:
-  - symbol: gUnk_088DC098
+  - symbol: gSor1bb01Frame0
     pieces:
     - [32x32, -16, -40]
     - [16x8, -8, -48]
     - [32x8, -16, -8]
     - [16x8, -8, 0]
-  - symbol: gUnk_088DC0B4
+  - symbol: gSor1bb01Frame1
     pieces:
     - [32x32, -16, -40]
     - [32x8, -16, -8]
     - [16x8, -8, -48]
     - [16x8, -7, 0]
-  - symbol: gUnk_088DC0D0
+  - symbol: gSor1bb01Frame2
     pieces:
     - [32x32, -16, -40]
     - [32x8, -16, -8]
     - [16x8, -7, 0]
     - [16x8, -9, -48]
-  - symbol: gUnk_088DC0EC
+  - symbol: gSor1bb01Frame3
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
     - [16x8, -9, -48]
-  - symbol: gUnk_088DC102
+  - symbol: gSor1bb01Frame4
     pieces:
     - [32x32, -16, -40]
     - [16x8, -8, -48, {fresh: true}]
     - [32x8, -16, -8]
     - [16x8, -9, 0]
-  - symbol: gUnk_088DC11E
+  - symbol: gSor1bb01Frame5
     pieces:
     - [32x32, -16, -40]
     - [16x8, -8, -48, {fresh: true}]
     - [32x8, -16, -8]
     - [16x8, -10, 0]
-  - symbol: gUnk_088DC13A
+  - symbol: gSor1bb01Frame6
     pieces:
     - [32x32, -16, -40]
     - [16x8, -9, -48, {fresh: true}]
     - [32x8, -16, -8]
     - [16x8, -10, 0]
-  - symbol: gUnk_088DC156
+  - symbol: gSor1bb01Frame7
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
     - [16x8, -9, -48, {fresh: true}]
   animations:
-  - symbol: gUnk_088DC16C
+  - symbol: gSor1bb01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
   us:
@@ -1203,56 +1203,56 @@ entries:
 - name: sor1bb02
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088DDAF6
+  symbol: gSor1bb02Tiles
   align: 4
   cell: [32, 61]
   anchor: [16, 47]
   columns: 8
   frames:
-  - symbol: gUnk_088DDA14
+  - symbol: gSor1bb02Frame0
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -9]
-  - symbol: gUnk_088DDA24
+  - symbol: gSor1bb02Frame1
     pieces:
     - [32x32, -16, -32, {layer: 1}]
     - [16x8, -9, -39, {layer: 2}]
     - [32x8, -16, -1]
     - [16x8, -8, 6]
-  - symbol: gUnk_088DDA40
+  - symbol: gSor1bb02Frame2
     pieces:
     - [32x32, -16, -40]
     - [32x8, -16, -9]
     - [8x8, -1, -47]
     - [16x16, -8, -2, {layer: 1}]
-  - symbol: gUnk_088DDA5C
+  - symbol: gSor1bb02Frame3
     pieces:
     - [32x32, -16, -40]
     - [16x16, -8, -10]
     - [8x8, -3, -47]
-  - symbol: gUnk_088DDA72
+  - symbol: gSor1bb02Frame4
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -10]
-  - symbol: gUnk_088DDA82
+  - symbol: gSor1bb02Frame5
     pieces:
     - [32x32, -16, -32]
     - [32x8, -16, -1]
     - [16x8, -8, -39]
     - [16x8, -9, 6]
-  - symbol: gUnk_088DDA9E
+  - symbol: gSor1bb02Frame6
     pieces:
     - [32x32, -16, -40]
     - [32x8, -16, -9]
     - [8x8, -8, -47]
     - [16x16, -16, -2]
-  - symbol: gUnk_088DDABA
+  - symbol: gSor1bb02Frame7
     pieces:
     - [32x32, -16, -40]
     - [16x16, -9, -9]
     - [8x8, -7, -47]
   animations:
-  - symbol: gUnk_088DDAD0
+  - symbol: gSor1bb02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [6, 4], [7, 4], [0, 4]]
   us:
@@ -1267,65 +1267,65 @@ entries:
 - name: sor1bb03
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088DF374
+  symbol: gSor1bb03Tiles
   align: 4
   cell: [47, 55]
   anchor: [24, 47]
   columns: 7
   frames:
-  - symbol: gUnk_088DF278
+  - symbol: gSor1bb03Frame0
     pieces:
     - [32x32, -17, -33]
     - [32x8, -17, -2]
     - [8x8, 13, -16]
-  - symbol: gUnk_088DF28E
+  - symbol: gSor1bb03Frame1
     pieces:
     - [32x32, -16, -26]
     - [8x8, -22, -23]
     - [32x16, -16, -40]
-  - symbol: gUnk_088DF2A4
+  - symbol: gSor1bb03Frame2
     pieces:
     - [32x32, -16, -47]
     - [32x16, -16, -16, {layer: 1}]
     - [32x8, -16, -1]
     - [8x8, 14, -23, {layer: 2}]
-  - symbol: gUnk_088DF2C0
+  - symbol: gSor1bb03Frame3
     pieces:
     - [32x32, -9, -46, {layer: 1}]
     - [16x32, -23, -38]
     - [16x8, 7, -16]
-  - symbol: gUnk_088DF2D6
+  - symbol: gSor1bb03Frame4
     pieces:
     - [32x32, -24, -38]
     - [32x16, -24, -8]
     - [16x32, 7, -29]
-  - symbol: gUnk_088DF2EC
+  - symbol: gSor1bb03Frame5
     pieces:
     - [32x32, -14, -33]
     - [8x16, -20, -25]
     - [32x8, -14, -2]
     - [8x8, -6, -39]
-  - symbol: gUnk_088DF308
+  - symbol: gSor1bb03Frame6
     pieces:
     - [32x32, -16, -26]
     - [32x16, -16, -40]
   animations:
-  - symbol: gUnk_088DF318
+  - symbol: gSor1bb03Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4]]
-  - symbol: gUnk_088DF326
+  - symbol: gSor1bb03Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnk_088DF330
+  - symbol: gSor1bb03Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 4]]
-  - symbol: gUnk_088DF33A
+  - symbol: gSor1bb03Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 4]]
-  - symbol: gUnk_088DF344
+  - symbol: gSor1bb03Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 4], [6, 4]]
-  - symbol: gUnk_088DF352
+  - symbol: gSor1bb03Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 8], [3, 10], [4, 8], [5, 4], [6, 4]]
   us:
@@ -1340,101 +1340,101 @@ entries:
 - name: sor1ll50
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E0BC0
+  symbol: gSor1ll50Tiles
   align: 4
   cell: [73, 75]
   anchor: [24, 55]
   columns: 8
   frames:
-  - symbol: gUnk_088E09F4
+  - symbol: gSor1ll50Frame0
     pieces:
     - [32x32, -16, -45]
     - [32x16, -16, -14]
     - [32x8, -18, 1]
-  - symbol: gUnk_088E0A0A
+  - symbol: gSor1ll50Frame1
     pieces:
     - [32x32, -18, -36]
     - [16x8, -10, -43]
     - [32x8, -18, -5]
     - [16x8, -2, 2]
     - [8x16, -24, -12]
-  - symbol: gUnk_088E0A2C
+  - symbol: gSor1ll50Frame2
     pieces:
     - [32x32, -16, -39]
     - [32x16, -16, -8]
     - [16x8, 0, 7, {layer: 1}]
-  - symbol: gUnk_088E0A42
+  - symbol: gSor1ll50Frame3
     pieces:
     - [32x32, -15, -22]
     - [16x8, -15, -29]
     - [8x8, 17, -14]
-  - symbol: gUnk_088E0A58
+  - symbol: gSor1ll50Frame4
     pieces:
     - [32x32, -5, -38]
     - [8x8, -12, -38]
     - [8x8, 26, -19]
     - [16x16, 11, -7]
     - [16x16, -13, -14]
-  - symbol: gUnk_088E0A7A
+  - symbol: gSor1ll50Frame5
     pieces:
     - [32x32, -13, -29]
     - [16x16, 11, -5]
     - [8x8, 19, -12]
-  - symbol: gUnk_088E0A90
+  - symbol: gSor1ll50Frame6
     pieces:
     - [32x32, -13, -21]
     - [16x8, 3, 10]
     - [8x16, 18, -5]
     - [8x8, 23, -12]
-  - symbol: gUnk_088E0AAC
+  - symbol: gSor1ll50Frame7
     pieces:
     - [64x32, -15, -22]
-  - symbol: gUnk_088E0AB6
+  - symbol: gSor1ll50Frame8
     pieces:
     - [32x32, -14, -28]
     - [8x8, 10, 3]
     - [16x32, 17, -12]
-  - symbol: gUnk_088E0ACC
+  - symbol: gSor1ll50Frame9
     pieces:
     - [32x32, -13, -34]
     - [32x16, -13, -3]
     - [8x16, 18, -15]
-  - symbol: gUnk_088E0AE2
+  - symbol: gSor1ll50Frame10
     pieces:
     - [32x32, -1, -44]
     - [8x8, -8, -24]
     - [16x16, 7, -20]
-  - symbol: gUnk_088E0AF8
+  - symbol: gSor1ll50Frame11
     pieces:
     - [32x32, 3, -48]
     - [8x16, -4, -32]
     - [8x8, 14, -17, {layer: 1}]
     - [8x8, 19, -55, {layer: 1}]
-  - symbol: gUnk_088E0B14
+  - symbol: gSor1ll50Frame12
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -7]
     - [8x16, 18, -22]
   animations:
-  - symbol: gUnk_088E0B2A
+  - symbol: gSor1ll50Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 48], [1, 6], [2, 4], [12, 4]]
-  - symbol: gUnk_088E0B40
+  - symbol: gSor1ll50Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4], [1, 6], [0, 16]]
-  - symbol: gUnk_088E0B52
+  - symbol: gSor1ll50Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [4, 8], [5, 6], [6, 7], [7, 8], [8, 9], [2, 8]]
-  - symbol: gUnk_088E0B74
+  - symbol: gSor1ll50Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 5], [6, 4], [7, 5], [2, 5]]
-  - symbol: gUnk_088E0B8A
+  - symbol: gSor1ll50Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [6, 6], [8, 6], [9, 12]]
-  - symbol: gUnk_088E0BA0
+  - symbol: gSor1ll50Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 6]]
-  - symbol: gUnk_088E0BAA
+  - symbol: gSor1ll50Anim6
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [4, 8], [10, 10], [11, 32]]
   us:
@@ -1449,32 +1449,32 @@ entries:
 - name: sor1ll51
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E33C2
+  symbol: gSor1ll51Tiles
   align: 4
   cell: [39, 47]
   anchor: [13, 38]
   columns: 3
   frames:
-  - symbol: gUnk_088E3360
+  - symbol: gSor1ll51Frame0
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -7]
     - [8x16, 18, -22]
-  - symbol: gUnk_088E3376
+  - symbol: gSor1ll51Frame1
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -7]
     - [8x16, 18, -23, {fresh: true}]
-  - symbol: gUnk_088E338C
+  - symbol: gSor1ll51Frame2
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -7]
     - [8x16, 18, -22]
   animations:
-  - symbol: gUnk_088E33A2
+  - symbol: gSor1ll51Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 12], [1, 12], [0, 12], [2, 12]]
-  - symbol: gUnk_088E33B8
+  - symbol: gSor1ll51Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1489,59 +1489,59 @@ entries:
 - name: sor1ll53
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E3E78
+  symbol: gSor1ll53Tiles
   align: 4
   cell: [54, 53]
   anchor: [25, 41]
   columns: 8
   frames:
-  - symbol: gUnk_088E3D84
+  - symbol: gSor1ll53Frame0
     pieces:
     - [32x32, -19, -33]
     - [16x8, -12, -2]
     - [8x16, 12, -18]
     - [16x8, -20, -40, {layer: 1}]
-  - symbol: gUnk_088E3DA0
+  - symbol: gSor1ll53Frame1
     pieces:
     - [32x32, -16, -34]
     - [16x16, 0, -4]
-  - symbol: gUnk_088E3DB0
+  - symbol: gSor1ll53Frame2
     pieces:
     - [32x32, -21, -34, {layer: 1}]
     - [8x8, 9, -35]
     - [16x16, 5, -11, {layer: 2}]
     - [32x8, -21, -40, {layer: 2}]
-  - symbol: gUnk_088E3DCC
+  - symbol: gSor1ll53Frame3
     pieces:
     - [32x32, -23, -32]
     - [8x8, 7, -32]
     - [16x16, 8, -17]
     - [32x8, -23, -39, {layer: 1}]
-  - symbol: gUnk_088E3DE8
+  - symbol: gSor1ll53Frame4
     pieces:
     - [32x32, -10, -32]
     - [16x8, -8, -2]
     - [16x8, -10, -39]
     - [8x8, -16, -35, {layer: 1}]
-  - symbol: gUnk_088E3E04
+  - symbol: gSor1ll53Frame5
     pieces:
     - [32x32, -16, -33]
     - [16x8, -16, -40]
     - [16x8, 0, -2]
-  - symbol: gUnk_088E3E1A
+  - symbol: gSor1ll53Frame6
     pieces:
     - [32x32, -25, -34]
     - [8x8, 5, -28]
     - [16x16, 5, -14]
     - [32x8, -25, -41]
-  - symbol: gUnk_088E3E36
+  - symbol: gSor1ll53Frame7
     pieces:
     - [32x32, -18, -40, {layer: 1}]
     - [16x16, 13, -20]
     - [8x32, -25, -32]
     - [16x16, -18, -9]
   animations:
-  - symbol: gUnk_088E3E52
+  - symbol: gSor1ll53Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [6, 4], [7, 4]]
   us:
@@ -1556,56 +1556,56 @@ entries:
 - name: sor1ll55
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E56C6
+  symbol: gSor1ll55Tiles
   align: 4
   cell: [77, 68]
   anchor: [50, 54]
   columns: 5
   frames:
-  - symbol: gUnk_088E55B8
+  - symbol: gSor1ll55Frame0
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -9]
     - [16x8, 0, 6]
-  - symbol: gUnk_088E55CE
+  - symbol: gSor1ll55Frame1
     pieces:
     - [32x32, -12, -47]
     - [16x16, -9, -16]
     - [16x8, -9, -1]
     - [8x8, 19, -31]
-  - symbol: gUnk_088E55EA
+  - symbol: gSor1ll55Frame2
     pieces:
     - [32x32, -19, -24]
     - [32x16, -27, -39]
     - [8x8, -26, -25]
     - [16x16, -28, -54]
-  - symbol: gUnk_088E5606
+  - symbol: gSor1ll55Frame3
     pieces:
     - [32x32, -19, -28]
     - [8x16, 12, -14]
     - [16x8, -10, 3]
     - [32x8, -50, -9]
     - [8x16, -26, -24]
-  - symbol: gUnk_088E5628
+  - symbol: gSor1ll55Frame4
     pieces:
     - [32x32, -17, -30]
     - [16x8, -1, 1]
     - [16x16, -32, -6]
     - [8x8, -24, -30, {layer: 1}]
   animations:
-  - symbol: gUnk_088E5644
+  - symbol: gSor1ll55Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 10], [4, 5]]
-  - symbol: gUnk_088E565E
+  - symbol: gSor1ll55Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 6], [2, 5], [3, 11], [4, 5]]
-  - symbol: gUnk_088E5678
+  - symbol: gSor1ll55Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 6], [3, 12], [4, 5]]
-  - symbol: gUnk_088E5692
+  - symbol: gSor1ll55Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 4], [2, 3], [3, 9], [4, 5]]
-  - symbol: gUnk_088E56AC
+  - symbol: gSor1ll55Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 3], [2, 3], [3, 8], [4, 4]]
   us:
@@ -1620,56 +1620,56 @@ entries:
 - name: sor1ll57
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E67B6
+  symbol: gSor1ll57Tiles
   align: 4
   cell: [83, 53]
   anchor: [53, 38]
   columns: 5
   frames:
-  - symbol: gUnk_088E66A8
+  - symbol: gSor1ll57Frame0
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -7]
     - [16x16, -28, -30]
-  - symbol: gUnk_088E66BE
+  - symbol: gSor1ll57Frame1
     pieces:
     - [32x32, -8, -32]
     - [8x8, -15, -15]
     - [16x16, 3, -1]
     - [8x16, 22, -16, {layer: 1}]
-  - symbol: gUnk_088E66DA
+  - symbol: gSor1ll57Frame2
     pieces:
     - [32x32, -19, -36]
     - [16x16, 5, -6]
     - [16x8, -11, -5]
     - [32x16, -50, -21]
-  - symbol: gUnk_088E66F6
+  - symbol: gSor1ll57Frame3
     pieces:
     - [32x32, -22, -30]
     - [16x16, 10, -6]
     - [8x16, 9, -14, {layer: 1}]
     - [16x8, -22, 1]
     - [32x16, -53, -21]
-  - symbol: gUnk_088E6718
+  - symbol: gSor1ll57Frame4
     pieces:
     - [32x32, -20, -37, {layer: 1}]
     - [16x16, 4, -7]
     - [16x16, -15, -7]
     - [8x16, -27, -29]
   animations:
-  - symbol: gUnk_088E6734
+  - symbol: gSor1ll57Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 8], [2, 4], [3, 15], [4, 6]]
-  - symbol: gUnk_088E674E
+  - symbol: gSor1ll57Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 9], [2, 5], [3, 15], [4, 6]]
-  - symbol: gUnk_088E6768
+  - symbol: gSor1ll57Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 10], [2, 5], [3, 15], [4, 6]]
-  - symbol: gUnk_088E6782
+  - symbol: gSor1ll57Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 7], [2, 3], [3, 15], [4, 6]]
-  - symbol: gUnk_088E679C
+  - symbol: gSor1ll57Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 6], [2, 3], [3, 15], [4, 6]]
   us:
@@ -1684,63 +1684,63 @@ entries:
 - name: sor1ll58
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E7974
+  symbol: gSor1ll58Tiles
   align: 4
   cell: [96, 48]
   anchor: [55, 36]
   columns: 8
   frames:
-  - symbol: gUnk_088E7818
+  - symbol: gSor1ll58Frame0
     pieces:
     - [64x32, -37, -23]
     - [16x8, -13, -30]
-  - symbol: gUnk_088E7828
+  - symbol: gSor1ll58Frame1
     pieces:
     - [32x32, -13, -26]
     - [16x8, -12, -33]
     - [16x16, -28, -10]
-  - symbol: gUnk_088E783E
+  - symbol: gSor1ll58Frame2
     pieces:
     - [32x32, -15, -34]
     - [16x8, 16, -25]
     - [8x16, -22, -21]
     - [16x16, -9, -4]
-  - symbol: gUnk_088E785A
+  - symbol: gSor1ll58Frame3
     pieces:
     - [64x32, -49, -26]
     - [16x8, -17, -33]
     - [8x8, -55, -18]
-  - symbol: gUnk_088E7870
+  - symbol: gSor1ll58Frame4
     pieces:
     - [32x32, -19, -26]
     - [8x16, 11, -10]
     - [8x8, -25, -2]
     - [16x8, -19, -33]
-  - symbol: gUnk_088E788C
+  - symbol: gSor1ll58Frame5
     pieces:
     - [32x32, -20, -25]
     - [32x16, 4, -9]
-  - symbol: gUnk_088E789C
+  - symbol: gSor1ll58Frame6
     pieces:
     - [64x32, -23, -24]
-  - symbol: gUnk_088E78A6
+  - symbol: gSor1ll58Frame7
     pieces:
     - [32x32, -14, -36]
     - [32x16, -14, -5]
   animations:
-  - symbol: gUnk_088E78B6
+  - symbol: gSor1ll58Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 4], [2, 4], [3, 7], [4, 7], [5, 8], [6, 9], [7, 8]]
-  - symbol: gUnk_088E78DC
+  - symbol: gSor1ll58Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 8], [4, 7], [5, 9], [6, 10], [7, 8]]
-  - symbol: gUnk_088E7902
+  - symbol: gSor1ll58Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 6], [3, 8], [4, 8], [5, 9], [6, 10], [7, 8]]
-  - symbol: gUnk_088E7928
+  - symbol: gSor1ll58Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 3], [3, 6], [4, 7], [5, 7], [6, 8], [7, 8]]
-  - symbol: gUnk_088E794E
+  - symbol: gSor1ll58Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 3], [2, 3], [3, 6], [4, 6], [5, 7], [6, 7], [7, 7]]
   us:
@@ -1755,55 +1755,55 @@ entries:
 - name: sor1ll65
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088E967C
+  symbol: gSor1ll65Tiles
   align: 4
   cell: [129, 67]
   anchor: [59, 54]
   columns: 8
   frames:
-  - symbol: gUnk_088E9474
+  - symbol: gSor1ll65Frame0
     pieces:
     - [32x32, -10, -38]
     - [32x16, -10, -7]
     - [8x8, -2, -45]
     - [16x16, -25, -32]
-  - symbol: gUnk_088E9490
+  - symbol: gSor1ll65Frame1
     pieces:
     - [32x32, 0, -38]
     - [32x16, 0, -7]
     - [8x16, 13, -54]
     - [8x16, 20, -50]
-  - symbol: gUnk_088E94AC
+  - symbol: gSor1ll65Frame2
     pieces:
     - [32x32, 7, -36]
     - [16x16, 7, -5]
     - [32x16, 38, -34]
-  - symbol: gUnk_088E94C2
+  - symbol: gSor1ll65Frame3
     pieces:
     - [32x32, 3, -34]
     - [8x32, 34, -31]
     - [16x16, 3, -3]
-  - symbol: gUnk_088E94D8
+  - symbol: gSor1ll65Frame4
     pieces:
     - [32x32, -20, -32]
     - [8x8, -3, -1]
     - [16x16, 11, -17]
     - [16x16, -35, -19]
     - [32x16, -59, -19, {layer: 1}]
-  - symbol: gUnk_088E94FA
+  - symbol: gSor1ll65Frame5
     pieces:
     - [32x32, -18, -31]
     - [16x16, 13, -7]
     - [8x8, -11, 0]
     - [16x16, -33, -22, {layer: 1}]
     - [32x16, -52, -19, {same: [4, 4]}]
-  - symbol: gUnk_088E951C
+  - symbol: gSor1ll65Frame6
     pieces:
     - [32x32, -16, -38]
     - [32x8, -16, -6]
     - [16x16, 11, -6]
     - [8x8, -23, -19]
-  - symbol: gUnk_088E9538
+  - symbol: gSor1ll65Frame7
     pieces:
     - [32x32, -20, -32, {same: [4, 0]}]
     - [8x8, -3, -1]
@@ -1815,7 +1815,7 @@ entries:
     - [16x16, 19, -17, {same: [4, 2]}]
     - [16x16, -27, -19, {same: [4, 3]}]
     - [32x16, -51, -19, {same: [4, 4]}]
-  - symbol: gUnk_088E9578
+  - symbol: gSor1ll65Frame8
     pieces:
     - [32x32, -20, -32, {same: [4, 0]}]
     - [8x8, -3, -1]
@@ -1827,7 +1827,7 @@ entries:
     - [16x16, 25, -17, {same: [4, 2]}]
     - [16x16, -21, -19, {same: [4, 3]}]
     - [32x16, -45, -19, {same: [4, 4]}]
-  - symbol: gUnk_088E95B8
+  - symbol: gSor1ll65Frame9
     pieces:
     - [32x32, -20, -32, {same: [4, 0]}]
     - [8x8, -3, -1]
@@ -1840,10 +1840,10 @@ entries:
     - [16x16, -15, -19, {same: [4, 3]}]
     - [32x16, -39, -19, {same: [4, 4]}]
   animations:
-  - symbol: gUnk_088E95F8
+  - symbol: gSor1ll65Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 5], [3, 6], [4, 7], [7, 1], [4, 1], [7, 1], [4, 1], [8, 1], [4, 1], [8, 1], [4, 1], [9, 1], [4, 1], [9, 1], [4, 1], [9, 1], [4, 1], [8, 1], [4, 1], [8, 1], [4, 1], [7, 1], [4, 1], [7, 1], [4, 8], [5, 8], [6, 5]]
-  - symbol: gUnk_088E9672
+  - symbol: gSor1ll65Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1858,43 +1858,43 @@ entries:
 - name: sor1ll08
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088EAF1C
+  symbol: gSor1ll08Tiles
   align: 4
   cell: [69, 53]
   anchor: [44, 38]
   columns: 5
   frames:
-  - symbol: gUnk_088EAE7C
+  - symbol: gSor1ll08Frame0
     pieces:
     - [32x32, -14, -38, {layer: 1}]
     - [16x8, -14, -7]
     - [16x16, 2, -7]
     - [8x8, 17, -38]
-  - symbol: gUnk_088EAE98
+  - symbol: gSor1ll08Frame1
     pieces:
     - [32x32, -16, -32]
     - [8x8, -8, -1]
     - [16x16, 0, -1, {layer: 1}]
     - [8x16, -23, -24]
     - [16x16, -38, -32]
-  - symbol: gUnk_088EAEBA
+  - symbol: gSor1ll08Frame2
     pieces:
     - [32x32, -13, -30]
     - [32x16, -44, -22, {layer: 1}]
     - [16x16, 3, -6]
-  - symbol: gUnk_088EAED0
+  - symbol: gSor1ll08Frame3
     pieces:
     - [32x32, -9, -33]
     - [16x16, -24, -36]
     - [8x8, -9, -3]
     - [16x16, 5, -2]
-  - symbol: gUnk_088EAEEC
+  - symbol: gSor1ll08Frame4
     pieces:
     - [32x32, -10, -37]
     - [16x8, -10, -6]
     - [16x16, 6, -6]
   animations:
-  - symbol: gUnk_088EAF02
+  - symbol: gSor1ll08Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 8], [2, 45], [3, 13], [4, 6]]
   us:
@@ -1909,45 +1909,45 @@ entries:
 - name: sor1ll09
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088EBFDA
+  symbol: gSor1ll09Tiles
   align: 4
   cell: [57, 89]
   anchor: [25, 74]
   columns: 7
   frames:
-  - symbol: gUnk_088EBEBC
+  - symbol: gSor1ll09Frame0
     pieces:
     - [32x32, -15, -38]
     - [32x16, -15, -7]
     - [16x8, 16, -17]
-  - symbol: gUnk_088EBED2
+  - symbol: gSor1ll09Frame1
     pieces:
     - [32x32, -15, -39]
     - [32x16, -15, -8]
     - [8x8, 2, 7]
-  - symbol: gUnk_088EBEE8
+  - symbol: gSor1ll09Frame2
     pieces:
     - [32x32, -16, -39]
     - [32x16, -16, -8]
     - [8x8, 2, 7, {fresh: true}]
-  - symbol: gUnk_088EBEFE
+  - symbol: gSor1ll09Frame3
     pieces:
     - [32x32, -18, -37]
     - [32x16, -18, -6]
     - [8x8, -25, -37]
-  - symbol: gUnk_088EBF14
+  - symbol: gSor1ll09Frame4
     pieces:
     - [32x32, -13, -44]
     - [32x16, -15, -13]
     - [16x8, 1, 2]
     - [16x32, -6, -74]
-  - symbol: gUnk_088EBF30
+  - symbol: gSor1ll09Frame5
     pieces:
     - [16x8, -10, -47]
     - [32x32, -10, -40]
     - [32x16, -13, -9]
     - [16x8, 3, 6]
-  - symbol: gUnk_088EBF4C
+  - symbol: gSor1ll09Frame6
     pieces:
     - [32x16, -15, -13]
     - [16x8, 1, 2]
@@ -1955,16 +1955,16 @@ entries:
     - [16x32, -12, -44]
     - [16x32, 3, -44]
   animations:
-  - symbol: gUnk_088EBF6E
+  - symbol: gSor1ll09Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 7], [3, 9], [4, 10], [6, 30], [5, 6]]
-  - symbol: gUnk_088EBF90
+  - symbol: gSor1ll09Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 7], [3, 9], [4, 10], [6, 40], [5, 6]]
-  - symbol: gUnk_088EBFB2
+  - symbol: gSor1ll09Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 7], [3, 9], [4, 10], [6, 30]]
-  - symbol: gUnk_088EBFD0
+  - symbol: gSor1ll09Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 6]]
   us:
@@ -1979,62 +1979,62 @@ entries:
 - name: sor1ll56
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088ED77A
+  symbol: gSor1ll56Tiles
   align: 4
   cell: [92, 64]
   anchor: [42, 51]
   columns: 6
   frames:
-  - symbol: gUnk_088ED63C
+  - symbol: gSor1ll56Frame0
     pieces:
     - [32x32, -9, -38]
     - [16x8, 7, -45]
     - [16x16, 7, -7]
     - [8x8, 0, -7]
     - [16x8, -23, -24]
-  - symbol: gUnk_088ED65E
+  - symbol: gSor1ll56Frame1
     pieces:
     - [32x32, 7, -38]
     - [16x16, 34, -51]
     - [16x8, 7, -45]
     - [16x16, 10, -7]
-  - symbol: gUnk_088ED67A
+  - symbol: gSor1ll56Frame2
     pieces:
     - [32x32, -19, -42]
     - [8x8, 11, -42]
     - [32x16, -7, -11]
     - [16x8, 9, -18, {layer: 1}]
-  - symbol: gUnk_088ED696
+  - symbol: gSor1ll56Frame3
     pieces:
     - [32x32, -11, -34]
     - [8x8, -18, -34, {layer: 1}]
     - [8x16, 20, -16]
     - [16x16, -14, -3]
     - [32x8, -42, -15]
-  - symbol: gUnk_088ED6B8
+  - symbol: gSor1ll56Frame4
     pieces:
     - [32x32, -15, -34]
     - [16x16, 12, -14]
     - [16x16, -15, -4]
-  - symbol: gUnk_088ED6CE
+  - symbol: gSor1ll56Frame5
     pieces:
     - [16x16, -7, -7]
     - [32x32, -12, -38]
     - [8x8, 19, -36]
   animations:
-  - symbol: gUnk_088ED6E4
+  - symbol: gSor1ll56Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 6], [2, 5], [3, 5], [4, 8], [5, 5]]
-  - symbol: gUnk_088ED702
+  - symbol: gSor1ll56Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 7], [2, 6], [3, 6], [4, 8], [5, 5]]
-  - symbol: gUnk_088ED720
+  - symbol: gSor1ll56Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 7], [2, 7], [3, 6], [4, 8], [5, 5]]
-  - symbol: gUnk_088ED73E
+  - symbol: gSor1ll56Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 5], [2, 4], [3, 5], [4, 8], [5, 5]]
-  - symbol: gUnk_088ED75C
+  - symbol: gSor1ll56Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 4], [2, 3], [3, 5], [4, 8], [5, 5]]
   us:
@@ -2049,43 +2049,43 @@ entries:
 - name: sor1ll66
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088EEAD4
+  symbol: gSor1ll66Tiles
   align: 4
   cell: [36, 64]
   anchor: [18, 48]
   columns: 7
   frames:
-  - symbol: gUnk_088EEA3C
+  - symbol: gSor1ll66Frame0
     pieces:
     - [32x32, -14, -41]
     - [32x16, -14, -10]
     - [16x8, -6, 5]
-  - symbol: gUnk_088EEA52
+  - symbol: gSor1ll66Frame1
     pieces:
     - [32x16, -15, -41]
     - [32x32, -15, -26]
     - [8x8, -7, -48]
     - [16x8, -8, 5]
-  - symbol: gUnk_088EEA6E
+  - symbol: gSor1ll66Frame2
     pieces:
     - [32x16, -16, -3]
     - [32x32, -16, -34]
     - [16x8, -14, -41]
-  - symbol: gUnk_088EEA84
+  - symbol: gSor1ll66Frame3
     pieces:
     - [32x64, -16, -48]
-  - symbol: gUnk_088EEA8E
+  - symbol: gSor1ll66Frame4
     pieces:
     - [32x64, -16, -48]
-  - symbol: gUnk_088EEA98
+  - symbol: gSor1ll66Frame5
     pieces:
     - [32x64, -16, -48]
     - [8x16, -18, -40]
-  - symbol: gUnk_088EEAA8
+  - symbol: gSor1ll66Frame6
     pieces:
     - [32x64, -16, -48]
   animations:
-  - symbol: gUnk_088EEAB2
+  - symbol: gSor1ll66Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 8], [2, 6], [3, 7], [4, 7], [5, 7], [6, 7]]
   us:
@@ -2100,51 +2100,51 @@ entries:
 - name: sor1ll54
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F05DC
+  symbol: gSor1ll54Tiles
   align: 4
   cell: [83, 74]
   anchor: [27, 60]
   columns: 5
   frames:
-  - symbol: gUnk_088F04F4
+  - symbol: gSor1ll54Frame0
     pieces:
     - [32x64, -21, -60]
     - [8x8, -27, -36]
     - [8x8, -27, -12]
-  - symbol: gUnk_088F050A
+  - symbol: gSor1ll54Frame1
     pieces:
     - [32x32, -7, -43]
     - [16x16, 24, -43]
     - [32x16, -15, -12]
     - [16x8, -7, 3]
-  - symbol: gUnk_088F0526
+  - symbol: gSor1ll54Frame2
     pieces:
     - [32x32, -7, -33]
     - [32x16, -7, -2]
     - [32x16, 24, -17]
     - [8x16, -14, -9]
-  - symbol: gUnk_088F0542
+  - symbol: gSor1ll54Frame3
     pieces:
     - [32x32, -9, -29]
     - [32x16, 15, -5]
     - [8x8, 8, 2]
     - [8x16, -16, -13, {layer: 1}]
-  - symbol: gUnk_088F055E
+  - symbol: gSor1ll54Frame4
     pieces:
     - [32x32, -8, -34]
     - [32x16, -8, -3]
     - [8x16, -15, -10]
   animations:
-  - symbol: gUnk_088F0574
+  - symbol: gSor1ll54Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 13], [3, 15], [4, 12]]
-  - symbol: gUnk_088F058E
+  - symbol: gSor1ll54Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 11], [2, 14], [3, 15], [4, 12]]
-  - symbol: gUnk_088F05A8
+  - symbol: gSor1ll54Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 11], [3, 12], [4, 11]]
-  - symbol: gUnk_088F05C2
+  - symbol: gSor1ll54Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 9], [3, 10], [4, 9]]
   us:
@@ -2159,39 +2159,39 @@ entries:
 - name: sor1ll59
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F19DC
+  symbol: gSor1ll59Tiles
   align: 4
   cell: [82, 91]
   anchor: [43, 73]
   columns: 5
   frames:
-  - symbol: gUnk_088F18BC
+  - symbol: gSor1ll59Frame0
     pieces:
     - [32x32, -15, -39]
     - [32x8, -14, -8]
     - [16x16, 9, -1]
     - [16x32, 16, -47]
     - [8x8, 31, -47]
-  - symbol: gUnk_088F18DE
+  - symbol: gSor1ll59Frame1
     pieces:
     - [32x32, -16, -35]
     - [32x16, 4, -4]
     - [16x8, -11, -4]
-  - symbol: gUnk_088F18F4
+  - symbol: gSor1ll59Frame2
     pieces:
     - [32x32, -20, -39]
     - [32x16, -20, -8]
     - [16x8, -4, 7]
     - [16x16, -35, -31]
     - [16x16, -43, -16]
-  - symbol: gUnk_088F1916
+  - symbol: gSor1ll59Frame3
     pieces:
     - [16x16, -16, -73]
     - [16x16, -6, -58]
     - [32x32, -13, -43]
     - [32x16, -14, -12]
     - [16x8, 2, 3]
-  - symbol: gUnk_088F1938
+  - symbol: gSor1ll59Frame4
     pieces:
     - [32x32, -17, -44]
     - [32x16, -17, -13]
@@ -2199,19 +2199,19 @@ entries:
     - [8x8, 14, -21]
     - [16x16, -1, 2]
   animations:
-  - symbol: gUnk_088F195A
+  - symbol: gSor1ll59Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 6], [3, 8], [4, 5]]
-  - symbol: gUnk_088F1974
+  - symbol: gSor1ll59Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 6], [2, 7], [3, 8], [4, 5]]
-  - symbol: gUnk_088F198E
+  - symbol: gSor1ll59Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 7], [3, 9], [4, 5]]
-  - symbol: gUnk_088F19A8
+  - symbol: gSor1ll59Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 4], [2, 5], [3, 7], [4, 5]]
-  - symbol: gUnk_088F19C2
+  - symbol: gSor1ll59Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 3], [2, 5], [3, 7], [4, 5]]
   us:
@@ -2226,69 +2226,69 @@ entries:
 - name: sor1ll60
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F2F5C
+  symbol: gSor1ll60Tiles
   align: 4
   cell: [97, 73]
   anchor: [42, 50]
   columns: 8
   frames:
-  - symbol: gUnk_088F2DDC
+  - symbol: gSor1ll60Frame0
     pieces:
     - [32x16, -15, -39]
     - [32x32, -15, -24]
     - [16x16, 7, -47, {layer: 1}]
-  - symbol: gUnk_088F2DF2
+  - symbol: gSor1ll60Frame1
     pieces:
     - [32x64, -6, -41]
     - [16x16, 25, -27]
     - [8x16, -13, -17]
-  - symbol: gUnk_088F2E08
+  - symbol: gSor1ll60Frame2
     pieces:
     - [32x32, -27, -35]
     - [32x32, -19, -19]
     - [16x32, -42, -43]
-  - symbol: gUnk_088F2E1E
+  - symbol: gSor1ll60Frame3
     pieces:
     - [64x32, -36, -20]
     - [32x16, -28, -35, {layer: 1}]
-  - symbol: gUnk_088F2E2E
+  - symbol: gSor1ll60Frame4
     pieces:
     - [32x32, -8, -36]
     - [32x16, -7, -5]
     - [16x16, -23, -20]
     - [32x16, 23, -32]
-  - symbol: gUnk_088F2E4A
+  - symbol: gSor1ll60Frame5
     pieces:
     - [32x64, -14, -50]
     - [8x16, 17, -34]
     - [16x16, 17, -18]
-  - symbol: gUnk_088F2E60
+  - symbol: gSor1ll60Frame6
     pieces:
     - [32x32, -10, -45]
     - [16x8, -2, -14]
     - [16x16, 0, -7]
     - [8x8, 21, -36]
     - [32x16, -41, -37]
-  - symbol: gUnk_088F2E82
+  - symbol: gSor1ll60Frame7
     pieces:
     - [32x32, -16, -44]
     - [32x8, -16, -13]
     - [16x16, 0, -6]
     - [16x8, -31, -20]
   animations:
-  - symbol: gUnk_088F2E9E
+  - symbol: gSor1ll60Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 6], [2, 4], [3, 6], [4, 6], [5, 7], [6, 8], [7, 9]]
-  - symbol: gUnk_088F2EC4
+  - symbol: gSor1ll60Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 7], [2, 5], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9]]
-  - symbol: gUnk_088F2EEA
+  - symbol: gSor1ll60Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 7], [2, 6], [3, 7], [4, 7], [5, 8], [6, 8], [7, 9]]
-  - symbol: gUnk_088F2F10
+  - symbol: gSor1ll60Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 5], [2, 3], [3, 6], [4, 5], [5, 7], [6, 7], [7, 9]]
-  - symbol: gUnk_088F2F36
+  - symbol: gSor1ll60Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 2], [1, 4], [2, 3], [3, 5], [4, 5], [5, 6], [6, 7], [7, 9]]
   us:
@@ -2303,43 +2303,43 @@ entries:
 - name: sor1ff61
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F5298
+  symbol: gSor1ff61Tiles
   align: 4
   cell: [56, 89]
   anchor: [25, 64]
   columns: 6
   frames:
-  - symbol: gUnk_088F51FC
+  - symbol: gSor1ff61Frame0
     pieces:
     - [32x64, -16, -55]
     - [8x8, 0, -63]
-  - symbol: gUnk_088F520C
+  - symbol: gSor1ff61Frame1
     pieces:
     - [32x64, -16, -60]
-  - symbol: gUnk_088F5216
+  - symbol: gSor1ff61Frame2
     pieces:
     - [32x64, -16, -56]
     - [8x8, 0, -64]
-  - symbol: gUnk_088F5226
+  - symbol: gSor1ff61Frame3
     pieces:
     - [32x32, -14, -38]
     - [16x16, -25, -14]
     - [8x8, -1, -6]
     - [16x16, 12, -6]
-  - symbol: gUnk_088F5242
+  - symbol: gSor1ff61Frame4
     pieces:
     - [32x32, -17, -31]
     - [8x16, -25, -15]
     - [16x16, 15, -16]
     - [8x32, -1, -7]
-  - symbol: gUnk_088F525E
+  - symbol: gSor1ff61Frame5
     pieces:
     - [32x32, -23, -40, {layer: 1}]
     - [16x8, -23, -10]
     - [16x32, 7, -29]
     - [8x8, 7, -36, {layer: 2}]
   animations:
-  - symbol: gUnk_088F527A
+  - symbol: gSor1ff61Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 8], [5, 5]]
   us:
@@ -2354,51 +2354,51 @@ entries:
 - name: sor1fl61
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F695C
+  symbol: gSor1fl61Tiles
   align: 4
   cell: [60, 91]
   anchor: [33, 67]
   columns: 7
   frames:
-  - symbol: gUnk_088F6898
+  - symbol: gSor1fl61Frame0
     pieces:
     - [32x64, -18, -55]
     - [8x16, 14, -15]
-  - symbol: gUnk_088F68A8
+  - symbol: gSor1fl61Frame1
     pieces:
     - [32x64, -5, -58]
     - [8x8, -13, -26]
-  - symbol: gUnk_088F68B8
+  - symbol: gSor1fl61Frame2
     pieces:
     - [32x64, -13, -59]
     - [8x8, 19, -7]
     - [8x8, -8, -67]
-  - symbol: gUnk_088F68CE
+  - symbol: gSor1fl61Frame3
     pieces:
     - [16x32, -33, -31]
     - [32x32, -17, -31]
     - [16x16, 7, -7]
     - [16x8, -9, -39]
-  - symbol: gUnk_088F68EA
+  - symbol: gSor1fl61Frame4
     pieces:
     - [32x32, -8, -28]
     - [32x8, -8, 4]
     - [16x16, -24, -20]
     - [16x16, -18, 8]
-  - symbol: gUnk_088F6906
+  - symbol: gSor1fl61Frame5
     pieces:
     - [32x32, -25, -26]
     - [16x32, 7, -26]
     - [8x8, -33, -2]
     - [16x8, -9, -34]
-  - symbol: gUnk_088F6922
+  - symbol: gSor1fl61Frame6
     pieces:
     - [32x32, -25, -40]
     - [16x32, 7, -40]
     - [32x16, -25, -8]
     - [16x16, 7, -8]
   animations:
-  - symbol: gUnk_088F693E
+  - symbol: gSor1fl61Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 8], [6, 5]]
   us:
@@ -2413,63 +2413,63 @@ entries:
 - name: sor1ll61
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088F8678
+  symbol: gSor1ll61Tiles
   align: 4
   cell: [84, 93]
   anchor: [49, 66]
   columns: 7
   frames:
-  - symbol: gUnk_088F851C
+  - symbol: gSor1ll61Frame0
     pieces:
     - [32x32, -22, -44]
     - [32x16, -14, -13]
     - [16x16, -3, 2]
     - [8x16, 9, -52]
     - [8x8, -29, -29]
-  - symbol: gUnk_088F853E
+  - symbol: gSor1ll61Frame1
     pieces:
     - [32x64, -4, -52]
     - [8x8, 27, -20]
-  - symbol: gUnk_088F854E
+  - symbol: gSor1ll61Frame2
     pieces:
     - [32x64, -17, -51]
     - [16x16, -9, -66]
-  - symbol: gUnk_088F855E
+  - symbol: gSor1ll61Frame3
     pieces:
     - [32x32, -22, -36]
     - [16x32, -8, -5]
     - [32x16, -42, -28, {layer: 1}]
-  - symbol: gUnk_088F8574
+  - symbol: gSor1ll61Frame4
     pieces:
     - [32x32, -21, -28]
     - [32x16, -27, 3]
     - [8x16, -34, 4]
-  - symbol: gUnk_088F858A
+  - symbol: gSor1ll61Frame5
     pieces:
     - [32x32, -23, -33]
     - [16x16, -9, -2]
     - [32x8, -49, -13]
-  - symbol: gUnk_088F85A0
+  - symbol: gSor1ll61Frame6
     pieces:
     - [32x32, -16, -36]
     - [32x16, -16, -4]
   animations:
-  - symbol: gUnk_088F85B0
+  - symbol: gSor1ll61Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 8], [6, 5]]
-  - symbol: gUnk_088F85CE
+  - symbol: gSor1ll61Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 5], [5, 6], [6, 6]]
-  - symbol: gUnk_088F85F0
+  - symbol: gSor1ll61Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 6], [2, 5], [3, 4], [4, 6], [5, 6], [6, 6]]
-  - symbol: gUnk_088F8612
+  - symbol: gSor1ll61Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 6], [3, 5], [4, 6], [5, 6], [6, 6]]
-  - symbol: gUnk_088F8634
+  - symbol: gSor1ll61Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 4], [2, 3], [3, 4], [4, 4], [5, 6], [6, 6]]
-  - symbol: gUnk_088F8656
+  - symbol: gSor1ll61Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 3], [2, 3], [3, 3], [4, 4], [5, 5], [6, 6]]
   us:
@@ -2484,44 +2484,44 @@ entries:
 - name: sor1bl61
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088FA0DA
+  symbol: gSor1bl61Tiles
   align: 4
   cell: [58, 80]
   anchor: [31, 71]
   columns: 6
   frames:
-  - symbol: gUnk_088FA038
+  - symbol: gSor1bl61Frame0
     pieces:
     - [32x32, -14, -49]
     - [32x16, -14, -17]
     - [16x8, -6, -1]
     - [16x8, -30, -41]
-  - symbol: gUnk_088FA054
+  - symbol: gSor1bl61Frame1
     pieces:
     - [32x64, -8, -56]
-  - symbol: gUnk_088FA05E
+  - symbol: gSor1bl61Frame2
     pieces:
     - [32x64, -16, -55]
     - [16x16, -8, -71]
-  - symbol: gUnk_088FA06E
+  - symbol: gSor1bl61Frame3
     pieces:
     - [32x32, -15, -32]
     - [16x8, -8, -40]
     - [16x8, -16, 0]
     - [16x16, -31, -40]
-  - symbol: gUnk_088FA08A
+  - symbol: gSor1bl61Frame4
     pieces:
     - [32x32, -21, -31]
     - [16x8, -21, 1]
     - [16x16, 11, -22]
     - [8x8, -5, -39]
-  - symbol: gUnk_088FA0A6
+  - symbol: gSor1bl61Frame5
     pieces:
     - [32x32, -18, -41]
     - [32x8, -18, -9]
     - [8x8, -26, -32]
   animations:
-  - symbol: gUnk_088FA0BC
+  - symbol: gSor1bl61Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 8], [5, 5]]
   us:
@@ -2536,42 +2536,42 @@ entries:
 - name: sor1bb61
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088FB5F2
+  symbol: gSor1bb61Tiles
   align: 4
   cell: [56, 82]
   anchor: [30, 65]
   columns: 6
   frames:
-  - symbol: gUnk_088FB55C
+  - symbol: gSor1bb61Frame0
     pieces:
     - [32x64, -16, -48]
-  - symbol: gUnk_088FB566
+  - symbol: gSor1bb61Frame1
     pieces:
     - [32x64, -16, -47]
-  - symbol: gUnk_088FB570
+  - symbol: gSor1bb61Frame2
     pieces:
     - [32x32, -15, -33]
     - [32x16, -15, -1]
     - [16x32, -8, -65]
-  - symbol: gUnk_088FB586
+  - symbol: gSor1bb61Frame3
     pieces:
     - [32x32, -16, -34]
     - [16x16, -24, -3]
     - [16x16, 9, -2]
     - [8x8, -7, -42]
-  - symbol: gUnk_088FB5A2
+  - symbol: gSor1bb61Frame4
     pieces:
     - [32x32, -22, -27]
     - [8x16, -30, -12]
     - [16x16, 10, -11]
     - [16x8, -6, -35]
-  - symbol: gUnk_088FB5BE
+  - symbol: gSor1bb61Frame5
     pieces:
     - [32x32, -24, -38]
     - [32x16, -24, -8]
     - [16x32, 7, -29]
   animations:
-  - symbol: gUnk_088FB5D4
+  - symbol: gSor1bb61Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 4], [4, 8], [5, 5]]
   us:
@@ -2586,50 +2586,50 @@ entries:
 - name: sor1ll67
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088FCCCE
+  symbol: gSor1ll67Tiles
   align: 4
   cell: [58, 49]
   anchor: [33, 38]
   columns: 6
   frames:
-  - symbol: gUnk_088FCC14
+  - symbol: gSor1ll67Frame0
     pieces:
     - [32x32, -17, -30]
     - [8x16, -24, -24]
     - [16x8, -1, 1]
-  - symbol: gUnk_088FCC2A
+  - symbol: gSor1ll67Frame1
     pieces:
     - [32x32, -9, -31]
     - [32x16, -33, -31]
     - [32x8, -33, -38]
-  - symbol: gUnk_088FCC40
+  - symbol: gSor1ll67Frame2
     pieces:
     - [32x32, -22, -26]
     - [16x16, 9, -26]
-  - symbol: gUnk_088FCC50
+  - symbol: gSor1ll67Frame3
     pieces:
     - [32x32, -19, -27]
     - [8x8, -11, 3]
-  - symbol: gUnk_088FCC60
+  - symbol: gSor1ll67Frame4
     pieces:
     - [32x32, -15, -28]
     - [8x8, 16, -24]
-  - symbol: gUnk_088FCC70
+  - symbol: gSor1ll67Frame5
     pieces:
     - [32x32, -20, -38]
     - [32x16, -20, -7]
     - [8x8, -25, -22]
   animations:
-  - symbol: gUnk_088FCC86
+  - symbol: gSor1ll67Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 6], [3, 6], [4, 7], [5, 8]]
-  - symbol: gUnk_088FCCA4
+  - symbol: gSor1ll67Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 6], [4, 8], [3, 8]]
-  - symbol: gUnk_088FCCB6
+  - symbol: gSor1ll67Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 4]]
-  - symbol: gUnk_088FCCC0
+  - symbol: gSor1ll67Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 6], [0, 8]]
   us:
@@ -2644,106 +2644,106 @@ entries:
 - name: sor1ll68
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_088FDE7A
+  symbol: gSor1ll68Tiles
   align: 4
   cell: [90, 68]
   anchor: [24, 52]
   columns: 8
   frames:
-  - symbol: gUnk_088FDCB0
+  - symbol: gSor1ll68Frame0
     pieces:
     - [32x32, -22, -39]
     - [32x32, -14, -23]
-  - symbol: gUnk_088FDCC0
+  - symbol: gSor1ll68Frame1
     pieces:
     - [32x32, -17, -30]
     - [32x16, -9, -6]
     - [32x16, 7, -22]
-  - symbol: gUnk_088FDCD6
+  - symbol: gSor1ll68Frame2
     pieces:
     - [64x32, -14, -28]
     - [16x8, 10, 3]
-  - symbol: gUnk_088FDCE6
+  - symbol: gSor1ll68Frame3
     pieces:
     - [32x32, -14, -30]
     - [16x16, 10, -6]
     - [16x16, 17, -28]
     - [16x32, 25, -52]
     - [8x8, 23, -30, {layer: 1}]
-  - symbol: gUnk_088FDD08
+  - symbol: gSor1ll68Frame4
     pieces:
     - [32x32, -10, -32]
     - [16x16, 9, -5]
     - [32x16, 21, -32]
     - [32x8, -2, -39]
     - [8x8, 52, -24]
-  - symbol: gUnk_088FDD2A
+  - symbol: gSor1ll68Frame5
     pieces:
     - [32x64, -9, -48]
     - [16x32, -24, -34]
-  - symbol: gUnk_088FDD3A
+  - symbol: gSor1ll68Frame6
     pieces:
     - [32x32, -23, -36]
     - [16x8, -14, -5]
     - [16x32, 8, -20]
-  - symbol: gUnk_088FDD50
+  - symbol: gSor1ll68Frame7
     pieces:
     - [32x32, -23, -34]
     - [16x8, -14, -3]
     - [16x32, 8, -34]
-  - symbol: gUnk_088FDD66
+  - symbol: gSor1ll68Frame8
     pieces:
     - [32x32, -22, -33]
     - [8x8, 9, -26]
     - [32x8, -22, -2]
-  - symbol: gUnk_088FDD7C
+  - symbol: gSor1ll68Frame9
     pieces:
     - [32x32, -17, -37]
     - [32x16, -17, -6]
     - [8x32, 14, -28]
-  - symbol: gUnk_088FDD92
+  - symbol: gSor1ll68Frame10
     pieces:
     - [32x32, -13, -29]
     - [32x8, -13, -36]
     - [16x16, -21, -51]
     - [16x16, 11, -5]
     - [8x8, 18, -20]
-  - symbol: gUnk_088FDDB4
+  - symbol: gSor1ll68Frame11
     pieces:
     - [32x32, -4, -30]
     - [16x16, 12, 0]
     - [16x16, -18, -14]
-  - symbol: gUnk_088FDDCA
+  - symbol: gSor1ll68Frame12
     pieces:
     - [64x32, -21, -27]
     - [16x8, 11, 3]
-  - symbol: gUnk_088FDDDA
+  - symbol: gSor1ll68Frame13
     pieces:
     - [64x32, -13, -26]
     - [16x8, 50, -10]
     - [16x8, 11, 4]
-  - symbol: gUnk_088FDDF0
+  - symbol: gSor1ll68Frame14
     pieces:
     - [32x32, -8, -35]
     - [32x16, 16, -19]
     - [16x16, -14, -8]
     - [16x16, 8, -4]
-  - symbol: gUnk_088FDE0C
+  - symbol: gSor1ll68Frame15
     pieces:
     - [32x32, -13, -34]
     - [32x16, -13, -3]
     - [16x16, 17, -26]
   animations:
-  - symbol: gUnk_088FDE22
+  - symbol: gSor1ll68Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 5], [2, 6], [3, 8]]
-  - symbol: gUnk_088FDE38
+  - symbol: gSor1ll68Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 6], [5, 6], [6, 8], [7, 12], [8, 10]]
-  - symbol: gUnk_088FDE52
+  - symbol: gSor1ll68Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[9, 4]]
-  - symbol: gUnk_088FDE5C
+  - symbol: gSor1ll68Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[10, 4], [11, 3], [12, 5], [13, 8], [14, 6], [15, 5]]
   us:
@@ -2758,66 +2758,66 @@ entries:
 - name: sor1ll68w
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_08901C8A
+  symbol: gSor1ll68wTiles
   align: 4
   cell: [47, 44]
   anchor: [24, 22]
   columns: 8
   frames:
-  - symbol: gUnk_08901B7C
+  - symbol: gSor1ll68wFrame0
     pieces:
     - [32x16, -24, -5]
     - [8x16, 7, -13]
-  - symbol: gUnk_08901B8C
+  - symbol: gSor1ll68wFrame1
     pieces:
     - [16x32, -8, -16]
     - [8x8, -15, 8, {layer: 1}]
-  - symbol: gUnk_08901B9C
+  - symbol: gSor1ll68wFrame2
     pieces:
     - [32x16, -15, -9]
     - [16x16, 1, 6]
-  - symbol: gUnk_08901BAC
+  - symbol: gSor1ll68wFrame3
     pieces:
     - [32x16, -9, -11]
     - [8x8, -16, 0]
-  - symbol: gUnk_08901BBC
+  - symbol: gSor1ll68wFrame4
     pieces:
     - [16x32, -8, -16]
     - [8x8, 7, -16, {layer: 1}]
-  - symbol: gUnk_08901BCC
+  - symbol: gSor1ll68wFrame5
     pieces:
     - [32x16, -17, -7]
     - [16x16, -17, -22]
-  - symbol: gUnk_08901BDC
+  - symbol: gSor1ll68wFrame6
     pieces:
     - [32x16, -24, -5]
     - [16x16, 2, -8, {layer: 1}]
-  - symbol: gUnk_08901BEC
+  - symbol: gSor1ll68wFrame7
     pieces:
     - [16x16, -8, 0]
     - [8x8, -15, 8, {same: [1, 1]}]
     - [16x16, -3, -11, {layer: 1}]
-  - symbol: gUnk_08901C02
+  - symbol: gSor1ll68wFrame8
     pieces:
     - [32x16, -15, -9]
     - [16x16, 1, 6]
     - [16x8, -14, -16]
-  - symbol: gUnk_08901C18
+  - symbol: gSor1ll68wFrame9
     pieces:
     - [32x16, -9, -11]
     - [16x16, -17, -6, {layer: 1}]
-  - symbol: gUnk_08901C28
+  - symbol: gSor1ll68wFrame10
     pieces:
     - [16x16, -8, -16]
     - [8x8, 7, -16, {same: [4, 1]}]
     - [16x16, -13, -1, {layer: 1}]
-  - symbol: gUnk_08901C3E
+  - symbol: gSor1ll68wFrame11
     pieces:
     - [32x16, -17, -7]
     - [16x8, -1, 8]
     - [16x16, -17, -22]
   animations:
-  - symbol: gUnk_08901C54
+  - symbol: gSor1ll68wAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 2], [8, 1], [3, 2], [9, 1], [4, 2], [10, 1], [5, 2], [11, 1], [0, 2], [6, 1], [1, 2], [7, 1]]
   us:
@@ -2832,92 +2832,92 @@ entries:
 - name: sor1ll69
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_08902C3C
+  symbol: gSor1ll69Tiles
   align: 4
   cell: [83, 122]
   anchor: [32, 106]
   columns: 8
   frames:
-  - symbol: gUnk_089029AC
+  - symbol: gSor1ll69Frame0
     pieces:
     - [32x32, -15, -43]
     - [32x16, -31, -12]
     - [32x16, -15, -12]
     - [16x16, 1, -4]
-  - symbol: gUnk_089029C8
+  - symbol: gSor1ll69Frame1
     pieces:
     - [32x64, -12, -53]
     - [8x8, -19, -5]
     - [16x32, -4, -77]
-  - symbol: gUnk_089029DE
+  - symbol: gSor1ll69Frame2
     pieces:
     - [32x64, -12, -53]
     - [16x32, -4, -77]
     - [8x8, -19, -5, {fresh: true}]
-  - symbol: gUnk_089029F4
+  - symbol: gSor1ll69Frame3
     pieces:
     - [32x64, -14, -48]
-  - symbol: gUnk_089029FE
+  - symbol: gSor1ll69Frame4
     pieces:
     - [32x32, -5, -20]
     - [32x16, 3, -30]
     - [32x16, 19, -12]
-  - symbol: gUnk_08902A14
+  - symbol: gSor1ll69Frame5
     pieces:
     - [32x32, -8, -57]
     - [32x32, -16, -73]
     - [16x16, 15, -81]
-  - symbol: gUnk_08902A2A
+  - symbol: gSor1ll69Frame6
     pieces:
     - [32x32, -17, -88, {layer: 1}]
     - [16x32, 7, -72, {layer: 2}]
     - [16x32, -24, -106, {layer: 2}]
-  - symbol: gUnk_08902A40
+  - symbol: gSor1ll69Frame7
     pieces:
     - [32x32, -14, -76]
     - [16x32, 10, -76]
     - [32x16, -22, -45]
-  - symbol: gUnk_08902A56
+  - symbol: gSor1ll69Frame8
     pieces:
     - [32x64, -12, -88]
     - [16x32, -4, -32]
     - [8x16, -19, -88]
-  - symbol: gUnk_08902A6C
+  - symbol: gSor1ll69Frame9
     pieces:
     - [32x64, -13, -85]
     - [16x32, -4, -24]
     - [16x16, -28, -61]
-  - symbol: gUnk_08902A82
+  - symbol: gSor1ll69Frame10
     pieces:
     - [64x32, -23, -63]
     - [32x16, -23, -71]
     - [16x16, -7, -39]
     - [16x32, -4, -24]
-  - symbol: gUnk_08902A9E
+  - symbol: gSor1ll69Frame11
     pieces:
     - [32x64, -7, -74]
     - [8x8, 24, -72]
     - [16x16, -4, -16]
-  - symbol: gUnk_08902AB4
+  - symbol: gSor1ll69Frame12
     pieces:
     - [32x32, -17, -61]
     - [32x16, -25, -69]
     - [16x32, -32, -54]
     - [16x8, -9, -30]
     - [16x32, -4, -24]
-  - symbol: gUnk_08902AD6
+  - symbol: gSor1ll69Frame13
     pieces:
     - [32x32, -14, -59]
     - [32x16, -22, -35]
     - [16x16, -22, -43]
     - [16x32, -4, -24, {same: [9, 1]}]
-  - symbol: gUnk_08902AF2
+  - symbol: gSor1ll69Frame14
     pieces:
     - [32x32, -11, -54]
     - [16x8, 9, -61]
     - [16x32, 20, -54]
     - [16x32, -4, -24]
-  - symbol: gUnk_08902B0E
+  - symbol: gSor1ll69Frame15
     pieces:
     - [32x32, -8, -61]
     - [32x32, 16, -77]
@@ -2925,50 +2925,50 @@ entries:
     - [8x8, 9, -68]
     - [16x8, -8, -30]
     - [16x32, -4, -24]
-  - symbol: gUnk_08902B36
+  - symbol: gSor1ll69Frame16
     pieces:
     - [32x32, -11, -60]
     - [32x32, 13, -52]
     - [16x8, -10, -29]
     - [16x32, -4, -24]
-  - symbol: gUnk_08902B52
+  - symbol: gSor1ll69Frame17
     pieces:
     - [32x32, -11, -38]
     - [32x32, -3, -22]
     - [16x8, 1, -45]
-  - symbol: gUnk_08902B68
+  - symbol: gSor1ll69Frame18
     pieces:
     - [32x32, -7, -37]
     - [32x16, -7, -6]
     - [8x8, 24, -13]
-  - symbol: gUnk_08902B7E
+  - symbol: gSor1ll69Frame19
     pieces:
     - [32x32, -8, -40]
     - [32x16, -8, -9]
     - [8x8, 23, -14]
     - [8x8, 9, 6]
-  - symbol: gUnk_08902B9A
+  - symbol: gSor1ll69Frame20
     pieces:
     - [32x32, -6, -49]
     - [32x32, -6, -25]
     - [16x16, -14, -17]
     - [8x8, 25, -15]
-  - symbol: gUnk_08902BB6
+  - symbol: gSor1ll69Frame21
     pieces:
     - [32x32, -12, -48]
     - [32x32, -12, -24]
     - [16x16, 19, -18]
   animations:
-  - symbol: gUnk_08902BCC
+  - symbol: gSor1ll69Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 10], [2, 24]]
-  - symbol: gUnk_08902BDE
+  - symbol: gSor1ll69Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 7], [4, 6], [5, 7], [6, 6], [7, 6], [8, 12], [9, 10], [10, 10], [11, 10], [12, 10], [13, 10], [14, 11], [15, 15], [16, 8], [17, 6], [18, 24]]
-  - symbol: gUnk_08902C24
+  - symbol: gSor1ll69Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[19, 24]]
-  - symbol: gUnk_08902C2E
+  - symbol: gSor1ll69Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[20, 10], [21, 8]]
   us:
@@ -2983,40 +2983,40 @@ entries:
 - name: sor1fl10
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_0891A166
+  symbol: gSor1fl10Tiles
   align: 4
   cell: [57, 82]
   anchor: [36, 68]
   columns: 5
   frames:
-  - symbol: gUnk_0891A0DC
+  - symbol: gSor1fl10Frame0
     pieces:
     - [32x32, -16, -48]
     - [32x16, -16, -16]
     - [16x8, 0, 0]
-  - symbol: gUnk_0891A0F2
+  - symbol: gSor1fl10Frame1
     pieces:
     - [32x64, -15, -60]
     - [8x8, 1, -68]
     - [8x8, -23, -6]
-  - symbol: gUnk_0891A108
+  - symbol: gSor1fl10Frame2
     pieces:
     - [32x32, -20, -27]
     - [8x16, 12, -11]
     - [16x8, -12, -35]
     - [16x16, -36, -27]
-  - symbol: gUnk_0891A124
+  - symbol: gSor1fl10Frame3
     pieces:
     - [32x32, -19, -26]
     - [8x16, 13, -11]
     - [16x16, -35, -2]
-  - symbol: gUnk_0891A13A
+  - symbol: gSor1fl10Frame4
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
     - [16x8, -8, -48]
   animations:
-  - symbol: gUnk_0891A150
+  - symbol: gSor1fl10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 12]]
   us:
@@ -3031,39 +3031,39 @@ entries:
 - name: sor1bl10
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_0891B26C
+  symbol: gSor1bl10Tiles
   align: 4
   cell: [51, 85]
   anchor: [35, 73]
   columns: 5
   frames:
-  - symbol: gUnk_0891B1E8
+  - symbol: gSor1bl10Frame0
     pieces:
     - [32x32, -16, -48]
     - [32x8, -16, -16]
     - [16x16, -8, -8]
-  - symbol: gUnk_0891B1FE
+  - symbol: gSor1bl10Frame1
     pieces:
     - [32x32, -22, -57]
     - [16x32, -6, -25]
     - [16x16, -13, -73]
-  - symbol: gUnk_0891B214
+  - symbol: gSor1bl10Frame2
     pieces:
     - [32x32, -19, -36]
     - [16x16, -3, -4]
     - [16x16, -35, -47]
-  - symbol: gUnk_0891B22A
+  - symbol: gSor1bl10Frame3
     pieces:
     - [32x32, -18, -33]
     - [16x8, -2, -1]
     - [8x8, -26, -24]
-  - symbol: gUnk_0891B240
+  - symbol: gSor1bl10Frame4
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
     - [16x8, -8, -48]
   animations:
-  - symbol: gUnk_0891B256
+  - symbol: gSor1bl10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 12]]
   us:
@@ -3078,31 +3078,31 @@ entries:
 - name: sor1ll10
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_0891C1E8
+  symbol: gSor1ll10Tiles
   align: 4
   cell: [72, 80]
   anchor: [46, 64]
   columns: 4
   frames:
-  - symbol: gUnk_0891C18C
+  - symbol: gSor1ll10Frame0
     pieces:
     - [32x64, -13, -48]
-  - symbol: gUnk_0891C196
+  - symbol: gSor1ll10Frame1
     pieces:
     - [32x64, -16, -56]
     - [16x8, -8, -64]
     - [8x16, -24, -48]
-  - symbol: gUnk_0891C1AC
+  - symbol: gSor1ll10Frame2
     pieces:
     - [64x32, -46, -31]
     - [16x8, 2, 1]
     - [8x8, 18, -7]
-  - symbol: gUnk_0891C1C2
+  - symbol: gSor1ll10Frame3
     pieces:
     - [64x32, -44, -26]
     - [8x8, 5, 6]
   animations:
-  - symbol: gUnk_0891C1D2
+  - symbol: gSor1ll10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 12]]
   us:
@@ -3117,31 +3117,31 @@ entries:
 - name: sor1ff10
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_0891D344
+  symbol: gSor1ff10Tiles
   align: 4
   cell: [37, 100]
   anchor: [17, 74]
   columns: 4
   frames:
-  - symbol: gUnk_0891D2E8
+  - symbol: gSor1ff10Frame0
     pieces:
     - [32x32, -17, -45]
     - [32x16, -17, -13]
     - [16x8, -9, -53]
-  - symbol: gUnk_0891D2FE
+  - symbol: gSor1ff10Frame1
     pieces:
     - [32x64, -17, -58]
     - [8x16, -9, -74]
-  - symbol: gUnk_0891D30E
+  - symbol: gSor1ff10Frame2
     pieces:
     - [32x32, -12, -28]
     - [16x8, 4, 4]
-  - symbol: gUnk_0891D31E
+  - symbol: gSor1ff10Frame3
     pieces:
     - [32x32, -12, -22]
     - [8x16, 4, 10]
   animations:
-  - symbol: gUnk_0891D32E
+  - symbol: gSor1ff10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 12]]
   us:
@@ -3156,37 +3156,37 @@ entries:
 - name: sor1bb10
   format: sprite_sheet
   palette: sora
-  symbol: gUnk_0891DFC4
+  symbol: gSor1bb10Tiles
   align: 4
   cell: [33, 85]
   anchor: [16, 70]
   columns: 4
   frames:
-  - symbol: gUnk_0891DF44
+  - symbol: gSor1bb10Frame0
     pieces:
     - [32x32, -16, -48]
     - [32x16, -16, -16]
     - [16x8, 0, 0]
-  - symbol: gUnk_0891DF5A
+  - symbol: gSor1bb10Frame1
     pieces:
     - [32x32, -16, -46]
     - [32x16, -16, -14]
     - [16x16, 0, -62]
     - [8x8, 8, -70]
     - [16x8, 0, 2]
-  - symbol: gUnk_0891DF7C
+  - symbol: gSor1bb10Frame2
     pieces:
     - [32x32, -15, -38]
     - [32x8, -15, -6]
     - [8x16, -1, -54]
     - [16x8, 1, 2]
-  - symbol: gUnk_0891DF98
+  - symbol: gSor1bb10Frame3
     pieces:
     - [32x32, -16, -33]
     - [32x8, -16, -1]
     - [8x8, 8, 7]
   animations:
-  - symbol: gUnk_0891DFAE
+  - symbol: gSor1bb10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 5], [2, 4], [3, 12]]
   us:
@@ -3201,44 +3201,44 @@ entries:
 - name: riku_bt00
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_0891ED26
+  symbol: gRikuBt00Tiles
   align: 4
   cell: [52, 64]
   anchor: [32, 56]
   columns: 6
   frames:
-  - symbol: gUnk_0891EC84
+  - symbol: gRikuBt00Frame0
     pieces:
     - [32x64, -18, -56]
     - [16x16, -26, -32]
     - [8x8, 12, -36]
-  - symbol: gUnk_0891EC9A
+  - symbol: gRikuBt00Frame1
     pieces:
     - [32x64, -18, -56]
     - [16x16, -26, -32]
     - [8x8, 12, -37]
-  - symbol: gUnk_0891ECB0
+  - symbol: gRikuBt00Frame2
     pieces:
     - [32x64, -18, -56]
     - [16x16, -32, -32]
     - [8x16, 12, -40]
-  - symbol: gUnk_0891ECC6
+  - symbol: gRikuBt00Frame3
     pieces:
     - [32x64, -18, -56]
     - [16x16, -32, -32]
     - [8x8, 12, -34]
-  - symbol: gUnk_0891ECDC
+  - symbol: gRikuBt00Frame4
     pieces:
     - [32x64, -18, -56]
     - [16x16, -32, -32]
     - [8x8, 12, -34]
-  - symbol: gUnk_0891ECF2
+  - symbol: gRikuBt00Frame5
     pieces:
     - [32x64, -18, -56]
     - [16x16, -32, -32]
     - [8x8, 12, -35]
   animations:
-  - symbol: gUnk_0891ED08
+  - symbol: gRikuBt00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9]]
   us:
@@ -3253,44 +3253,44 @@ entries:
 - name: riku_bt02
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_089209A6
+  symbol: gRikuBt02Tiles
   align: 4
   cell: [74, 71]
   anchor: [43, 51]
   columns: 6
   frames:
-  - symbol: gUnk_08920908
+  - symbol: gRikuBt02Frame0
     pieces:
     - [32x16, -27, -39]
     - [64x32, -43, -25]
-  - symbol: gUnk_08920918
+  - symbol: gRikuBt02Frame1
     pieces:
     - [32x64, -3, -51]
     - [16x32, -17, -35]
     - [8x8, -9, -5]
-  - symbol: gUnk_0892092E
+  - symbol: gRikuBt02Frame2
     pieces:
     - [32x64, -10, -50]
     - [16x32, -18, -34]
-  - symbol: gUnk_0892093E
+  - symbol: gRikuBt02Frame3
     pieces:
     - [32x64, -17, -44]
     - [8x8, 13, -4]
     - [16x8, -31, -12]
-  - symbol: gUnk_08920954
+  - symbol: gRikuBt02Frame4
     pieces:
     - [32x64, -16, -51]
     - [32x8, -32, -11]
-  - symbol: gUnk_08920964
+  - symbol: gRikuBt02Frame5
     pieces:
     - [32x32, -1, -51]
     - [32x32, -9, -27]
     - [16x8, -17, -19]
   animations:
-  - symbol: gUnk_0892097A
+  - symbol: gRikuBt02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 8], [2, 7], [3, 9], [4, 8]]
-  - symbol: gUnk_08920994
+  - symbol: gRikuBt02Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 8], [5, 32]]
   us:
@@ -3305,39 +3305,39 @@ entries:
 - name: riku_bt04
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08922670
+  symbol: gRikuBt04Tiles
   align: 4
   cell: [70, 84]
   anchor: [32, 69]
   columns: 5
   frames:
-  - symbol: gUnk_089225E8
+  - symbol: gRikuBt04Frame0
     pieces:
     - [32x64, -18, -53]
     - [16x32, -32, -69]
-  - symbol: gUnk_089225F8
+  - symbol: gRikuBt04Frame1
     pieces:
     - [32x16, 0, -40]
     - [32x32, -11, -26]
     - [8x8, -17, -9]
     - [8x8, 30, -33]
-  - symbol: gUnk_08922614
+  - symbol: gRikuBt04Frame2
     pieces:
     - [32x64, -11, -49]
     - [8x16, -17, -17]
     - [8x8, 19, -33]
-  - symbol: gUnk_0892262A
+  - symbol: gRikuBt04Frame3
     pieces:
     - [32x64, -17, -53]
     - [16x8, -31, -21]
     - [8x16, 13, -13]
-  - symbol: gUnk_08922640
+  - symbol: gRikuBt04Frame4
     pieces:
     - [32x64, -14, -51]
     - [8x8, -20, -35]
     - [8x8, -20, -9]
   animations:
-  - symbol: gUnk_08922656
+  - symbol: gRikuBt04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 9], [2, 10], [3, 9], [4, 8]]
   us:
@@ -3352,45 +3352,45 @@ entries:
 - name: riku_bt05
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08923C74
+  symbol: gRikuBt05Tiles
   align: 4
   cell: [51, 78]
   anchor: [32, 63]
   columns: 7
   frames:
-  - symbol: gUnk_08923BD0
+  - symbol: gRikuBt05Frame0
     pieces:
     - [32x64, -19, -49]
     - [16x16, -27, -25]
-  - symbol: gUnk_08923BE0
+  - symbol: gRikuBt05Frame1
     pieces:
     - [32x32, -25, -49, {layer: 1}]
     - [32x32, -17, -25]
     - [16x16, -32, -25]
-  - symbol: gUnk_08923BF6
+  - symbol: gRikuBt05Frame2
     pieces:
     - [32x64, -21, -57]
     - [8x8, -13, -63]
     - [8x16, -27, -17]
-  - symbol: gUnk_08923C0C
+  - symbol: gRikuBt05Frame3
     pieces:
     - [32x64, -19, -57]
     - [8x8, -11, -63]
     - [8x8, 11, -25]
-  - symbol: gUnk_08923C22
+  - symbol: gRikuBt05Frame4
     pieces:
     - [32x64, -17, -57]
-  - symbol: gUnk_08923C2C
+  - symbol: gRikuBt05Frame5
     pieces:
     - [32x64, -15, -49]
     - [8x16, -21, -49]
     - [8x8, -21, -9]
-  - symbol: gUnk_08923C42
+  - symbol: gRikuBt05Frame6
     pieces:
     - [32x64, -20, -49]
     - [16x8, -28, -1]
   animations:
-  - symbol: gUnk_08923C52
+  - symbol: gRikuBt05Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 12], [1, 8], [2, 10], [3, 16], [4, 10], [5, 10], [6, 12]]
   us:
@@ -3657,41 +3657,41 @@ entries:
 - name: rik1ff10
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08943FFC
+  symbol: gRik1ff10Tiles
   align: 4
   cell: [64, 95]
   anchor: [31, 82]
   columns: 5
   frames:
-  - symbol: gUnk_08943F68
+  - symbol: gRik1ff10Frame0
     pieces:
     - [32x32, -23, -41]
     - [32x16, -15, -9]
     - [8x8, -31, -25]
-  - symbol: gUnk_08943F7E
+  - symbol: gRik1ff10Frame1
     pieces:
     - [32x64, -17, -59]
     - [8x8, 7, 5]
     - [8x8, -25, -51]
-  - symbol: gUnk_08943F94
+  - symbol: gRik1ff10Frame2
     pieces:
     - [32x32, -14, -29]
     - [16x8, -14, 3]
     - [32x16, -7, -45]
     - [8x8, 25, -37]
-  - symbol: gUnk_08943FB0
+  - symbol: gRik1ff10Frame3
     pieces:
     - [32x16, -16, -8]
     - [16x16, 16, -8]
     - [32x32, -9, -40]
-  - symbol: gUnk_08943FC6
+  - symbol: gRik1ff10Frame4
     pieces:
     - [32x32, -15, -42]
     - [32x16, -15, -10]
     - [32x8, -23, -50]
     - [16x32, -23, -82]
   animations:
-  - symbol: gUnk_08943FE2
+  - symbol: gRik1ff10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [4, 3], [2, 4], [3, 12]]
   us:
@@ -3706,42 +3706,42 @@ entries:
 - name: rik1bb10
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08945356
+  symbol: gRik1bb10Tiles
   align: 4
   cell: [83, 82]
   anchor: [42, 75]
   columns: 5
   frames:
-  - symbol: gUnk_089452BC
+  - symbol: gRik1bb10Frame0
     pieces:
     - [32x32, -15, -41]
     - [32x16, -15, -9]
     - [8x16, 17, -9]
     - [16x8, 25, -1]
-  - symbol: gUnk_089452D8
+  - symbol: gRik1bb10Frame1
     pieces:
     - [32x32, -11, -44]
     - [16x8, -11, -52]
     - [32x16, -18, -12]
-  - symbol: gUnk_089452EE
+  - symbol: gRik1bb10Frame2
     pieces:
     - [32x32, -19, -25]
     - [32x16, -27, -41]
     - [8x8, -27, -25]
-  - symbol: gUnk_08945304
+  - symbol: gRik1bb10Frame3
     pieces:
     - [32x16, -18, -9]
     - [32x32, -23, -41]
     - [16x8, -34, -9]
     - [8x8, -42, -9]
-  - symbol: gUnk_08945320
+  - symbol: gRik1bb10Frame4
     pieces:
     - [32x32, -19, -43]
     - [32x16, -19, -11]
     - [16x32, 2, -75]
     - [8x8, -6, -51]
   animations:
-  - symbol: gUnk_0894533C
+  - symbol: gRik1bb10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [4, 3], [2, 4], [3, 12]]
   us:
@@ -3756,42 +3756,42 @@ entries:
 - name: rik1fl10
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08946552
+  symbol: gRik1fl10Tiles
   align: 4
   cell: [102, 86]
   anchor: [48, 76]
   columns: 5
   frames:
-  - symbol: gUnk_089464B8
+  - symbol: gRik1fl10Frame0
     pieces:
     - [32x32, -10, -40]
     - [32x16, -10, -8]
     - [32x16, 22, -24]
     - [8x8, -18, -5]
-  - symbol: gUnk_089464D4
+  - symbol: gRik1fl10Frame1
     pieces:
     - [32x32, -15, -48]
     - [32x16, -15, -16]
     - [32x8, -15, 0]
     - [16x32, 17, -56]
-  - symbol: gUnk_089464F0
+  - symbol: gRik1fl10Frame2
     pieces:
     - [32x32, -23, -47]
     - [32x8, -15, -15]
     - [16x16, -7, -7]
     - [32x16, -48, -23]
-  - symbol: gUnk_0894650C
+  - symbol: gRik1fl10Frame3
     pieces:
     - [32x32, -16, -22]
     - [32x32, -24, -38]
     - [8x8, 8, -30]
     - [8x8, -32, -14]
-  - symbol: gUnk_08946528
+  - symbol: gRik1fl10Frame4
     pieces:
     - [32x64, -18, -60]
     - [16x16, 1, -76]
   animations:
-  - symbol: gUnk_08946538
+  - symbol: gRik1fl10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [4, 3], [2, 4], [3, 12]]
   us:
@@ -3806,38 +3806,38 @@ entries:
 - name: rik1bl10
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_08947B36
+  symbol: gRik1bl10Tiles
   align: 4
   cell: [80, 100]
   anchor: [46, 76]
   columns: 5
   frames:
-  - symbol: gUnk_08947AB4
+  - symbol: gRik1bl10Frame0
     pieces:
     - [32x64, -10, -40]
     - [8x16, -18, -32]
-  - symbol: gUnk_08947AC4
+  - symbol: gRik1bl10Frame1
     pieces:
     - [32x64, -14, -54]
     - [16x16, 18, -38]
-  - symbol: gUnk_08947AD4
+  - symbol: gRik1bl10Frame2
     pieces:
     - [32x64, -14, -52]
     - [32x32, -46, -52]
     - [8x8, -22, -6]
-  - symbol: gUnk_08947AEA
+  - symbol: gRik1bl10Frame3
     pieces:
     - [32x32, -12, -43]
     - [32x16, -20, -11]
     - [8x16, 12, -11]
     - [8x8, 20, -19]
-  - symbol: gUnk_08947B06
+  - symbol: gRik1bl10Frame4
     pieces:
     - [32x32, -16, -28]
     - [32x32, -16, -52]
     - [16x32, -16, -76]
   animations:
-  - symbol: gUnk_08947B1C
+  - symbol: gRik1bl10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [4, 3], [2, 4], [3, 12]]
   us:
@@ -3852,39 +3852,39 @@ entries:
 - name: riku_ff17
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_089492FC
+  symbol: gRikuFf17Tiles
   align: 4
   cell: [66, 99]
   anchor: [28, 79]
   columns: 6
   frames:
-  - symbol: gUnk_08949278
+  - symbol: gRikuFf17Frame0
     pieces:
     - [32x64, -17, -55]
     - [16x32, -21, -79]
-  - symbol: gUnk_08949288
+  - symbol: gRikuFf17Frame1
     pieces:
     - [32x64, -21, -55]
     - [16x32, 9, -39]
-  - symbol: gUnk_08949298
+  - symbol: gRikuFf17Frame2
     pieces:
     - [64x64, -26, -44]
-  - symbol: gUnk_089492A2
+  - symbol: gRikuFf17Frame3
     pieces:
     - [32x64, -14, -58]
     - [16x16, 16, -10]
-  - symbol: gUnk_089492B2
+  - symbol: gRikuFf17Frame4
     pieces:
     - [32x64, -17, -56]
     - [8x16, 14, -56]
     - [8x8, 14, -8]
-  - symbol: gUnk_089492C8
+  - symbol: gRikuFf17Frame5
     pieces:
     - [32x64, -14, -55]
     - [16x32, -28, -47]
     - [8x8, 16, -47]
   animations:
-  - symbol: gUnk_089492DE
+  - symbol: gRikuFf17Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 5], [3, 4], [4, 4], [5, 4]]
   us:
@@ -3899,40 +3899,40 @@ entries:
 - name: riku_fl17
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_0894B386
+  symbol: gRikuFl17Tiles
   align: 4
   cell: [71, 83]
   anchor: [49, 74]
   columns: 6
   frames:
-  - symbol: gUnk_0894B2FC
+  - symbol: gRikuFl17Frame0
     pieces:
     - [32x64, -17, -59]
     - [8x16, -23, -27]
     - [16x16, 6, -74]
-  - symbol: gUnk_0894B312
+  - symbol: gRikuFl17Frame1
     pieces:
     - [32x32, -19, -48]
     - [32x16, -19, -18]
     - [32x16, -49, -18]
-  - symbol: gUnk_0894B328
+  - symbol: gRikuFl17Frame2
     pieces:
     - [32x64, -19, -55]
     - [32x16, -43, -7]
     - [8x32, 11, -31]
-  - symbol: gUnk_0894B33E
+  - symbol: gRikuFl17Frame3
     pieces:
     - [32x64, -17, -60]
     - [8x16, -23, -20]
-  - symbol: gUnk_0894B34E
+  - symbol: gRikuFl17Frame4
     pieces:
     - [32x64, -20, -58]
-  - symbol: gUnk_0894B358
+  - symbol: gRikuFl17Frame5
     pieces:
     - [32x64, -12, -59]
     - [8x8, -18, -27]
   animations:
-  - symbol: gUnk_0894B368
+  - symbol: gRikuFl17Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 5], [3, 4], [4, 4], [5, 4]]
   us:
@@ -3947,44 +3947,44 @@ entries:
 - name: riku_bl17
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_0894CECA
+  symbol: gRikuBl17Tiles
   align: 4
   cell: [81, 83]
   anchor: [49, 77]
   columns: 6
   frames:
-  - symbol: gUnk_0894CE28
+  - symbol: gRikuBl17Frame0
     pieces:
     - [32x64, -22, -63]
     - [16x16, -22, -77]
-  - symbol: gUnk_0894CE38
+  - symbol: gRikuBl17Frame1
     pieces:
     - [64x32, -49, -51]
     - [32x16, -17, -21]
     - [8x16, 14, -21]
-  - symbol: gUnk_0894CE4E
+  - symbol: gRikuBl17Frame2
     pieces:
     - [32x64, -14, -58]
     - [16x16, 16, -18]
     - [8x16, 16, -42]
-  - symbol: gUnk_0894CE64
+  - symbol: gRikuBl17Frame3
     pieces:
     - [32x64, -14, -59]
     - [16x16, 10, -19]
     - [8x16, 16, -51]
-  - symbol: gUnk_0894CE7A
+  - symbol: gRikuBl17Frame4
     pieces:
     - [32x64, -14, -59]
     - [16x16, -22, -35]
     - [8x8, 16, -43]
-  - symbol: gUnk_0894CE90
+  - symbol: gRikuBl17Frame5
     pieces:
     - [32x64, -21, -58]
     - [16x8, 9, -42]
     - [16x16, -29, -42]
     - [16x16, -44, -50]
   animations:
-  - symbol: gUnk_0894CEAC
+  - symbol: gRikuBl17Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 5], [3, 4], [4, 4], [5, 4]]
   us:
@@ -3999,41 +3999,41 @@ entries:
 - name: riku_bb17
   format: sprite_sheet
   palette: riku
-  symbol: gUnk_0894EC7C
+  symbol: gRikuBb17Tiles
   align: 4
   cell: [61, 86]
   anchor: [32, 76]
   columns: 6
   frames:
-  - symbol: gUnk_0894EBEC
+  - symbol: gRikuBb17Frame0
     pieces:
     - [32x64, -16, -60]
     - [16x32, 8, -76]
-  - symbol: gUnk_0894EBFC
+  - symbol: gRikuBb17Frame1
     pieces:
     - [32x64, -17, -66]
     - [8x16, -23, -18]
     - [8x8, 13, -18, {layer: 1}]
-  - symbol: gUnk_0894EC12
+  - symbol: gRikuBb17Frame2
     pieces:
     - [32x64, -25, -56]
     - [8x32, 6, -40]
-  - symbol: gUnk_0894EC22
+  - symbol: gRikuBb17Frame3
     pieces:
     - [32x64, -18, -61]
     - [8x8, -24, -45]
     - [16x16, -32, -21]
-  - symbol: gUnk_0894EC38
+  - symbol: gRikuBb17Frame4
     pieces:
     - [32x64, -20, -54]
     - [8x16, 10, -38]
-  - symbol: gUnk_0894EC48
+  - symbol: gRikuBb17Frame5
     pieces:
     - [32x64, -17, -58]
     - [16x32, 13, -58]
     - [8x8, -23, -34]
   animations:
-  - symbol: gUnk_0894EC5E
+  - symbol: gRikuBb17Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 7], [2, 5], [3, 4], [4, 4], [5, 4]]
   us:

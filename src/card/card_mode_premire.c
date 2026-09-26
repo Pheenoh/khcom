@@ -157,7 +157,7 @@ void HCEffectName_0(HcEffectNameWork* w, u8* a) {
     w->unk_19 = a[0];
     w->timer = 0;
     w->unk_1C = 32;
-    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gBStatesPalette, 32);
     w->tiles2 = AllocSpriteFrameTiles(0x3C0);
     w->tiles3 = AllocSpriteFrameTiles(32);
     w->unk_20 = 0;
@@ -416,7 +416,7 @@ void HCEffectName_3(u8* work) {
 void NumberPlus_0(NumberPlusWork* w, NumberPlusArgs* args) {
     w->args = *args;
     w->tiles = LoadObjTiles(gUnk_090451C0, 128);
-    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gBStatesPalette, 32);
     w->unk_24 = w->args.unk_04 >> 8;
     w->unk_26 = (w->args.unk_08 >> 8) - 20;
     w->unk_28 = 16;

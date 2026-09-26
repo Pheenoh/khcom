@@ -13,16 +13,16 @@
 #include "m4a_song.h"
 #include "sprites_continue.h"
 
-extern u8 gUnk_08F683A4[];
+extern u8 gSoraPalette[];
 extern u8 gUnk_090A6B26[];
 extern u8 gUnk_090A7D9A[];
-extern u8 gUnk_090A7F0A[];
-extern u8 gUnk_090A8FC4[];
+extern u8 gSoraContinueTiles[];
+extern u8 gRikuContinueTiles[];
 extern u8 gUnk_096145D8[];
 extern u8 gUnk_09614618[];
 extern u8 gUnk_09614658[];
 extern u8 gUnk_096146F8[];
-extern u8 gUnk_09618118[];
+extern u8 gRikuPalette[];
 
 const s32 gUnk_08F7DAFC[2] = {
     0x4000, 0x5600,
@@ -93,9 +93,9 @@ void func_0806CD60(ContinueWork* p) {
     AnimInit(&p->anim, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->anim, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
-    p->palette2 = LoadObjPalette(gUnk_08F683A4, 32);
-    SetObjTileSource(p->tiles2, gUnk_090A7F0A);
-    AnimInit(&p->anim2, gUnk_09EEB14C, gUnk_09EEB11C);
+    p->palette2 = LoadObjPalette(gSoraPalette, 32);
+    SetObjTileSource(p->tiles2, gSoraContinueTiles);
+    AnimInit(&p->anim2, gSoraContinueAnims, gSoraContinueFrames);
     AnimStart(&p->anim2, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;
@@ -160,9 +160,9 @@ void func_0806CF04(ContinueWork* p) {
     AnimInit(&p->anim, gUnk_09EEB108, gUnk_09EEB0C4);
     AnimStart(&p->anim, 0, 1);
     p->tiles2 = AllocObjTiles(1024, 0);
-    p->palette2 = LoadObjPalette(gUnk_09618118, 32);
-    SetObjTileSource(p->tiles2, gUnk_090A8FC4);
-    AnimInit(&p->anim2, gUnk_09EEB180, gUnk_09EEB150);
+    p->palette2 = LoadObjPalette(gRikuPalette, 32);
+    SetObjTileSource(p->tiles2, gRikuContinueTiles);
+    AnimInit(&p->anim2, gRikuContinueAnims, gRikuContinueFrames);
     AnimStart(&p->anim2, 0, 1);
     p->unk_58 = -2048;
     p->unk_5C = 0xA000;

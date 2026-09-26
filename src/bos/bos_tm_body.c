@@ -552,7 +552,7 @@ void _080B949C(BtlObj* a, TmBodyWork* b) {
 
 void task_bos_tm_body_0(TmBodyWork* work, TmWork* arg) {
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
-    work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->palette = LoadObjPalette(gBoss03objPalette, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->gfx = gUnk_09EF3950;
     work->gfx2 = gUnk_09EF3958;

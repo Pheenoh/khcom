@@ -14,8 +14,8 @@ static s32 gUnk_02034A10;
 #ifndef VERSION_EU
 void mode_test_0(void) {
     gUnk_02034A10 = 0;
-    gUnk_02034A08 = LoadObjTiles(gUnk_08B24DAA, 0x7C0);
-    gUnk_02034A0C = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    gUnk_02034A08 = LoadObjTiles(gBHpgagETiles, 0x7C0);
+    gUnk_02034A0C = LoadObjPalette(gBStatesPalette, 0x20);
 }
 #endif
 
@@ -35,7 +35,7 @@ void mode_test_1(void) {
         gUnk_02034A10 = 13;
     }
 
-    DrawSprite(120, 80, gUnk_09EE14D4[gUnk_02034A10], gUnk_02034A08, gUnk_02034A0C, 0, 0, 0);
+    DrawSprite(120, 80, gBHpgagEFrames[gUnk_02034A10], gUnk_02034A08, gUnk_02034A0C, 0, 0, 0);
 }
 #endif
 
@@ -52,24 +52,24 @@ void ApproachValueHalf(s32* p, s32 v) {
 
 #ifdef VERSION_EU
 const AnimDef gUnkEu_08896524[18] = {
-    { gUnk_09EF52C0, gUnk_09EF52EC, gUnk_096FEFBE, 0, { 0, 0, 0 } },
-    { gUnk_09EF52F0, gUnk_09EF531C, gUnk_097006F8, 0, { 0, 0, 0 } },
-    { gUnk_09EF5320, gUnk_09EF534C, gUnk_09701FDA, 0, { 0, 0, 0 } },
-    { gUnk_09EF5350, gUnk_09EF537C, gUnk_09703C44, 0, { 0, 0, 0 } },
-    { gUnk_09EF5380, gUnk_09EF53AC, gUnk_097058D2, 0, { 0, 0, 0 } },
-    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
-    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 0, { 0, 0, 0 } },
-    { gUnk_09EF5538, gUnk_09EF5560, gUnk_09712406, 0, { 0, 0, 0 } },
-    { gUnk_09EF5634, gUnk_09EF5670, gUnk_09719286, 0, { 0, 0, 0 } },
-    { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 0, { 0, 0, 0 } },
-    { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
-    { gUnk_09EF5490, gUnk_09EF5494, gUnk_0970DE0A, 0, { 0, 0, 0 } },
-    { gUnk_09EF5488, gUnk_09EF548C, gUnk_0970DBAE, 0, { 0, 0, 0 } },
-    { gUnk_09EF5450, gUnk_09EF5454, gUnk_0970CB2A, 0, { 0, 0, 0 } },
-    { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
-    { gUnk_09EF5448, gUnk_09EF544C, gUnk_0970C8CE, 0, { 0, 0, 0 } },
-    { gUnk_09EF5498, gUnk_09EF549C, gUnk_0970E066, 0, { 0, 0, 0 } },
-    { gUnk_09EF5480, gUnk_09EF5484, gUnk_0970D952, 0, { 0, 0, 0 } },
+    { gPoohFf01Frames, gPoohFf01Anims, gPoohFf01Tiles, 0, { 0, 0, 0 } },
+    { gPoohFr01Frames, gPoohFr01Anims, gPoohFr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohRr01Frames, gPoohRr01Anims, gPoohRr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohBr01Frames, gPoohBr01Anims, gPoohBr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohBb01Frames, gPoohBb01Anims, gPoohBb01Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl10Frames, gPoohLl10Anims, gPoohLl10Tiles, 0, { 0, 0, 0 } },
+    { gPoohBl07Frames, gPoohBl07Anims, gPoohBl07Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl04Frames, gPoohLl04Anims, gPoohLl04Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl04aFrames, gPoohLl04aAnims, gPoohLl04aTiles, 0, { 0, 0, 0 } },
+    { gPoohFl06Frames, gPoohFl06Anims, gPoohFl06Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf00Frames, gPoohFf00Anims, gPoohFf00Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf00FrFrames, gPoohFf00FrAnims, gPoohFf00FrTiles, 0, { 0, 0, 0 } },
+    { gPoohFf00RrFrames, gPoohFf00RrAnims, gPoohFf00RrTiles, 0, { 0, 0, 0 } },
+    { gPoohBb00BrFrames, gPoohBb00BrAnims, gPoohBb00BrTiles, 0, { 0, 0, 0 } },
+    { gPoohBb00Frames, gPoohBb00Anims, gPoohBb00Tiles, 0, { 0, 0, 0 } },
+    { gPoohBb00BlFrames, gPoohBb00BlAnims, gPoohBb00BlTiles, 0, { 0, 0, 0 } },
+    { gPoohFf00LlFrames, gPoohFf00LlAnims, gPoohFf00LlTiles, 0, { 0, 0, 0 } },
+    { gPoohFf00FlFrames, gPoohFf00FlAnims, gPoohFf00FlTiles, 0, { 0, 0, 0 } },
 };
 
 u8 eu_08060C44(FrdPoohWork* work) {
@@ -118,7 +118,7 @@ void eu_08060C8C(FrdPoohWork* work, FrdPoohArgs* args) {
     work->state = 0;
     work->targetX = work->actor->x;
     work->targetY = work->actor->y;
-    work->palette = LoadObjPalette(gUnk_09849A98, 32);
+    work->palette = LoadObjPalette(gPoohPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gUnkEu_08896524, &work->anim, 0, 0, work->tiles);
     ColliderInit(body->particles, 3, 10, 32);

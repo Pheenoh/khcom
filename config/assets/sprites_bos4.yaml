@@ -221,72 +221,72 @@ entries:
   eu:
     address: 0x09F81DE0
     symbol: gUnkEu_09F81DE0
-- name: gUnk_09EF67FC
+- name: gSakuFrames
   record: SpriteTable
-  items: [gUnk_09799BCC, gUnk_09799C00, gUnk_09799C34, gUnk_09799C68]
+  items: [gSakuFrame0, gSakuFrame1, gSakuFrame2, gSakuFrame3]
   us:
     address: 0x09EF67FC
   jp:
     address: 0x09ECDBE8
   eu:
     address: 0x09F81DE4
-- name: gUnk_09EF680C
+- name: gSakuAnims
   record: AnimTable
-  items: [gUnk_09799C72, gUnk_09799C88, gUnk_09799C9A, gUnk_09799CA8]
+  items: [gSakuAnim0, gSakuAnim1, gSakuAnim2, gSakuAnim3]
   us:
     address: 0x09EF680C
   jp:
     address: 0x09ECDBF8
   eu:
     address: 0x09F81DF4
-- name: gUnk_09EF681C
+- name: gKaifukuFrames
   record: SpriteTable
-  items: [gUnk_09799F9C]
+  items: [gKaifukuFrame0]
   us:
     address: 0x09EF681C
   jp:
     address: 0x09ECDC08
   eu:
     address: 0x09F81E04
-- name: gUnk_09EF6820
+- name: gKaifukuAnims
   record: AnimTable
-  items: [gUnk_09799FA6]
+  items: [gKaifukuAnim0]
   us:
     address: 0x09EF6820
   jp:
     address: 0x09ECDC0C
   eu:
     address: 0x09F81E08
-- name: gUnk_09EF6824
+- name: gNokogiriFrames
   record: SpriteTable
-  items: [gUnk_0979A3B0, gUnk_0979A3BA, gUnk_0979A3C4, gUnk_0979A3CE, gUnk_0979A3D8, gUnk_0979A3E2, gUnk_0979A3EC, gUnk_0979A3F6]
+  items: [gNokogiriFrame0, gNokogiriFrame1, gNokogiriFrame2, gNokogiriFrame3, gNokogiriFrame4, gNokogiriFrame5, gNokogiriFrame6, gNokogiriFrame7]
   us:
     address: 0x09EF6824
   jp:
     address: 0x09ECDC10
   eu:
     address: 0x09F81E0C
-- name: gUnk_09EF6844
+- name: gNokogiriAnims
   record: AnimTable
-  items: [gUnk_0979A400]
+  items: [gNokogiriAnim0]
   us:
     address: 0x09EF6844
   jp:
     address: 0x09ECDC30
   eu:
     address: 0x09F81E2C
-- name: gUnk_09EF6848
+- name: gKnifeFrames
   record: SpriteTable
-  items: [gUnk_0979C428]
+  items: [gKnifeFrame0]
   us:
     address: 0x09EF6848
   jp:
     address: 0x09ECDC34
   eu:
     address: 0x09F81E30
-- name: gUnk_09EF684C
+- name: gKnifeAnims
   record: AnimTable
-  items: [gUnk_0979C444]
+  items: [gKnifeAnim0]
   us:
     address: 0x09EF684C
   jp:
@@ -662,13 +662,13 @@ entries:
 - name: saku
   format: sprite_sheet
   palette: boss02obj
-  symbol: gUnk_09799CBA
+  symbol: gSakuTiles
   align: 4
   cell: [64, 64]
   anchor: [32, 64]
   columns: 4
   frames:
-  - symbol: gUnk_09799BCC
+  - symbol: gSakuFrame0
     pieces:
     - [16x32, -16, -64]
     - [16x32, -16, -32]
@@ -678,7 +678,7 @@ entries:
     - [16x32, 0, -32]
     - [16x32, 16, -64]
     - [16x32, 16, -32]
-  - symbol: gUnk_09799C00
+  - symbol: gSakuFrame1
     pieces:
     - [16x8, -16, -8]
     - [16x8, -32, -8]
@@ -688,7 +688,7 @@ entries:
     - [16x32, -16, -40]
     - [16x32, 0, -40]
     - [16x32, 16, -40]
-  - symbol: gUnk_09799C34
+  - symbol: gSakuFrame2
     pieces:
     - [16x8, -16, -8]
     - [16x8, -32, -8]
@@ -698,20 +698,20 @@ entries:
     - [16x16, -16, -24]
     - [16x16, 0, -24]
     - [16x16, 16, -24]
-  - symbol: gUnk_09799C68
+  - symbol: gSakuFrame3
     pieces:
     - [8x8, 0, -8]
   animations:
-  - symbol: gUnk_09799C72
+  - symbol: gSakuAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 4]]
-  - symbol: gUnk_09799C88
+  - symbol: gSakuAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4], [2, 4], [3, 4]]
-  - symbol: gUnk_09799C9A
+  - symbol: gSakuAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4], [3, 4]]
-  - symbol: gUnk_09799CA8
+  - symbol: gSakuAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4], [1, 4], [0, 4]]
   us:
@@ -725,18 +725,18 @@ entries:
     size: 974
 - name: kaifuku
   format: sprite_sheet
-  palette: gUnk_0984AFB8
-  symbol: gUnk_09799FB0
+  palette: gKaifukuPalette
+  symbol: gKaifukuTiles
   align: 4
   cell: [32, 64]
   anchor: [16, 0]
   columns: 1
   frames:
-  - symbol: gUnk_09799F9C
+  - symbol: gKaifukuFrame0
     pieces:
     - [32x64, -16, 0]
   animations:
-  - symbol: gUnk_09799FA6
+  - symbol: gKaifukuAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -750,39 +750,39 @@ entries:
     size: 1044
 - name: nokogiri
   format: sprite_sheet
-  palette: gUnk_0984AFB8
-  symbol: gUnk_0979A426
+  palette: gKaifukuPalette
+  symbol: gNokogiriTiles
   align: 4
   cell: [64, 32]
   anchor: [32, 16]
   columns: 8
   frames:
-  - symbol: gUnk_0979A3B0
+  - symbol: gNokogiriFrame0
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3BA
+  - symbol: gNokogiriFrame1
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3C4
+  - symbol: gNokogiriFrame2
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3CE
+  - symbol: gNokogiriFrame3
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3D8
+  - symbol: gNokogiriFrame4
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3E2
+  - symbol: gNokogiriFrame5
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3EC
+  - symbol: gNokogiriFrame6
     pieces:
     - [64x32, -32, -16]
-  - symbol: gUnk_0979A3F6
+  - symbol: gNokogiriFrame7
     pieces:
     - [64x32, -32, -16]
   animations:
-  - symbol: gUnk_0979A400
+  - symbol: gNokogiriAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5]]
   us:
@@ -796,21 +796,21 @@ entries:
     size: 8310
 - name: knife
   format: sprite_sheet
-  palette: gUnk_0984AFD8
-  symbol: gUnk_0979C44E
+  palette: gKnifePalette
+  symbol: gKnifeTiles
   align: 4
   cell: [48, 184]
   anchor: [32, 128]
   columns: 1
   frames:
-  - symbol: gUnk_0979C428
+  - symbol: gKnifeFrame0
     pieces:
     - [32x64, -32, -8]
     - [32x64, -24, -64, {layer: 1}]
     - [32x64, -24, -128]
     - [8x16, 8, -59]
   animations:
-  - symbol: gUnk_0979C444
+  - symbol: gKnifeAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:

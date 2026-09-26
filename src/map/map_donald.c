@@ -52,9 +52,9 @@ void Task_MapDonald_0(MapDonaldWork* w) {
     e->unk_30 = 2;
     w->unk_0C1 = 1;
     w->update = func_080F5C60;
-    w->tiles = AllocObjTiles(0x400, gUnk_0919FDF8);
-    w->palette = LoadObjPalette(gUnk_09617C58, 32);
-    AnimInit(&w->anim, gUnk_09EEE0A8, gUnk_09EEE03C);
+    w->tiles = AllocObjTiles(0x400, gDonaFl00Tiles);
+    w->palette = LoadObjPalette(gDonaldPalette, 32);
+    AnimInit(&w->anim, gDonaFl00Anims, gDonaFl00Frames);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
     ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);

@@ -8,22 +8,22 @@
 #include "world_types.h"
 
 const AnimDef gFrdDonaldAnimDefs[6] = {
-    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 0, { 0, 0, 0 } },
-    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 1, { 0, 0, 0 } },
-    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 2, { 0, 0, 0 } },
-    { gUnk_09EDE548, gUnk_09EDE584, gUnk_088724E2, 3, { 0, 0, 0 } },
-    { gUnk_09EEE03C, gUnk_09EEE0A8, gUnk_0919FDF8, 5, { 0, 0, 0 } },
-    { gUnk_09EEE0C4, gUnk_09EEE170, gUnk_091A4386, 2, { 0, 0, 0 } },
+    { gDonaBtLl00Frames, gDonaBtLl00Anims, gDonaBtLl00Tiles, 0, { 0, 0, 0 } },
+    { gDonaBtLl00Frames, gDonaBtLl00Anims, gDonaBtLl00Tiles, 1, { 0, 0, 0 } },
+    { gDonaBtLl00Frames, gDonaBtLl00Anims, gDonaBtLl00Tiles, 2, { 0, 0, 0 } },
+    { gDonaBtLl00Frames, gDonaBtLl00Anims, gDonaBtLl00Tiles, 3, { 0, 0, 0 } },
+    { gDonaFl00Frames, gDonaFl00Anims, gDonaFl00Tiles, 5, { 0, 0, 0 } },
+    { gDonaBl00Frames, gDonaBl00Anims, gDonaBl00Tiles, 2, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescFrdDonald = { "task_frd_donald", task_frd_donald_0, task_frd_donald_1, task_frd_donald_2, task_frd_donald_3, 0x164 };
 
 const AnimDef gFrdGoofyAnimDefs[5] = {
-    { gUnk_09EDE538, gUnk_09EDE540, gUnk_088717D8, 0, { 0, 0, 0 } },
-    { gUnk_09EDE538, gUnk_09EDE540, gUnk_088717D8, 1, { 0, 0, 0 } },
-    { gUnk_09EDE518, gUnk_09EDE534, gUnk_0886E396, 0, { 0, 0, 0 } },
-    { gUnk_09EDE4F0, gUnk_09EDE50C, gUnk_0886ADEC, 1, { 0, 0, 0 } },
-    { gUnk_09EDE4F0, gUnk_09EDE50C, gUnk_0886ADEC, 2, { 0, 0, 0 } },
+    { gGoofy16Frames, gGoofy16Anims, gGoofy16Tiles, 0, { 0, 0, 0 } },
+    { gGoofy16Frames, gGoofy16Anims, gGoofy16Tiles, 1, { 0, 0, 0 } },
+    { gGoofy14Frames, gGoofy14Anims, gGoofy14Tiles, 0, { 0, 0, 0 } },
+    { gGoofy05Frames, gGoofy05Anims, gGoofy05Tiles, 1, { 0, 0, 0 } },
+    { gGoofy05Frames, gGoofy05Anims, gGoofy05Tiles, 2, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescFrdGoofy = { "task_frd_goofy", task_frd_goofy_0, task_frd_goofy_1, task_frd_goofy_2, task_frd_goofy_3, 0x164 };
@@ -47,25 +47,25 @@ const AnimDef gFrdJackAnimDefs[5] = {
 TaskDesc gTaskDescFrdJack = { "task_frd_jack", task_frd_jack_0, task_frd_jack_1, task_frd_jack_2, task_frd_jack_3, 0x16C };
 
 const AnimDef gFrdPanAnimDefs[4] = {
-    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 0, { 0, 0, 0 } },
-    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 1, { 0, 0, 0 } },
-    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 2, { 0, 0, 0 } },
-    { gUnk_09EDE63C, gUnk_09EDE654, gUnk_088801BE, 3, { 0, 0, 0 } },
+    { gPeterTukiFrames, gPeterTukiAnims, gPeterTukiTiles, 0, { 0, 0, 0 } },
+    { gPeterTukiFrames, gPeterTukiAnims, gPeterTukiTiles, 1, { 0, 0, 0 } },
+    { gPeterTukiFrames, gPeterTukiAnims, gPeterTukiTiles, 2, { 0, 0, 0 } },
+    { gPeterTukiFrames, gPeterTukiAnims, gPeterTukiTiles, 3, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescFrdPan = { "task_frd_pan", task_frd_pan_0, task_frd_pan_1, task_frd_pan_2, task_frd_pan_3, 0x170 };
 
 const AnimDef gFrdAladdinAnimDefs[3] = {
-    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 2, { 0, 0, 0 } },
-    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 0, { 0, 0, 0 } },
-    { gUnk_09EDE5FC, gUnk_09EDE630, gUnk_0887A400, 1, { 0, 0, 0 } },
+    { gAladdin10Frames, gAladdin10Anims, gAladdin10Tiles, 2, { 0, 0, 0 } },
+    { gAladdin10Frames, gAladdin10Anims, gAladdin10Tiles, 0, { 0, 0, 0 } },
+    { gAladdin10Frames, gAladdin10Anims, gAladdin10Tiles, 1, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescFrdAladdin = { "task_frd_aladdin", task_frd_aladdin_0, task_frd_aladdin_1, task_frd_aladdin_2, task_frd_aladdin_3, 0x160 };
 
 const AnimDef gFrdBeastAnimDefs[2] = {
-    { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 0, { 0, 0, 0 } },
-    { gUnk_09EDE664, gUnk_09EDE680, gUnk_08881798, 1, { 0, 0, 0 } },
+    { gFelosiaslangeFrames, gFelosiaslangeAnims, gFelosiaslangeTiles, 0, { 0, 0, 0 } },
+    { gFelosiaslangeFrames, gFelosiaslangeAnims, gFelosiaslangeTiles, 1, { 0, 0, 0 } },
 };
 
 void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
@@ -104,7 +104,7 @@ void task_frd_donald_0(FrdDonaldWork* work, FrdArgs* args) {
     body->y = work->actor->y;
     body->z = -0x5000;
     body->unk_010 = 0;
-    work->palette = LoadObjPalette(gUnk_09617C58, 32);
+    work->palette = LoadObjPalette(gDonaldPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdDonaldAnimDefs, &work->anim, 0, 0, work->tiles);
 
@@ -622,7 +622,7 @@ void task_frd_goofy_0(FrdGoofyWork* work, FrdArgs* args) {
     body->y = work->actor->y;
     body->z = -0x5000;
     body->unk_010 = 0;
-    work->palette = LoadObjPalette(gUnk_08F68384, 32);
+    work->palette = LoadObjPalette(gGoofyPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdGoofyAnimDefs, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
@@ -883,7 +883,7 @@ void task_frd_ariel_0(FrdArielWork* work, FrdArgs* args) {
     body->unk_010 = 0;
     work->unk_154 = -0x1000;
     body->z = -0x1000;
-    work->palette = LoadObjPalette(gUnk_09617DF8, 32);
+    work->palette = LoadObjPalette(gArielPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdArielAnimDefs, &work->anim, 1, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
@@ -1137,7 +1137,7 @@ void task_frd_jack_0(FrdJackWork* work, FrdArgs* args) {
     body->z = -0x5000;
     body->unk_010 = 0;
     work->unk_160 = 0;
-    work->palette = LoadObjPalette(gUnk_09617DB8, 32);
+    work->palette = LoadObjPalette(gJackPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdJackAnimDefs, &work->anim, 0, 0, work->tiles);
 
@@ -1610,7 +1610,7 @@ void task_frd_pan_0(FrdPanWork* work, FrdArgs* args) {
     body->unk_010 = 0;
     work->unk_164 = -0x2000;
     body->z = -0x2000;
-    work->palette = LoadObjPalette(gUnk_09617DD8, 32);
+    work->palette = LoadObjPalette(gPeterPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdPanAnimDefs, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 15);
@@ -1941,7 +1941,7 @@ void task_frd_aladdin_0(FrdAladdinWork* work, FrdArgs* args) {
     body->y = work->actor->y;
     body->z = -0x5000;
     body->unk_010 = 0;
-    work->palette = LoadObjPalette(gUnk_09617D98, 32);
+    work->palette = LoadObjPalette(gAladdinPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdAladdinAnimDefs, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);
@@ -2207,7 +2207,7 @@ void task_frd_beast_0(FrdBeastWork* work, FrdArgs* args) {
         break;
     }
 
-    work->palette = LoadObjPalette(gUnk_09617E18, 32);
+    work->palette = LoadObjPalette(gBeastPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gFrdBeastAnimDefs, &work->anim, 0, 0, work->tiles);
     TaskPoolInit(&work->tasks, 1);

@@ -1511,7 +1511,7 @@ void func_080AA450(u8* work) {
         *(void**)&work[0x10] = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 0x300);
         *(void**)&work[0x14] = LoadObjTiles(def->tiles, 0x200);
         *(void**)&work[0x24] = LoadObjPalette(def->palette, 32);
-        *(void**)&work[0x20] = LoadObjPalette(gUnk_09611AB8, 32);
+        *(void**)&work[0x20] = LoadObjPalette(gCard00Palette, 32);
         *(void**)&work[0x4D4] = gUnk_08F709B0[def->unk_2A].gfx;
         *(void**)&work[0x4D8] = def->gfx;
 

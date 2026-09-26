@@ -436,7 +436,7 @@ void task_bos_tm_foot_0(TmFootWork* work, TmWork* arg) {
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
     work->tiles2 = AllocObjTiles(0x440, gUnk_09654C04);
     work->tiles3 = AllocObjTiles(0x440, gUnk_09654C04);
-    work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->palette = LoadObjPalette(gBoss03objPalette, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->gfx = gUnk_09EF39DC[2];
     work->gfx2 = gUnk_09EF39DC[2];
@@ -735,7 +735,7 @@ void task_bos_tm_clb_0(TmClbWork* work, void* arg) {
     void* p;
 
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
-    work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->palette = LoadObjPalette(gBoss03objPalette, 0x60);
     work->arg = arg;
     p = ((void**)arg)[2];
     work->unk_00C = *(u16*)((u8*)p + 12);
@@ -925,7 +925,7 @@ void task_bos_tm_arm_0(TmArmWork* work, TmArmSrc* arg) {
 
     work->src = arg;
     work->tiles = LoadObjTiles(gUnk_09652E84, 0x1D80);
-    work->palette = LoadObjPalette(gUnk_096FB2A4, 0x60);
+    work->palette = LoadObjPalette(gBoss03objPalette, 0x60);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     work->unk_1B0 = 0;
     work->unk_1B2 = 0;

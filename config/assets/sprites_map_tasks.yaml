@@ -107,9 +107,9 @@ entries:
     address: 0x09EB7420
   eu:
     address: 0x09F5A5FC
-- name: gUnk_09EF04FC
+- name: gNiserikuHizaFFrames
   record: SpriteTable
-  items: [gUnk_093803D8]
+  items: [gNiserikuHizaFFrame0]
   us:
     address: 0x09EF04FC
   jp:
@@ -119,7 +119,7 @@ entries:
 - name: gUnk_09EF0500
   record: SpriteTable
   scalar: true
-  items: [gUnk_093803EE]
+  items: [gNiserikuHizaFFrame1]
   us:
     address: 0x09EF0500
   jp:
@@ -129,7 +129,7 @@ entries:
 - name: gUnk_09EF0504
   record: SpriteTable
   scalar: true
-  items: [gUnk_09380404]
+  items: [gNiserikuHizaFFrame2]
   us:
     address: 0x09EF0504
   jp:
@@ -139,7 +139,7 @@ entries:
 - name: gUnk_09EF0508
   record: SpriteTable
   scalar: true
-  items: [gUnk_09380420]
+  items: [gNiserikuHizaFFrame3]
   us:
     address: 0x09EF0508
   jp:
@@ -149,466 +149,466 @@ entries:
 - name: gUnk_09EF050C
   record: SpriteTable
   scalar: true
-  items: [gUnk_09380436]
+  items: [gNiserikuHizaFFrame4]
   us:
     address: 0x09EF050C
   jp:
     address: 0x09EC78F8
   eu:
     address: 0x09F7B6F0
-- name: gUnk_09EF0510
+- name: gNiserikuHizaFAnims
   record: AnimTable
-  items: [gUnk_09380440]
+  items: [gNiserikuHizaFAnim0]
   us:
     address: 0x09EF0510
   jp:
     address: 0x09EC78FC
   eu:
     address: 0x09F7B6F4
-- name: gUnk_09EF0514
+- name: gNiserikuKamaeFFrames
   record: SpriteTable
-  items: [gUnk_0938152C, gUnk_0938153C, gUnk_0938154C, gUnk_09381556, gUnk_0938156C, gUnk_0938157C]
+  items: [gNiserikuKamaeFFrame0, gNiserikuKamaeFFrame1, gNiserikuKamaeFFrame2, gNiserikuKamaeFFrame3, gNiserikuKamaeFFrame4, gNiserikuKamaeFFrame5]
   us:
     address: 0x09EF0514
   jp:
     address: 0x09EC7900
   eu:
     address: 0x09F7B6F8
-- name: gUnk_09EF052C
+- name: gNiserikuKamaeFAnims
   record: AnimTable
-  items: [gUnk_0938158C, gUnk_093815AA, gUnk_093815B4]
+  items: [gNiserikuKamaeFAnim0, gNiserikuKamaeFAnim1, gNiserikuKamaeFAnim2]
   us:
     address: 0x09EF052C
   jp:
     address: 0x09EC7918
   eu:
     address: 0x09F7B710
-- name: gUnk_09EF0538
+- name: gNiserikuOmamoriFFrames
   record: SpriteTable
-  items: [gUnk_09382F24, gUnk_09382F4C, gUnk_09382F74, gUnk_09382F9C]
+  items: [gNiserikuOmamoriFFrame0, gNiserikuOmamoriFFrame1, gNiserikuOmamoriFFrame2, gNiserikuOmamoriFFrame3]
   us:
     address: 0x09EF0538
   jp:
     address: 0x09EC7924
   eu:
     address: 0x09F7B71C
-- name: gUnk_09EF0548
+- name: gNiserikuOmamoriFAnims
   record: AnimTable
-  items: [gUnk_09382FCA, gUnk_09382FE0]
+  items: [gNiserikuOmamoriFAnim0, gNiserikuOmamoriFAnim1]
   us:
     address: 0x09EF0548
   jp:
     address: 0x09EC7934
   eu:
     address: 0x09F7B72C
-- name: gUnk_09EF0550
+- name: gNiserikuRyoteFFrames
   record: SpriteTable
-  items: [gUnk_09383A58, gUnk_09383A62, gUnk_09383A6C, gUnk_09383A76]
+  items: [gNiserikuRyoteFFrame0, gNiserikuRyoteFFrame1, gNiserikuRyoteFFrame2, gNiserikuRyoteFFrame3]
   us:
     address: 0x09EF0550
   jp:
     address: 0x09EC793C
   eu:
     address: 0x09F7B734
-- name: gUnk_09EF0560
+- name: gNiserikuRyoteFAnims
   record: AnimTable
-  items: [gUnk_09383A80]
+  items: [gNiserikuRyoteFAnim0]
   us:
     address: 0x09EF0560
   jp:
     address: 0x09EC794C
   eu:
     address: 0x09F7B744
-- name: gUnk_09EF0564
+- name: gNiserikuRyoteBFrames
   record: SpriteTable
-  items: [gUnk_09384A98, gUnk_09384AA2, gUnk_09384AAC, gUnk_09384AB6]
+  items: [gNiserikuRyoteBFrame0, gNiserikuRyoteBFrame1, gNiserikuRyoteBFrame2, gNiserikuRyoteBFrame3]
   us:
     address: 0x09EF0564
   jp:
     address: 0x09EC7950
   eu:
     address: 0x09F7B748
-- name: gUnk_09EF0574
+- name: gNiserikuRyoteBAnims
   record: AnimTable
-  items: [gUnk_09384AC0]
+  items: [gNiserikuRyoteBAnim0]
   us:
     address: 0x09EF0574
   jp:
     address: 0x09EC7960
   eu:
     address: 0x09F7B758
-- name: gUnk_09EF0578
+- name: gNiserikuWaraiFFrames
   record: SpriteTable
-  items: [gUnk_09385AD8, gUnk_09385AEE, gUnk_09385B04, gUnk_09385B1A]
+  items: [gNiserikuWaraiFFrame0, gNiserikuWaraiFFrame1, gNiserikuWaraiFFrame2, gNiserikuWaraiFFrame3]
   us:
     address: 0x09EF0578
   jp:
     address: 0x09EC7964
   eu:
     address: 0x09F7B75C
-- name: gUnk_09EF0588
+- name: gNiserikuWaraiFAnims
   record: AnimTable
-  items: [gUnk_09385B30]
+  items: [gNiserikuWaraiFAnim0]
   us:
     address: 0x09EF0588
   jp:
     address: 0x09EC7974
   eu:
     address: 0x09F7B76C
-- name: gUnk_09EF058C
+- name: gNiserikuWalkFFrames
   record: SpriteTable
-  items: [gUnk_09386860, gUnk_0938686A, gUnk_09386874, gUnk_0938687E, gUnk_09386888, gUnk_09386892, gUnk_0938689C, gUnk_093868A6]
+  items: [gNiserikuWalkFFrame0, gNiserikuWalkFFrame1, gNiserikuWalkFFrame2, gNiserikuWalkFFrame3, gNiserikuWalkFFrame4, gNiserikuWalkFFrame5, gNiserikuWalkFFrame6, gNiserikuWalkFFrame7]
   us:
     address: 0x09EF058C
   jp:
     address: 0x09EC7978
   eu:
     address: 0x09F7B770
-- name: gUnk_09EF05AC
+- name: gNiserikuWalkFAnims
   record: AnimTable
-  items: [gUnk_093868B0]
+  items: [gNiserikuWalkFAnim0]
   us:
     address: 0x09EF05AC
   jp:
     address: 0x09EC7998
   eu:
     address: 0x09F7B790
-- name: gUnk_09EF05B0
+- name: gNiserikuWalkBFrames
   record: SpriteTable
-  items: [gUnk_093888D8, gUnk_093888E2, gUnk_093888EC, gUnk_093888F6, gUnk_09388900, gUnk_0938890A, gUnk_09388914, gUnk_0938891E]
+  items: [gNiserikuWalkBFrame0, gNiserikuWalkBFrame1, gNiserikuWalkBFrame2, gNiserikuWalkBFrame3, gNiserikuWalkBFrame4, gNiserikuWalkBFrame5, gNiserikuWalkBFrame6, gNiserikuWalkBFrame7]
   us:
     address: 0x09EF05B0
   jp:
     address: 0x09EC799C
   eu:
     address: 0x09F7B794
-- name: gUnk_09EF05D0
+- name: gNiserikuWalkBAnims
   record: AnimTable
-  items: [gUnk_09388928]
+  items: [gNiserikuWalkBAnim0]
   us:
     address: 0x09EF05D0
   jp:
     address: 0x09EC79BC
   eu:
     address: 0x09F7B7B4
-- name: gUnk_09EF05D4
+- name: gNiserikuRunFFrames
   record: SpriteTable
-  items: [gUnk_0938A950, gUnk_0938A960, gUnk_0938A976, gUnk_0938A986, gUnk_0938A996, gUnk_0938A9AC]
+  items: [gNiserikuRunFFrame0, gNiserikuRunFFrame1, gNiserikuRunFFrame2, gNiserikuRunFFrame3, gNiserikuRunFFrame4, gNiserikuRunFFrame5]
   us:
     address: 0x09EF05D4
   jp:
     address: 0x09EC79C0
   eu:
     address: 0x09F7B7B8
-- name: gUnk_09EF05EC
+- name: gNiserikuRunFAnims
   record: AnimTable
-  items: [gUnk_0938A9C8]
+  items: [gNiserikuRunFAnim0]
   us:
     address: 0x09EF05EC
   jp:
     address: 0x09EC79D8
   eu:
     address: 0x09F7B7D0
-- name: gUnk_09EF05F0
+- name: gNiserikuRunBFrames
   record: SpriteTable
-  items: [gUnk_0938BCC8, gUnk_0938BCDE, gUnk_0938BCFA, gUnk_0938BD10, gUnk_0938BD26, gUnk_0938BD3C]
+  items: [gNiserikuRunBFrame0, gNiserikuRunBFrame1, gNiserikuRunBFrame2, gNiserikuRunBFrame3, gNiserikuRunBFrame4, gNiserikuRunBFrame5]
   us:
     address: 0x09EF05F0
   jp:
     address: 0x09EC79DC
   eu:
     address: 0x09F7B7D4
-- name: gUnk_09EF0608
+- name: gNiserikuRunBAnims
   record: AnimTable
-  items: [gUnk_0938BD52]
+  items: [gNiserikuRunBAnim0]
   us:
     address: 0x09EF0608
   jp:
     address: 0x09EC79F4
   eu:
     address: 0x09F7B7EC
-- name: gUnk_09EF060C
+- name: gNiserikuDownFFrames
   record: SpriteTable
-  items: [gUnk_0938D1F0, gUnk_0938D1FA, gUnk_0938D20A, gUnk_0938D21A, gUnk_0938D22A, gUnk_0938D23A, gUnk_0938D24A]
+  items: [gNiserikuDownFFrame0, gNiserikuDownFFrame1, gNiserikuDownFFrame2, gNiserikuDownFFrame3, gNiserikuDownFFrame4, gNiserikuDownFFrame5, gNiserikuDownFFrame6]
   us:
     address: 0x09EF060C
   jp:
     address: 0x09EC79F8
   eu:
     address: 0x09F7B7F0
-- name: gUnk_09EF0628
+- name: gNiserikuDownFAnims
   record: AnimTable
-  items: [gUnk_0938D25A, gUnk_0938D278]
+  items: [gNiserikuDownFAnim0, gNiserikuDownFAnim1]
   us:
     address: 0x09EF0628
   jp:
     address: 0x09EC7A14
   eu:
     address: 0x09F7B80C
-- name: gUnk_09EF0630
+- name: gNiserikuShockFFrames
   record: SpriteTable
-  items: [gUnk_0938E504, gUnk_0938E50E]
+  items: [gNiserikuShockFFrame0, gNiserikuShockFFrame1]
   us:
     address: 0x09EF0630
   jp:
     address: 0x09EC7A1C
   eu:
     address: 0x09F7B814
-- name: gUnk_09EF0638
+- name: gNiserikuShockFAnims
   record: AnimTable
-  items: [gUnk_0938E518]
+  items: [gNiserikuShockFAnim0]
   us:
     address: 0x09EF0638
   jp:
     address: 0x09EC7A24
   eu:
     address: 0x09F7B81C
-- name: gUnk_09EF063C
+- name: gNiserikuShockBFrames
   record: SpriteTable
-  items: [gUnk_0938ED28, gUnk_0938ED3E]
+  items: [gNiserikuShockBFrame0, gNiserikuShockBFrame1]
   us:
     address: 0x09EF063C
   jp:
     address: 0x09EC7A28
   eu:
     address: 0x09F7B820
-- name: gUnk_09EF0644
+- name: gNiserikuShockBAnims
   record: AnimTable
-  items: [gUnk_0938ED5A]
+  items: [gNiserikuShockBAnim0]
   us:
     address: 0x09EF0644
   jp:
     address: 0x09EC7A30
   eu:
     address: 0x09F7B828
-- name: gUnk_09EF0648
+- name: gNiserikuTeFFrames
   record: SpriteTable
-  items: [gUnk_0938F308, gUnk_0938F330, gUnk_0938F358, gUnk_0938F380]
+  items: [gNiserikuTeFFrame0, gNiserikuTeFFrame1, gNiserikuTeFFrame2, gNiserikuTeFFrame3]
   us:
     address: 0x09EF0648
   jp:
     address: 0x09EC7A34
   eu:
     address: 0x09F7B82C
-- name: gUnk_09EF0658
+- name: gNiserikuTeFAnims
   record: AnimTable
-  items: [gUnk_0938F3A8]
+  items: [gNiserikuTeFAnim0]
   us:
     address: 0x09EF0658
   jp:
     address: 0x09EC7A44
   eu:
     address: 0x09F7B83C
-- name: gUnk_09EF065C
+- name: gNiserikuKamaeBFrames
   record: SpriteTable
-  items: [gUnk_0938FE40, gUnk_0938FE5C, gUnk_0938FE78, gUnk_0938FE94, gUnk_0938FEA4, gUnk_0938FEB4, gUnk_0938FEC4, gUnk_0938FEDA, gUnk_0938FEEA, gUnk_0938FF0C, gUnk_0938FF34, gUnk_0938FF50, gUnk_0938FF66]
+  items: [gNiserikuKamaeBFrame0, gNiserikuKamaeBFrame1, gNiserikuKamaeBFrame2, gNiserikuKamaeBFrame3, gNiserikuKamaeBFrame4, gNiserikuKamaeBFrame5, gNiserikuKamaeBFrame6, gNiserikuKamaeBFrame7, gNiserikuKamaeBFrame8, gNiserikuKamaeBFrame9, gNiserikuKamaeBFrame10, gNiserikuKamaeBFrame11, gNiserikuKamaeBFrame12]
   us:
     address: 0x09EF065C
   jp:
     address: 0x09EC7A48
   eu:
     address: 0x09F7B840
-- name: gUnk_09EF0690
+- name: gNiserikuKamaeBAnims
   record: AnimTable
-  items: [gUnk_0938FF7C, gUnk_0938FF9A, gUnk_0938FFC0, gUnk_0938FFCA]
+  items: [gNiserikuKamaeBAnim0, gNiserikuKamaeBAnim1, gNiserikuKamaeBAnim2, gNiserikuKamaeBAnim3]
   us:
     address: 0x09EF0690
   jp:
     address: 0x09EC7A7C
   eu:
     address: 0x09F7B874
-- name: gUnk_09EF06A0
+- name: gNiseBl00Frames
   record: SpriteTable
-  items: [gUnk_09392F38]
+  items: [gNiseBl00Frame0]
   us:
     address: 0x09EF06A0
   jp:
     address: 0x09EC7A8C
   eu:
     address: 0x09F7B884
-- name: gUnk_09EF06A4
+- name: gNiseBl00Anims
   record: AnimTable
-  items: [gUnk_09392F4E]
+  items: [gNiseBl00Anim0]
   us:
     address: 0x09EF06A4
   jp:
     address: 0x09EC7A90
   eu:
     address: 0x09F7B888
-- name: gUnk_09EF0820
+- name: gMickeyFl00Frames
   record: SpriteTable
-  items: [gUnk_093A5DF0]
+  items: [gMickeyFl00Frame0]
   us:
     address: 0x09EF0820
   jp:
     address: 0x09EC7C0C
   eu:
     address: 0x09F7BA04
-- name: gUnk_09EF0824
+- name: gMickeyFl00Anims
   record: AnimTable
-  items: [gUnk_093A5E06]
+  items: [gMickeyFl00Anim0]
   us:
     address: 0x09EF0824
   jp:
     address: 0x09EC7C10
   eu:
     address: 0x09F7BA08
-- name: gUnk_09EF0828
+- name: gMickeyBl00Frames
   record: SpriteTable
-  items: [gUnk_093A6090]
+  items: [gMickeyBl00Frame0]
   us:
     address: 0x09EF0828
   jp:
     address: 0x09EC7C14
   eu:
     address: 0x09F7BA0C
-- name: gUnk_09EF082C
+- name: gMickeyBl00Anims
   record: AnimTable
-  items: [gUnk_093A60AC]
+  items: [gMickeyBl00Anim0]
   us:
     address: 0x09EF082C
   jp:
     address: 0x09EC7C18
   eu:
     address: 0x09F7BA10
-- name: gUnk_09EF0830
+- name: gMickey01Frames
   record: SpriteTable
-  items: [gUnk_093A6298, gUnk_093A62AE, gUnk_093A62C4, gUnk_093A62DA, gUnk_093A62F0, gUnk_093A6306, gUnk_093A631C, gUnk_093A6332]
+  items: [gMickey01Frame0, gMickey01Frame1, gMickey01Frame2, gMickey01Frame3, gMickey01Frame4, gMickey01Frame5, gMickey01Frame6, gMickey01Frame7]
   us:
     address: 0x09EF0830
   jp:
     address: 0x09EC7C1C
   eu:
     address: 0x09F7BA14
-- name: gUnk_09EF0850
+- name: gMickey01Anims
   record: AnimTable
-  items: [gUnk_093A6348]
+  items: [gMickey01Anim0]
   us:
     address: 0x09EF0850
   jp:
     address: 0x09EC7C3C
   eu:
     address: 0x09F7BA34
-- name: gUnk_09EF0854
+- name: gMickey02Frames
   record: SpriteTable
-  items: [gUnk_093A7870, gUnk_093A7880, gUnk_093A7896, gUnk_093A78A6]
+  items: [gMickey02Frame0, gMickey02Frame1, gMickey02Frame2, gMickey02Frame3]
   us:
     address: 0x09EF0854
   jp:
     address: 0x09EC7C40
   eu:
     address: 0x09F7BA38
-- name: gUnk_09EF0864
+- name: gMickey02Anims
   record: AnimTable
-  items: [gUnk_093A78B6]
+  items: [gMickey02Anim0]
   us:
     address: 0x09EF0864
   jp:
     address: 0x09EC7C50
   eu:
     address: 0x09F7BA48
-- name: gUnk_09EF0868
+- name: gMickey03Frames
   record: SpriteTable
-  items: [gUnk_093A840C, gUnk_093A841C, gUnk_093A842C, gUnk_093A843C, gUnk_093A844C, gUnk_093A845C, gUnk_093A846C, gUnk_093A847C]
+  items: [gMickey03Frame0, gMickey03Frame1, gMickey03Frame2, gMickey03Frame3, gMickey03Frame4, gMickey03Frame5, gMickey03Frame6, gMickey03Frame7]
   us:
     address: 0x09EF0868
   jp:
     address: 0x09EC7C54
   eu:
     address: 0x09F7BA4C
-- name: gUnk_09EF0888
+- name: gMickey03Anims
   record: AnimTable
-  items: [gUnk_093A848C]
+  items: [gMickey03Anim0]
   us:
     address: 0x09EF0888
   jp:
     address: 0x09EC7C74
   eu:
     address: 0x09F7BA6C
-- name: gUnk_09EF088C
+- name: gMickey04Frames
   record: SpriteTable
-  items: [gUnk_093A9CB4, gUnk_093A9CC4, gUnk_093A9CD4, gUnk_093A9CE4]
+  items: [gMickey04Frame0, gMickey04Frame1, gMickey04Frame2, gMickey04Frame3]
   us:
     address: 0x09EF088C
   jp:
     address: 0x09EC7C78
   eu:
     address: 0x09F7BA70
-- name: gUnk_09EF089C
+- name: gMickey04Anims
   record: AnimTable
-  items: [gUnk_093A9CF4]
+  items: [gMickey04Anim0]
   us:
     address: 0x09EF089C
   jp:
     address: 0x09EC7C88
   eu:
     address: 0x09F7BA80
-- name: gUnk_09EF08A0
+- name: gMickey05Frames
   record: SpriteTable
-  items: [gUnk_093AA90C, gUnk_093AA91C, gUnk_093AA92C, gUnk_093AA93C]
+  items: [gMickey05Frame0, gMickey05Frame1, gMickey05Frame2, gMickey05Frame3]
   us:
     address: 0x09EF08A0
   jp:
     address: 0x09EC7C8C
   eu:
     address: 0x09F7BA84
-- name: gUnk_09EF08B0
+- name: gMickey05Anims
   record: AnimTable
-  items: [gUnk_093AA94C]
+  items: [gMickey05Anim0]
   us:
     address: 0x09EF08B0
   jp:
     address: 0x09EC7C9C
   eu:
     address: 0x09F7BA94
-- name: gUnk_09EF08B4
+- name: gMickey06Frames
   record: SpriteTable
-  items: [gUnk_093AB564, gUnk_093AB574, gUnk_093AB584]
+  items: [gMickey06Frame0, gMickey06Frame1, gMickey06Frame2]
   us:
     address: 0x09EF08B4
   jp:
     address: 0x09EC7CA0
   eu:
     address: 0x09F7BA98
-- name: gUnk_09EF08C0
+- name: gMickey06Anims
   record: AnimTable
-  items: [gUnk_093AB594]
+  items: [gMickey06Anim0]
   us:
     address: 0x09EF08C0
   jp:
     address: 0x09EC7CAC
   eu:
     address: 0x09F7BAA4
-- name: gUnk_09EF08C4
+- name: gMickey07Frames
   record: SpriteTable
-  items: [gUnk_093ABEA8, gUnk_093ABEB8, gUnk_093ABEC8, gUnk_093ABED8, gUnk_093ABEE8, gUnk_093ABEF8, gUnk_093ABF08, gUnk_093ABF18]
+  items: [gMickey07Frame0, gMickey07Frame1, gMickey07Frame2, gMickey07Frame3, gMickey07Frame4, gMickey07Frame5, gMickey07Frame6, gMickey07Frame7]
   us:
     address: 0x09EF08C4
   jp:
     address: 0x09EC7CB0
   eu:
     address: 0x09F7BAA8
-- name: gUnk_09EF08E4
+- name: gMickey07Anims
   record: AnimTable
-  items: [gUnk_093ABF28]
+  items: [gMickey07Anim0]
   us:
     address: 0x09EF08E4
   jp:
     address: 0x09EC7CD0
   eu:
     address: 0x09F7BAC8
-- name: gUnk_09EF08E8
+- name: gMickey08Frames
   record: SpriteTable
-  items: [gUnk_093AD450, gUnk_093AD460, gUnk_093AD470, gUnk_093AD486, gUnk_093AD496, gUnk_093AD4A6, gUnk_093AD4B6, gUnk_093AD4C6]
+  items: [gMickey08Frame0, gMickey08Frame1, gMickey08Frame2, gMickey08Frame3, gMickey08Frame4, gMickey08Frame5, gMickey08Frame6, gMickey08Frame7]
   us:
     address: 0x09EF08E8
   jp:
     address: 0x09EC7CD4
   eu:
     address: 0x09F7BACC
-- name: gUnk_09EF0908
+- name: gMickey08Anims
   record: AnimTable
-  items: [gUnk_093AD4D6]
+  items: [gMickey08Anim0]
   us:
     address: 0x09EF0908
   jp:
@@ -676,38 +676,38 @@ entries:
 - name: niseriku_hiza_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938044A
+  symbol: gNiserikuHizaFTiles
   align: 4
   cell: [48, 65]
   anchor: [20, 49]
   columns: 5
   frames:
-  - symbol: gUnk_093803D8
+  - symbol: gNiserikuHizaFFrame0
     pieces:
     - [8x8, -20, 8]
     - [32x32, -12, -32]
     - [32x16, -12, 0]
-  - symbol: gUnk_093803EE
+  - symbol: gNiserikuHizaFFrame1
     pieces:
     - [8x8, -19, 8]
     - [32x32, -11, -32]
     - [32x16, -11, 0]
-  - symbol: gUnk_09380404
+  - symbol: gNiserikuHizaFFrame2
     pieces:
     - [8x16, 20, -8]
     - [8x8, -20, 8]
     - [32x32, -12, -32]
     - [32x16, -12, 0]
-  - symbol: gUnk_09380420
+  - symbol: gNiserikuHizaFFrame3
     pieces:
     - [32x32, -12, -41]
     - [32x16, -12, -9]
     - [16x8, -4, 7]
-  - symbol: gUnk_09380436
+  - symbol: gNiserikuHizaFFrame4
     pieces:
     - [32x64, -12, -49]
   animations:
-  - symbol: gUnk_09380440
+  - symbol: gNiserikuHizaFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7]]
   us:
@@ -722,44 +722,44 @@ entries:
 - name: niseriku_kamae_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_093815C2
+  symbol: gNiserikuKamaeFTiles
   align: 4
   cell: [55, 64]
   anchor: [32, 51]
   columns: 6
   frames:
-  - symbol: gUnk_0938152C
+  - symbol: gNiserikuKamaeFFrame0
     pieces:
     - [32x64, -24, -51]
     - [8x16, -32, -27]
-  - symbol: gUnk_0938153C
+  - symbol: gNiserikuKamaeFFrame1
     pieces:
     - [32x64, -23, -51]
     - [8x16, -31, -19]
-  - symbol: gUnk_0938154C
+  - symbol: gNiserikuKamaeFFrame2
     pieces:
     - [32x64, -19, -51]
-  - symbol: gUnk_09381556
+  - symbol: gNiserikuKamaeFFrame3
     pieces:
     - [32x64, -15, -51]
     - [8x16, -23, -43]
     - [8x16, -23, -3]
-  - symbol: gUnk_0938156C
+  - symbol: gNiserikuKamaeFFrame4
     pieces:
     - [32x64, -17, -51]
     - [8x8, 15, -43]
-  - symbol: gUnk_0938157C
+  - symbol: gNiserikuKamaeFFrame5
     pieces:
     - [32x64, -17, -51]
     - [8x16, 15, -51]
   animations:
-  - symbol: gUnk_0938158C
+  - symbol: gNiserikuKamaeFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 6], [2, 8], [3, 10], [4, 6], [5, 7]]
-  - symbol: gUnk_093815AA
+  - symbol: gNiserikuKamaeFAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 6]]
-  - symbol: gUnk_093815B4
+  - symbol: gNiserikuKamaeFAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 6], [0, 6]]
   us:
@@ -774,13 +774,13 @@ entries:
 - name: niseriku_omamori_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_09382FF6
+  symbol: gNiserikuOmamoriFTiles
   align: 4
   cell: [32, 64]
   anchor: [20, 52]
   columns: 4
   frames:
-  - symbol: gUnk_09382F24
+  - symbol: gNiserikuOmamoriFFrame0
     pieces:
     - [16x32, -12, -44]
     - [8x32, 4, -44]
@@ -788,7 +788,7 @@ entries:
     - [8x16, 4, -12]
     - [16x8, -4, -52]
     - [16x8, -4, 4]
-  - symbol: gUnk_09382F4C
+  - symbol: gNiserikuOmamoriFFrame1
     pieces:
     - [16x32, -12, -44]
     - [8x32, 4, -44]
@@ -796,7 +796,7 @@ entries:
     - [8x16, 4, -12]
     - [16x8, -8, -52]
     - [16x8, -4, 4]
-  - symbol: gUnk_09382F74
+  - symbol: gNiserikuOmamoriFFrame2
     pieces:
     - [16x32, -12, -44]
     - [8x32, 4, -44]
@@ -804,7 +804,7 @@ entries:
     - [8x16, 4, -12]
     - [16x8, -8, -52]
     - [16x8, -4, 4]
-  - symbol: gUnk_09382F9C
+  - symbol: gNiserikuOmamoriFFrame3
     pieces:
     - [16x32, -12, -44]
     - [8x32, 4, -44]
@@ -814,10 +814,10 @@ entries:
     - [16x8, -4, 4]
     - [8x8, -20, -28]
   animations:
-  - symbol: gUnk_09382FCA
+  - symbol: gNiserikuOmamoriFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 8], [2, 6], [3, 7]]
-  - symbol: gUnk_09382FE0
+  - symbol: gNiserikuOmamoriFAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 7], [2, 6], [1, 8], [0, 10]]
   us:
@@ -832,26 +832,26 @@ entries:
 - name: niseriku_ryote_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_09383A96
+  symbol: gNiserikuRyoteFTiles
   align: 4
   cell: [32, 64]
   anchor: [18, 53]
   columns: 4
   frames:
-  - symbol: gUnk_09383A58
+  - symbol: gNiserikuRyoteFFrame0
     pieces:
     - [32x64, -18, -53]
-  - symbol: gUnk_09383A62
+  - symbol: gNiserikuRyoteFFrame1
     pieces:
     - [32x64, -18, -53]
-  - symbol: gUnk_09383A6C
+  - symbol: gNiserikuRyoteFFrame2
     pieces:
     - [32x64, -18, -53]
-  - symbol: gUnk_09383A76
+  - symbol: gNiserikuRyoteFFrame3
     pieces:
     - [32x64, -18, -53]
   animations:
-  - symbol: gUnk_09383A80
+  - symbol: gNiserikuRyoteFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 8], [2, 10], [3, 7]]
   us:
@@ -866,26 +866,26 @@ entries:
 - name: niseriku_ryote_b
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_09384AD6
+  symbol: gNiserikuRyoteBTiles
   align: 4
   cell: [32, 64]
   anchor: [20, 56]
   columns: 4
   frames:
-  - symbol: gUnk_09384A98
+  - symbol: gNiserikuRyoteBFrame0
     pieces:
     - [32x64, -20, -56]
-  - symbol: gUnk_09384AA2
+  - symbol: gNiserikuRyoteBFrame1
     pieces:
     - [32x64, -20, -56]
-  - symbol: gUnk_09384AAC
+  - symbol: gNiserikuRyoteBFrame2
     pieces:
     - [32x64, -20, -56]
-  - symbol: gUnk_09384AB6
+  - symbol: gNiserikuRyoteBFrame3
     pieces:
     - [32x64, -20, -56]
   animations:
-  - symbol: gUnk_09384AC0
+  - symbol: gNiserikuRyoteBAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 6], [2, 8], [3, 10], [3, 7]]
   us:
@@ -900,34 +900,34 @@ entries:
 - name: niseriku_warai_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_09385B5E
+  symbol: gNiserikuWaraiFTiles
   align: 4
   cell: [32, 56]
   anchor: [14, 50]
   columns: 4
   frames:
-  - symbol: gUnk_09385AD8
+  - symbol: gNiserikuWaraiFFrame0
     pieces:
     - [16x8, -6, -50]
     - [32x32, -14, -42]
     - [32x16, -14, -10]
-  - symbol: gUnk_09385AEE
+  - symbol: gNiserikuWaraiFFrame1
     pieces:
     - [16x8, -6, -50]
     - [32x32, -14, -42]
     - [32x16, -14, -10]
-  - symbol: gUnk_09385B04
+  - symbol: gNiserikuWaraiFFrame2
     pieces:
     - [16x8, -6, -50]
     - [32x32, -14, -42]
     - [32x16, -14, -10]
-  - symbol: gUnk_09385B1A
+  - symbol: gNiserikuWaraiFFrame3
     pieces:
     - [16x8, -6, -50]
     - [32x32, -14, -42]
     - [32x16, -14, -10]
   animations:
-  - symbol: gUnk_09385B30
+  - symbol: gNiserikuWaraiFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 12], [3, 12], [2, 12], [3, 12], [2, 12], [3, 12], [2, 12], [3, 12]]
   us:
@@ -942,38 +942,38 @@ entries:
 - name: niseriku_walk_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_093868D6
+  symbol: gNiserikuWalkFTiles
   align: 4
   cell: [32, 64]
   anchor: [16, 52]
   columns: 8
   frames:
-  - symbol: gUnk_09386860
+  - symbol: gNiserikuWalkFFrame0
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_0938686A
+  - symbol: gNiserikuWalkFFrame1
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_09386874
+  - symbol: gNiserikuWalkFFrame2
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_0938687E
+  - symbol: gNiserikuWalkFFrame3
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_09386888
+  - symbol: gNiserikuWalkFFrame4
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_09386892
+  - symbol: gNiserikuWalkFFrame5
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_0938689C
+  - symbol: gNiserikuWalkFFrame6
     pieces:
     - [32x64, -16, -52]
-  - symbol: gUnk_093868A6
+  - symbol: gNiserikuWalkFFrame7
     pieces:
     - [32x64, -16, -52]
   animations:
-  - symbol: gUnk_093868B0
+  - symbol: gNiserikuWalkFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
   us:
@@ -988,38 +988,38 @@ entries:
 - name: niseriku_walk_b
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938894E
+  symbol: gNiserikuWalkBTiles
   align: 4
   cell: [33, 64]
   anchor: [16, 56]
   columns: 8
   frames:
-  - symbol: gUnk_093888D8
+  - symbol: gNiserikuWalkBFrame0
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_093888E2
+  - symbol: gNiserikuWalkBFrame1
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_093888EC
+  - symbol: gNiserikuWalkBFrame2
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_093888F6
+  - symbol: gNiserikuWalkBFrame3
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_09388900
+  - symbol: gNiserikuWalkBFrame4
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_0938890A
+  - symbol: gNiserikuWalkBFrame5
     pieces:
     - [32x64, -15, -56]
-  - symbol: gUnk_09388914
+  - symbol: gNiserikuWalkBFrame6
     pieces:
     - [32x64, -16, -56]
-  - symbol: gUnk_0938891E
+  - symbol: gNiserikuWalkBFrame7
     pieces:
     - [32x64, -16, -56]
   animations:
-  - symbol: gUnk_09388928
+  - symbol: gNiserikuWalkBAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
   us:
@@ -1034,42 +1034,42 @@ entries:
 - name: niseriku_run_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938A9E6
+  symbol: gNiserikuRunFTiles
   align: 4
   cell: [40, 56]
   anchor: [22, 45]
   columns: 6
   frames:
-  - symbol: gUnk_0938A950
+  - symbol: gNiserikuRunFFrame0
     pieces:
     - [32x32, -14, -44]
     - [32x16, -14, -12]
-  - symbol: gUnk_0938A960
+  - symbol: gNiserikuRunFFrame1
     pieces:
     - [32x32, -14, -45]
     - [32x16, -14, -13]
     - [8x8, -22, -8]
-  - symbol: gUnk_0938A976
+  - symbol: gNiserikuRunFFrame2
     pieces:
     - [32x32, -14, -44]
     - [32x16, -14, -12]
-  - symbol: gUnk_0938A986
+  - symbol: gNiserikuRunFFrame3
     pieces:
     - [32x32, -14, -44]
     - [32x16, -14, -12]
-  - symbol: gUnk_0938A996
+  - symbol: gNiserikuRunFFrame4
     pieces:
     - [32x32, -14, -45]
     - [32x16, -14, -13]
     - [8x16, -22, -37]
-  - symbol: gUnk_0938A9AC
+  - symbol: gNiserikuRunFFrame5
     pieces:
     - [32x32, -14, -45]
     - [32x16, -14, -13]
     - [16x8, -14, 3]
     - [8x16, -22, -29]
   animations:
-  - symbol: gUnk_0938A9C8
+  - symbol: gNiserikuRunFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]
   us:
@@ -1084,45 +1084,45 @@ entries:
 - name: niseriku_run_b
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938BD70
+  symbol: gNiserikuRunBTiles
   align: 4
   cell: [47, 57]
   anchor: [23, 44]
   columns: 6
   frames:
-  - symbol: gUnk_0938BCC8
+  - symbol: gNiserikuRunBFrame0
     pieces:
     - [32x32, -16, -44]
     - [32x16, -16, -12]
     - [32x8, -16, 4]
-  - symbol: gUnk_0938BCDE
+  - symbol: gNiserikuRunBFrame1
     pieces:
     - [32x32, -23, -44]
     - [32x16, -23, -12]
     - [8x32, 9, -36]
     - [8x16, 9, -4]
-  - symbol: gUnk_0938BCFA
+  - symbol: gNiserikuRunBFrame2
     pieces:
     - [32x32, -22, -44]
     - [32x16, -14, -12]
     - [8x16, 10, -28]
-  - symbol: gUnk_0938BD10
+  - symbol: gNiserikuRunBFrame3
     pieces:
     - [32x32, -16, -43]
     - [16x8, 0, 5]
     - [32x16, -8, -11]
-  - symbol: gUnk_0938BD26
+  - symbol: gNiserikuRunBFrame4
     pieces:
     - [32x32, -20, -44]
     - [32x16, -20, -12]
     - [8x32, 12, -20]
-  - symbol: gUnk_0938BD3C
+  - symbol: gNiserikuRunBFrame5
     pieces:
     - [32x32, -16, -43]
     - [32x16, -16, -11]
     - [8x16, 16, -19]
   animations:
-  - symbol: gUnk_0938BD52
+  - symbol: gNiserikuRunBAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]
   us:
@@ -1137,44 +1137,44 @@ entries:
 - name: niseriku_down_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938D282
+  symbol: gNiserikuDownFTiles
   align: 4
   cell: [66, 74]
   anchor: [45, 49]
   columns: 7
   frames:
-  - symbol: gUnk_0938D1F0
+  - symbol: gNiserikuDownFFrame0
     pieces:
     - [32x64, -13, -49]
-  - symbol: gUnk_0938D1FA
+  - symbol: gNiserikuDownFFrame1
     pieces:
     - [32x32, -21, -41]
     - [32x16, -21, -9]
-  - symbol: gUnk_0938D20A
+  - symbol: gNiserikuDownFFrame2
     pieces:
     - [32x32, -21, -33]
     - [32x16, -21, -1]
-  - symbol: gUnk_0938D21A
+  - symbol: gNiserikuDownFFrame3
     pieces:
     - [32x32, -27, -25]
     - [32x8, -27, 7]
-  - symbol: gUnk_0938D22A
+  - symbol: gNiserikuDownFFrame4
     pieces:
     - [32x32, -44, -9]
     - [16x32, -12, -9]
-  - symbol: gUnk_0938D23A
+  - symbol: gNiserikuDownFFrame5
     pieces:
     - [32x32, -45, -7]
     - [16x32, -13, -7]
-  - symbol: gUnk_0938D24A
+  - symbol: gNiserikuDownFFrame6
     pieces:
     - [32x32, -27, -18]
     - [16x32, 5, -18]
   animations:
-  - symbol: gUnk_0938D25A
+  - symbol: gNiserikuDownFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 8], [2, 12], [3, 8], [4, 6], [5, 8]]
-  - symbol: gUnk_0938D278
+  - symbol: gNiserikuDownFAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[6, 7]]
   us:
@@ -1189,20 +1189,20 @@ entries:
 - name: niseriku_shock_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938E526
+  symbol: gNiserikuShockFTiles
   align: 4
   cell: [32, 64]
   anchor: [13, 49]
   columns: 2
   frames:
-  - symbol: gUnk_0938E504
+  - symbol: gNiserikuShockFFrame0
     pieces:
     - [32x64, -13, -49]
-  - symbol: gUnk_0938E50E
+  - symbol: gNiserikuShockFFrame1
     pieces:
     - [32x64, -13, -49]
   animations:
-  - symbol: gUnk_0938E518
+  - symbol: gNiserikuShockFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8]]
   us:
@@ -1217,25 +1217,25 @@ entries:
 - name: niseriku_shock_b
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938ED68
+  symbol: gNiserikuShockBTiles
   align: 4
   cell: [32, 57]
   anchor: [19, 51]
   columns: 2
   frames:
-  - symbol: gUnk_0938ED28
+  - symbol: gNiserikuShockBFrame0
     pieces:
     - [32x32, -19, -51]
     - [16x16, -11, -19]
     - [16x8, -11, -3]
-  - symbol: gUnk_0938ED3E
+  - symbol: gNiserikuShockBFrame1
     pieces:
     - [32x32, -19, -50]
     - [8x8, -19, -18]
     - [16x16, -11, -18]
     - [16x8, -11, -2]
   animations:
-  - symbol: gUnk_0938ED5A
+  - symbol: gNiserikuShockBAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8]]
   us:
@@ -1250,13 +1250,13 @@ entries:
 - name: niseriku_te_f
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938F3BE
+  symbol: gNiserikuTeFTiles
   align: 4
   cell: [24, 56]
   anchor: [12, 50]
   columns: 4
   frames:
-  - symbol: gUnk_0938F308
+  - symbol: gNiserikuTeFFrame0
     pieces:
     - [16x32, -12, -50]
     - [8x32, 4, -50]
@@ -1264,7 +1264,7 @@ entries:
     - [8x16, 4, -18]
     - [16x8, -12, -2]
     - [8x8, 4, -2]
-  - symbol: gUnk_0938F330
+  - symbol: gNiserikuTeFFrame1
     pieces:
     - [16x32, -12, -50]
     - [8x32, 4, -50]
@@ -1272,7 +1272,7 @@ entries:
     - [8x16, 4, -18]
     - [16x8, -12, -2, {fresh: true}]
     - [8x8, 4, -2, {fresh: true}]
-  - symbol: gUnk_0938F358
+  - symbol: gNiserikuTeFFrame2
     pieces:
     - [16x32, -12, -50]
     - [8x32, 4, -50]
@@ -1280,7 +1280,7 @@ entries:
     - [8x16, 4, -18]
     - [16x8, -12, -2, {fresh: true}]
     - [8x8, 4, -2, {fresh: true}]
-  - symbol: gUnk_0938F380
+  - symbol: gNiserikuTeFFrame3
     pieces:
     - [16x32, -12, -50]
     - [8x32, 4, -50]
@@ -1289,7 +1289,7 @@ entries:
     - [16x8, -12, -2, {fresh: true}]
     - [8x8, 4, -2, {fresh: true}]
   animations:
-  - symbol: gUnk_0938F3A8
+  - symbol: gNiserikuTeFAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8]]
   us:
@@ -1304,59 +1304,59 @@ entries:
 - name: niseriku_kamae_b
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_0938FFD8
+  symbol: gNiserikuKamaeBTiles
   align: 4
   cell: [84, 80]
   anchor: [48, 64]
   columns: 8
   frames:
-  - symbol: gUnk_0938FE40
+  - symbol: gNiserikuKamaeBFrame0
     pieces:
     - [8x32, 0, -48]
     - [32x32, -32, -48]
     - [16x16, -16, -16]
     - [16x8, -16, 0]
-  - symbol: gUnk_0938FE5C
+  - symbol: gNiserikuKamaeBFrame1
     pieces:
     - [32x32, -31, -48]
     - [16x16, -15, -16]
     - [16x8, -15, 0]
     - [8x16, -39, -40]
-  - symbol: gUnk_0938FE78
+  - symbol: gNiserikuKamaeBFrame2
     pieces:
     - [32x32, -29, -48]
     - [16x16, -13, -16]
     - [16x8, -13, 0]
     - [16x16, -45, -48]
-  - symbol: gUnk_0938FE94
+  - symbol: gNiserikuKamaeBFrame3
     pieces:
     - [32x64, -24, -56]
     - [8x16, -32, -64]
-  - symbol: gUnk_0938FEA4
+  - symbol: gNiserikuKamaeBFrame4
     pieces:
     - [8x8, -31, -40]
     - [32x64, -23, -48]
-  - symbol: gUnk_0938FEB4
+  - symbol: gNiserikuKamaeBFrame5
     pieces:
     - [8x8, -31, -40]
     - [32x64, -23, -48]
-  - symbol: gUnk_0938FEC4
+  - symbol: gNiserikuKamaeBFrame6
     pieces:
     - [32x64, -20, -51]
     - [16x16, 12, -51]
     - [8x16, 28, -51]
-  - symbol: gUnk_0938FEDA
+  - symbol: gNiserikuKamaeBFrame7
     pieces:
     - [8x8, 0, -56]
     - [32x64, -32, -64]
-  - symbol: gUnk_0938FEEA
+  - symbol: gNiserikuKamaeBFrame8
     pieces:
     - [32x32, -32, -40]
     - [16x8, -24, -48]
     - [16x16, -48, -48]
     - [8x32, -40, -32]
     - [32x8, -32, -8]
-  - symbol: gUnk_0938FF0C
+  - symbol: gNiserikuKamaeBFrame9
     pieces:
     - [32x32, -32, -40]
     - [16x8, -40, -8]
@@ -1364,33 +1364,33 @@ entries:
     - [16x8, -16, -8]
     - [16x16, 0, -24]
     - [8x16, 16, -24]
-  - symbol: gUnk_0938FF34
+  - symbol: gNiserikuKamaeBFrame10
     pieces:
     - [32x32, -24, -47]
     - [32x16, -32, -15]
     - [16x8, 8, -31]
     - [8x8, 8, -39]
-  - symbol: gUnk_0938FF50
+  - symbol: gNiserikuKamaeBFrame11
     pieces:
     - [32x32, -25, -48]
     - [32x16, -25, -16]
     - [16x8, -9, 0]
-  - symbol: gUnk_0938FF66
+  - symbol: gNiserikuKamaeBFrame12
     pieces:
     - [32x32, -26, -48]
     - [16x8, -10, 0]
     - [16x16, -12, -16]
   animations:
-  - symbol: gUnk_0938FF7C
+  - symbol: gNiserikuKamaeBAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 6], [2, 8], [3, 10], [4, 6], [5, 8]]
-  - symbol: gUnk_0938FF9A
+  - symbol: gNiserikuKamaeBAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 7], [6, 10], [7, 8], [8, 4], [9, 8], [10, 10], [11, 6], [12, 6]]
-  - symbol: gUnk_0938FFC0
+  - symbol: gNiserikuKamaeBAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 4]]
-  - symbol: gUnk_0938FFCA
+  - symbol: gNiserikuKamaeBAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 6], [0, 8]]
   us:
@@ -1405,19 +1405,19 @@ entries:
 - name: nise_bl00
   format: sprite_sheet
   palette: niseriku
-  symbol: gUnk_09392F58
+  symbol: gNiseBl00Tiles
   align: 4
   cell: [32, 56]
   anchor: [18, 49]
   columns: 1
   frames:
-  - symbol: gUnk_09392F38
+  - symbol: gNiseBl00Frame0
     pieces:
     - [16x8, -7, -49]
     - [32x32, -18, -41]
     - [16x16, -10, -9]
   animations:
-  - symbol: gUnk_09392F4E
+  - symbol: gNiseBl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1432,19 +1432,19 @@ entries:
 - name: mickey_fl00
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A5E10
+  symbol: gMickeyFl00Tiles
   align: 4
   cell: [32, 48]
   anchor: [16, 38]
   columns: 1
   frames:
-  - symbol: gUnk_093A5DF0
+  - symbol: gMickeyFl00Frame0
     pieces:
     - [16x8, -8, -38]
     - [32x32, -16, -30]
     - [16x8, 0, 2]
   animations:
-  - symbol: gUnk_093A5E06
+  - symbol: gMickeyFl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1459,20 +1459,20 @@ entries:
 - name: mickey_bl00
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A60B6
+  symbol: gMickeyBl00Tiles
   align: 4
   cell: [24, 40]
   anchor: [11, 35]
   columns: 1
   frames:
-  - symbol: gUnk_093A6090
+  - symbol: gMickeyBl00Frame0
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
     - [8x8, 5, -3]
   animations:
-  - symbol: gUnk_093A60AC
+  - symbol: gMickeyBl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -1487,54 +1487,54 @@ entries:
 - name: mickey_01
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A636E
+  symbol: gMickey01Tiles
   align: 4
   cell: [38, 51]
   anchor: [18, 40]
   columns: 8
   frames:
-  - symbol: gUnk_093A6298
+  - symbol: gMickey01Frame0
     pieces:
     - [32x32, -13, -29]
     - [16x8, -5, -37]
     - [16x8, -13, 3]
-  - symbol: gUnk_093A62AE
+  - symbol: gMickey01Frame1
     pieces:
     - [32x32, -13, -29]
     - [16x8, -5, -37]
     - [16x8, -5, 3]
-  - symbol: gUnk_093A62C4
+  - symbol: gMickey01Frame2
     pieces:
     - [32x32, -13, -31]
     - [16x8, -5, -39]
     - [16x8, -5, 1]
-  - symbol: gUnk_093A62DA
+  - symbol: gMickey01Frame3
     pieces:
     - [32x32, -15, -31]
     - [16x8, -7, -39]
     - [16x8, 1, 1]
-  - symbol: gUnk_093A62F0
+  - symbol: gMickey01Frame4
     pieces:
     - [32x32, -16, -31]
     - [16x8, -8, -39]
     - [32x8, -16, 1]
-  - symbol: gUnk_093A6306
+  - symbol: gMickey01Frame5
     pieces:
     - [32x32, -18, -32]
     - [32x8, -18, 0]
     - [16x8, -10, -40]
-  - symbol: gUnk_093A631C
+  - symbol: gMickey01Frame6
     pieces:
     - [32x32, -12, -31]
     - [32x8, -12, 1]
     - [16x8, -4, -39]
-  - symbol: gUnk_093A6332
+  - symbol: gMickey01Frame7
     pieces:
     - [32x32, -13, -32]
     - [32x8, -13, 0]
     - [16x8, -5, -40]
   animations:
-  - symbol: gUnk_093A6348
+  - symbol: gMickey01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8], [5, 8], [6, 8], [7, 8]]
   us:
@@ -1549,31 +1549,31 @@ entries:
 - name: mickey_02
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A78CC
+  symbol: gMickey02Tiles
   align: 4
   cell: [35, 50]
   anchor: [17, 39]
   columns: 4
   frames:
-  - symbol: gUnk_093A7870
+  - symbol: gMickey02Frame0
     pieces:
     - [32x32, -14, -35]
     - [32x8, -14, -3]
-  - symbol: gUnk_093A7880
+  - symbol: gMickey02Frame1
     pieces:
     - [32x32, -14, -37]
     - [32x8, -14, -5]
     - [16x8, 2, 3]
-  - symbol: gUnk_093A7896
+  - symbol: gMickey02Frame2
     pieces:
     - [32x32, -14, -39]
     - [32x16, -14, -7]
-  - symbol: gUnk_093A78A6
+  - symbol: gMickey02Frame3
     pieces:
     - [32x32, -17, -38]
     - [32x16, -17, -6]
   animations:
-  - symbol: gUnk_093A78B6
+  - symbol: gMickey02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 12], [2, 8], [3, 18]]
   us:
@@ -1588,46 +1588,46 @@ entries:
 - name: mickey_03
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A84B2
+  symbol: gMickey03Tiles
   align: 4
   cell: [35, 57]
   anchor: [16, 46]
   columns: 8
   frames:
-  - symbol: gUnk_093A840C
+  - symbol: gMickey03Frame0
     pieces:
     - [32x32, -16, -37]
     - [32x16, -16, -5]
-  - symbol: gUnk_093A841C
+  - symbol: gMickey03Frame1
     pieces:
     - [32x32, -14, -38]
     - [32x16, -14, -6]
-  - symbol: gUnk_093A842C
+  - symbol: gMickey03Frame2
     pieces:
     - [32x32, -14, -40]
     - [32x16, -14, -8]
-  - symbol: gUnk_093A843C
+  - symbol: gMickey03Frame3
     pieces:
     - [32x32, -13, -46]
     - [32x16, -13, -14]
-  - symbol: gUnk_093A844C
+  - symbol: gMickey03Frame4
     pieces:
     - [32x32, -13, -40]
     - [32x16, -13, -8]
-  - symbol: gUnk_093A845C
+  - symbol: gMickey03Frame5
     pieces:
     - [32x32, -16, -40]
     - [32x16, -16, -8]
-  - symbol: gUnk_093A846C
+  - symbol: gMickey03Frame6
     pieces:
     - [32x32, -15, -37]
     - [32x16, -15, -5]
-  - symbol: gUnk_093A847C
+  - symbol: gMickey03Frame7
     pieces:
     - [32x32, -13, -38]
     - [32x16, -13, -6]
   animations:
-  - symbol: gUnk_093A848C
+  - symbol: gMickey03Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 7], [2, 7], [3, 9], [4, 7], [5, 7], [6, 6], [7, 7]]
   us:
@@ -1642,30 +1642,30 @@ entries:
 - name: mickey_04
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093A9D0A
+  symbol: gMickey04Tiles
   align: 4
   cell: [34, 49]
   anchor: [16, 38]
   columns: 4
   frames:
-  - symbol: gUnk_093A9CB4
+  - symbol: gMickey04Frame0
     pieces:
     - [32x32, -14, -37]
     - [32x16, -14, -5]
-  - symbol: gUnk_093A9CC4
+  - symbol: gMickey04Frame1
     pieces:
     - [32x32, -15, -38]
     - [32x16, -15, -6]
-  - symbol: gUnk_093A9CD4
+  - symbol: gMickey04Frame2
     pieces:
     - [32x32, -16, -38]
     - [32x16, -16, -6]
-  - symbol: gUnk_093A9CE4
+  - symbol: gMickey04Frame3
     pieces:
     - [32x32, -15, -38]
     - [32x16, -15, -6]
   animations:
-  - symbol: gUnk_093A9CF4
+  - symbol: gMickey04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 7], [3, 15]]
   us:
@@ -1680,30 +1680,30 @@ entries:
 - name: mickey_05
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093AA962
+  symbol: gMickey05Tiles
   align: 4
   cell: [33, 51]
   anchor: [15, 40]
   columns: 4
   frames:
-  - symbol: gUnk_093AA90C
+  - symbol: gMickey05Frame0
     pieces:
     - [32x32, -14, -37]
     - [32x16, -14, -5]
-  - symbol: gUnk_093AA91C
+  - symbol: gMickey05Frame1
     pieces:
     - [32x32, -15, -39]
     - [32x16, -15, -7]
-  - symbol: gUnk_093AA92C
+  - symbol: gMickey05Frame2
     pieces:
     - [32x32, -14, -40]
     - [32x16, -14, -8]
-  - symbol: gUnk_093AA93C
+  - symbol: gMickey05Frame3
     pieces:
     - [32x32, -14, -38]
     - [32x16, -14, -6]
   animations:
-  - symbol: gUnk_093AA94C
+  - symbol: gMickey05Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 15]]
   us:
@@ -1718,26 +1718,26 @@ entries:
 - name: mickey_06
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093AB5A6
+  symbol: gMickey06Tiles
   align: 4
   cell: [34, 49]
   anchor: [15, 40]
   columns: 3
   frames:
-  - symbol: gUnk_093AB564
+  - symbol: gMickey06Frame0
     pieces:
     - [32x32, -15, -39]
     - [32x16, -15, -7]
-  - symbol: gUnk_093AB574
+  - symbol: gMickey06Frame1
     pieces:
     - [32x32, -13, -40]
     - [32x16, -13, -8]
-  - symbol: gUnk_093AB584
+  - symbol: gMickey06Frame2
     pieces:
     - [32x32, -14, -40]
     - [32x16, -14, -8]
   animations:
-  - symbol: gUnk_093AB594
+  - symbol: gMickey06Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 15]]
   us:
@@ -1752,46 +1752,46 @@ entries:
 - name: mickey_07
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093ABF4E
+  symbol: gMickey07Tiles
   align: 4
   cell: [35, 50]
   anchor: [17, 40]
   columns: 8
   frames:
-  - symbol: gUnk_093ABEA8
+  - symbol: gMickey07Frame0
     pieces:
     - [32x32, -17, -40]
     - [32x8, -17, -8]
-  - symbol: gUnk_093ABEB8
+  - symbol: gMickey07Frame1
     pieces:
     - [32x32, -15, -39]
     - [32x8, -15, -7]
-  - symbol: gUnk_093ABEC8
+  - symbol: gMickey07Frame2
     pieces:
     - [32x32, -15, -38]
     - [32x16, -15, -6]
-  - symbol: gUnk_093ABED8
+  - symbol: gMickey07Frame3
     pieces:
     - [32x32, -14, -38]
     - [32x16, -14, -6]
-  - symbol: gUnk_093ABEE8
+  - symbol: gMickey07Frame4
     pieces:
     - [32x32, -16, -39]
     - [32x8, -16, -7]
-  - symbol: gUnk_093ABEF8
+  - symbol: gMickey07Frame5
     pieces:
     - [32x32, -15, -38]
     - [32x8, -15, -6]
-  - symbol: gUnk_093ABF08
+  - symbol: gMickey07Frame6
     pieces:
     - [32x32, -14, -36]
     - [32x8, -14, -4]
-  - symbol: gUnk_093ABF18
+  - symbol: gMickey07Frame7
     pieces:
     - [32x32, -16, -39]
     - [32x8, -16, -7]
   animations:
-  - symbol: gUnk_093ABF28
+  - symbol: gMickey07Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6], [7, 6]]
   us:
@@ -1806,47 +1806,47 @@ entries:
 - name: mickey_08
   format: sprite_sheet
   palette: mickey
-  symbol: gUnk_093AD4FC
+  symbol: gMickey08Tiles
   align: 4
   cell: [36, 49]
   anchor: [15, 37]
   columns: 8
   frames:
-  - symbol: gUnk_093AD450
+  - symbol: gMickey08Frame0
     pieces:
     - [32x32, -15, -35]
     - [32x8, -15, -3]
-  - symbol: gUnk_093AD460
+  - symbol: gMickey08Frame1
     pieces:
     - [32x32, -13, -35]
     - [32x8, -13, -3]
-  - symbol: gUnk_093AD470
+  - symbol: gMickey08Frame2
     pieces:
     - [32x32, -11, -36]
     - [32x8, -11, -4]
     - [16x8, -11, 4]
-  - symbol: gUnk_093AD486
+  - symbol: gMickey08Frame3
     pieces:
     - [32x32, -12, -37]
     - [32x16, -12, -5]
-  - symbol: gUnk_093AD496
+  - symbol: gMickey08Frame4
     pieces:
     - [32x32, -13, -34]
     - [32x8, -13, -2]
-  - symbol: gUnk_093AD4A6
+  - symbol: gMickey08Frame5
     pieces:
     - [32x32, -12, -35]
     - [32x8, -12, -3]
-  - symbol: gUnk_093AD4B6
+  - symbol: gMickey08Frame6
     pieces:
     - [32x32, -12, -37]
     - [32x8, -12, -5]
-  - symbol: gUnk_093AD4C6
+  - symbol: gMickey08Frame7
     pieces:
     - [32x32, -15, -35]
     - [32x8, -15, -3]
   animations:
-  - symbol: gUnk_093AD4D6
+  - symbol: gMickey08Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7]]
   us:

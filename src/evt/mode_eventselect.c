@@ -215,14 +215,14 @@ void Hanabira_c_0(EffectWork* w, EventActor* arg) {
 
     w->actor = arg;
     b = &arg->body;
-    w->palette = LoadObjPalette(gUnk_08F6DC84, 32);
-    w->tiles = LoadObjTiles(gUnk_08BCB3D8, 256);
+    w->palette = LoadObjPalette(gMaruxhaBtEffPalette, 32);
+    w->tiles = LoadObjTiles(gMaruxhaBtEff2Tiles, 256);
     w->x = b->x;
     w->y = b->y;
     w->z = b->z - 0x3000;
     w->vx = GetRandom() % 717 - 358;
     w->vz = -(GetRandom() % 539 + 102);
-    AnimInit(&w->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
+    AnimInit(&w->anim, gMaruxhaBtEff2Anims, gMaruxhaBtEff2Frames);
     AnimStart(&w->anim, GetRandom() & 1, 1);
     w->state = 0;
 }
@@ -314,8 +314,8 @@ void Exclamation_0(EffectWork* w, EventActor* arg) {
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->index + 16, 1);
     }
 
-    SetObjTileSource(w->tiles, gUnk_09320796);
-    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    SetObjTileSource(w->tiles, gFEventTiles);
+    AnimInit(&w->anim, gFEventAnims, gFEventFrames);
     AnimStart(&w->anim, 0, 0);
     w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 1;
@@ -331,8 +331,8 @@ void balloon_0(EffectWork* w, EventActor* arg) {
     w->y = b->y;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    SetObjTileSource(w->tiles, gUnk_09320796);
-    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    SetObjTileSource(w->tiles, gFEventTiles);
+    AnimInit(&w->anim, gFEventAnims, gFEventFrames);
     AnimStart(&w->anim, 1, 1);
     w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 0;
@@ -390,8 +390,8 @@ void Question_0(EffectWork* w, EventActor* arg) {
     w->y = b->y;
     w->tiles = AllocObjTiles(128, 0);
     w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
-    SetObjTileSource(w->tiles, gUnk_09320796);
-    AnimInit(&w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+    SetObjTileSource(w->tiles, gFEventTiles);
+    AnimInit(&w->anim, gFEventAnims, gFEventFrames);
     AnimStart(&w->anim, 5, 0);
     w->gfx = AnimGetGfx(&w->anim);
     w->unk_48 = 0;
@@ -566,7 +566,7 @@ void down_0(EffectWork* w, EventActor* arg) {
 
     w->tiles = AllocSpriteFrameTiles(32);
     UpdateSpriteFrameTiles(w->tiles, gUnk_09EEA19C[3], gUnk_0908C686);
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     w->down = EwramAlloc(sizeof(DownWork));
     s = w->down;
 

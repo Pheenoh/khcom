@@ -4,7 +4,7 @@
 
 #include "types.h"
 
-extern u8 gUnk_08F683A4[];
+extern u8 gSoraPalette[];
 extern u8 gUnk_09617F78[];
 extern u8 gUnk_09618398[];
 extern u8 gUnk_096183D8[];

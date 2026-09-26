@@ -6,181 +6,181 @@
 #include "sprites_evt.h"
 
 const AnimDef gUnk_0813D32C[3] = {
-    { gUnk_09EDF834, gUnk_09EDF85C, gUnk_08957290, 0, { 0, 0, 0 } },
-    { gUnk_09EDF9A8, gUnk_09EDF9BC, gUnk_08963BAC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF884, gUnk_09EDF8A4, gUnk_0895A12A, 0, { 0, 0, 0 } },
+    { gEmy00L00Frames, gEmy00L00Anims, gEmy00L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L09Frames, gEmy00L09Anims, gEmy00L09Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L02Frames, gEmy00L02Anims, gEmy00L02Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D35C[7] = {
-    { gUnk_09EDF948, gUnk_09EDF974, gUnk_089605FC, 1, { 0, 0, 0 } },
-    { gUnk_09EDF9F8, gUnk_09EDFA04, gUnk_0896700E, 0, { 0, 0, 0 } },
-    { gUnk_09EDF914, gUnk_09EDF940, gUnk_0895EECC, 1, { 0, 0, 0 } },
-    { gUnk_09EDF914, gUnk_09EDF940, gUnk_0895EECC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF8CC, gUnk_09EDF8EC, gUnk_0895C5E6, 0, { 0, 0, 0 } },
-    { gUnk_09EDF9C0, gUnk_09EDF9D8, gUnk_08964BF6, 0, { 0, 0, 0 } },
-    { gUnk_09EDF9DC, gUnk_09EDF9F4, gUnk_08965D48, 0, { 0, 0, 0 } },
+    { gEmy00L07Frames, gEmy00L07Anims, gEmy00L07Tiles, 1, { 0, 0, 0 } },
+    { gEmy00L12Frames, gEmy00L12Anims, gEmy00L12Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L06Frames, gEmy00L06Anims, gEmy00L06Tiles, 1, { 0, 0, 0 } },
+    { gEmy00L06Frames, gEmy00L06Anims, gEmy00L06Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L04Frames, gEmy00L04Anims, gEmy00L04Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L10Frames, gEmy00L10Anims, gEmy00L10Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L11Frames, gEmy00L11Anims, gEmy00L11Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy00Def = { gUnk_08F697A4, gUnk_0813D32C, 384, 130, 10, 20, 64, 32, 16, 10, 3, { 0, 12, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy00Def = { gEmy00Palette, gUnk_0813D32C, 384, 130, 10, 20, 64, 32, 16, 10, 3, { 0, 12, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy00 = { "task_emy_00", task_emy_00_0, task_emy_00_1, task_emy_00_2, task_emy_00_3, 0x184 };
 
 const AnimDef gUnk_0813D404[3] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D434[2] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 1, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 1, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 1, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy01Def = { gUnk_08F69804, gUnk_0813D404, 384, 130, 20, 20, 64, 32, 32, 10, 0, { 1, 33, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy01Def = { gEmy01Palette, gUnk_0813D404, 384, 130, 20, 20, 64, 32, 32, 10, 0, { 1, 33, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy01 = { "task_emy_01", task_emy_01_0, task_emy_01_1, task_emy_01_2, task_emy_01_3, 0x184 };
 
 const AnimDef gUnk_0813D48C[3] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D4BC[2] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 6, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 8, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 6, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 8, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy02Def = { gUnk_08F69824, gUnk_0813D48C, 460, 130, 20, 20, 64, 32, 32, 10, 0, { 2, 34, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy02Def = { gEmy02Palette, gUnk_0813D48C, 460, 130, 20, 20, 64, 32, 32, 10, 0, { 2, 34, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy02 = { "task_emy_02", task_emy_02_0, task_emy_02_1, task_emy_02_2, task_emy_02_3, 0x184 };
 
 const AnimDef gUnk_0813D514[3] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D544[2] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 7, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 5, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 7, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 5, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy03Def = { gUnk_08F69844, gUnk_0813D514, 512, 130, 20, 20, 64, 32, 32, 10, 0, { 3, 36, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy03Def = { gEmy03Palette, gUnk_0813D514, 512, 130, 20, 20, 64, 32, 32, 10, 0, { 3, 36, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy03 = { "task_emy_03", task_emy_03_0, task_emy_03_1, task_emy_03_2, task_emy_03_3, 0x190 };
 
 const AnimDef gUnk_0813D59C[3] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
 };
 
-const AnimDef gUnk_0813D5CC = { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 4, { 0, 0, 0 } };
+const AnimDef gUnk_0813D5CC = { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 4, { 0, 0, 0 } };
 
-const EmyDef gEmy04Def = { gUnk_08F69864, gUnk_0813D59C, 332, 130, 20, 20, 0, 0, 0, 200, 0, { 4, 27, 24, 12, 4, 100, 8 } };
+const EmyDef gEmy04Def = { gEmy04Palette, gUnk_0813D59C, 332, 130, 20, 20, 0, 0, 0, 200, 0, { 4, 27, 24, 12, 4, 100, 8 } };
 
 TaskDesc gTaskDescEmy04 = { "task_emy_04", task_emy_04_0, task_emy_04_1, task_emy_04_2, task_emy_04_3, 0x188 };
 
 const AnimDef gUnk_0813D614[3] = {
-    { gUnk_09EE00D0, gUnk_09EE00F0, gUnk_089D8148, 0, { 0, 0, 0 } },
-    { gUnk_09EE00F4, gUnk_09EE0114, gUnk_089DA20E, 0, { 0, 0, 0 } },
-    { gUnk_09EE00D0, gUnk_09EE00F0, gUnk_089D8148, 0, { 0, 0, 0 } },
+    { gEmy0600Frames, gEmy0600Anims, gEmy0600Tiles, 0, { 0, 0, 0 } },
+    { gEmy0603Frames, gEmy0603Anims, gEmy0603Tiles, 0, { 0, 0, 0 } },
+    { gEmy0600Frames, gEmy0600Anims, gEmy0600Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D644[2] = {
-    { gUnk_09EE0118, gUnk_09EE013C, gUnk_089DBFA8, 0, { 0, 0, 0 } },
-    { gUnk_09EE0140, gUnk_09EE0178, gUnk_089DDB2C, 0, { 0, 0, 0 } },
+    { gEmy0610Frames, gEmy0610Anims, gEmy0610Tiles, 0, { 0, 0, 0 } },
+    { gEmy0611Frames, gEmy0611Anims, gEmy0611Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy06Def = { gUnk_08F69924, gUnk_0813D614, 230, 130, 20, 20, 70, 32, 48, 10, 0, { 5, 42, 32, 8, 16, 100, 0 } };
+const EmyDef gEmy06Def = { gEmy06Palette, gUnk_0813D614, 230, 130, 20, 20, 70, 32, 48, 10, 0, { 5, 42, 32, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy06 = { "task_emy_06", task_emy_06_0, task_emy_06_1, task_emy_06_2, task_emy_06_3, 0x188 };
 
 const AnimDef gUnk_0813D69C[3] = {
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D6CC[7] = {
-    { gUnk_09EDFE80, gUnk_09EDFEA0, gUnk_089B5D96, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE48, gUnk_09EDFE60, gUnk_089B370E, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE64, gUnk_09EDFE7C, gUnk_089B4A42, 0, { 0, 0, 0 } },
-    { gUnk_09EDFEB8, gUnk_09EDFED0, gUnk_089B807A, 0, { 0, 0, 0 } },
-    { gUnk_09EDFEA4, gUnk_09EDFEB4, gUnk_089B75F2, 0, { 0, 0, 0 } },
-    { gUnk_09EDFED4, gUnk_09EDFEE8, gUnk_089B902C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
+    { gEmy07Fl05Frames, gEmy07Fl05Anims, gEmy07Fl05Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl04Frames, gEmy07Fl04Anims, gEmy07Fl04Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl04tFrames, gEmy07Fl04tAnims, gEmy07Fl04tTiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl07Frames, gEmy07Fl07Anims, gEmy07Fl07Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl06Frames, gEmy07Fl06Anims, gEmy07Fl06Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl08Frames, gEmy07Fl08Anims, gEmy07Fl08Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl02Frames, gEmy07Fl02Anims, gEmy07Fl02Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy07Def = { gUnk_08F698A4, gUnk_0813D69C, 0, 130, 20, 20, 0, 0, 0, 1, 0, { 6, 40, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy07Def = { gEmy07Palette, gUnk_0813D69C, 0, 130, 20, 20, 0, 0, 0, 1, 0, { 6, 40, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy07 = { "task_emy_07", task_emy_07_0, task_emy_07_1, task_emy_07_2, task_emy_07_3, 0x188 };
 
 const AnimDef gUnk_0813D774[3] = {
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFEEC, gUnk_09EDFF0C, gUnk_089B9DD2, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl09Frames, gEmy07Fl09Anims, gEmy07Fl09Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D7A4[6] = {
-    { gUnk_09EDFF10, gUnk_09EDFF30, gUnk_089BB67A, 0, { 0, 0, 0 } },
+    { gEmy07Fl10Frames, gEmy07Fl10Anims, gEmy07Fl10Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EDFFDC, gUnk_09EE0004, gUnk_089C292C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFF34, gUnk_09EDFF5C, gUnk_089BCC54, 0, { 0, 0, 0 } },
-    { gUnk_09EDFF60, gUnk_09EDFF88, gUnk_089BE7BA, 0, { 0, 0, 0 } },
-    { gUnk_09EDFF8C, gUnk_09EDFFAC, gUnk_089BFDD6, 0, { 0, 0, 0 } },
-    { gUnk_09EDFFB0, gUnk_09EDFFD8, gUnk_089C11E6, 0, { 0, 0, 0 } },
+    { gEmy07Fl10tFrames, gEmy07Fl10tAnims, gEmy07Fl10tTiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl10fFrames, gEmy07Fl10fAnims, gEmy07Fl10fTiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl11tFrames, gEmy07Fl11tAnims, gEmy07Fl11tTiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl11fFrames, gEmy07Fl11fAnims, gEmy07Fl11fTiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy08Def = { gUnk_08F698E4, gUnk_0813D774, 179, 130, 20, 20, 24, 24, 16, 5, 0, { 7, 999, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy08Def = { gEmy07bPalette, gUnk_0813D774, 179, 130, 20, 20, 24, 24, 16, 5, 0, { 7, 999, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy08 = { "task_emy_08", task_emy_08_0, task_emy_08_1, task_emy_08_2, task_emy_08_3, 0x190 };
 
 const AnimDef gUnk_0813D83C[3] = {
-    { gUnk_09EDFAA4, gUnk_09EDFAC4, gUnk_0897CDAC, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB14, gUnk_09EDFB30, gUnk_08983E36, 0, { 0, 0, 0 } },
-    { gUnk_09EDFAC8, gUnk_09EDFAEC, gUnk_0897EFB2, 0, { 0, 0, 0 } },
+    { gEmy14Ll00Frames, gEmy14Ll00Anims, gEmy14Ll00Tiles, 0, { 0, 0, 0 } },
+    { gEmy14Ll03Frames, gEmy14Ll03Anims, gEmy14Ll03Tiles, 0, { 0, 0, 0 } },
+    { gEmy14Ll01Frames, gEmy14Ll01Anims, gEmy14Ll01Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D86C[2] = {
-    { gUnk_09EDFAF0, gUnk_09EDFB10, gUnk_08981824, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB38, gUnk_09EDFB58, gUnk_08985F9E, 0, { 0, 0, 0 } },
+    { gEmy14Ll02Frames, gEmy14Ll02Anims, gEmy14Ll02Tiles, 0, { 0, 0, 0 } },
+    { gEmy14Ll04Frames, gEmy14Ll04Anims, gEmy14Ll04Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy14Def = { gUnk_08F697E4, gUnk_0813D83C, 307, 130, 10, 20, 64, 32, 16, 10, 0, { 9, 32, 35, 12, 16, 100, 0 } };
+const EmyDef gEmy14Def = { gEmy14Palette, gUnk_0813D83C, 307, 130, 10, 20, 64, 32, 16, 10, 0, { 9, 32, 35, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy14 = { "task_emy_14", task_emy_14_0, task_emy_14_1, task_emy_14_2, task_emy_14_3, 0x184 };
 
 const AnimDef gUnk_0813D8C4[3] = {
-    { gUnk_09EE017C, gUnk_09EE01A0, gUnk_089DF930, 0, { 0, 0, 0 } },
-    { gUnk_09EE01C8, gUnk_09EE01E0, gUnk_089E416E, 0, { 0, 0, 0 } },
-    { gUnk_09EE01A4, gUnk_09EE01C4, gUnk_089E26BE, 0, { 0, 0, 0 } },
+    { gEmy1500Frames, gEmy1500Anims, gEmy1500Tiles, 0, { 0, 0, 0 } },
+    { gEmy1502Frames, gEmy1502Anims, gEmy1502Tiles, 0, { 0, 0, 0 } },
+    { gEmy1501Frames, gEmy1501Anims, gEmy1501Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D8F4[5] = {
-    { gUnk_09EE01E4, gUnk_09EE0200, gUnk_089E5EA0, 0, { 0, 0, 0 } },
-    { gUnk_09EE01E4, gUnk_09EE0200, gUnk_089E5EA0, 1, { 0, 0, 0 } },
-    { gUnk_09EE01E4, gUnk_09EE0200, gUnk_089E5EA0, 2, { 0, 0, 0 } },
-    { gUnk_09EE020C, gUnk_09EE0230, gUnk_089E8384, 0, { 0, 0, 0 } },
-    { gUnk_09EE020C, gUnk_09EE0230, gUnk_089E8384, 1, { 0, 0, 0 } },
+    { gEmy1510Frames, gEmy1510Anims, gEmy1510Tiles, 0, { 0, 0, 0 } },
+    { gEmy1510Frames, gEmy1510Anims, gEmy1510Tiles, 1, { 0, 0, 0 } },
+    { gEmy1510Frames, gEmy1510Anims, gEmy1510Tiles, 2, { 0, 0, 0 } },
+    { gEmy1511Frames, gEmy1511Anims, gEmy1511Tiles, 0, { 0, 0, 0 } },
+    { gEmy1511Frames, gEmy1511Anims, gEmy1511Tiles, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy15Def = { gUnk_08F69944, gUnk_0813D8C4, 192, 200, 2, 20, 64, 32, 32, 10, 0, { 10, 41, 35, 12, 16, 100, 0 } };
+const EmyDef gEmy15Def = { gEmy15Palette, gUnk_0813D8C4, 192, 200, 2, 20, 64, 32, 32, 10, 0, { 10, 41, 35, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy15 = { "task_emy_15", task_emy_15_0, task_emy_15_1, task_emy_15_2, task_emy_15_3, 0x184 };
 
 const AnimDef gUnk_0813D97C[3] = {
-    { gUnk_09EE0424, gUnk_09EE0448, gUnk_08A1823A, 0, { 0, 0, 0 } },
-    { gUnk_09EE0470, gUnk_09EE0484, gUnk_08A1CDA8, 0, { 0, 0, 0 } },
-    { gUnk_09EE044C, gUnk_09EE046C, gUnk_08A1AB00, 0, { 0, 0, 0 } },
+    { gEmy1600Frames, gEmy1600Anims, gEmy1600Tiles, 0, { 0, 0, 0 } },
+    { gEmy1602Frames, gEmy1602Anims, gEmy1602Tiles, 0, { 0, 0, 0 } },
+    { gEmy1601Frames, gEmy1601Anims, gEmy1601Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813D9AC[2] = {
-    { gUnk_09EE0488, gUnk_09EE04A8, gUnk_08A1E4CC, 0, { 0, 0, 0 } },
-    { gUnk_09EE04B8, gUnk_09EE04DC, gUnk_08A20D96, 0, { 0, 0, 0 } },
+    { gEmy1610Frames, gEmy1610Anims, gEmy1610Tiles, 0, { 0, 0, 0 } },
+    { gEmy1611Frames, gEmy1611Anims, gEmy1611Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy16Def = { gUnk_08F699C4, gUnk_0813D97C, 307, 130, 20, 20, 99, 32, 32, 10, 0, { 11, 29, 16, 8, 16, 100, 0 } };
+const EmyDef gEmy16Def = { gEmy16Palette, gUnk_0813D97C, 307, 130, 20, 20, 99, 32, 32, 10, 0, { 11, 29, 16, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy16 = { "task_emy_16", task_emy_16_0, task_emy_16_1, task_emy_16_2, task_emy_16_3, 0x1A4 };
 
@@ -189,336 +189,336 @@ TaskDesc gTaskDescEmy16B = { "task_emy_16_b", task_emy_16_b_0, task_emy_16_b_1, 
 TaskDesc gTaskDescEmy16P = { "task_emy_16_p", task_emy_16_p_0, task_emy_16_p_1, task_emy_16_p_2, task_emy_16_p_3, 0x34 };
 
 const AnimDef gUnk_0813DA24[3] = {
-    { gUnk_09EE0D2C, gUnk_09EE0D6C, gUnk_08AF0E4E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0DC4, gUnk_09EE0DE0, gUnk_08AF7F7E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0D70, gUnk_09EE0DB8, gUnk_08AF4A6E, 1, { 0, 0, 0 } },
+    { gEmy1800Frames, gEmy1800Anims, gEmy1800Tiles, 0, { 0, 0, 0 } },
+    { gEmy1802Frames, gEmy1802Anims, gEmy1802Tiles, 0, { 0, 0, 0 } },
+    { gEmy1801Frames, gEmy1801Anims, gEmy1801Tiles, 1, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DA54[4] = {
-    { gUnk_09EE0DE4, gUnk_09EE0E04, gUnk_08AFA282, 0, { 0, 0, 0 } },
-    { gUnk_09EE0E08, gUnk_09EE0E28, gUnk_08AFCC84, 0, { 0, 0, 0 } },
-    { gUnk_09EE0D70, gUnk_09EE0DB8, gUnk_08AF4A6E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0D70, gUnk_09EE0DB8, gUnk_08AF4A6E, 2, { 0, 0, 0 } },
+    { gEmy1810Frames, gEmy1810Anims, gEmy1810Tiles, 0, { 0, 0, 0 } },
+    { gEmy1811Frames, gEmy1811Anims, gEmy1811Tiles, 0, { 0, 0, 0 } },
+    { gEmy1801Frames, gEmy1801Anims, gEmy1801Tiles, 0, { 0, 0, 0 } },
+    { gEmy1801Frames, gEmy1801Anims, gEmy1801Tiles, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy18Def = { gUnk_08F69B24, gUnk_0813DA24, 768, 150, 4, 20, 40, 24, 16, 10, 0, { 12, 45, 40, 8, 16, 100, 0 } };
+const EmyDef gEmy18Def = { gEmy18Palette, gUnk_0813DA24, 768, 150, 4, 20, 40, 24, 16, 10, 0, { 12, 45, 40, 8, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy18 = { "task_emy_18", task_emy_18_0, task_emy_18_1, task_emy_18_2, task_emy_18_3, 0x188 };
 
 const AnimDef gUnk_0813DACC[3] = {
-    { gUnk_09EE0238, gUnk_09EE0250, gUnk_089EB0D6, 0, { 0, 0, 0 } },
-    { gUnk_09EE0278, gUnk_09EE0284, gUnk_089EEFFC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0254, gUnk_09EE0274, gUnk_089ECE06, 0, { 0, 0, 0 } },
+    { gEmy1900Frames, gEmy1900Anims, gEmy1900Tiles, 0, { 0, 0, 0 } },
+    { gEmy1902Frames, gEmy1902Anims, gEmy1902Tiles, 0, { 0, 0, 0 } },
+    { gEmy1901Frames, gEmy1901Anims, gEmy1901Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DAFC[5] = {
-    { gUnk_09EE0288, gUnk_09EE02A4, gUnk_089EFC28, 0, { 0, 0, 0 } },
-    { gUnk_09EE0288, gUnk_09EE02A4, gUnk_089EFC28, 1, { 0, 0, 0 } },
-    { gUnk_09EE0288, gUnk_09EE02A4, gUnk_089EFC28, 2, { 0, 0, 0 } },
-    { gUnk_09EE0288, gUnk_09EE02A4, gUnk_089EFC28, 3, { 0, 0, 0 } },
-    { gUnk_09EE02B4, gUnk_09EE02D0, gUnk_089F18A0, 0, { 0, 0, 0 } },
+    { gEmy1910Frames, gEmy1910Anims, gEmy1910Tiles, 0, { 0, 0, 0 } },
+    { gEmy1910Frames, gEmy1910Anims, gEmy1910Tiles, 1, { 0, 0, 0 } },
+    { gEmy1910Frames, gEmy1910Anims, gEmy1910Tiles, 2, { 0, 0, 0 } },
+    { gEmy1910Frames, gEmy1910Anims, gEmy1910Tiles, 3, { 0, 0, 0 } },
+    { gEmy1911Frames, gEmy1911Anims, gEmy1911Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy19Def = { gUnk_08F69964, gUnk_0813DACC, 256, 130, 20, 20, 80, 80, 32, 10, 0, { 13, 53, 32, 13, 16, 100, 0 } };
+const EmyDef gEmy19Def = { gEmy19Palette, gUnk_0813DACC, 256, 130, 20, 20, 80, 80, 32, 10, 0, { 13, 53, 32, 13, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy19 = { "task_emy_19", task_emy_19_0, task_emy_19_1, task_emy_19_2, task_emy_19_3, 0x188 };
 
 const AnimDef gUnk_0813DB84[3] = {
-    { gUnk_09EDFC60, gUnk_09EDFC80, gUnk_0899014C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFCA0, gUnk_09EDFCB8, gUnk_089975F8, 0, { 0, 0, 0 } },
-    { gUnk_09EDFC84, gUnk_09EDFC9C, gUnk_089943B0, 0, { 0, 0, 0 } },
+    { gEmy2100Frames, gEmy2100Anims, gEmy2100Tiles, 0, { 0, 0, 0 } },
+    { gEmy2102Frames, gEmy2102Anims, gEmy2102Tiles, 0, { 0, 0, 0 } },
+    { gEmy2101Frames, gEmy2101Anims, gEmy2101Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DBB4[4] = {
-    { gUnk_09EDFCF8, gUnk_09EDFD10, gUnk_0899DE26, 0, { 0, 0, 0 } },
-    { gUnk_09EDFD14, gUnk_09EDFD44, gUnk_089A1034, 0, { 0, 0, 0 } },
-    { gUnk_09EDFD14, gUnk_09EDFD44, gUnk_089A1034, 1, { 0, 0, 0 } },
-    { gUnk_09EDFD4C, gUnk_09EDFD6C, gUnk_089A7288, 0, { 0, 0, 0 } },
+    { gEmy2110Frames, gEmy2110Anims, gEmy2110Tiles, 0, { 0, 0, 0 } },
+    { gEmy2111Frames, gEmy2111Anims, gEmy2111Tiles, 0, { 0, 0, 0 } },
+    { gEmy2111Frames, gEmy2111Anims, gEmy2111Tiles, 1, { 0, 0, 0 } },
+    { gEmy2111fFrames, gEmy2111fAnims, gEmy2111fTiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy21Def = { gUnk_08F69884, gUnk_0813DB84, 396, 130, 20, 20, 80, 80, 16, 5, 0, { 14, 40, 32, 16, 16, 100, 0 } };
+const EmyDef gEmy21Def = { gEmy21Palette, gUnk_0813DB84, 396, 130, 20, 20, 80, 80, 16, 5, 0, { 14, 40, 32, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy21 = { "task_emy_21", task_emy_21_0, task_emy_21_1, task_emy_21_2, task_emy_21_3, 0x188 };
 
 const AnimDef gUnk_0813DC2C[3] = {
-    { gUnk_09EE0500, gUnk_09EE0530, gUnk_08A239E2, 0, { 0, 0, 0 } },
-    { gUnk_09EE0534, gUnk_09EE0550, gUnk_08A2723C, 0, { 0, 0, 0 } },
-    { gUnk_09EE0500, gUnk_09EE0530, gUnk_08A239E2, 0, { 0, 0, 0 } },
+    { gEmy2200Frames, gEmy2200Anims, gEmy2200Tiles, 0, { 0, 0, 0 } },
+    { gEmy2202Frames, gEmy2202Anims, gEmy2202Tiles, 0, { 0, 0, 0 } },
+    { gEmy2200Frames, gEmy2200Anims, gEmy2200Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DC5C[2] = {
-    { gUnk_09EE0554, gUnk_09EE057C, gUnk_08A2A2C4, 0, { 0, 0, 0 } },
-    { gUnk_09EE0580, gUnk_09EE05BC, gUnk_08A2D81C, 0, { 0, 0, 0 } },
+    { gEmy2210Frames, gEmy2210Anims, gEmy2210Tiles, 0, { 0, 0, 0 } },
+    { gEmy2211Frames, gEmy2211Anims, gEmy2211Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy22Def = { gUnk_08F699E4, gUnk_0813DC2C, 192, 130, 20, 20, 64, 32, 32, 5, 0, { 15, 61, 40, 12, 24, 15, 8 } };
+const EmyDef gEmy22Def = { gEmy22Palette, gUnk_0813DC2C, 192, 130, 20, 20, 64, 32, 32, 5, 0, { 15, 61, 40, 12, 24, 15, 8 } };
 
 TaskDesc gTaskDescEmy22 = { "task_emy_22", task_emy_22_0, task_emy_22_1, task_emy_22_2, task_emy_22_3, 0x188 };
 
 const AnimDef gUnk_0813DCB4[3] = {
-    { gUnk_09EE02D4, gUnk_09EE02F4, gUnk_089F3E0E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0314, gUnk_09EE0328, gUnk_089FB642, 0, { 0, 0, 0 } },
-    { gUnk_09EE02F8, gUnk_09EE0310, gUnk_089F840E, 0, { 0, 0, 0 } },
+    { gEmy2300Frames, gEmy2300Anims, gEmy2300Tiles, 0, { 0, 0, 0 } },
+    { gEmy2302Frames, gEmy2302Anims, gEmy2302Tiles, 0, { 0, 0, 0 } },
+    { gEmy2301Frames, gEmy2301Anims, gEmy2301Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DCE4[2] = {
-    { gUnk_09EE032C, gUnk_09EE034C, gUnk_089FDD92, 0, { 0, 0, 0 } },
-    { gUnk_09EE0350, gUnk_09EE036C, gUnk_08A02308, 0, { 0, 0, 0 } },
+    { gEmy2310Frames, gEmy2310Anims, gEmy2310Tiles, 0, { 0, 0, 0 } },
+    { gEmy2311Frames, gEmy2311Anims, gEmy2311Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy23Def = { gUnk_08F69984, gUnk_0813DCB4, 192, 30, 2, 20, 64, 40, 32, 25, 0, { 16, 66, 36, 10, 16, 100, 0 } };
+const EmyDef gEmy23Def = { gEmy23Palette, gUnk_0813DCB4, 192, 30, 2, 20, 64, 40, 32, 25, 0, { 16, 66, 36, 10, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy23 = { "task_emy_23", task_emy_23_0, task_emy_23_1, task_emy_23_2, task_emy_23_3, 0x188 };
 
 const AnimDef gUnk_0813DD3C[3] = {
-    { gUnk_09EE0B18, gUnk_09EE0B64, gUnk_08ABBF0E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0B94, gUnk_09EE0BB4, gUnk_08AC59DA, 0, { 0, 0, 0 } },
-    { gUnk_09EE0B68, gUnk_09EE0B90, gUnk_08AC206A, 0, { 0, 0, 0 } },
+    { gEmy2500Frames, gEmy2500Anims, gEmy2500Tiles, 0, { 0, 0, 0 } },
+    { gEmy2502Frames, gEmy2502Anims, gEmy2502Tiles, 0, { 0, 0, 0 } },
+    { gEmy2501Frames, gEmy2501Anims, gEmy2501Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DD6C[2] = {
-    { gUnk_09EE0BB8, gUnk_09EE0BE4, gUnk_08AC85A2, 0, { 0, 0, 0 } },
-    { gUnk_09EE0BE8, gUnk_09EE0C54, gUnk_08ACC9D0, 0, { 0, 0, 0 } },
+    { gEmy2510Frames, gEmy2510Anims, gEmy2510Tiles, 0, { 0, 0, 0 } },
+    { gEmy2511Frames, gEmy2511Anims, gEmy2511Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy25Def = { gUnk_08F69AE4, gUnk_0813DD3C, 253, 130, 20, 20, 24, 16, 16, 3, 0, { 17, 79, 40, 12, 32, 100, 0 } };
+const EmyDef gEmy25Def = { gEmy25Palette, gUnk_0813DD3C, 253, 130, 20, 20, 24, 16, 16, 3, 0, { 17, 79, 40, 12, 32, 100, 0 } };
 
 TaskDesc gTaskDescEmy25 = { "task_emy_25", task_emy_25_0, task_emy_25_1, task_emy_25_2, task_emy_25_3, 0x184 };
 
 const AnimDef gUnk_0813DDC4[3] = {
-    { gUnk_09EE05C0, gUnk_09EE05E0, gUnk_08A31D86, 0, { 0, 0, 0 } },
-    { gUnk_09EE05F8, gUnk_09EE0610, gUnk_08A38370, 0, { 0, 0, 0 } },
-    { gUnk_09EE05E4, gUnk_09EE05F4, gUnk_08A3623E, 0, { 0, 0, 0 } },
+    { gEmy2600Frames, gEmy2600Anims, gEmy2600Tiles, 0, { 0, 0, 0 } },
+    { gEmy2602Frames, gEmy2602Anims, gEmy2602Tiles, 0, { 0, 0, 0 } },
+    { gEmy2601Frames, gEmy2601Anims, gEmy2601Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DDF4[2] = {
-    { gUnk_09EE0614, gUnk_09EE062C, gUnk_08A3B798, 0, { 0, 0, 0 } },
-    { gUnk_09EE0630, gUnk_09EE064C, gUnk_08A3EE2E, 0, { 0, 0, 0 } },
+    { gEmy2610Frames, gEmy2610Anims, gEmy2610Tiles, 0, { 0, 0, 0 } },
+    { gEmy2611Frames, gEmy2611Anims, gEmy2611Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy26Def = { gUnk_08F69A04, gUnk_0813DDC4, 192, 130, 20, 20, 64, 32, 32, 10, 0, { 18, 89, 36, 20, 16, 100, 4 } };
+const EmyDef gEmy26Def = { gEmy26Palette, gUnk_0813DDC4, 192, 130, 20, 20, 64, 32, 32, 10, 0, { 18, 89, 36, 20, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy26 = { "task_emy_26", task_emy_26_0, task_emy_26_1, task_emy_26_2, task_emy_26_3, 0x184 };
 
 const AnimDef gUnk_0813DE4C[3] = {
-    { gUnk_09EE0658, gUnk_09EE0678, gUnk_08A42C16, 0, { 0, 0, 0 } },
-    { gUnk_09EE06A0, gUnk_09EE06AC, gUnk_08A4677E, 0, { 0, 0, 0 } },
-    { gUnk_09EE067C, gUnk_09EE069C, gUnk_08A44658, 0, { 0, 0, 0 } },
+    { gEmy2700Frames, gEmy2700Anims, gEmy2700Tiles, 0, { 0, 0, 0 } },
+    { gEmy2702Frames, gEmy2702Anims, gEmy2702Tiles, 0, { 0, 0, 0 } },
+    { gEmy2701Frames, gEmy2701Anims, gEmy2701Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DE7C[2] = {
-    { gUnk_09EE06B0, gUnk_09EE06CC, gUnk_08A473D8, 0, { 0, 0, 0 } },
-    { gUnk_09EE06D0, gUnk_09EE06E8, gUnk_08A49124, 0, { 0, 0, 0 } },
+    { gEmy2710Frames, gEmy2710Anims, gEmy2710Tiles, 0, { 0, 0, 0 } },
+    { gEmy2711Frames, gEmy2711Anims, gEmy2711Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy27Def = { gUnk_08F69A24, gUnk_0813DE4C, 192, 130, 20, 20, 64, 32, 64, 10, 0, { 19, 125, 32, 12, 16, 100, 0 } };
+const EmyDef gEmy27Def = { gEmy27Palette, gUnk_0813DE4C, 192, 130, 20, 20, 64, 32, 64, 10, 0, { 19, 125, 32, 12, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy27 = { "task_emy_27", task_emy_27_0, task_emy_27_1, task_emy_27_2, task_emy_27_3, 0x184 };
 
 const AnimDef gUnk_0813DED4[3] = {
-    { gUnk_09EE06EC, gUnk_09EE070C, gUnk_08A4AD94, 0, { 0, 0, 0 } },
-    { gUnk_09EE0734, gUnk_09EE0740, gUnk_08A51622, 0, { 0, 0, 0 } },
-    { gUnk_09EE0710, gUnk_09EE0728, gUnk_08A4E2F8, 1, { 0, 0, 0 } },
+    { gEmy2800Frames, gEmy2800Anims, gEmy2800Tiles, 0, { 0, 0, 0 } },
+    { gEmy2802Frames, gEmy2802Anims, gEmy2802Tiles, 0, { 0, 0, 0 } },
+    { gEmy2801Frames, gEmy2801Anims, gEmy2801Tiles, 1, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DF04[4] = {
-    { gUnk_09EE0744, gUnk_09EE075C, gUnk_08A52E8A, 0, { 0, 0, 0 } },
-    { gUnk_09EE0760, gUnk_09EE077C, gUnk_08A566B8, 0, { 0, 0, 0 } },
-    { gUnk_09EE0710, gUnk_09EE0728, gUnk_08A4E2F8, 0, { 0, 0, 0 } },
-    { gUnk_09EE0710, gUnk_09EE0728, gUnk_08A4E2F8, 2, { 0, 0, 0 } },
+    { gEmy2810Frames, gEmy2810Anims, gEmy2810Tiles, 0, { 0, 0, 0 } },
+    { gEmy2811Frames, gEmy2811Anims, gEmy2811Tiles, 0, { 0, 0, 0 } },
+    { gEmy2801Frames, gEmy2801Anims, gEmy2801Tiles, 0, { 0, 0, 0 } },
+    { gEmy2801Frames, gEmy2801Anims, gEmy2801Tiles, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy28Def = { gUnk_08F69A44, gUnk_0813DED4, 1024, 150, 4, 20, 40, 24, 16, 25, 0, { 20, 45, 48, 8, 16, 100, 4 } };
+const EmyDef gEmy28Def = { gEmy28Palette, gUnk_0813DED4, 1024, 150, 4, 20, 40, 24, 16, 25, 0, { 20, 45, 48, 8, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy28 = { "task_emy_28", task_emy_28_0, task_emy_28_1, task_emy_28_2, task_emy_28_3, 0x188 };
 
 const AnimDef gUnk_0813DF7C[3] = {
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
-    { gUnk_09EE07A8, gUnk_09EE07B4, gUnk_08A5D6BA, 0, { 0, 0, 0 } },
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
+    { gEmy2902Frames, gEmy2902Anims, gEmy2902Tiles, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813DFAC[2] = {
-    { gUnk_09EE07B8, gUnk_09EE07D4, gUnk_08A5ECC6, 0, { 0, 0, 0 } },
-    { gUnk_09EE07DC, gUnk_09EE0800, gUnk_08A62944, 0, { 0, 0, 0 } },
+    { gEmy2910Frames, gEmy2910Anims, gEmy2910Tiles, 0, { 0, 0, 0 } },
+    { gEmy2911Frames, gEmy2911Anims, gEmy2911Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy29Def = { gUnk_08F69A64, gUnk_0813DF7C, 192, 300, 20, 20, 64, 64, 32, 30, 0, { 21, 80, 56, 22, 32, 100, 4 } };
+const EmyDef gEmy29Def = { gEmy29Palette, gUnk_0813DF7C, 192, 300, 20, 20, 64, 64, 32, 30, 0, { 21, 80, 56, 22, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy29 = { "task_emy_29", task_emy_29_0, task_emy_29_1, task_emy_29_2, task_emy_29_3, 0x188 };
 
 const AnimDef gUnk_0813E004[3] = {
-    { gUnk_09EE09D0, gUnk_09EE09EC, gUnk_08A971D2, 0, { 0, 0, 0 } },
-    { gUnk_09EE0A18, gUnk_09EE0A2C, gUnk_08A9EE4E, 0, { 0, 0, 0 } },
-    { gUnk_09EE09F4, gUnk_09EE0A0C, gUnk_08A9B688, 1, { 0, 0, 0 } },
+    { gEmy3000Frames, gEmy3000Anims, gEmy3000Tiles, 0, { 0, 0, 0 } },
+    { gEmy3002Frames, gEmy3002Anims, gEmy3002Tiles, 0, { 0, 0, 0 } },
+    { gEmy3001Frames, gEmy3001Anims, gEmy3001Tiles, 1, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E034[8] = {
-    { gUnk_09EE09F4, gUnk_09EE0A0C, gUnk_08A9B688, 0, { 0, 0, 0 } },
-    { gUnk_09EE09F4, gUnk_09EE0A0C, gUnk_08A9B688, 2, { 0, 0, 0 } },
-    { gUnk_09EE0A30, gUnk_09EE0A50, gUnk_08AA22EA, 0, { 0, 0, 0 } },
-    { gUnk_09EE0A30, gUnk_09EE0A50, gUnk_08AA22EA, 1, { 0, 0, 0 } },
-    { gUnk_09EE0A30, gUnk_09EE0A50, gUnk_08AA22EA, 2, { 0, 0, 0 } },
-    { gUnk_09EE0A5C, gUnk_09EE0A78, gUnk_08AA7146, 0, { 0, 0, 0 } },
-    { gUnk_09EE0A5C, gUnk_09EE0A78, gUnk_08AA7146, 1, { 0, 0, 0 } },
-    { gUnk_09EE0A5C, gUnk_09EE0A78, gUnk_08AA7146, 2, { 0, 0, 0 } },
+    { gEmy3001Frames, gEmy3001Anims, gEmy3001Tiles, 0, { 0, 0, 0 } },
+    { gEmy3001Frames, gEmy3001Anims, gEmy3001Tiles, 2, { 0, 0, 0 } },
+    { gEmy3010Frames, gEmy3010Anims, gEmy3010Tiles, 0, { 0, 0, 0 } },
+    { gEmy3010Frames, gEmy3010Anims, gEmy3010Tiles, 1, { 0, 0, 0 } },
+    { gEmy3010Frames, gEmy3010Anims, gEmy3010Tiles, 2, { 0, 0, 0 } },
+    { gEmy3011Frames, gEmy3011Anims, gEmy3011Tiles, 0, { 0, 0, 0 } },
+    { gEmy3011Frames, gEmy3011Anims, gEmy3011Tiles, 1, { 0, 0, 0 } },
+    { gEmy3011Frames, gEmy3011Anims, gEmy3011Tiles, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy30Def = { gUnk_08F69AC4, gUnk_0813E004, 1024, 150, 4, 20, 60, 32, 32, 30, 0, { 22, 45, 34, 30, 16, 100, 4 } };
+const EmyDef gEmy30Def = { gEmy30Palette, gUnk_0813E004, 1024, 150, 4, 20, 60, 32, 32, 30, 0, { 22, 45, 34, 30, 16, 100, 4 } };
 
 TaskDesc gTaskDescEmy30 = { "task_emy_30", task_emy_30_0, task_emy_30_1, task_emy_30_2, task_emy_30_3, 0x184 };
 
 const AnimDef gUnk_0813E0EC[3] = {
-    { gUnk_09EE0008, gUnk_09EE0028, gUnk_089C44A8, 0, { 0, 0, 0 } },
-    { gUnk_09EE002C, gUnk_09EE0044, gUnk_089C8588, 0, { 0, 0, 0 } },
-    { gUnk_09EE0008, gUnk_09EE0028, gUnk_089C44A8, 0, { 0, 0, 0 } },
+    { gEmy3100Frames, gEmy3100Anims, gEmy3100Tiles, 0, { 0, 0, 0 } },
+    { gEmy3104Frames, gEmy3104Anims, gEmy3104Tiles, 0, { 0, 0, 0 } },
+    { gEmy3100Frames, gEmy3100Anims, gEmy3100Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E11C[3] = {
-    { gUnk_09EE0048, gUnk_09EE0068, gUnk_089CB296, 0, { 0, 0, 0 } },
-    { gUnk_09EE0074, gUnk_09EE0094, gUnk_089CF49A, 0, { 0, 0, 0 } },
-    { gUnk_09EE00A0, gUnk_09EE00C4, gUnk_089D354A, 0, { 0, 0, 0 } },
+    { gEmy3105Frames, gEmy3105Anims, gEmy3105Tiles, 0, { 0, 0, 0 } },
+    { gEmy3106Frames, gEmy3106Anims, gEmy3106Tiles, 0, { 0, 0, 0 } },
+    { gEmy3107Frames, gEmy3107Anims, gEmy3107Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy31Def = { gUnk_08F69904, gUnk_0813E0EC, 256, 100, 10, 20, 64, 32, 32, 10, 0, { 23, 95, 32, 12, 24, 100, 0 } };
+const EmyDef gEmy31Def = { gEmy31Palette, gUnk_0813E0EC, 256, 100, 10, 20, 64, 32, 32, 10, 0, { 23, 95, 32, 12, 24, 100, 0 } };
 
 TaskDesc gTaskDescEmy31 = { "task_emy_31", task_emy_31_0, task_emy_31_1, task_emy_31_2, task_emy_31_3, 0x194 };
 
 const AnimDef gUnk_0813E184[3] = {
-    { gUnk_09EE0824, gUnk_09EE0844, gUnk_08A67796, 0, { 0, 0, 0 } },
-    { gUnk_09EE0864, gUnk_09EE0874, gUnk_08A6DA7E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0848, gUnk_09EE0860, gUnk_08A6AA32, 0, { 0, 0, 0 } },
+    { gEmy3700Frames, gEmy3700Anims, gEmy3700Tiles, 0, { 0, 0, 0 } },
+    { gEmy3702Frames, gEmy3702Anims, gEmy3702Tiles, 0, { 0, 0, 0 } },
+    { gEmy3701Frames, gEmy3701Anims, gEmy3701Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E1B4[11] = {
-    { gUnk_09EE0878, gUnk_09EE0890, gUnk_08A6FB4C, 0, { 0, 0, 0 } },
-    { gUnk_09EE0894, gUnk_09EE08CC, gUnk_08A72E8A, 0, { 0, 0, 0 } },
-    { gUnk_09EE0894, gUnk_09EE08CC, gUnk_08A72E8A, 1, { 0, 0, 0 } },
-    { gUnk_09EE0894, gUnk_09EE08CC, gUnk_08A72E8A, 2, { 0, 0, 0 } },
-    { gUnk_09EE0894, gUnk_09EE08CC, gUnk_08A72E8A, 3, { 0, 0, 0 } },
-    { gUnk_09EE08DC, gUnk_09EE0910, gUnk_08A79200, 0, { 0, 0, 0 } },
-    { gUnk_09EE08DC, gUnk_09EE0910, gUnk_08A79200, 1, { 0, 0, 0 } },
-    { gUnk_09EE08DC, gUnk_09EE0910, gUnk_08A79200, 2, { 0, 0, 0 } },
-    { gUnk_09EE08DC, gUnk_09EE0910, gUnk_08A79200, 3, { 0, 0, 0 } },
-    { gUnk_09EE0920, gUnk_09EE092C, gUnk_08A7D0F4, 0, { 0, 0, 0 } },
-    { gUnk_09EE0920, gUnk_09EE092C, gUnk_08A7D0F4, 1, { 0, 0, 0 } },
+    { gEmy3710Frames, gEmy3710Anims, gEmy3710Tiles, 0, { 0, 0, 0 } },
+    { gEmy3711Frames, gEmy3711Anims, gEmy3711Tiles, 0, { 0, 0, 0 } },
+    { gEmy3711Frames, gEmy3711Anims, gEmy3711Tiles, 1, { 0, 0, 0 } },
+    { gEmy3711Frames, gEmy3711Anims, gEmy3711Tiles, 2, { 0, 0, 0 } },
+    { gEmy3711Frames, gEmy3711Anims, gEmy3711Tiles, 3, { 0, 0, 0 } },
+    { gEmy3720Frames, gEmy3720Anims, gEmy3720Tiles, 0, { 0, 0, 0 } },
+    { gEmy3720Frames, gEmy3720Anims, gEmy3720Tiles, 1, { 0, 0, 0 } },
+    { gEmy3720Frames, gEmy3720Anims, gEmy3720Tiles, 2, { 0, 0, 0 } },
+    { gEmy3720Frames, gEmy3720Anims, gEmy3720Tiles, 3, { 0, 0, 0 } },
+    { gEmy3721Frames, gEmy3721Anims, gEmy3721Tiles, 0, { 0, 0, 0 } },
+    { gEmy3721Frames, gEmy3721Anims, gEmy3721Tiles, 1, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy37Def = { gUnk_08F69A84, gUnk_0813E184, 409, 130, 20, 20, 64, 32, 32, 10, 3, { 24, 110, 38, 12, 20, 100, 0 } };
+const EmyDef gEmy37Def = { gEmy37Palette, gUnk_0813E184, 409, 130, 20, 20, 64, 32, 32, 10, 3, { 24, 110, 38, 12, 20, 100, 0 } };
 
 TaskDesc gTaskDescEmy37 = { "task_emy_37", task_emy_37_0, task_emy_37_1, task_emy_37_2, task_emy_37_3, 0x190 };
 
 const AnimDef gUnk_0813E29C[3] = {
-    { gUnk_09EDFA08, gUnk_09EDFA24, gUnk_08967A32, 0, { 0, 0, 0 } },
-    { gUnk_09EDFA4C, gUnk_09EDFA5C, gUnk_089717E4, 0, { 0, 0, 0 } },
-    { gUnk_09EDFA28, gUnk_09EDFA48, gUnk_0896C03A, 0, { 0, 0, 0 } },
+    { gEmy3800Frames, gEmy3800Anims, gEmy3800Tiles, 0, { 0, 0, 0 } },
+    { gEmy3802Frames, gEmy3802Anims, gEmy3802Tiles, 0, { 0, 0, 0 } },
+    { gEmy3801Frames, gEmy3801Anims, gEmy3801Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E2CC[2] = {
-    { gUnk_09EDFA80, gUnk_09EDFAA0, gUnk_089789A4, 0, { 0, 0, 0 } },
-    { gUnk_09EDFA60, gUnk_09EDFA7C, gUnk_089744FE, 0, { 0, 0, 0 } },
+    { gEmy3811Frames, gEmy3811Anims, gEmy3811Tiles, 0, { 0, 0, 0 } },
+    { gEmy3810Frames, gEmy3810Anims, gEmy3810Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy38Def = { gUnk_08F697C4, gUnk_0813E29C, 76, 130, 80, 22, 64, 32, 32, 10, 0, { 25, 112, 56, 25, 32, 100, 4 } };
+const EmyDef gEmy38Def = { gEmy38Palette, gUnk_0813E29C, 76, 130, 80, 22, 64, 32, 32, 10, 0, { 25, 112, 56, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy38 = { "task_emy_38", task_emy_38_0, task_emy_38_1, task_emy_38_2, task_emy_38_3, 0x184 };
 
 const AnimDef gUnk_0813E324[3] = {
-    { gUnk_09EE0934, gUnk_09EE0954, gUnk_08A7E6E4, 0, { 0, 0, 0 } },
-    { gUnk_09EE097C, gUnk_09EE098C, gUnk_08A8A10E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0958, gUnk_09EE0978, gUnk_08A844FC, 0, { 0, 0, 0 } },
+    { gEmy3900Frames, gEmy3900Anims, gEmy3900Tiles, 0, { 0, 0, 0 } },
+    { gEmy3902Frames, gEmy3902Anims, gEmy3902Tiles, 0, { 0, 0, 0 } },
+    { gEmy3901Frames, gEmy3901Anims, gEmy3901Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E354[2] = {
-    { gUnk_09EE0990, gUnk_09EE09A8, gUnk_08A8D2C4, 0, { 0, 0, 0 } },
-    { gUnk_09EE09AC, gUnk_09EE09CC, gUnk_08A91ACA, 0, { 0, 0, 0 } },
+    { gEmy3910Frames, gEmy3910Anims, gEmy3910Tiles, 0, { 0, 0, 0 } },
+    { gEmy3911Frames, gEmy3911Anims, gEmy3911Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy39Def = { gUnk_08F69AA4, gUnk_0813E324, 102, 130, 100, 22, 64, 32, 32, 10, 0, { 26, 134, 56, 25, 32, 100, 4 } };
+const EmyDef gEmy39Def = { gEmy39Palette, gUnk_0813E324, 102, 130, 100, 22, 64, 32, 32, 10, 0, { 26, 134, 56, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy39 = { "task_emy_39", task_emy_39_0, task_emy_39_1, task_emy_39_2, task_emy_39_3, 0x188 };
 
 const AnimDef gUnk_0813E3AC[3] = {
-    { gUnk_09EE0370, gUnk_09EE038C, gUnk_08A0625A, 0, { 0, 0, 0 } },
-    { gUnk_09EE03AC, gUnk_09EE03B8, gUnk_08A0DE08, 0, { 0, 0, 0 } },
-    { gUnk_09EE0390, gUnk_09EE03A8, gUnk_08A0A3DA, 0, { 0, 0, 0 } },
+    { gEmy4100Frames, gEmy4100Anims, gEmy4100Tiles, 0, { 0, 0, 0 } },
+    { gEmy4102Frames, gEmy4102Anims, gEmy4102Tiles, 0, { 0, 0, 0 } },
+    { gEmy4101Frames, gEmy4101Anims, gEmy4101Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E3DC[2] = {
-    { gUnk_09EE03BC, gUnk_09EE03DC, gUnk_08A0FCAA, 0, { 0, 0, 0 } },
-    { gUnk_09EE03E0, gUnk_09EE0420, gUnk_08A15034, 0, { 0, 0, 0 } },
+    { gEmy4110Frames, gEmy4110Anims, gEmy4110Tiles, 0, { 0, 0, 0 } },
+    { gEmy4111Frames, gEmy4111Anims, gEmy4111Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy41Def = { gUnk_08F699A4, gUnk_0813E3AC, 192, 400, 50, 20, 64, 32, 32, 10, 0, { 27, 108, 56, 32, 20, 100, 4 } };
+const EmyDef gEmy41Def = { gEmy41Palette, gUnk_0813E3AC, 192, 400, 50, 20, 64, 32, 32, 10, 0, { 27, 108, 56, 32, 20, 100, 4 } };
 
 TaskDesc gTaskDescEmy41 = { "task_emy_41", task_emy_41_0, task_emy_41_1, task_emy_41_2, task_emy_41_3, 0x190 };
 
 const AnimDef gUnk_0813E434[3] = {
-    { gUnk_09EE0C58, gUnk_09EE0C80, gUnk_08AD3CFC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0CA8, gUnk_09EE0CC8, gUnk_08ADE50C, 0, { 0, 0, 0 } },
-    { gUnk_09EE0C84, gUnk_09EE0CA4, gUnk_08AD990E, 0, { 0, 0, 0 } },
+    { gEmy4400Frames, gEmy4400Anims, gEmy4400Tiles, 0, { 0, 0, 0 } },
+    { gEmy4402Frames, gEmy4402Anims, gEmy4402Tiles, 0, { 0, 0, 0 } },
+    { gEmy4401Frames, gEmy4401Anims, gEmy4401Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E464[2] = {
-    { gUnk_09EE0CCC, gUnk_09EE0CF4, gUnk_08AE35CC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0CF8, gUnk_09EE0D28, gUnk_08AEA246, 0, { 0, 0, 0 } },
+    { gEmy4410Frames, gEmy4410Anims, gEmy4410Tiles, 0, { 0, 0, 0 } },
+    { gEmy4412Frames, gEmy4412Anims, gEmy4412Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy44Def = { gUnk_08F69B04, gUnk_0813E434, 192, 130, 90, 20, 60, 60, 16, 10, 0, { 28, 260, 48, 25, 32, 100, 4 } };
+const EmyDef gEmy44Def = { gEmy44Palette, gUnk_0813E434, 192, 130, 90, 20, 60, 60, 16, 10, 0, { 28, 260, 48, 25, 32, 100, 4 } };
 
 TaskDesc gTaskDescEmy44 = { "task_emy_44", task_emy_44_0, task_emy_44_1, task_emy_44_2, task_emy_44_3, 0x184 };
 
 const AnimDef gUnk_0813E4BC[3] = {
-    { gUnk_09EE0E2C, gUnk_09EE0E4C, gUnk_08AFF950, 0, { 0, 0, 0 } },
-    { gUnk_09EE0E50, gUnk_09EE0E70, gUnk_08B01336, 0, { 0, 0, 0 } },
-    { gUnk_09EE0E2C, gUnk_09EE0E4C, gUnk_08AFF950, 0, { 0, 0, 0 } },
+    { gEmy8100Frames, gEmy8100Anims, gEmy8100Tiles, 0, { 0, 0, 0 } },
+    { gEmy8102Frames, gEmy8102Anims, gEmy8102Tiles, 0, { 0, 0, 0 } },
+    { gEmy8100Frames, gEmy8100Anims, gEmy8100Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E4EC[5] = {
-    { gUnk_09EE0EC8, gUnk_09EE0EEC, gUnk_08B06B56, 0, { 0, 0, 0 } },
-    { gUnk_09EE0EF0, gUnk_09EE0F14, gUnk_08B08984, 0, { 0, 0, 0 } },
-    { gUnk_09EE0E74, gUnk_09EE0EBC, gUnk_08B02F02, 0, { 0, 0, 0 } },
-    { gUnk_09EE0E74, gUnk_09EE0EBC, gUnk_08B02F02, 1, { 0, 0, 0 } },
-    { gUnk_09EE0E74, gUnk_09EE0EBC, gUnk_08B02F02, 2, { 0, 0, 0 } },
+    { gEmy8110Frames, gEmy8110Anims, gEmy8110Tiles, 0, { 0, 0, 0 } },
+    { gEmy8111Frames, gEmy8111Anims, gEmy8111Tiles, 0, { 0, 0, 0 } },
+    { gEmy8105Frames, gEmy8105Anims, gEmy8105Tiles, 0, { 0, 0, 0 } },
+    { gEmy8105Frames, gEmy8105Anims, gEmy8105Tiles, 1, { 0, 0, 0 } },
+    { gEmy8105Frames, gEmy8105Anims, gEmy8105Tiles, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy81Def = { gUnk_08F69B44, gUnk_0813E4BC, 128, 130, 20, 15, 64, 32, 32, 10, 0, { 29, 66, 27, 13, 16, 100, 0 } };
+const EmyDef gEmy81Def = { gEmy81Palette, gUnk_0813E4BC, 128, 130, 20, 15, 64, 32, 32, 10, 0, { 29, 66, 27, 13, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy81 = { "task_emy_81", task_emy_81_0, task_emy_81_1, task_emy_81_2, task_emy_81_3, 0x194 };
 
 const AnimDef gUnk_0813E574[3] = {
-    { gUnk_09EE0F18, gUnk_09EE0F38, gUnk_08B0AAE6, 0, { 0, 0, 0 } },
-    { gUnk_09EE0F5C, gUnk_09EE0F80, gUnk_08B0D658, 0, { 0, 0, 0 } },
-    { gUnk_09EE0F3C, gUnk_09EE0F58, gUnk_08B0C1D2, 0, { 0, 0, 0 } },
+    { gEmy8200Frames, gEmy8200Anims, gEmy8200Tiles, 0, { 0, 0, 0 } },
+    { gEmy8202Frames, gEmy8202Anims, gEmy8202Tiles, 0, { 0, 0, 0 } },
+    { gEmy8201Frames, gEmy8201Anims, gEmy8201Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E5A4[6] = {
-    { gUnk_09EE0FB0, gUnk_09EE0FC8, gUnk_08B114B0, 0, { 0, 0, 0 } },
-    { gUnk_09EE0FB0, gUnk_09EE0FC8, gUnk_08B114B0, 1, { 0, 0, 0 } },
-    { gUnk_09EE0FB0, gUnk_09EE0FC8, gUnk_08B114B0, 2, { 0, 0, 0 } },
-    { gUnk_09EE0F84, gUnk_09EE0FAC, gUnk_08B0EB86, 0, { 0, 0, 0 } },
-    { gUnk_09EE0FD4, gUnk_09EE0FF8, gUnk_08B1278E, 0, { 0, 0, 0 } },
-    { gUnk_09EE0FFC, gUnk_09EE1020, gUnk_08B149BC, 0, { 0, 0, 0 } },
+    { gEmy8210jFrames, gEmy8210jAnims, gEmy8210jTiles, 0, { 0, 0, 0 } },
+    { gEmy8210jFrames, gEmy8210jAnims, gEmy8210jTiles, 1, { 0, 0, 0 } },
+    { gEmy8210jFrames, gEmy8210jAnims, gEmy8210jTiles, 2, { 0, 0, 0 } },
+    { gEmy8210Frames, gEmy8210Anims, gEmy8210Tiles, 0, { 0, 0, 0 } },
+    { gEmy8211Frames, gEmy8211Anims, gEmy8211Tiles, 0, { 0, 0, 0 } },
+    { gEmy8212Frames, gEmy8212Anims, gEmy8212Tiles, 0, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy82Def = { gUnk_08F69B64, gUnk_0813E574, 204, 3, 20, 20, 48, 32, 32, 1, 0, { 30, 66, 32, 10, 16, 100, 0 } };
+const EmyDef gEmy82Def = { gEmy82Palette, gUnk_0813E574, 204, 3, 20, 20, 48, 32, 32, 1, 0, { 30, 66, 32, 10, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmy82 = { "task_emy_82", task_emy_82_0, task_emy_82_1, task_emy_82_2, task_emy_82_3, 0x188 };
 
 const AnimDef gUnk_0813E63C[3] = {
-    { gUnk_09EE1024, gUnk_09EE1044, gUnk_08B16A8A, 0, { 0, 0, 0 } },
-    { gUnk_09EE1048, gUnk_09EE1058, gUnk_08B185C6, 0, { 0, 0, 0 } },
-    { gUnk_09EE1024, gUnk_09EE1044, gUnk_08B16A8A, 0, { 0, 0, 0 } },
+    { gEmy8300Frames, gEmy8300Anims, gEmy8300Tiles, 0, { 0, 0, 0 } },
+    { gEmy8302Frames, gEmy8302Anims, gEmy8302Tiles, 0, { 0, 0, 0 } },
+    { gEmy8300Frames, gEmy8300Anims, gEmy8300Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813E66C[4] = {
-    { gUnk_09EE105C, gUnk_09EE1088, gUnk_08B19556, 0, { 0, 0, 0 } },
-    { gUnk_09EE10B0, gUnk_09EE10D4, gUnk_08B1BAA8, 0, { 0, 0, 0 } },
-    { gUnk_09EE10B0, gUnk_09EE10D4, gUnk_08B1BAA8, 1, { 0, 0, 0 } },
-    { gUnk_09EE10B0, gUnk_09EE10D4, gUnk_08B1BAA8, 2, { 0, 0, 0 } },
+    { gEmy8310Frames, gEmy8310Anims, gEmy8310Tiles, 0, { 0, 0, 0 } },
+    { gEmy8311Frames, gEmy8311Anims, gEmy8311Tiles, 0, { 0, 0, 0 } },
+    { gEmy8311Frames, gEmy8311Anims, gEmy8311Tiles, 1, { 0, 0, 0 } },
+    { gEmy8311Frames, gEmy8311Anims, gEmy8311Tiles, 2, { 0, 0, 0 } },
 };
 
-const EmyDef gEmy83Def = { gUnk_08F69B84, gUnk_0813E63C, 192, 130, 20, 20, 50, 50, 50, 10, 0, { 31, 66, 35, 12, 24, 100, 0 } };
+const EmyDef gEmy83Def = { gEmy83Palette, gUnk_0813E63C, 192, 130, 20, 20, 50, 50, 50, 10, 0, { 31, 66, 35, 12, 24, 100, 0 } };
 
 TaskDesc gTaskDescEmy83 = { "task_emy_83", task_emy_83_0, task_emy_83_1, task_emy_83_2, task_emy_83_3, 0x1A8 };
 
@@ -527,26 +527,26 @@ TaskDesc gTaskDescEmy83B = { "task_emy_83_b", task_emy_83_b_0, task_emy_83_b_1, 
 TaskDesc gTaskDescEmy83S = { "task_emy_83_s", task_emy_83_s_0, task_emy_83_s_1, task_emy_83_s_2, task_emy_83_s_3, 0x24 };
 
 const AnimDef gUnk_0813E704[3] = {
-    { gUnk_09EE0A84, gUnk_09EE0A9C, gUnk_08AAB264, 0, { 0, 0, 0 } },
-    { gUnk_09EE0AA0, gUnk_09EE0AB0, gUnk_08AAE8C6, 0, { 0, 0, 0 } },
-    { gUnk_09EEE640, gUnk_09EEE658, gUnk_091DFA24, 0, { 0, 0, 0 } },
+    { gTrumpH00bFrames, gTrumpH00bAnims, gTrumpH00bTiles, 0, { 0, 0, 0 } },
+    { gTrumpH02bFrames, gTrumpH02bAnims, gTrumpH02bTiles, 0, { 0, 0, 0 } },
+    { gTrumpH03Frames, gTrumpH03Anims, gTrumpH03Tiles, 0, { 0, 0, 0 } },
 };
 
-const AnimDef gUnk_0813E734 = { gUnk_09EE0AB4, gUnk_09EE0AC8, gUnk_08AB0C38, 0, { 0, 0, 0 } };
+const AnimDef gUnk_0813E734 = { gTrumpH10Frames, gTrumpH10Anims, gTrumpH10Tiles, 0, { 0, 0, 0 } };
 
-const EmyDef gEmyTrumpHDef = { gUnk_09617C98, gUnk_0813E704, 409, 130, 20, 20, 90, 32, 32, 10, 0, { 47, 200, 40, 16, 16, 100, 0 } };
+const EmyDef gEmyTrumpHDef = { gTrumpHPalette, gUnk_0813E704, 409, 130, 20, 20, 90, 32, 32, 10, 0, { 47, 200, 40, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmyTrumpH = { "task_emy_trump_h", task_emy_trump_h_0, task_emy_trump_h_1, task_emy_trump_h_2, task_emy_trump_h_3, 0x184 };
 
 const AnimDef gUnk_0813E784[3] = {
-    { gUnk_09EE0ACC, gUnk_09EE0AE4, gUnk_08AB357C, 0, { 0, 0, 0 } },
-    { gUnk_09EE0AE8, gUnk_09EE0AF8, gUnk_08AB69D8, 0, { 0, 0, 0 } },
-    { gUnk_09EEE69C, gUnk_09EEE6B4, gUnk_091E8B6E, 0, { 0, 0, 0 } },
+    { gTrumpS00bFrames, gTrumpS00bAnims, gTrumpS00bTiles, 0, { 0, 0, 0 } },
+    { gTrumpS02bFrames, gTrumpS02bAnims, gTrumpS02bTiles, 0, { 0, 0, 0 } },
+    { gTrumpS03Frames, gTrumpS03Anims, gTrumpS03Tiles, 0, { 0, 0, 0 } },
 };
 
-const AnimDef gUnk_0813E7B4 = { gUnk_09EE0AFC, gUnk_09EE0B14, gUnk_08AB8BE8, 0, { 0, 0, 0 } };
+const AnimDef gUnk_0813E7B4 = { gTrumpS10Frames, gTrumpS10Anims, gTrumpS10Tiles, 0, { 0, 0, 0 } };
 
-const EmyDef gEmyTrumpSDef = { gUnk_09617CB8, gUnk_0813E784, 307, 130, 20, 20, 64, 32, 32, 10, 0, { 46, 200, 40, 16, 16, 100, 0 } };
+const EmyDef gEmyTrumpSDef = { gTrumpSPalette, gUnk_0813E784, 307, 130, 20, 20, 64, 32, 32, 10, 0, { 46, 200, 40, 16, 16, 100, 0 } };
 
 TaskDesc gTaskDescEmyTrumpS = { "task_emy_trump_s", task_emy_trump_s_0, task_emy_trump_s_1, task_emy_trump_s_2, task_emy_trump_s_3, 0x184 };
 
@@ -1498,7 +1498,7 @@ void task_emy_07_3(EmyWork* work) {
 
 void task_emy_08_0(Emy08Work* work, void* obj) {
     func_0800C778(&work->base, &gEmy08Def, obj);
-    work->palette = LoadObjPalette(gUnk_08F698C4, 0x20);
+    work->palette = LoadObjPalette(gEmy07mPalette, 0x20);
     work->unk_188 = work->base.palette;
     work->flags = 0;
 }
@@ -1937,9 +1937,9 @@ void task_emy_16_b_0(Emy16bWork* work, EmySpawn* spawn) {
         work->unk_02C = 0;
     }
 
-    work->palette = LoadObjPalette(gUnk_08F699C4, 0x20);
-    work->tiles = AllocObjTiles(0x80, gUnk_08A23630);
-    AnimInit(work->anim, gUnk_09EE04F4, gUnk_09EE04E0);
+    work->palette = LoadObjPalette(gEmy16Palette, 0x20);
+    work->tiles = AllocObjTiles(0x80, gEmy1611bTiles);
+    AnimInit(work->anim, gEmy1611bAnims, gEmy1611bFrames);
     AnimStart(work->anim, 0, 1);
     work->state = 0;
     work->x = spawn->x;
@@ -2085,9 +2085,9 @@ void task_emy_16_p_0(Emy16pWork* work, EmySpawn* spawn) {
         work->unk_02C = 0;
     }
 
-    work->palette = LoadObjPalette(gUnk_08F699C4, 0x20);
-    work->tiles = AllocObjTiles(0x80, gUnk_08A20BCE);
-    AnimInit(work->anim, gUnk_09EE04B4, gUnk_09EE04AC);
+    work->palette = LoadObjPalette(gEmy16Palette, 0x20);
+    work->tiles = AllocObjTiles(0x80, gEmy1610bTiles);
+    AnimInit(work->anim, gEmy1610bAnims, gEmy1610bFrames);
     AnimStart(work->anim, 0, 1);
     work->x = spawn->x;
     work->y = spawn->y;
@@ -5406,9 +5406,9 @@ void task_emy_83_3(Emy83Work* work) {
 
 void task_emy_83_b_0(Emy83bWork* work, EmySpawn* spawn) {
     work->state = 0;
-    work->palette = LoadObjPalette(gUnk_08F69B84, 0x20);
-    work->tiles = AllocObjTiles(0x80, gUnk_08B1B854);
-    AnimInit(work->unk_008, gUnk_09EE10A4, gUnk_09EE1090);
+    work->palette = LoadObjPalette(gEmy83Palette, 0x20);
+    work->tiles = AllocObjTiles(0x80, gEmy8310bTiles);
+    AnimInit(work->unk_008, gEmy8310bAnims, gEmy8310bFrames);
     AnimStart(work->unk_008, 0, 0);
     work->x = spawn->x;
     work->y = spawn->y;
@@ -5488,8 +5488,8 @@ void task_emy_83_b_3(Emy83bWork* work) {
 }
 
 void task_emy_83_s_0(Emy83sWork* work, EmySpawn* spawn) {
-    work->palette = LoadObjPalette(gUnk_08F69B84, 0x20);
-    work->tiles = LoadObjTiles(gUnk_08B1D846, 0x40);
+    work->palette = LoadObjPalette(gEmy83Palette, 0x20);
+    work->tiles = LoadObjTiles(gEmy8311bTiles, 0x40);
     work->x = spawn->x;
     work->y = spawn->y;
     work->z = spawn->z;
@@ -5541,10 +5541,10 @@ void task_emy_83_s_2(Emy83sWork* work) {
 
     pri = GetBattleSpritePriorityFlags(work->y);
     WorldToScreen(&x, &y, work->x, work->y, work->z);
-    DrawSprite(x, y, gUnk_08B1D828, work->tiles, work->palette, 0, pri,
+    DrawSprite(x, y, gEmy8311bFrame0, work->tiles, work->palette, 0, pri,
         -0x1004 - ((work->y + 0x400) >> 8) * 4);
     WorldToScreen(&x, &y, work->x, work->y, 0);
-    DrawSprite(x, y, gUnk_08B1D832, work->tiles, work->palette, 0, pri, -2);
+    DrawSprite(x, y, gEmy8311bFrame1, work->tiles, work->palette, 0, pri, -2);
 }
 
 void task_emy_83_s_3(Emy83sWork* work) {

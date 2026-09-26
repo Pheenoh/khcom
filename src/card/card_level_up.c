@@ -65,8 +65,8 @@ u8 func_080A0A44(struct LevelUpWork* w, void* a);
 u8 func_080A11CC(LevelUpWork* w, void* a);
 extern u8 gUnk_0908CAEC[];
 extern u8 gUnk_0908D05E[];
-extern u8 gUnk_08F683A4[];
-extern u8 gUnk_09618118[];
+extern u8 gSoraPalette[];
+extern u8 gRikuPalette[];
 #ifdef VERSION_EU
 extern void* gUnkEu_09F72D1C[];
 #endif
@@ -137,24 +137,24 @@ void Level_Up_0(LevelUpWork* w) {
     if (!(gGameState.flags & 8)) {
         w->tiles4 = AllocObjTiles(0x500, 0);
         w->palette5 = AllocObjPalette(32);
-        UpdateAllocatedObjPalette(w->palette5, gUnk_08F683A4);
+        UpdateAllocatedObjPalette(w->palette5, gSoraPalette);
         FadeSetPaletteExcluded(((ObjPalette*)w->palette5)->index + 16, 1);
         WorldToScreen(&x, &y, gBtlWork->actor->x,
                       gBtlWork->actor->y,
                       gBtlWork->actor->z);
-        SetObjTileSource(w->tiles4, gUnk_088E33C2);
-        AnimInit(&w->anim2, gUnk_09EDEE14, gUnk_09EDEE08);
+        SetObjTileSource(w->tiles4, gSor1ll51Tiles);
+        AnimInit(&w->anim2, gSor1ll51Anims, gSor1ll51Frames);
         AnimStart(&w->anim2, 0, 1);
     } else {
         w->tiles4 = AllocObjTiles(0x800, 0);
         w->palette5 = AllocObjPalette(32);
-        UpdateAllocatedObjPalette(w->palette5, gUnk_09618118);
+        UpdateAllocatedObjPalette(w->palette5, gRikuPalette);
         FadeSetPaletteExcluded(((ObjPalette*)w->palette5)->index + 16, 1);
         WorldToScreen(&x, &y, gBtlWork->actor->x,
                       gBtlWork->actor->y,
                       gBtlWork->actor->z);
-        SetObjTileSource(w->tiles4, gUnk_0891ED26);
-        AnimInit(&w->anim2, gUnk_09EDF38C, gUnk_09EDF374);
+        SetObjTileSource(w->tiles4, gRikuBt00Tiles);
+        AnimInit(&w->anim2, gRikuBt00Anims, gRikuBt00Frames);
         AnimStart(&w->anim2, 0, 1);
     }
     if (gBtlWork->flags & 0x2000) {
@@ -508,7 +508,7 @@ u8 Level_Up_1(LevelUpWork* w, void* a) {
 #else
             w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-            w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette4 = LoadObjPalette(gCard00Palette, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[4])->index + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[5])->index + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->palette4)->index + 16, 1);
@@ -810,7 +810,7 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         ReleaseObjTiles(w->tiles);
         ReleaseObjPalette(w->palette3);
         w->tiles = AllocObjTiles(128, 0);
-        w->palette3 = LoadObjPalette(&gUnk_09611AB8[palOffset], 32);
+        w->palette3 = LoadObjPalette(&gCard00Palette[palOffset], 32);
         FadeSetPaletteExcluded(((ObjPalette*)w->palette3)->index + 16, 1);
         SetObjTileSource(w->tiles, &gUnk_0908C686[0x2B0A]);
         AnimInit(&w->anim, &gUnk_09EEA1EC[0x25], &gUnk_09EEA19C[0x34]);
@@ -820,12 +820,12 @@ u8 func_0809F390(LevelUpWork* w, void* a) {
         w->x3 = 136;
 
         if (!(gGameState.flags & 8)) {
-            SetObjTileSource(w->tiles4, gUnk_088B6560);
-            AnimInit(&w->anim2, gUnk_09EDE918, gUnk_09EDE8CC);
+            SetObjTileSource(w->tiles4, gSor1ff00Tiles);
+            AnimInit(&w->anim2, gSor1ff00Anims, gSor1ff00Frames);
             AnimStart(&w->anim2, 1, 0);
         } else {
-            SetObjTileSource(w->tiles4, gUnk_092EB78A);
-            AnimInit(&w->anim2, gUnk_09EEF8C0, gUnk_09EEF89C);
+            SetObjTileSource(w->tiles4, gRikuFf00Tiles);
+            AnimInit(&w->anim2, gRikuFf00Anims, gRikuFf00Frames);
             AnimStart(&w->anim2, 1, 0);
         }
 
@@ -1489,7 +1489,7 @@ u8 func_080A0A44(LevelUpWork* w, void* a) {
 #else
             w->tiles3 = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-            w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette4 = LoadObjPalette(gCard00Palette, 32);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[4])->index + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->unk_000[5])->index + 16, 1);
             FadeSetPaletteExcluded(((ObjPalette*)w->palette4)->index + 16, 1);
@@ -1782,12 +1782,12 @@ u8 func_080A11CC(LevelUpWork* w, void* a) {
             w->y3 = gUnk_09037FB4[0];
 
             if ((gGameState.flags & 8) == 0) {
-                SetObjTileSource(w->tiles4, gUnk_088E33C2);
-                AnimInit(&w->anim2, gUnk_09EDEE14, gUnk_09EDEE08);
+                SetObjTileSource(w->tiles4, gSor1ll51Tiles);
+                AnimInit(&w->anim2, gSor1ll51Anims, gSor1ll51Frames);
                 AnimStart(&w->anim2, 0, 1);
             } else {
-                SetObjTileSource(w->tiles4, gUnk_0891ED26);
-                AnimInit(&w->anim2, gUnk_09EDF38C, gUnk_09EDF374);
+                SetObjTileSource(w->tiles4, gRikuBt00Tiles);
+                AnimInit(&w->anim2, gRikuBt00Anims, gRikuBt00Frames);
                 AnimStart(&w->anim2, 0, 1);
             }
 
@@ -1863,7 +1863,7 @@ void LVUP_EFFECT_0(LevelUpEffectWork* w, LevelUpEffectArgs* a) {
 #else
     w->tiles = LoadObjTiles(gUnk_0908C686, 0x3E0);
 #endif
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
 
     for (i = 0; i < 4; i++) {
         w->unk_10[i] = (w->unk_64 << 8) + gUnk_09037FFC[i];

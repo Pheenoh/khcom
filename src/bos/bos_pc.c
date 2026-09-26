@@ -125,7 +125,7 @@ PcAnimStep* gUnk_09EF9DB4[14] = {
 const EmyKind gUnk_09A3DEFC = { 36, 256, 16, 8, 0, 128, 0 };
 
 const BattleBackgroundDef gUnk_09A3DF0C = {
-    gUnk_09C91754, 0x3340, { 0, 0 }, gUnk_09D69274, 0x100, { 0, 0 }, { gUnk_09D33A74, gUnk_09D33274, gUnk_09D33A74, gUnk_09D33274 }
+    gUnk_09C91754, 0x3340, { 0, 0 }, gBosPcBgPalette, 0x100, { 0, 0 }, { gUnk_09D33A74, gUnk_09D33274, gUnk_09D33A74, gUnk_09D33274 }
 };
 
 u8* const gUnk_09A3DF2C[2] = { gUnk_09D33A74 + 0x800, gUnk_09D33A74 + 0x800 };
@@ -5240,7 +5240,7 @@ void func_0810A018(PcWork* work) {
 
     if (work->unk_00A != work->unk_00C) {
         if (work->unk_00A == 0) {
-            LoadPalette(gUnk_09D69274, (void*)0x05000000, 32);
+            LoadPalette(gBosPcBgPalette, (void*)0x05000000, 32);
         } else {
             LoadPalette(gUnk_08F69BC4, (void*)0x05000000, 32);
         }

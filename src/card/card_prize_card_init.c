@@ -1024,7 +1024,7 @@ void DispCardname_0(u8* work, u16* a) {
     FadeSetPaletteExcluded(p->index + 16, 1);
     work[0x10E] = LoadTextSlots(a, (TextSlot*)work);
     *(void**)&work[0x100] = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
-    *(void**)&work[0x108] = LoadObjPalette(gUnk_09611AB8, 32);
+    *(void**)&work[0x108] = LoadObjPalette(gCard00Palette, 32);
 #ifdef VERSION_JP
     v = (240 - work[0x10E] * 10) / 2;
 #else

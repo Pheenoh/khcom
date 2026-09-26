@@ -166,7 +166,7 @@ void func_08090100(DeckCard2Work* n) {
         return;
     }
 
-    n->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    n->palette2 = LoadObjPalette(gCard00Palette, 32);
     n->tiles = LoadObjTiles(n->cardDef->tiles2, 0x200);
     n->palette = LoadObjPalette(n->cardDef->palette2, 32);
     n->tiles2 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);

@@ -324,8 +324,8 @@ u8 func_080DABFC(s32* x, s32* y, s16 w, s16 h, s32 z);
 void task_bos_boogie_dice_3(BoogieDiceWork* work);
 
 extern const u8 gUnk_0984D134[][8];
-extern u8 gUnk_09799CBA[];
-extern u8 gUnk_0984AF78[];
+extern u8 gSakuTiles[];
+extern u8 gBoss02objPalette[];
 void func_080DB978(UrsulaWork* work);
 void task_bos_ursula_2(UrsulaWork* work);
 u16 func_080DD7C4(UrsulaBubbleWork* work);
@@ -510,7 +510,7 @@ void task_bos_ursula_0(UrsulaWork* work);
 extern const BattleBackgroundDef gBosUrsulaBattleBackgroundDef;
 extern const EmyKind gBosUrsulaEmyKind;
 extern const EmyKind gBosBoogieDiskEmyKind;
-extern u8 gUnk_0979A426[];
+extern u8 gNokogiriTiles[];
 u8 task_bos_boogie_saku_1(BoogieSakuWork* work);
 
 void task_bos_boogie_dice_0(BoogieDiceWork* work, u8* arg);
@@ -524,8 +524,8 @@ u8 task_bos_boogie_kaihuku_1(BoogieKaihukuWork* work);
 extern const UnkStruct_096FE034 gUnk_096FE260;
 
 void task_bos_boogie_knife_0(BoogieKnifeWork* work, u32* arg);
-extern u8 gUnk_0979C44E[];
-extern u8 gUnk_0984AFD8[];
+extern u8 gKnifeTiles[];
+extern u8 gKnifePalette[];
 
 void task_bos_boogie_disk_0(BoogieDiskWork* work, BtlObj* arg);
 u8 task_bos_boogie_disk_1(BoogieDiskWork* work);
@@ -579,8 +579,8 @@ extern u8 gUnk_0984AFF8[];
 
 void task_bos_boogie_kaihuku_0(BoogieKaihukuWork* work, BoogieDiceWork* arg);
 extern const EmyKind gBosBoogieKaihukuEmyKind;
-extern u8 gUnk_09799FB0[];
-extern u8 gUnk_0984AFB8[];
+extern u8 gKaifukuTiles[];
+extern u8 gKaifukuPalette[];
 extern u8 gUnk_08F69BC4[];
 void func_080DB468(BoogieKnifereaderWork* work);
 void task_bos_ursula_backtako_2(UrsulaBacktakoWork* work);

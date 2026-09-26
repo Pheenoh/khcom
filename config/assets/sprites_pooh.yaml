@@ -98,882 +98,882 @@ objects:
     start: 0x09811AC0
     end: 0x09814A40
 entries:
-- name: gUnk_09EF5298
+- name: gPoohFf00Frames
   record: SpriteTable
-  items: [gUnk_096FE36C]
+  items: [gPoohFf00Frame0]
   us:
     address: 0x09EF5298
   jp:
     address: 0x09ECC684
   eu:
     address: 0x09F80690
-- name: gUnk_09EF529C
+- name: gPoohFf00Anims
   record: AnimTable
-  items: [gUnk_096FE37C]
+  items: [gPoohFf00Anim0]
   us:
     address: 0x09EF529C
   jp:
     address: 0x09ECC688
   eu:
     address: 0x09F80694
-- name: gUnk_09EF52A0
+- name: gPoohFr00Frames
   record: SpriteTable
-  items: [gUnk_096FE5C8]
+  items: [gPoohFr00Frame0]
   us:
     address: 0x09EF52A0
   jp:
     address: 0x09ECC68C
   eu:
     address: 0x09F80698
-- name: gUnk_09EF52A4
+- name: gPoohFr00Anims
   record: AnimTable
-  items: [gUnk_096FE5D8]
+  items: [gPoohFr00Anim0]
   us:
     address: 0x09EF52A4
   jp:
     address: 0x09ECC690
   eu:
     address: 0x09F8069C
-- name: gUnk_09EF52A8
+- name: gPoohRr00Frames
   record: SpriteTable
-  items: [gUnk_096FE824]
+  items: [gPoohRr00Frame0]
   us:
     address: 0x09EF52A8
   jp:
     address: 0x09ECC694
   eu:
     address: 0x09F806A0
-- name: gUnk_09EF52AC
+- name: gPoohRr00Anims
   record: AnimTable
-  items: [gUnk_096FE834]
+  items: [gPoohRr00Anim0]
   us:
     address: 0x09EF52AC
   jp:
     address: 0x09ECC698
   eu:
     address: 0x09F806A4
-- name: gUnk_09EF52B0
+- name: gPoohBr00Frames
   record: SpriteTable
-  items: [gUnk_096FEA60]
+  items: [gPoohBr00Frame0]
   us:
     address: 0x09EF52B0
   jp:
     address: 0x09ECC69C
   eu:
     address: 0x09F806A8
-- name: gUnk_09EF52B4
+- name: gPoohBr00Anims
   record: AnimTable
-  items: [gUnk_096FEA70]
+  items: [gPoohBr00Anim0]
   us:
     address: 0x09EF52B4
   jp:
     address: 0x09ECC6A0
   eu:
     address: 0x09F806AC
-- name: gUnk_09EF52B8
+- name: gPoohBb00Frames
   record: SpriteTable
-  items: [gUnk_096FECBC]
+  items: [gPoohBb00Frame0]
   us:
     address: 0x09EF52B8
   jp:
     address: 0x09ECC6A4
   eu:
     address: 0x09F806B0
-- name: gUnk_09EF52BC
+- name: gPoohBb00Anims
   record: AnimTable
-  items: [gUnk_096FECCC]
+  items: [gPoohBb00Anim0]
   us:
     address: 0x09EF52BC
   jp:
     address: 0x09ECC6A8
   eu:
     address: 0x09F806B4
-- name: gUnk_09EF52C0
+- name: gPoohFf01Frames
   record: SpriteTable
-  items: [gUnk_096FEF18, gUnk_096FEF28, gUnk_096FEF32, gUnk_096FEF3C, gUnk_096FEF46, gUnk_096FEF50, gUnk_096FEF5A, gUnk_096FEF64, gUnk_096FEF6E, gUnk_096FEF78, gUnk_096FEF82]
+  items: [gPoohFf01Frame0, gPoohFf01Frame1, gPoohFf01Frame2, gPoohFf01Frame3, gPoohFf01Frame4, gPoohFf01Frame5, gPoohFf01Frame6, gPoohFf01Frame7, gPoohFf01Frame8, gPoohFf01Frame9, gPoohFf01Frame10]
   us:
     address: 0x09EF52C0
   jp:
     address: 0x09ECC6AC
   eu:
     address: 0x09F806B8
-- name: gUnk_09EF52EC
+- name: gPoohFf01Anims
   record: AnimTable
-  items: [gUnk_096FEF8C]
+  items: [gPoohFf01Anim0]
   us:
     address: 0x09EF52EC
   jp:
     address: 0x09ECC6D8
   eu:
     address: 0x09F806E4
-- name: gUnk_09EF52F0
+- name: gPoohFr01Frames
   record: SpriteTable
-  items: [gUnk_09700640, gUnk_09700650, gUnk_09700660, gUnk_09700670, gUnk_09700680, gUnk_0970068A, gUnk_09700694, gUnk_0970069E, gUnk_097006A8, gUnk_097006B2, gUnk_097006BC]
+  items: [gPoohFr01Frame0, gPoohFr01Frame1, gPoohFr01Frame2, gPoohFr01Frame3, gPoohFr01Frame4, gPoohFr01Frame5, gPoohFr01Frame6, gPoohFr01Frame7, gPoohFr01Frame8, gPoohFr01Frame9, gPoohFr01Frame10]
   us:
     address: 0x09EF52F0
   jp:
     address: 0x09ECC6DC
   eu:
     address: 0x09F806E8
-- name: gUnk_09EF531C
+- name: gPoohFr01Anims
   record: AnimTable
-  items: [gUnk_097006C6]
+  items: [gPoohFr01Anim0]
   us:
     address: 0x09EF531C
   jp:
     address: 0x09ECC708
   eu:
     address: 0x09F80714
-- name: gUnk_09EF5320
+- name: gPoohRr01Frames
   record: SpriteTable
-  items: [gUnk_09701EF8, gUnk_09701F08, gUnk_09701F18, gUnk_09701F28, gUnk_09701F38, gUnk_09701F48, gUnk_09701F58, gUnk_09701F68, gUnk_09701F78, gUnk_09701F88, gUnk_09701F98]
+  items: [gPoohRr01Frame0, gPoohRr01Frame1, gPoohRr01Frame2, gPoohRr01Frame3, gPoohRr01Frame4, gPoohRr01Frame5, gPoohRr01Frame6, gPoohRr01Frame7, gPoohRr01Frame8, gPoohRr01Frame9, gPoohRr01Frame10]
   us:
     address: 0x09EF5320
   jp:
     address: 0x09ECC70C
   eu:
     address: 0x09F80718
-- name: gUnk_09EF534C
+- name: gPoohRr01Anims
   record: AnimTable
-  items: [gUnk_09701FA8]
+  items: [gPoohRr01Anim0]
   us:
     address: 0x09EF534C
   jp:
     address: 0x09ECC738
   eu:
     address: 0x09F80744
-- name: gUnk_09EF5350
+- name: gPoohBr01Frames
   record: SpriteTable
-  items: [gUnk_09703B5C, gUnk_09703B6C, gUnk_09703B7C, gUnk_09703B8C, gUnk_09703B9C, gUnk_09703BAC, gUnk_09703BBC, gUnk_09703BCC, gUnk_09703BDC, gUnk_09703BEC, gUnk_09703C02]
+  items: [gPoohBr01Frame0, gPoohBr01Frame1, gPoohBr01Frame2, gPoohBr01Frame3, gPoohBr01Frame4, gPoohBr01Frame5, gPoohBr01Frame6, gPoohBr01Frame7, gPoohBr01Frame8, gPoohBr01Frame9, gPoohBr01Frame10]
   us:
     address: 0x09EF5350
   jp:
     address: 0x09ECC73C
   eu:
     address: 0x09F80748
-- name: gUnk_09EF537C
+- name: gPoohBr01Anims
   record: AnimTable
-  items: [gUnk_09703C12]
+  items: [gPoohBr01Anim0]
   us:
     address: 0x09EF537C
   jp:
     address: 0x09ECC768
   eu:
     address: 0x09F80774
-- name: gUnk_09EF5380
+- name: gPoohBb01Frames
   record: SpriteTable
-  items: [gUnk_097057E4, gUnk_097057F4, gUnk_09705804, gUnk_09705814, gUnk_0970582A, gUnk_0970583A, gUnk_0970584A, gUnk_0970585A, gUnk_0970586A, gUnk_0970587A, gUnk_09705890]
+  items: [gPoohBb01Frame0, gPoohBb01Frame1, gPoohBb01Frame2, gPoohBb01Frame3, gPoohBb01Frame4, gPoohBb01Frame5, gPoohBb01Frame6, gPoohBb01Frame7, gPoohBb01Frame8, gPoohBb01Frame9, gPoohBb01Frame10]
   us:
     address: 0x09EF5380
   jp:
     address: 0x09ECC76C
   eu:
     address: 0x09F80778
-- name: gUnk_09EF53AC
+- name: gPoohBb01Anims
   record: AnimTable
-  items: [gUnk_097058A0]
+  items: [gPoohBb01Anim0]
   us:
     address: 0x09EF53AC
   jp:
     address: 0x09ECC798
   eu:
     address: 0x09F807A4
-- name: gUnk_09EF53B0
+- name: gPoohFl01Frames
   record: SpriteTable
-  items: [gUnk_09707494, gUnk_097074A4, gUnk_097074B4, gUnk_097074C4, gUnk_097074D4, gUnk_097074DE, gUnk_097074E8, gUnk_097074F2, gUnk_097074FC, gUnk_09707506, gUnk_09707510]
+  items: [gPoohFl01Frame0, gPoohFl01Frame1, gPoohFl01Frame2, gPoohFl01Frame3, gPoohFl01Frame4, gPoohFl01Frame5, gPoohFl01Frame6, gPoohFl01Frame7, gPoohFl01Frame8, gPoohFl01Frame9, gPoohFl01Frame10]
   us:
     address: 0x09EF53B0
   jp:
     address: 0x09ECC79C
   eu:
     address: 0x09F807A8
-- name: gUnk_09EF53DC
+- name: gPoohFl01Anims
   record: AnimTable
-  items: [gUnk_0970751A]
+  items: [gPoohFl01Anim0]
   us:
     address: 0x09EF53DC
   jp:
     address: 0x09ECC7C8
   eu:
     address: 0x09F807D4
-- name: gUnk_09EF53E0
+- name: gPoohLl01Frames
   record: SpriteTable
-  items: [gUnk_09708D4C, gUnk_09708D5C, gUnk_09708D6C, gUnk_09708D7C, gUnk_09708D8C, gUnk_09708D9C, gUnk_09708DAC, gUnk_09708DBC, gUnk_09708DCC, gUnk_09708DDC, gUnk_09708DEC]
+  items: [gPoohLl01Frame0, gPoohLl01Frame1, gPoohLl01Frame2, gPoohLl01Frame3, gPoohLl01Frame4, gPoohLl01Frame5, gPoohLl01Frame6, gPoohLl01Frame7, gPoohLl01Frame8, gPoohLl01Frame9, gPoohLl01Frame10]
   us:
     address: 0x09EF53E0
   jp:
     address: 0x09ECC7CC
   eu:
     address: 0x09F807D8
-- name: gUnk_09EF540C
+- name: gPoohLl01Anims
   record: AnimTable
-  items: [gUnk_09708DFC]
+  items: [gPoohLl01Anim0]
   us:
     address: 0x09EF540C
   jp:
     address: 0x09ECC7F8
   eu:
     address: 0x09F80804
-- name: gUnk_09EF5410
+- name: gPoohBl01Frames
   record: SpriteTable
-  items: [gUnk_0970A9B0, gUnk_0970A9C0, gUnk_0970A9D0, gUnk_0970A9E0, gUnk_0970A9F0, gUnk_0970AA00, gUnk_0970AA10, gUnk_0970AA20, gUnk_0970AA30, gUnk_0970AA40, gUnk_0970AA56]
+  items: [gPoohBl01Frame0, gPoohBl01Frame1, gPoohBl01Frame2, gPoohBl01Frame3, gPoohBl01Frame4, gPoohBl01Frame5, gPoohBl01Frame6, gPoohBl01Frame7, gPoohBl01Frame8, gPoohBl01Frame9, gPoohBl01Frame10]
   us:
     address: 0x09EF5410
   jp:
     address: 0x09ECC7FC
   eu:
     address: 0x09F80808
-- name: gUnk_09EF543C
+- name: gPoohBl01Anims
   record: AnimTable
-  items: [gUnk_0970AA66]
+  items: [gPoohBl01Anim0]
   us:
     address: 0x09EF543C
   jp:
     address: 0x09ECC828
   eu:
     address: 0x09F80834
-- name: gUnk_09EF5440
+- name: gPoohBb00RrFrames
   record: SpriteTable
-  items: [gUnk_0970C658]
+  items: [gPoohBb00RrFrame0]
   us:
     address: 0x09EF5440
   jp:
     address: 0x09ECC82C
   eu:
     address: 0x09F80838
-- name: gUnk_09EF5444
+- name: gPoohBb00RrAnims
   record: AnimTable
-  items: [gUnk_0970C668]
+  items: [gPoohBb00RrAnim0]
   us:
     address: 0x09EF5444
   jp:
     address: 0x09ECC830
   eu:
     address: 0x09F8083C
-- name: gUnk_09EF5448
+- name: gPoohBb00BlFrames
   record: SpriteTable
-  items: [gUnk_0970C8B4]
+  items: [gPoohBb00BlFrame0]
   us:
     address: 0x09EF5448
   jp:
     address: 0x09ECC834
   eu:
     address: 0x09F80840
-- name: gUnk_09EF544C
+- name: gPoohBb00BlAnims
   record: AnimTable
-  items: [gUnk_0970C8C4]
+  items: [gPoohBb00BlAnim0]
   us:
     address: 0x09EF544C
   jp:
     address: 0x09ECC838
   eu:
     address: 0x09F80844
-- name: gUnk_09EF5450
+- name: gPoohBb00BrFrames
   record: SpriteTable
-  items: [gUnk_0970CB10]
+  items: [gPoohBb00BrFrame0]
   us:
     address: 0x09EF5450
   jp:
     address: 0x09ECC83C
   eu:
     address: 0x09F80848
-- name: gUnk_09EF5454
+- name: gPoohBb00BrAnims
   record: AnimTable
-  items: [gUnk_0970CB20]
+  items: [gPoohBb00BrAnim0]
   us:
     address: 0x09EF5454
   jp:
     address: 0x09ECC840
   eu:
     address: 0x09F8084C
-- name: gUnk_09EF5458
+- name: gPoohBb00LlFrames
   record: SpriteTable
-  items: [gUnk_0970CD6C]
+  items: [gPoohBb00LlFrame0]
   us:
     address: 0x09EF5458
   jp:
     address: 0x09ECC844
   eu:
     address: 0x09F80850
-- name: gUnk_09EF545C
+- name: gPoohBb00LlAnims
   record: AnimTable
-  items: [gUnk_0970CD7C]
+  items: [gPoohBb00LlAnim0]
   us:
     address: 0x09EF545C
   jp:
     address: 0x09ECC848
   eu:
     address: 0x09F80854
-- name: gUnk_09EF5460
+- name: gPoohBr00BbFrames
   record: SpriteTable
-  items: [gUnk_0970CFC8]
+  items: [gPoohBr00BbFrame0]
   us:
     address: 0x09EF5460
   jp:
     address: 0x09ECC84C
   eu:
     address: 0x09F80858
-- name: gUnk_09EF5464
+- name: gPoohBr00BbAnims
   record: AnimTable
-  items: [gUnk_0970CFD8]
+  items: [gPoohBr00BbAnim0]
   us:
     address: 0x09EF5464
   jp:
     address: 0x09ECC850
   eu:
     address: 0x09F8085C
-- name: gUnk_09EF5468
+- name: gPoohBr00FrFrames
   record: SpriteTable
-  items: [gUnk_0970D224]
+  items: [gPoohBr00FrFrame0]
   us:
     address: 0x09EF5468
   jp:
     address: 0x09ECC854
   eu:
     address: 0x09F80860
-- name: gUnk_09EF546C
+- name: gPoohBr00FrAnims
   record: AnimTable
-  items: [gUnk_0970D234]
+  items: [gPoohBr00FrAnim0]
   us:
     address: 0x09EF546C
   jp:
     address: 0x09ECC858
   eu:
     address: 0x09F80864
-- name: gUnk_09EF5470
+- name: gPoohBr00BlFrames
   record: SpriteTable
-  items: [gUnk_0970D480]
+  items: [gPoohBr00BlFrame0]
   us:
     address: 0x09EF5470
   jp:
     address: 0x09ECC85C
   eu:
     address: 0x09F80868
-- name: gUnk_09EF5474
+- name: gPoohBr00BlAnims
   record: AnimTable
-  items: [gUnk_0970D490]
+  items: [gPoohBr00BlAnim0]
   us:
     address: 0x09EF5474
   jp:
     address: 0x09ECC860
   eu:
     address: 0x09F8086C
-- name: gUnk_09EF5478
+- name: gPoohBr00RrFrames
   record: SpriteTable
-  items: [gUnk_0970D6DC]
+  items: [gPoohBr00RrFrame0]
   us:
     address: 0x09EF5478
   jp:
     address: 0x09ECC864
   eu:
     address: 0x09F80870
-- name: gUnk_09EF547C
+- name: gPoohBr00RrAnims
   record: AnimTable
-  items: [gUnk_0970D6EC]
+  items: [gPoohBr00RrAnim0]
   us:
     address: 0x09EF547C
   jp:
     address: 0x09ECC868
   eu:
     address: 0x09F80874
-- name: gUnk_09EF5480
+- name: gPoohFf00FlFrames
   record: SpriteTable
-  items: [gUnk_0970D938]
+  items: [gPoohFf00FlFrame0]
   us:
     address: 0x09EF5480
   jp:
     address: 0x09ECC86C
   eu:
     address: 0x09F80878
-- name: gUnk_09EF5484
+- name: gPoohFf00FlAnims
   record: AnimTable
-  items: [gUnk_0970D948]
+  items: [gPoohFf00FlAnim0]
   us:
     address: 0x09EF5484
   jp:
     address: 0x09ECC870
   eu:
     address: 0x09F8087C
-- name: gUnk_09EF5488
+- name: gPoohFf00RrFrames
   record: SpriteTable
-  items: [gUnk_0970DB94]
+  items: [gPoohFf00RrFrame0]
   us:
     address: 0x09EF5488
   jp:
     address: 0x09ECC874
   eu:
     address: 0x09F80880
-- name: gUnk_09EF548C
+- name: gPoohFf00RrAnims
   record: AnimTable
-  items: [gUnk_0970DBA4]
+  items: [gPoohFf00RrAnim0]
   us:
     address: 0x09EF548C
   jp:
     address: 0x09ECC878
   eu:
     address: 0x09F80884
-- name: gUnk_09EF5490
+- name: gPoohFf00FrFrames
   record: SpriteTable
-  items: [gUnk_0970DDF0]
+  items: [gPoohFf00FrFrame0]
   us:
     address: 0x09EF5490
   jp:
     address: 0x09ECC87C
   eu:
     address: 0x09F80888
-- name: gUnk_09EF5494
+- name: gPoohFf00FrAnims
   record: AnimTable
-  items: [gUnk_0970DE00]
+  items: [gPoohFf00FrAnim0]
   us:
     address: 0x09EF5494
   jp:
     address: 0x09ECC880
   eu:
     address: 0x09F8088C
-- name: gUnk_09EF5498
+- name: gPoohFf00LlFrames
   record: SpriteTable
-  items: [gUnk_0970E04C]
+  items: [gPoohFf00LlFrame0]
   us:
     address: 0x09EF5498
   jp:
     address: 0x09ECC884
   eu:
     address: 0x09F80890
-- name: gUnk_09EF549C
+- name: gPoohFf00LlAnims
   record: AnimTable
-  items: [gUnk_0970E05C]
+  items: [gPoohFf00LlAnim0]
   us:
     address: 0x09EF549C
   jp:
     address: 0x09ECC888
   eu:
     address: 0x09F80894
-- name: gUnk_09EF54A0
+- name: gPoohFr00RrFrames
   record: SpriteTable
-  items: [gUnk_0970E2A8]
+  items: [gPoohFr00RrFrame0]
   us:
     address: 0x09EF54A0
   jp:
     address: 0x09ECC88C
   eu:
     address: 0x09F80898
-- name: gUnk_09EF54A4
+- name: gPoohFr00RrAnims
   record: AnimTable
-  items: [gUnk_0970E2B8]
+  items: [gPoohFr00RrAnim0]
   us:
     address: 0x09EF54A4
   jp:
     address: 0x09ECC890
   eu:
     address: 0x09F8089C
-- name: gUnk_09EF54A8
+- name: gPoohFr00BrFrames
   record: SpriteTable
-  items: [gUnk_0970E504]
+  items: [gPoohFr00BrFrame0]
   us:
     address: 0x09EF54A8
   jp:
     address: 0x09ECC894
   eu:
     address: 0x09F808A0
-- name: gUnk_09EF54AC
+- name: gPoohFr00BrAnims
   record: AnimTable
-  items: [gUnk_0970E514]
+  items: [gPoohFr00BrAnim0]
   us:
     address: 0x09EF54AC
   jp:
     address: 0x09ECC898
   eu:
     address: 0x09F808A4
-- name: gUnk_09EF54B0
+- name: gPoohFr00FfFrames
   record: SpriteTable
-  items: [gUnk_0970E760]
+  items: [gPoohFr00FfFrame0]
   us:
     address: 0x09EF54B0
   jp:
     address: 0x09ECC89C
   eu:
     address: 0x09F808A8
-- name: gUnk_09EF54B4
+- name: gPoohFr00FfAnims
   record: AnimTable
-  items: [gUnk_0970E770]
+  items: [gPoohFr00FfAnim0]
   us:
     address: 0x09EF54B4
   jp:
     address: 0x09ECC8A0
   eu:
     address: 0x09F808AC
-- name: gUnk_09EF54B8
+- name: gPoohFr00FlFrames
   record: SpriteTable
-  items: [gUnk_0970E9BC]
+  items: [gPoohFr00FlFrame0]
   us:
     address: 0x09EF54B8
   jp:
     address: 0x09ECC8A4
   eu:
     address: 0x09F808B0
-- name: gUnk_09EF54BC
+- name: gPoohFr00FlAnims
   record: AnimTable
-  items: [gUnk_0970E9CC]
+  items: [gPoohFr00FlAnim0]
   us:
     address: 0x09EF54BC
   jp:
     address: 0x09ECC8A8
   eu:
     address: 0x09F808B4
-- name: gUnk_09EF54C0
+- name: gPoohRr00BbFrames
   record: SpriteTable
-  items: [gUnk_0970EC18]
+  items: [gPoohRr00BbFrame0]
   us:
     address: 0x09EF54C0
   jp:
     address: 0x09ECC8AC
   eu:
     address: 0x09F808B8
-- name: gUnk_09EF54C4
+- name: gPoohRr00BbAnims
   record: AnimTable
-  items: [gUnk_0970EC28]
+  items: [gPoohRr00BbAnim0]
   us:
     address: 0x09EF54C4
   jp:
     address: 0x09ECC8B0
   eu:
     address: 0x09F808BC
-- name: gUnk_09EF54C8
+- name: gPoohRr00FfFrames
   record: SpriteTable
-  items: [gUnk_0970EE54]
+  items: [gPoohRr00FfFrame0]
   us:
     address: 0x09EF54C8
   jp:
     address: 0x09ECC8B4
   eu:
     address: 0x09F808C0
-- name: gUnk_09EF54CC
+- name: gPoohRr00FfAnims
   record: AnimTable
-  items: [gUnk_0970EE64]
+  items: [gPoohRr00FfAnim0]
   us:
     address: 0x09EF54CC
   jp:
     address: 0x09ECC8B8
   eu:
     address: 0x09F808C4
-- name: gUnk_09EF54D0
+- name: gPoohRr00FrFrames
   record: SpriteTable
-  items: [gUnk_0970F090]
+  items: [gPoohRr00FrFrame0]
   us:
     address: 0x09EF54D0
   jp:
     address: 0x09ECC8BC
   eu:
     address: 0x09F808C8
-- name: gUnk_09EF54D4
+- name: gPoohRr00FrAnims
   record: AnimTable
-  items: [gUnk_0970F0A0]
+  items: [gPoohRr00FrAnim0]
   us:
     address: 0x09EF54D4
   jp:
     address: 0x09ECC8C0
   eu:
     address: 0x09F808CC
-- name: gUnk_09EF54D8
+- name: gPoohRr00BrFrames
   record: SpriteTable
-  items: [gUnk_0970F2CC]
+  items: [gPoohRr00BrFrame0]
   us:
     address: 0x09EF54D8
   jp:
     address: 0x09ECC8C4
   eu:
     address: 0x09F808D0
-- name: gUnk_09EF54DC
+- name: gPoohRr00BrAnims
   record: AnimTable
-  items: [gUnk_0970F2DC]
+  items: [gPoohRr00BrAnim0]
   us:
     address: 0x09EF54DC
   jp:
     address: 0x09ECC8C8
   eu:
     address: 0x09F808D4
-- name: gUnk_09EF54E0
+- name: gPoohBb04Frames
   record: SpriteTable
-  items: [gUnk_0970F508, gUnk_0970F51E, gUnk_0970F52E, gUnk_0970F53E, gUnk_0970F54E, gUnk_0970F55E, gUnk_0970F568, gUnk_0970F572, gUnk_0970F582, gUnk_0970F58C]
+  items: [gPoohBb04Frame0, gPoohBb04Frame1, gPoohBb04Frame2, gPoohBb04Frame3, gPoohBb04Frame4, gPoohBb04Frame5, gPoohBb04Frame6, gPoohBb04Frame7, gPoohBb04Frame8, gPoohBb04Frame9]
   us:
     address: 0x09EF54E0
   jp:
     address: 0x09ECC8CC
   eu:
     address: 0x09F808D8
-- name: gUnk_09EF5508
+- name: gPoohBb04Anims
   record: AnimTable
-  items: [gUnk_0970F596]
+  items: [gPoohBb04Anim0]
   us:
     address: 0x09EF5508
   jp:
     address: 0x09ECC8F4
   eu:
     address: 0x09F80900
-- name: gUnk_09EF550C
+- name: gPoohBl04Frames
   record: SpriteTable
-  items: [gUnk_09710BE4, gUnk_09710BF4, gUnk_09710C04, gUnk_09710C14, gUnk_09710C24, gUnk_09710C34, gUnk_09710C44, gUnk_09710C4E, gUnk_09710C5E, gUnk_09710C68]
+  items: [gPoohBl04Frame0, gPoohBl04Frame1, gPoohBl04Frame2, gPoohBl04Frame3, gPoohBl04Frame4, gPoohBl04Frame5, gPoohBl04Frame6, gPoohBl04Frame7, gPoohBl04Frame8, gPoohBl04Frame9]
   us:
     address: 0x09EF550C
   jp:
     address: 0x09ECC8F8
   eu:
     address: 0x09F80904
-- name: gUnk_09EF5534
+- name: gPoohBl04Anims
   record: AnimTable
-  items: [gUnk_09710C72]
+  items: [gPoohBl04Anim0]
   us:
     address: 0x09EF5534
   jp:
     address: 0x09ECC920
   eu:
     address: 0x09F8092C
-- name: gUnk_09EF5538
+- name: gPoohLl04Frames
   record: SpriteTable
-  items: [gUnk_09712320, gUnk_0971232A, gUnk_0971233A, gUnk_0971234A, gUnk_09712354, gUnk_0971235E, gUnk_09712374, gUnk_09712390, gUnk_097123A6, gUnk_097123BC]
+  items: [gPoohLl04Frame0, gPoohLl04Frame1, gPoohLl04Frame2, gPoohLl04Frame3, gPoohLl04Frame4, gPoohLl04Frame5, gPoohLl04Frame6, gPoohLl04Frame7, gPoohLl04Frame8, gPoohLl04Frame9]
   us:
     address: 0x09EF5538
   jp:
     address: 0x09ECC924
   eu:
     address: 0x09F80930
-- name: gUnk_09EF5560
+- name: gPoohLl04Anims
   record: AnimTable
-  items: [gUnk_097123D8]
+  items: [gPoohLl04Anim0]
   us:
     address: 0x09EF5560
   jp:
     address: 0x09ECC94C
   eu:
     address: 0x09F80958
-- name: gUnk_09EF5564
+- name: gPoohFl04Frames
   record: SpriteTable
-  items: [gUnk_09713748, gUnk_09713752, gUnk_0971375C, gUnk_09713766, gUnk_09713776, gUnk_09713786, gUnk_0971379C, gUnk_097137AC, gUnk_097137C2, gUnk_097137D8]
+  items: [gPoohFl04Frame0, gPoohFl04Frame1, gPoohFl04Frame2, gPoohFl04Frame3, gPoohFl04Frame4, gPoohFl04Frame5, gPoohFl04Frame6, gPoohFl04Frame7, gPoohFl04Frame8, gPoohFl04Frame9]
   us:
     address: 0x09EF5564
   jp:
     address: 0x09ECC950
   eu:
     address: 0x09F8095C
-- name: gUnk_09EF558C
+- name: gPoohFl04Anims
   record: AnimTable
-  items: [gUnk_097137EE]
+  items: [gPoohFl04Anim0]
   us:
     address: 0x09EF558C
   jp:
     address: 0x09ECC978
   eu:
     address: 0x09F80984
-- name: gUnk_09EF5590
+- name: gPoohFf04Frames
   record: SpriteTable
-  items: [gUnk_09714C9C, gUnk_09714CAC, gUnk_09714CBC, gUnk_09714CC6, gUnk_09714CD0, gUnk_09714CDA, gUnk_09714CE4, gUnk_09714CEE, gUnk_09714CF8, gUnk_09714D02]
+  items: [gPoohFf04Frame0, gPoohFf04Frame1, gPoohFf04Frame2, gPoohFf04Frame3, gPoohFf04Frame4, gPoohFf04Frame5, gPoohFf04Frame6, gPoohFf04Frame7, gPoohFf04Frame8, gPoohFf04Frame9]
   us:
     address: 0x09EF5590
   jp:
     address: 0x09ECC97C
   eu:
     address: 0x09F80988
-- name: gUnk_09EF55B8
+- name: gPoohFf04Anims
   record: AnimTable
-  items: [gUnk_09714D0C]
+  items: [gPoohFf04Anim0]
   us:
     address: 0x09EF55B8
   jp:
     address: 0x09ECC9A4
   eu:
     address: 0x09F809B0
-- name: gUnk_09EF55BC
+- name: gPoohBb04aFrames
   record: SpriteTable
-  items: [gUnk_0971623C, gUnk_09716246, gUnk_09716256, gUnk_09716266, gUnk_09716276, gUnk_09716286, gUnk_09716296, gUnk_097162A6, gUnk_097162BC, gUnk_097162CC, gUnk_097162DC, gUnk_097162E6, gUnk_097162FC, gUnk_09716312]
+  items: [gPoohBb04aFrame0, gPoohBb04aFrame1, gPoohBb04aFrame2, gPoohBb04aFrame3, gPoohBb04aFrame4, gPoohBb04aFrame5, gPoohBb04aFrame6, gPoohBb04aFrame7, gPoohBb04aFrame8, gPoohBb04aFrame9, gPoohBb04aFrame10, gPoohBb04aFrame11, gPoohBb04aFrame12, gPoohBb04aFrame13]
   us:
     address: 0x09EF55BC
   jp:
     address: 0x09ECC9A8
   eu:
     address: 0x09F809B4
-- name: gUnk_09EF55F4
+- name: gPoohBb04aAnims
   record: AnimTable
-  items: [gUnk_09716328]
+  items: [gPoohBb04aAnim0]
   us:
     address: 0x09EF55F4
   jp:
     address: 0x09ECC9E0
   eu:
     address: 0x09F809EC
-- name: gUnk_09EF55F8
+- name: gPoohBl04aFrames
   record: SpriteTable
-  items: [gUnk_097178E8, gUnk_097178F2, gUnk_09717902, gUnk_09717912, gUnk_09717922, gUnk_09717932, gUnk_09717942, gUnk_0971794C, gUnk_0971795C, gUnk_0971796C, gUnk_09717976, gUnk_09717980, gUnk_09717996, gUnk_097179AC]
+  items: [gPoohBl04aFrame0, gPoohBl04aFrame1, gPoohBl04aFrame2, gPoohBl04aFrame3, gPoohBl04aFrame4, gPoohBl04aFrame5, gPoohBl04aFrame6, gPoohBl04aFrame7, gPoohBl04aFrame8, gPoohBl04aFrame9, gPoohBl04aFrame10, gPoohBl04aFrame11, gPoohBl04aFrame12, gPoohBl04aFrame13]
   us:
     address: 0x09EF55F8
   jp:
     address: 0x09ECC9E4
   eu:
     address: 0x09F809F0
-- name: gUnk_09EF5630
+- name: gPoohBl04aAnims
   record: AnimTable
-  items: [gUnk_097179BC]
+  items: [gPoohBl04aAnim0]
   us:
     address: 0x09EF5630
   jp:
     address: 0x09ECCA1C
   eu:
     address: 0x09F80A28
-- name: gUnk_09EF5634
+- name: gPoohLl04aFrames
   record: SpriteTable
-  items: [gUnk_0971913C, gUnk_09719152, gUnk_09719168, gUnk_0971917E, gUnk_0971918E, gUnk_0971919E, gUnk_097191AE, gUnk_097191BE, gUnk_097191CE, gUnk_097191DE, gUnk_097191EE, gUnk_097191F8, gUnk_0971920E, gUnk_09719224, gUnk_09719234]
+  items: [gPoohLl04aFrame0, gPoohLl04aFrame1, gPoohLl04aFrame2, gPoohLl04aFrame3, gPoohLl04aFrame4, gPoohLl04aFrame5, gPoohLl04aFrame6, gPoohLl04aFrame7, gPoohLl04aFrame8, gPoohLl04aFrame9, gPoohLl04aFrame10, gPoohLl04aFrame11, gPoohLl04aFrame12, gPoohLl04aFrame13, gPoohLl04aFrame14]
   us:
     address: 0x09EF5634
   jp:
     address: 0x09ECCA20
   eu:
     address: 0x09F80A2C
-- name: gUnk_09EF5670
+- name: gPoohLl04aAnims
   record: AnimTable
-  items: [gUnk_09719244]
+  items: [gPoohLl04aAnim0]
   us:
     address: 0x09EF5670
   jp:
     address: 0x09ECCA5C
   eu:
     address: 0x09F80A68
-- name: gUnk_09EF5674
+- name: gPoohFl04aFrames
   record: SpriteTable
-  items: [gUnk_0971A9E8, gUnk_0971A9FE, gUnk_0971AA0E, gUnk_0971AA1E, gUnk_0971AA2E, gUnk_0971AA3E, gUnk_0971AA4E, gUnk_0971AA5E, gUnk_0971AA6E, gUnk_0971AA7E, gUnk_0971AA8E, gUnk_0971AA9E, gUnk_0971AAAE, gUnk_0971AAC4, gUnk_0971AADA]
+  items: [gPoohFl04aFrame0, gPoohFl04aFrame1, gPoohFl04aFrame2, gPoohFl04aFrame3, gPoohFl04aFrame4, gPoohFl04aFrame5, gPoohFl04aFrame6, gPoohFl04aFrame7, gPoohFl04aFrame8, gPoohFl04aFrame9, gPoohFl04aFrame10, gPoohFl04aFrame11, gPoohFl04aFrame12, gPoohFl04aFrame13, gPoohFl04aFrame14]
   us:
     address: 0x09EF5674
   jp:
     address: 0x09ECCA60
   eu:
     address: 0x09F80A6C
-- name: gUnk_09EF56B0
+- name: gPoohFl04aAnims
   record: AnimTable
-  items: [gUnk_0971AAF0]
+  items: [gPoohFl04aAnim0]
   us:
     address: 0x09EF56B0
   jp:
     address: 0x09ECCA9C
   eu:
     address: 0x09F80AA8
-- name: gUnk_09EF56B4
+- name: gPoohFf04aFrames
   record: SpriteTable
-  items: [gUnk_0971C2B4, gUnk_0971C2BE, gUnk_0971C2C8, gUnk_0971C2D8, gUnk_0971C2E8, gUnk_0971C2F8, gUnk_0971C308, gUnk_0971C318, gUnk_0971C328, gUnk_0971C338, gUnk_0971C348, gUnk_0971C35E, gUnk_0971C36E, gUnk_0971C384, gUnk_0971C39A]
+  items: [gPoohFf04aFrame0, gPoohFf04aFrame1, gPoohFf04aFrame2, gPoohFf04aFrame3, gPoohFf04aFrame4, gPoohFf04aFrame5, gPoohFf04aFrame6, gPoohFf04aFrame7, gPoohFf04aFrame8, gPoohFf04aFrame9, gPoohFf04aFrame10, gPoohFf04aFrame11, gPoohFf04aFrame12, gPoohFf04aFrame13, gPoohFf04aFrame14]
   us:
     address: 0x09EF56B4
   jp:
     address: 0x09ECCAA0
   eu:
     address: 0x09F80AAC
-- name: gUnk_09EF56F0
+- name: gPoohFf04aAnims
   record: AnimTable
-  items: [gUnk_0971C3B0]
+  items: [gPoohFf04aAnim0]
   us:
     address: 0x09EF56F0
   jp:
     address: 0x09ECCADC
   eu:
     address: 0x09F80AE8
-- name: gUnk_09EF56F4
+- name: gPoohFl07Frames
   record: SpriteTable
-  items: [gUnk_0971DBB4, gUnk_0971DBCA, gUnk_0971DBE0, gUnk_0971DBF6, gUnk_0971DC0C, gUnk_0971DC1C, gUnk_0971DC2C, gUnk_0971DC3C, gUnk_0971DC4C, gUnk_0971DC5C, gUnk_0971DC6C, gUnk_0971DC76, gUnk_0971DC8C, gUnk_0971DC9C, gUnk_0971DCAC, gUnk_0971DCBC, gUnk_0971DCCC, gUnk_0971DCDC, gUnk_0971DCEC, gUnk_0971DCF6]
+  items: [gPoohFl07Frame0, gPoohFl07Frame1, gPoohFl07Frame2, gPoohFl07Frame3, gPoohFl07Frame4, gPoohFl07Frame5, gPoohFl07Frame6, gPoohFl07Frame7, gPoohFl07Frame8, gPoohFl07Frame9, gPoohFl07Frame10, gPoohFl07Frame11, gPoohFl07Frame12, gPoohFl07Frame13, gPoohFl07Frame14, gPoohFl07Frame15, gPoohFl07Frame16, gPoohFl07Frame17, gPoohFl07Frame18, gPoohFl07Frame19]
   us:
     address: 0x09EF56F4
   jp:
     address: 0x09ECCAE0
   eu:
     address: 0x09F80AEC
-- name: gUnk_09EF5744
+- name: gPoohFl07Anims
   record: AnimTable
-  items: [gUnk_0971DD0C, gUnk_0971DD42]
+  items: [gPoohFl07Anim0, gPoohFl07Anim1]
   us:
     address: 0x09EF5744
   jp:
     address: 0x09ECCB30
   eu:
     address: 0x09F80B3C
-- name: gUnk_09EF574C
+- name: gPoohBl07Frames
   record: SpriteTable
-  items: [gUnk_0971EF58, gUnk_0971EF6E, gUnk_0971EF84, gUnk_0971EF9A, gUnk_0971EFAA, gUnk_0971EFB4, gUnk_0971EFBE, gUnk_0971EFC8, gUnk_0971EFD2, gUnk_0971EFE2, gUnk_0971EFF2, gUnk_0971F002, gUnk_0971F018, gUnk_0971F022, gUnk_0971F02C, gUnk_0971F036, gUnk_0971F040, gUnk_0971F050, gUnk_0971F060, gUnk_0971F070]
+  items: [gPoohBl07Frame0, gPoohBl07Frame1, gPoohBl07Frame2, gPoohBl07Frame3, gPoohBl07Frame4, gPoohBl07Frame5, gPoohBl07Frame6, gPoohBl07Frame7, gPoohBl07Frame8, gPoohBl07Frame9, gPoohBl07Frame10, gPoohBl07Frame11, gPoohBl07Frame12, gPoohBl07Frame13, gPoohBl07Frame14, gPoohBl07Frame15, gPoohBl07Frame16, gPoohBl07Frame17, gPoohBl07Frame18, gPoohBl07Frame19]
   us:
     address: 0x09EF574C
   jp:
     address: 0x09ECCB38
   eu:
     address: 0x09F80B44
-- name: gUnk_09EF579C
+- name: gPoohBl07Anims
   record: AnimTable
-  items: [gUnk_0971F086, gUnk_0971F0BC]
+  items: [gPoohBl07Anim0, gPoohBl07Anim1]
   us:
     address: 0x09EF579C
   jp:
     address: 0x09ECCB88
   eu:
     address: 0x09F80B94
-- name: gUnk_09EF57A4
+- name: gPoohFl03Frames
   record: SpriteTable
-  items: [gUnk_09720534, gUnk_09720544, gUnk_0972054E, gUnk_09720558, gUnk_09720562, gUnk_0972056C, gUnk_0972057C, gUnk_0972058C]
+  items: [gPoohFl03Frame0, gPoohFl03Frame1, gPoohFl03Frame2, gPoohFl03Frame3, gPoohFl03Frame4, gPoohFl03Frame5, gPoohFl03Frame6, gPoohFl03Frame7]
   us:
     address: 0x09EF57A4
   jp:
     address: 0x09ECCB90
   eu:
     address: 0x09F80B9C
-- name: gUnk_09EF57C4
+- name: gPoohFl03Anims
   record: AnimTable
-  items: [gUnk_0972059C]
+  items: [gPoohFl03Anim0]
   us:
     address: 0x09EF57C4
   jp:
     address: 0x09ECCBB0
   eu:
     address: 0x09F80BBC
-- name: gUnk_09EF57C8
+- name: gPoohBl03Frames
   record: SpriteTable
-  items: [gUnk_097217C4, gUnk_097217D4, gUnk_097217E4, gUnk_097217F4, gUnk_09721804, gUnk_09721814, gUnk_09721824, gUnk_09721834]
+  items: [gPoohBl03Frame0, gPoohBl03Frame1, gPoohBl03Frame2, gPoohBl03Frame3, gPoohBl03Frame4, gPoohBl03Frame5, gPoohBl03Frame6, gPoohBl03Frame7]
   us:
     address: 0x09EF57C8
   jp:
     address: 0x09ECCBB4
   eu:
     address: 0x09F80BC0
-- name: gUnk_09EF57E8
+- name: gPoohBl03Anims
   record: AnimTable
-  items: [gUnk_09721844]
+  items: [gPoohBl03Anim0]
   us:
     address: 0x09EF57E8
   jp:
     address: 0x09ECCBD4
   eu:
     address: 0x09F80BE0
-- name: gUnk_09EF57EC
+- name: gPoohLl10Frames
   record: SpriteTable
-  items: [gUnk_09722C6C, gUnk_09722C7C, gUnk_09722C8C, gUnk_09722C9C, gUnk_09722CAC, gUnk_09722CBC]
+  items: [gPoohLl10Frame0, gPoohLl10Frame1, gPoohLl10Frame2, gPoohLl10Frame3, gPoohLl10Frame4, gPoohLl10Frame5]
   us:
     address: 0x09EF57EC
   jp:
     address: 0x09ECCBD8
   eu:
     address: 0x09F80BE4
-- name: gUnk_09EF5804
+- name: gPoohLl10Anims
   record: AnimTable
-  items: [gUnk_09722CCC]
+  items: [gPoohLl10Anim0]
   us:
     address: 0x09EF5804
   jp:
     address: 0x09ECCBF0
   eu:
     address: 0x09F80BFC
-- name: gUnk_09EF5808
+- name: gPoohFf10Frames
   record: SpriteTable
-  items: [gUnk_09723BEC, gUnk_09723BFC, gUnk_09723C0C, gUnk_09723C1C, gUnk_09723C2C, gUnk_09723C3C]
+  items: [gPoohFf10Frame0, gPoohFf10Frame1, gPoohFf10Frame2, gPoohFf10Frame3, gPoohFf10Frame4, gPoohFf10Frame5]
   us:
     address: 0x09EF5808
   jp:
     address: 0x09ECCBF4
   eu:
     address: 0x09F80C00
-- name: gUnk_09EF5820
+- name: gPoohFf10Anims
   record: AnimTable
-  items: [gUnk_09723C4C]
+  items: [gPoohFf10Anim0]
   us:
     address: 0x09EF5820
   jp:
@@ -998,54 +998,54 @@ entries:
     address: 0x09ECCC28
   eu:
     address: 0x09F80C34
-- name: gUnk_09EF5844
+- name: gPoohFl05Frames
   record: SpriteTable
-  items: [gUnk_0972539C, gUnk_097253B8, gUnk_097253D4, gUnk_097253F0, gUnk_09725400, gUnk_09725410, gUnk_0972542C, gUnk_0972543C, gUnk_0972544C, gUnk_0972545C, gUnk_0972546C, gUnk_09725476, gUnk_09725486, gUnk_09725496, gUnk_097254AC, gUnk_097254BC, gUnk_097254CC, gUnk_097254D6, gUnk_097254E0, gUnk_097254F0, gUnk_09725506, gUnk_09725516, gUnk_09725526, gUnk_0972553C, gUnk_09725552, gUnk_09725562, gUnk_09725572, gUnk_09725582, gUnk_09725592, gUnk_097255A2, gUnk_097255B2, gUnk_097255C2, gUnk_097255DE, gUnk_097255EE, gUnk_097255F8, gUnk_09725602, gUnk_0972560C, gUnk_09725616, gUnk_09725620, gUnk_0972562A, gUnk_09725634, gUnk_0972563E, gUnk_09725640, gUnk_0972565C, gUnk_09725678, gUnk_09725688, gUnk_09725698, gUnk_097256B4]
+  items: [gPoohFl05Frame0, gPoohFl05Frame1, gPoohFl05Frame2, gPoohFl05Frame3, gPoohFl05Frame4, gPoohFl05Frame5, gPoohFl05Frame6, gPoohFl05Frame7, gPoohFl05Frame8, gPoohFl05Frame9, gPoohFl05Frame10, gPoohFl05Frame11, gPoohFl05Frame12, gPoohFl05Frame13, gPoohFl05Frame14, gPoohFl05Frame15, gPoohFl05Frame16, gPoohFl05Frame17, gPoohFl05Frame18, gPoohFl05Frame19, gPoohFl05Frame20, gPoohFl05Frame21, gPoohFl05Frame22, gPoohFl05Frame23, gPoohFl05Frame24, gPoohFl05Frame25, gPoohFl05Frame26, gPoohFl05Frame27, gPoohFl05Frame28, gPoohFl05Frame29, gPoohFl05Frame30, gPoohFl05Frame31, gPoohFl05Frame32, gPoohFl05Frame33, gPoohFl05Frame34, gPoohFl05Frame35, gPoohFl05Frame36, gPoohFl05Frame37, gPoohFl05Frame38, gPoohFl05Frame39, gPoohFl05Frame40, gPoohFl05Frame41, gPoohFl05Frame42, gPoohFl05Frame43, gPoohFl05Frame44, gPoohFl05Frame45, gPoohFl05Frame46, gPoohFl05Frame47]
   us:
     address: 0x09EF5844
   jp:
     address: 0x09ECCC30
   eu:
     address: 0x09F80C3C
-- name: gUnk_09EF5904
+- name: gPoohFl05Anims
   record: AnimTable
-  items: [gUnk_097256C4, gUnk_097256E6, gUnk_097256F0, gUnk_0972570E, gUnk_09725724, gUnk_09725742, gUnk_09725778, gUnk_09725782, gUnk_0972579C, gUnk_097257B6]
+  items: [gPoohFl05Anim0, gPoohFl05Anim1, gPoohFl05Anim2, gPoohFl05Anim3, gPoohFl05Anim4, gPoohFl05Anim5, gPoohFl05Anim6, gPoohFl05Anim7, gPoohFl05Anim8, gPoohFl05Anim9]
   us:
     address: 0x09EF5904
   jp:
     address: 0x09ECCCF0
   eu:
     address: 0x09F80CFC
-- name: gUnk_09EF592C
+- name: gPoohFl06Frames
   record: SpriteTable
-  items: [gUnk_097292B8, gUnk_097292CE, gUnk_097292E4, gUnk_097292F4, gUnk_09729304, gUnk_09729314, gUnk_09729324, gUnk_09729334]
+  items: [gPoohFl06Frame0, gPoohFl06Frame1, gPoohFl06Frame2, gPoohFl06Frame3, gPoohFl06Frame4, gPoohFl06Frame5, gPoohFl06Frame6, gPoohFl06Frame7]
   us:
     address: 0x09EF592C
   jp:
     address: 0x09ECCD18
   eu:
     address: 0x09F80D24
-- name: gUnk_09EF594C
+- name: gPoohFl06Anims
   record: AnimTable
-  items: [gUnk_0972934A, gUnk_09729384, gUnk_0972939E, gUnk_097293AC]
+  items: [gPoohFl06Anim0, gPoohFl06Anim1, gPoohFl06Anim2, gPoohFl06Anim3]
   us:
     address: 0x09EF594C
   jp:
     address: 0x09ECCD38
   eu:
     address: 0x09F80D44
-- name: gUnk_09EF595C
+- name: gPoohFl09Frames
   record: SpriteTable
-  items: [gUnk_09729EE0, gUnk_09729EF0, gUnk_09729F00, gUnk_09729F0A, gUnk_09729F14, gUnk_09729F1E, gUnk_09729F28, gUnk_09729F32, gUnk_09729F42, gUnk_09729F52, gUnk_09729F62, gUnk_09729F6C, gUnk_09729F7C, gUnk_09729F8C, gUnk_09729F9C, gUnk_09729FAC, gUnk_09729FBC, gUnk_09729FCC, gUnk_09729FDC, gUnk_09729FEC, gUnk_09729FFC]
+  items: [gPoohFl09Frame0, gPoohFl09Frame1, gPoohFl09Frame2, gPoohFl09Frame3, gPoohFl09Frame4, gPoohFl09Frame5, gPoohFl09Frame6, gPoohFl09Frame7, gPoohFl09Frame8, gPoohFl09Frame9, gPoohFl09Frame10, gPoohFl09Frame11, gPoohFl09Frame12, gPoohFl09Frame13, gPoohFl09Frame14, gPoohFl09Frame15, gPoohFl09Frame16, gPoohFl09Frame17, gPoohFl09Frame18, gPoohFl09Frame19, gPoohFl09Frame20]
   us:
     address: 0x09EF595C
   jp:
     address: 0x09ECCD48
   eu:
     address: 0x09F80D54
-- name: gUnk_09EF59B0
+- name: gPoohFl09Anims
   record: AnimTable
-  items: [gUnk_0972A00C, gUnk_0972A096, gUnk_0972A0F8]
+  items: [gPoohFl09Anim0, gPoohFl09Anim1, gPoohFl09Anim2]
   us:
     address: 0x09EF59B0
   jp:
@@ -1074,252 +1074,252 @@ entries:
   eu:
     address: 0x09F80DB8
     symbol: gUnkEu_09F80DB8
-- name: gUnk_09EF59C4
+- name: gTrap0001bbFrames
   record: SpriteTable
-  items: [gUnk_0972BE8C, gUnk_0972BE9C, gUnk_0972BEA6, gUnk_0972BEB0]
+  items: [gTrap0001bbFrame0, gTrap0001bbFrame1, gTrap0001bbFrame2, gTrap0001bbFrame3]
   us:
     address: 0x09EF59C4
   jp:
     address: 0x09ECCDB0
   eu:
     address: 0x09F80DBC
-- name: gUnk_09EF59D4
+- name: gTrap0001bbAnims
   record: AnimTable
-  items: [gUnk_0972BEBA]
+  items: [gTrap0001bbAnim0]
   us:
     address: 0x09EF59D4
   jp:
     address: 0x09ECCDC0
   eu:
     address: 0x09F80DCC
-- name: gUnk_09EF59D8
+- name: gTrap0001ffFrames
   record: SpriteTable
-  items: [gUnk_0972C650, gUnk_0972C660, gUnk_0972C66A, gUnk_0972C674]
+  items: [gTrap0001ffFrame0, gTrap0001ffFrame1, gTrap0001ffFrame2, gTrap0001ffFrame3]
   us:
     address: 0x09EF59D8
   jp:
     address: 0x09ECCDC4
   eu:
     address: 0x09F80DD0
-- name: gUnk_09EF59E8
+- name: gTrap0001ffAnims
   record: AnimTable
-  items: [gUnk_0972C67E]
+  items: [gTrap0001ffAnim0]
   us:
     address: 0x09EF59E8
   jp:
     address: 0x09ECCDD4
   eu:
     address: 0x09F80DE0
-- name: gUnk_09EF59EC
+- name: gTrap0001blFrames
   record: SpriteTable
-  items: [gUnk_0972CE14, gUnk_0972CE24, gUnk_0972CE2E, gUnk_0972CE38]
+  items: [gTrap0001blFrame0, gTrap0001blFrame1, gTrap0001blFrame2, gTrap0001blFrame3]
   us:
     address: 0x09EF59EC
   jp:
     address: 0x09ECCDD8
   eu:
     address: 0x09F80DE4
-- name: gUnk_09EF59FC
+- name: gTrap0001blAnims
   record: AnimTable
-  items: [gUnk_0972CE42]
+  items: [gTrap0001blAnim0]
   us:
     address: 0x09EF59FC
   jp:
     address: 0x09ECCDE8
   eu:
     address: 0x09F80DF4
-- name: gUnk_09EF5A00
+- name: gTrap0001brFrames
   record: SpriteTable
-  items: [gUnk_0972D5D8, gUnk_0972D5E8, gUnk_0972D5F2, gUnk_0972D5FC]
+  items: [gTrap0001brFrame0, gTrap0001brFrame1, gTrap0001brFrame2, gTrap0001brFrame3]
   us:
     address: 0x09EF5A00
   jp:
     address: 0x09ECCDEC
   eu:
     address: 0x09F80DF8
-- name: gUnk_09EF5A10
+- name: gTrap0001brAnims
   record: AnimTable
-  items: [gUnk_0972D606]
+  items: [gTrap0001brAnim0]
   us:
     address: 0x09EF5A10
   jp:
     address: 0x09ECCDFC
   eu:
     address: 0x09F80E08
-- name: gUnk_09EF5A14
+- name: gTrap0001flFrames
   record: SpriteTable
-  items: [gUnk_0972DD9C, gUnk_0972DDAC, gUnk_0972DDB6, gUnk_0972DDC0]
+  items: [gTrap0001flFrame0, gTrap0001flFrame1, gTrap0001flFrame2, gTrap0001flFrame3]
   us:
     address: 0x09EF5A14
   jp:
     address: 0x09ECCE00
   eu:
     address: 0x09F80E0C
-- name: gUnk_09EF5A24
+- name: gTrap0001flAnims
   record: AnimTable
-  items: [gUnk_0972DDCA]
+  items: [gTrap0001flAnim0]
   us:
     address: 0x09EF5A24
   jp:
     address: 0x09ECCE10
   eu:
     address: 0x09F80E1C
-- name: gUnk_09EF5A28
+- name: gTrap0001frFrames
   record: SpriteTable
-  items: [gUnk_0972E560, gUnk_0972E570, gUnk_0972E57A, gUnk_0972E584]
+  items: [gTrap0001frFrame0, gTrap0001frFrame1, gTrap0001frFrame2, gTrap0001frFrame3]
   us:
     address: 0x09EF5A28
   jp:
     address: 0x09ECCE14
   eu:
     address: 0x09F80E20
-- name: gUnk_09EF5A38
+- name: gTrap0001frAnims
   record: AnimTable
-  items: [gUnk_0972E58E]
+  items: [gTrap0001frAnim0]
   us:
     address: 0x09EF5A38
   jp:
     address: 0x09ECCE24
   eu:
     address: 0x09F80E30
-- name: gUnk_09EF5A3C
+- name: gTrap0001rrFrames
   record: SpriteTable
-  items: [gUnk_0972ED24, gUnk_0972ED34, gUnk_0972ED3E, gUnk_0972ED48]
+  items: [gTrap0001rrFrame0, gTrap0001rrFrame1, gTrap0001rrFrame2, gTrap0001rrFrame3]
   us:
     address: 0x09EF5A3C
   jp:
     address: 0x09ECCE28
   eu:
     address: 0x09F80E34
-- name: gUnk_09EF5A4C
+- name: gTrap0001rrAnims
   record: AnimTable
-  items: [gUnk_0972ED52]
+  items: [gTrap0001rrAnim0]
   us:
     address: 0x09EF5A4C
   jp:
     address: 0x09ECCE38
   eu:
     address: 0x09F80E44
-- name: gUnk_09EF5A50
+- name: gTrap0001llFrames
   record: SpriteTable
-  items: [gUnk_0972F4E8, gUnk_0972F4F8, gUnk_0972F502, gUnk_0972F50C]
+  items: [gTrap0001llFrame0, gTrap0001llFrame1, gTrap0001llFrame2, gTrap0001llFrame3]
   us:
     address: 0x09EF5A50
   jp:
     address: 0x09ECCE3C
   eu:
     address: 0x09F80E48
-- name: gUnk_09EF5A60
+- name: gTrap0001llAnims
   record: AnimTable
-  items: [gUnk_0972F516]
+  items: [gTrap0001llAnim0]
   us:
     address: 0x09EF5A60
   jp:
     address: 0x09ECCE4C
   eu:
     address: 0x09F80E58
-- name: gUnk_09EF5A64
+- name: gTrap0002Frames
   record: SpriteTable
-  items: [gUnk_0972FCAC, gUnk_0972FCB6, gUnk_0972FCC0, gUnk_0972FCD0, gUnk_0972FCE0, gUnk_0972FCF0, gUnk_0972FCFA, gUnk_0972FD04, gUnk_0972FD0E, gUnk_0972FD18, gUnk_0972FD22]
+  items: [gTrap0002Frame0, gTrap0002Frame1, gTrap0002Frame2, gTrap0002Frame3, gTrap0002Frame4, gTrap0002Frame5, gTrap0002Frame6, gTrap0002Frame7, gTrap0002Frame8, gTrap0002Frame9, gTrap0002Frame10]
   us:
     address: 0x09EF5A64
   jp:
     address: 0x09ECCE50
   eu:
     address: 0x09F80E5C
-- name: gUnk_09EF5A90
+- name: gTrap0002Anims
   record: AnimTable
-  items: [gUnk_0972FD2C, gUnk_0972FD4E]
+  items: [gTrap0002Anim0, gTrap0002Anim1]
   us:
     address: 0x09EF5A90
   jp:
     address: 0x09ECCE7C
   eu:
     address: 0x09F80E88
-- name: gUnk_09EF5A98
+- name: gTrap0003Frames
   record: SpriteTable
-  items: [gUnk_09732000]
+  items: [gTrap0003Frame0]
   us:
     address: 0x09EF5A98
   jp:
     address: 0x09ECCE84
   eu:
     address: 0x09F80E90
-- name: gUnk_09EF5A9C
+- name: gTrap0003Anims
   record: AnimTable
-  items: [gUnk_0973201C]
+  items: [gTrap0003Anim0]
   us:
     address: 0x09EF5A9C
   jp:
     address: 0x09ECCE88
   eu:
     address: 0x09F80E94
-- name: gUnk_09EF5AA0
+- name: gTrap0004Frames
   record: SpriteTable
-  items: [gUnk_09732208, gUnk_09732218, gUnk_09732228, gUnk_09732238, gUnk_09732248]
+  items: [gTrap0004Frame0, gTrap0004Frame1, gTrap0004Frame2, gTrap0004Frame3, gTrap0004Frame4]
   us:
     address: 0x09EF5AA0
   jp:
     address: 0x09ECCE8C
   eu:
     address: 0x09F80E98
-- name: gUnk_09EF5AB4
+- name: gTrap0004Anims
   record: AnimTable
-  items: [gUnk_09732258]
+  items: [gTrap0004Anim0]
   us:
     address: 0x09EF5AB4
   jp:
     address: 0x09ECCEA0
   eu:
     address: 0x09F80EAC
-- name: gUnk_09EF5AB8
+- name: gTrap0005Frames
   record: SpriteTable
-  items: [gUnk_097328B4, gUnk_097328C4, gUnk_097328D4, gUnk_097328E4, gUnk_097328F4]
+  items: [gTrap0005Frame0, gTrap0005Frame1, gTrap0005Frame2, gTrap0005Frame3, gTrap0005Frame4]
   us:
     address: 0x09EF5AB8
   jp:
     address: 0x09ECCEA4
   eu:
     address: 0x09F80EB0
-- name: gUnk_09EF5ACC
+- name: gTrap0005Anims
   record: AnimTable
-  items: [gUnk_09732904]
+  items: [gTrap0005Anim0]
   us:
     address: 0x09EF5ACC
   jp:
     address: 0x09ECCEB8
   eu:
     address: 0x09F80EC4
-- name: gUnk_09EF5AD0
+- name: gTrap0006Frames
   record: SpriteTable
-  items: [gUnk_09732F60, gUnk_09732F70, gUnk_09732F80, gUnk_09732F90]
+  items: [gTrap0006Frame0, gTrap0006Frame1, gTrap0006Frame2, gTrap0006Frame3]
   us:
     address: 0x09EF5AD0
   jp:
     address: 0x09ECCEBC
   eu:
     address: 0x09F80EC8
-- name: gUnk_09EF5AE0
+- name: gTrap0006Anims
   record: AnimTable
-  items: [gUnk_09732FA0]
+  items: [gTrap0006Anim0]
   us:
     address: 0x09EF5AE0
   jp:
     address: 0x09ECCECC
   eu:
     address: 0x09F80ED8
-- name: gUnk_09EF5AE4
+- name: gPoohHoneyFrames
   record: SpriteTable
-  items: [gUnk_09733858, gUnk_09733862, gUnk_0973386C, gUnk_09733876, gUnk_09733880, gUnk_0973388A, gUnk_09733894, gUnk_0973389E, gUnk_097338A8, gUnk_097338B2, gUnk_097338BC, gUnk_097338C6, gUnk_097338D0, gUnk_097338DA]
+  items: [gPoohHoneyFrame0, gPoohHoneyFrame1, gPoohHoneyFrame2, gPoohHoneyFrame3, gPoohHoneyFrame4, gPoohHoneyFrame5, gPoohHoneyFrame6, gPoohHoneyFrame7, gPoohHoneyFrame8, gPoohHoneyFrame9, gPoohHoneyFrame10, gPoohHoneyFrame11, gPoohHoneyFrame12, gPoohHoneyFrame13]
   us:
     address: 0x09EF5AE4
   jp:
     address: 0x09ECCED0
   eu:
     address: 0x09F80EDC
-- name: gUnk_09EF5B1C
+- name: gPoohHoneyAnims
   record: AnimTable
-  items: [gUnk_097338E4, gUnk_0973395E, gUnk_097339B0, gUnk_097339DE]
+  items: [gPoohHoneyAnim0, gPoohHoneyAnim1, gPoohHoneyAnim2, gPoohHoneyAnim3]
   us:
     address: 0x09EF5B1C
   jp:
@@ -1364,126 +1364,126 @@ entries:
     address: 0x09ECD078
   eu:
     address: 0x09F81084
-- name: gUnk_09EF5D04
+- name: gTrap01Ff00Frames
   record: SpriteTable
-  items: [gUnk_097442DC, gUnk_097442E6, gUnk_097442F0, gUnk_097442FA]
+  items: [gTrap01Ff00Frame0, gTrap01Ff00Frame1, gTrap01Ff00Frame2, gTrap01Ff00Frame3]
   us:
     address: 0x09EF5D04
   jp:
     address: 0x09ECD0F0
   eu:
     address: 0x09F810FC
-- name: gUnk_09EF5D14
+- name: gTrap01Ff00Anims
   record: AnimTable
-  items: [gUnk_09744304]
+  items: [gTrap01Ff00Anim0]
   us:
     address: 0x09EF5D14
   jp:
     address: 0x09ECD100
   eu:
     address: 0x09F8110C
-- name: gUnk_09EF5D18
+- name: gTrap01Fl00Frames
   record: SpriteTable
-  items: [gUnk_097443DC, gUnk_097443E6, gUnk_097443F0, gUnk_097443FA]
+  items: [gTrap01Fl00Frame0, gTrap01Fl00Frame1, gTrap01Fl00Frame2, gTrap01Fl00Frame3]
   us:
     address: 0x09EF5D18
   jp:
     address: 0x09ECD104
   eu:
     address: 0x09F81110
-- name: gUnk_09EF5D28
+- name: gTrap01Fl00Anims
   record: AnimTable
-  items: [gUnk_09744404]
+  items: [gTrap01Fl00Anim0]
   us:
     address: 0x09EF5D28
   jp:
     address: 0x09ECD114
   eu:
     address: 0x09F81120
-- name: gUnk_09EF5D2C
+- name: gTrap01Ll00Frames
   record: SpriteTable
-  items: [gUnk_0974449C, gUnk_097444A6, gUnk_097444B0, gUnk_097444BA]
+  items: [gTrap01Ll00Frame0, gTrap01Ll00Frame1, gTrap01Ll00Frame2, gTrap01Ll00Frame3]
   us:
     address: 0x09EF5D2C
   jp:
     address: 0x09ECD118
   eu:
     address: 0x09F81124
-- name: gUnk_09EF5D3C
+- name: gTrap01Ll00Anims
   record: AnimTable
-  items: [gUnk_097444C4]
+  items: [gTrap01Ll00Anim0]
   us:
     address: 0x09EF5D3C
   jp:
     address: 0x09ECD128
   eu:
     address: 0x09F81134
-- name: gUnk_09EF5D40
+- name: gTrap01Bl00Frames
   record: SpriteTable
-  items: [gUnk_0974455C, gUnk_09744566, gUnk_09744570, gUnk_0974457A]
+  items: [gTrap01Bl00Frame0, gTrap01Bl00Frame1, gTrap01Bl00Frame2, gTrap01Bl00Frame3]
   us:
     address: 0x09EF5D40
   jp:
     address: 0x09ECD12C
   eu:
     address: 0x09F81138
-- name: gUnk_09EF5D50
+- name: gTrap01Bl00Anims
   record: AnimTable
-  items: [gUnk_09744584]
+  items: [gTrap01Bl00Anim0]
   us:
     address: 0x09EF5D50
   jp:
     address: 0x09ECD13C
   eu:
     address: 0x09F81148
-- name: gUnk_09EF5D54
+- name: gTrap01Bb00Frames
   record: SpriteTable
-  items: [gUnk_0974461C, gUnk_09744626, gUnk_09744630, gUnk_0974463A]
+  items: [gTrap01Bb00Frame0, gTrap01Bb00Frame1, gTrap01Bb00Frame2, gTrap01Bb00Frame3]
   us:
     address: 0x09EF5D54
   jp:
     address: 0x09ECD140
   eu:
     address: 0x09F8114C
-- name: gUnk_09EF5D64
+- name: gTrap01Bb00Anims
   record: AnimTable
-  items: [gUnk_09744644]
+  items: [gTrap01Bb00Anim0]
   us:
     address: 0x09EF5D64
   jp:
     address: 0x09ECD150
   eu:
     address: 0x09F8115C
-- name: gUnk_09EF5D68
+- name: gEeyoreFl00Frames
   record: SpriteTable
-  items: [gUnk_0974471C, gUnk_09744732, gUnk_0974474E, gUnk_09744764, gUnk_0974477A, gUnk_0974478A, gUnk_097447A0, gUnk_097447B6, gUnk_097447C6, gUnk_097447D6, gUnk_097447E6, gUnk_097447FC, gUnk_0974480C, gUnk_09744822, gUnk_09744832, gUnk_09744842]
+  items: [gEeyoreFl00Frame0, gEeyoreFl00Frame1, gEeyoreFl00Frame2, gEeyoreFl00Frame3, gEeyoreFl00Frame4, gEeyoreFl00Frame5, gEeyoreFl00Frame6, gEeyoreFl00Frame7, gEeyoreFl00Frame8, gEeyoreFl00Frame9, gEeyoreFl00Frame10, gEeyoreFl00Frame11, gEeyoreFl00Frame12, gEeyoreFl00Frame13, gEeyoreFl00Frame14, gEeyoreFl00Frame15]
   us:
     address: 0x09EF5D68
   jp:
     address: 0x09ECD154
   eu:
     address: 0x09F81160
-- name: gUnk_09EF5DA8
+- name: gEeyoreFl00Anims
   record: AnimTable
-  items: [gUnk_0974484C, gUnk_09744856, gUnk_09744860, gUnk_0974486A, gUnk_09744874, gUnk_0974488E, gUnk_097448B0]
+  items: [gEeyoreFl00Anim0, gEeyoreFl00Anim1, gEeyoreFl00Anim2, gEeyoreFl00Anim3, gEeyoreFl00Anim4, gEeyoreFl00Anim5, gEeyoreFl00Anim6]
   us:
     address: 0x09EF5DA8
   jp:
     address: 0x09ECD194
   eu:
     address: 0x09F811A0
-- name: gUnk_09EF5DC4
+- name: gOwlFl00Frames
   record: SpriteTable
-  items: [gUnk_09746EDC, gUnk_09746EF8, gUnk_09746F14, gUnk_09746F30, gUnk_09746F4C, gUnk_09746F68, gUnk_09746F84, gUnk_09746F94, gUnk_09746FB0, gUnk_09746FD2, gUnk_09746FE2, gUnk_09746FFE, gUnk_0974701A, gUnk_09747036, gUnk_09747052, gUnk_0974706E, gUnk_09747084, gUnk_0974709A, gUnk_097470B6, gUnk_097470C6, gUnk_097470E2, gUnk_097470FE, gUnk_0974711A, gUnk_09747136]
+  items: [gOwlFl00Frame0, gOwlFl00Frame1, gOwlFl00Frame2, gOwlFl00Frame3, gOwlFl00Frame4, gOwlFl00Frame5, gOwlFl00Frame6, gOwlFl00Frame7, gOwlFl00Frame8, gOwlFl00Frame9, gOwlFl00Frame10, gOwlFl00Frame11, gOwlFl00Frame12, gOwlFl00Frame13, gOwlFl00Frame14, gOwlFl00Frame15, gOwlFl00Frame16, gOwlFl00Frame17, gOwlFl00Frame18, gOwlFl00Frame19, gOwlFl00Frame20, gOwlFl00Frame21, gOwlFl00Frame22, gOwlFl00Frame23]
   us:
     address: 0x09EF5DC4
   jp:
     address: 0x09ECD1B0
   eu:
     address: 0x09F811BC
-- name: gUnk_09EF5E24
+- name: gOwlFl00Anims
   record: AnimTable
-  items: [gUnk_0974714C, gUnk_09747156, gUnk_0974717C, gUnk_09747196, gUnk_097471C8]
+  items: [gOwlFl00Anim0, gOwlFl00Anim1, gOwlFl00Anim2, gOwlFl00Anim3, gOwlFl00Anim4]
   us:
     address: 0x09EF5E24
   jp:
@@ -1508,72 +1508,72 @@ entries:
     address: 0x09ECD230
   eu:
     address: 0x09F8123C
-- name: gUnk_09EF5E48
+- name: gRabbitFl00Frames
   record: SpriteTable
-  items: [gUnk_0974BF58, gUnk_0974BF6E, gUnk_0974BF84, gUnk_0974BF9A, gUnk_0974BFB0, gUnk_0974BFC6, gUnk_0974BFDC, gUnk_0974BFEC, gUnk_0974C002, gUnk_0974C01E, gUnk_0974C040, gUnk_0974C062, gUnk_0974C084, gUnk_0974C09A, gUnk_0974C0AA, gUnk_0974C0BA, gUnk_0974C0CA, gUnk_0974C0DA, gUnk_0974C0F6, gUnk_0974C112]
+  items: [gRabbitFl00Frame0, gRabbitFl00Frame1, gRabbitFl00Frame2, gRabbitFl00Frame3, gRabbitFl00Frame4, gRabbitFl00Frame5, gRabbitFl00Frame6, gRabbitFl00Frame7, gRabbitFl00Frame8, gRabbitFl00Frame9, gRabbitFl00Frame10, gRabbitFl00Frame11, gRabbitFl00Frame12, gRabbitFl00Frame13, gRabbitFl00Frame14, gRabbitFl00Frame15, gRabbitFl00Frame16, gRabbitFl00Frame17, gRabbitFl00Frame18, gRabbitFl00Frame19]
   us:
     address: 0x09EF5E48
   jp:
     address: 0x09ECD234
   eu:
     address: 0x09F81240
-- name: gUnk_09EF5E98
+- name: gRabbitFl00Anims
   record: AnimTable
-  items: [gUnk_0974C12E, gUnk_0974C138, gUnk_0974C14E, gUnk_0974C174]
+  items: [gRabbitFl00Anim0, gRabbitFl00Anim1, gRabbitFl00Anim2, gRabbitFl00Anim3]
   us:
     address: 0x09EF5E98
   jp:
     address: 0x09ECD284
   eu:
     address: 0x09F81290
-- name: gUnk_09EF5EA8
+- name: gRabbitBl00Frames
   record: SpriteTable
-  items: [gUnk_0974F938, gUnk_0974F948, gUnk_0974F958, gUnk_0974F96E, gUnk_0974F97E, gUnk_0974F98E, gUnk_0974F9B0, gUnk_0974F9D2, gUnk_0974F9EE, gUnk_0974FA10, gUnk_0974FA38, gUnk_0974FA5A, gUnk_0974FA76, gUnk_0974FA98, gUnk_0974FAA8]
+  items: [gRabbitBl00Frame0, gRabbitBl00Frame1, gRabbitBl00Frame2, gRabbitBl00Frame3, gRabbitBl00Frame4, gRabbitBl00Frame5, gRabbitBl00Frame6, gRabbitBl00Frame7, gRabbitBl00Frame8, gRabbitBl00Frame9, gRabbitBl00Frame10, gRabbitBl00Frame11, gRabbitBl00Frame12, gRabbitBl00Frame13, gRabbitBl00Frame14]
   us:
     address: 0x09EF5EA8
   jp:
     address: 0x09ECD294
   eu:
     address: 0x09F812A0
-- name: gUnk_09EF5EE4
+- name: gRabbitBl00Anims
   record: AnimTable
-  items: [gUnk_0974FAC4, gUnk_0974FACE, gUnk_0974FAE4, gUnk_0974FB02, gUnk_0974FB1C]
+  items: [gRabbitBl00Anim0, gRabbitBl00Anim1, gRabbitBl00Anim2, gRabbitBl00Anim3, gRabbitBl00Anim4]
   us:
     address: 0x09EF5EE4
   jp:
     address: 0x09ECD2D0
   eu:
     address: 0x09F812DC
-- name: gUnk_09EF5EF8
+- name: gRooFl00Frames
   record: SpriteTable
-  items: [gUnk_09752E08, gUnk_09752E18, gUnk_09752E28, gUnk_09752E32, gUnk_09752E3C, gUnk_09752E46, gUnk_09752E56, gUnk_09752E60, gUnk_09752E6A, gUnk_09752E80, gUnk_09752E8A, gUnk_09752E94, gUnk_09752EA4, gUnk_09752EB4, gUnk_09752EC4, gUnk_09752ECE, gUnk_09752ED8, gUnk_09752EE8, gUnk_09752EF8, gUnk_09752EFA, gUnk_09752F04, gUnk_09752F0E, gUnk_09752F24, gUnk_09752F40, gUnk_09752F50, gUnk_09752F66, gUnk_09752F7C, gUnk_09752F86, gUnk_09752F90, gUnk_09752F9A, gUnk_09752FAA, gUnk_09752FB4, gUnk_09752FBE, gUnk_09752FD4, gUnk_09752FDE, gUnk_09752FE8, gUnk_09752FF8, gUnk_09753008, gUnk_09753018, gUnk_09753022, gUnk_0975302C, gUnk_0975303C]
+  items: [gRooFl00Frame0, gRooFl00Frame1, gRooFl00Frame2, gRooFl00Frame3, gRooFl00Frame4, gRooFl00Frame5, gRooFl00Frame6, gRooFl00Frame7, gRooFl00Frame8, gRooFl00Frame9, gRooFl00Frame10, gRooFl00Frame11, gRooFl00Frame12, gRooFl00Frame13, gRooFl00Frame14, gRooFl00Frame15, gRooFl00Frame16, gRooFl00Frame17, gRooFl00Frame18, gRooFl00Frame19, gRooFl00Frame20, gRooFl00Frame21, gRooFl00Frame22, gRooFl00Frame23, gRooFl00Frame24, gRooFl00Frame25, gRooFl00Frame26, gRooFl00Frame27, gRooFl00Frame28, gRooFl00Frame29, gRooFl00Frame30, gRooFl00Frame31, gRooFl00Frame32, gRooFl00Frame33, gRooFl00Frame34, gRooFl00Frame35, gRooFl00Frame36, gRooFl00Frame37, gRooFl00Frame38, gRooFl00Frame39, gRooFl00Frame40, gRooFl00Frame41]
   us:
     address: 0x09EF5EF8
   jp:
     address: 0x09ECD2E4
   eu:
     address: 0x09F812F0
-- name: gUnk_09EF5FA0
+- name: gRooFl00Anims
   record: AnimTable
-  items: [gUnk_0975304C, gUnk_09753056, gUnk_09753060, gUnk_09753086, gUnk_097530AC, gUnk_097530CA, gUnk_097530D4, gUnk_097530FE, gUnk_09753108, gUnk_0975312E]
+  items: [gRooFl00Anim0, gRooFl00Anim1, gRooFl00Anim2, gRooFl00Anim3, gRooFl00Anim4, gRooFl00Anim5, gRooFl00Anim6, gRooFl00Anim7, gRooFl00Anim8, gRooFl00Anim9]
   us:
     address: 0x09EF5FA0
   jp:
     address: 0x09ECD38C
   eu:
     address: 0x09F81398
-- name: gUnk_09EF5FC8
+- name: gRoFootmarkFrames
   record: SpriteTable
-  items: [gUnk_097559F4, gUnk_09755A04]
+  items: [gRoFootmarkFrame0, gRoFootmarkFrame1]
   us:
     address: 0x09EF5FC8
   jp:
     address: 0x09ECD3B4
   eu:
     address: 0x09F813C0
-- name: gUnk_09EF5FD0
+- name: gRoFootmarkAnims
   record: AnimTable
-  items: [gUnk_09755A20, gUnk_09755A2A]
+  items: [gRoFootmarkAnim0, gRoFootmarkAnim1]
   us:
     address: 0x09EF5FD0
   jp:
@@ -1646,45 +1646,45 @@ entries:
   eu:
     address: 0x09F813E4
     symbol: gUnkEu_09F813E4
-- name: gUnk_09EF5FF0
+- name: gEeHoneycombFrames
   record: SpriteTable
-  items: [gUnk_097567FC]
+  items: [gEeHoneycombFrame0]
   us:
     address: 0x09EF5FF0
   jp:
     address: 0x09ECD3DC
   eu:
     address: 0x09F813E8
-- name: gUnk_09EF5FF4
+- name: gEeHoneycombAnims
   record: AnimTable
-  items: [gUnk_09756806]
+  items: [gEeHoneycombAnim0]
   us:
     address: 0x09EF5FF4
   jp:
     address: 0x09ECD3E0
   eu:
     address: 0x09F813EC
-- name: gUnk_09EF5FF8
+- name: gEeBeeFrames
   record: SpriteTable
-  items: [gUnk_09756A10, gUnk_09756A20, gUnk_09756A30, gUnk_09756A40, gUnk_09756A4A, gUnk_09756A54, gUnk_09756A5E, gUnk_09756A6E, gUnk_09756A78, gUnk_09756A82, gUnk_09756A8C]
+  items: [gEeBeeFrame0, gEeBeeFrame1, gEeBeeFrame2, gEeBeeFrame3, gEeBeeFrame4, gEeBeeFrame5, gEeBeeFrame6, gEeBeeFrame7, gEeBeeFrame8, gEeBeeFrame9, gEeBeeFrame10]
   us:
     address: 0x09EF5FF8
   jp:
     address: 0x09ECD3E4
   eu:
     address: 0x09F813F0
-- name: gUnk_09EF6024
+- name: gEeBeeAnims
   record: AnimTable
-  items: [gUnk_09756A96, gUnk_09756AA4]
+  items: [gEeBeeAnim0, gEeBeeAnim1]
   us:
     address: 0x09EF6024
   jp:
     address: 0x09ECD410
   eu:
     address: 0x09F8141C
-- name: gUnk_09EF602C
+- name: gRaVegetablesFrames
   record: SpriteTable
-  items: [gUnk_09756C50, gUnk_09756C78, gUnk_09756C88, gUnk_09756C9E, gUnk_09756CB4, gUnk_09756CCA, gUnk_09756CDA, gUnk_09756CF0, gUnk_09756D06, gUnk_09756D16]
+  items: [gRaVegetablesFrame0, gRaVegetablesFrame1, gRaVegetablesFrame2, gRaVegetablesFrame3, gRaVegetablesFrame4, gRaVegetablesFrame5, gRaVegetablesFrame6, gRaVegetablesFrame7, gRaVegetablesFrame8, gRaVegetablesFrame9]
   us:
     address: 0x09EF602C
   jp:
@@ -1694,7 +1694,7 @@ entries:
 - name: gUnk_09EF6054
   record: SpriteTable
   scalar: true
-  items: [gUnk_09756D86]
+  items: [gRaVegetablesFrame10]
   us:
     address: 0x09EF6054
   jp:
@@ -1704,7 +1704,7 @@ entries:
 - name: gUnk_09EF6058
   record: SpriteTable
   scalar: true
-  items: [gUnk_09756D90]
+  items: [gRaVegetablesFrame11]
   us:
     address: 0x09EF6058
   jp:
@@ -1714,25 +1714,25 @@ entries:
 - name: gUnk_09EF605C
   record: SpriteTable
   scalar: true
-  items: [gUnk_09756DA0]
+  items: [gRaVegetablesFrame12]
   us:
     address: 0x09EF605C
   jp:
     address: 0x09ECD448
   eu:
     address: 0x09F81454
-- name: gUnk_09EF6060
+- name: gRaVegetablesAnims
   record: AnimTable
-  items: [gUnk_09756DB0, gUnk_09756DBA, gUnk_09756DC4, gUnk_09756DEA, gUnk_09756E00, gUnk_09756E1E]
+  items: [gRaVegetablesAnim0, gRaVegetablesAnim1, gRaVegetablesAnim2, gRaVegetablesAnim3, gRaVegetablesAnim4, gRaVegetablesAnim5]
   us:
     address: 0x09EF6060
   jp:
     address: 0x09ECD44C
   eu:
     address: 0x09F81458
-- name: gUnk_09EF6078
+- name: gRaWagonFrames
   record: SpriteTable
-  items: [gUnk_09758B48, gUnk_09758B70, gUnk_09758B8C, gUnk_09758B9C, gUnk_09758BAC, gUnk_09758BBC, gUnk_09758BCC, gUnk_09758BD6, gUnk_09758BE0, gUnk_09758BEA, gUnk_09758BF4, gUnk_09758C04]
+  items: [gRaWagonFrame0, gRaWagonFrame1, gRaWagonFrame2, gRaWagonFrame3, gRaWagonFrame4, gRaWagonFrame5, gRaWagonFrame6, gRaWagonFrame7, gRaWagonFrame8, gRaWagonFrame9, gRaWagonFrame10, gRaWagonFrame11]
   us:
     address: 0x09EF6078
   jp:
@@ -1742,16 +1742,16 @@ entries:
 - name: gUnk_09EF60A8
   record: SpriteTable
   scalar: true
-  items: [gUnk_09758C20]
+  items: [gRaWagonFrame12]
   us:
     address: 0x09EF60A8
   jp:
     address: 0x09ECD494
   eu:
     address: 0x09F814A0
-- name: gUnk_09EF60AC
+- name: gRaWagonAnims
   record: AnimTable
-  items: [gUnk_09758C30, gUnk_09758C3A, gUnk_09758C44, gUnk_09758C4E, gUnk_09758C80, gUnk_09758C8A]
+  items: [gRaWagonAnim0, gRaWagonAnim1, gRaWagonAnim2, gRaWagonAnim3, gRaWagonAnim4, gRaWagonAnim5]
   us:
     address: 0x09EF60AC
   jp:
@@ -2133,18 +2133,18 @@ entries:
 - name: pooh_ff00
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FE386
+  symbol: gPoohFf00Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_096FE36C
+  - symbol: gPoohFf00Frame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_096FE37C
+  - symbol: gPoohFf00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2159,18 +2159,18 @@ entries:
 - name: pooh_fr00
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FE5E2
+  symbol: gPoohFr00Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_096FE5C8
+  - symbol: gPoohFr00Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_096FE5D8
+  - symbol: gPoohFr00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2185,18 +2185,18 @@ entries:
 - name: pooh_rr00
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FE83E
+  symbol: gPoohRr00Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_096FE824
+  - symbol: gPoohRr00Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [8x8, -5, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_096FE834
+  - symbol: gPoohRr00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2211,18 +2211,18 @@ entries:
 - name: pooh_br00
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FEA7A
+  symbol: gPoohBr00Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_096FEA60
+  - symbol: gPoohBr00Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_096FEA70
+  - symbol: gPoohBr00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2237,18 +2237,18 @@ entries:
 - name: pooh_bb00
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FECD6
+  symbol: gPoohBb00Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_096FECBC
+  - symbol: gPoohBb00Frame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_096FECCC
+  - symbol: gPoohBb00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2263,48 +2263,48 @@ entries:
 - name: pooh_ff01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_096FEFBE
+  symbol: gPoohFf01Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_096FEF18
+  - symbol: gPoohFf01Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_096FEF28
+  - symbol: gPoohFf01Frame1
     pieces:
     - [32x32, -16, -35]
-  - symbol: gUnk_096FEF32
+  - symbol: gPoohFf01Frame2
     pieces:
     - [32x32, -16, -35]
-  - symbol: gUnk_096FEF3C
+  - symbol: gPoohFf01Frame3
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_096FEF46
+  - symbol: gPoohFf01Frame4
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_096FEF50
+  - symbol: gPoohFf01Frame5
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_096FEF5A
+  - symbol: gPoohFf01Frame6
     pieces:
     - [32x32, -16, -35]
-  - symbol: gUnk_096FEF64
+  - symbol: gPoohFf01Frame7
     pieces:
     - [32x32, -16, -35]
-  - symbol: gUnk_096FEF6E
+  - symbol: gPoohFf01Frame8
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_096FEF78
+  - symbol: gPoohFf01Frame9
     pieces:
     - [32x32, -16, -30]
-  - symbol: gUnk_096FEF82
+  - symbol: gPoohFf01Frame10
     pieces:
     - [32x32, -16, -31]
   animations:
-  - symbol: gUnk_096FEF8C
+  - symbol: gPoohFf01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9]]
   us:
@@ -2319,51 +2319,51 @@ entries:
 - name: pooh_fr01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097006F8
+  symbol: gPoohFr01Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09700640
+  - symbol: gPoohFr01Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09700650
+  - symbol: gPoohFr01Frame1
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09700660
+  - symbol: gPoohFr01Frame2
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09700670
+  - symbol: gPoohFr01Frame3
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09700680
+  - symbol: gPoohFr01Frame4
     pieces:
     - [32x32, -16, -27, {hflip: true}]
-  - symbol: gUnk_0970068A
+  - symbol: gPoohFr01Frame5
     pieces:
     - [32x32, -16, -29, {hflip: true}]
-  - symbol: gUnk_09700694
+  - symbol: gPoohFr01Frame6
     pieces:
     - [32x32, -16, -31, {hflip: true}]
-  - symbol: gUnk_0970069E
+  - symbol: gPoohFr01Frame7
     pieces:
     - [32x32, -16, -31, {hflip: true}]
-  - symbol: gUnk_097006A8
+  - symbol: gPoohFr01Frame8
     pieces:
     - [32x32, -16, -32, {hflip: true}]
-  - symbol: gUnk_097006B2
+  - symbol: gPoohFr01Frame9
     pieces:
     - [32x32, -16, -31, {hflip: true}]
-  - symbol: gUnk_097006BC
+  - symbol: gPoohFr01Frame10
     pieces:
     - [32x32, -16, -31, {hflip: true}]
   animations:
-  - symbol: gUnk_097006C6
+  - symbol: gPoohFr01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9]]
   us:
@@ -2378,58 +2378,58 @@ entries:
 - name: pooh_rr01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09701FDA
+  symbol: gPoohRr01Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09701EF8
+  - symbol: gPoohRr01Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F08
+  - symbol: gPoohRr01Frame1
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F18
+  - symbol: gPoohRr01Frame2
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F28
+  - symbol: gPoohRr01Frame3
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F38
+  - symbol: gPoohRr01Frame4
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F48
+  - symbol: gPoohRr01Frame5
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F58
+  - symbol: gPoohRr01Frame6
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F68
+  - symbol: gPoohRr01Frame7
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F78
+  - symbol: gPoohRr01Frame8
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F88
+  - symbol: gPoohRr01Frame9
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09701F98
+  - symbol: gPoohRr01Frame10
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_09701FA8
+  - symbol: gPoohRr01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9]]
   us:
@@ -2444,59 +2444,59 @@ entries:
 - name: pooh_br01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09703C44
+  symbol: gPoohBr01Tiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09703B5C
+  - symbol: gPoohBr01Frame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703B6C
+  - symbol: gPoohBr01Frame1
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703B7C
+  - symbol: gPoohBr01Frame2
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703B8C
+  - symbol: gPoohBr01Frame3
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703B9C
+  - symbol: gPoohBr01Frame4
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703BAC
+  - symbol: gPoohBr01Frame5
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703BBC
+  - symbol: gPoohBr01Frame6
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703BCC
+  - symbol: gPoohBr01Frame7
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703BDC
+  - symbol: gPoohBr01Frame8
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
-  - symbol: gUnk_09703BEC
+  - symbol: gPoohBr01Frame9
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
     - [8x8, -8, 5]
-  - symbol: gUnk_09703C02
+  - symbol: gPoohBr01Frame10
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [32x8, -16, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_09703C12
+  - symbol: gPoohBr01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9]]
   us:
@@ -2511,60 +2511,60 @@ entries:
 - name: pooh_bb01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097058D2
+  symbol: gPoohBb01Tiles
   align: 4
   cell: [32, 48]
   anchor: [16, 34]
   columns: 8
   frames:
-  - symbol: gUnk_097057E4
+  - symbol: gPoohBb01Frame0
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_097057F4
+  - symbol: gPoohBb01Frame1
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_09705804
+  - symbol: gPoohBb01Frame2
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_09705814
+  - symbol: gPoohBb01Frame3
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
     - [8x8, -8, 6]
-  - symbol: gUnk_0970582A
+  - symbol: gPoohBb01Frame4
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_0970583A
+  - symbol: gPoohBb01Frame5
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_0970584A
+  - symbol: gPoohBb01Frame6
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_0970585A
+  - symbol: gPoohBb01Frame7
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_0970586A
+  - symbol: gPoohBb01Frame8
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_0970587A
+  - symbol: gPoohBb01Frame9
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
     - [8x8, 0, 6]
-  - symbol: gUnk_09705890
+  - symbol: gPoohBb01Frame10
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
   animations:
-  - symbol: gUnk_097058A0
+  - symbol: gPoohBb01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9]]
   us:
@@ -2579,51 +2579,51 @@ entries:
 - name: pooh_fl01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970754C
+  symbol: gPoohFl01Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09707494
+  - symbol: gPoohFl01Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_097074A4
+  - symbol: gPoohFl01Frame1
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_097074B4
+  - symbol: gPoohFl01Frame2
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_097074C4
+  - symbol: gPoohFl01Frame3
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_097074D4
+  - symbol: gPoohFl01Frame4
     pieces:
     - [32x32, -16, -27]
-  - symbol: gUnk_097074DE
+  - symbol: gPoohFl01Frame5
     pieces:
     - [32x32, -16, -29]
-  - symbol: gUnk_097074E8
+  - symbol: gPoohFl01Frame6
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_097074F2
+  - symbol: gPoohFl01Frame7
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_097074FC
+  - symbol: gPoohFl01Frame8
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_09707506
+  - symbol: gPoohFl01Frame9
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_09707510
+  - symbol: gPoohFl01Frame10
     pieces:
     - [32x32, -16, -31]
   animations:
-  - symbol: gUnk_0970751A
+  - symbol: gPoohFl01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9], [0, 9], [1, 9], [2, 9], [3, 9], [4, 9]]
   us:
@@ -2638,58 +2638,58 @@ entries:
 - name: pooh_ll01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09708E2E
+  symbol: gPoohLl01Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09708D4C
+  - symbol: gPoohLl01Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708D5C
+  - symbol: gPoohLl01Frame1
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708D6C
+  - symbol: gPoohLl01Frame2
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708D7C
+  - symbol: gPoohLl01Frame3
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708D8C
+  - symbol: gPoohLl01Frame4
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708D9C
+  - symbol: gPoohLl01Frame5
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708DAC
+  - symbol: gPoohLl01Frame6
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708DBC
+  - symbol: gPoohLl01Frame7
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708DCC
+  - symbol: gPoohLl01Frame8
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708DDC
+  - symbol: gPoohLl01Frame9
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09708DEC
+  - symbol: gPoohLl01Frame10
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
   animations:
-  - symbol: gUnk_09708DFC
+  - symbol: gPoohLl01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9], [0, 9], [1, 9], [2, 9], [3, 9], [4, 9]]
   us:
@@ -2704,59 +2704,59 @@ entries:
 - name: pooh_bl01
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970AA98
+  symbol: gPoohBl01Tiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0970A9B0
+  - symbol: gPoohBl01Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970A9C0
+  - symbol: gPoohBl01Frame1
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970A9D0
+  - symbol: gPoohBl01Frame2
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970A9E0
+  - symbol: gPoohBl01Frame3
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970A9F0
+  - symbol: gPoohBl01Frame4
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970AA00
+  - symbol: gPoohBl01Frame5
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970AA10
+  - symbol: gPoohBl01Frame6
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970AA20
+  - symbol: gPoohBl01Frame7
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970AA30
+  - symbol: gPoohBl01Frame8
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0970AA40
+  - symbol: gPoohBl01Frame9
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
     - [16x8, -8, 5]
-  - symbol: gUnk_0970AA56
+  - symbol: gPoohBl01Frame10
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
   animations:
-  - symbol: gUnk_0970AA66
+  - symbol: gPoohBl01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 9], [6, 9], [7, 9], [8, 9], [9, 9], [10, 9], [0, 9], [1, 9], [2, 9], [3, 9], [4, 9]]
   us:
@@ -2771,18 +2771,18 @@ entries:
 - name: pooh_bb00_rr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970C672
+  symbol: gPoohBb00RrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970C658
+  - symbol: gPoohBb00RrFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970C668
+  - symbol: gPoohBb00RrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2797,18 +2797,18 @@ entries:
 - name: pooh_bb00_bl
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970C8CE
+  symbol: gPoohBb00BlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970C8B4
+  - symbol: gPoohBb00BlFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970C8C4
+  - symbol: gPoohBb00BlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2823,18 +2823,18 @@ entries:
 - name: pooh_bb00_br
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970CB2A
+  symbol: gPoohBb00BrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970CB10
+  - symbol: gPoohBb00BrFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970CB20
+  - symbol: gPoohBb00BrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2849,18 +2849,18 @@ entries:
 - name: pooh_bb00_ll
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970CD86
+  symbol: gPoohBb00LlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970CD6C
+  - symbol: gPoohBb00LlFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970CD7C
+  - symbol: gPoohBb00LlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2875,18 +2875,18 @@ entries:
 - name: pooh_br00_bb
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970CFE2
+  symbol: gPoohBr00BbTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970CFC8
+  - symbol: gPoohBr00BbFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970CFD8
+  - symbol: gPoohBr00BbAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2901,18 +2901,18 @@ entries:
 - name: pooh_br00_fr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970D23E
+  symbol: gPoohBr00FrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970D224
+  - symbol: gPoohBr00FrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970D234
+  - symbol: gPoohBr00FrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2927,18 +2927,18 @@ entries:
 - name: pooh_br00_bl
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970D49A
+  symbol: gPoohBr00BlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970D480
+  - symbol: gPoohBr00BlFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970D490
+  - symbol: gPoohBr00BlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2953,18 +2953,18 @@ entries:
 - name: pooh_br00_rr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970D6F6
+  symbol: gPoohBr00RrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970D6DC
+  - symbol: gPoohBr00RrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970D6EC
+  - symbol: gPoohBr00RrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -2979,18 +2979,18 @@ entries:
 - name: pooh_ff00_fl
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970D952
+  symbol: gPoohFf00FlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970D938
+  - symbol: gPoohFf00FlFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970D948
+  - symbol: gPoohFf00FlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3005,18 +3005,18 @@ entries:
 - name: pooh_ff00_rr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970DBAE
+  symbol: gPoohFf00RrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970DB94
+  - symbol: gPoohFf00RrFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970DBA4
+  - symbol: gPoohFf00RrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3031,18 +3031,18 @@ entries:
 - name: pooh_ff00_fr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970DE0A
+  symbol: gPoohFf00FrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970DDF0
+  - symbol: gPoohFf00FrFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970DE00
+  - symbol: gPoohFf00FrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3057,18 +3057,18 @@ entries:
 - name: pooh_ff00_ll
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970E066
+  symbol: gPoohFf00LlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970E04C
+  - symbol: gPoohFf00LlFrame0
     pieces:
     - [32x32, -16, -35]
     - [16x8, -8, -3]
   animations:
-  - symbol: gUnk_0970E05C
+  - symbol: gPoohFf00LlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3083,18 +3083,18 @@ entries:
 - name: pooh_fr00_rr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970E2C2
+  symbol: gPoohFr00RrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970E2A8
+  - symbol: gPoohFr00RrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970E2B8
+  - symbol: gPoohFr00RrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3109,18 +3109,18 @@ entries:
 - name: pooh_fr00_br
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970E51E
+  symbol: gPoohFr00BrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970E504
+  - symbol: gPoohFr00BrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970E514
+  - symbol: gPoohFr00BrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3135,18 +3135,18 @@ entries:
 - name: pooh_fr00_ff
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970E77A
+  symbol: gPoohFr00FfTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970E760
+  - symbol: gPoohFr00FfFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970E770
+  - symbol: gPoohFr00FfAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3161,18 +3161,18 @@ entries:
 - name: pooh_fr00_fl
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970E9D6
+  symbol: gPoohFr00FlTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970E9BC
+  - symbol: gPoohFr00FlFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [16x8, -8, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970E9CC
+  - symbol: gPoohFr00FlAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3187,18 +3187,18 @@ entries:
 - name: pooh_rr00_bb
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970EC32
+  symbol: gPoohRr00BbTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970EC18
+  - symbol: gPoohRr00BbFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [8x8, -5, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970EC28
+  - symbol: gPoohRr00BbAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3213,18 +3213,18 @@ entries:
 - name: pooh_rr00_ff
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970EE6E
+  symbol: gPoohRr00FfTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970EE54
+  - symbol: gPoohRr00FfFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [8x8, -5, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970EE64
+  - symbol: gPoohRr00FfAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3239,18 +3239,18 @@ entries:
 - name: pooh_rr00_fr
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970F0AA
+  symbol: gPoohRr00FrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970F090
+  - symbol: gPoohRr00FrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [8x8, -5, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970F0A0
+  - symbol: gPoohRr00FrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3265,18 +3265,18 @@ entries:
 - name: pooh_rr00_br
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970F2E6
+  symbol: gPoohRr00BrTiles
   align: 4
   cell: [32, 40]
   anchor: [16, 35]
   columns: 1
   frames:
-  - symbol: gUnk_0970F2CC
+  - symbol: gPoohRr00BrFrame0
     pieces:
     - [32x32, -16, -35, {hflip: true}]
     - [8x8, -5, -3, {hflip: true}]
   animations:
-  - symbol: gUnk_0970F2DC
+  - symbol: gPoohRr00BrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -3291,51 +3291,51 @@ entries:
 - name: pooh_bb04
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0970F5C4
+  symbol: gPoohBb04Tiles
   align: 4
   cell: [35, 49]
   anchor: [19, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0970F508
+  - symbol: gPoohBb04Frame0
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
     - [8x8, 0, 6]
-  - symbol: gUnk_0970F51E
+  - symbol: gPoohBb04Frame1
     pieces:
     - [32x32, -16, -31]
     - [32x8, -16, 1]
-  - symbol: gUnk_0970F52E
+  - symbol: gPoohBb04Frame2
     pieces:
     - [32x32, -16, -31]
     - [32x8, -16, 1]
-  - symbol: gUnk_0970F53E
+  - symbol: gPoohBb04Frame3
     pieces:
     - [32x32, -19, -34]
     - [32x8, -19, -2]
-  - symbol: gUnk_0970F54E
+  - symbol: gPoohBb04Frame4
     pieces:
     - [32x32, -19, -35]
     - [32x8, -19, -3]
-  - symbol: gUnk_0970F55E
+  - symbol: gPoohBb04Frame5
     pieces:
     - [32x32, -17, -21]
-  - symbol: gUnk_0970F568
+  - symbol: gPoohBb04Frame6
     pieces:
     - [32x32, -16, -20]
-  - symbol: gUnk_0970F572
+  - symbol: gPoohBb04Frame7
     pieces:
     - [16x32, -13, -21]
     - [8x32, 3, -21]
-  - symbol: gUnk_0970F582
+  - symbol: gPoohBb04Frame8
     pieces:
     - [32x32, -18, -18]
-  - symbol: gUnk_0970F58C
+  - symbol: gPoohBb04Frame9
     pieces:
     - [32x32, -18, -18]
   animations:
-  - symbol: gUnk_0970F596
+  - symbol: gPoohBb04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 6], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9], [8, 8], [9, 9]]
   us:
@@ -3350,51 +3350,51 @@ entries:
 - name: pooh_bl04
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09710CA0
+  symbol: gPoohBl04Tiles
   align: 4
   cell: [40, 50]
   anchor: [19, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09710BE4
+  - symbol: gPoohBl04Frame0
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_09710BF4
+  - symbol: gPoohBl04Frame1
     pieces:
     - [32x32, -17, -35]
     - [32x8, -17, -3]
-  - symbol: gUnk_09710C04
+  - symbol: gPoohBl04Frame2
     pieces:
     - [32x32, -18, -34]
     - [32x8, -18, -2]
-  - symbol: gUnk_09710C14
+  - symbol: gPoohBl04Frame3
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_09710C24
+  - symbol: gPoohBl04Frame4
     pieces:
     - [32x32, -16, -34]
     - [32x8, -16, -2]
-  - symbol: gUnk_09710C34
+  - symbol: gPoohBl04Frame5
     pieces:
     - [32x32, -19, -20]
     - [8x32, 13, -20]
-  - symbol: gUnk_09710C44
+  - symbol: gPoohBl04Frame6
     pieces:
     - [32x32, -15, -17]
-  - symbol: gUnk_09710C4E
+  - symbol: gPoohBl04Frame7
     pieces:
     - [32x16, -16, -17]
     - [32x8, -16, -1]
-  - symbol: gUnk_09710C5E
+  - symbol: gPoohBl04Frame8
     pieces:
     - [32x32, -17, -17]
-  - symbol: gUnk_09710C68
+  - symbol: gPoohBl04Frame9
     pieces:
     - [32x32, -17, -17]
   animations:
-  - symbol: gUnk_09710C72
+  - symbol: gPoohBl04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 6], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9], [8, 8], [9, 9]]
   us:
@@ -3409,58 +3409,58 @@ entries:
 - name: pooh_ll04
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09712406
+  symbol: gPoohLl04Tiles
   align: 4
   cell: [45, 46]
   anchor: [20, 32]
   columns: 8
   frames:
-  - symbol: gUnk_09712320
+  - symbol: gPoohLl04Frame0
     pieces:
     - [32x32, -12, -27]
-  - symbol: gUnk_0971232A
+  - symbol: gPoohLl04Frame1
     pieces:
     - [32x32, -12, -31]
     - [32x8, -12, 1]
-  - symbol: gUnk_0971233A
+  - symbol: gPoohLl04Frame2
     pieces:
     - [32x32, -17, -30]
     - [16x8, -1, 2]
-  - symbol: gUnk_0971234A
+  - symbol: gPoohLl04Frame3
     pieces:
     - [32x32, -13, -31]
-  - symbol: gUnk_09712354
+  - symbol: gPoohLl04Frame4
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_0971235E
+  - symbol: gPoohLl04Frame5
     pieces:
     - [32x16, -15, -18]
     - [32x8, -15, -2]
     - [8x8, 17, -10]
-  - symbol: gUnk_09712374
+  - symbol: gPoohLl04Frame6
     pieces:
     - [32x16, -19, -16]
     - [8x16, 13, -16]
     - [32x8, -19, 0]
     - [8x8, 13, 0]
-  - symbol: gUnk_09712390
+  - symbol: gPoohLl04Frame7
     pieces:
     - [32x16, -20, -14]
     - [8x16, 12, -14]
     - [32x8, -20, 2]
-  - symbol: gUnk_097123A6
+  - symbol: gPoohLl04Frame8
     pieces:
     - [32x16, -20, -10]
     - [8x16, 12, -10]
     - [8x8, -12, 6]
-  - symbol: gUnk_097123BC
+  - symbol: gPoohLl04Frame9
     pieces:
     - [32x16, -18, -13]
     - [8x16, 14, -13]
     - [32x8, -18, 3]
     - [8x8, 14, 3]
   animations:
-  - symbol: gUnk_097123D8
+  - symbol: gPoohLl04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 6], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9], [8, 8], [9, 9]]
   us:
@@ -3475,55 +3475,55 @@ entries:
 - name: pooh_fl04
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0971381C
+  symbol: gPoohFl04Tiles
   align: 4
   cell: [43, 48]
   anchor: [21, 32]
   columns: 8
   frames:
-  - symbol: gUnk_09713748
+  - symbol: gPoohFl04Frame0
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_09713752
+  - symbol: gPoohFl04Frame1
     pieces:
     - [32x32, -13, -31]
-  - symbol: gUnk_0971375C
+  - symbol: gPoohFl04Frame2
     pieces:
     - [32x32, -16, -31]
-  - symbol: gUnk_09713766
+  - symbol: gPoohFl04Frame3
     pieces:
     - [32x32, -20, -32]
     - [8x32, 12, -32]
-  - symbol: gUnk_09713776
+  - symbol: gPoohFl04Frame4
     pieces:
     - [32x32, -18, -29]
     - [8x32, 14, -29]
-  - symbol: gUnk_09713786
+  - symbol: gPoohFl04Frame5
     pieces:
     - [32x16, -21, -17]
     - [8x16, 11, -17]
     - [32x8, -21, -1]
-  - symbol: gUnk_0971379C
+  - symbol: gPoohFl04Frame6
     pieces:
     - [32x32, -18, -16]
     - [8x32, 14, -16]
-  - symbol: gUnk_097137AC
+  - symbol: gPoohFl04Frame7
     pieces:
     - [32x16, -19, -14]
     - [8x16, 13, -14]
     - [32x8, -19, 2]
-  - symbol: gUnk_097137C2
+  - symbol: gPoohFl04Frame8
     pieces:
     - [32x16, -20, -11]
     - [8x16, 12, -11]
     - [32x8, -20, 5]
-  - symbol: gUnk_097137D8
+  - symbol: gPoohFl04Frame9
     pieces:
     - [32x16, -19, -10]
     - [8x16, 13, -10]
     - [32x8, -19, 6]
   animations:
-  - symbol: gUnk_097137EE
+  - symbol: gPoohFl04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 6], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9], [8, 8], [9, 9]]
   us:
@@ -3538,46 +3538,46 @@ entries:
 - name: pooh_ff04
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09714D3A
+  symbol: gPoohFf04Tiles
   align: 4
   cell: [36, 50]
   anchor: [17, 35]
   columns: 8
   frames:
-  - symbol: gUnk_09714C9C
+  - symbol: gPoohFf04Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09714CAC
+  - symbol: gPoohFf04Frame1
     pieces:
     - [32x32, -17, -35]
     - [32x8, -17, -3]
-  - symbol: gUnk_09714CBC
+  - symbol: gPoohFf04Frame2
     pieces:
     - [32x32, -17, -32]
-  - symbol: gUnk_09714CC6
+  - symbol: gPoohFf04Frame3
     pieces:
     - [32x32, -14, -30]
-  - symbol: gUnk_09714CD0
+  - symbol: gPoohFf04Frame4
     pieces:
     - [32x32, -13, -28]
-  - symbol: gUnk_09714CDA
+  - symbol: gPoohFf04Frame5
     pieces:
     - [32x32, -15, -21]
-  - symbol: gUnk_09714CE4
+  - symbol: gPoohFf04Frame6
     pieces:
     - [32x32, -14, -18]
-  - symbol: gUnk_09714CEE
+  - symbol: gPoohFf04Frame7
     pieces:
     - [32x32, -15, -20]
-  - symbol: gUnk_09714CF8
+  - symbol: gPoohFf04Frame8
     pieces:
     - [32x32, -15, -17]
-  - symbol: gUnk_09714D02
+  - symbol: gPoohFf04Frame9
     pieces:
     - [32x32, -15, -17]
   animations:
-  - symbol: gUnk_09714D0C
+  - symbol: gPoohFf04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 6], [3, 7], [4, 6], [5, 7], [6, 8], [7, 9], [8, 8], [9, 9]]
   us:
@@ -3592,72 +3592,72 @@ entries:
 - name: pooh_bb04a
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09716366
+  symbol: gPoohBb04aTiles
   align: 4
   cell: [34, 51]
   anchor: [18, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0971623C
+  - symbol: gPoohBb04aFrame0
     pieces:
     - [32x32, -18, -16]
-  - symbol: gUnk_09716246
+  - symbol: gPoohBb04aFrame1
     pieces:
     - [16x32, -14, -17]
     - [8x32, 2, -17]
-  - symbol: gUnk_09716256
+  - symbol: gPoohBb04aFrame2
     pieces:
     - [16x32, -13, -20]
     - [8x32, 3, -20]
-  - symbol: gUnk_09716266
+  - symbol: gPoohBb04aFrame3
     pieces:
     - [16x32, -13, -21]
     - [8x32, 3, -21]
-  - symbol: gUnk_09716276
+  - symbol: gPoohBb04aFrame4
     pieces:
     - [16x32, -12, -23]
     - [8x32, 4, -23]
-  - symbol: gUnk_09716286
+  - symbol: gPoohBb04aFrame5
     pieces:
     - [16x32, -13, -25]
     - [8x32, 3, -25]
-  - symbol: gUnk_09716296
+  - symbol: gPoohBb04aFrame6
     pieces:
     - [16x32, -12, -27]
     - [8x32, 4, -27]
-  - symbol: gUnk_097162A6
+  - symbol: gPoohBb04aFrame7
     pieces:
     - [16x16, -9, -20]
     - [8x16, 7, -20]
     - [16x8, -9, -4]
-  - symbol: gUnk_097162BC
+  - symbol: gPoohBb04aFrame8
     pieces:
     - [16x16, -8, -19]
     - [16x8, -8, -3]
-  - symbol: gUnk_097162CC
+  - symbol: gPoohBb04aFrame9
     pieces:
     - [16x32, -12, -26]
     - [8x32, 4, -26]
-  - symbol: gUnk_097162DC
+  - symbol: gPoohBb04aFrame10
     pieces:
     - [32x32, -16, -29]
-  - symbol: gUnk_097162E6
+  - symbol: gPoohBb04aFrame11
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
-  - symbol: gUnk_097162FC
+  - symbol: gPoohBb04aFrame12
     pieces:
     - [16x32, -10, -35]
     - [8x32, 6, -35]
     - [16x8, -10, -3]
-  - symbol: gUnk_09716312
+  - symbol: gPoohBb04aFrame13
     pieces:
     - [16x32, -10, -35]
     - [8x32, 6, -35]
     - [16x8, -10, -3]
   animations:
-  - symbol: gUnk_09716328
+  - symbol: gPoohBb04aAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 11], [1, 11], [2, 11], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12], [12, 12], [13, 30]]
   us:
@@ -3672,68 +3672,68 @@ entries:
 - name: pooh_bl04a
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097179FA
+  symbol: gPoohBl04aTiles
   align: 4
   cell: [35, 52]
   anchor: [17, 37]
   columns: 8
   frames:
-  - symbol: gUnk_097178E8
+  - symbol: gPoohBl04aFrame0
     pieces:
     - [32x32, -16, -17]
-  - symbol: gUnk_097178F2
+  - symbol: gPoohBl04aFrame1
     pieces:
     - [32x16, -16, -15]
     - [32x8, -16, 1]
-  - symbol: gUnk_09717902
+  - symbol: gPoohBl04aFrame2
     pieces:
     - [32x16, -16, -15]
     - [32x8, -16, 1]
-  - symbol: gUnk_09717912
+  - symbol: gPoohBl04aFrame3
     pieces:
     - [32x16, -17, -17]
     - [32x8, -17, -1]
-  - symbol: gUnk_09717922
+  - symbol: gPoohBl04aFrame4
     pieces:
     - [32x16, -16, -18]
     - [32x8, -16, -2]
-  - symbol: gUnk_09717932
+  - symbol: gPoohBl04aFrame5
     pieces:
     - [32x16, -14, -20]
     - [32x8, -14, -4]
-  - symbol: gUnk_09717942
+  - symbol: gPoohBl04aFrame6
     pieces:
     - [32x32, -14, -24]
-  - symbol: gUnk_0971794C
+  - symbol: gPoohBl04aFrame7
     pieces:
     - [32x16, -15, -20]
     - [32x8, -15, -4]
-  - symbol: gUnk_0971795C
+  - symbol: gPoohBl04aFrame8
     pieces:
     - [32x16, -14, -19]
     - [32x8, -14, -3]
-  - symbol: gUnk_0971796C
+  - symbol: gPoohBl04aFrame9
     pieces:
     - [32x32, -16, -26]
-  - symbol: gUnk_09717976
+  - symbol: gPoohBl04aFrame10
     pieces:
     - [32x32, -14, -29]
-  - symbol: gUnk_09717980
+  - symbol: gPoohBl04aFrame11
     pieces:
     - [16x32, -9, -36]
     - [8x32, 7, -36]
     - [16x8, -9, -4]
-  - symbol: gUnk_09717996
+  - symbol: gPoohBl04aFrame12
     pieces:
     - [16x32, -11, -37]
     - [8x32, 5, -37]
     - [16x8, -11, -5]
-  - symbol: gUnk_097179AC
+  - symbol: gPoohBl04aFrame13
     pieces:
     - [16x32, -8, -36]
     - [16x8, -8, -4]
   animations:
-  - symbol: gUnk_097179BC
+  - symbol: gPoohBl04aAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 11], [1, 11], [2, 11], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12], [12, 12], [13, 30]]
   us:
@@ -3748,78 +3748,78 @@ entries:
 - name: pooh_ll04a
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09719286
+  symbol: gPoohLl04aTiles
   align: 4
   cell: [42, 49]
   anchor: [21, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0971913C
+  - symbol: gPoohLl04aFrame0
     pieces:
     - [32x16, -19, -10]
     - [8x16, 13, -10]
     - [8x8, -11, 6]
-  - symbol: gUnk_09719152
+  - symbol: gPoohLl04aFrame1
     pieces:
     - [32x16, -20, -11]
     - [8x16, 12, -11]
     - [32x8, -20, 5]
-  - symbol: gUnk_09719168
+  - symbol: gPoohLl04aFrame2
     pieces:
     - [32x16, -21, -13]
     - [8x16, 11, -13]
     - [32x8, -21, 3]
-  - symbol: gUnk_0971917E
+  - symbol: gPoohLl04aFrame3
     pieces:
     - [32x16, -17, -15]
     - [32x8, -17, 1]
-  - symbol: gUnk_0971918E
+  - symbol: gPoohLl04aFrame4
     pieces:
     - [32x16, -16, -17]
     - [32x8, -16, -1]
-  - symbol: gUnk_0971919E
+  - symbol: gPoohLl04aFrame5
     pieces:
     - [32x16, -16, -17]
     - [32x8, -16, -1]
-  - symbol: gUnk_097191AE
+  - symbol: gPoohLl04aFrame6
     pieces:
     - [32x16, -16, -18]
     - [32x8, -16, -2]
-  - symbol: gUnk_097191BE
+  - symbol: gPoohLl04aFrame7
     pieces:
     - [32x16, -16, -17]
     - [32x8, -16, -1]
-  - symbol: gUnk_097191CE
+  - symbol: gPoohLl04aFrame8
     pieces:
     - [32x16, -17, -17]
     - [32x8, -17, -1]
-  - symbol: gUnk_097191DE
+  - symbol: gPoohLl04aFrame9
     pieces:
     - [32x16, -17, -19]
     - [32x8, -17, -3]
-  - symbol: gUnk_097191EE
+  - symbol: gPoohLl04aFrame10
     pieces:
     - [32x32, -16, -26]
-  - symbol: gUnk_097191F8
+  - symbol: gPoohLl04aFrame11
     pieces:
     - [16x32, -9, -33]
     - [8x32, 7, -33]
     - [16x8, -9, -1]
-  - symbol: gUnk_0971920E
+  - symbol: gPoohLl04aFrame12
     pieces:
     - [16x32, -9, -35]
     - [8x32, 7, -35]
     - [16x8, -9, -3]
-  - symbol: gUnk_09719224
+  - symbol: gPoohLl04aFrame13
     pieces:
     - [16x32, -8, -34]
     - [16x8, -8, -2]
-  - symbol: gUnk_09719234
+  - symbol: gPoohLl04aFrame14
     pieces:
     - [16x32, -8, -34]
     - [16x8, -8, -2, {fresh: true}]
   animations:
-  - symbol: gUnk_09719244
+  - symbol: gPoohLl04aAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 11], [1, 11], [2, 11], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12], [12, 12], [13, 15], [14, 15]]
   us:
@@ -3834,78 +3834,78 @@ entries:
 - name: pooh_fl04a
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0971AB32
+  symbol: gPoohFl04aTiles
   align: 4
   cell: [40, 48]
   anchor: [20, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0971A9E8
+  - symbol: gPoohFl04aFrame0
     pieces:
     - [32x16, -20, -11]
     - [8x16, 12, -11]
     - [32x8, -20, 5]
-  - symbol: gUnk_0971A9FE
+  - symbol: gPoohFl04aFrame1
     pieces:
     - [32x16, -17, -12]
     - [32x8, -17, 4]
-  - symbol: gUnk_0971AA0E
+  - symbol: gPoohFl04aFrame2
     pieces:
     - [32x16, -16, -12]
     - [32x8, -16, 4]
-  - symbol: gUnk_0971AA1E
+  - symbol: gPoohFl04aFrame3
     pieces:
     - [32x16, -15, -14]
     - [32x8, -15, 2]
-  - symbol: gUnk_0971AA2E
+  - symbol: gPoohFl04aFrame4
     pieces:
     - [32x16, -16, -15]
     - [32x8, -16, 1]
-  - symbol: gUnk_0971AA3E
+  - symbol: gPoohFl04aFrame5
     pieces:
     - [32x16, -16, -15]
     - [32x8, -16, 1]
-  - symbol: gUnk_0971AA4E
+  - symbol: gPoohFl04aFrame6
     pieces:
     - [32x16, -15, -15]
     - [32x8, -15, 1]
-  - symbol: gUnk_0971AA5E
+  - symbol: gPoohFl04aFrame7
     pieces:
     - [32x16, -16, -15]
     - [32x8, -16, 1]
-  - symbol: gUnk_0971AA6E
+  - symbol: gPoohFl04aFrame8
     pieces:
     - [32x16, -17, -16]
     - [32x8, -17, 0]
-  - symbol: gUnk_0971AA7E
+  - symbol: gPoohFl04aFrame9
     pieces:
     - [32x16, -16, -18]
     - [32x8, -16, -2]
-  - symbol: gUnk_0971AA8E
+  - symbol: gPoohFl04aFrame10
     pieces:
     - [32x16, -17, -20]
     - [32x8, -17, -4]
-  - symbol: gUnk_0971AA9E
+  - symbol: gPoohFl04aFrame11
     pieces:
     - [16x32, -12, -28]
     - [8x32, 4, -28]
-  - symbol: gUnk_0971AAAE
+  - symbol: gPoohFl04aFrame12
     pieces:
     - [16x32, -12, -34]
     - [8x32, 4, -34]
     - [16x8, -12, -2]
-  - symbol: gUnk_0971AAC4
+  - symbol: gPoohFl04aFrame13
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
-  - symbol: gUnk_0971AADA
+  - symbol: gPoohFl04aFrame14
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35, {fresh: true}]
     - [16x8, -11, -3, {fresh: true}]
   animations:
-  - symbol: gUnk_0971AAF0
+  - symbol: gPoohFl04aAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 11], [1, 11], [2, 1], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12], [12, 12], [13, 15], [14, 15]]
   us:
@@ -3920,76 +3920,76 @@ entries:
 - name: pooh_ff04a
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0971C3F2
+  symbol: gPoohFf04aTiles
   align: 4
   cell: [33, 52]
   anchor: [16, 36]
   columns: 8
   frames:
-  - symbol: gUnk_0971C2B4
+  - symbol: gPoohFf04aFrame0
     pieces:
     - [32x32, -15, -17]
-  - symbol: gUnk_0971C2BE
+  - symbol: gPoohFf04aFrame1
     pieces:
     - [32x32, -16, -16]
-  - symbol: gUnk_0971C2C8
+  - symbol: gPoohFf04aFrame2
     pieces:
     - [16x32, -12, -16]
     - [8x32, 4, -16]
-  - symbol: gUnk_0971C2D8
+  - symbol: gPoohFf04aFrame3
     pieces:
     - [16x32, -13, -18]
     - [8x32, 3, -18]
-  - symbol: gUnk_0971C2E8
+  - symbol: gPoohFf04aFrame4
     pieces:
     - [16x32, -13, -16]
     - [8x32, 3, -16]
-  - symbol: gUnk_0971C2F8
+  - symbol: gPoohFf04aFrame5
     pieces:
     - [16x32, -12, -17]
     - [8x32, 4, -17]
-  - symbol: gUnk_0971C308
+  - symbol: gPoohFf04aFrame6
     pieces:
     - [16x32, -13, -17]
     - [8x32, 3, -17]
-  - symbol: gUnk_0971C318
+  - symbol: gPoohFf04aFrame7
     pieces:
     - [16x32, -12, -17]
     - [8x32, 4, -17]
-  - symbol: gUnk_0971C328
+  - symbol: gPoohFf04aFrame8
     pieces:
     - [16x32, -13, -19]
     - [8x32, 3, -19]
-  - symbol: gUnk_0971C338
+  - symbol: gPoohFf04aFrame9
     pieces:
     - [16x32, -13, -18]
     - [8x32, 3, -18]
-  - symbol: gUnk_0971C348
+  - symbol: gPoohFf04aFrame10
     pieces:
     - [16x16, -9, -22]
     - [8x16, 7, -22]
     - [16x8, -9, -6]
-  - symbol: gUnk_0971C35E
+  - symbol: gPoohFf04aFrame11
     pieces:
     - [16x32, -13, -29]
     - [8x32, 3, -29]
-  - symbol: gUnk_0971C36E
+  - symbol: gPoohFf04aFrame12
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
-  - symbol: gUnk_0971C384
+  - symbol: gPoohFf04aFrame13
     pieces:
     - [16x32, -11, -36]
     - [8x32, 5, -36]
     - [16x8, -11, -4]
-  - symbol: gUnk_0971C39A
+  - symbol: gPoohFf04aFrame14
     pieces:
     - [16x32, -11, -36]
     - [8x32, 5, -36, {fresh: true}]
     - [16x8, -11, -4, {fresh: true}]
   animations:
-  - symbol: gUnk_0971C3B0
+  - symbol: gPoohFf04aAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 11], [1, 11], [2, 11], [3, 11], [4, 11], [5, 11], [6, 11], [7, 11], [8, 12], [9, 12], [10, 12], [11, 12], [12, 12], [13, 15], [14, 15]]
   us:
@@ -4004,101 +4004,101 @@ entries:
 - name: pooh_fl07
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0971DD78
+  symbol: gPoohFl07Tiles
   align: 4
   cell: [42, 61]
   anchor: [29, 51]
   columns: 8
   frames:
-  - symbol: gUnk_0971DBB4
+  - symbol: gPoohFl07Frame0
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
-  - symbol: gUnk_0971DBCA
+  - symbol: gPoohFl07Frame1
     pieces:
     - [16x32, -11, -36]
     - [8x32, 5, -36]
     - [16x8, -11, -4]
-  - symbol: gUnk_0971DBE0
+  - symbol: gPoohFl07Frame2
     pieces:
     - [16x32, -17, -36]
     - [8x32, -1, -36]
     - [16x8, -9, -4]
-  - symbol: gUnk_0971DBF6
+  - symbol: gPoohFl07Frame3
     pieces:
     - [16x32, -15, -30]
     - [8x32, 1, -30]
     - [8x8, 1, 2]
-  - symbol: gUnk_0971DC0C
+  - symbol: gPoohFl07Frame4
     pieces:
     - [32x16, -25, -29]
     - [32x8, -25, -13]
-  - symbol: gUnk_0971DC1C
+  - symbol: gPoohFl07Frame5
     pieces:
     - [32x16, -29, -32]
     - [32x8, -29, -16]
-  - symbol: gUnk_0971DC2C
+  - symbol: gPoohFl07Frame6
     pieces:
     - [32x16, -28, -31]
     - [32x8, -28, -15]
-  - symbol: gUnk_0971DC3C
+  - symbol: gPoohFl07Frame7
     pieces:
     - [32x16, -27, -32]
     - [32x8, -27, -16]
-  - symbol: gUnk_0971DC4C
+  - symbol: gPoohFl07Frame8
     pieces:
     - [32x16, -27, -32]
     - [32x8, -27, -16]
-  - symbol: gUnk_0971DC5C
+  - symbol: gPoohFl07Frame9
     pieces:
     - [32x16, -29, -32]
     - [32x8, -29, -16]
-  - symbol: gUnk_0971DC6C
+  - symbol: gPoohFl07Frame10
     pieces:
     - [32x32, -28, -39]
-  - symbol: gUnk_0971DC76
+  - symbol: gPoohFl07Frame11
     pieces:
     - [16x32, -20, -49]
     - [8x32, -4, -49]
     - [16x8, -20, -17]
-  - symbol: gUnk_0971DC8C
+  - symbol: gPoohFl07Frame12
     pieces:
     - [32x16, -25, -31]
     - [32x8, -25, -15]
-  - symbol: gUnk_0971DC9C
+  - symbol: gPoohFl07Frame13
     pieces:
     - [32x16, -29, -34]
     - [32x8, -29, -18]
-  - symbol: gUnk_0971DCAC
+  - symbol: gPoohFl07Frame14
     pieces:
     - [32x16, -28, -33]
     - [32x8, -28, -17]
-  - symbol: gUnk_0971DCBC
+  - symbol: gPoohFl07Frame15
     pieces:
     - [32x16, -27, -34]
     - [32x8, -27, -18]
-  - symbol: gUnk_0971DCCC
+  - symbol: gPoohFl07Frame16
     pieces:
     - [32x16, -27, -34]
     - [32x8, -27, -18]
-  - symbol: gUnk_0971DCDC
+  - symbol: gPoohFl07Frame17
     pieces:
     - [32x16, -29, -34]
     - [32x8, -29, -18]
-  - symbol: gUnk_0971DCEC
+  - symbol: gPoohFl07Frame18
     pieces:
     - [32x32, -28, -41]
-  - symbol: gUnk_0971DCF6
+  - symbol: gPoohFl07Frame19
     pieces:
     - [16x32, -20, -51]
     - [8x32, -4, -51]
     - [16x8, -20, -19]
   animations:
-  - symbol: gUnk_0971DD0C
+  - symbol: gPoohFl07Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 15], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10], [11, 15]]
-  - symbol: gUnk_0971DD42
+  - symbol: gPoohFl07Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 15], [1, 10], [2, 10], [3, 10], [12, 10], [13, 10], [14, 10], [15, 10], [16, 10], [17, 10], [18, 10], [19, 15]]
   us:
@@ -4113,94 +4113,94 @@ entries:
 - name: pooh_bl07
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0971F0F2
+  symbol: gPoohBl07Tiles
   align: 4
   cell: [43, 61]
   anchor: [30, 53]
   columns: 8
   frames:
-  - symbol: gUnk_0971EF58
+  - symbol: gPoohBl07Frame0
     pieces:
     - [16x32, -11, -34]
     - [8x32, 5, -34]
     - [16x8, -11, -2]
-  - symbol: gUnk_0971EF6E
+  - symbol: gPoohBl07Frame1
     pieces:
     - [16x32, -12, -32]
     - [8x32, 4, -32]
     - [16x8, -12, 0]
-  - symbol: gUnk_0971EF84
+  - symbol: gPoohBl07Frame2
     pieces:
     - [16x32, -17, -32]
     - [8x32, -1, -32]
     - [16x8, -9, 0]
-  - symbol: gUnk_0971EF9A
+  - symbol: gPoohBl07Frame3
     pieces:
     - [32x32, -21, -32]
     - [32x8, -21, 0]
-  - symbol: gUnk_0971EFAA
+  - symbol: gPoohBl07Frame4
     pieces:
     - [32x32, -20, -33]
-  - symbol: gUnk_0971EFB4
+  - symbol: gPoohBl07Frame5
     pieces:
     - [32x32, -24, -33]
-  - symbol: gUnk_0971EFBE
+  - symbol: gPoohBl07Frame6
     pieces:
     - [32x32, -25, -35]
-  - symbol: gUnk_0971EFC8
+  - symbol: gPoohBl07Frame7
     pieces:
     - [32x32, -28, -37]
-  - symbol: gUnk_0971EFD2
+  - symbol: gPoohBl07Frame8
     pieces:
     - [32x16, -30, -33]
     - [32x8, -30, -17]
-  - symbol: gUnk_0971EFE2
+  - symbol: gPoohBl07Frame9
     pieces:
     - [32x16, -30, -35]
     - [32x8, -30, -19]
-  - symbol: gUnk_0971EFF2
+  - symbol: gPoohBl07Frame10
     pieces:
     - [16x32, -27, -42]
     - [8x32, -11, -42]
-  - symbol: gUnk_0971F002
+  - symbol: gPoohBl07Frame11
     pieces:
     - [16x32, -22, -48]
     - [8x32, -6, -48]
     - [16x8, -22, -16]
-  - symbol: gUnk_0971F018
+  - symbol: gPoohBl07Frame12
     pieces:
     - [32x32, -20, -37]
-  - symbol: gUnk_0971F022
+  - symbol: gPoohBl07Frame13
     pieces:
     - [32x32, -24, -38]
-  - symbol: gUnk_0971F02C
+  - symbol: gPoohBl07Frame14
     pieces:
     - [32x32, -25, -40]
-  - symbol: gUnk_0971F036
+  - symbol: gPoohBl07Frame15
     pieces:
     - [32x32, -27, -41]
-  - symbol: gUnk_0971F040
+  - symbol: gPoohBl07Frame16
     pieces:
     - [32x16, -29, -37]
     - [32x8, -29, -21]
-  - symbol: gUnk_0971F050
+  - symbol: gPoohBl07Frame17
     pieces:
     - [32x16, -29, -39]
     - [32x8, -29, -23]
-  - symbol: gUnk_0971F060
+  - symbol: gPoohBl07Frame18
     pieces:
     - [16x32, -25, -47]
     - [8x32, -9, -47]
-  - symbol: gUnk_0971F070
+  - symbol: gPoohBl07Frame19
     pieces:
     - [16x32, -20, -53]
     - [8x32, -4, -53]
     - [16x8, -20, -21]
   animations:
-  - symbol: gUnk_0971F086
+  - symbol: gPoohBl07Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 15], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10], [11, 15]]
-  - symbol: gUnk_0971F0BC
+  - symbol: gPoohBl07Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 15], [1, 10], [2, 10], [3, 10], [12, 10], [13, 10], [14, 10], [15, 10], [16, 10], [17, 10], [18, 10], [19, 15]]
   us:
@@ -4215,42 +4215,42 @@ entries:
 - name: pooh_fl03
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097205C2
+  symbol: gPoohFl03Tiles
   align: 4
   cell: [35, 41]
   anchor: [18, 36]
   columns: 8
   frames:
-  - symbol: gUnk_09720534
+  - symbol: gPoohFl03Frame0
     pieces:
     - [32x32, -18, -35]
     - [32x8, -18, -3]
-  - symbol: gUnk_09720544
+  - symbol: gPoohFl03Frame1
     pieces:
     - [32x32, -18, -27]
-  - symbol: gUnk_0972054E
+  - symbol: gPoohFl03Frame2
     pieces:
     - [32x32, -17, -31]
-  - symbol: gUnk_09720558
+  - symbol: gPoohFl03Frame3
     pieces:
     - [32x32, -15, -36]
-  - symbol: gUnk_09720562
+  - symbol: gPoohFl03Frame4
     pieces:
     - [32x32, -17, -32]
-  - symbol: gUnk_0972056C
+  - symbol: gPoohFl03Frame5
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972057C
+  - symbol: gPoohFl03Frame6
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972058C
+  - symbol: gPoohFl03Frame7
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
   animations:
-  - symbol: gUnk_0972059C
+  - symbol: gPoohFl03Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 14], [2, 14], [3, 14], [4, 10], [5, 15], [6, 15], [7, 40]]
   us:
@@ -4265,46 +4265,46 @@ entries:
 - name: pooh_bl03
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0972186A
+  symbol: gPoohBl03Tiles
   align: 4
   cell: [33, 46]
   anchor: [16, 40]
   columns: 8
   frames:
-  - symbol: gUnk_097217C4
+  - symbol: gPoohBl03Frame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_097217D4
+  - symbol: gPoohBl03Frame1
     pieces:
     - [32x32, -15, -34]
     - [32x8, -15, -2]
-  - symbol: gUnk_097217E4
+  - symbol: gPoohBl03Frame2
     pieces:
     - [32x32, -16, -38]
     - [32x8, -16, -6]
-  - symbol: gUnk_097217F4
+  - symbol: gPoohBl03Frame3
     pieces:
     - [32x32, -16, -40]
     - [32x8, -16, -8]
-  - symbol: gUnk_09721804
+  - symbol: gPoohBl03Frame4
     pieces:
     - [32x32, -16, -39]
     - [32x8, -16, -7]
-  - symbol: gUnk_09721814
+  - symbol: gPoohBl03Frame5
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09721824
+  - symbol: gPoohBl03Frame6
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_09721834
+  - symbol: gPoohBl03Frame7
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
   animations:
-  - symbol: gUnk_09721844
+  - symbol: gPoohBl03Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 9], [2, 9], [3, 10], [4, 9], [5, 9], [6, 9], [7, 10]]
   us:
@@ -4319,38 +4319,38 @@ entries:
 - name: pooh_ll10
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09722CEA
+  symbol: gPoohLl10Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 36]
   columns: 6
   frames:
-  - symbol: gUnk_09722C6C
+  - symbol: gPoohLl10Frame0
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09722C7C
+  - symbol: gPoohLl10Frame1
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09722C8C
+  - symbol: gPoohLl10Frame2
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09722C9C
+  - symbol: gPoohLl10Frame3
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09722CAC
+  - symbol: gPoohLl10Frame4
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09722CBC
+  - symbol: gPoohLl10Frame5
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
   animations:
-  - symbol: gUnk_09722CCC
+  - symbol: gPoohLl10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]
   us:
@@ -4365,38 +4365,38 @@ entries:
 - name: pooh_ff10
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_09723C6A
+  symbol: gPoohFf10Tiles
   align: 4
   cell: [32, 40]
   anchor: [16, 36]
   columns: 6
   frames:
-  - symbol: gUnk_09723BEC
+  - symbol: gPoohFf10Frame0
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09723BFC
+  - symbol: gPoohFf10Frame1
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09723C0C
+  - symbol: gPoohFf10Frame2
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09723C1C
+  - symbol: gPoohFf10Frame3
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09723C2C
+  - symbol: gPoohFf10Frame4
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
-  - symbol: gUnk_09723C3C
+  - symbol: gPoohFf10Frame5
     pieces:
     - [32x32, -16, -36]
     - [32x8, -16, -4]
   animations:
-  - symbol: gUnk_09723C4C
+  - symbol: gPoohFf10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5]]
   us:
@@ -4464,240 +4464,240 @@ entries:
 - name: pooh_fl05
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097257D8
+  symbol: gPoohFl05Tiles
   align: 4
   cell: [51, 47]
   anchor: [23, 35]
   columns: 8
   frames:
-  - symbol: gUnk_0972539C
+  - symbol: gPoohFl05Frame0
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
     - [8x8, 5, -3]
-  - symbol: gUnk_097253B8
+  - symbol: gPoohFl05Frame1
     pieces:
     - [16x32, -10, -35]
     - [8x32, 6, -35]
     - [16x8, -10, -3]
     - [8x8, 6, -3]
-  - symbol: gUnk_097253D4
+  - symbol: gPoohFl05Frame2
     pieces:
     - [16x32, -11, -33]
     - [8x32, 5, -33]
     - [16x8, -11, -1]
     - [8x8, 5, -1]
-  - symbol: gUnk_097253F0
+  - symbol: gPoohFl05Frame3
     pieces:
     - [16x32, -11, -28]
     - [8x32, 5, -28]
-  - symbol: gUnk_09725400
+  - symbol: gPoohFl05Frame4
     pieces:
     - [16x32, -10, -29]
     - [8x32, 6, -29]
-  - symbol: gUnk_09725410
+  - symbol: gPoohFl05Frame5
     pieces:
     - [16x32, -9, -31]
     - [8x32, 7, -31]
     - [16x8, -9, 1]
     - [8x8, 7, 1]
-  - symbol: gUnk_0972542C
+  - symbol: gPoohFl05Frame6
     pieces:
     - [16x32, -10, -27]
     - [8x32, 6, -27]
-  - symbol: gUnk_0972543C
+  - symbol: gPoohFl05Frame7
     pieces:
     - [16x32, -9, -26]
     - [8x32, 7, -26]
-  - symbol: gUnk_0972544C
+  - symbol: gPoohFl05Frame8
     pieces:
     - [16x32, -7, -27]
     - [8x32, 9, -27]
-  - symbol: gUnk_0972545C
+  - symbol: gPoohFl05Frame9
     pieces:
     - [16x32, -6, -30]
     - [8x32, 10, -30]
-  - symbol: gUnk_0972546C
+  - symbol: gPoohFl05Frame10
     pieces:
     - [32x32, -9, -27]
-  - symbol: gUnk_09725476
+  - symbol: gPoohFl05Frame11
     pieces:
     - [32x16, -8, -21]
     - [32x8, -8, -5]
-  - symbol: gUnk_09725486
+  - symbol: gPoohFl05Frame12
     pieces:
     - [32x16, -7, -17]
     - [32x8, -7, -1]
-  - symbol: gUnk_09725496
+  - symbol: gPoohFl05Frame13
     pieces:
     - [32x16, -12, -16]
     - [8x16, 20, -16]
     - [32x8, -12, 0]
-  - symbol: gUnk_097254AC
+  - symbol: gPoohFl05Frame14
     pieces:
     - [32x16, -8, -16]
     - [32x8, -8, 0]
-  - symbol: gUnk_097254BC
+  - symbol: gPoohFl05Frame15
     pieces:
     - [32x16, -8, -16]
     - [32x8, -8, 0, {fresh: true}]
-  - symbol: gUnk_097254CC
+  - symbol: gPoohFl05Frame16
     pieces:
     - [32x32, -7, -25]
-  - symbol: gUnk_097254D6
+  - symbol: gPoohFl05Frame17
     pieces:
     - [32x32, -6, -27]
-  - symbol: gUnk_097254E0
+  - symbol: gPoohFl05Frame18
     pieces:
     - [32x32, -12, -29]
     - [32x8, -12, 3]
-  - symbol: gUnk_097254F0
+  - symbol: gPoohFl05Frame19
     pieces:
     - [16x32, -8, -28]
     - [8x32, 8, -28]
     - [16x8, -8, 4]
-  - symbol: gUnk_09725506
+  - symbol: gPoohFl05Frame20
     pieces:
     - [16x32, -9, -28]
     - [8x32, 7, -28]
-  - symbol: gUnk_09725516
+  - symbol: gPoohFl05Frame21
     pieces:
     - [16x32, -8, -27]
     - [8x32, 8, -27]
-  - symbol: gUnk_09725526
+  - symbol: gPoohFl05Frame22
     pieces:
     - [16x32, -9, -29]
     - [8x32, 7, -29]
     - [16x8, -9, 3]
-  - symbol: gUnk_0972553C
+  - symbol: gPoohFl05Frame23
     pieces:
     - [16x32, -10, -29]
     - [8x32, 6, -29]
     - [16x8, -10, 3]
-  - symbol: gUnk_09725552
+  - symbol: gPoohFl05Frame24
     pieces:
     - [16x32, -15, -25]
     - [8x32, 1, -25]
-  - symbol: gUnk_09725562
+  - symbol: gPoohFl05Frame25
     pieces:
     - [32x16, -21, -19]
     - [32x8, -21, -3]
-  - symbol: gUnk_09725572
+  - symbol: gPoohFl05Frame26
     pieces:
     - [32x16, -23, -15]
     - [32x8, -23, 1]
-  - symbol: gUnk_09725582
+  - symbol: gPoohFl05Frame27
     pieces:
     - [32x16, -22, -17]
     - [32x8, -22, -1]
-  - symbol: gUnk_09725592
+  - symbol: gPoohFl05Frame28
     pieces:
     - [32x16, -21, -17]
     - [32x8, -21, -1]
-  - symbol: gUnk_097255A2
+  - symbol: gPoohFl05Frame29
     pieces:
     - [32x16, -21, -19]
     - [32x8, -21, -3]
-  - symbol: gUnk_097255B2
+  - symbol: gPoohFl05Frame30
     pieces:
     - [16x32, -18, -26]
     - [8x32, -2, -26]
-  - symbol: gUnk_097255C2
+  - symbol: gPoohFl05Frame31
     pieces:
     - [16x32, -14, -34]
     - [8x32, 2, -34]
     - [16x8, -14, -2]
     - [8x8, 2, -2]
-  - symbol: gUnk_097255DE
+  - symbol: gPoohFl05Frame32
     pieces:
     - [16x32, -9, -26]
     - [8x32, 7, -26]
-  - symbol: gUnk_097255EE
+  - symbol: gPoohFl05Frame33
     pieces:
     - [16x16, 1, -33]
-  - symbol: gUnk_097255F8
+  - symbol: gPoohFl05Frame34
     pieces:
     - [16x16, 1, -33]
-  - symbol: gUnk_09725602
+  - symbol: gPoohFl05Frame35
     pieces:
     - [16x16, 1, -33]
-  - symbol: gUnk_0972560C
+  - symbol: gPoohFl05Frame36
     pieces:
     - [16x16, 1, -33]
-  - symbol: gUnk_09725616
+  - symbol: gPoohFl05Frame37
     pieces:
     - [16x16, -17, -33]
-  - symbol: gUnk_09725620
+  - symbol: gPoohFl05Frame38
     pieces:
     - [16x16, -17, -33]
-  - symbol: gUnk_0972562A
+  - symbol: gPoohFl05Frame39
     pieces:
     - [16x16, -17, -33]
-  - symbol: gUnk_09725634
+  - symbol: gPoohFl05Frame40
     pieces:
     - [16x16, -17, -33]
-  - symbol: gUnk_0972563E
+  - symbol: gPoohFl05Frame41
     pieces: []
-  - symbol: gUnk_09725640
+  - symbol: gPoohFl05Frame42
     pieces:
     - [16x32, -10, -35]
     - [8x32, 6, -35]
     - [16x8, -10, -3]
     - [8x8, 6, -3]
-  - symbol: gUnk_0972565C
+  - symbol: gPoohFl05Frame43
     pieces:
     - [16x32, -13, -33]
     - [8x32, 3, -33]
     - [16x8, -13, -1]
     - [8x8, 3, -1]
-  - symbol: gUnk_09725678
+  - symbol: gPoohFl05Frame44
     pieces:
     - [16x32, -14, -26]
     - [8x32, 2, -26]
-  - symbol: gUnk_09725688
+  - symbol: gPoohFl05Frame45
     pieces:
     - [16x32, -13, -26]
     - [8x32, 3, -26]
-  - symbol: gUnk_09725698
+  - symbol: gPoohFl05Frame46
     pieces:
     - [16x32, -12, -29]
     - [8x32, 4, -29]
     - [16x8, -12, 3]
     - [8x8, 4, 3]
-  - symbol: gUnk_097256B4
+  - symbol: gPoohFl05Frame47
     pieces:
     - [16x32, -14, -25]
     - [8x32, 2, -25]
   animations:
-  - symbol: gUnk_097256C4
+  - symbol: gPoohFl05Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 8], [2, 9], [3, 10], [4, 10], [5, 10], [6, 10]]
-  - symbol: gUnk_097256E6
+  - symbol: gPoohFl05Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[7, 4]]
-  - symbol: gUnk_097256F0
+  - symbol: gPoohFl05Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[6, 10], [8, 8], [9, 9], [10, 10], [11, 10], [12, 10]]
-  - symbol: gUnk_0972570E
+  - symbol: gPoohFl05Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[13, 50], [14, 30], [15, 30], [14, 30]]
-  - symbol: gUnk_09725724
+  - symbol: gPoohFl05Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[16, 12], [17, 12], [18, 12], [19, 12], [20, 12], [7, 30]]
-  - symbol: gUnk_09725742
+  - symbol: gPoohFl05Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[21, 10], [22, 10], [23, 10], [24, 10], [25, 10], [26, 10], [27, 10], [28, 10], [29, 10], [30, 10], [31, 10], [0, 10]]
-  - symbol: gUnk_09725778
+  - symbol: gPoohFl05Anim6
     fields: {unk_00: 64, unk_02: 64}
     frames: [[32, 4]]
-  - symbol: gUnk_09725782
+  - symbol: gPoohFl05Anim7
     fields: {unk_00: 64, unk_02: 64}
     frames: [[41, 50], [33, 22], [34, 23], [35, 22], [36, 23]]
-  - symbol: gUnk_0972579C
+  - symbol: gPoohFl05Anim8
     fields: {unk_00: 64, unk_02: 64}
     frames: [[41, 50], [37, 22], [38, 23], [39, 22], [40, 23]]
-  - symbol: gUnk_097257B6
+  - symbol: gPoohFl05Anim9
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [42, 8], [43, 9], [44, 10], [45, 10], [46, 10], [47, 10]]
   us:
@@ -4712,58 +4712,58 @@ entries:
 - name: pooh_fl06
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_097293BE
+  symbol: gPoohFl06Tiles
   align: 4
   cell: [25, 41]
   anchor: [11, 36]
   columns: 8
   frames:
-  - symbol: gUnk_097292B8
+  - symbol: gPoohFl06Frame0
     pieces:
     - [16x32, -11, -35]
     - [8x32, 5, -35]
     - [16x8, -11, -3]
-  - symbol: gUnk_097292CE
+  - symbol: gPoohFl06Frame1
     pieces:
     - [16x32, -11, -36]
     - [8x32, 5, -36]
     - [16x8, -11, -4]
-  - symbol: gUnk_097292E4
+  - symbol: gPoohFl06Frame2
     pieces:
     - [16x32, -9, -36]
     - [16x8, -9, -4]
-  - symbol: gUnk_097292F4
+  - symbol: gPoohFl06Frame3
     pieces:
     - [16x32, -9, -36]
     - [16x8, -9, -4, {fresh: true}]
-  - symbol: gUnk_09729304
+  - symbol: gPoohFl06Frame4
     pieces:
     - [16x32, -9, -36]
     - [16x8, -9, -4]
-  - symbol: gUnk_09729314
+  - symbol: gPoohFl06Frame5
     pieces:
     - [16x32, -9, -36]
     - [16x8, -9, -4, {fresh: true}]
-  - symbol: gUnk_09729324
+  - symbol: gPoohFl06Frame6
     pieces:
     - [16x32, -9, -36]
     - [16x8, -9, -4, {fresh: true}]
-  - symbol: gUnk_09729334
+  - symbol: gPoohFl06Frame7
     pieces:
     - [16x32, -10, -36]
     - [16x8, -10, -4]
     - [8x8, 6, -36]
   animations:
-  - symbol: gUnk_0972934A
+  - symbol: gPoohFl06Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 10], [4, 20], [5, 12], [4, 12], [5, 12], [4, 12], [5, 12], [6, 10], [7, 10], [0, 20]]
-  - symbol: gUnk_09729384
+  - symbol: gPoohFl06Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 10], [4, 20]]
-  - symbol: gUnk_0972939E
+  - symbol: gPoohFl06Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 12], [4, 12]]
-  - symbol: gUnk_097293AC
+  - symbol: gPoohFl06Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[6, 10], [7, 10], [0, 20]]
   us:
@@ -4778,98 +4778,98 @@ entries:
 - name: pooh_fl09
   format: sprite_sheet
   palette: pooh
-  symbol: gUnk_0972A136
+  symbol: gPoohFl09Tiles
   align: 4
   cell: [29, 34]
   anchor: [16, 26]
   columns: 8
   frames:
-  - symbol: gUnk_09729EE0
+  - symbol: gPoohFl09Frame0
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729EF0
+  - symbol: gPoohFl09Frame1
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729F00
+  - symbol: gPoohFl09Frame2
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F0A
+  - symbol: gPoohFl09Frame3
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F14
+  - symbol: gPoohFl09Frame4
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F1E
+  - symbol: gPoohFl09Frame5
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F28
+  - symbol: gPoohFl09Frame6
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F32
+  - symbol: gPoohFl09Frame7
     pieces:
     - [16x32, -16, -25]
     - [8x32, 0, -25]
-  - symbol: gUnk_09729F42
+  - symbol: gPoohFl09Frame8
     pieces:
     - [16x32, -16, -25]
     - [8x32, 0, -25]
-  - symbol: gUnk_09729F52
+  - symbol: gPoohFl09Frame9
     pieces:
     - [16x32, -16, -25]
     - [8x32, 0, -25]
-  - symbol: gUnk_09729F62
+  - symbol: gPoohFl09Frame10
     pieces:
     - [16x32, -8, -25]
-  - symbol: gUnk_09729F6C
+  - symbol: gPoohFl09Frame11
     pieces:
     - [16x32, -8, -25]
     - [8x16, -16, -9]
-  - symbol: gUnk_09729F7C
+  - symbol: gPoohFl09Frame12
     pieces:
     - [16x32, -11, -26]
     - [8x32, 5, -26]
-  - symbol: gUnk_09729F8C
+  - symbol: gPoohFl09Frame13
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729F9C
+  - symbol: gPoohFl09Frame14
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729FAC
+  - symbol: gPoohFl09Frame15
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729FBC
+  - symbol: gPoohFl09Frame16
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729FCC
+  - symbol: gPoohFl09Frame17
     pieces:
     - [16x32, -12, -24]
     - [8x32, 4, -24]
-  - symbol: gUnk_09729FDC
+  - symbol: gPoohFl09Frame18
     pieces:
     - [16x32, -16, -25]
     - [8x32, 0, -25]
-  - symbol: gUnk_09729FEC
+  - symbol: gPoohFl09Frame19
     pieces:
     - [16x32, -13, -25]
     - [8x32, 3, -25]
-  - symbol: gUnk_09729FFC
+  - symbol: gPoohFl09Frame20
     pieces:
     - [16x32, -13, -25]
     - [8x32, 3, -25]
   animations:
-  - symbol: gUnk_0972A00C
+  - symbol: gPoohFl09Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 25], [5, 15], [7, 20], [5, 12], [6, 12], [5, 20], [7, 10], [8, 15], [9, 17], [8, 15], [9, 19], [4, 12], [6, 12], [5, 12], [4, 20], [5, 15], [6, 20], [5, 20], [3, 20], [10, 20], [11, 20], [12, 50], [18, 15], [19, 12], [20, 12], [13, 60], [14, 15], [15, 15], [16, 15], [17, 20]]
-  - symbol: gUnk_0972A096
+  - symbol: gPoohFl09Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 20], [4, 12], [6, 12], [5, 12], [4, 20], [5, 12], [6, 20], [5, 20], [3, 35], [10, 20], [11, 20], [12, 35], [18, 15], [19, 12], [20, 12], [13, 60], [14, 15], [15, 15], [16, 15], [17, 20]]
-  - symbol: gUnk_0972A0F8
+  - symbol: gPoohFl09Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [10, 20], [11, 20], [12, 30], [18, 15], [19, 12], [20, 12], [13, 60], [14, 15], [15, 15], [16, 15], [17, 15]]
   us:
@@ -4909,27 +4909,27 @@ entries:
 - name: trap00_01bb
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972BED0
+  symbol: gTrap0001bbTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972BE8C
+  - symbol: gTrap0001bbFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972BE9C
+  - symbol: gTrap0001bbFrame1
     pieces:
     - [32x32, -16, -27]
-  - symbol: gUnk_0972BEA6
+  - symbol: gTrap0001bbFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972BEB0
+  - symbol: gTrap0001bbFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972BEBA
+  - symbol: gTrap0001bbAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -4944,27 +4944,27 @@ entries:
 - name: trap00_01ff
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972C694
+  symbol: gTrap0001ffTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972C650
+  - symbol: gTrap0001ffFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972C660
+  - symbol: gTrap0001ffFrame1
     pieces:
     - [32x32, -16, -27, {fresh: true}]
-  - symbol: gUnk_0972C66A
+  - symbol: gTrap0001ffFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972C674
+  - symbol: gTrap0001ffFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972C67E
+  - symbol: gTrap0001ffAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -4979,27 +4979,27 @@ entries:
 - name: trap00_01bl
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972CE58
+  symbol: gTrap0001blTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972CE14
+  - symbol: gTrap0001blFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972CE24
+  - symbol: gTrap0001blFrame1
     pieces:
     - [32x32, -16, -27, {fresh: true}]
-  - symbol: gUnk_0972CE2E
+  - symbol: gTrap0001blFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972CE38
+  - symbol: gTrap0001blFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972CE42
+  - symbol: gTrap0001blAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5014,27 +5014,27 @@ entries:
 - name: trap00_01br
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972D61C
+  symbol: gTrap0001brTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972D5D8
+  - symbol: gTrap0001brFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972D5E8
+  - symbol: gTrap0001brFrame1
     pieces:
     - [32x32, -16, -27, {fresh: true}]
-  - symbol: gUnk_0972D5F2
+  - symbol: gTrap0001brFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972D5FC
+  - symbol: gTrap0001brFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972D606
+  - symbol: gTrap0001brAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5049,27 +5049,27 @@ entries:
 - name: trap00_01fl
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972DDE0
+  symbol: gTrap0001flTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972DD9C
+  - symbol: gTrap0001flFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972DDAC
+  - symbol: gTrap0001flFrame1
     pieces:
     - [32x32, -16, -27, {fresh: true}]
-  - symbol: gUnk_0972DDB6
+  - symbol: gTrap0001flFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972DDC0
+  - symbol: gTrap0001flFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972DDCA
+  - symbol: gTrap0001flAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5141,27 +5141,27 @@ entries:
 - name: trap00_01fr
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972E5A4
+  symbol: gTrap0001frTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972E560
+  - symbol: gTrap0001frFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972E570
+  - symbol: gTrap0001frFrame1
     pieces:
     - [32x32, -16, -27, {fresh: true}]
-  - symbol: gUnk_0972E57A
+  - symbol: gTrap0001frFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972E584
+  - symbol: gTrap0001frFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972E58E
+  - symbol: gTrap0001frAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5269,27 +5269,27 @@ entries:
 - name: trap00_01rr
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972ED68
+  symbol: gTrap0001rrTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972ED24
+  - symbol: gTrap0001rrFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972ED34
+  - symbol: gTrap0001rrFrame1
     pieces:
     - [32x32, -16, -27]
-  - symbol: gUnk_0972ED3E
+  - symbol: gTrap0001rrFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972ED48
+  - symbol: gTrap0001rrFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972ED52
+  - symbol: gTrap0001rrAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5304,27 +5304,27 @@ entries:
 - name: trap00_01ll
   format: sprite_sheet
   palette: trap00_01
-  symbol: gUnk_0972F52C
+  symbol: gTrap0001llTiles
   align: 4
   cell: [32, 48]
   anchor: [16, 35]
   columns: 4
   frames:
-  - symbol: gUnk_0972F4E8
+  - symbol: gTrap0001llFrame0
     pieces:
     - [32x32, -16, -35]
     - [32x8, -16, -3]
-  - symbol: gUnk_0972F4F8
+  - symbol: gTrap0001llFrame1
     pieces:
     - [32x32, -16, -27]
-  - symbol: gUnk_0972F502
+  - symbol: gTrap0001llFrame2
     pieces:
     - [32x32, -16, -19]
-  - symbol: gUnk_0972F50C
+  - symbol: gTrap0001llFrame3
     pieces:
     - [32x16, -16, -11]
   animations:
-  - symbol: gUnk_0972F516
+  - symbol: gTrap0001llAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 4], [3, 40]]
   us:
@@ -5492,54 +5492,54 @@ entries:
     size: 4318
 - name: trap00_02
   format: sprite_sheet
-  palette: gUnk_09849AF8
-  symbol: gUnk_0972FD80
+  palette: gTrap0002Palette
+  symbol: gTrap0002Tiles
   align: 4
   cell: [36, 90]
   anchor: [14, 77]
   columns: 8
   frames:
-  - symbol: gUnk_0972FCAC
+  - symbol: gTrap0002Frame0
     pieces:
     - [32x16, -13, -11]
-  - symbol: gUnk_0972FCB6
+  - symbol: gTrap0002Frame1
     pieces:
     - [32x32, -13, -27]
-  - symbol: gUnk_0972FCC0
+  - symbol: gTrap0002Frame2
     pieces:
     - [32x16, -13, -19]
     - [32x8, -13, -3]
-  - symbol: gUnk_0972FCD0
+  - symbol: gTrap0002Frame3
     pieces:
     - [32x32, -13, -43]
     - [32x16, -13, -11]
-  - symbol: gUnk_0972FCE0
+  - symbol: gTrap0002Frame4
     pieces:
     - [32x32, -12, -43]
     - [32x16, -12, -11]
-  - symbol: gUnk_0972FCF0
+  - symbol: gTrap0002Frame5
     pieces:
     - [32x64, -13, -51]
-  - symbol: gUnk_0972FCFA
+  - symbol: gTrap0002Frame6
     pieces:
     - [32x64, -14, -56]
-  - symbol: gUnk_0972FD04
+  - symbol: gTrap0002Frame7
     pieces:
     - [32x64, -13, -59]
-  - symbol: gUnk_0972FD0E
+  - symbol: gTrap0002Frame8
     pieces:
     - [32x64, -10, -67]
-  - symbol: gUnk_0972FD18
+  - symbol: gTrap0002Frame9
     pieces:
     - [32x64, -11, -72]
-  - symbol: gUnk_0972FD22
+  - symbol: gTrap0002Frame10
     pieces:
     - [32x64, -10, -77]
   animations:
-  - symbol: gUnk_0972FD2C
+  - symbol: gTrap0002Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10]]
-  - symbol: gUnk_0972FD4E
+  - symbol: gTrap0002Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 10], [2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10]]
   us:
@@ -5694,21 +5694,21 @@ entries:
     size: 1092
 - name: trap00_03
   format: sprite_sheet
-  palette: gUnk_09849B18
-  symbol: gUnk_09732026
+  palette: gTrap0003Palette
+  symbol: gTrap0003Tiles
   align: 4
   cell: [24, 40]
   anchor: [13, 37]
   columns: 1
   frames:
-  - symbol: gUnk_09732000
+  - symbol: gTrap0003Frame0
     pieces:
     - [16x32, -13, -37]
     - [8x32, 3, -37]
     - [16x8, -13, -5]
     - [8x8, 3, -5]
   animations:
-  - symbol: gUnk_0973201C
+  - symbol: gTrap0003Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -5722,35 +5722,35 @@ entries:
     size: 518
 - name: trap00_04
   format: sprite_sheet
-  palette: gUnk_09849B38
-  symbol: gUnk_09732272
+  palette: gTrap0004Palette
+  symbol: gTrap0004Tiles
   align: 4
   cell: [16, 40]
   anchor: [1, 60]
   columns: 5
   frames:
-  - symbol: gUnk_09732208
+  - symbol: gTrap0004Frame0
     pieces:
     - [16x32, -1, -60]
     - [16x8, -1, -28]
-  - symbol: gUnk_09732218
+  - symbol: gTrap0004Frame1
     pieces:
     - [16x32, -1, -60]
     - [16x8, -1, -28]
-  - symbol: gUnk_09732228
+  - symbol: gTrap0004Frame2
     pieces:
     - [16x32, -1, -60]
     - [16x8, -1, -28]
-  - symbol: gUnk_09732238
+  - symbol: gTrap0004Frame3
     pieces:
     - [16x32, -1, -60]
     - [16x8, -1, -28]
-  - symbol: gUnk_09732248
+  - symbol: gTrap0004Frame4
     pieces:
     - [16x32, -1, -60, {fresh: true}]
     - [16x8, -1, -28, {fresh: true}]
   animations:
-  - symbol: gUnk_09732258
+  - symbol: gTrap0004Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8]]
   us:
@@ -5816,35 +5816,35 @@ entries:
     size: 4698
 - name: trap00_05
   format: sprite_sheet
-  palette: gUnk_09849B38
-  symbol: gUnk_0973291E
+  palette: gTrap0004Palette
+  symbol: gTrap0005Tiles
   align: 4
   cell: [16, 40]
   anchor: [5, 60]
   columns: 5
   frames:
-  - symbol: gUnk_097328B4
+  - symbol: gTrap0005Frame0
     pieces:
     - [16x32, -5, -60]
     - [16x8, -5, -28]
-  - symbol: gUnk_097328C4
+  - symbol: gTrap0005Frame1
     pieces:
     - [16x32, -5, -60]
     - [16x8, -5, -28]
-  - symbol: gUnk_097328D4
+  - symbol: gTrap0005Frame2
     pieces:
     - [16x32, -5, -60]
     - [16x8, -5, -28]
-  - symbol: gUnk_097328E4
+  - symbol: gTrap0005Frame3
     pieces:
     - [16x32, -5, -60]
     - [16x8, -5, -28]
-  - symbol: gUnk_097328F4
+  - symbol: gTrap0005Frame4
     pieces:
     - [16x32, -5, -60, {fresh: true}]
     - [16x8, -5, -28, {fresh: true}]
   animations:
-  - symbol: gUnk_09732904
+  - symbol: gTrap0005Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8]]
   us:
@@ -5858,31 +5858,31 @@ entries:
     size: 1706
 - name: trap00_06
   format: sprite_sheet
-  palette: gUnk_09849B38
-  symbol: gUnk_09732FB6
+  palette: gTrap0004Palette
+  symbol: gTrap0006Tiles
   align: 4
   cell: [32, 40]
   anchor: [9, 56]
   columns: 4
   frames:
-  - symbol: gUnk_09732F60
+  - symbol: gTrap0006Frame0
     pieces:
     - [32x32, -9, -56]
     - [8x8, 7, -24]
-  - symbol: gUnk_09732F70
+  - symbol: gTrap0006Frame1
     pieces:
     - [32x32, -9, -56]
     - [8x8, 7, -24]
-  - symbol: gUnk_09732F80
+  - symbol: gTrap0006Frame2
     pieces:
     - [32x32, -9, -56]
     - [8x8, 7, -24]
-  - symbol: gUnk_09732F90
+  - symbol: gTrap0006Frame3
     pieces:
     - [32x32, -9, -56]
     - [16x8, -1, -24]
   animations:
-  - symbol: gUnk_09732FA0
+  - symbol: gTrap0006Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 15], [1, 15], [2, 15], [3, 15]]
   us:
@@ -5949,65 +5949,65 @@ entries:
 - name: pooh_honey
   format: sprite_sheet
   palette: pooh_gauge
-  symbol: gUnk_097339E8
+  symbol: gPoohHoneyTiles
   align: 4
   cell: [33, 35]
   anchor: [16, 25]
   columns: 8
   frames:
-  - symbol: gUnk_09733858
+  - symbol: gPoohHoneyFrame0
     pieces:
     - [32x32, -16, -23]
-  - symbol: gUnk_09733862
+  - symbol: gPoohHoneyFrame1
     pieces:
     - [32x32, -16, -23]
-  - symbol: gUnk_0973386C
+  - symbol: gPoohHoneyFrame2
     pieces:
     - [32x32, -15, -25]
-  - symbol: gUnk_09733876
+  - symbol: gPoohHoneyFrame3
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_09733880
+  - symbol: gPoohHoneyFrame4
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_0973388A
+  - symbol: gPoohHoneyFrame5
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_09733894
+  - symbol: gPoohHoneyFrame6
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_0973389E
+  - symbol: gPoohHoneyFrame7
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_097338A8
+  - symbol: gPoohHoneyFrame8
     pieces:
     - [32x32, -15, -22]
-  - symbol: gUnk_097338B2
+  - symbol: gPoohHoneyFrame9
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_097338BC
+  - symbol: gPoohHoneyFrame10
     pieces:
     - [32x32, -15, -25]
-  - symbol: gUnk_097338C6
+  - symbol: gPoohHoneyFrame11
     pieces:
     - [32x32, -16, -23]
-  - symbol: gUnk_097338D0
+  - symbol: gPoohHoneyFrame12
     pieces:
     - [32x32, -16, -23]
-  - symbol: gUnk_097338DA
+  - symbol: gPoohHoneyFrame13
     pieces:
     - [32x32, -16, -23]
   animations:
-  - symbol: gUnk_097338E4
+  - symbol: gPoohHoneyAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 25], [4, 15], [4, 20], [4, 12], [4, 12], [4, 20], [4, 10], [4, 15], [5, 17], [4, 15], [5, 19], [4, 12], [4, 12], [4, 12], [4, 20], [4, 15], [4, 20], [4, 20], [3, 20], [6, 20], [7, 20], [8, 50], [7, 15], [9, 12], [10, 12], [13, 60]]
-  - symbol: gUnk_0973395E
+  - symbol: gPoohHoneyAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [3, 20], [4, 12], [4, 12], [4, 12], [4, 20], [4, 12], [4, 20], [4, 20], [3, 35], [6, 20], [7, 20], [8, 35], [7, 15], [9, 12], [10, 12], [12, 60]]
-  - symbol: gUnk_097339B0
+  - symbol: gPoohHoneyAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 20], [1, 10], [2, 10], [6, 20], [7, 20], [8, 30], [7, 15], [9, 12], [10, 12], [11, 60]]
-  - symbol: gUnk_097339DE
+  - symbol: gPoohHoneyAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -6369,26 +6369,26 @@ entries:
 - name: trap01_ff00
   format: sprite_sheet
   palette: trap01_00
-  symbol: gUnk_0974431A
+  symbol: gTrap01Ff00Tiles
   align: 4
   cell: [16, 9]
   anchor: [5, 9]
   columns: 4
   frames:
-  - symbol: gUnk_097442DC
+  - symbol: gTrap01Ff00Frame0
     pieces:
     - [16x8, -5, -8]
-  - symbol: gUnk_097442E6
+  - symbol: gTrap01Ff00Frame1
     pieces:
     - [8x8, -4, -9]
-  - symbol: gUnk_097442F0
+  - symbol: gTrap01Ff00Frame2
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_097442FA
+  - symbol: gTrap01Ff00Frame3
     pieces:
     - [16x8, -5, -8]
   animations:
-  - symbol: gUnk_09744304
+  - symbol: gTrap01Ff00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6]]
   us:
@@ -6403,26 +6403,26 @@ entries:
 - name: trap01_fl00
   format: sprite_sheet
   palette: trap01_00
-  symbol: gUnk_0974441A
+  symbol: gTrap01Fl00Tiles
   align: 4
   cell: [8, 9]
   anchor: [4, 9]
   columns: 4
   frames:
-  - symbol: gUnk_097443DC
+  - symbol: gTrap01Fl00Frame0
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_097443E6
+  - symbol: gTrap01Fl00Frame1
     pieces:
     - [8x8, -4, -9]
-  - symbol: gUnk_097443F0
+  - symbol: gTrap01Fl00Frame2
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_097443FA
+  - symbol: gTrap01Fl00Frame3
     pieces:
     - [8x8, -4, -8]
   animations:
-  - symbol: gUnk_09744404
+  - symbol: gTrap01Fl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6]]
   us:
@@ -6437,26 +6437,26 @@ entries:
 - name: trap01_ll00
   format: sprite_sheet
   palette: trap01_00
-  symbol: gUnk_097444DA
+  symbol: gTrap01Ll00Tiles
   align: 4
   cell: [9, 9]
   anchor: [5, 9]
   columns: 4
   frames:
-  - symbol: gUnk_0974449C
+  - symbol: gTrap01Ll00Frame0
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_097444A6
+  - symbol: gTrap01Ll00Frame1
     pieces:
     - [8x8, -4, -9]
-  - symbol: gUnk_097444B0
+  - symbol: gTrap01Ll00Frame2
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_097444BA
+  - symbol: gTrap01Ll00Frame3
     pieces:
     - [8x8, -5, -8]
   animations:
-  - symbol: gUnk_097444C4
+  - symbol: gTrap01Ll00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6]]
   us:
@@ -6471,26 +6471,26 @@ entries:
 - name: trap01_bl00
   format: sprite_sheet
   palette: trap01_00
-  symbol: gUnk_0974459A
+  symbol: gTrap01Bl00Tiles
   align: 4
   cell: [8, 9]
   anchor: [4, 9]
   columns: 4
   frames:
-  - symbol: gUnk_0974455C
+  - symbol: gTrap01Bl00Frame0
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_09744566
+  - symbol: gTrap01Bl00Frame1
     pieces:
     - [8x8, -4, -9]
-  - symbol: gUnk_09744570
+  - symbol: gTrap01Bl00Frame2
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_0974457A
+  - symbol: gTrap01Bl00Frame3
     pieces:
     - [8x8, -4, -8]
   animations:
-  - symbol: gUnk_09744584
+  - symbol: gTrap01Bl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6]]
   us:
@@ -6505,26 +6505,26 @@ entries:
 - name: trap01_bb00
   format: sprite_sheet
   palette: trap01_00
-  symbol: gUnk_0974465A
+  symbol: gTrap01Bb00Tiles
   align: 4
   cell: [16, 9]
   anchor: [5, 9]
   columns: 4
   frames:
-  - symbol: gUnk_0974461C
+  - symbol: gTrap01Bb00Frame0
     pieces:
     - [16x8, -5, -8]
-  - symbol: gUnk_09744626
+  - symbol: gTrap01Bb00Frame1
     pieces:
     - [8x8, -4, -9]
-  - symbol: gUnk_09744630
+  - symbol: gTrap01Bb00Frame2
     pieces:
     - [8x8, -4, -8]
-  - symbol: gUnk_0974463A
+  - symbol: gTrap01Bb00Frame3
     pieces:
     - [16x8, -5, -8]
   animations:
-  - symbol: gUnk_09744644
+  - symbol: gTrap01Bb00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 6], [1, 6], [2, 6], [3, 6]]
   us:
@@ -6539,104 +6539,104 @@ entries:
 - name: eeyore_fl00
   format: sprite_sheet
   palette: eeyore
-  symbol: gUnk_097448BA
+  symbol: gEeyoreFl00Tiles
   align: 4
   cell: [44, 42]
   anchor: [26, 29]
   columns: 8
   frames:
-  - symbol: gUnk_0974471C
+  - symbol: gEeyoreFl00Frame0
     pieces:
     - [32x32, -26, -27]
     - [8x32, 6, -27]
     - [32x8, -26, 5]
-  - symbol: gUnk_09744732
+  - symbol: gEeyoreFl00Frame1
     pieces:
     - [32x32, -22, -29]
     - [8x32, 10, -29]
     - [32x8, -22, 3]
     - [8x8, 10, 3]
-  - symbol: gUnk_0974474E
+  - symbol: gEeyoreFl00Frame2
     pieces:
     - [16x32, -22, -29]
     - [8x32, -6, -29]
     - [16x32, 2, -21]
-  - symbol: gUnk_09744764
+  - symbol: gEeyoreFl00Frame3
     pieces:
     - [16x32, -2, -24]
     - [16x32, -26, -23]
     - [8x32, -10, -23]
-  - symbol: gUnk_0974477A
+  - symbol: gEeyoreFl00Frame4
     pieces:
     - [32x32, -26, -24]
     - [8x32, 6, -24]
-  - symbol: gUnk_0974478A
+  - symbol: gEeyoreFl00Frame5
     pieces:
     - [16x32, -2, -24]
     - [16x32, -26, -23]
     - [8x32, -10, -23]
-  - symbol: gUnk_097447A0
+  - symbol: gEeyoreFl00Frame6
     pieces:
     - [16x32, -2, -24]
     - [16x32, -26, -22]
     - [8x32, -10, -22]
-  - symbol: gUnk_097447B6
+  - symbol: gEeyoreFl00Frame7
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_097447C6
+  - symbol: gEeyoreFl00Frame8
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_097447D6
+  - symbol: gEeyoreFl00Frame9
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_097447E6
+  - symbol: gEeyoreFl00Frame10
     pieces:
     - [32x32, -26, -27]
     - [8x32, 6, -27]
     - [32x8, -26, 5]
-  - symbol: gUnk_097447FC
+  - symbol: gEeyoreFl00Frame11
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_0974480C
+  - symbol: gEeyoreFl00Frame12
     pieces:
     - [32x32, -26, -27]
     - [8x32, 6, -27]
     - [32x8, -26, 5]
-  - symbol: gUnk_09744822
+  - symbol: gEeyoreFl00Frame13
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_09744832
+  - symbol: gEeyoreFl00Frame14
     pieces:
     - [32x32, -26, -23]
     - [8x32, 6, -23]
-  - symbol: gUnk_09744842
+  - symbol: gEeyoreFl00Frame15
     pieces:
     - [16x16, -8, -8]
   animations:
-  - symbol: gUnk_0974484C
+  - symbol: gEeyoreFl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09744856
+  - symbol: gEeyoreFl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 4]]
-  - symbol: gUnk_09744860
+  - symbol: gEeyoreFl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnk_0974486A
+  - symbol: gEeyoreFl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnk_09744874
+  - symbol: gEeyoreFl00Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 100], [4, 12], [5, 12], [6, 40], [4, 12]]
-  - symbol: gUnk_0974488E
+  - symbol: gEeyoreFl00Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[7, 9], [8, 9], [9, 9], [10, 9], [11, 9], [12, 9], [13, 9]]
-  - symbol: gUnk_097448B0
+  - symbol: gEeyoreFl00Anim6
     fields: {unk_00: 64, unk_02: 64}
     frames: [[15, 4]]
   us:
@@ -6651,162 +6651,162 @@ entries:
 - name: owl_fl00
   format: sprite_sheet
   palette: owl
-  symbol: gUnk_097471E2
+  symbol: gOwlFl00Tiles
   align: 4
   cell: [66, 97]
   anchor: [35, 87]
   columns: 8
   frames:
-  - symbol: gUnk_09746EDC
+  - symbol: gOwlFl00Frame0
     pieces:
     - [16x32, -10, -34]
     - [8x32, 6, -34]
     - [16x8, -10, -2]
     - [8x8, 6, -2]
-  - symbol: gUnk_09746EF8
+  - symbol: gOwlFl00Frame1
     pieces:
     - [16x32, -11, -38]
     - [8x32, 5, -38]
     - [16x16, -11, -6]
     - [8x16, 5, -6]
-  - symbol: gUnk_09746F14
+  - symbol: gOwlFl00Frame2
     pieces:
     - [32x32, -19, -38]
     - [8x32, 13, -38]
     - [32x16, -19, -6]
     - [8x16, 13, -6]
-  - symbol: gUnk_09746F30
+  - symbol: gOwlFl00Frame3
     pieces:
     - [32x32, -25, -43]
     - [16x32, 7, -43]
     - [32x16, -25, -11]
     - [16x16, 7, -11]
-  - symbol: gUnk_09746F4C
+  - symbol: gOwlFl00Frame4
     pieces:
     - [32x32, -25, -41]
     - [16x32, 7, -41]
     - [32x16, -25, -9]
     - [16x16, 7, -9]
-  - symbol: gUnk_09746F68
+  - symbol: gOwlFl00Frame5
     pieces:
     - [32x32, -23, -39]
     - [16x32, 9, -39]
     - [32x16, -23, -7]
     - [16x16, 9, -7]
-  - symbol: gUnk_09746F84
+  - symbol: gOwlFl00Frame6
     pieces:
     - [32x32, -10, -38]
     - [32x16, -10, -6]
-  - symbol: gUnk_09746F94
+  - symbol: gOwlFl00Frame7
     pieces:
     - [32x32, -19, -37]
     - [16x32, 13, -37]
     - [32x8, -19, -5]
     - [16x8, 13, -5]
-  - symbol: gUnk_09746FB0
+  - symbol: gOwlFl00Frame8
     pieces:
     - [32x32, -25, -38]
     - [16x32, 7, -38]
     - [8x32, 23, -38]
     - [32x8, -25, -6]
     - [16x8, 7, -6]
-  - symbol: gUnk_09746FD2
+  - symbol: gOwlFl00Frame9
     pieces:
     - [32x32, -18, -36]
     - [32x8, -18, -4]
-  - symbol: gUnk_09746FE2
+  - symbol: gOwlFl00Frame10
     pieces:
     - [32x32, -28, -36]
     - [16x32, 4, -36]
     - [32x8, -28, -4]
     - [16x8, 4, -4]
-  - symbol: gUnk_09746FFE
+  - symbol: gOwlFl00Frame11
     pieces:
     - [32x32, -21, -44]
     - [8x32, 11, -44]
     - [32x16, -21, -12]
     - [8x16, 11, -12]
-  - symbol: gUnk_0974701A
+  - symbol: gOwlFl00Frame12
     pieces:
     - [32x32, -33, -36]
     - [16x32, -1, -36]
     - [32x8, -33, -4]
     - [16x8, -1, -4]
-  - symbol: gUnk_09747036
+  - symbol: gOwlFl00Frame13
     pieces:
     - [32x32, -35, -35]
     - [16x32, -3, -35]
     - [32x8, -35, -3]
     - [16x8, -3, -3]
-  - symbol: gUnk_09747052
+  - symbol: gOwlFl00Frame14
     pieces:
     - [32x32, -26, -36]
     - [8x32, 6, -36]
     - [32x8, -26, -4]
     - [8x8, 6, -4]
-  - symbol: gUnk_0974706E
+  - symbol: gOwlFl00Frame15
     pieces:
     - [32x32, -19, -43]
     - [16x32, 13, -43]
     - [32x16, -19, -11]
-  - symbol: gUnk_09747084
+  - symbol: gOwlFl00Frame16
     pieces:
     - [32x32, -19, -39]
     - [16x32, 13, -39]
     - [32x16, -19, -7]
-  - symbol: gUnk_0974709A
+  - symbol: gOwlFl00Frame17
     pieces:
     - [32x32, -20, -35]
     - [8x32, 12, -35]
     - [32x8, -20, -3]
     - [8x8, 12, -3]
-  - symbol: gUnk_097470B6
+  - symbol: gOwlFl00Frame18
     pieces:
     - [32x32, -14, -34]
     - [32x8, -14, -2]
-  - symbol: gUnk_097470C6
+  - symbol: gOwlFl00Frame19
     pieces:
     - [32x32, -28, -80]
     - [16x32, 4, -80]
     - [32x8, -28, -48]
     - [16x8, 4, -48]
-  - symbol: gUnk_097470E2
+  - symbol: gOwlFl00Frame20
     pieces:
     - [32x32, -33, -80]
     - [16x32, -1, -80]
     - [32x8, -33, -48]
     - [16x8, -1, -48]
-  - symbol: gUnk_097470FE
+  - symbol: gOwlFl00Frame21
     pieces:
     - [32x32, -35, -79]
     - [16x32, -3, -79]
     - [32x8, -35, -47]
     - [16x8, -3, -47]
-  - symbol: gUnk_0974711A
+  - symbol: gOwlFl00Frame22
     pieces:
     - [32x32, -26, -80]
     - [8x32, 6, -80]
     - [32x8, -26, -48]
     - [8x8, 6, -48]
-  - symbol: gUnk_09747136
+  - symbol: gOwlFl00Frame23
     pieces:
     - [32x32, -19, -87]
     - [16x32, 13, -87]
     - [32x16, -19, -55]
   animations:
-  - symbol: gUnk_0974714C
+  - symbol: gOwlFl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09747156
+  - symbol: gOwlFl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 10], [2, 10], [3, 12], [4, 14], [5, 18], [6, 22], [7, 15], [8, 13]]
-  - symbol: gUnk_0974717C
+  - symbol: gOwlFl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[10, 10], [12, 9], [13, 9], [14, 9], [15, 9]]
-  - symbol: gUnk_09747196
+  - symbol: gOwlFl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[9, 10], [10, 10], [11, 10], [12, 10], [13, 10], [14, 10], [15, 10], [16, 10], [17, 10], [18, 10], [0, 100]]
-  - symbol: gUnk_097471C8
+  - symbol: gOwlFl00Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[19, 10], [20, 9], [21, 9], [22, 9], [23, 9]]
   us:
@@ -6856,128 +6856,128 @@ entries:
 - name: rabbit_fl00
   format: sprite_sheet
   palette: rabbit
-  symbol: gUnk_0974C196
+  symbol: gRabbitFl00Tiles
   align: 4
   cell: [42, 70]
   anchor: [22, 55]
   columns: 8
   frames:
-  - symbol: gUnk_0974BF58
+  - symbol: gRabbitFl00Frame0
     pieces:
     - [32x32, -16, -48]
     - [32x16, -16, -16]
     - [32x8, -16, 0]
-  - symbol: gUnk_0974BF6E
+  - symbol: gRabbitFl00Frame1
     pieces:
     - [32x32, -21, -30]
     - [8x8, 3, 2]
     - [8x8, 11, -14]
-  - symbol: gUnk_0974BF84
+  - symbol: gRabbitFl00Frame2
     pieces:
     - [32x32, -21, -29]
     - [8x8, 3, 3]
     - [8x8, 11, -13]
-  - symbol: gUnk_0974BF9A
+  - symbol: gRabbitFl00Frame3
     pieces:
     - [32x32, -22, -30]
     - [8x8, 2, 2]
     - [8x16, 10, -14]
-  - symbol: gUnk_0974BFB0
+  - symbol: gRabbitFl00Frame4
     pieces:
     - [32x32, -22, -32]
     - [32x8, -22, 0]
     - [8x16, 10, -16]
-  - symbol: gUnk_0974BFC6
+  - symbol: gRabbitFl00Frame5
     pieces:
     - [32x32, -20, -48]
     - [32x16, -20, -16]
     - [8x8, 4, 0]
-  - symbol: gUnk_0974BFDC
+  - symbol: gRabbitFl00Frame6
     pieces:
     - [32x32, -16, -47]
     - [32x16, -16, -15]
-  - symbol: gUnk_0974BFEC
+  - symbol: gRabbitFl00Frame7
     pieces:
     - [32x32, -15, -47]
     - [32x16, -15, -15]
     - [8x8, -7, -55]
-  - symbol: gUnk_0974C002
+  - symbol: gRabbitFl00Frame8
     pieces:
     - [16x32, -11, -49]
     - [8x32, 5, -49]
     - [16x32, -11, -17]
     - [8x16, 5, -17]
-  - symbol: gUnk_0974C01E
+  - symbol: gRabbitFl00Frame9
     pieces:
     - [16x32, -10, -49]
     - [8x32, 6, -49]
     - [16x16, -10, -17]
     - [8x16, 6, -17]
     - [8x8, -5, -1]
-  - symbol: gUnk_0974C040
+  - symbol: gRabbitFl00Frame10
     pieces:
     - [16x32, -11, -46]
     - [8x32, 5, -46]
     - [16x16, -11, -14]
     - [8x16, 5, -14]
     - [8x8, -3, 2]
-  - symbol: gUnk_0974C062
+  - symbol: gRabbitFl00Frame11
     pieces:
     - [16x32, -12, -48]
     - [8x32, 4, -48]
     - [16x16, -12, -16]
     - [8x16, 4, -16]
     - [8x8, -2, 0]
-  - symbol: gUnk_0974C084
+  - symbol: gRabbitFl00Frame12
     pieces:
     - [32x32, -16, -48]
     - [32x16, -16, -16]
     - [8x8, 0, 0]
-  - symbol: gUnk_0974C09A
+  - symbol: gRabbitFl00Frame13
     pieces:
     - [32x32, -17, -41]
     - [32x16, -17, -9]
-  - symbol: gUnk_0974C0AA
+  - symbol: gRabbitFl00Frame14
     pieces:
     - [32x32, -19, -42]
     - [32x16, -19, -10]
-  - symbol: gUnk_0974C0BA
+  - symbol: gRabbitFl00Frame15
     pieces:
     - [32x32, -19, -43]
     - [32x16, -19, -11]
-  - symbol: gUnk_0974C0CA
+  - symbol: gRabbitFl00Frame16
     pieces:
     - [32x32, -17, -42]
     - [32x16, -17, -10]
-  - symbol: gUnk_0974C0DA
+  - symbol: gRabbitFl00Frame17
     pieces:
     - [16x32, -12, -38]
     - [8x32, 4, -38]
     - [16x16, -12, -6]
     - [8x16, 4, -6]
-  - symbol: gUnk_0974C0F6
+  - symbol: gRabbitFl00Frame18
     pieces:
     - [16x32, -13, -39]
     - [8x32, 3, -39]
     - [16x16, -13, -7]
     - [8x16, 3, -7]
-  - symbol: gUnk_0974C112
+  - symbol: gRabbitFl00Frame19
     pieces:
     - [32x32, -20, -43]
     - [8x32, 12, -43]
     - [32x16, -20, -11]
     - [8x16, 12, -11]
   animations:
-  - symbol: gUnk_0974C12E
+  - symbol: gRabbitFl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_0974C138
+  - symbol: gRabbitFl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 15], [2, 15], [3, 15], [4, 15]]
-  - symbol: gUnk_0974C14E
+  - symbol: gRabbitFl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 8], [6, 8], [7, 8], [8, 8], [9, 8], [10, 8], [11, 8], [12, 8]]
-  - symbol: gUnk_0974C174
+  - symbol: gRabbitFl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[13, 7], [14, 7], [15, 7], [16, 7], [17, 7], [18, 7], [19, 7]]
   us:
@@ -6992,61 +6992,61 @@ entries:
 - name: rabbit_bl00
   format: sprite_sheet
   palette: rabbit
-  symbol: gUnk_0974FB26
+  symbol: gRabbitBl00Tiles
   align: 4
   cell: [49, 54]
   anchor: [21, 43]
   columns: 8
   frames:
-  - symbol: gUnk_0974F938
+  - symbol: gRabbitBl00Frame0
     pieces:
     - [32x32, -17, -43]
     - [32x16, -17, -11]
-  - symbol: gUnk_0974F948
+  - symbol: gRabbitBl00Frame1
     pieces:
     - [32x32, -17, -42]
     - [32x16, -17, -10]
-  - symbol: gUnk_0974F958
+  - symbol: gRabbitBl00Frame2
     pieces:
     - [32x32, -18, -42]
     - [32x16, -18, -10]
     - [8x8, 14, -2]
-  - symbol: gUnk_0974F96E
+  - symbol: gRabbitBl00Frame3
     pieces:
     - [32x32, -17, -42]
     - [32x16, -17, -10]
-  - symbol: gUnk_0974F97E
+  - symbol: gRabbitBl00Frame4
     pieces:
     - [32x32, -16, -42]
     - [32x16, -16, -10]
-  - symbol: gUnk_0974F98E
+  - symbol: gRabbitBl00Frame5
     pieces:
     - [32x32, -20, -38, {layer: 1}]
     - [32x8, -20, -6]
     - [16x16, 12, -38]
     - [16x16, -12, -38, {pal: 1, layer: 2}]
     - [16x8, -12, -22, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974F9B0
+  - symbol: gRabbitBl00Frame6
     pieces:
     - [32x32, -16, -36, {layer: 1}]
     - [32x8, -16, -4]
     - [8x8, 16, -36]
     - [16x16, -13, -36, {pal: 1, layer: 2}]
     - [16x8, -13, -20, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974F9D2
+  - symbol: gRabbitBl00Frame7
     pieces:
     - [32x32, -14, -40, {layer: 1}]
     - [32x16, -14, -8]
     - [8x8, 18, -38]
     - [16x32, -11, -40, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974F9EE
+  - symbol: gRabbitBl00Frame8
     pieces:
     - [32x32, -14, -38, {layer: 1}]
     - [32x16, -14, -6]
     - [8x8, 18, -38]
     - [16x16, -12, -38, {pal: 1, layer: 2}]
     - [16x8, -12, -22, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974FA10
+  - symbol: gRabbitBl00Frame9
     pieces:
     - [32x32, -15, -37, {layer: 1}]
     - [32x16, -15, -5]
@@ -7054,50 +7054,50 @@ entries:
     - [16x16, -12, -37, {pal: 1, layer: 2}]
     - [16x8, -12, -21, {pal: 1, layer: 2}]
     - [8x8, 4, -37, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974FA38
+  - symbol: gRabbitBl00Frame10
     pieces:
     - [32x32, -14, -38, {layer: 1}]
     - [32x8, -14, -6]
     - [8x8, 18, -38]
     - [16x16, -12, -39, {pal: 1, layer: 2}]
     - [16x8, -12, -23, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974FA5A
+  - symbol: gRabbitBl00Frame11
     pieces:
     - [32x32, -15, -40, {layer: 1}]
     - [32x16, -15, -8]
     - [8x8, 17, -32]
     - [16x32, -12, -41, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974FA76
+  - symbol: gRabbitBl00Frame12
     pieces:
     - [32x32, -15, -40, {layer: 1}]
     - [32x16, -15, -8, {fresh: true}]
     - [8x8, 17, -32]
     - [16x16, -14, -40, {pal: 1, layer: 2}]
     - [16x8, -14, -24, {pal: 1, layer: 2}]
-  - symbol: gUnk_0974FA98
+  - symbol: gRabbitBl00Frame13
     pieces:
     - [32x32, -21, -43]
     - [32x16, -21, -11]
-  - symbol: gUnk_0974FAA8
+  - symbol: gRabbitBl00Frame14
     pieces:
     - [16x32, -13, -43]
     - [8x32, 3, -43]
     - [16x16, -13, -11]
     - [8x16, 3, -11]
   animations:
-  - symbol: gUnk_0974FAC4
+  - symbol: gRabbitBl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_0974FACE
+  - symbol: gRabbitBl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 15], [2, 15], [3, 15], [4, 15]]
-  - symbol: gUnk_0974FAE4
+  - symbol: gRabbitBl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 12], [6, 12], [7, 12], [8, 12], [9, 12], [10, 12]]
-  - symbol: gUnk_0974FB02
+  - symbol: gRabbitBl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[11, 20], [12, 10], [13, 20], [14, 10], [0, 30]]
-  - symbol: gUnk_0974FB1C
+  - symbol: gRabbitBl00Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[11, 4]]
   us:
@@ -7112,194 +7112,194 @@ entries:
 - name: roo_fl00
   format: sprite_sheet
   palette: roo
-  symbol: gUnk_09753154
+  symbol: gRooFl00Tiles
   align: 4
   cell: [37, 81]
   anchor: [19, 44]
   columns: 8
   frames:
-  - symbol: gUnk_09752E08
+  - symbol: gRooFl00Frame0
     pieces:
     - [16x32, -11, -26]
     - [8x32, 5, -26]
-  - symbol: gUnk_09752E18
+  - symbol: gRooFl00Frame1
     pieces:
     - [16x32, -11, -26]
     - [8x32, 5, -26]
-  - symbol: gUnk_09752E28
+  - symbol: gRooFl00Frame2
     pieces:
     - [32x32, -17, -23]
-  - symbol: gUnk_09752E32
+  - symbol: gRooFl00Frame3
     pieces:
     - [32x32, -16, -24]
-  - symbol: gUnk_09752E3C
+  - symbol: gRooFl00Frame4
     pieces:
     - [32x32, -16, -27]
-  - symbol: gUnk_09752E46
+  - symbol: gRooFl00Frame5
     pieces:
     - [16x32, -9, -28]
     - [8x32, 7, -28]
-  - symbol: gUnk_09752E56
+  - symbol: gRooFl00Frame6
     pieces:
     - [32x32, -15, -29]
-  - symbol: gUnk_09752E60
+  - symbol: gRooFl00Frame7
     pieces:
     - [32x32, -15, -30]
-  - symbol: gUnk_09752E6A
+  - symbol: gRooFl00Frame8
     pieces:
     - [16x32, -11, -29]
     - [8x32, 5, -29]
     - [16x8, -11, 3]
-  - symbol: gUnk_09752E80
+  - symbol: gRooFl00Frame9
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_09752E8A
+  - symbol: gRooFl00Frame10
     pieces:
     - [32x32, -15, -24]
-  - symbol: gUnk_09752E94
+  - symbol: gRooFl00Frame11
     pieces:
     - [32x32, -16, -28]
     - [32x8, -16, 4]
-  - symbol: gUnk_09752EA4
+  - symbol: gRooFl00Frame12
     pieces:
     - [32x32, -15, -31]
     - [32x8, -15, 1]
-  - symbol: gUnk_09752EB4
+  - symbol: gRooFl00Frame13
     pieces:
     - [16x32, -10, -30]
     - [8x32, 6, -30]
-  - symbol: gUnk_09752EC4
+  - symbol: gRooFl00Frame14
     pieces:
     - [32x32, -16, -32]
-  - symbol: gUnk_09752ECE
+  - symbol: gRooFl00Frame15
     pieces:
     - [32x32, -15, -31]
-  - symbol: gUnk_09752ED8
+  - symbol: gRooFl00Frame16
     pieces:
     - [16x32, -12, -30]
     - [8x32, 4, -30]
-  - symbol: gUnk_09752EE8
+  - symbol: gRooFl00Frame17
     pieces:
     - [32x32, -17, -30]
     - [32x8, -17, 2]
-  - symbol: gUnk_09752EF8
+  - symbol: gRooFl00Frame18
     pieces: []
-  - symbol: gUnk_09752EFA
+  - symbol: gRooFl00Frame19
     pieces:
     - [16x8, -13, -3]
-  - symbol: gUnk_09752F04
+  - symbol: gRooFl00Frame20
     pieces:
     - [16x16, -14, -9]
-  - symbol: gUnk_09752F0E
+  - symbol: gRooFl00Frame21
     pieces:
     - [16x16, -15, -15]
     - [16x8, -15, 1]
     - [8x8, 1, 1]
-  - symbol: gUnk_09752F24
+  - symbol: gRooFl00Frame22
     pieces:
     - [16x16, -19, -19]
     - [8x16, -3, -19]
     - [16x8, -19, -3]
     - [8x8, -3, -3]
-  - symbol: gUnk_09752F40
+  - symbol: gRooFl00Frame23
     pieces:
     - [16x32, -18, -24]
     - [8x32, -2, -24]
-  - symbol: gUnk_09752F50
+  - symbol: gRooFl00Frame24
     pieces:
     - [16x32, -13, -34]
     - [8x32, 3, -34]
     - [8x8, -2, -2]
-  - symbol: gUnk_09752F66
+  - symbol: gRooFl00Frame25
     pieces:
     - [16x32, -19, -3]
     - [8x32, -3, -3]
     - [8x8, -8, 29]
-  - symbol: gUnk_09752F7C
+  - symbol: gRooFl00Frame26
     pieces:
     - [32x32, -17, -23]
-  - symbol: gUnk_09752F86
+  - symbol: gRooFl00Frame27
     pieces:
     - [32x32, -17, -26]
-  - symbol: gUnk_09752F90
+  - symbol: gRooFl00Frame28
     pieces:
     - [32x32, -17, -31]
-  - symbol: gUnk_09752F9A
+  - symbol: gRooFl00Frame29
     pieces:
     - [16x32, -10, -31]
     - [8x32, 6, -31]
-  - symbol: gUnk_09752FAA
+  - symbol: gRooFl00Frame30
     pieces:
     - [32x32, -15, -33]
-  - symbol: gUnk_09752FB4
+  - symbol: gRooFl00Frame31
     pieces:
     - [32x32, -15, -32]
-  - symbol: gUnk_09752FBE
+  - symbol: gRooFl00Frame32
     pieces:
     - [16x32, -11, -31]
     - [8x32, 5, -31]
     - [16x8, -11, 1]
-  - symbol: gUnk_09752FD4
+  - symbol: gRooFl00Frame33
     pieces:
     - [32x32, -14, -24]
-  - symbol: gUnk_09752FDE
+  - symbol: gRooFl00Frame34
     pieces:
     - [32x32, -16, -24]
-  - symbol: gUnk_09752FE8
+  - symbol: gRooFl00Frame35
     pieces:
     - [32x32, -15, -34]
     - [32x8, -15, -2]
-  - symbol: gUnk_09752FF8
+  - symbol: gRooFl00Frame36
     pieces:
     - [32x32, -15, -41]
     - [32x8, -15, -9]
-  - symbol: gUnk_09753008
+  - symbol: gRooFl00Frame37
     pieces:
     - [16x32, -10, -43]
     - [8x32, 6, -43]
-  - symbol: gUnk_09753018
+  - symbol: gRooFl00Frame38
     pieces:
     - [32x32, -16, -44]
-  - symbol: gUnk_09753022
+  - symbol: gRooFl00Frame39
     pieces:
     - [32x32, -16, -41]
-  - symbol: gUnk_0975302C
+  - symbol: gRooFl00Frame40
     pieces:
     - [16x32, -11, -34]
     - [8x32, 5, -34]
-  - symbol: gUnk_0975303C
+  - symbol: gRooFl00Frame41
     pieces:
     - [32x32, -15, -31]
     - [32x8, -15, 1]
   animations:
-  - symbol: gUnk_0975304C
+  - symbol: gRooFl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09753056
+  - symbol: gRooFl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 10]]
-  - symbol: gUnk_09753060
+  - symbol: gRooFl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 6], [3, 6], [4, 7], [5, 7], [6, 7], [7, 7], [8, 6], [9, 6]]
-  - symbol: gUnk_09753086
+  - symbol: gRooFl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[10, 6], [11, 6], [12, 7], [13, 7], [14, 7], [15, 7], [16, 6], [17, 6]]
-  - symbol: gUnk_097530AC
+  - symbol: gRooFl00Anim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[18, 60], [19, 10], [20, 10], [21, 10], [22, 10], [23, 10]]
-  - symbol: gUnk_097530CA
+  - symbol: gRooFl00Anim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[24, 4]]
-  - symbol: gUnk_097530D4
+  - symbol: gRooFl00Anim6
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 7], [4, 7], [5, 8], [6, 8], [7, 8], [8, 7], [9, 7], [2, 8], [0, 10]]
-  - symbol: gUnk_097530FE
+  - symbol: gRooFl00Anim7
     fields: {unk_00: 64, unk_02: 64}
     frames: [[25, 4]]
-  - symbol: gUnk_09753108
+  - symbol: gRooFl00Anim8
     fields: {unk_00: 64, unk_02: 64}
     frames: [[26, 4], [27, 4], [28, 5], [29, 5], [30, 5], [31, 5], [32, 4], [33, 4]]
-  - symbol: gUnk_0975312E
+  - symbol: gRooFl00Anim9
     fields: {unk_00: 64, unk_02: 64}
     frames: [[34, 4], [35, 4], [36, 5], [37, 5], [38, 5], [39, 5], [40, 4], [41, 4]]
   us:
@@ -7313,28 +7313,28 @@ entries:
     size: 11244
 - name: ro_footmark
   format: sprite_sheet
-  palette: gUnk_09849D18
-  symbol: gUnk_09755A34
+  palette: gRoFootmarkPalette
+  symbol: gRoFootmarkTiles
   align: 4
   cell: [48, 41]
   anchor: [-3, 1]
   columns: 2
   frames:
-  - symbol: gUnk_097559F4
+  - symbol: gRoFootmarkFrame0
     pieces:
     - [32x32, 9, -1]
     - [32x8, 9, 31]
-  - symbol: gUnk_09755A04
+  - symbol: gRoFootmarkFrame1
     pieces:
     - [32x32, 11, 0]
     - [8x8, 35, 32]
     - [8x8, 3, 4]
     - [8x16, 43, 16]
   animations:
-  - symbol: gUnk_09755A20
+  - symbol: gRoFootmarkAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09755A2A
+  - symbol: gRoFootmarkAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
   us:
@@ -7425,18 +7425,18 @@ entries:
     size: 532
 - name: ee_honeycomb
   format: sprite_sheet
-  palette: gUnk_09849D78
-  symbol: gUnk_09756810
+  palette: gEeHoneycombPalette
+  symbol: gEeHoneycombTiles
   align: 4
   cell: [32, 32]
   anchor: [15, 18]
   columns: 1
   frames:
-  - symbol: gUnk_097567FC
+  - symbol: gEeHoneycombFrame0
     pieces:
     - [32x32, -15, -18]
   animations:
-  - symbol: gUnk_09756806
+  - symbol: gEeHoneycombAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7450,55 +7450,55 @@ entries:
     size: 532
 - name: ee_bee
   format: sprite_sheet
-  palette: gUnk_09849D98
-  symbol: gUnk_09756ACE
+  palette: gEeBeePalette
+  symbol: gEeBeeTiles
   align: 4
   cell: [45, 26]
   anchor: [23, 15]
   columns: 8
   frames:
-  - symbol: gUnk_09756A10
+  - symbol: gEeBeeFrame0
     pieces:
     - [8x8, -4, -6]
     - [8x8, -4, 2]
-  - symbol: gUnk_09756A20
+  - symbol: gEeBeeFrame1
     pieces:
     - [8x8, -4, -5]
     - [8x8, -4, 3, {fresh: true}]
-  - symbol: gUnk_09756A30
+  - symbol: gEeBeeFrame2
     pieces:
     - [8x8, 5, -1, {hflip: true}]
     - [8x8, -10, -13, {hflip: true}]
-  - symbol: gUnk_09756A40
+  - symbol: gEeBeeFrame3
     pieces:
     - [8x16, 14, -7, {hflip: true}]
-  - symbol: gUnk_09756A4A
+  - symbol: gEeBeeFrame4
     pieces:
     - [8x16, 14, -10]
-  - symbol: gUnk_09756A54
+  - symbol: gEeBeeFrame5
     pieces:
     - [8x16, 8, -14]
-  - symbol: gUnk_09756A5E
+  - symbol: gEeBeeFrame6
     pieces:
     - [8x16, 5, -14]
     - [8x8, -13, -7]
-  - symbol: gUnk_09756A6E
+  - symbol: gEeBeeFrame7
     pieces:
     - [8x16, -20, -10]
-  - symbol: gUnk_09756A78
+  - symbol: gEeBeeFrame8
     pieces:
     - [8x16, -23, -12]
-  - symbol: gUnk_09756A82
+  - symbol: gEeBeeFrame9
     pieces:
     - [8x16, -20, -14, {hflip: true}]
-  - symbol: gUnk_09756A8C
+  - symbol: gEeBeeFrame10
     pieces:
     - [8x16, -14, -15, {hflip: true}]
   animations:
-  - symbol: gUnk_09756A96
+  - symbol: gEeBeeAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4]]
-  - symbol: gUnk_09756AA4
+  - symbol: gEeBeeAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 10], [3, 10], [4, 10], [5, 10], [6, 10], [7, 10], [8, 10], [9, 10], [10, 10]]
   us:
@@ -7512,14 +7512,14 @@ entries:
     size: 574
 - name: ra_vegetables
   format: sprite_sheet
-  palette: gUnk_09849DB8
-  symbol: gUnk_09756E28
+  palette: gRaVegetablesPalette
+  symbol: gRaVegetablesTiles
   align: 4
   cell: [96, 70]
   anchor: [49, 40]
   columns: 8
   frames:
-  - symbol: gUnk_09756C50
+  - symbol: gRaVegetablesFrame0
     pieces:
     - [64x32, -49, -26]
     - [32x32, 15, -26]
@@ -7527,44 +7527,44 @@ entries:
     - [32x16, -17, 6]
     - [32x16, 15, 6]
     - [16x8, -9, 22]
-  - symbol: gUnk_09756C78
+  - symbol: gRaVegetablesFrame1
     pieces:
     - [16x16, -12, -12]
     - [8x16, 4, -12]
-  - symbol: gUnk_09756C88
+  - symbol: gRaVegetablesFrame2
     pieces:
     - [16x16, -11, -13]
     - [8x16, 5, -13]
     - [16x8, -11, 3]
-  - symbol: gUnk_09756C9E
+  - symbol: gRaVegetablesFrame3
     pieces:
     - [16x16, -9, -15]
     - [8x16, 7, -15]
     - [16x8, -9, 1]
-  - symbol: gUnk_09756CB4
+  - symbol: gRaVegetablesFrame4
     pieces:
     - [16x16, -9, -15]
     - [8x16, 7, -15]
     - [16x8, -9, 1]
-  - symbol: gUnk_09756CCA
+  - symbol: gRaVegetablesFrame5
     pieces:
     - [16x16, -11, -13]
     - [8x16, 5, -13]
-  - symbol: gUnk_09756CDA
+  - symbol: gRaVegetablesFrame6
     pieces:
     - [16x16, -9, -14]
     - [8x16, 7, -14]
     - [16x8, -9, 2]
-  - symbol: gUnk_09756CF0
+  - symbol: gRaVegetablesFrame7
     pieces:
     - [16x16, -11, -12]
     - [8x16, 5, -12]
     - [8x8, -3, 4]
-  - symbol: gUnk_09756D06
+  - symbol: gRaVegetablesFrame8
     pieces:
     - [16x16, -12, -12]
     - [8x16, 4, -12]
-  - symbol: gUnk_09756D16
+  - symbol: gRaVegetablesFrame9
     pieces:
     - [16x16, -12, -40, {same: [1, 0]}]
     - [8x16, 4, -40, {same: [1, 1]}]
@@ -7584,34 +7584,34 @@ entries:
     - [8x16, 24, -22]
     - [16x16, -32, -22, {same: [1, 0]}]
     - [8x16, -16, -22, {same: [1, 1]}]
-  - symbol: gUnk_09756D86
+  - symbol: gRaVegetablesFrame10
     pieces:
     - [64x32, -37, -27]
-  - symbol: gUnk_09756D90
+  - symbol: gRaVegetablesFrame11
     pieces:
     - [64x32, -32, -32]
     - [16x8, -8, 0]
-  - symbol: gUnk_09756DA0
+  - symbol: gRaVegetablesFrame12
     pieces:
     - [64x32, -32, -28]
     - [32x8, -16, -36]
   animations:
-  - symbol: gUnk_09756DB0
+  - symbol: gRaVegetablesAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09756DBA
+  - symbol: gRaVegetablesAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnk_09756DC4
+  - symbol: gRaVegetablesAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 8], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7], [7, 7], [8, 7]]
-  - symbol: gUnk_09756DEA
+  - symbol: gRaVegetablesAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 8], [1, 8], [8, 8], [1, 8]]
-  - symbol: gUnk_09756E00
+  - symbol: gRaVegetablesAnim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [1, 6], [8, 6], [1, 6], [2, 6], [1, 50]]
-  - symbol: gUnk_09756E1E
+  - symbol: gRaVegetablesAnim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[9, 4]]
   us:
@@ -7625,14 +7625,14 @@ entries:
     size: 7928
 - name: ra_wagon
   format: sprite_sheet
-  palette: gUnk_09849DD8
-  symbol: gUnk_09758C94
+  palette: gRaWagonPalette
+  symbol: gRaWagonTiles
   align: 4
   cell: [83, 62]
   anchor: [47, 37]
   columns: 8
   frames:
-  - symbol: gUnk_09758B48
+  - symbol: gRaWagonFrame0
     pieces:
     - [32x32, -28, -28, {layer: 1}]
     - [32x32, 4, -21]
@@ -7640,71 +7640,71 @@ entries:
     - [16x16, -23, -37, {layer: 2}]
     - [8x8, -31, -37]
     - [32x8, 4, 11]
-  - symbol: gUnk_09758B70
+  - symbol: gRaWagonFrame1
     pieces:
     - [32x32, -29, -14, {layer: 1}]
     - [32x32, 3, -10]
     - [16x16, -47, -27]
     - [8x8, -31, -19, {layer: 2}]
-  - symbol: gUnk_09758B8C
+  - symbol: gRaWagonFrame2
     pieces:
     - [32x16, -21, 1]
     - [32x8, -21, 17]
-  - symbol: gUnk_09758B9C
+  - symbol: gRaWagonFrame3
     pieces:
     - [32x16, -15, -21]
     - [32x8, -15, -5]
-  - symbol: gUnk_09758BAC
+  - symbol: gRaWagonFrame4
     pieces:
     - [16x32, -10, -27]
     - [8x32, 6, -27]
-  - symbol: gUnk_09758BBC
+  - symbol: gRaWagonFrame5
     pieces:
     - [16x32, -11, -27]
     - [8x32, 5, -27]
-  - symbol: gUnk_09758BCC
+  - symbol: gRaWagonFrame6
     pieces:
     - [16x32, -8, -27]
-  - symbol: gUnk_09758BD6
+  - symbol: gRaWagonFrame7
     pieces:
     - [16x32, -8, -27]
-  - symbol: gUnk_09758BE0
+  - symbol: gRaWagonFrame8
     pieces:
     - [16x32, -8, -27]
-  - symbol: gUnk_09758BEA
+  - symbol: gRaWagonFrame9
     pieces:
     - [16x32, -8, -27]
-  - symbol: gUnk_09758BF4
+  - symbol: gRaWagonFrame10
     pieces:
     - [32x16, -16, -12]
     - [32x8, -16, 4]
-  - symbol: gUnk_09758C04
+  - symbol: gRaWagonFrame11
     pieces:
     - [32x32, -28, -28]
     - [32x32, 4, -21]
     - [16x8, -12, 4]
     - [32x8, 4, 11]
-  - symbol: gUnk_09758C20
+  - symbol: gRaWagonFrame12
     pieces:
     - [16x16, -23, -37]
     - [8x8, -31, -37]
   animations:
-  - symbol: gUnk_09758C30
+  - symbol: gRaWagonAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_09758C3A
+  - symbol: gRaWagonAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnk_09758C44
+  - symbol: gRaWagonAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnk_09758C4E
+  - symbol: gRaWagonAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 30], [4, 15], [5, 15], [6, 15], [7, 15], [8, 15], [9, 15], [6, 15], [7, 15], [8, 15], [9, 15]]
-  - symbol: gUnk_09758C80
+  - symbol: gRaWagonAnim4
     fields: {unk_00: 64, unk_02: 64}
     frames: [[10, 4]]
-  - symbol: gUnk_09758C8A
+  - symbol: gRaWagonAnim5
     fields: {unk_00: 64, unk_02: 64}
     frames: [[11, 4]]
   us:

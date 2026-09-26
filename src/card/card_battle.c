@@ -269,8 +269,8 @@ void func_08076458(void) {
     gUnk_02039DD4->tiles5 = LoadObjTiles(gUnk_0905EAE8, 320);
     gUnk_02039DD4->tiles6 = LoadObjTiles(gUnk_0905ED36, 320);
     gUnk_02039DD4->tiles7 = LoadObjTiles(gUnk_0905EEE6, 320);
-    gUnk_02039DD4->palette = LoadObjPalette(gUnk_09611AB8, 32);
-    gUnk_02039DD4->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
+    gUnk_02039DD4->palette = LoadObjPalette(gCard00Palette, 32);
+    gUnk_02039DD4->palette2 = LoadObjPalette(gBStatesPalette, 32);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)gUnk_02039DD4->palette)->index + 16, 1);
     func_0807B668(gUnk_02039DD4);
 }
@@ -511,7 +511,7 @@ static void cardbattle_0(UnkStruct_08080268* w) {
     func_08091B28();
     func_080782EC();
     w->tiles = AllocSpriteFrameTiles(128);
-    w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette = LoadObjPalette(gBStatesPalette, 32);
     UpdateSpriteFrameTiles(w->tiles, gUnk_09EF12E8[0], (u32)gUnk_093FBAB8);
     TaskPoolInit((TaskPool*)w, 30);
     w->unk_B9 = 0;

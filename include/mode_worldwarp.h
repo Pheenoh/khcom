@@ -24,7 +24,7 @@
 #include "m4a.h"
 #include "bos4_api.h"
 
-extern u8 gUnk_09617D58[];
+extern u8 gMoguPalette[];
 
 extern u8 gUnk_09A3D57C[];
 extern u8 gUnk_09A3D59C[];

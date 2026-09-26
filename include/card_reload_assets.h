@@ -3,7 +3,7 @@
 
 #include "anim.h"
 
-extern u8 gUnk_090A0C86[];
+extern u8 gRiCardF0RedTiles[];
 
 #ifdef VERSION_EU
 extern u8 gUnkEu_094C7CCE[1408];

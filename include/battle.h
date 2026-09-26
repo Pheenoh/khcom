@@ -247,17 +247,17 @@ void eu_08013190(void);
 extern Mode gModeChkbtl;
 
 extern u8 gUnk_08935BC2[];
-extern u8 gUnk_092F15E4[];
-extern u8 gUnk_092EFAD4[];
-extern u8 gUnk_092ED9F6[];
+extern u8 gRik1bl01Tiles[];
+extern u8 gRik1ll01Tiles[];
+extern u8 gRik1fl01Tiles[];
 extern u8 gUnk_0893416A[];
-extern u8 gUnk_088DC192[];
-extern u8 gUnk_088CE0C2[];
-extern u8 gUnk_088C5AAA[];
-extern u8 gUnk_088C1388[];
-extern u8 gUnk_088BAC36[];
-extern u8 gUnk_09618118[];
-extern u8 gUnk_08F683A4[];
+extern u8 gSor1bb01Tiles[];
+extern u8 gSor1bl01Tiles[];
+extern u8 gSor1ll01Tiles[];
+extern u8 gSor1fl01Tiles[];
+extern u8 gSor1ff01Tiles[];
+extern u8 gRikuPalette[];
+extern u8 gSoraPalette[];
 extern vu16 gSystemFlags;
 
 u8 func_0801AD68(BtlObj* p);

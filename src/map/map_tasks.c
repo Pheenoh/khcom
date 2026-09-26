@@ -19,16 +19,16 @@ extern u8 gUnk_09EF6C38[2];
 #endif
 
 const AnimDef gUnk_0984BB9C[10] = {
-    { gUnk_09EDF914, gUnk_09EDF940, gUnk_0895EECC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF914, gUnk_09EDF940, gUnk_0895EECC, 0, { 0, 0, 0 } },
+    { gEmy00L06Frames, gEmy00L06Anims, gEmy00L06Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L06Frames, gEmy00L06Anims, gEmy00L06Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EDF860, gUnk_09EDF880, gUnk_08958AC8, 0, { 0, 0, 0 } },
-    { gUnk_09EDF834, gUnk_09EDF85C, gUnk_08957290, 0, { 0, 0, 0 } },
+    { gEmy00L00Frames, gEmy00L00Anims, gEmy00L00Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EDF8A8, gUnk_09EDF8C8, gUnk_0895B2C0, 0, { 0, 0, 0 } },
-    { gUnk_09EDF884, gUnk_09EDF8A4, gUnk_0895A12A, 0, { 0, 0, 0 } },
+    { gEmy00L02Frames, gEmy00L02Anims, gEmy00L02Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EDF97C, gUnk_09EDF9A4, gUnk_0896213C, 0, { 0, 0, 0 } },
-    { gUnk_09EDF948, gUnk_09EDF974, gUnk_089605FC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF9A8, gUnk_09EDF9BC, gUnk_08963BAC, 0, { 0, 0, 0 } },
-    { gUnk_09EDF9A8, gUnk_09EDF9BC, gUnk_08963BAC, 0, { 0, 0, 0 } },
+    { gEmy00L07Frames, gEmy00L07Anims, gEmy00L07Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L09Frames, gEmy00L09Anims, gEmy00L09Tiles, 0, { 0, 0, 0 } },
+    { gEmy00L09Frames, gEmy00L09Anims, gEmy00L09Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0984BC3C = {
@@ -56,7 +56,7 @@ const AnimDef gUnk_0984BC8C = {
 };
 
 const UnkStruct_0984BC9C gUnk_0984BC9C = {
-    gUnk_0984BB9C, gUnk_08F697A4,
+    gUnk_0984BB9C, gEmy00Palette,
     32, 8, 16, 0,
     &gTaskDescMapEnm00, 1, 0,
 };
@@ -64,16 +64,16 @@ const UnkStruct_0984BC9C gUnk_0984BC9C = {
 const char gTaskNameMapEnm00[] = "Task_MapEnm00";
 
 const AnimDef gUnk_0984BCC4[6] = {
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 0, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 2, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
-    { gUnk_09EDFB5C, gUnk_09EDFC3C, gUnk_08988980, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 0, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 2, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
+    { gEmy01L00Frames, gEmy01L00Anims, gEmy01L00Tiles, 3, { 0, 0, 0 } },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BD24 = {
-    gUnk_0984BCC4, gUnk_08F69804,
+    gUnk_0984BCC4, gEmy01Palette,
     17, 16, 16, 0,
     &gTaskDescMapEnm01, 2, 0,
 };
@@ -81,20 +81,20 @@ const UnkStruct_0984BC9C gUnk_0984BD24 = {
 const char gTaskNameMapEnm01[] = "Task_MapEnm01";
 
 const AnimDef gUnk_0984BD4C[2] = {
-    { gUnk_09EDFA08, gUnk_09EDFA24, gUnk_08967A32, 0, { 0, 0, 0 } },
-    { gUnk_09EDFA08, gUnk_09EDFA24, gUnk_08967A32, 0, { 0, 0, 0 } },
+    { gEmy3800Frames, gEmy3800Anims, gEmy3800Tiles, 0, { 0, 0, 0 } },
+    { gEmy3800Frames, gEmy3800Anims, gEmy3800Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0984BD6C = {
-    gUnk_09EDFA28, gUnk_09EDFA48, gUnk_0896C03A, 0, { 0, 0, 0 },
+    gEmy3801Frames, gEmy3801Anims, gEmy3801Tiles, 0, { 0, 0, 0 },
 };
 
 const AnimDef gUnk_0984BD7C = {
-    gUnk_09EDFA28, gUnk_09EDFA48, gUnk_0896C03A, 0, { 0, 0, 0 },
+    gEmy3801Frames, gEmy3801Anims, gEmy3801Tiles, 0, { 0, 0, 0 },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BD8C = {
-    gUnk_0984BD4C, gUnk_08F697C4,
+    gUnk_0984BD4C, gEmy38Palette,
     106, 48, 36, 0,
     &gTaskDescMapEnm02, 8, 0,
 };
@@ -102,22 +102,22 @@ const UnkStruct_0984BC9C gUnk_0984BD8C = {
 const char gTaskNameMapEnm02[] = "Task_MapEnm02";
 
 const AnimDef gUnk_0984BDB4[4] = {
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
-    { gUnk_09EE0780, gUnk_09EE07A0, gUnk_08A59DDC, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
+    { gEmy2900Frames, gEmy2900Anims, gEmy2900Tiles, 0, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0984BDF4 = {
-    gUnk_09EE07A8, gUnk_09EE07B4, gUnk_08A5D6BA, 0, { 0, 0, 0 },
+    gEmy2902Frames, gEmy2902Anims, gEmy2902Tiles, 0, { 0, 0, 0 },
 };
 
 const AnimDef gUnk_0984BE04 = {
-    gUnk_09EE07A8, gUnk_09EE07B4, gUnk_08A5D6BA, 0, { 0, 0, 0 },
+    gEmy2902Frames, gEmy2902Anims, gEmy2902Tiles, 0, { 0, 0, 0 },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BE14 = {
-    gUnk_0984BDB4, gUnk_08F69A64,
+    gUnk_0984BDB4, gEmy29Palette,
     73, 56, 36, 0,
     &gTaskDescMapEnm03, 10, 0,
 };
@@ -126,15 +126,15 @@ const char gTaskNameMapEnm03[] = "Task_MapEnm03";
 
 const AnimDef gUnk_0984BE3C[6] = {
     { gUnk_09EF8D24, gUnk_09EF8D44, gUnk_098A659A, 0, { 0, 0, 0 } },
-    { gUnk_09EE00D0, gUnk_09EE00F0, gUnk_089D8148, 0, { 0, 0, 0 } },
+    { gEmy0600Frames, gEmy0600Anims, gEmy0600Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EF8D24, gUnk_09EF8D44, gUnk_098A659A, 0, { 0, 0, 0 } },
-    { gUnk_09EE00D0, gUnk_09EE00F0, gUnk_089D8148, 0, { 0, 0, 0 } },
-    { gUnk_09EE00F4, gUnk_09EE0114, gUnk_089DA20E, 0, { 0, 0, 0 } },
-    { gUnk_09EE00F4, gUnk_09EE0114, gUnk_089DA20E, 0, { 0, 0, 0 } },
+    { gEmy0600Frames, gEmy0600Anims, gEmy0600Tiles, 0, { 0, 0, 0 } },
+    { gEmy0603Frames, gEmy0603Anims, gEmy0603Tiles, 0, { 0, 0, 0 } },
+    { gEmy0603Frames, gEmy0603Anims, gEmy0603Tiles, 0, { 0, 0, 0 } },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BE9C = {
-    gUnk_0984BE3C, gUnk_08F69924,
+    gUnk_0984BE3C, gEmy06Palette,
     34, 16, 12, 0,
     &gTaskDescMapEnm04, 2, 0,
 };
@@ -142,18 +142,18 @@ const UnkStruct_0984BC9C gUnk_0984BE9C = {
 const char gTaskNameMapEnm04[] = "Task_MapEnm04";
 
 const AnimDef gUnk_0984BEC4[8] = {
-    { gUnk_09EDFDD8, gUnk_09EDFDFC, gUnk_089AF520, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDD8, gUnk_09EDFDFC, gUnk_089AF520, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
+    { gEmy07Fl01Frames, gEmy07Fl01Anims, gEmy07Fl01Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl01Frames, gEmy07Fl01Anims, gEmy07Fl01Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl02Frames, gEmy07Fl02Anims, gEmy07Fl02Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl02Frames, gEmy07Fl02Anims, gEmy07Fl02Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BF44 = {
-    gUnk_0984BEC4, gUnk_08F698A4,
+    gUnk_0984BEC4, gEmy07Palette,
     26, 16, 12, 0,
     &gTaskDescMapEnm05, 4, 0,
 };
@@ -161,18 +161,18 @@ const UnkStruct_0984BC9C gUnk_0984BF44 = {
 const char gTaskNameMapEnm05[] = "Task_MapEnm05";
 
 const AnimDef gUnk_0984BF6C[8] = {
-    { gUnk_09EDFDD8, gUnk_09EDFDFC, gUnk_089AF520, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDD8, gUnk_09EDFDFC, gUnk_089AF520, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFDBC, gUnk_09EDFDD4, gUnk_089AE276, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE00, gUnk_09EDFE24, gUnk_089B0C42, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
-    { gUnk_09EDFE28, gUnk_09EDFE44, gUnk_089B225C, 0, { 0, 0, 0 } },
+    { gEmy07Fl01Frames, gEmy07Fl01Anims, gEmy07Fl01Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl01Frames, gEmy07Fl01Anims, gEmy07Fl01Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl00Frames, gEmy07Fl00Anims, gEmy07Fl00Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl02Frames, gEmy07Fl02Anims, gEmy07Fl02Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl02Frames, gEmy07Fl02Anims, gEmy07Fl02Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
+    { gEmy07Fl03Frames, gEmy07Fl03Anims, gEmy07Fl03Tiles, 0, { 0, 0, 0 } },
 };
 
 const UnkStruct_0984BC9C gUnk_0984BFEC = {
-    gUnk_0984BF6C, gUnk_08F698E4,
+    gUnk_0984BF6C, gEmy07bPalette,
     26, 16, 12, 0,
     &gTaskDescMapEnm06, 4, 0,
 };
@@ -1836,17 +1836,17 @@ void Task_MapGmk_Enm_0(MapGmkEnmWork* w, FldPos* arg) {
     w->unk_01A = 16;
 
     if (gUnk_0203C590.unk_04 != 2) {
-        w->tiles = AllocObjTiles(0x220, gUnk_08988980);
-        w->palette = LoadObjPalette(gUnk_08F69804, 32);
+        w->tiles = AllocObjTiles(0x220, gEmy01L00Tiles);
+        w->palette = LoadObjPalette(gEmy01Palette, 32);
         an = &w->anim;
-        anim = gUnk_09EDFC3C;
-        frames = gUnk_09EDFB5C;
+        anim = gEmy01L00Anims;
+        frames = gEmy01L00Frames;
     } else {
-        w->tiles = AllocObjTiles(0x440, gUnk_089D8148);
-        w->palette = LoadObjPalette(gUnk_08F69924, 32);
+        w->tiles = AllocObjTiles(0x440, gEmy0600Tiles);
+        w->palette = LoadObjPalette(gEmy06Palette, 32);
         an = &w->anim;
-        anim = gUnk_09EE00F0;
-        frames = gUnk_09EE00D0;
+        anim = gEmy0600Anims;
+        frames = gEmy0600Frames;
     }
 
     do {
@@ -2043,12 +2043,12 @@ void Task_MapGmk_Spider_0(MapGmkSpiderWork* w, UnkStruct_0203C7B8* arg) {
 
     *(FldPos*)w = arg->unk_04;
     w->unk_01A = 24;
-    w->tiles = AllocObjTiles(0x720, gUnk_0899A8BE);
+    w->tiles = AllocObjTiles(0x720, gEmy2103Tiles);
     w->palette = LoadObjPalette(&gUnk_08F691E4[0x6A0], 32);
-    AnimInit(&w->anim, gUnk_09EDFCF4, gUnk_09EDFCBC);
+    AnimInit(&w->anim, gEmy2103Anims, gEmy2103Frames);
     AnimStart(&w->anim, 0, 1);
     w->gfx = AnimGetGfx(&w->anim);
-    SetObjTileSource(w->tiles, gUnk_0899A8BE);
+    SetObjTileSource(w->tiles, gEmy2103Tiles);
     w->update = func_080F1C64;
     v = 0;
 
@@ -4069,7 +4069,7 @@ void Task_MapPrzCard_0(MapPrzCardWork* w, UnkStruct_080E8F50* p) {
     w->palette = LoadObjPalette(d->palette, 32);
     w->unk_090 = *(UnkStruct_08F70ACC*)&d->unk_1C;
     q = &gUnk_08F709B0[w->unk_090.unk_0E];
-    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gCard00Palette, 32);
     w->tiles2 = LoadObjTiles(q->tiles, 0x280);
     w->tiles3 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->palette3 = LoadObjPalette(gUnk_08F69BE4, 32);
@@ -4225,7 +4225,7 @@ void func_080F58C4(MapMsgWork* w, void* text) {
     LoadBgTiles(0, &gUnk_099597E4[0x140], 0x140);
     LoadBgMap(0, &gUnk_09985F44[0x800], 0x800);
     SetBgScroll(0, 0, (u16)-46);
-    LoadPalette(gUnk_09611AB8, &gUnk_050001C0[0x20], 32);
+    LoadPalette(gCard00Palette, &gUnk_050001C0[0x20], 32);
     InitTextSlots(w->textSlots, 48);
     w->textSlotCount = LoadTextSlots(text, w->textSlots);
     w->palette = _08066468(1);
@@ -4374,7 +4374,7 @@ const UnkStruct_080E7D80 gUnk_0984C1CC = {
 const char gTaskNameMapGmk04[] = "Task_MapGmk04";
 
 const UnkStruct_080E7D80 gUnk_0984C204 = {
-    gUnk_09617D58, gUnk_092028EC, 0x100, 0, 0, gUnk_09EEEA98, gUnk_09EEEAC8,
+    gMoguPalette, gMoguFl00Tiles, 0x100, 0, 0, gMoguFl00Frames, gMoguFl00Anims,
     1, 13, 0, 0, 0, 16, 24, 207, 0, &gTaskDescMapGmk05,
 };
 

@@ -58,13 +58,13 @@ static s16 gUnk_020358C2;
 
 const WarpDef gWarpDefs[2] = {
 #if defined(VERSION_US)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetUs_09A3D81C, 32, {0, 0}, gWorldwarpAssetUs_099A2F84, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetUs_09A3D81C, 32, {0, 0}, gWorldwarpAssetUs_099A2F84, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gMoguPalette, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
     {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetUs_09A3D83C, 32, {0, 0}, gWorldwarpAssetUs_099A32E4, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #elif defined(VERSION_JP)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetJp_099F22A4, 32, {0, 0}, gWorldwarpAssetJp_09957A0C, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetJp_099F22A4, 32, {0, 0}, gWorldwarpAssetJp_09957A0C, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gMoguPalette, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
     {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetJp_099F22C4, 32, {0, 0}, gWorldwarpAssetJp_09957D6C, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #elif defined(VERSION_EU)
-    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetEu_09A9B2E0, 32, {0, 0}, gWorldwarpAssetEu_099B0F08, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gUnk_09617D58, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
+    {&gModeMsShop, gUnk_09A36EDC, 1280, 104, 48, 1, 136, 80, 0, 48, 66, {0, 0}, {{64, 64, gWorldwarpAssetEu_09A9B2E0, 32, {0, 0}, gWorldwarpAssetEu_099B0F08, 832, {0, 0}, gUnk_09EF999C, gUnk_09EF9998, 0, {0, 0}}, {192, 84, gMoguPalette, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 1, {0, 0}}}},
     {&gModeMsCharge, gUnk_09A373DC, 1280, 76, 48, 0, 112, 80, 1, 32, 32, {0, 0}, {{32, 64, gWorldwarpAssetEu_09A9B300, 32, {0, 0}, gWorldwarpAssetEu_099B1268, 832, {0, 0}, gUnk_09EF99A4, gUnk_09EF99A0, 0, {0, 0}}, {160, 84, gUnk_09A3D77C, 32, {0, 0}, gUnk_099A2194, 2368, {0, 0}, gUnk_09EF9978, gUnk_09EF9928, 0, {0, 0}}}},
 #endif
 };
@@ -177,7 +177,7 @@ void func_081015E8(void) {
         flag = 1;
     }
     ReleaseObjPalette(gUnk_0203585C);
-    gUnk_0203585C = LoadObjPalette(flag == 0 ? gUnk_09617D58 : gUnk_09A3D77C, 0x20);
+    gUnk_0203585C = LoadObjPalette(flag == 0 ? gMoguPalette : gUnk_09A3D77C, 0x20);
 }
 
 void func_08101654(void) {
@@ -427,15 +427,15 @@ void mode_ms_top_0(u32 a) {
     gUnk_020357D4 = LoadObjPalette(gUnk_09A3D85C, 0x20);
     gUnk_020357D0 = LoadObjTiles(gUnk_099A36F8, 0x500);
     AnimInit(&gWorldwarpAnim, gUnk_09EF99D0, gUnk_09EF99A8);
-    gUnk_020357F4 = LoadObjPalette(gUnk_08F683A4, 0x20);
-    gUnk_020357F0 = LoadObjTiles(gUnk_088C56C6, 0x300);
-    AnimInit(&gUnk_020357F8, gUnk_09EDEA6C, gUnk_09EDEA68);
+    gUnk_020357F4 = LoadObjPalette(gSoraPalette, 0x20);
+    gUnk_020357F0 = LoadObjTiles(gSor1ll00Tiles, 0x300);
+    AnimInit(&gUnk_020357F8, gSor1ll00Anims, gSor1ll00Frames);
     AnimStart(&gUnk_020357F8, 0, 1);
-    gUnk_02035814 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    gUnk_02035814 = LoadObjPalette(gBStatesPalette, 0x20);
     gUnk_02035810 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    gUnk_0203585C = LoadObjPalette(gUnk_09617D58, 0x20);
-    gUnk_02035858 = LoadObjTiles(gUnk_092028EC, 0xC00);
-    AnimInit(&gUnk_02035860, gUnk_09EEEAC8, gUnk_09EEEA98);
+    gUnk_0203585C = LoadObjPalette(gMoguPalette, 0x20);
+    gUnk_02035858 = LoadObjTiles(gMoguFl00Tiles, 0xC00);
+    AnimInit(&gUnk_02035860, gMoguFl00Anims, gMoguFl00Frames);
     AnimStart(&gUnk_02035860, 0, 1);
     func_08101740(gUnk_020357C0);
     func_08101654();

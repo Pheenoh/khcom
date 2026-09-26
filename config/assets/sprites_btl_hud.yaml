@@ -956,217 +956,217 @@ entries:
   eu:
     address: 0x08B53F40
     size: 3130
-- name: gUnkEu_08B54E98
+- name: b_hpgag_e_eu
   format: sprite_sheet
   align: 4
   cell: [80, 12]
   anchor: [80, 4]
   columns: 8
   frames:
-  - symbol: gUnkEu_08B54B7C
+  - symbol: gBHpgagEFrame0Eu
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnkEu_08B54B86
+  - symbol: gBHpgagEFrame1Eu
     pieces:
     - [32x8, -32, 0]
     - [8x8, -40, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54B96
+  - symbol: gBHpgagEFrame2Eu
     pieces:
     - [32x8, -32, 0]
     - [16x8, -48, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54BA6
+  - symbol: gBHpgagEFrame3Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -56, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54BB6
+  - symbol: gBHpgagEFrame4Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54BC6
+  - symbol: gBHpgagEFrame5Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0, {hflip: true}]
     - [8x8, -72, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54BDC
+  - symbol: gBHpgagEFrame6Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54BF2
+  - symbol: gBHpgagEFrame7Eu
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnkEu_08B54BFC
+  - symbol: gBHpgagEFrame8Eu
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnkEu_08B54C06
+  - symbol: gBHpgagEFrame9Eu
     pieces:
     - [32x8, -32, -4]
-  - symbol: gUnkEu_08B54C10
+  - symbol: gBHpgagEFrame10Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
-  - symbol: gUnkEu_08B54C26
+  - symbol: gBHpgagEFrame11Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0]
-  - symbol: gUnkEu_08B54C3C
+  - symbol: gBHpgagEFrame12Eu
     pieces:
     - [32x8, -32, 0]
     - [32x8, -64, 0]
     - [16x8, -80, 0]
-  - symbol: gUnkEu_08B54C52
+  - symbol: gBHpgagEFrame13Eu
     pieces:
     - [8x8, -24, 0]
-  - symbol: gUnkEu_08B54C5C
+  - symbol: gBHpgagEFrame14Eu
     pieces:
     - [8x8, -40, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54C6C
+  - symbol: gBHpgagEFrame15Eu
     pieces:
     - [16x8, -48, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54C7C
+  - symbol: gBHpgagEFrame16Eu
     pieces:
     - [32x8, -56, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54C8C
+  - symbol: gBHpgagEFrame17Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54C9C
+  - symbol: gBHpgagEFrame18Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [8x8, -72, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54CB2
+  - symbol: gBHpgagEFrame19Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54CC8
+  - symbol: gBHpgagEFrame20Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54CDE
+  - symbol: gBHpgagEFrame21Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54CF4
+  - symbol: gBHpgagEFrame22Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D0A
+  - symbol: gBHpgagEFrame23Eu
     pieces:
     - [8x8, -40, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D1A
+  - symbol: gBHpgagEFrame24Eu
     pieces:
     - [16x8, -48, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D2A
+  - symbol: gBHpgagEFrame25Eu
     pieces:
     - [32x8, -56, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D3A
+  - symbol: gBHpgagEFrame26Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D4A
+  - symbol: gBHpgagEFrame27Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [8x8, -72, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D60
+  - symbol: gBHpgagEFrame28Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D76
+  - symbol: gBHpgagEFrame29Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54D8C
+  - symbol: gBHpgagEFrame30Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DA2
+  - symbol: gBHpgagEFrame31Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DB8
+  - symbol: gBHpgagEFrame32Eu
     pieces:
     - [8x8, -40, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DC8
+  - symbol: gBHpgagEFrame33Eu
     pieces:
     - [16x8, -48, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DD8
+  - symbol: gBHpgagEFrame34Eu
     pieces:
     - [32x8, -56, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DE8
+  - symbol: gBHpgagEFrame35Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54DF8
+  - symbol: gBHpgagEFrame36Eu
     pieces:
     - [32x8, -64, 0, {hflip: true}]
     - [8x8, -72, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54E0E
+  - symbol: gBHpgagEFrame37Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54E24
+  - symbol: gBHpgagEFrame38Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0, {hflip: true}]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54E3A
+  - symbol: gBHpgagEFrame39Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
-  - symbol: gUnkEu_08B54E50
+  - symbol: gBHpgagEFrame40Eu
     pieces:
     - [32x8, -64, 0]
     - [16x8, -80, 0]
     - [32x8, -32, 0]
   animations:
-  - symbol: gUnkEu_08B54E66
+  - symbol: gBHpgagEAnim0Eu
     declare: false
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnkEu_08B54E70
+  - symbol: gBHpgagEAnim1Eu
     declare: false
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnkEu_08B54E7A
+  - symbol: gBHpgagEAnim2Eu
     declare: false
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnkEu_08B54E84
+  - symbol: gBHpgagEAnim3Eu
     declare: false
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 4]]
-  - symbol: gUnkEu_08B54E8E
+  - symbol: gBHpgagEAnim4Eu
     declare: false
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 4]]
   eu:
     address: 0x08B54B7C
     size: 4316
-    symbol: gUnk_08B24DAA
+    symbol: gBHpgagETiles
 - name: gUnk_08B263D2
   format: sprite_sheet
   cell: [30, 24]
@@ -2040,282 +2040,16 @@ entries:
   items: [gUnkEu_08B53FF0]
   eu:
     address: 0x09F5C2D8
-- name: gUnkEu_09F5C2DC
+- name: gBHpgagEFramesEu
   record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54B7C]
+  items: [gBHpgagEFrame0Eu, gBHpgagEFrame1Eu, gBHpgagEFrame2Eu, gBHpgagEFrame3Eu, gBHpgagEFrame4Eu, gBHpgagEFrame5Eu, gBHpgagEFrame6Eu, gBHpgagEFrame7Eu, gBHpgagEFrame8Eu, gBHpgagEFrame9Eu, gBHpgagEFrame10Eu, gBHpgagEFrame11Eu, gBHpgagEFrame12Eu, gBHpgagEFrame13Eu, gBHpgagEFrame14Eu, gBHpgagEFrame15Eu, gBHpgagEFrame16Eu, gBHpgagEFrame17Eu, gBHpgagEFrame18Eu, gBHpgagEFrame19Eu, gBHpgagEFrame20Eu, gBHpgagEFrame21Eu, gBHpgagEFrame22Eu, gBHpgagEFrame23Eu, gBHpgagEFrame24Eu, gBHpgagEFrame25Eu, gBHpgagEFrame26Eu, gBHpgagEFrame27Eu, gBHpgagEFrame28Eu, gBHpgagEFrame29Eu, gBHpgagEFrame30Eu, gBHpgagEFrame31Eu, gBHpgagEFrame32Eu, gBHpgagEFrame33Eu, gBHpgagEFrame34Eu, gBHpgagEFrame35Eu, gBHpgagEFrame36Eu, gBHpgagEFrame37Eu, gBHpgagEFrame38Eu, gBHpgagEFrame39Eu, gBHpgagEFrame40Eu]
   eu:
     address: 0x09F5C2DC
-- name: gUnkEu_09F5C2E0
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54B86]
-  eu:
-    address: 0x09F5C2E0
-- name: gUnkEu_09F5C2E4
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54B96]
-  eu:
-    address: 0x09F5C2E4
-- name: gUnkEu_09F5C2E8
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BA6]
-  eu:
-    address: 0x09F5C2E8
-- name: gUnkEu_09F5C2EC
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BB6]
-  eu:
-    address: 0x09F5C2EC
-- name: gUnkEu_09F5C2F0
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BC6]
-  eu:
-    address: 0x09F5C2F0
-- name: gUnkEu_09F5C2F4
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BDC]
-  eu:
-    address: 0x09F5C2F4
-- name: gUnkEu_09F5C2F8
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BF2]
-  eu:
-    address: 0x09F5C2F8
-- name: gUnkEu_09F5C2FC
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54BFC]
-  eu:
-    address: 0x09F5C2FC
-- name: gUnkEu_09F5C300
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C06]
-  eu:
-    address: 0x09F5C300
-- name: gUnkEu_09F5C304
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C10]
-  eu:
-    address: 0x09F5C304
-- name: gUnkEu_09F5C308
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C26]
-  eu:
-    address: 0x09F5C308
-- name: gUnkEu_09F5C30C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C3C]
-  eu:
-    address: 0x09F5C30C
-- name: gUnkEu_09F5C310
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C52]
-  eu:
-    address: 0x09F5C310
-- name: gUnkEu_09F5C314
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C5C]
-  eu:
-    address: 0x09F5C314
-- name: gUnkEu_09F5C318
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C6C]
-  eu:
-    address: 0x09F5C318
-- name: gUnkEu_09F5C31C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C7C]
-  eu:
-    address: 0x09F5C31C
-- name: gUnkEu_09F5C320
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C8C]
-  eu:
-    address: 0x09F5C320
-- name: gUnkEu_09F5C324
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54C9C]
-  eu:
-    address: 0x09F5C324
-- name: gUnkEu_09F5C328
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54CB2]
-  eu:
-    address: 0x09F5C328
-- name: gUnkEu_09F5C32C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54CC8]
-  eu:
-    address: 0x09F5C32C
-- name: gUnkEu_09F5C330
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54CDE]
-  eu:
-    address: 0x09F5C330
-- name: gUnkEu_09F5C334
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54CF4]
-  eu:
-    address: 0x09F5C334
-- name: gUnkEu_09F5C338
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D0A]
-  eu:
-    address: 0x09F5C338
-- name: gUnkEu_09F5C33C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D1A]
-  eu:
-    address: 0x09F5C33C
-- name: gUnkEu_09F5C340
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D2A]
-  eu:
-    address: 0x09F5C340
-- name: gUnkEu_09F5C344
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D3A]
-  eu:
-    address: 0x09F5C344
-- name: gUnkEu_09F5C348
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D4A]
-  eu:
-    address: 0x09F5C348
-- name: gUnkEu_09F5C34C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D60]
-  eu:
-    address: 0x09F5C34C
-- name: gUnkEu_09F5C350
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D76]
-  eu:
-    address: 0x09F5C350
-- name: gUnkEu_09F5C354
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54D8C]
-  eu:
-    address: 0x09F5C354
-- name: gUnkEu_09F5C358
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DA2]
-  eu:
-    address: 0x09F5C358
-- name: gUnkEu_09F5C35C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DB8]
-  eu:
-    address: 0x09F5C35C
-- name: gUnkEu_09F5C360
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DC8]
-  eu:
-    address: 0x09F5C360
-- name: gUnkEu_09F5C364
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DD8]
-  eu:
-    address: 0x09F5C364
-- name: gUnkEu_09F5C368
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DE8]
-  eu:
-    address: 0x09F5C368
-- name: gUnkEu_09F5C36C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54DF8]
-  eu:
-    address: 0x09F5C36C
-- name: gUnkEu_09F5C370
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54E0E]
-  eu:
-    address: 0x09F5C370
-- name: gUnkEu_09F5C374
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54E24]
-  eu:
-    address: 0x09F5C374
-- name: gUnkEu_09F5C378
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54E3A]
-  eu:
-    address: 0x09F5C378
-- name: gUnkEu_09F5C37C
-  record: SpriteTable
-  scalar: true
-  items: [gUnkEu_08B54E50]
-  eu:
-    address: 0x09F5C37C
-- name: gUnkEu_09F5C380
+- name: gBHpgagEAnimsEu
   record: AnimTable
-  scalar: true
-  items: [gUnkEu_08B54E66]
+  items: [gBHpgagEAnim0Eu, gBHpgagEAnim1Eu, gBHpgagEAnim2Eu, gBHpgagEAnim3Eu, gBHpgagEAnim4Eu]
   eu:
     address: 0x09F5C380
-- name: gUnkEu_09F5C384
-  record: AnimTable
-  scalar: true
-  items: [gUnkEu_08B54E70]
-  eu:
-    address: 0x09F5C384
-- name: gUnkEu_09F5C388
-  record: AnimTable
-  scalar: true
-  items: [gUnkEu_08B54E7A]
-  eu:
-    address: 0x09F5C388
-- name: gUnkEu_09F5C38C
-  record: AnimTable
-  scalar: true
-  items: [gUnkEu_08B54E84]
-  eu:
-    address: 0x09F5C38C
-- name: gUnkEu_09F5C390
-  record: AnimTable
-  scalar: true
-  items: [gUnkEu_08B54E8E]
-  eu:
-    address: 0x09F5C390
 - name: gUnkEu_09F5C3CC
   record: SpriteTable
   scalar: true

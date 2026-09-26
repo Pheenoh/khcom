@@ -36,11 +36,11 @@ extern u8 gUnk_09A3CDDC[];
 extern JiminyWork* gJiminyWork;
 
 extern u8 gUnk_08159FE0[];
-extern u8 gUnk_090FDBF4[];
-extern u8 gUnk_0913F0C2[];
-extern u8 gUnk_09611AB8[];
-extern u8 gUnk_09614AB8[];
-extern u8 gUnk_09614D58[];
+extern u8 gTalk0600Tiles[];
+extern u8 gTalk2700Tiles[];
+extern u8 gCard00Palette[];
+extern u8 gTalk0600Palette[];
+extern u8 gTalk2700Palette[];
 
 void func_0805A484(void);
 u8 func_0805AA9C(void);

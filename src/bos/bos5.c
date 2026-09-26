@@ -3036,7 +3036,7 @@ void task_bos_ga_0(GaWork* work, s32 arg) {
 
     func_0801C2DC(p, 1);
     func_0801C2DC(&work->entries[1], 1);
-    work->palette = LoadObjPalette(gUnk_09A3C89C, 32);
+    work->palette = LoadObjPalette(gBoss01objPalette, 32);
     work->palette2 = LoadObjPalette(gUnk_08F69BC4, 32);
     func_0801C298(work->palette[6] + 16, 1);
     func_0801C298(work->palette2[6] + 16, 1);

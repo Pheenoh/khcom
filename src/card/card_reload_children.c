@@ -64,7 +64,7 @@ const s16 gUnk_090361C0[4] = { 0, 0, 0, 24 };
 void RELOAD_CHILDREN_0(ReloadChildWork* w, ReloadChildArgs* a) {
     *(ReloadChildArgs*)&w->unk_0C = *a;
     w->tiles = LoadObjTiles(gUnk_09EE7698[w->unk_19], 128);
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     w->tiles2 = 0;
 
     switch (w->unk_1A) {
@@ -225,7 +225,7 @@ void REV_COUNT_0(RevCountWork* w, RevCountArgs* a) {
     idx = w->args.unk_0C;
     w->unk_24 = idx;
     w->tiles = AllocSpriteFrameTiles(320);
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
 
     if (w->unk_24 == 0) {
         count = (s16*)w->args.unk_04;
@@ -465,7 +465,7 @@ void CreateREVCOUNTTask(void* pool, u8* a, void* b, u8* c, u8 d) {
 
 void RELOAD_0(ReloadWork* w, ReloadArgs* a) {
     w->tiles = AllocObjTiles(0xA0, 0);
-    w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette = LoadObjPalette(gCard00Palette, 32);
     *(ReloadArgs*)&w->unk_2C = *a;
     SetObjTileSource(w->tiles, gUnk_09EE7708[w->unk_2C]);
     AnimInit(&w->anim, gUnk_09EE7714[w->unk_2C], gUnk_09EE7720[w->unk_2C]);
@@ -557,10 +557,10 @@ void PrizeBoss_0(BossPrizeWork* w, s32* args) {
     back = &gUnk_08F709B0[def->unk_2A];
     w->tiles2 = LoadObjTiles(back->tiles, 0x280);
     w->tiles3 = LoadObjTiles(back->tiles3, 0x600);
-    w->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette2 = LoadObjPalette(gCard00Palette, 32);
     w->tiles4 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
     w->tiles5 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    w->palette3 = LoadObjPalette(gUnk_08F69BA4, 32);
+    w->palette3 = LoadObjPalette(gBStatesPalette, 32);
     w->unk_A8 = args[0];
     w->unk_AC = args[1];
     w->unk_B0 = args[2];

@@ -41,8 +41,8 @@ void func_0803473C(FldWork* work, s32 index, u16 flags);
 
 void CreateWorldSelBeforeTask(void* a, s32 x, s32 y, s32 z);
 
-extern u8 gUnk_08F683A4[];
-extern u8 gUnk_09618118[];
+extern u8 gSoraPalette[];
+extern u8 gRikuPalette[];
 extern u8 gUnk_08F69BE4[];
 
 u8 func_08034518(FldPos* p);

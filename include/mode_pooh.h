@@ -58,10 +58,10 @@ typedef struct PoohHit {
 
 extern u32 gUnk_02034DAC;
 
-extern u8 gUnk_09849A98[];
-extern u8 gUnk_09849AD8[];
-extern u8 gUnk_09849AF8[];
-extern u8 gUnk_09849B18[];
+extern u8 gPoohPalette[];
+extern u8 gTrap0001Palette[];
+extern u8 gTrap0002Palette[];
+extern u8 gTrap0003Palette[];
 extern const PoohHit gUnk_096FC010;
 extern const s8 gUnk_096FC01C[8][8];
 

@@ -535,10 +535,10 @@ void func_08102AB4(s16 x, s16 y) {
         gUnk_020358C8[i].timer = 0;
     }
 
-    gUnk_02035A30 = LoadObjPalette(gUnk_09611AB8, 0x20);
+    gUnk_02035A30 = LoadObjPalette(gCard00Palette, 0x20);
     FadeSetPaletteExcluded(((FldRes*)gUnk_02035A30)->index + 0x10, 1);
     gUnk_02035A34 = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
-    gUnk_02035A38 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    gUnk_02035A38 = LoadObjPalette(gBStatesPalette, 0x20);
     FadeSetPaletteExcluded(((FldRes*)gUnk_02035A38)->index + 0x10, 1);
     gUnk_02035A3C = LoadObjTiles(gUnk_0905ED36, 0x140);
     gUnk_02035AE0 = LoadObjPalette(gUnk_09A3DA7C, 0x20);
@@ -707,7 +707,7 @@ u8 func_0810329C(u16 a) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].palette2);
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
-                    gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
+                    gUnk_020358C8[i].palette2 = LoadObjPalette(gCard00Palette, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->index + 0x10, 1);
                     gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].tiles, 0x300);
                     gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].gfx;
@@ -760,7 +760,7 @@ u8 func_0810329C(u16 a) {
                 if (AnimGetFrame(&gUnk_020358C8[i].anim) == 3 || AnimGetFrame(&gUnk_020358C8[i].anim) == 8) {
                     ReleaseObjPalette(gUnk_020358C8[i].palette2);
                     ReleaseObjTiles(gUnk_020358C8[i].tiles2);
-                    gUnk_020358C8[i].palette2 = LoadObjPalette(gUnk_09611AB8, 0x20);
+                    gUnk_020358C8[i].palette2 = LoadObjPalette(gCard00Palette, 0x20);
                     FadeSetPaletteExcluded(gUnk_020358C8[i].palette2->index + 0x10, 1);
                     gUnk_020358C8[i].tiles2 = LoadObjTiles(gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].tiles, 0x300);
                     gUnk_020358C8[i].backSprite = gUnk_08F709B0[gCardDefs[gUnk_02035B58[i] & 0xFFF].unk_2A].gfx;

@@ -239,15 +239,15 @@ typedef struct SmnKingWork {
     u8 unk_15F[0x09];
 } SmnKingWork;
 
-extern u8 gUnk_096183F8[];
-extern u8 gUnk_08F6DC24[];
-extern u8 gUnk_08F69BA4[];
-extern u8 gUnk_09617FF8[];
-extern u8 gUnk_09617F98[];
-extern u8 gUnk_09618018[];
-extern u8 gUnk_09618098[];
-extern u8 gUnk_09618298[];
-extern u8 gUnk_09618038[];
+extern u8 gMickeyPalette[];
+extern u8 gCroudPalette[];
+extern u8 gBStatesPalette[];
+extern u8 gBanbPalette[];
+extern u8 gDamboPalette[];
+extern u8 gShinbaPalette[];
+extern u8 gTinkPalette[];
+extern u8 gGeniePalette[];
+extern u8 gMushuPalette[];
 void func_08041D64(SmnBambiWork* work);
 void func_08044518(SmnGenieWork* work);
 u8 func_08041FCC(SmnBambiWork* work);

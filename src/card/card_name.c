@@ -137,7 +137,7 @@ void CardName_0(CardNameWork* w) {
     w->unk_222 = v;
 #endif
     w->tiles = LoadObjTiles(&gUnk_093F8C8E[0xC1E], 0x1800);
-    pal = LoadObjPalette(gUnk_09611AB8, 32);
+    pal = LoadObjPalette(gCard00Palette, 32);
     w->unk_04 = pal;
     FadeSetPaletteExcluded(pal->index + 16, 1);
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->unk_218)->index + 16, 1);

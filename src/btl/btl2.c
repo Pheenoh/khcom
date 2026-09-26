@@ -33,47 +33,47 @@ extern u8 gUnkEu_08B51D50[];
 extern u8 gUnkEu_08B51FB8[];
 extern u8 gUnkEu_08B52220[];
 extern u8 gUnkEu_08B52488[];
-extern u8 gUnkEu_08B54B7C[];
-extern u8 gUnkEu_08B54B86[];
-extern u8 gUnkEu_08B54B96[];
-extern u8 gUnkEu_08B54BA6[];
-extern u8 gUnkEu_08B54BB6[];
-extern u8 gUnkEu_08B54BC6[];
-extern u8 gUnkEu_08B54BDC[];
-extern u8 gUnkEu_08B54BF2[];
-extern u8 gUnkEu_08B54BFC[];
-extern u8 gUnkEu_08B54C06[];
-extern u8 gUnkEu_08B54C10[];
-extern u8 gUnkEu_08B54C26[];
-extern u8 gUnkEu_08B54C3C[];
-extern u8 gUnkEu_08B54C52[];
-extern u8 gUnkEu_08B54C5C[];
-extern u8 gUnkEu_08B54C6C[];
-extern u8 gUnkEu_08B54C7C[];
-extern u8 gUnkEu_08B54C8C[];
-extern u8 gUnkEu_08B54C9C[];
-extern u8 gUnkEu_08B54CB2[];
-extern u8 gUnkEu_08B54CC8[];
-extern u8 gUnkEu_08B54CDE[];
-extern u8 gUnkEu_08B54CF4[];
-extern u8 gUnkEu_08B54D0A[];
-extern u8 gUnkEu_08B54D1A[];
-extern u8 gUnkEu_08B54D2A[];
-extern u8 gUnkEu_08B54D3A[];
-extern u8 gUnkEu_08B54D4A[];
-extern u8 gUnkEu_08B54D60[];
-extern u8 gUnkEu_08B54D76[];
-extern u8 gUnkEu_08B54D8C[];
-extern u8 gUnkEu_08B54DA2[];
-extern u8 gUnkEu_08B54DB8[];
-extern u8 gUnkEu_08B54DC8[];
-extern u8 gUnkEu_08B54DD8[];
-extern u8 gUnkEu_08B54DE8[];
-extern u8 gUnkEu_08B54DF8[];
-extern u8 gUnkEu_08B54E0E[];
-extern u8 gUnkEu_08B54E24[];
-extern u8 gUnkEu_08B54E3A[];
-extern u8 gUnkEu_08B54E50[];
+extern u8 gBHpgagEFrame0Eu[];
+extern u8 gBHpgagEFrame1Eu[];
+extern u8 gBHpgagEFrame2Eu[];
+extern u8 gBHpgagEFrame3Eu[];
+extern u8 gBHpgagEFrame4Eu[];
+extern u8 gBHpgagEFrame5Eu[];
+extern u8 gBHpgagEFrame6Eu[];
+extern u8 gBHpgagEFrame7Eu[];
+extern u8 gBHpgagEFrame8Eu[];
+extern u8 gBHpgagEFrame9Eu[];
+extern u8 gBHpgagEFrame10Eu[];
+extern u8 gBHpgagEFrame11Eu[];
+extern u8 gBHpgagEFrame12Eu[];
+extern u8 gBHpgagEFrame13Eu[];
+extern u8 gBHpgagEFrame14Eu[];
+extern u8 gBHpgagEFrame15Eu[];
+extern u8 gBHpgagEFrame16Eu[];
+extern u8 gBHpgagEFrame17Eu[];
+extern u8 gBHpgagEFrame18Eu[];
+extern u8 gBHpgagEFrame19Eu[];
+extern u8 gBHpgagEFrame20Eu[];
+extern u8 gBHpgagEFrame21Eu[];
+extern u8 gBHpgagEFrame22Eu[];
+extern u8 gBHpgagEFrame23Eu[];
+extern u8 gBHpgagEFrame24Eu[];
+extern u8 gBHpgagEFrame25Eu[];
+extern u8 gBHpgagEFrame26Eu[];
+extern u8 gBHpgagEFrame27Eu[];
+extern u8 gBHpgagEFrame28Eu[];
+extern u8 gBHpgagEFrame29Eu[];
+extern u8 gBHpgagEFrame30Eu[];
+extern u8 gBHpgagEFrame31Eu[];
+extern u8 gBHpgagEFrame32Eu[];
+extern u8 gBHpgagEFrame33Eu[];
+extern u8 gBHpgagEFrame34Eu[];
+extern u8 gBHpgagEFrame35Eu[];
+extern u8 gBHpgagEFrame36Eu[];
+extern u8 gBHpgagEFrame37Eu[];
+extern u8 gBHpgagEFrame38Eu[];
+extern u8 gBHpgagEFrame39Eu[];
+extern u8 gBHpgagEFrame40Eu[];
 #endif
 
 void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor) {
@@ -89,7 +89,7 @@ void task_btl_shadow_0(BtlShadowWork* work, BtlObj* actor) {
         work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
         work->gfx = gUnk_08B22BA8;
     }
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
 }
 
 s32 task_btl_shadow_1(void) {
@@ -130,23 +130,23 @@ void task_btl_shadow_3(BtlShadowWork* work) {
 
 void task_btl_hpply_0(BtlHpplyWork* work) {
     if (gGameState.flags & 8) {
-        work->palette = LoadObjPalette(gUnk_09618118, 0x20);
+        work->palette = LoadObjPalette(gRikuPalette, 0x20);
         work->tiles = AllocObjTiles(0x280, gUnk_08B21438);
         work->gfx = gUnk_08B213F0;
         AnimInit(&work->anim, gUnk_09EE12C8, gUnk_09EE12BC);
     } else {
-        work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
+        work->palette = LoadObjPalette(gSoraPalette, 0x20);
         work->tiles = AllocObjTiles(0x280, gUnk_08B20D6E);
         work->gfx = gUnk_08B20D20;
         AnimInit(&work->anim, gUnk_09EE12B0, gUnk_09EE12A4);
     }
 
-    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    work->tiles2 = AllocObjTiles(0x280, gUnk_08B24016);
-    work->tiles3 = AllocObjTiles(0x120, gUnk_08B24016);
-    work->tiles4 = AllocObjTiles(0x80, gUnk_08B24016);
-    work->gfx2 = gUnk_08B23CBA;
-    AnimInit(&work->anim2, gUnk_09EE1498, gUnk_09EE1420);
+    work->palette2 = LoadObjPalette(gBStatesPalette, 0x20);
+    work->tiles2 = AllocObjTiles(0x280, gBHpgagTiles);
+    work->tiles3 = AllocObjTiles(0x120, gBHpgagTiles);
+    work->tiles4 = AllocObjTiles(0x80, gBHpgagTiles);
+    work->gfx2 = gBHpgagFrame1;
+    AnimInit(&work->anim2, gBHpgagAnims, gBHpgagFrames);
     AnimStart(&work->anim, 0, 1);
 
     if (gBtlWork->actor->unk_02E <= 40) {
@@ -227,28 +227,28 @@ void task_btl_hpply_0(BtlHpplyWork* work) {
 
         switch (work->unk_64) {
         case 0:
-            work->gfx3 = gUnk_08B23E7C;
+            work->gfx3 = gBHpgagFrame19;
             break;
         case 1:
-            work->gfx3 = gUnk_08B23E8C;
+            work->gfx3 = gBHpgagFrame20;
             break;
         case 2:
-            work->gfx3 = gUnk_08B23E9C;
+            work->gfx3 = gBHpgagFrame21;
             break;
         case 3:
-            work->gfx3 = gUnk_08B23EAC;
+            work->gfx3 = gBHpgagFrame22;
             break;
         case 4:
-            work->gfx3 = gUnk_08B23EBC;
+            work->gfx3 = gBHpgagFrame23;
             break;
         case 5:
-            work->gfx3 = gUnk_08B23ED2;
+            work->gfx3 = gBHpgagFrame24;
             break;
         case 6:
-            work->gfx3 = gUnk_08B23EE8;
+            work->gfx3 = gBHpgagFrame25;
             break;
         default:
-            work->gfx3 = gUnk_08B23EE8;
+            work->gfx3 = gBHpgagFrame25;
             break;
         }
     }
@@ -418,7 +418,7 @@ void task_btl_hpply_2(BtlHpplyWork* work) {
         DrawSprite(4, 2, work->gfx2, work->tiles2, work->palette2, 0, 0x410, 4);
         break;
     case 1:
-        DrawSprite(4, 2, gUnk_08B23F08, work->tiles2, work->palette2, 0, 0x410, 4);
+        DrawSprite(4, 2, gBHpgagFrame27, work->tiles2, work->palette2, 0, 0x410, 4);
         DrawSprite(4, 2, work->gfx3, work->tiles3, work->palette2, 0, 0x410, 3);
         break;
     case 2:
@@ -502,9 +502,9 @@ void task_btl_hpply_2(BtlHpplyWork* work) {
         }
 
         if (work->unk_68 == 1) {
-            DrawSprite(31, 9, gUnk_08B23EFE, work->tiles4, work->palette2, aff, 0x410, 2);
+            DrawSprite(31, 9, gBHpgagFrame26, work->tiles4, work->palette2, aff, 0x410, 2);
         } else {
-            DrawSprite(31, 6, gUnk_08B23CB0, work->tiles4, work->palette2, aff, 0x410, 2);
+            DrawSprite(31, 6, gBHpgagFrame0, work->tiles4, work->palette2, aff, 0x410, 2);
         }
     }
 }
@@ -520,10 +520,10 @@ void task_btl_hpply_3(BtlHpplyWork* work) {
 }
 
 void task_btl_hpenm_0(BtlHpenmWork* work) {
-    work->tiles = AllocObjTiles(0x140, gUnk_08B24DAA);
-    work->tiles2 = AllocObjTiles(0x80, gUnk_08B24DAA);
-    work->tiles3 = AllocObjTiles(0x20, gUnk_08B24DAA);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = AllocObjTiles(0x140, gBHpgagETiles);
+    work->tiles2 = AllocObjTiles(0x80, gBHpgagETiles);
+    work->tiles3 = AllocObjTiles(0x20, gBHpgagETiles);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->unk_14 = 0;
     work->unk_10 = 0x100;
     work->actor = 0;
@@ -637,23 +637,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         switch (gLanguage) {
         case 0:
         case 1:
-            gfx = gUnkEu_08B54C3C;
+            gfx = gBHpgagEFrame12Eu;
             break;
         case 4:
-            gfx = gUnkEu_08B54CF4;
+            gfx = gBHpgagEFrame22Eu;
             break;
         case 3:
-            gfx = gUnkEu_08B54DA2;
+            gfx = gBHpgagEFrame31Eu;
             break;
         case 2:
         default:
-            gfx = gUnkEu_08B54E50;
+            gfx = gBHpgagEFrame40Eu;
             break;
         }
-        bar = gUnkEu_08B54C06;
+        bar = gBHpgagEFrame9Eu;
 #else
-        gfx = gUnk_08B24D58;
-        bar = gUnk_08B24D22;
+        gfx = gBHpgagEFrame12;
+        bar = gBHpgagEFrame9;
 #endif
         break;
     case 2:
@@ -661,23 +661,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         switch (gLanguage) {
         case 0:
         case 1:
-            gfx = gUnkEu_08B54C26;
+            gfx = gBHpgagEFrame11Eu;
             break;
         case 4:
-            gfx = gUnkEu_08B54CDE;
+            gfx = gBHpgagEFrame21Eu;
             break;
         case 3:
-            gfx = gUnkEu_08B54D8C;
+            gfx = gBHpgagEFrame30Eu;
             break;
         case 2:
         default:
-            gfx = gUnkEu_08B54E3A;
+            gfx = gBHpgagEFrame39Eu;
             break;
         }
-        bar = gUnkEu_08B54BFC;
+        bar = gBHpgagEFrame8Eu;
 #else
-        gfx = gUnk_08B24D42;
-        bar = gUnk_08B24D18;
+        gfx = gBHpgagEFrame11;
+        bar = gBHpgagEFrame8;
 #endif
         break;
     case 1:
@@ -685,23 +685,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
         switch (gLanguage) {
         case 0:
         case 1:
-            gfx = gUnkEu_08B54C10;
+            gfx = gBHpgagEFrame10Eu;
             break;
         case 4:
-            gfx = gUnkEu_08B54CC8;
+            gfx = gBHpgagEFrame20Eu;
             break;
         case 3:
-            gfx = gUnkEu_08B54D76;
+            gfx = gBHpgagEFrame29Eu;
             break;
         case 2:
         default:
-            gfx = gUnkEu_08B54E24;
+            gfx = gBHpgagEFrame38Eu;
             break;
         }
-        bar = gUnkEu_08B54BF2;
+        bar = gBHpgagEFrame7Eu;
 #else
-        gfx = gUnk_08B24D2C;
-        bar = gUnk_08B24D0E;
+        gfx = gBHpgagEFrame10;
+        bar = gBHpgagEFrame7;
 #endif
         break;
     case 0:
@@ -713,23 +713,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
             switch (work->unk_1C) {
             case 0:
             case 1:
-                gfx = gUnkEu_08B54B86;
+                gfx = gBHpgagEFrame1Eu;
                 break;
             case 2:
-                gfx = gUnkEu_08B54B96;
+                gfx = gBHpgagEFrame2Eu;
                 break;
             case 3:
-                gfx = gUnkEu_08B54BA6;
+                gfx = gBHpgagEFrame3Eu;
                 break;
             case 4:
-                gfx = gUnkEu_08B54BB6;
+                gfx = gBHpgagEFrame4Eu;
                 break;
             case 5:
-                gfx = gUnkEu_08B54BC6;
+                gfx = gBHpgagEFrame5Eu;
                 break;
             case 6:
             default:
-                gfx = gUnkEu_08B54BDC;
+                gfx = gBHpgagEFrame6Eu;
                 break;
             }
             break;
@@ -737,23 +737,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
             switch (work->unk_1C) {
             case 0:
             case 1:
-                gfx = gUnkEu_08B54C5C;
+                gfx = gBHpgagEFrame14Eu;
                 break;
             case 2:
-                gfx = gUnkEu_08B54C6C;
+                gfx = gBHpgagEFrame15Eu;
                 break;
             case 3:
-                gfx = gUnkEu_08B54C7C;
+                gfx = gBHpgagEFrame16Eu;
                 break;
             case 4:
-                gfx = gUnkEu_08B54C8C;
+                gfx = gBHpgagEFrame17Eu;
                 break;
             case 5:
-                gfx = gUnkEu_08B54C9C;
+                gfx = gBHpgagEFrame18Eu;
                 break;
             case 6:
             default:
-                gfx = gUnkEu_08B54CB2;
+                gfx = gBHpgagEFrame19Eu;
                 break;
             }
             break;
@@ -761,23 +761,23 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
             switch (work->unk_1C) {
             case 0:
             case 1:
-                gfx = gUnkEu_08B54D0A;
+                gfx = gBHpgagEFrame23Eu;
                 break;
             case 2:
-                gfx = gUnkEu_08B54D1A;
+                gfx = gBHpgagEFrame24Eu;
                 break;
             case 3:
-                gfx = gUnkEu_08B54D2A;
+                gfx = gBHpgagEFrame25Eu;
                 break;
             case 4:
-                gfx = gUnkEu_08B54D3A;
+                gfx = gBHpgagEFrame26Eu;
                 break;
             case 5:
-                gfx = gUnkEu_08B54D4A;
+                gfx = gBHpgagEFrame27Eu;
                 break;
             case 6:
             default:
-                gfx = gUnkEu_08B54D60;
+                gfx = gBHpgagEFrame28Eu;
                 break;
             }
             break;
@@ -786,63 +786,63 @@ void task_btl_hpenm_2(BtlHpenmWork* work) {
             switch (work->unk_1C) {
             case 0:
             case 1:
-                gfx = gUnkEu_08B54DB8;
+                gfx = gBHpgagEFrame32Eu;
                 break;
             case 2:
-                gfx = gUnkEu_08B54DC8;
+                gfx = gBHpgagEFrame33Eu;
                 break;
             case 3:
-                gfx = gUnkEu_08B54DD8;
+                gfx = gBHpgagEFrame34Eu;
                 break;
             case 4:
-                gfx = gUnkEu_08B54DE8;
+                gfx = gBHpgagEFrame35Eu;
                 break;
             case 5:
-                gfx = gUnkEu_08B54DF8;
+                gfx = gBHpgagEFrame36Eu;
                 break;
             case 6:
             default:
-                gfx = gUnkEu_08B54E0E;
+                gfx = gBHpgagEFrame37Eu;
                 break;
             }
             break;
         }
-        bar = gUnkEu_08B54B7C;
+        bar = gBHpgagEFrame0Eu;
 #else
         switch (work->unk_1C) {
         case 0:
         case 1:
-            gfx = gUnk_08B24CA2;
+            gfx = gBHpgagEFrame1;
             break;
         case 2:
-            gfx = gUnk_08B24CB2;
+            gfx = gBHpgagEFrame2;
             break;
         case 3:
-            gfx = gUnk_08B24CC2;
+            gfx = gBHpgagEFrame3;
             break;
         case 4:
-            gfx = gUnk_08B24CD2;
+            gfx = gBHpgagEFrame4;
             break;
         case 5:
-            gfx = gUnk_08B24CE2;
+            gfx = gBHpgagEFrame5;
             break;
         case 6:
-            gfx = gUnk_08B24CF8;
+            gfx = gBHpgagEFrame6;
             break;
         default:
-            gfx = gUnk_08B24CF8;
+            gfx = gBHpgagEFrame6;
             break;
         }
-        bar = gUnk_08B24C98;
+        bar = gBHpgagEFrame0;
 #endif
         break;
     }
 
     DrawSprite(236, 2, gfx, work->tiles, work->palette, 0, 0x410, 3);
 #ifdef VERSION_EU
-    DrawSprite(236, 2, gUnkEu_08B54C52, work->tiles3, work->palette, 0, 0x410, 1);
+    DrawSprite(236, 2, gBHpgagEFrame13Eu, work->tiles3, work->palette, 0, 0x410, 1);
 #else
-    DrawSprite(236, 2, gUnk_08B24D6E, work->tiles3, work->palette, 0, 0x410, 1);
+    DrawSprite(236, 2, gBHpgagEFrame13, work->tiles3, work->palette, 0, 0x410, 1);
 #endif
 
     switch (work->unk_1C) {
@@ -897,7 +897,7 @@ void task_btl_pause_0(BtlPauseWork* work) {
 #ifdef VERSION_EU
     void** p;
 
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
 
     if (gLanguage <= 2) {
         work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
@@ -910,7 +910,7 @@ void task_btl_pause_0(BtlPauseWork* work) {
     work->gfx2 = p[1];
 #else
     work->tiles = LoadObjTiles(gUnk_08B1E7F4, 0x180);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->gfx = gUnk_09EE115C[0];
     work->gfx2 = gUnk_09EE115C[1];
 #endif
@@ -1203,7 +1203,7 @@ void task_btl_pop_0(BtlPopWork* work, BtlPremireSrc* src) {
 #endif
 
     work->gfx = AnimGetGfx(&work->anim);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->x = src->x;
     work->y = src->y;
     work->z = src->z;
@@ -1239,7 +1239,7 @@ void task_btl_escape_0(BtlEscapeWork* work) {
     void** p;
 
     work->unk_18 = 0x5A00;
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
 
     switch (gLanguage) {
     case 0:
@@ -1270,7 +1270,7 @@ void task_btl_escape_0(BtlEscapeWork* work) {
 #else
     work->unk_18 = 0x5A00;
     work->tiles = LoadObjTiles(gUnk_08B1EB1C, 0x240);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->gfx = gUnk_09EE11A4[0];
     work->gfx2 = gUnk_09EE11A4[2];
     work->gfx3 = gUnk_09EE11A4[1];
@@ -1366,10 +1366,10 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
     work->vz = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
-    work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->tiles = LoadObjTiles(gBPuraizuTiles, 0x340);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->unk_28 = 0;
-    work->gfx2 = gUnk_08B208E8;
+    work->gfx2 = gBPuraizuFrame0;
     work->flags = 3;
 
     if (src->unk_14 != 0) {
@@ -1378,56 +1378,56 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
 
     switch (src->unk_12) {
     case 0:
-        work->gfx = gUnk_08B208F2;
+        work->gfx = gBPuraizuFrame1;
         work->unk_3A = 0;
         work->unk_38 = 1400;
         work->unk_24 = 1280;
         spd = 384;
         break;
     case 1:
-        work->gfx = gUnk_08B208FC;
+        work->gfx = gBPuraizuFrame2;
         work->unk_3A = 3;
         work->unk_38 = 0;
         work->unk_24 = 0x300;
         spd = 76;
         break;
     case 2:
-        work->gfx = gUnk_08B20906;
+        work->gfx = gBPuraizuFrame3;
         work->unk_3A = 10;
         work->unk_38 = 0;
         work->unk_24 = 0x300;
         spd = 76;
         break;
     case 3:
-        work->gfx = gUnk_08B20910;
+        work->gfx = gBPuraizuFrame4;
         work->unk_3A = 0;
         work->unk_38 = 1;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 4:
-        work->gfx = gUnk_08B2091A;
+        work->gfx = gBPuraizuFrame5;
         work->unk_3A = 0;
         work->unk_38 = 10;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 5:
-        work->gfx = gUnk_08B20924;
+        work->gfx = gBPuraizuFrame6;
         work->unk_3A = 0;
         work->unk_38 = 60;
         work->unk_24 = 0x400;
         spd = 128;
         break;
     case 6:
-        work->gfx = gUnk_08B2092E;
+        work->gfx = gBPuraizuFrame7;
         work->unk_3A = 0;
         work->unk_38 = 5;
         work->unk_24 = 0x400;
         spd = 179;
         break;
     case 7:
-        work->gfx = gUnk_08B20938;
+        work->gfx = gBPuraizuFrame8;
         work->unk_3A = 0;
         work->unk_38 = 30;
         work->unk_24 = 0x400;
@@ -1435,7 +1435,7 @@ void task_btl_prize_0(BtlPrizeWork* work, BtlPremireSrc* src) {
         break;
     case 8:
     default:
-        work->gfx = gUnk_08B20942;
+        work->gfx = gBPuraizuFrame9;
         work->unk_3A = 0;
         work->unk_38 = 199;
         work->unk_24 = 0x400;
@@ -1700,13 +1700,13 @@ void task_btl_premire_0(BtlPremireWork* work, BtlPremireSrc* src) {
     work->vz = -(GetRandom() % 897 + 768);
     angle = GetRandom();
 
-    work->tiles = LoadObjTiles(gUnk_08B209E0, 0x340);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    AnimInit(&work->anim, gUnk_09EE1278, gUnk_09EE1244);
+    work->tiles = LoadObjTiles(gBPuraizuTiles, 0x340);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
+    AnimInit(&work->anim, gBPuraizuAnims, gBPuraizuFrames);
     AnimStart(&work->anim, 10, 1);
     work->gfx = AnimGetGfx(&work->anim);
     work->unk_28 = 0;
-    work->gfx2 = gUnk_08B208E8;
+    work->gfx2 = gBPuraizuFrame0;
     work->flags = 3;
 
     if (src->unk_14 != 0) {

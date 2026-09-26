@@ -274,468 +274,468 @@ entries:
     address: 0x09EC8390
   eu:
     address: 0x09F7C188
-- name: gUnk_09EF0FA8
+- name: gCardRoom01Frames
   record: SpriteTable
-  items: [gUnk_093EF054]
+  items: [gCardRoom01Frame0]
   us:
     address: 0x09EF0FA8
   jp:
     address: 0x09EC8394
   eu:
     address: 0x09F7C18C
-- name: gUnk_09EF0FAC
+- name: gCardRoom01Anims
   record: AnimTable
-  items: [gUnk_093EF05E]
+  items: [gCardRoom01Anim0]
   us:
     address: 0x09EF0FAC
   jp:
     address: 0x09EC8398
   eu:
     address: 0x09F7C190
-- name: gUnk_09EF0FB0
+- name: gCardRoom02Frames
   record: SpriteTable
-  items: [gUnk_093EF268]
+  items: [gCardRoom02Frame0]
   us:
     address: 0x09EF0FB0
   jp:
     address: 0x09EC839C
   eu:
     address: 0x09F7C194
-- name: gUnk_09EF0FB4
+- name: gCardRoom02Anims
   record: AnimTable
-  items: [gUnk_093EF272]
+  items: [gCardRoom02Anim0]
   us:
     address: 0x09EF0FB4
   jp:
     address: 0x09EC83A0
   eu:
     address: 0x09F7C198
-- name: gUnk_09EF0FB8
+- name: gCardRoom03Frames
   record: SpriteTable
-  items: [gUnk_093EF47C]
+  items: [gCardRoom03Frame0]
   us:
     address: 0x09EF0FB8
   jp:
     address: 0x09EC83A4
   eu:
     address: 0x09F7C19C
-- name: gUnk_09EF0FBC
+- name: gCardRoom03Anims
   record: AnimTable
-  items: [gUnk_093EF486]
+  items: [gCardRoom03Anim0]
   us:
     address: 0x09EF0FBC
   jp:
     address: 0x09EC83A8
   eu:
     address: 0x09F7C1A0
-- name: gUnk_09EF0FC0
+- name: gCardRoom04Frames
   record: SpriteTable
-  items: [gUnk_093EF690]
+  items: [gCardRoom04Frame0]
   us:
     address: 0x09EF0FC0
   jp:
     address: 0x09EC83AC
   eu:
     address: 0x09F7C1A4
-- name: gUnk_09EF0FC4
+- name: gCardRoom04Anims
   record: AnimTable
-  items: [gUnk_093EF69A]
+  items: [gCardRoom04Anim0]
   us:
     address: 0x09EF0FC4
   jp:
     address: 0x09EC83B0
   eu:
     address: 0x09F7C1A8
-- name: gUnk_09EF0FC8
+- name: gCardRoom05Frames
   record: SpriteTable
-  items: [gUnk_093EF8A4]
+  items: [gCardRoom05Frame0]
   us:
     address: 0x09EF0FC8
   jp:
     address: 0x09EC83B4
   eu:
     address: 0x09F7C1AC
-- name: gUnk_09EF0FCC
+- name: gCardRoom05Anims
   record: AnimTable
-  items: [gUnk_093EF8AE]
+  items: [gCardRoom05Anim0]
   us:
     address: 0x09EF0FCC
   jp:
     address: 0x09EC83B8
   eu:
     address: 0x09F7C1B0
-- name: gUnk_09EF0FD0
+- name: gCardRoom06Frames
   record: SpriteTable
-  items: [gUnk_093EFAB8]
+  items: [gCardRoom06Frame0]
   us:
     address: 0x09EF0FD0
   jp:
     address: 0x09EC83BC
   eu:
     address: 0x09F7C1B4
-- name: gUnk_09EF0FD4
+- name: gCardRoom06Anims
   record: AnimTable
-  items: [gUnk_093EFAC2]
+  items: [gCardRoom06Anim0]
   us:
     address: 0x09EF0FD4
   jp:
     address: 0x09EC83C0
   eu:
     address: 0x09F7C1B8
-- name: gUnk_09EF0FD8
+- name: gCardRoom07Frames
   record: SpriteTable
-  items: [gUnk_093EFCCC]
+  items: [gCardRoom07Frame0]
   us:
     address: 0x09EF0FD8
   jp:
     address: 0x09EC83C4
   eu:
     address: 0x09F7C1BC
-- name: gUnk_09EF0FDC
+- name: gCardRoom07Anims
   record: AnimTable
-  items: [gUnk_093EFCD6]
+  items: [gCardRoom07Anim0]
   us:
     address: 0x09EF0FDC
   jp:
     address: 0x09EC83C8
   eu:
     address: 0x09F7C1C0
-- name: gUnk_09EF0FE0
+- name: gCardRoom08Frames
   record: SpriteTable
-  items: [gUnk_093EFEE0]
+  items: [gCardRoom08Frame0]
   us:
     address: 0x09EF0FE0
   jp:
     address: 0x09EC83CC
   eu:
     address: 0x09F7C1C4
-- name: gUnk_09EF0FE4
+- name: gCardRoom08Anims
   record: AnimTable
-  items: [gUnk_093EFEEA]
+  items: [gCardRoom08Anim0]
   us:
     address: 0x09EF0FE4
   jp:
     address: 0x09EC83D0
   eu:
     address: 0x09F7C1C8
-- name: gUnk_09EF0FE8
+- name: gCardRoom09Frames
   record: SpriteTable
-  items: [gUnk_093F00F4]
+  items: [gCardRoom09Frame0]
   us:
     address: 0x09EF0FE8
   jp:
     address: 0x09EC83D4
   eu:
     address: 0x09F7C1CC
-- name: gUnk_09EF0FEC
+- name: gCardRoom09Anims
   record: AnimTable
-  items: [gUnk_093F00FE]
+  items: [gCardRoom09Anim0]
   us:
     address: 0x09EF0FEC
   jp:
     address: 0x09EC83D8
   eu:
     address: 0x09F7C1D0
-- name: gUnk_09EF0FF0
+- name: gCardRoom10Frames
   record: SpriteTable
-  items: [gUnk_093F0308]
+  items: [gCardRoom10Frame0]
   us:
     address: 0x09EF0FF0
   jp:
     address: 0x09EC83DC
   eu:
     address: 0x09F7C1D4
-- name: gUnk_09EF0FF4
+- name: gCardRoom10Anims
   record: AnimTable
-  items: [gUnk_093F0312]
+  items: [gCardRoom10Anim0]
   us:
     address: 0x09EF0FF4
   jp:
     address: 0x09EC83E0
   eu:
     address: 0x09F7C1D8
-- name: gUnk_09EF0FF8
+- name: gCardRoom11Frames
   record: SpriteTable
-  items: [gUnk_093F051C]
+  items: [gCardRoom11Frame0]
   us:
     address: 0x09EF0FF8
   jp:
     address: 0x09EC83E4
   eu:
     address: 0x09F7C1DC
-- name: gUnk_09EF0FFC
+- name: gCardRoom11Anims
   record: AnimTable
-  items: [gUnk_093F0526]
+  items: [gCardRoom11Anim0]
   us:
     address: 0x09EF0FFC
   jp:
     address: 0x09EC83E8
   eu:
     address: 0x09F7C1E0
-- name: gUnk_09EF1000
+- name: gCardRoom12Frames
   record: SpriteTable
-  items: [gUnk_093F0730]
+  items: [gCardRoom12Frame0]
   us:
     address: 0x09EF1000
   jp:
     address: 0x09EC83EC
   eu:
     address: 0x09F7C1E4
-- name: gUnk_09EF1004
+- name: gCardRoom12Anims
   record: AnimTable
-  items: [gUnk_093F073A]
+  items: [gCardRoom12Anim0]
   us:
     address: 0x09EF1004
   jp:
     address: 0x09EC83F0
   eu:
     address: 0x09F7C1E8
-- name: gUnk_09EF1008
+- name: gCardRoom13Frames
   record: SpriteTable
-  items: [gUnk_093F0944]
+  items: [gCardRoom13Frame0]
   us:
     address: 0x09EF1008
   jp:
     address: 0x09EC83F4
   eu:
     address: 0x09F7C1EC
-- name: gUnk_09EF100C
+- name: gCardRoom13Anims
   record: AnimTable
-  items: [gUnk_093F094E]
+  items: [gCardRoom13Anim0]
   us:
     address: 0x09EF100C
   jp:
     address: 0x09EC83F8
   eu:
     address: 0x09F7C1F0
-- name: gUnk_09EF1010
+- name: gCardRoom14Frames
   record: SpriteTable
-  items: [gUnk_093F0B58]
+  items: [gCardRoom14Frame0]
   us:
     address: 0x09EF1010
   jp:
     address: 0x09EC83FC
   eu:
     address: 0x09F7C1F4
-- name: gUnk_09EF1014
+- name: gCardRoom14Anims
   record: AnimTable
-  items: [gUnk_093F0B62]
+  items: [gCardRoom14Anim0]
   us:
     address: 0x09EF1014
   jp:
     address: 0x09EC8400
   eu:
     address: 0x09F7C1F8
-- name: gUnk_09EF1018
+- name: gCardRoom15Frames
   record: SpriteTable
-  items: [gUnk_093F0D6C]
+  items: [gCardRoom15Frame0]
   us:
     address: 0x09EF1018
   jp:
     address: 0x09EC8404
   eu:
     address: 0x09F7C1FC
-- name: gUnk_09EF101C
+- name: gCardRoom15Anims
   record: AnimTable
-  items: [gUnk_093F0D76]
+  items: [gCardRoom15Anim0]
   us:
     address: 0x09EF101C
   jp:
     address: 0x09EC8408
   eu:
     address: 0x09F7C200
-- name: gUnk_09EF1020
+- name: gCardRoom16Frames
   record: SpriteTable
-  items: [gUnk_093F0F80]
+  items: [gCardRoom16Frame0]
   us:
     address: 0x09EF1020
   jp:
     address: 0x09EC840C
   eu:
     address: 0x09F7C204
-- name: gUnk_09EF1024
+- name: gCardRoom16Anims
   record: AnimTable
-  items: [gUnk_093F0F8A]
+  items: [gCardRoom16Anim0]
   us:
     address: 0x09EF1024
   jp:
     address: 0x09EC8410
   eu:
     address: 0x09F7C208
-- name: gUnk_09EF1028
+- name: gCardRoom17Frames
   record: SpriteTable
-  items: [gUnk_093F1194]
+  items: [gCardRoom17Frame0]
   us:
     address: 0x09EF1028
   jp:
     address: 0x09EC8414
   eu:
     address: 0x09F7C20C
-- name: gUnk_09EF102C
+- name: gCardRoom17Anims
   record: AnimTable
-  items: [gUnk_093F119E]
+  items: [gCardRoom17Anim0]
   us:
     address: 0x09EF102C
   jp:
     address: 0x09EC8418
   eu:
     address: 0x09F7C210
-- name: gUnk_09EF1030
+- name: gCardRoom18Frames
   record: SpriteTable
-  items: [gUnk_093F13A8]
+  items: [gCardRoom18Frame0]
   us:
     address: 0x09EF1030
   jp:
     address: 0x09EC841C
   eu:
     address: 0x09F7C214
-- name: gUnk_09EF1034
+- name: gCardRoom18Anims
   record: AnimTable
-  items: [gUnk_093F13B2]
+  items: [gCardRoom18Anim0]
   us:
     address: 0x09EF1034
   jp:
     address: 0x09EC8420
   eu:
     address: 0x09F7C218
-- name: gUnk_09EF1038
+- name: gCardRoom19Frames
   record: SpriteTable
-  items: [gUnk_093F15BC]
+  items: [gCardRoom19Frame0]
   us:
     address: 0x09EF1038
   jp:
     address: 0x09EC8424
   eu:
     address: 0x09F7C21C
-- name: gUnk_09EF103C
+- name: gCardRoom19Anims
   record: AnimTable
-  items: [gUnk_093F15C6]
+  items: [gCardRoom19Anim0]
   us:
     address: 0x09EF103C
   jp:
     address: 0x09EC8428
   eu:
     address: 0x09F7C220
-- name: gUnk_09EF1040
+- name: gCardRoom20Frames
   record: SpriteTable
-  items: [gUnk_093F17D0]
+  items: [gCardRoom20Frame0]
   us:
     address: 0x09EF1040
   jp:
     address: 0x09EC842C
   eu:
     address: 0x09F7C224
-- name: gUnk_09EF1044
+- name: gCardRoom20Anims
   record: AnimTable
-  items: [gUnk_093F17DA]
+  items: [gCardRoom20Anim0]
   us:
     address: 0x09EF1044
   jp:
     address: 0x09EC8430
   eu:
     address: 0x09F7C228
-- name: gUnk_09EF1048
+- name: gCardRoom21Frames
   record: SpriteTable
-  items: [gUnk_093F19E4]
+  items: [gCardRoom21Frame0]
   us:
     address: 0x09EF1048
   jp:
     address: 0x09EC8434
   eu:
     address: 0x09F7C22C
-- name: gUnk_09EF104C
+- name: gCardRoom21Anims
   record: AnimTable
-  items: [gUnk_093F19EE]
+  items: [gCardRoom21Anim0]
   us:
     address: 0x09EF104C
   jp:
     address: 0x09EC8438
   eu:
     address: 0x09F7C230
-- name: gUnk_09EF1050
+- name: gCardRoom22Frames
   record: SpriteTable
-  items: [gUnk_093F1BF8]
+  items: [gCardRoom22Frame0]
   us:
     address: 0x09EF1050
   jp:
     address: 0x09EC843C
   eu:
     address: 0x09F7C234
-- name: gUnk_09EF1054
+- name: gCardRoom22Anims
   record: AnimTable
-  items: [gUnk_093F1C02]
+  items: [gCardRoom22Anim0]
   us:
     address: 0x09EF1054
   jp:
     address: 0x09EC8440
   eu:
     address: 0x09F7C238
-- name: gUnk_09EF1058
+- name: gCardRoom23Frames
   record: SpriteTable
-  items: [gUnk_093F1E0C]
+  items: [gCardRoom23Frame0]
   us:
     address: 0x09EF1058
   jp:
     address: 0x09EC8444
   eu:
     address: 0x09F7C23C
-- name: gUnk_09EF105C
+- name: gCardRoom23Anims
   record: AnimTable
-  items: [gUnk_093F1E16]
+  items: [gCardRoom23Anim0]
   us:
     address: 0x09EF105C
   jp:
     address: 0x09EC8448
   eu:
     address: 0x09F7C240
-- name: gUnk_09EF1138
+- name: gCardEve00Frames
   record: SpriteTable
-  items: [gUnk_093F3E3C]
+  items: [gCardEve00Frame0]
   us:
     address: 0x09EF1138
   jp:
     address: 0x09EC8524
   eu:
     address: 0x09F7C31C
-- name: gUnk_09EF113C
+- name: gCardEve00Anims
   record: AnimTable
-  items: [gUnk_093F3E46]
+  items: [gCardEve00Anim0]
   us:
     address: 0x09EF113C
   jp:
     address: 0x09EC8528
   eu:
     address: 0x09F7C320
-- name: gUnk_09EF1140
+- name: gCardEve01Frames
   record: SpriteTable
-  items: [gUnk_093F4050]
+  items: [gCardEve01Frame0]
   us:
     address: 0x09EF1140
   jp:
     address: 0x09EC852C
   eu:
     address: 0x09F7C324
-- name: gUnk_09EF1144
+- name: gCardEve01Anims
   record: AnimTable
-  items: [gUnk_093F405A]
+  items: [gCardEve01Anim0]
   us:
     address: 0x09EF1144
   jp:
     address: 0x09EC8530
   eu:
     address: 0x09F7C328
-- name: gUnk_09EF1148
+- name: gCardEve02Frames
   record: SpriteTable
-  items: [gUnk_093F4264]
+  items: [gCardEve02Frame0]
   us:
     address: 0x09EF1148
   jp:
     address: 0x09EC8534
   eu:
     address: 0x09F7C32C
-- name: gUnk_09EF114C
+- name: gCardEve02Anims
   record: AnimTable
-  items: [gUnk_093F426E]
+  items: [gCardEve02Anim0]
   us:
     address: 0x09EF114C
   jp:
@@ -7120,18 +7120,18 @@ entries:
     size: 4212
 - name: card_room01
   format: sprite_sheet
-  palette: gUnk_09618598
-  symbol: gUnk_093EF068
+  palette: gCardRoom01Palette
+  symbol: gCardRoom01Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EF054
+  - symbol: gCardRoom01Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EF05E
+  - symbol: gCardRoom01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7145,18 +7145,18 @@ entries:
     size: 532
 - name: card_room02
   format: sprite_sheet
-  palette: gUnk_096185B8
-  symbol: gUnk_093EF27C
+  palette: gCardRoom02Palette
+  symbol: gCardRoom02Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EF268
+  - symbol: gCardRoom02Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EF272
+  - symbol: gCardRoom02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7170,18 +7170,18 @@ entries:
     size: 532
 - name: card_room03
   format: sprite_sheet
-  palette: gUnk_096185D8
-  symbol: gUnk_093EF490
+  palette: gCardRoom03Palette
+  symbol: gCardRoom03Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EF47C
+  - symbol: gCardRoom03Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EF486
+  - symbol: gCardRoom03Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7195,18 +7195,18 @@ entries:
     size: 532
 - name: card_room04
   format: sprite_sheet
-  palette: gUnk_096185F8
-  symbol: gUnk_093EF6A4
+  palette: gCardRoom04Palette
+  symbol: gCardRoom04Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EF690
+  - symbol: gCardRoom04Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EF69A
+  - symbol: gCardRoom04Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7220,18 +7220,18 @@ entries:
     size: 532
 - name: card_room05
   format: sprite_sheet
-  palette: gUnk_09618618
-  symbol: gUnk_093EF8B8
+  palette: gCardRoom05Palette
+  symbol: gCardRoom05Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EF8A4
+  - symbol: gCardRoom05Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EF8AE
+  - symbol: gCardRoom05Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7245,18 +7245,18 @@ entries:
     size: 532
 - name: card_room06
   format: sprite_sheet
-  palette: gUnk_09618638
-  symbol: gUnk_093EFACC
+  palette: gCardRoom06Palette
+  symbol: gCardRoom06Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EFAB8
+  - symbol: gCardRoom06Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EFAC2
+  - symbol: gCardRoom06Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7270,18 +7270,18 @@ entries:
     size: 532
 - name: card_room07
   format: sprite_sheet
-  palette: gUnk_09618658
-  symbol: gUnk_093EFCE0
+  palette: gCardRoom07Palette
+  symbol: gCardRoom07Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EFCCC
+  - symbol: gCardRoom07Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EFCD6
+  - symbol: gCardRoom07Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7295,18 +7295,18 @@ entries:
     size: 532
 - name: card_room08
   format: sprite_sheet
-  palette: gUnk_09618678
-  symbol: gUnk_093EFEF4
+  palette: gCardRoom08Palette
+  symbol: gCardRoom08Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093EFEE0
+  - symbol: gCardRoom08Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093EFEEA
+  - symbol: gCardRoom08Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7320,18 +7320,18 @@ entries:
     size: 532
 - name: card_room09
   format: sprite_sheet
-  palette: gUnk_09618698
-  symbol: gUnk_093F0108
+  palette: gCardRoom09Palette
+  symbol: gCardRoom09Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F00F4
+  - symbol: gCardRoom09Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F00FE
+  - symbol: gCardRoom09Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7345,18 +7345,18 @@ entries:
     size: 532
 - name: card_room10
   format: sprite_sheet
-  palette: gUnk_096186B8
-  symbol: gUnk_093F031C
+  palette: gCardRoom10Palette
+  symbol: gCardRoom10Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0308
+  - symbol: gCardRoom10Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F0312
+  - symbol: gCardRoom10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7370,18 +7370,18 @@ entries:
     size: 532
 - name: card_room11
   format: sprite_sheet
-  palette: gUnk_096186D8
-  symbol: gUnk_093F0530
+  palette: gCardRoom11Palette
+  symbol: gCardRoom11Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F051C
+  - symbol: gCardRoom11Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F0526
+  - symbol: gCardRoom11Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7395,18 +7395,18 @@ entries:
     size: 532
 - name: card_room12
   format: sprite_sheet
-  palette: gUnk_096186F8
-  symbol: gUnk_093F0744
+  palette: gCardRoom12Palette
+  symbol: gCardRoom12Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0730
+  - symbol: gCardRoom12Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F073A
+  - symbol: gCardRoom12Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7420,18 +7420,18 @@ entries:
     size: 532
 - name: card_room13
   format: sprite_sheet
-  palette: gUnk_09618718
-  symbol: gUnk_093F0958
+  palette: gCardRoom13Palette
+  symbol: gCardRoom13Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0944
+  - symbol: gCardRoom13Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F094E
+  - symbol: gCardRoom13Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7445,18 +7445,18 @@ entries:
     size: 532
 - name: card_room14
   format: sprite_sheet
-  palette: gUnk_09618738
-  symbol: gUnk_093F0B6C
+  palette: gCardRoom14Palette
+  symbol: gCardRoom14Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0B58
+  - symbol: gCardRoom14Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F0B62
+  - symbol: gCardRoom14Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7470,18 +7470,18 @@ entries:
     size: 532
 - name: card_room15
   format: sprite_sheet
-  palette: gUnk_09618758
-  symbol: gUnk_093F0D80
+  palette: gCardRoom15Palette
+  symbol: gCardRoom15Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0D6C
+  - symbol: gCardRoom15Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F0D76
+  - symbol: gCardRoom15Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7495,18 +7495,18 @@ entries:
     size: 532
 - name: card_room16
   format: sprite_sheet
-  palette: gUnk_09618778
-  symbol: gUnk_093F0F94
+  palette: gCardRoom16Palette
+  symbol: gCardRoom16Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F0F80
+  - symbol: gCardRoom16Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F0F8A
+  - symbol: gCardRoom16Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7520,18 +7520,18 @@ entries:
     size: 532
 - name: card_room17
   format: sprite_sheet
-  palette: gUnk_09618798
-  symbol: gUnk_093F11A8
+  palette: gCardRoom17Palette
+  symbol: gCardRoom17Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F1194
+  - symbol: gCardRoom17Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F119E
+  - symbol: gCardRoom17Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7545,18 +7545,18 @@ entries:
     size: 532
 - name: card_room18
   format: sprite_sheet
-  palette: gUnk_096187B8
-  symbol: gUnk_093F13BC
+  palette: gCardRoom18Palette
+  symbol: gCardRoom18Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F13A8
+  - symbol: gCardRoom18Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F13B2
+  - symbol: gCardRoom18Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7570,18 +7570,18 @@ entries:
     size: 532
 - name: card_room19
   format: sprite_sheet
-  palette: gUnk_096187D8
-  symbol: gUnk_093F15D0
+  palette: gCardRoom19Palette
+  symbol: gCardRoom19Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F15BC
+  - symbol: gCardRoom19Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F15C6
+  - symbol: gCardRoom19Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7595,18 +7595,18 @@ entries:
     size: 532
 - name: card_room20
   format: sprite_sheet
-  palette: gUnk_096187F8
-  symbol: gUnk_093F17E4
+  palette: gCardRoom20Palette
+  symbol: gCardRoom20Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F17D0
+  - symbol: gCardRoom20Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F17DA
+  - symbol: gCardRoom20Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7620,18 +7620,18 @@ entries:
     size: 532
 - name: card_room21
   format: sprite_sheet
-  palette: gUnk_09618818
-  symbol: gUnk_093F19F8
+  palette: gCardRoom21Palette
+  symbol: gCardRoom21Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F19E4
+  - symbol: gCardRoom21Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F19EE
+  - symbol: gCardRoom21Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7645,18 +7645,18 @@ entries:
     size: 532
 - name: card_room22
   format: sprite_sheet
-  palette: gUnk_09618838
-  symbol: gUnk_093F1C0C
+  palette: gCardRoom22Palette
+  symbol: gCardRoom22Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F1BF8
+  - symbol: gCardRoom22Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F1C02
+  - symbol: gCardRoom22Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7670,18 +7670,18 @@ entries:
     size: 532
 - name: card_room23
   format: sprite_sheet
-  palette: gUnk_09618858
-  symbol: gUnk_093F1E20
+  palette: gCardRoom23Palette
+  symbol: gCardRoom23Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F1E0C
+  - symbol: gCardRoom23Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F1E16
+  - symbol: gCardRoom23Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7695,18 +7695,18 @@ entries:
     size: 532
 - name: card_eve00
   format: sprite_sheet
-  palette: gUnk_09618BD8
-  symbol: gUnk_093F3E50
+  palette: gCardEve00Palette
+  symbol: gCardEve00Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F3E3C
+  - symbol: gCardEve00Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F3E46
+  - symbol: gCardEve00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7720,18 +7720,18 @@ entries:
     size: 532
 - name: card_eve01
   format: sprite_sheet
-  palette: gUnk_09618BF8
-  symbol: gUnk_093F4064
+  palette: gCardEve01Palette
+  symbol: gCardEve01Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F4050
+  - symbol: gCardEve01Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F405A
+  - symbol: gCardEve01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:
@@ -7745,18 +7745,18 @@ entries:
     size: 532
 - name: card_eve02
   format: sprite_sheet
-  palette: gUnk_09618C18
-  symbol: gUnk_093F4278
+  palette: gCardEve02Palette
+  symbol: gCardEve02Tiles
   align: 4
   cell: [32, 32]
   anchor: [16, 12]
   columns: 1
   frames:
-  - symbol: gUnk_093F4264
+  - symbol: gCardEve02Frame0
     pieces:
     - [32x32, -16, -12]
   animations:
-  - symbol: gUnk_093F426E
+  - symbol: gCardEve02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
   us:

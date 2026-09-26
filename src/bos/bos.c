@@ -67,7 +67,7 @@ s32 task_bos_map_1(void) {
 void task_bos_shadow_0(BosShadowWork* work, BtlObj* obj) {
     work->actor = obj;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
 }
 
 s32 task_bos_shadow_1(void) {

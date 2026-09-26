@@ -135,10 +135,10 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
     switch (w->unk_113) {
     case 0:
         w->tiles = AllocObjTiles(0x40, 0);
-        w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+        w->palette = LoadObjPalette(gBStatesPalette, 32);
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->index + 16, 1);
-        SetObjTileSource(w->tiles, gUnk_09320796);
-        AnimInit(w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+        SetObjTileSource(w->tiles, gFEventTiles);
+        AnimInit(w->anim, gFEventAnims, gFEventFrames);
         AnimStart(w->anim, 2, 1);
         w->gfx = (s32)AnimGetGfx(w->anim);
         SetBgPriority(w->bg, 0);
@@ -148,10 +148,10 @@ void func_080A430C(UnkStruct_080A4DCC* w, void* a) {
         break;
     case 2:
         w->tiles = AllocObjTiles(0x40, 0);
-        w->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+        w->palette = LoadObjPalette(gBStatesPalette, 32);
         FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette)->index + 16, 1);
-        SetObjTileSource(w->tiles, gUnk_09320796);
-        AnimInit(w->anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+        SetObjTileSource(w->tiles, gFEventTiles);
+        AnimInit(w->anim, gFEventAnims, gFEventFrames);
         AnimStart(w->anim, 2, 1);
         w->gfx = (s32)AnimGetGfx(w->anim);
         break;
@@ -168,7 +168,7 @@ u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
         pal = &gUnk_050001C0[0x20];
         LoadBgTiles(w->bg, gUnk_0950E2F8, 0x140);
         LoadBgMap(w->bg, gUnk_096112B8, 0x800);
-        LoadPalette(gUnk_09611AB8, pal, 32);
+        LoadPalette(gCard00Palette, pal, 32);
 
         switch ((u32)w->messageDef->positionIndex) {
         case 0:
@@ -208,7 +208,7 @@ u8 func_080A4578(UnkStruct_080A3F5C* w, void* a) {
             w->unk_146[1] = 0;
         }
 
-        w->palette4 = LoadObjPalette(gUnk_09611AB8, 32);
+        w->palette4 = LoadObjPalette(gCard00Palette, 32);
         FadeSetPaletteExcluded(w->palette4->index + 16, 1);
         break;
     }
@@ -285,7 +285,7 @@ u8 func_080A470C(UnkStruct_080A3F5C* w, void* a) {
             w->unk_0C0 = (s32)_08066468(1);
             w->unk_144 = 1;
             w->tiles = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
-            w->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
+            w->palette3 = LoadObjPalette(gCard00Palette, 32);
 #ifdef VERSION_EU
             FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette3)->index + 16, 1);
 #else
@@ -597,7 +597,7 @@ u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
         pal = (void*)0x050001E0;
         LoadBgTiles(w->bg, gUnk_099597E4, 0x140);
         LoadBgMap(w->bg, gUnk_09985F44, 0x800);
-        LoadPalette(gUnk_09611AB8, pal, 32);
+        LoadPalette(gCard00Palette, pal, 32);
         switch ((u32)w->messageDef->positionIndex) {
         case 0:
         case 2:
@@ -627,7 +627,7 @@ u8 func_080A4F14(UnkStruct_080A3F5C* w, void* a) {
             break;
         }
         w->tiles2 = LoadObjTiles(gUnk_093F8C8E, 0xC00);
-        w->palette4 = (UnkStruct_080038C8*)LoadObjPalette(gUnk_09611AB8, 32);
+        w->palette4 = (UnkStruct_080038C8*)LoadObjPalette(gCard00Palette, 32);
         FadeSetPaletteExcluded(w->palette4->index + 16, 1);
         break;
     }
@@ -666,7 +666,7 @@ u8 func_080A5034(UnkStruct_080A3F5C* w, void* a) {
     w->unk_0C0 = (s32)_08066468(1);
     w->unk_144 = 1;
     w->tiles = LoadObjTiles(gUnk_093F7C9C, 0xFC0);
-    w->palette3 = LoadObjPalette(gUnk_09611AB8, 32);
+    w->palette3 = LoadObjPalette(gCard00Palette, 32);
 #ifdef VERSION_EU
     FadeSetPaletteExcluded(((UnkStruct_080038C8*)w->palette3)->index + 16, 1);
 #else

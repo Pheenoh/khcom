@@ -18,6 +18,6 @@ extern void* gUrsulaWork;
 
 extern u16 gUnk_0203C3BC;
 extern u16 gUnk_0203C3C0;
-extern u8 gUnk_08F69BA4[];
+extern u8 gBStatesPalette[];
 
 #endif /* GUARD_GAME_H */

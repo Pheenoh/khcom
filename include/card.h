@@ -129,7 +129,7 @@ typedef struct CardDisplayWork {
 extern const u16 gUnk_0903BFD4[];
 extern const u16 gUnk_0903BFBC[];
 extern u8 gUnk_096148D8[];
-extern u8 gUnk_090A0C86[];
+extern u8 gRiCardF0RedTiles[];
 typedef struct CardListWork {
     ListPool cards;
     struct UnkStruct_0809C534* selectedCard;
@@ -382,7 +382,7 @@ extern u8 gUnk_0815C1C2[];
 extern u8 gUnk_08159E10[];
 extern u8 gUnk_09614418[];
 extern u8 gUnk_09614438[];
-extern u8 gUnk_09320796[];
+extern u8 gFEventTiles[];
 extern u8 gUnk_08F69BE4[];
 
 typedef struct CardMessageArgs {
@@ -1149,8 +1149,8 @@ extern u16 gUnk_09041F70[];
 extern const u32 gUnk_09036210[];
 extern const s16 gUnk_09036278[];
 extern const u8 gUnk_0903628A[];
-extern u8 gUnk_0891ED26[];
-extern u8 gUnk_088E33C2[];
+extern u8 gRikuBt00Tiles[];
+extern u8 gSor1ll51Tiles[];
 extern u8 gUnk_09618D38[];
 extern const s32 gUnk_09033FF4[][2];
 extern const s32 gUnk_09033FA8[];
@@ -1215,9 +1215,9 @@ extern u8 gUnk_09614498[];
 extern u8 gUnk_096144B8[];
 extern u8 gUnk_09614406[];
 extern const Deck gUnk_09034084[];
-extern u8 gUnk_09611AB8[];
-extern u8 gUnk_088B6560[];
-extern u8 gUnk_092EB78A[];
+extern u8 gCard00Palette[];
+extern u8 gSor1ff00Tiles[];
+extern u8 gRikuFf00Tiles[];
 extern u8 gUnk_09614798[];
 extern u8 gUnk_09618C38[];
 extern u8 gUnk_050001A0[];

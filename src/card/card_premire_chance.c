@@ -214,12 +214,12 @@ u8 func_0809C9F4(UnkStruct_0809C9A4* p) {
 void func_0809CA1C(u8* work) {
     if (work[0x54] == 0) {
         *(void**)&work[0x0C] = LoadObjTiles(((void**)*(void**)&work[4])[3], 0x280);
-        *(void**)&work[0x28] = LoadObjPalette(gUnk_09611AB8, 32);
+        *(void**)&work[0x28] = LoadObjPalette(gCard00Palette, 32);
         *(void**)&work[0x08] = LoadObjTiles(((void**)*(void**)&work[0])[1], 0x200);
         *(void**)&work[0x24] = LoadObjPalette(((void**)*(void**)&work[0])[2], 32);
         *(void**)&work[0x10] = LoadObjTiles(gUnk_0905EAE8, 0x1E0);
         *(void**)&work[0x1C] = LoadObjTiles(gUnk_0905ED36, 0x140);
-        *(void**)&work[0x20] = LoadObjPalette(gUnk_08F69BA4, 32);
+        *(void**)&work[0x20] = LoadObjPalette(gBStatesPalette, 32);
         FadeSetPaletteExcluded((*(UnkStruct_080038C8**)&work[0x20])->index + 16, 1);
         FadeSetPaletteExcluded((*(UnkStruct_080038C8**)&work[0x28])->index + 16, 1);
         FadeSetPaletteExcluded((*(UnkStruct_080038C8**)&work[0x24])->index + 16, 1);

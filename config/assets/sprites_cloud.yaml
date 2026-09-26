@@ -35,126 +35,126 @@ objects:
     start: 0x088B149C
     end: 0x088D0360
 entries:
-- name: gUnk_09EDE688
+- name: gCroud00Frames
   record: SpriteTable
-  items: [gUnk_08885B78, gUnk_08885B88, gUnk_08885B98, gUnk_08885BAE, gUnk_08885BC4]
+  items: [gCroud00Frame0, gCroud00Frame1, gCroud00Frame2, gCroud00Frame3, gCroud00Frame4]
   us:
     address: 0x09EDE688
   jp:
     address: 0x09EB6104
   eu:
     address: 0x09F592E0
-- name: gUnk_09EDE69C
+- name: gCroud00Anims
   record: AnimTable
-  items: [gUnk_08885BDA, gUnk_08885BE4, gUnk_08885BEE, gUnk_08885BF8]
+  items: [gCroud00Anim0, gCroud00Anim1, gCroud00Anim2, gCroud00Anim3]
   us:
     address: 0x09EDE69C
   jp:
     address: 0x09EB6118
   eu:
     address: 0x09F592F4
-- name: gUnk_09EDE6AC
+- name: gCroud01Frames
   record: SpriteTable
-  items: [gUnk_08888BC8, gUnk_08888BDE, gUnk_08888BEE, gUnk_08888C04, gUnk_08888C20, gUnk_08888C36, gUnk_08888C52, gUnk_08888C7A, gUnk_08888C96, gUnk_08888CAC]
+  items: [gCroud01Frame0, gCroud01Frame1, gCroud01Frame2, gCroud01Frame3, gCroud01Frame4, gCroud01Frame5, gCroud01Frame6, gCroud01Frame7, gCroud01Frame8, gCroud01Frame9]
   us:
     address: 0x09EDE6AC
   jp:
     address: 0x09EB6128
   eu:
     address: 0x09F59304
-- name: gUnk_09EDE6D4
+- name: gCroud01Anims
   record: AnimTable
-  items: [gUnk_08888CC2, gUnk_08888CF0, gUnk_08888D1E]
+  items: [gCroud01Anim0, gCroud01Anim1, gCroud01Anim2]
   us:
     address: 0x09EDE6D4
   jp:
     address: 0x09EB6150
   eu:
     address: 0x09F5932C
-- name: gUnk_09EDE6E0
+- name: gCroud02Frames
   record: SpriteTable
-  items: [gUnk_0888F0C4, gUnk_0888F0DA, gUnk_0888F0FC, gUnk_0888F112, gUnk_0888F128, gUnk_0888F138, gUnk_0888F14E, gUnk_0888F164, gUnk_0888F180, gUnk_0888F19C, gUnk_0888F1B2]
+  items: [gCroud02Frame0, gCroud02Frame1, gCroud02Frame2, gCroud02Frame3, gCroud02Frame4, gCroud02Frame5, gCroud02Frame6, gCroud02Frame7, gCroud02Frame8, gCroud02Frame9, gCroud02Frame10]
   us:
     address: 0x09EDE6E0
   jp:
     address: 0x09EB615C
   eu:
     address: 0x09F59338
-- name: gUnk_09EDE70C
+- name: gCroud02Anims
   record: AnimTable
-  items: [gUnk_0888F1C8, gUnk_0888F1FA]
+  items: [gCroud02Anim0, gCroud02Anim1]
   us:
     address: 0x09EDE70C
   jp:
     address: 0x09EB6188
   eu:
     address: 0x09F59364
-- name: gUnk_09EDE714
+- name: gCroud10Frames
   record: SpriteTable
-  items: [gUnk_08895A38, gUnk_08895A48, gUnk_08895A58]
+  items: [gCroud10Frame0, gCroud10Frame1, gCroud10Frame2]
   us:
     address: 0x09EDE714
   jp:
     address: 0x09EB6190
   eu:
     address: 0x09F5936C
-- name: gUnk_09EDE720
+- name: gCroud10Anims
   record: AnimTable
-  items: [gUnk_08895A68]
+  items: [gCroud10Anim0]
   us:
     address: 0x09EDE720
   jp:
     address: 0x09EB619C
   eu:
     address: 0x09F59378
-- name: gUnk_09EDE724
+- name: gCroud11Frames
   record: SpriteTable
-  items: [gUnk_088973C0, gUnk_088973DC, gUnk_088973F8, gUnk_0889740E, gUnk_08897424, gUnk_08897440, gUnk_08897456]
+  items: [gCroud11Frame0, gCroud11Frame1, gCroud11Frame2, gCroud11Frame3, gCroud11Frame4, gCroud11Frame5, gCroud11Frame6]
   us:
     address: 0x09EDE724
   jp:
     address: 0x09EB61A0
   eu:
     address: 0x09F5937C
-- name: gUnk_09EDE740
+- name: gCroud11Anims
   record: AnimTable
-  items: [gUnk_08897472]
+  items: [gCroud11Anim0]
   us:
     address: 0x09EDE740
   jp:
     address: 0x09EB61BC
   eu:
     address: 0x09F59398
-- name: gUnk_09EDE744
+- name: gCroud12Frames
   record: SpriteTable
-  items: [gUnk_0889B0D4, gUnk_0889B0F0, gUnk_0889B106, gUnk_0889B11C, gUnk_0889B138, gUnk_0889B154, gUnk_0889B164, gUnk_0889B174]
+  items: [gCroud12Frame0, gCroud12Frame1, gCroud12Frame2, gCroud12Frame3, gCroud12Frame4, gCroud12Frame5, gCroud12Frame6, gCroud12Frame7]
   us:
     address: 0x09EDE744
   jp:
     address: 0x09EB61C0
   eu:
     address: 0x09F5939C
-- name: gUnk_09EDE764
+- name: gCroud12Anims
   record: AnimTable
-  items: [gUnk_0889B17E]
+  items: [gCroud12Anim0]
   us:
     address: 0x09EDE764
   jp:
     address: 0x09EB61E0
   eu:
     address: 0x09F593BC
-- name: gUnk_09EDE768
+- name: gCroud13Frames
   record: SpriteTable
-  items: [gUnk_0889F624, gUnk_0889F646, gUnk_0889F656, gUnk_0889F67E, gUnk_0889F694, gUnk_0889F6AA, gUnk_0889F6CC, gUnk_0889F6E8, gUnk_0889F6FE]
+  items: [gCroud13Frame0, gCroud13Frame1, gCroud13Frame2, gCroud13Frame3, gCroud13Frame4, gCroud13Frame5, gCroud13Frame6, gCroud13Frame7, gCroud13Frame8]
   us:
     address: 0x09EDE768
   jp:
     address: 0x09EB61E4
   eu:
     address: 0x09F593C0
-- name: gUnk_09EDE78C
+- name: gCroud13Anims
   record: AnimTable
-  items: [gUnk_0889F70E]
+  items: [gCroud13Anim0]
   us:
     address: 0x09EDE78C
   jp:
@@ -164,46 +164,46 @@ entries:
 - name: croud_00
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_08885C06
+  symbol: gCroud00Tiles
   align: 4
   cell: [111, 113]
   anchor: [68, 93]
   columns: 5
   frames:
-  - symbol: gUnk_08885B78
+  - symbol: gCroud00Frame0
     pieces:
     - [64x64, -26, -62]
     - [32x16, -18, -6]
-  - symbol: gUnk_08885B88
+  - symbol: gCroud00Frame1
     pieces:
     - [64x64, -21, -62]
     - [32x16, -13, -6]
-  - symbol: gUnk_08885B98
+  - symbol: gCroud00Frame2
     pieces:
     - [64x64, -32, -63]
     - [32x16, -8, -7]
     - [16x32, -24, -93, {layer: 1}]
-  - symbol: gUnk_08885BAE
+  - symbol: gCroud00Frame3
     pieces:
     - [64x64, -37, -44]
     - [32x32, -61, -36]
     - [16x8, 19, -4]
-  - symbol: gUnk_08885BC4
+  - symbol: gCroud00Frame4
     pieces:
     - [64x64, -44, -45]
     - [32x16, -68, -13]
     - [32x8, 4, -5]
   animations:
-  - symbol: gUnk_08885BDA
+  - symbol: gCroud00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_08885BE4
+  - symbol: gCroud00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 4]]
-  - symbol: gUnk_08885BEE
+  - symbol: gCroud00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[2, 4]]
-  - symbol: gUnk_08885BF8
+  - symbol: gCroud00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [4, 10]]
   us:
@@ -218,44 +218,44 @@ entries:
 - name: croud_01
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_08888D44
+  symbol: gCroud01Tiles
   align: 4
   cell: [128, 101]
   anchor: [66, 86]
   columns: 8
   frames:
-  - symbol: gUnk_08888BC8
+  - symbol: gCroud01Frame0
     pieces:
     - [64x64, -27, -60]
     - [32x32, -58, -52]
     - [16x8, 5, 3]
-  - symbol: gUnk_08888BDE
+  - symbol: gCroud01Frame1
     pieces:
     - [64x64, -27, -54]
     - [16x16, -42, -16]
-  - symbol: gUnk_08888BEE
+  - symbol: gCroud01Frame2
     pieces:
     - [64x64, -10, -54]
     - [16x8, 6, -61]
     - [8x16, -17, -14]
-  - symbol: gUnk_08888C04
+  - symbol: gCroud01Frame3
     pieces:
     - [64x64, -10, -59]
     - [16x16, 46, -35]
     - [8x16, -17, -11]
     - [16x8, 6, 4]
-  - symbol: gUnk_08888C20
+  - symbol: gCroud01Frame4
     pieces:
     - [64x64, -26, -62]
     - [16x16, 6, -6]
     - [64x32, -19, -86]
-  - symbol: gUnk_08888C36
+  - symbol: gCroud01Frame5
     pieces:
     - [64x64, -40, -61, {layer: 1}]
     - [32x64, -66, -73, {layer: 2}]
     - [8x8, -35, -73]
     - [16x8, 8, 2]
-  - symbol: gUnk_08888C52
+  - symbol: gCroud01Frame6
     pieces:
     - [64x32, -65, -55, {layer: 1}]
     - [64x32, -65, -24]
@@ -263,30 +263,30 @@ entries:
     - [16x8, 7, 7]
     - [16x8, -2, -31]
     - [16x8, -22, -62]
-  - symbol: gUnk_08888C7A
+  - symbol: gCroud01Frame7
     pieces:
     - [64x64, -40, -52]
     - [16x16, 16, -12]
     - [32x16, -64, -4]
     - [16x16, -23, -67]
-  - symbol: gUnk_08888C96
+  - symbol: gCroud01Frame8
     pieces:
     - [64x64, -25, -59]
     - [16x16, 7, -3]
     - [32x8, -18, -66]
-  - symbol: gUnk_08888CAC
+  - symbol: gCroud01Frame9
     pieces:
     - [64x64, -24, -59]
     - [16x16, 8, -3]
     - [8x8, -31, -19]
   animations:
-  - symbol: gUnk_08888CC2
+  - symbol: gCroud01Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 2], [1, 3], [2, 6], [3, 14], [4, 2], [5, 3], [6, 6], [7, 12], [8, 6], [9, 4]]
-  - symbol: gUnk_08888CF0
+  - symbol: gCroud01Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 2], [1, 3], [2, 5], [3, 14], [4, 2], [5, 2], [6, 2], [7, 16], [8, 6], [9, 4]]
-  - symbol: gUnk_08888D1E
+  - symbol: gCroud01Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 2], [1, 3], [2, 5], [3, 14], [4, 2], [5, 2], [6, 2], [7, 16]]
   us:
@@ -301,75 +301,75 @@ entries:
 - name: croud_02
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_0888F218
+  symbol: gCroud02Tiles
   align: 4
   cell: [101, 113]
   anchor: [59, 94]
   columns: 8
   frames:
-  - symbol: gUnk_0888F0C4
+  - symbol: gCroud02Frame0
     pieces:
     - [64x64, -44, -52]
     - [16x8, 4, 11]
     - [16x32, -59, -36]
-  - symbol: gUnk_0888F0DA
+  - symbol: gCroud02Frame1
     pieces:
     - [64x64, -35, -61]
     - [16x16, 5, -5]
     - [32x16, -50, -76, {layer: 1}]
     - [32x16, -19, -76]
     - [16x32, -50, -62, {layer: 2}]
-  - symbol: gUnk_0888F0FC
+  - symbol: gCroud02Frame2
     pieces:
     - [64x32, -37, -27]
     - [64x64, -42, -90]
     - [16x16, 3, -3]
-  - symbol: gUnk_0888F112
+  - symbol: gCroud02Frame3
     pieces:
     - [64x64, -37, -59]
     - [16x32, 3, -90, {layer: 1}]
     - [16x16, 3, -3]
-  - symbol: gUnk_0888F128
+  - symbol: gCroud02Frame4
     pieces:
     - [64x64, -39, -61]
     - [32x16, -7, -5]
-  - symbol: gUnk_0888F138
+  - symbol: gCroud02Frame5
     pieces:
     - [64x64, -34, -54, {layer: 1}]
     - [32x32, -58, -30, {layer: 2}]
     - [16x8, 22, -22]
-  - symbol: gUnk_0888F14E
+  - symbol: gCroud02Frame6
     pieces:
     - [64x64, -33, -85]
     - [32x32, -9, -22]
     - [16x16, 21, -22, {layer: 1}]
-  - symbol: gUnk_0888F164
+  - symbol: gCroud02Frame7
     pieces:
     - [16x16, 22, -22]
     - [32x64, -9, -54]
     - [32x16, -1, -62]
     - [16x32, 15, -86]
-  - symbol: gUnk_0888F180
+  - symbol: gCroud02Frame8
     pieces:
     - [32x64, -12, -63]
     - [32x16, -12, -7]
     - [16x32, -4, -94, {layer: 1}]
     - [16x16, 4, -71, {layer: 2}]
-  - symbol: gUnk_0888F19C
+  - symbol: gCroud02Frame9
     pieces:
     - [64x64, -29, -62]
     - [8x8, 34, -54]
     - [32x8, -5, 1]
-  - symbol: gUnk_0888F1B2
+  - symbol: gCroud02Frame10
     pieces:
     - [64x64, -27, -60]
     - [16x16, 5, -4]
     - [32x32, -58, -52]
   animations:
-  - symbol: gUnk_0888F1C8
+  - symbol: gCroud02Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 2], [1, 3], [2, 6], [3, 10], [4, 4], [5, 3], [6, 6], [7, 10], [8, 5], [9, 5], [10, 3]]
-  - symbol: gUnk_0888F1FA
+  - symbol: gCroud02Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 3], [1, 3], [2, 3], [3, 9], [8, 3], [9, 3]]
   us:
@@ -384,26 +384,26 @@ entries:
 - name: croud_10
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_08895A7E
+  symbol: gCroud10Tiles
   align: 4
   cell: [72, 64]
   anchor: [28, 37]
   columns: 3
   frames:
-  - symbol: gUnk_08895A38
+  - symbol: gCroud10Frame0
     pieces:
     - [64x64, -28, -37]
     - [16x16, 28, -29]
-  - symbol: gUnk_08895A48
+  - symbol: gCroud10Frame1
     pieces:
     - [64x64, -28, -37]
     - [16x16, 28, -29]
-  - symbol: gUnk_08895A58
+  - symbol: gCroud10Frame2
     pieces:
     - [64x64, -28, -37]
     - [16x8, 28, -29]
   animations:
-  - symbol: gUnk_08895A68
+  - symbol: gCroud10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [2, 2], [1, 4], [2, 2]]
   us:
@@ -418,53 +418,53 @@ entries:
 - name: croud_11
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_08897494
+  symbol: gCroud11Tiles
   align: 4
   cell: [121, 114]
   anchor: [63, 86]
   columns: 7
   frames:
-  - symbol: gUnk_088973C0
+  - symbol: gCroud11Frame0
     pieces:
     - [64x32, -28, -35]
     - [16x16, 28, -27]
     - [32x16, -4, -4]
     - [8x8, -17, -4]
-  - symbol: gUnk_088973DC
+  - symbol: gCroud11Frame1
     pieces:
     - [64x32, -34, -45]
     - [32x32, -10, -21]
     - [16x16, 22, -21]
     - [8x8, 29, -42]
-  - symbol: gUnk_088973F8
+  - symbol: gCroud11Frame2
     pieces:
     - [64x64, -21, -56]
     - [16x16, 42, -56]
     - [32x8, -13, 7]
-  - symbol: gUnk_0889740E
+  - symbol: gCroud11Frame3
     pieces:
     - [64x64, -24, -48, {layer: 1}]
     - [64x32, -24, -79, {layer: 2}]
     - [32x8, -8, -86, {layer: 1}]
-  - symbol: gUnk_08897424
+  - symbol: gCroud11Frame4
     pieces:
     - [64x64, -63, -51]
     - [32x32, 0, -27]
     - [32x8, -8, 4, {layer: 1}]
     - [16x16, -51, -66]
-  - symbol: gUnk_08897440
+  - symbol: gCroud11Frame5
     pieces:
     - [64x64, -38, -36]
     - [32x32, -62, -12]
     - [8x16, 25, -20]
-  - symbol: gUnk_08897456
+  - symbol: gCroud11Frame6
     pieces:
     - [64x32, -33, -35]
     - [32x16, -9, -11]
     - [8x8, -1, 4]
     - [8x8, 22, -4]
   animations:
-  - symbol: gUnk_08897472
+  - symbol: gCroud11Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 9], [3, 3], [4, 6], [5, 4], [6, 4]]
   us:
@@ -479,53 +479,53 @@ entries:
 - name: croud_12
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_0889B1A4
+  symbol: gCroud12Tiles
   align: 4
   cell: [117, 108]
   anchor: [62, 64]
   columns: 8
   frames:
-  - symbol: gUnk_0889B0D4
+  - symbol: gCroud12Frame0
     pieces:
     - [64x32, -28, -37]
     - [16x16, 28, -29]
     - [16x16, -20, -13]
     - [32x16, -4, -6, {layer: 1}]
-  - symbol: gUnk_0889B0F0
+  - symbol: gCroud12Frame1
     pieces:
     - [64x64, -42, -39]
     - [8x32, -49, -39]
     - [8x8, 21, -23]
-  - symbol: gUnk_0889B106
+  - symbol: gCroud12Frame2
     pieces:
     - [64x64, -38, -29]
     - [16x8, 18, -21]
     - [32x64, -62, -21]
-  - symbol: gUnk_0889B11C
+  - symbol: gCroud12Frame3
     pieces:
     - [64x64, -23, -27]
     - [32x8, -22, 36]
     - [32x8, 9, 36]
     - [32x8, -53, 36]
-  - symbol: gUnk_0889B138
+  - symbol: gCroud12Frame4
     pieces:
     - [64x64, -24, -34]
     - [16x32, 39, -10]
     - [32x8, -8, 29]
     - [8x8, -15, 29, {layer: 1}]
-  - symbol: gUnk_0889B154
+  - symbol: gCroud12Frame5
     pieces:
     - [64x32, -23, -39]
     - [32x32, -15, -15]
-  - symbol: gUnk_0889B164
+  - symbol: gCroud12Frame6
     pieces:
     - [64x64, -30, -49, {layer: 1}]
     - [16x16, -30, -64, {layer: 2}]
-  - symbol: gUnk_0889B174
+  - symbol: gCroud12Frame7
     pieces:
     - [64x64, -28, -54]
   animations:
-  - symbol: gUnk_0889B17E
+  - symbol: gCroud12Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 3], [2, 3], [3, 4], [4, 5], [5, 8], [6, 5], [7, 4]]
   us:
@@ -540,24 +540,24 @@ entries:
 - name: croud_13
   format: sprite_sheet
   palette: croud
-  symbol: gUnk_0889F73C
+  symbol: gCroud13Tiles
   align: 4
   cell: [120, 104]
   anchor: [70, 78]
   columns: 8
   frames:
-  - symbol: gUnk_0889F624
+  - symbol: gCroud13Frame0
     pieces:
     - [16x16, 28, -21]
     - [64x32, -28, -21]
     - [8x8, 20, -28]
     - [32x8, -28, -28]
     - [32x8, -4, 10]
-  - symbol: gUnk_0889F646
+  - symbol: gCroud13Frame1
     pieces:
     - [64x64, -27, -45]
     - [32x16, -11, -60]
-  - symbol: gUnk_0889F656
+  - symbol: gCroud13Frame2
     pieces:
     - [64x32, -26, -32]
     - [32x32, -10, -8]
@@ -565,40 +565,40 @@ entries:
     - [8x16, 37, -32]
     - [16x16, -41, -24, {layer: 1}]
     - [8x8, -23, -39]
-  - symbol: gUnk_0889F67E
+  - symbol: gCroud13Frame3
     pieces:
     - [64x64, -39, -38]
     - [32x32, 17, -38]
     - [32x32, -70, -22, {layer: 1}]
-  - symbol: gUnk_0889F694
+  - symbol: gCroud13Frame4
     pieces:
     - [64x32, -63, -51]
     - [32x64, -15, -43]
     - [32x32, 16, -43]
-  - symbol: gUnk_0889F6AA
+  - symbol: gCroud13Frame5
     pieces:
     - [64x64, -15, -53, {layer: 1}]
     - [32x16, -15, 3]
     - [16x16, -30, -54, {layer: 2}]
     - [32x16, -15, -61, {layer: 3}]
     - [32x16, 17, -61, {layer: 2}]
-  - symbol: gUnk_0889F6CC
+  - symbol: gCroud13Frame6
     pieces:
     - [64x64, -14, -52]
     - [16x16, -6, 4]
     - [32x8, 10, -59]
     - [8x8, -21, -12]
-  - symbol: gUnk_0889F6E8
+  - symbol: gCroud13Frame7
     pieces:
     - [64x64, -24, -47]
     - [8x8, -1, 16]
     - [32x32, -24, -78]
-  - symbol: gUnk_0889F6FE
+  - symbol: gCroud13Frame8
     pieces:
     - [64x64, -24, -38]
     - [8x16, -31, -30]
   animations:
-  - symbol: gUnk_0889F70E
+  - symbol: gCroud13Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4], [1, 4], [2, 3], [3, 3], [4, 3], [5, 6], [6, 6], [7, 3], [8, 3], [0, 2]]
   us:

@@ -950,7 +950,7 @@ void func_080A6FAC(UnkStruct_080A6FAC* w) {
         w->tiles = LoadObjTiles(gUnk_08F709B0[def->unk_2A].tiles, 768);
         w->tiles2 = LoadObjTiles(def->tiles, 512);
         w->palette2 = LoadObjPalette(def->palette, 32);
-        w->palette = LoadObjPalette(gUnk_09611AB8, 32);
+        w->palette = LoadObjPalette(gCard00Palette, 32);
         w->gfx2 = gUnk_08F709B0[def->unk_2A].gfx;
         w->gfx3 = def->gfx;
 

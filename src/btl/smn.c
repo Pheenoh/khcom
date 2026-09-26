@@ -9,44 +9,44 @@
 #include "sprites_smn.h"
 
 const AnimDef gSmnCloudAnimDefs[8] = {
-    { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 0, { 0, 0, 0 } },
-    { gUnk_09EDE6E0, gUnk_09EDE70C, gUnk_0888F218, 0, { 0, 0, 0 } },
-    { gUnk_09EDE714, gUnk_09EDE720, gUnk_08895A7E, 0, { 0, 0, 0 } },
-    { gUnk_09EDE724, gUnk_09EDE740, gUnk_08897494, 0, { 0, 0, 0 } },
-    { gUnk_09EDE744, gUnk_09EDE764, gUnk_0889B1A4, 0, { 0, 0, 0 } },
-    { gUnk_09EDE768, gUnk_09EDE78C, gUnk_0889F73C, 0, { 0, 0, 0 } },
-    { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 1, { 0, 0, 0 } },
-    { gUnk_09EDE6E0, gUnk_09EDE70C, gUnk_0888F218, 1, { 0, 0, 0 } },
+    { gCroud01Frames, gCroud01Anims, gCroud01Tiles, 0, { 0, 0, 0 } },
+    { gCroud02Frames, gCroud02Anims, gCroud02Tiles, 0, { 0, 0, 0 } },
+    { gCroud10Frames, gCroud10Anims, gCroud10Tiles, 0, { 0, 0, 0 } },
+    { gCroud11Frames, gCroud11Anims, gCroud11Tiles, 0, { 0, 0, 0 } },
+    { gCroud12Frames, gCroud12Anims, gCroud12Tiles, 0, { 0, 0, 0 } },
+    { gCroud13Frames, gCroud13Anims, gCroud13Tiles, 0, { 0, 0, 0 } },
+    { gCroud01Frames, gCroud01Anims, gCroud01Tiles, 1, { 0, 0, 0 } },
+    { gCroud02Frames, gCroud02Anims, gCroud02Tiles, 1, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescSmnCloud = { "task_smn_cloud", task_smn_cloud_0, task_smn_cloud_1, task_smn_cloud_2, task_smn_cloud_3, 0x180 };
 
-const AnimDef gSmnBambiAnimDef = { gUnk_09EDE790, gUnk_09EDE7B0, gUnk_088A4ADE, 0, { 0, 0, 0 } };
+const AnimDef gSmnBambiAnimDef = { gBanb00Frames, gBanb00Anims, gBanb00Tiles, 0, { 0, 0, 0 } };
 
 TaskDesc gTaskDescSmnBambi = { "task_smn_bambi", task_smn_bambi_0, task_smn_bambi_1, task_smn_bambi_2, task_smn_bambi_3, 0x178 };
 
 const AnimDef gSmnTinkAnimDefs[3] = {
-    { gUnk_09EEF628, gUnk_09EEF65C, gUnk_092D2EB6, 1, { 0, 0, 0 } },
-    { gUnk_09EEF628, gUnk_09EEF65C, gUnk_092D2EB6, 2, { 0, 0, 0 } },
-    { gUnk_09EEF628, gUnk_09EEF65C, gUnk_092D2EB6, 3, { 0, 0, 0 } },
+    { gTinkF00Frames, gTinkF00Anims, gTinkF00Tiles, 1, { 0, 0, 0 } },
+    { gTinkF00Frames, gTinkF00Anims, gTinkF00Tiles, 2, { 0, 0, 0 } },
+    { gTinkF00Frames, gTinkF00Anims, gTinkF00Tiles, 3, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescSmnTink = { "task_smn_tink", task_smn_tink_0, task_smn_tink_1, task_smn_tink_2, task_smn_tink_3, 0x180 };
 
 TaskDesc gTaskDescSmnTinkeff = { "task_smn_tinkeff", task_smn_tinkeff_0, task_smn_tinkeff_1, task_smn_tinkeff_2, task_smn_tinkeff_3, 0x30 };
 
-const AnimDef gSmnSimbaAnimDef = { gUnk_09EDE7F0, gUnk_09EDE810, gUnk_088A6022, 0, { 0, 0, 0 } };
+const AnimDef gSmnSimbaAnimDef = { gShinba10Frames, gShinba10Anims, gShinba10Tiles, 0, { 0, 0, 0 } };
 
 TaskDesc gTaskDescSmnSimba = { "task_smn_simba", task_smn_simba_0, task_smn_simba_1, task_smn_simba_2, task_smn_simba_3, 0x158 };
 
 const AnimDef gSmnMushuAnimDefs[4] = {
-    { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 0, { 0, 0, 0 } },
-    { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 1, { 0, 0, 0 } },
-    { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 2, { 0, 0, 0 } },
-    { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 3, { 0, 0, 0 } },
+    { gMushu10Frames, gMushu10Anims, gMushu10Tiles, 0, { 0, 0, 0 } },
+    { gMushu10Frames, gMushu10Anims, gMushu10Tiles, 1, { 0, 0, 0 } },
+    { gMushu10Frames, gMushu10Anims, gMushu10Tiles, 2, { 0, 0, 0 } },
+    { gMushu10Frames, gMushu10Anims, gMushu10Tiles, 3, { 0, 0, 0 } },
 };
 
-const AnimDef gUnk_0813EABC = { gUnk_09EDE814, gUnk_09EDE834, gUnk_088AAB32, 4, { 0, 0, 0 } };
+const AnimDef gUnk_0813EABC = { gMushu10Frames, gMushu10Anims, gMushu10Tiles, 4, { 0, 0, 0 } };
 
 TaskDesc gTaskDescSmnMushu = { "task_smn_mushu", task_smn_mushu_0, task_smn_mushu_1, task_smn_mushu_2, task_smn_mushu_3, 0x15C };
 
@@ -59,16 +59,16 @@ const AnimDef gSmnDumboAnimDefs[3] = {
 TaskDesc gTaskDescSmnDumbo = { "task_smn_dumbo", task_smn_dumbo_0, task_smn_dumbo_1, task_smn_dumbo_2, task_smn_dumbo_3, 0x158 };
 
 const AnimDef gSmnGenieAnimDefs[2] = {
-    { gUnk_09EDE878, gUnk_09EDE898, gUnk_088B087C, 0, { 0, 0, 0 } },
-    { gUnk_09EDE878, gUnk_09EDE898, gUnk_088B087C, 1, { 0, 0, 0 } },
+    { gGenie00Frames, gGenie00Anims, gGenie00Tiles, 0, { 0, 0, 0 } },
+    { gGenie00Frames, gGenie00Anims, gGenie00Tiles, 1, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescSmnGenie = { "task_smn_genie", task_smn_genie_0, task_smn_genie_1, task_smn_genie_2, task_smn_genie_3, 0x168 };
 
 const AnimDef gSmnKingAnimDefs[3] = {
-    { gUnk_09EDE8A0, gUnk_09EDE8C0, gUnk_088B4A9C, 0, { 0, 0, 0 } },
-    { gUnk_09EDE8A0, gUnk_09EDE8C0, gUnk_088B4A9C, 1, { 0, 0, 0 } },
-    { gUnk_09EDE8A0, gUnk_09EDE8C0, gUnk_088B4A9C, 2, { 0, 0, 0 } },
+    { gMickey10Frames, gMickey10Anims, gMickey10Tiles, 0, { 0, 0, 0 } },
+    { gMickey10Frames, gMickey10Anims, gMickey10Tiles, 1, { 0, 0, 0 } },
+    { gMickey10Frames, gMickey10Anims, gMickey10Tiles, 2, { 0, 0, 0 } },
 };
 
 void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
@@ -101,7 +101,7 @@ void task_smn_cloud_0(SmnCloudWork* work, SmnArgs* args) {
     }
 
     work->unk_162 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_08F6DC24, 32);
+    work->palette = LoadObjPalette(gCroudPalette, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnCloudAnimDefs, &work->anim, 0, 0, work->tiles);
@@ -551,7 +551,7 @@ void task_smn_bambi_0(SmnBambiWork* work, SmnArgs* args) {
     }
 
     work->unk_162 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09617FF8, 32);
+    work->palette = LoadObjPalette(gBanbPalette, 32);
     work->unk_15C = 0;
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(&gSmnBambiAnimDef, &work->anim, 0, 0, work->tiles);
@@ -884,7 +884,7 @@ void task_smn_tink_0(SmnTinkWork* work, SmnArgs* args) {
     }
 
     work->unk_152 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09618098, 32);
+    work->palette = LoadObjPalette(gTinkPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnTinkAnimDefs, &work->anim, 0, 1, work->tiles);
     work->state = 0;
@@ -1192,7 +1192,7 @@ void task_smn_tinkeff_0(SmnTinkeffWork* work, BtlObj* args) {
     work->z = args->z;
     work->vz = (u16)(GetRandom() % 0xE8) + 0x4C;
     work->tiles = LoadObjTiles(gUnk_088A5D7A, 0x200);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
     AnimInit(&work->anim, gUnk_09EDE7E4, gUnk_09EDE7B4);
 
     switch ((u16)(GetRandom() % 3)) {
@@ -1265,7 +1265,7 @@ void task_smn_simba_0(SmnSimbaWork* work, SmnArgs* args) {
     }
 
     work->unk_154 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09618018, 32);
+    work->palette = LoadObjPalette(gShinbaPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(&gSmnSimbaAnimDef, &work->anim, 0, 0, work->tiles);
     work->unk_034 = 0;
@@ -1502,7 +1502,7 @@ void task_smn_mushu_0(SmnMushuWork* work, SmnArgs* args) {
     }
 
     work->unk_152 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09618038, 32);
+    work->palette = LoadObjPalette(gMushuPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnMushuAnimDefs, &work->anim, 0, 1, work->tiles);
     work->state = 0;
@@ -1755,7 +1755,7 @@ void task_smn_dumbo_0(SmnDumboWork* work, SmnArgs* args) {
     }
 
     work->unk_154 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09617F98, 32);
+    work->palette = LoadObjPalette(gDamboPalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnDumboAnimDefs, &work->anim, 0, 0, work->tiles);
     work->state = 0;
@@ -1961,7 +1961,7 @@ void task_smn_genie_0(SmnGenieWork* work, SmnArgs* args) {
     body->z = obj->unk_01C - 0x2800;
     body->unk_010 = obj->unk_01C;
     work->unk_150 = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_09618298, 32);
+    work->palette = LoadObjPalette(gGeniePalette, 32);
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnGenieAnimDefs, &work->anim, 0, 0, work->tiles);
     work->state = 0;
@@ -2381,7 +2381,7 @@ void task_smn_king_0(SmnKingWork* work, SmnArgs* args) {
     body->unk_010 = 0;
     body->flags = obj->flags & 4;
     work->unk_15C = args->unk_00;
-    work->palette = LoadObjPalette(gUnk_096183F8, 32);
+    work->palette = LoadObjPalette(gMickeyPalette, 32);
     work->unk_158 = 0;
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gSmnKingAnimDefs, &work->anim, 0, 0, work->tiles);

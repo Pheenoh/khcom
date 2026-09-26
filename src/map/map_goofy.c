@@ -63,9 +63,9 @@ void Task_MapGoofy_0(MapGoofyWork* w) {
     e->unk_30 = 2;
     w->unk_0C1 = 1;
     w->update = func_080F5F88;
-    w->tiles = AllocObjTiles(0x400, gUnk_091ABDB8);
-    w->palette = LoadObjPalette(gUnk_08F68384, 32);
-    AnimInit(&w->anim, gUnk_09EEE1CC, gUnk_09EEE1C8);
+    w->tiles = AllocObjTiles(0x400, gGoofyFl00Tiles);
+    w->palette = LoadObjPalette(gGoofyPalette, 32);
+    AnimInit(&w->anim, gGoofyFl00Anims, gGoofyFl00Frames);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
     ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
@@ -180,9 +180,9 @@ void Task_MapNamine_0(MapNamineWork* w) {
     w->unk_0C0 = gUnk_0203C590.unk_00 != 23;
     w->unk_0C2 = 1;
     w->update = func_080F62B0;
-    w->tiles = AllocObjTiles(0x300, gUnk_093E1EE0);
-    w->palette = LoadObjPalette(gUnk_096184D8, 32);
-    AnimInit(&w->anim, gUnk_09EF0D64, gUnk_09EF0D48);
+    w->tiles = AllocObjTiles(0x300, gNamiF00Tiles);
+    w->palette = LoadObjPalette(gNaminePalette, 32);
+    AnimInit(&w->anim, gNamiF00Anims, gNamiF00Frames);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(w->collider, 4, 16, 48);
     ColliderSetPosition(w->collider, p->unk_00.x, p->unk_00.y, p->unk_00.z);
@@ -345,9 +345,9 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
     switch (gUnk_0203C590.unk_00) {
     case 27:
         w->update = func_080F65EC;
-        w->tiles = AllocObjTiles(0x680, gUnk_0937E90A);
-        w->palette = LoadObjPalette(gUnk_09618338, 32);
-        AnimInit(&w->anim, gUnk_09EF04D8, gUnk_09EF04D4);
+        w->tiles = AllocObjTiles(0x680, gNiseFl00Tiles);
+        w->palette = LoadObjPalette(gNiserikuPalette, 32);
+        AnimInit(&w->anim, gNiseFl00Anims, gNiseFl00Frames);
         AnimStart(&w->anim, 0, 1);
         ColliderInit(&w->collider, 4, 16, 48);
         ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
@@ -355,9 +355,9 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
         break;
     case 23:
         w->update = func_080F6668;
-        w->tiles = AllocObjTiles(0x320, gUnk_0938044A);
-        w->palette = LoadObjPalette(gUnk_09618338, 32);
-        AnimInit(&w->anim, gUnk_09EF0510, gUnk_09EF04FC);
+        w->tiles = AllocObjTiles(0x320, gNiserikuHizaFTiles);
+        w->palette = LoadObjPalette(gNiserikuPalette, 32);
+        AnimInit(&w->anim, gNiserikuHizaFAnims, gNiserikuHizaFFrames);
         AnimStart(&w->anim, 0, 1);
         ColliderInit(&w->collider, 4, 16, 48);
         ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
@@ -368,9 +368,9 @@ void Task_MapNiseriku_0(MapNiserikuWork* w) {
     case 26:
     default:
         w->update = 0;
-        w->tiles = AllocObjTiles(0x300, gUnk_0938D282);
-        w->palette = LoadObjPalette(gUnk_09618338, 32);
-        AnimInit(&w->anim, gUnk_09EF0628, gUnk_09EF060C);
+        w->tiles = AllocObjTiles(0x300, gNiserikuDownFTiles);
+        w->palette = LoadObjPalette(gNiserikuPalette, 32);
+        AnimInit(&w->anim, gNiserikuDownFAnims, gNiserikuDownFFrames);
         AnimStart(&w->anim, 1, 1);
         ColliderInit(&w->collider, 4, 36, 48);
         ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
@@ -479,9 +479,9 @@ void Task_MapMickey_0(MapMickeyWork* w) {
     e->unk_30 = 2;
     w->unk_0C1 = 1;
     w->update = func_080F6A60;
-    w->tiles = AllocObjTiles(0x300, gUnk_093A5E10);
-    w->palette = LoadObjPalette(gUnk_096183F8, 32);
-    AnimInit(&w->anim, gUnk_09EF0824, gUnk_09EF0820);
+    w->tiles = AllocObjTiles(0x300, gMickeyFl00Tiles);
+    w->palette = LoadObjPalette(gMickeyPalette, 32);
+    AnimInit(&w->anim, gMickeyFl00Anims, gMickeyFl00Frames);
     AnimStart(&w->anim, 0, 1);
     ColliderInit(&w->collider, 4, 16, 48);
     ColliderSetPosition(&w->collider, e->unk_00.x, e->unk_00.y, e->unk_00.z);
@@ -654,10 +654,10 @@ void func_080F7024(MapTutorialWork* w) {
             v = 1;
         }
         w->unk_0C2 = v;
-        w->tiles = AllocObjTiles(0x400, gUnk_0895EECC);
+        w->tiles = AllocObjTiles(0x400, gEmy00L06Tiles);
         w->palette = LoadObjPalette(&gUnk_08F691E4[0x5C0], 32);
         a = &w->anim;
-        AnimInit(a, gUnk_09EDF940, gUnk_09EDF914);
+        AnimInit(a, gEmy00L06Anims, gEmy00L06Frames);
         AnimStart(a, 0, 1);
         w->gfx = AnimGetGfx(a);
         ColliderInit(w->unk_040, 3, 8, 16);
@@ -671,8 +671,8 @@ void func_080F70F4(MapTutorialWork* w) {
     AnimState* a = &w->anim;
 
     if (AnimIsFinished(a)) {
-        AnimChangeWithTables(a, 0, 1, gUnk_09EDF85C, gUnk_09EDF834);
-        SetObjTileSource(w->tiles, gUnk_08957290);
+        AnimChangeWithTables(a, 0, 1, gEmy00L00Anims, gEmy00L00Frames);
+        SetObjTileSource(w->tiles, gEmy00L00Tiles);
         CreateCardMessageTask(&w->tasks, 0, 0x6C);
         w->update = func_080F7160;
     } else {
@@ -700,8 +700,8 @@ void func_080F71AC(MapTutorialWork* w) {
         gUnk_0203C7AC->flags |= 4;
         TaskCreate(gFieldState->tasks, &gTaskDescMapSpark, w);
         m4aSongNumStart(SONG_SYS_FIELD_ATT00);
-        AnimChangeWithTables(a, 0, 1, gUnk_09EDF9BC, gUnk_09EDF9A8);
-        SetObjTileSource(w->tiles, gUnk_08963BAC);
+        AnimChangeWithTables(a, 0, 1, gEmy00L09Anims, gEmy00L09Frames);
+        SetObjTileSource(w->tiles, gEmy00L09Tiles);
         w->update = func_080F7284;
     } else if (w->unk_06C != 0) {
         if (!(gUnk_0203C7AC->flags & 4) && w->unk_074 == 1) {

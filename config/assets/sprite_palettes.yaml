@@ -184,7 +184,7 @@ objects:
 entries:
 - name: goofy
   format: palette
-  symbol: gUnk_08F68384
+  symbol: gGoofyPalette
   us:
     address: 0x08F68384
     size: 32
@@ -196,7 +196,7 @@ entries:
     size: 32
 - name: sora
   format: palette
-  symbol: gUnk_08F683A4
+  symbol: gSoraPalette
   us:
     address: 0x08F683A4
     size: 32
@@ -208,7 +208,7 @@ entries:
     size: 32
 - name: emy_00
   format: palette
-  symbol: gUnk_08F697A4
+  symbol: gEmy00Palette
   us:
     address: 0x08F697A4
     size: 32
@@ -220,7 +220,7 @@ entries:
     size: 32
 - name: emy_38
   format: palette
-  symbol: gUnk_08F697C4
+  symbol: gEmy38Palette
   us:
     address: 0x08F697C4
     size: 32
@@ -232,7 +232,7 @@ entries:
     size: 32
 - name: emy_14
   format: palette
-  symbol: gUnk_08F697E4
+  symbol: gEmy14Palette
   us:
     address: 0x08F697E4
     size: 32
@@ -244,7 +244,7 @@ entries:
     size: 32
 - name: emy_01
   format: palette
-  symbol: gUnk_08F69804
+  symbol: gEmy01Palette
   us:
     address: 0x08F69804
     size: 32
@@ -256,7 +256,7 @@ entries:
     size: 32
 - name: emy_02
   format: palette
-  symbol: gUnk_08F69824
+  symbol: gEmy02Palette
   us:
     address: 0x08F69824
     size: 32
@@ -268,7 +268,7 @@ entries:
     size: 32
 - name: emy_03
   format: palette
-  symbol: gUnk_08F69844
+  symbol: gEmy03Palette
   us:
     address: 0x08F69844
     size: 32
@@ -280,7 +280,7 @@ entries:
     size: 32
 - name: emy_04
   format: palette
-  symbol: gUnk_08F69864
+  symbol: gEmy04Palette
   us:
     address: 0x08F69864
     size: 32
@@ -292,7 +292,7 @@ entries:
     size: 32
 - name: emy_21
   format: palette
-  symbol: gUnk_08F69884
+  symbol: gEmy21Palette
   us:
     address: 0x08F69884
     size: 32
@@ -304,7 +304,7 @@ entries:
     size: 32
 - name: emy_07
   format: palette
-  symbol: gUnk_08F698A4
+  symbol: gEmy07Palette
   us:
     address: 0x08F698A4
     size: 32
@@ -316,7 +316,7 @@ entries:
     size: 32
 - name: emy_07m
   format: palette
-  symbol: gUnk_08F698C4
+  symbol: gEmy07mPalette
   us:
     address: 0x08F698C4
     size: 32
@@ -328,7 +328,7 @@ entries:
     size: 32
 - name: emy_07b
   format: palette
-  symbol: gUnk_08F698E4
+  symbol: gEmy07bPalette
   us:
     address: 0x08F698E4
     size: 32
@@ -340,7 +340,7 @@ entries:
     size: 32
 - name: emy_31
   format: palette
-  symbol: gUnk_08F69904
+  symbol: gEmy31Palette
   us:
     address: 0x08F69904
     size: 32
@@ -352,7 +352,7 @@ entries:
     size: 32
 - name: emy_06
   format: palette
-  symbol: gUnk_08F69924
+  symbol: gEmy06Palette
   us:
     address: 0x08F69924
     size: 32
@@ -364,7 +364,7 @@ entries:
     size: 32
 - name: emy_15
   format: palette
-  symbol: gUnk_08F69944
+  symbol: gEmy15Palette
   us:
     address: 0x08F69944
     size: 32
@@ -376,7 +376,7 @@ entries:
     size: 32
 - name: emy_19
   format: palette
-  symbol: gUnk_08F69964
+  symbol: gEmy19Palette
   us:
     address: 0x08F69964
     size: 32
@@ -388,7 +388,7 @@ entries:
     size: 32
 - name: emy_23
   format: palette
-  symbol: gUnk_08F69984
+  symbol: gEmy23Palette
   us:
     address: 0x08F69984
     size: 32
@@ -400,7 +400,7 @@ entries:
     size: 32
 - name: emy_41
   format: palette
-  symbol: gUnk_08F699A4
+  symbol: gEmy41Palette
   us:
     address: 0x08F699A4
     size: 32
@@ -412,7 +412,7 @@ entries:
     size: 32
 - name: emy_16
   format: palette
-  symbol: gUnk_08F699C4
+  symbol: gEmy16Palette
   us:
     address: 0x08F699C4
     size: 32
@@ -424,7 +424,7 @@ entries:
     size: 32
 - name: emy_22
   format: palette
-  symbol: gUnk_08F699E4
+  symbol: gEmy22Palette
   us:
     address: 0x08F699E4
     size: 32
@@ -436,7 +436,7 @@ entries:
     size: 32
 - name: emy_26
   format: palette
-  symbol: gUnk_08F69A04
+  symbol: gEmy26Palette
   us:
     address: 0x08F69A04
     size: 32
@@ -448,7 +448,7 @@ entries:
     size: 32
 - name: emy_27
   format: palette
-  symbol: gUnk_08F69A24
+  symbol: gEmy27Palette
   us:
     address: 0x08F69A24
     size: 32
@@ -460,7 +460,7 @@ entries:
     size: 32
 - name: emy_28
   format: palette
-  symbol: gUnk_08F69A44
+  symbol: gEmy28Palette
   us:
     address: 0x08F69A44
     size: 32
@@ -472,7 +472,7 @@ entries:
     size: 32
 - name: emy_29
   format: palette
-  symbol: gUnk_08F69A64
+  symbol: gEmy29Palette
   us:
     address: 0x08F69A64
     size: 32
@@ -484,7 +484,7 @@ entries:
     size: 32
 - name: emy_37
   format: palette
-  symbol: gUnk_08F69A84
+  symbol: gEmy37Palette
   us:
     address: 0x08F69A84
     size: 32
@@ -496,7 +496,7 @@ entries:
     size: 32
 - name: emy_39
   format: palette
-  symbol: gUnk_08F69AA4
+  symbol: gEmy39Palette
   us:
     address: 0x08F69AA4
     size: 32
@@ -508,7 +508,7 @@ entries:
     size: 32
 - name: emy_30
   format: palette
-  symbol: gUnk_08F69AC4
+  symbol: gEmy30Palette
   us:
     address: 0x08F69AC4
     size: 32
@@ -520,7 +520,7 @@ entries:
     size: 32
 - name: emy_25
   format: palette
-  symbol: gUnk_08F69AE4
+  symbol: gEmy25Palette
   us:
     address: 0x08F69AE4
     size: 32
@@ -532,7 +532,7 @@ entries:
     size: 32
 - name: emy_44
   format: palette
-  symbol: gUnk_08F69B04
+  symbol: gEmy44Palette
   us:
     address: 0x08F69B04
     size: 32
@@ -544,7 +544,7 @@ entries:
     size: 32
 - name: emy_18
   format: palette
-  symbol: gUnk_08F69B24
+  symbol: gEmy18Palette
   us:
     address: 0x08F69B24
     size: 32
@@ -556,7 +556,7 @@ entries:
     size: 32
 - name: emy_81
   format: palette
-  symbol: gUnk_08F69B44
+  symbol: gEmy81Palette
   us:
     address: 0x08F69B44
     size: 32
@@ -568,7 +568,7 @@ entries:
     size: 32
 - name: emy_82
   format: palette
-  symbol: gUnk_08F69B64
+  symbol: gEmy82Palette
   us:
     address: 0x08F69B64
     size: 32
@@ -580,7 +580,7 @@ entries:
     size: 32
 - name: emy_83
   format: palette
-  symbol: gUnk_08F69B84
+  symbol: gEmy83Palette
   us:
     address: 0x08F69B84
     size: 32
@@ -592,7 +592,7 @@ entries:
     size: 32
 - name: b_states
   format: palette
-  symbol: gUnk_08F69BA4
+  symbol: gBStatesPalette
   us:
     address: 0x08F69BA4
     size: 32
@@ -626,7 +626,7 @@ entries:
     size: 32
 - name: croud
   format: palette
-  symbol: gUnk_08F6DC24
+  symbol: gCroudPalette
   us:
     address: 0x08F6DC24
     size: 32
@@ -636,7 +636,7 @@ entries:
   eu:
     address: 0x08F6A17C
     size: 32
-- name: gUnk_08F6DC44
+- name: gPBakudanPalette
   format: palette
   us:
     address: 0x08F6DC44
@@ -660,7 +660,7 @@ entries:
     size: 32
 - name: maruxha_bt_eff
   format: palette
-  symbol: gUnk_08F6DC84
+  symbol: gMaruxhaBtEffPalette
   us:
     address: 0x08F6DC84
     size: 32
@@ -672,7 +672,7 @@ entries:
     size: 32
 - name: vix_e
   format: palette
-  symbol: gUnk_08F6DCA4
+  symbol: gVixEPalette
   us:
     address: 0x08F6DCA4
     size: 32
@@ -682,7 +682,7 @@ entries:
   eu:
     address: 0x08F6A1FC
     size: 32
-- name: gUnk_08F6DCC4
+- name: gRexeusRock01Palette
   format: palette
   us:
     address: 0x08F6DCC4
@@ -693,7 +693,7 @@ entries:
   eu:
     address: 0x08F6A21C
     size: 32
-- name: gUnk_08F6DCE4
+- name: gRexeusRock02Palette
   format: palette
   us:
     address: 0x08F6DCE4
@@ -706,7 +706,7 @@ entries:
     size: 32
 - name: card_00
   format: palette
-  symbol: gUnk_09611AB8
+  symbol: gCard00Palette
   us:
     address: 0x09611AB8
     size: 32
@@ -716,7 +716,7 @@ entries:
   eu:
     address: 0x09544B24
     size: 32
-- name: gUnk_09611AD8
+- name: gCardItm01Palette
   format: palette
   us:
     address: 0x09611AD8
@@ -727,7 +727,7 @@ entries:
   eu:
     address: 0x09544B44
     size: 32
-- name: gUnk_09611AF8
+- name: gCardItm02Palette
   format: palette
   us:
     address: 0x09611AF8
@@ -738,7 +738,7 @@ entries:
   eu:
     address: 0x09544B64
     size: 32
-- name: gUnk_09611B18
+- name: gCardItm03Palette
   format: palette
   us:
     address: 0x09611B18
@@ -749,7 +749,7 @@ entries:
   eu:
     address: 0x09544B84
     size: 32
-- name: gUnk_09611B38
+- name: gCardItm04Palette
   format: palette
   us:
     address: 0x09611B38
@@ -760,7 +760,7 @@ entries:
   eu:
     address: 0x09544BA4
     size: 32
-- name: gUnk_09611B58
+- name: gCardItm05Palette
   format: palette
   us:
     address: 0x09611B58
@@ -771,7 +771,7 @@ entries:
   eu:
     address: 0x09544BC4
     size: 32
-- name: gUnk_09611B78
+- name: gCardItm06Palette
   format: palette
   us:
     address: 0x09611B78
@@ -782,7 +782,7 @@ entries:
   eu:
     address: 0x09544BE4
     size: 32
-- name: gUnk_09611B98
+- name: gCardItm07Palette
   format: palette
   us:
     address: 0x09611B98
@@ -793,7 +793,7 @@ entries:
   eu:
     address: 0x09544C04
     size: 32
-- name: gUnk_09611BB8
+- name: gCardMgc01Palette
   format: palette
   us:
     address: 0x09611BB8
@@ -804,7 +804,7 @@ entries:
   eu:
     address: 0x09544C24
     size: 32
-- name: gUnk_09611BD8
+- name: gCardMgc02Palette
   format: palette
   us:
     address: 0x09611BD8
@@ -815,7 +815,7 @@ entries:
   eu:
     address: 0x09544C44
     size: 32
-- name: gUnk_09611BF8
+- name: gCardMgc03Palette
   format: palette
   us:
     address: 0x09611BF8
@@ -826,7 +826,7 @@ entries:
   eu:
     address: 0x09544C64
     size: 32
-- name: gUnk_09611C18
+- name: gCardMgc04Palette
   format: palette
   us:
     address: 0x09611C18
@@ -837,7 +837,7 @@ entries:
   eu:
     address: 0x09544C84
     size: 32
-- name: gUnk_09611C38
+- name: gCardMgc05Palette
   format: palette
   us:
     address: 0x09611C38
@@ -848,7 +848,7 @@ entries:
   eu:
     address: 0x09544CA4
     size: 32
-- name: gUnk_09611C58
+- name: gCardMgc06Palette
   format: palette
   us:
     address: 0x09611C58
@@ -859,7 +859,7 @@ entries:
   eu:
     address: 0x09544CC4
     size: 32
-- name: gUnk_09611C78
+- name: gCardMgc07Palette
   format: palette
   us:
     address: 0x09611C78
@@ -883,7 +883,7 @@ entries:
     address: 0x09544D04
     size: 96
     symbol: gUnkEu_09544D04
-- name: gUnk_09611CF8
+- name: gCardSmn03Palette
   format: palette
   us:
     address: 0x09611CF8
@@ -894,7 +894,7 @@ entries:
   eu:
     address: 0x09544D64
     size: 32
-- name: gUnk_09611D18
+- name: gCardSmn04Palette
   format: palette
   us:
     address: 0x09611D18
@@ -918,7 +918,7 @@ entries:
     address: 0x09544DA4
     size: 32
     symbol: gUnkEu_09544DA4
-- name: gUnk_09611D58
+- name: gCardSmn06Palette
   format: palette
   us:
     address: 0x09611D58
@@ -942,7 +942,7 @@ entries:
     address: 0x09544DE4
     size: 64
     symbol: gUnkEu_09544DE4
-- name: gUnk_09611DB8
+- name: gCardSmn09Palette
   format: palette
   us:
     address: 0x09611DB8
@@ -955,7 +955,7 @@ entries:
     size: 32
 - name: card_smn09a
   format: palette
-  symbol: gUnk_09611DD8
+  symbol: gCardSmn09aPalette
   us:
     address: 0x09611DD8
     size: 32
@@ -967,7 +967,7 @@ entries:
     size: 32
 - name: card_smn09b
   format: palette
-  symbol: gUnk_09611DF8
+  symbol: gCardSmn09bPalette
   us:
     address: 0x09611DF8
     size: 32
@@ -979,7 +979,7 @@ entries:
     size: 32
 - name: card_smn09c
   format: palette
-  symbol: gUnk_09611E18
+  symbol: gCardSmn09cPalette
   us:
     address: 0x09611E18
     size: 32
@@ -991,7 +991,7 @@ entries:
     size: 32
 - name: card_smn09d
   format: palette
-  symbol: gUnk_09611E38
+  symbol: gCardSmn09dPalette
   us:
     address: 0x09611E38
     size: 32
@@ -1001,7 +1001,7 @@ entries:
   eu:
     address: 0x09544EA4
     size: 32
-- name: gUnk_09611E58
+- name: gCardWep01Palette
   format: palette
   us:
     address: 0x09611E58
@@ -1025,7 +1025,7 @@ entries:
     address: 0x09544EE4
     size: 32
     symbol: gUnkEu_09544EE4
-- name: gUnk_09611E98
+- name: gCardWep03Palette
   format: palette
   us:
     address: 0x09611E98
@@ -1036,7 +1036,7 @@ entries:
   eu:
     address: 0x09544F04
     size: 32
-- name: gUnk_09611EB8
+- name: gCardWep04Palette
   format: palette
   us:
     address: 0x09611EB8
@@ -1047,7 +1047,7 @@ entries:
   eu:
     address: 0x09544F24
     size: 32
-- name: gUnk_09611ED8
+- name: gCardWep05Palette
   format: palette
   us:
     address: 0x09611ED8
@@ -1058,7 +1058,7 @@ entries:
   eu:
     address: 0x09544F44
     size: 32
-- name: gUnk_09611EF8
+- name: gCardWep06Palette
   format: palette
   us:
     address: 0x09611EF8
@@ -1069,7 +1069,7 @@ entries:
   eu:
     address: 0x09544F64
     size: 32
-- name: gUnk_09611F18
+- name: gCardWep07Palette
   format: palette
   us:
     address: 0x09611F18
@@ -1080,7 +1080,7 @@ entries:
   eu:
     address: 0x09544F84
     size: 32
-- name: gUnk_09611F38
+- name: gCardWep08Palette
   format: palette
   us:
     address: 0x09611F38
@@ -1091,7 +1091,7 @@ entries:
   eu:
     address: 0x09544FA4
     size: 32
-- name: gUnk_09611F58
+- name: gCardWep09Palette
   format: palette
   us:
     address: 0x09611F58
@@ -1102,7 +1102,7 @@ entries:
   eu:
     address: 0x09544FC4
     size: 32
-- name: gUnk_09611F78
+- name: gCardWep10Palette
   format: palette
   us:
     address: 0x09611F78
@@ -1113,7 +1113,7 @@ entries:
   eu:
     address: 0x09544FE4
     size: 32
-- name: gUnk_09611F98
+- name: gCardWep11Palette
   format: palette
   us:
     address: 0x09611F98
@@ -1124,7 +1124,7 @@ entries:
   eu:
     address: 0x09545004
     size: 32
-- name: gUnk_09611FB8
+- name: gCardWep12Palette
   format: palette
   us:
     address: 0x09611FB8
@@ -1135,7 +1135,7 @@ entries:
   eu:
     address: 0x09545024
     size: 32
-- name: gUnk_09611FD8
+- name: gCardWep13Palette
   format: palette
   us:
     address: 0x09611FD8
@@ -1146,7 +1146,7 @@ entries:
   eu:
     address: 0x09545044
     size: 32
-- name: gUnk_09611FF8
+- name: gCardWep14Palette
   format: palette
   us:
     address: 0x09611FF8
@@ -1157,7 +1157,7 @@ entries:
   eu:
     address: 0x09545064
     size: 32
-- name: gUnk_09612018
+- name: gCardWep15Palette
   format: palette
   us:
     address: 0x09612018
@@ -1168,7 +1168,7 @@ entries:
   eu:
     address: 0x09545084
     size: 32
-- name: gUnk_09612038
+- name: gCardWep16Palette
   format: palette
   us:
     address: 0x09612038
@@ -1179,7 +1179,7 @@ entries:
   eu:
     address: 0x095450A4
     size: 32
-- name: gUnk_09612058
+- name: gCardWep18Palette
   format: palette
   us:
     address: 0x09612058
@@ -1190,7 +1190,7 @@ entries:
   eu:
     address: 0x095450C4
     size: 32
-- name: gUnk_09612078
+- name: gCardWep19Palette
   format: palette
   us:
     address: 0x09612078
@@ -1201,7 +1201,7 @@ entries:
   eu:
     address: 0x095450E4
     size: 32
-- name: gUnk_09612098
+- name: gCardWep20Palette
   format: palette
   us:
     address: 0x09612098
@@ -1212,7 +1212,7 @@ entries:
   eu:
     address: 0x09545104
     size: 32
-- name: gUnk_096120B8
+- name: gCardNpcAl01Palette
   format: palette
   us:
     address: 0x096120B8
@@ -1223,7 +1223,7 @@ entries:
   eu:
     address: 0x09545124
     size: 32
-- name: gUnk_096120D8
+- name: gCardNpcAl02Palette
   format: palette
   us:
     address: 0x096120D8
@@ -1234,7 +1234,7 @@ entries:
   eu:
     address: 0x09545144
     size: 32
-- name: gUnk_096120F8
+- name: gCardNpcAl03Palette
   format: palette
   us:
     address: 0x096120F8
@@ -1245,7 +1245,7 @@ entries:
   eu:
     address: 0x09545164
     size: 32
-- name: gUnk_09612118
+- name: gCardNpcAw01Palette
   format: palette
   us:
     address: 0x09612118
@@ -1256,7 +1256,7 @@ entries:
   eu:
     address: 0x09545184
     size: 32
-- name: gUnk_09612138
+- name: gCardNpcAw02Palette
   format: palette
   us:
     address: 0x09612138
@@ -1267,7 +1267,7 @@ entries:
   eu:
     address: 0x095451A4
     size: 32
-- name: gUnk_09612158
+- name: gCardNpcAw05Palette
   format: palette
   us:
     address: 0x09612158
@@ -1278,7 +1278,7 @@ entries:
   eu:
     address: 0x095451C4
     size: 32
-- name: gUnk_09612178
+- name: gCardNpcAw06Palette
   format: palette
   us:
     address: 0x09612178
@@ -1289,7 +1289,7 @@ entries:
   eu:
     address: 0x095451E4
     size: 32
-- name: gUnk_09612198
+- name: gCardNpcEx00Palette
   format: palette
   us:
     address: 0x09612198
@@ -1300,7 +1300,7 @@ entries:
   eu:
     address: 0x09545204
     size: 32
-- name: gUnk_096121B8
+- name: gCardNpcEx01Palette
   format: palette
   us:
     address: 0x096121B8
@@ -1311,7 +1311,7 @@ entries:
   eu:
     address: 0x09545224
     size: 32
-- name: gUnk_096121D8
+- name: gCardNpcEx02Palette
   format: palette
   us:
     address: 0x096121D8
@@ -1322,7 +1322,7 @@ entries:
   eu:
     address: 0x09545244
     size: 32
-- name: gUnk_096121F8
+- name: gCardNpcEx03Palette
   format: palette
   us:
     address: 0x096121F8
@@ -1346,7 +1346,7 @@ entries:
     address: 0x09545284
     size: 32
     symbol: gUnkEu_09545284
-- name: gUnk_09612238
+- name: gCardNpcEx05Palette
   format: palette
   us:
     address: 0x09612238
@@ -1357,7 +1357,7 @@ entries:
   eu:
     address: 0x095452A4
     size: 32
-- name: gUnk_09612258
+- name: gCardNpcEx06Palette
   format: palette
   us:
     address: 0x09612258
@@ -1368,7 +1368,7 @@ entries:
   eu:
     address: 0x095452C4
     size: 32
-- name: gUnk_09612278
+- name: gCardNpcEx07Palette
   format: palette
   us:
     address: 0x09612278
@@ -1379,7 +1379,7 @@ entries:
   eu:
     address: 0x095452E4
     size: 32
-- name: gUnk_09612298
+- name: gCardNpcEx08Palette
   format: palette
   us:
     address: 0x09612298
@@ -1390,7 +1390,7 @@ entries:
   eu:
     address: 0x09545304
     size: 32
-- name: gUnk_096122B8
+- name: gCardNpcEx09Palette
   format: palette
   us:
     address: 0x096122B8
@@ -1401,7 +1401,7 @@ entries:
   eu:
     address: 0x09545324
     size: 32
-- name: gUnk_096122D8
+- name: gCardNpcEx10Palette
   format: palette
   us:
     address: 0x096122D8
@@ -1412,7 +1412,7 @@ entries:
   eu:
     address: 0x09545344
     size: 32
-- name: gUnk_096122F8
+- name: gCardNpcDi01Palette
   format: palette
   us:
     address: 0x096122F8
@@ -1423,7 +1423,7 @@ entries:
   eu:
     address: 0x09545364
     size: 32
-- name: gUnk_09612318
+- name: gCardNpcDi02Palette
   format: palette
   us:
     address: 0x09612318
@@ -1434,7 +1434,7 @@ entries:
   eu:
     address: 0x09545384
     size: 32
-- name: gUnk_09612338
+- name: gCardNpcDi03Palette
   format: palette
   us:
     address: 0x09612338
@@ -1445,7 +1445,7 @@ entries:
   eu:
     address: 0x095453A4
     size: 32
-- name: gUnk_09612358
+- name: gCardNpcHe01Palette
   format: palette
   us:
     address: 0x09612358
@@ -1456,7 +1456,7 @@ entries:
   eu:
     address: 0x095453C4
     size: 32
-- name: gUnk_09612378
+- name: gCardNpcHe02Palette
   format: palette
   us:
     address: 0x09612378
@@ -1467,7 +1467,7 @@ entries:
   eu:
     address: 0x095453E4
     size: 32
-- name: gUnk_09612398
+- name: gCardNpcPo01Palette
   format: palette
   us:
     address: 0x09612398
@@ -1478,7 +1478,7 @@ entries:
   eu:
     address: 0x09545404
     size: 32
-- name: gUnk_096123B8
+- name: gCardNpcPo02Palette
   format: palette
   us:
     address: 0x096123B8
@@ -1489,7 +1489,7 @@ entries:
   eu:
     address: 0x09545424
     size: 32
-- name: gUnk_096123D8
+- name: gCardNpcPo03Palette
   format: palette
   us:
     address: 0x096123D8
@@ -1500,7 +1500,7 @@ entries:
   eu:
     address: 0x09545444
     size: 32
-- name: gUnk_096123F8
+- name: gCardNpcPo04Palette
   format: palette
   us:
     address: 0x096123F8
@@ -1511,7 +1511,7 @@ entries:
   eu:
     address: 0x09545464
     size: 32
-- name: gUnk_09612418
+- name: gCardNpcPo05Palette
   format: palette
   us:
     address: 0x09612418
@@ -1522,7 +1522,7 @@ entries:
   eu:
     address: 0x09545484
     size: 32
-- name: gUnk_09612438
+- name: gCardNpcPo06Palette
   format: palette
   us:
     address: 0x09612438
@@ -1533,7 +1533,7 @@ entries:
   eu:
     address: 0x095454A4
     size: 32
-- name: gUnk_09612458
+- name: gCardNpcPo07Palette
   format: palette
   us:
     address: 0x09612458
@@ -1544,7 +1544,7 @@ entries:
   eu:
     address: 0x095454C4
     size: 32
-- name: gUnk_09612478
+- name: gCardNpcLm01Palette
   format: palette
   us:
     address: 0x09612478
@@ -1555,7 +1555,7 @@ entries:
   eu:
     address: 0x095454E4
     size: 32
-- name: gUnk_09612498
+- name: gCardNpcLm02Palette
   format: palette
   us:
     address: 0x09612498
@@ -1566,7 +1566,7 @@ entries:
   eu:
     address: 0x09545504
     size: 32
-- name: gUnk_096124B8
+- name: gCardNpcNm01Palette
   format: palette
   us:
     address: 0x096124B8
@@ -1577,7 +1577,7 @@ entries:
   eu:
     address: 0x09545524
     size: 32
-- name: gUnk_096124D8
+- name: gCardNpcNm02Palette
   format: palette
   us:
     address: 0x096124D8
@@ -1588,7 +1588,7 @@ entries:
   eu:
     address: 0x09545544
     size: 32
-- name: gUnk_096124F8
+- name: gCardNpcPc01Palette
   format: palette
   us:
     address: 0x096124F8
@@ -1599,7 +1599,7 @@ entries:
   eu:
     address: 0x09545564
     size: 32
-- name: gUnk_09612518
+- name: gCardNpcPc02Palette
   format: palette
   us:
     address: 0x09612518
@@ -1610,7 +1610,7 @@ entries:
   eu:
     address: 0x09545584
     size: 32
-- name: gUnk_09612538
+- name: gCardNpcPp01Palette
   format: palette
   us:
     address: 0x09612538
@@ -1621,7 +1621,7 @@ entries:
   eu:
     address: 0x095455A4
     size: 32
-- name: gUnk_09612558
+- name: gCardNpcPi01Palette
   format: palette
   us:
     address: 0x09612558
@@ -1632,7 +1632,7 @@ entries:
   eu:
     address: 0x095455C4
     size: 32
-- name: gUnk_09612578
+- name: gCardNpcPi02Palette
   format: palette
   us:
     address: 0x09612578
@@ -1643,7 +1643,7 @@ entries:
   eu:
     address: 0x095455E4
     size: 32
-- name: gUnk_09612598
+- name: gCardBos05Palette
   format: palette
   us:
     address: 0x09612598
@@ -1654,7 +1654,7 @@ entries:
   eu:
     address: 0x09545604
     size: 32
-- name: gUnk_096125B8
+- name: gCardBos06Palette
   format: palette
   us:
     address: 0x096125B8
@@ -1665,7 +1665,7 @@ entries:
   eu:
     address: 0x09545624
     size: 32
-- name: gUnk_096125D8
+- name: gCardBos07Palette
   format: palette
   us:
     address: 0x096125D8
@@ -1676,7 +1676,7 @@ entries:
   eu:
     address: 0x09545644
     size: 32
-- name: gUnk_096125F8
+- name: gCardBos08Palette
   format: palette
   us:
     address: 0x096125F8
@@ -1687,7 +1687,7 @@ entries:
   eu:
     address: 0x09545664
     size: 32
-- name: gUnk_09612618
+- name: gCardBos10Palette
   format: palette
   us:
     address: 0x09612618
@@ -1700,7 +1700,7 @@ entries:
     size: 32
 - name: card_bos_10a
   format: palette
-  symbol: gUnk_09612638
+  symbol: gCardBos10aPalette
   us:
     address: 0x09612638
     size: 32
@@ -1712,7 +1712,7 @@ entries:
     size: 32
 - name: card_bos_10b
   format: palette
-  symbol: gUnk_09612658
+  symbol: gCardBos10bPalette
   us:
     address: 0x09612658
     size: 32
@@ -1724,7 +1724,7 @@ entries:
     size: 32
 - name: card_bos_10c
   format: palette
-  symbol: gUnk_09612678
+  symbol: gCardBos10cPalette
   us:
     address: 0x09612678
     size: 32
@@ -1736,7 +1736,7 @@ entries:
     size: 32
 - name: card_bos_10d
   format: palette
-  symbol: gUnk_09612698
+  symbol: gCardBos10dPalette
   us:
     address: 0x09612698
     size: 32
@@ -1746,7 +1746,7 @@ entries:
   eu:
     address: 0x09545704
     size: 32
-- name: gUnk_096126B8
+- name: gCardBos11Palette
   format: palette
   us:
     address: 0x096126B8
@@ -1759,7 +1759,7 @@ entries:
     size: 32
 - name: card_bos_11a
   format: palette
-  symbol: gUnk_096126D8
+  symbol: gCardBos11aPalette
   us:
     address: 0x096126D8
     size: 32
@@ -1771,7 +1771,7 @@ entries:
     size: 32
 - name: card_bos_11b
   format: palette
-  symbol: gUnk_096126F8
+  symbol: gCardBos11bPalette
   us:
     address: 0x096126F8
     size: 32
@@ -1783,7 +1783,7 @@ entries:
     size: 32
 - name: card_bos_11c
   format: palette
-  symbol: gUnk_09612718
+  symbol: gCardBos11cPalette
   us:
     address: 0x09612718
     size: 32
@@ -1795,7 +1795,7 @@ entries:
     size: 32
 - name: card_bos_11d
   format: palette
-  symbol: gUnk_09612738
+  symbol: gCardBos11dPalette
   us:
     address: 0x09612738
     size: 32
@@ -1805,7 +1805,7 @@ entries:
   eu:
     address: 0x095457A4
     size: 32
-- name: gUnk_09612758
+- name: gCardBos12Palette
   format: palette
   us:
     address: 0x09612758
@@ -1818,7 +1818,7 @@ entries:
     size: 32
 - name: card_bos_12a
   format: palette
-  symbol: gUnk_09612778
+  symbol: gCardBos12aPalette
   us:
     address: 0x09612778
     size: 32
@@ -1830,7 +1830,7 @@ entries:
     size: 32
 - name: card_bos_12b
   format: palette
-  symbol: gUnk_09612798
+  symbol: gCardBos12bPalette
   us:
     address: 0x09612798
     size: 32
@@ -1842,7 +1842,7 @@ entries:
     size: 32
 - name: card_bos_12c
   format: palette
-  symbol: gUnk_096127B8
+  symbol: gCardBos12cPalette
   us:
     address: 0x096127B8
     size: 32
@@ -1854,7 +1854,7 @@ entries:
     size: 32
 - name: card_bos_12d
   format: palette
-  symbol: gUnk_096127D8
+  symbol: gCardBos12dPalette
   us:
     address: 0x096127D8
     size: 32
@@ -1864,7 +1864,7 @@ entries:
   eu:
     address: 0x09545844
     size: 32
-- name: gUnk_096127F8
+- name: gCardBos13Palette
   format: palette
   us:
     address: 0x096127F8
@@ -1877,7 +1877,7 @@ entries:
     size: 32
 - name: card_bos_13a
   format: palette
-  symbol: gUnk_09612818
+  symbol: gCardBos13aPalette
   us:
     address: 0x09612818
     size: 32
@@ -1889,7 +1889,7 @@ entries:
     size: 32
 - name: card_bos_13b
   format: palette
-  symbol: gUnk_09612838
+  symbol: gCardBos13bPalette
   us:
     address: 0x09612838
     size: 32
@@ -1901,7 +1901,7 @@ entries:
     size: 32
 - name: card_bos_13c
   format: palette
-  symbol: gUnk_09612858
+  symbol: gCardBos13cPalette
   us:
     address: 0x09612858
     size: 32
@@ -1913,7 +1913,7 @@ entries:
     size: 32
 - name: card_bos_13d
   format: palette
-  symbol: gUnk_09612878
+  symbol: gCardBos13dPalette
   us:
     address: 0x09612878
     size: 32
@@ -1923,7 +1923,7 @@ entries:
   eu:
     address: 0x095458E4
     size: 32
-- name: gUnk_09612898
+- name: gCardBos14Palette
   format: palette
   us:
     address: 0x09612898
@@ -1936,7 +1936,7 @@ entries:
     size: 32
 - name: card_bos_14a
   format: palette
-  symbol: gUnk_096128B8
+  symbol: gCardBos14aPalette
   us:
     address: 0x096128B8
     size: 32
@@ -1948,7 +1948,7 @@ entries:
     size: 32
 - name: card_bos_14b
   format: palette
-  symbol: gUnk_096128D8
+  symbol: gCardBos14bPalette
   us:
     address: 0x096128D8
     size: 32
@@ -1960,7 +1960,7 @@ entries:
     size: 32
 - name: card_bos_14c
   format: palette
-  symbol: gUnk_096128F8
+  symbol: gCardBos14cPalette
   us:
     address: 0x096128F8
     size: 32
@@ -1972,7 +1972,7 @@ entries:
     size: 32
 - name: card_bos_14d
   format: palette
-  symbol: gUnk_09612918
+  symbol: gCardBos14dPalette
   us:
     address: 0x09612918
     size: 32
@@ -1982,7 +1982,7 @@ entries:
   eu:
     address: 0x09545984
     size: 32
-- name: gUnk_09612938
+- name: gCardBos15Palette
   format: palette
   us:
     address: 0x09612938
@@ -1995,7 +1995,7 @@ entries:
     size: 32
 - name: card_bos_15a
   format: palette
-  symbol: gUnk_09612958
+  symbol: gCardBos15aPalette
   us:
     address: 0x09612958
     size: 32
@@ -2007,7 +2007,7 @@ entries:
     size: 32
 - name: card_bos_15b
   format: palette
-  symbol: gUnk_09612978
+  symbol: gCardBos15bPalette
   us:
     address: 0x09612978
     size: 32
@@ -2019,7 +2019,7 @@ entries:
     size: 32
 - name: card_bos_15c
   format: palette
-  symbol: gUnk_09612998
+  symbol: gCardBos15cPalette
   us:
     address: 0x09612998
     size: 32
@@ -2031,7 +2031,7 @@ entries:
     size: 32
 - name: card_bos_15d
   format: palette
-  symbol: gUnk_096129B8
+  symbol: gCardBos15dPalette
   us:
     address: 0x096129B8
     size: 32
@@ -2041,7 +2041,7 @@ entries:
   eu:
     address: 0x09545A24
     size: 32
-- name: gUnk_096129D8
+- name: gCardBos16Palette
   format: palette
   us:
     address: 0x096129D8
@@ -2054,7 +2054,7 @@ entries:
     size: 32
 - name: card_bos_16a
   format: palette
-  symbol: gUnk_096129F8
+  symbol: gCardBos16aPalette
   us:
     address: 0x096129F8
     size: 32
@@ -2066,7 +2066,7 @@ entries:
     size: 32
 - name: card_bos_16b
   format: palette
-  symbol: gUnk_09612A18
+  symbol: gCardBos16bPalette
   us:
     address: 0x09612A18
     size: 32
@@ -2078,7 +2078,7 @@ entries:
     size: 32
 - name: card_bos_16c
   format: palette
-  symbol: gUnk_09612A38
+  symbol: gCardBos16cPalette
   us:
     address: 0x09612A38
     size: 32
@@ -2090,7 +2090,7 @@ entries:
     size: 32
 - name: card_bos_16d
   format: palette
-  symbol: gUnk_09612A58
+  symbol: gCardBos16dPalette
   us:
     address: 0x09612A58
     size: 32
@@ -2100,7 +2100,7 @@ entries:
   eu:
     address: 0x09545AC4
     size: 32
-- name: gUnk_09612A78
+- name: gCardBos17Palette
   format: palette
   us:
     address: 0x09612A78
@@ -2113,7 +2113,7 @@ entries:
     size: 32
 - name: card_bos_17a
   format: palette
-  symbol: gUnk_09612A98
+  symbol: gCardBos17aPalette
   us:
     address: 0x09612A98
     size: 32
@@ -2125,7 +2125,7 @@ entries:
     size: 32
 - name: card_bos_17b
   format: palette
-  symbol: gUnk_09612AB8
+  symbol: gCardBos17bPalette
   us:
     address: 0x09612AB8
     size: 32
@@ -2137,7 +2137,7 @@ entries:
     size: 32
 - name: card_bos_17c
   format: palette
-  symbol: gUnk_09612AD8
+  symbol: gCardBos17cPalette
   us:
     address: 0x09612AD8
     size: 32
@@ -2149,7 +2149,7 @@ entries:
     size: 32
 - name: card_bos_17d
   format: palette
-  symbol: gUnk_09612AF8
+  symbol: gCardBos17dPalette
   us:
     address: 0x09612AF8
     size: 32
@@ -2159,7 +2159,7 @@ entries:
   eu:
     address: 0x09545B64
     size: 32
-- name: gUnk_09612B18
+- name: gCardBos18Palette
   format: palette
   us:
     address: 0x09612B18
@@ -2172,7 +2172,7 @@ entries:
     size: 32
 - name: card_bos_18a
   format: palette
-  symbol: gUnk_09612B38
+  symbol: gCardBos18aPalette
   us:
     address: 0x09612B38
     size: 32
@@ -2184,7 +2184,7 @@ entries:
     size: 32
 - name: card_bos_18b
   format: palette
-  symbol: gUnk_09612B58
+  symbol: gCardBos18bPalette
   us:
     address: 0x09612B58
     size: 32
@@ -2196,7 +2196,7 @@ entries:
     size: 32
 - name: card_bos_18c
   format: palette
-  symbol: gUnk_09612B78
+  symbol: gCardBos18cPalette
   us:
     address: 0x09612B78
     size: 32
@@ -2208,7 +2208,7 @@ entries:
     size: 32
 - name: card_bos_18d
   format: palette
-  symbol: gUnk_09612B98
+  symbol: gCardBos18dPalette
   us:
     address: 0x09612B98
     size: 32
@@ -2229,7 +2229,7 @@ entries:
   eu:
     address: 0x09545C24
     size: 32
-- name: gUnk_09612BD8
+- name: gCardNpcCom01Palette
   format: palette
   us:
     address: 0x09612BD8
@@ -2240,7 +2240,7 @@ entries:
   eu:
     address: 0x09545C44
     size: 32
-- name: gUnk_09612BF8
+- name: gCardNpcCom02Palette
   format: palette
   us:
     address: 0x09612BF8
@@ -2251,7 +2251,7 @@ entries:
   eu:
     address: 0x09545C64
     size: 32
-- name: gUnk_09612C18
+- name: gCardNpcCom03Palette
   format: palette
   us:
     address: 0x09612C18
@@ -2719,7 +2719,7 @@ entries:
   eu:
     address: 0x095477C4
     size: 288
-- name: gUnk_096149F8
+- name: gTalk0000Palette
   format: palette
   us:
     address: 0x096149F8
@@ -2730,7 +2730,7 @@ entries:
   eu:
     address: 0x095478E4
     size: 32
-- name: gUnk_09614A18
+- name: gTalk0100Palette
   format: palette
   us:
     address: 0x09614A18
@@ -2741,7 +2741,7 @@ entries:
   eu:
     address: 0x09547904
     size: 32
-- name: gUnk_09614A38
+- name: gTalk0200Palette
   format: palette
   us:
     address: 0x09614A38
@@ -2752,7 +2752,7 @@ entries:
   eu:
     address: 0x09547924
     size: 32
-- name: gUnk_09614A58
+- name: gTalk0300Palette
   format: palette
   us:
     address: 0x09614A58
@@ -2763,7 +2763,7 @@ entries:
   eu:
     address: 0x09547944
     size: 32
-- name: gUnk_09614A78
+- name: gTalk0400Palette
   format: palette
   us:
     address: 0x09614A78
@@ -2774,7 +2774,7 @@ entries:
   eu:
     address: 0x09547964
     size: 32
-- name: gUnk_09614A98
+- name: gTalk0500Palette
   format: palette
   us:
     address: 0x09614A98
@@ -2785,7 +2785,7 @@ entries:
   eu:
     address: 0x09547984
     size: 32
-- name: gUnk_09614AB8
+- name: gTalk0600Palette
   format: palette
   us:
     address: 0x09614AB8
@@ -2796,7 +2796,7 @@ entries:
   eu:
     address: 0x095479A4
     size: 32
-- name: gUnk_09614AD8
+- name: gTalk0700Palette
   format: palette
   us:
     address: 0x09614AD8
@@ -2807,7 +2807,7 @@ entries:
   eu:
     address: 0x095479C4
     size: 32
-- name: gUnk_09614AF8
+- name: gTalk0800Palette
   format: palette
   us:
     address: 0x09614AF8
@@ -2818,7 +2818,7 @@ entries:
   eu:
     address: 0x095479E4
     size: 32
-- name: gUnk_09614B18
+- name: gTalk0900Palette
   format: palette
   us:
     address: 0x09614B18
@@ -2829,7 +2829,7 @@ entries:
   eu:
     address: 0x09547A04
     size: 32
-- name: gUnk_09614B38
+- name: gTalk1000Palette
   format: palette
   us:
     address: 0x09614B38
@@ -2840,7 +2840,7 @@ entries:
   eu:
     address: 0x09547A24
     size: 32
-- name: gUnk_09614B58
+- name: gTalk1100Palette
   format: palette
   us:
     address: 0x09614B58
@@ -2851,7 +2851,7 @@ entries:
   eu:
     address: 0x09547A44
     size: 32
-- name: gUnk_09614B78
+- name: gTalk1200Palette
   format: palette
   us:
     address: 0x09614B78
@@ -2862,7 +2862,7 @@ entries:
   eu:
     address: 0x09547A64
     size: 32
-- name: gUnk_09614B98
+- name: gTalk1300Palette
   format: palette
   us:
     address: 0x09614B98
@@ -2873,7 +2873,7 @@ entries:
   eu:
     address: 0x09547A84
     size: 32
-- name: gUnk_09614BB8
+- name: gTalk1400Palette
   format: palette
   us:
     address: 0x09614BB8
@@ -2884,7 +2884,7 @@ entries:
   eu:
     address: 0x09547AA4
     size: 32
-- name: gUnk_09614BD8
+- name: gTalk1500Palette
   format: palette
   us:
     address: 0x09614BD8
@@ -2895,7 +2895,7 @@ entries:
   eu:
     address: 0x09547AC4
     size: 32
-- name: gUnk_09614BF8
+- name: gTalk1600Palette
   format: palette
   us:
     address: 0x09614BF8
@@ -2906,7 +2906,7 @@ entries:
   eu:
     address: 0x09547AE4
     size: 32
-- name: gUnk_09614C18
+- name: gTalk1700Palette
   format: palette
   us:
     address: 0x09614C18
@@ -2917,7 +2917,7 @@ entries:
   eu:
     address: 0x09547B04
     size: 32
-- name: gUnk_09614C38
+- name: gTalk1800Palette
   format: palette
   us:
     address: 0x09614C38
@@ -2928,7 +2928,7 @@ entries:
   eu:
     address: 0x09547B24
     size: 32
-- name: gUnk_09614C58
+- name: gTalk1900Palette
   format: palette
   us:
     address: 0x09614C58
@@ -2939,7 +2939,7 @@ entries:
   eu:
     address: 0x09547B44
     size: 32
-- name: gUnk_09614C78
+- name: gTalk2000Palette
   format: palette
   us:
     address: 0x09614C78
@@ -2950,7 +2950,7 @@ entries:
   eu:
     address: 0x09547B64
     size: 32
-- name: gUnk_09614C98
+- name: gTalk2100Palette
   format: palette
   us:
     address: 0x09614C98
@@ -2963,7 +2963,7 @@ entries:
     size: 32
 - name: talk_22_00
   format: palette
-  symbol: gUnk_09614CB8
+  symbol: gTalk2200Palette
   us:
     address: 0x09614CB8
     size: 32
@@ -2975,7 +2975,7 @@ entries:
     size: 32
 - name: talk_23_00
   format: palette
-  symbol: gUnk_09614CD8
+  symbol: gTalk2300Palette
   us:
     address: 0x09614CD8
     size: 32
@@ -2985,7 +2985,7 @@ entries:
   eu:
     address: 0x09547BC4
     size: 32
-- name: gUnk_09614CF8
+- name: gTalk2400Palette
   format: palette
   us:
     address: 0x09614CF8
@@ -2996,7 +2996,7 @@ entries:
   eu:
     address: 0x09547BE4
     size: 32
-- name: gUnk_09614D18
+- name: gTalk2500Palette
   format: palette
   us:
     address: 0x09614D18
@@ -3007,7 +3007,7 @@ entries:
   eu:
     address: 0x09547C04
     size: 32
-- name: gUnk_09614D38
+- name: gTalk2600Palette
   format: palette
   us:
     address: 0x09614D38
@@ -3018,7 +3018,7 @@ entries:
   eu:
     address: 0x09547C24
     size: 32
-- name: gUnk_09614D58
+- name: gTalk2700Palette
   format: palette
   us:
     address: 0x09614D58
@@ -3029,7 +3029,7 @@ entries:
   eu:
     address: 0x09547C44
     size: 32
-- name: gUnk_09614D78
+- name: gTalk2800Palette
   format: palette
   us:
     address: 0x09614D78
@@ -3040,7 +3040,7 @@ entries:
   eu:
     address: 0x09547C64
     size: 32
-- name: gUnk_09614D98
+- name: gTalk2900Palette
   format: palette
   us:
     address: 0x09614D98
@@ -3051,7 +3051,7 @@ entries:
   eu:
     address: 0x09547C84
     size: 32
-- name: gUnk_09614DB8
+- name: gTalk3000Palette
   format: palette
   us:
     address: 0x09614DB8
@@ -3062,7 +3062,7 @@ entries:
   eu:
     address: 0x09547CA4
     size: 32
-- name: gUnk_09614DD8
+- name: gTalk3100Palette
   format: palette
   us:
     address: 0x09614DD8
@@ -3073,7 +3073,7 @@ entries:
   eu:
     address: 0x09547CC4
     size: 32
-- name: gUnk_09614DF8
+- name: gTalk3200Palette
   format: palette
   us:
     address: 0x09614DF8
@@ -3084,7 +3084,7 @@ entries:
   eu:
     address: 0x09547CE4
     size: 32
-- name: gUnk_09614E18
+- name: gTalk3300Palette
   format: palette
   us:
     address: 0x09614E18
@@ -3095,7 +3095,7 @@ entries:
   eu:
     address: 0x09547D04
     size: 32
-- name: gUnk_09614E38
+- name: gTalk3400Palette
   format: palette
   us:
     address: 0x09614E38
@@ -3106,7 +3106,7 @@ entries:
   eu:
     address: 0x09547D24
     size: 32
-- name: gUnk_09614E58
+- name: gTalk3500Palette
   format: palette
   us:
     address: 0x09614E58
@@ -3117,7 +3117,7 @@ entries:
   eu:
     address: 0x09547D44
     size: 32
-- name: gUnk_09614E78
+- name: gTalk3600Palette
   format: palette
   us:
     address: 0x09614E78
@@ -3128,7 +3128,7 @@ entries:
   eu:
     address: 0x09547D64
     size: 32
-- name: gUnk_09614E98
+- name: gTalk3700Palette
   format: palette
   us:
     address: 0x09614E98
@@ -3139,7 +3139,7 @@ entries:
   eu:
     address: 0x09547D84
     size: 32
-- name: gUnk_09614EB8
+- name: gTalk3800Palette
   format: palette
   us:
     address: 0x09614EB8
@@ -3150,7 +3150,7 @@ entries:
   eu:
     address: 0x09547DA4
     size: 32
-- name: gUnk_09614ED8
+- name: gTalk3900Palette
   format: palette
   us:
     address: 0x09614ED8
@@ -3161,7 +3161,7 @@ entries:
   eu:
     address: 0x09547DC4
     size: 32
-- name: gUnk_09614EF8
+- name: gTalk4000Palette
   format: palette
   us:
     address: 0x09614EF8
@@ -3172,7 +3172,7 @@ entries:
   eu:
     address: 0x09547DE4
     size: 32
-- name: gUnk_09614F18
+- name: gTalk4100Palette
   format: palette
   us:
     address: 0x09614F18
@@ -3183,7 +3183,7 @@ entries:
   eu:
     address: 0x09547E04
     size: 32
-- name: gUnk_09614F38
+- name: gTalk4200Palette
   format: palette
   us:
     address: 0x09614F38
@@ -3194,7 +3194,7 @@ entries:
   eu:
     address: 0x09547E24
     size: 32
-- name: gUnk_09614F58
+- name: gTalk4300Palette
   format: palette
   us:
     address: 0x09614F58
@@ -3205,7 +3205,7 @@ entries:
   eu:
     address: 0x09547E44
     size: 32
-- name: gUnk_09614F78
+- name: gTalk4400Palette
   format: palette
   us:
     address: 0x09614F78
@@ -3216,7 +3216,7 @@ entries:
   eu:
     address: 0x09547E64
     size: 32
-- name: gUnk_09614F98
+- name: gTalk4500Palette
   format: palette
   us:
     address: 0x09614F98
@@ -3227,7 +3227,7 @@ entries:
   eu:
     address: 0x09547E84
     size: 32
-- name: gUnk_09614FB8
+- name: gTalk4600Palette
   format: palette
   us:
     address: 0x09614FB8
@@ -3238,7 +3238,7 @@ entries:
   eu:
     address: 0x09547EA4
     size: 32
-- name: gUnk_09614FD8
+- name: gTalk4700Palette
   format: palette
   us:
     address: 0x09614FD8
@@ -3249,7 +3249,7 @@ entries:
   eu:
     address: 0x09547EC4
     size: 32
-- name: gUnk_09614FF8
+- name: gTalk4800Palette
   format: palette
   us:
     address: 0x09614FF8
@@ -3260,7 +3260,7 @@ entries:
   eu:
     address: 0x09547EE4
     size: 32
-- name: gUnk_09615018
+- name: gTalk4900Palette
   format: palette
   us:
     address: 0x09615018
@@ -3271,7 +3271,7 @@ entries:
   eu:
     address: 0x09547F04
     size: 32
-- name: gUnk_09615038
+- name: gTalk5000Palette
   format: palette
   us:
     address: 0x09615038
@@ -3293,7 +3293,7 @@ entries:
   eu:
     address: 0x09547F44
     size: 32
-- name: gUnk_09615078
+- name: gTalk5100Palette
   format: palette
   us:
     address: 0x09615078
@@ -3304,7 +3304,7 @@ entries:
   eu:
     address: 0x09547F64
     size: 32
-- name: gUnk_09615098
+- name: gTalk5200Palette
   format: palette
   us:
     address: 0x09615098
@@ -3315,7 +3315,7 @@ entries:
   eu:
     address: 0x09547F84
     size: 32
-- name: gUnk_096150B8
+- name: gTalk5300Palette
   format: palette
   us:
     address: 0x096150B8
@@ -3326,7 +3326,7 @@ entries:
   eu:
     address: 0x09547FA4
     size: 32
-- name: gUnk_096150D8
+- name: gTalk5400Palette
   format: palette
   us:
     address: 0x096150D8
@@ -3337,7 +3337,7 @@ entries:
   eu:
     address: 0x09547FC4
     size: 32
-- name: gUnk_096150F8
+- name: gTalk5500Palette
   format: palette
   us:
     address: 0x096150F8
@@ -3348,7 +3348,7 @@ entries:
   eu:
     address: 0x09547FE4
     size: 32
-- name: gUnk_09615118
+- name: gTalk5600Palette
   format: palette
   us:
     address: 0x09615118
@@ -3359,7 +3359,7 @@ entries:
   eu:
     address: 0x09548004
     size: 32
-- name: gUnk_09615138
+- name: gTalk5700Palette
   format: palette
   us:
     address: 0x09615138
@@ -3370,7 +3370,7 @@ entries:
   eu:
     address: 0x09548024
     size: 32
-- name: gUnk_09615158
+- name: gTalk5800Palette
   format: palette
   us:
     address: 0x09615158
@@ -3381,7 +3381,7 @@ entries:
   eu:
     address: 0x09548044
     size: 32
-- name: gUnk_09615178
+- name: gTalk5900Palette
   format: palette
   us:
     address: 0x09615178
@@ -3392,7 +3392,7 @@ entries:
   eu:
     address: 0x09548064
     size: 32
-- name: gUnk_09615198
+- name: gTalk6000Palette
   format: palette
   us:
     address: 0x09615198
@@ -3403,7 +3403,7 @@ entries:
   eu:
     address: 0x09548084
     size: 32
-- name: gUnk_096151B8
+- name: gTalk6100Palette
   format: palette
   us:
     address: 0x096151B8
@@ -3416,7 +3416,7 @@ entries:
     size: 32
 - name: donald
   format: palette
-  symbol: gUnk_09617C58
+  symbol: gDonaldPalette
   us:
     address: 0x09617C58
     size: 32
@@ -3428,7 +3428,7 @@ entries:
     size: 32
 - name: robe
   format: palette
-  symbol: gUnk_09617C78
+  symbol: gRobePalette
   us:
     address: 0x09617C78
     size: 32
@@ -3440,7 +3440,7 @@ entries:
     size: 32
 - name: trump_H
   format: palette
-  symbol: gUnk_09617C98
+  symbol: gTrumpHPalette
   us:
     address: 0x09617C98
     size: 32
@@ -3452,7 +3452,7 @@ entries:
     size: 32
 - name: trump_S
   format: palette
-  symbol: gUnk_09617CB8
+  symbol: gTrumpSPalette
   us:
     address: 0x09617CB8
     size: 32
@@ -3464,7 +3464,7 @@ entries:
     size: 32
 - name: qeen
   format: palette
-  symbol: gUnk_09617CD8
+  symbol: gQeenPalette
   us:
     address: 0x09617CD8
     size: 32
@@ -3476,7 +3476,7 @@ entries:
     size: 32
 - name: alice
   format: palette
-  symbol: gUnk_09617CF8
+  symbol: gAlicePalette
   us:
     address: 0x09617CF8
     size: 32
@@ -3488,7 +3488,7 @@ entries:
     size: 32
 - name: jiminy
   format: palette
-  symbol: gUnk_09617D18
+  symbol: gJiminyPalette
   us:
     address: 0x09617D18
     size: 32
@@ -3500,7 +3500,7 @@ entries:
     size: 32
 - name: pinokio
   format: palette
-  symbol: gUnk_09617D38
+  symbol: gPinokioPalette
   us:
     address: 0x09617D38
     size: 32
@@ -3512,7 +3512,7 @@ entries:
     size: 32
 - name: mogu
   format: palette
-  symbol: gUnk_09617D58
+  symbol: gMoguPalette
   us:
     address: 0x09617D58
     size: 32
@@ -3524,7 +3524,7 @@ entries:
     size: 32
 - name: usagi00
   format: palette
-  symbol: gUnk_09617D78
+  symbol: gUsagi00Palette
   us:
     address: 0x09617D78
     size: 32
@@ -3536,7 +3536,7 @@ entries:
     size: 32
 - name: aladdin
   format: palette
-  symbol: gUnk_09617D98
+  symbol: gAladdinPalette
   us:
     address: 0x09617D98
     size: 32
@@ -3548,7 +3548,7 @@ entries:
     size: 32
 - name: jack
   format: palette
-  symbol: gUnk_09617DB8
+  symbol: gJackPalette
   us:
     address: 0x09617DB8
     size: 32
@@ -3560,7 +3560,7 @@ entries:
     size: 32
 - name: peter
   format: palette
-  symbol: gUnk_09617DD8
+  symbol: gPeterPalette
   us:
     address: 0x09617DD8
     size: 32
@@ -3572,7 +3572,7 @@ entries:
     size: 32
 - name: ariel
   format: palette
-  symbol: gUnk_09617DF8
+  symbol: gArielPalette
   us:
     address: 0x09617DF8
     size: 32
@@ -3584,7 +3584,7 @@ entries:
     size: 32
 - name: beast
   format: palette
-  symbol: gUnk_09617E18
+  symbol: gBeastPalette
   us:
     address: 0x09617E18
     size: 32
@@ -3594,7 +3594,7 @@ entries:
   eu:
     address: 0x0954AD04
     size: 32
-- name: gUnk_09617E38
+- name: gCheshirePalette
   format: palette
   us:
     address: 0x09617E38
@@ -3607,7 +3607,7 @@ entries:
     size: 32
 - name: geppetto
   format: palette
-  symbol: gUnk_09617E58
+  symbol: gGeppettoPalette
   us:
     address: 0x09617E58
     size: 32
@@ -3619,7 +3619,7 @@ entries:
     size: 32
 - name: arthra
   format: palette
-  symbol: gUnk_09617E78
+  symbol: gArthraPalette
   us:
     address: 0x09617E78
     size: 32
@@ -3631,7 +3631,7 @@ entries:
     size: 32
 - name: bugi
   format: palette
-  symbol: gUnk_09617E98
+  symbol: gBugiPalette
   us:
     address: 0x09617E98
     size: 32
@@ -3643,7 +3643,7 @@ entries:
     size: 32
 - name: bell
   format: palette
-  symbol: gUnk_09617EB8
+  symbol: gBellPalette
   us:
     address: 0x09617EB8
     size: 32
@@ -3655,7 +3655,7 @@ entries:
     size: 32
 - name: phil
   format: palette
-  symbol: gUnk_09617ED8
+  symbol: gPhilPalette
   us:
     address: 0x09617ED8
     size: 32
@@ -3667,7 +3667,7 @@ entries:
     size: 32
 - name: heracles
   format: palette
-  symbol: gUnk_09617EF8
+  symbol: gHeraclesPalette
   us:
     address: 0x09617EF8
     size: 32
@@ -3679,7 +3679,7 @@ entries:
     size: 32
 - name: hades
   format: palette
-  symbol: gUnk_09617F18
+  symbol: gHadesPalette
   us:
     address: 0x09617F18
     size: 32
@@ -3689,7 +3689,7 @@ entries:
   eu:
     address: 0x0954AE04
     size: 32
-- name: gUnk_09617F38
+- name: gHadesAngryPalette
   format: palette
   us:
     address: 0x09617F38
@@ -3700,7 +3700,7 @@ entries:
   eu:
     address: 0x0954AE24
     size: 32
-- name: gUnk_09617F58
+- name: gShougekihaPalette
   format: palette
   us:
     address: 0x09617F58
@@ -3722,7 +3722,7 @@ entries:
   eu:
     address: 0x0954AE64
     size: 32
-- name: gUnk_09617F98
+- name: gDamboPalette
   format: palette
   us:
     address: 0x09617F98
@@ -3735,7 +3735,7 @@ entries:
     size: 32
 - name: finkl
   format: palette
-  symbol: gUnk_09617FB8
+  symbol: gFinklPalette
   us:
     address: 0x09617FB8
     size: 32
@@ -3747,7 +3747,7 @@ entries:
     size: 32
 - name: maref
   format: palette
-  symbol: gUnk_09617FD8
+  symbol: gMarefPalette
   us:
     address: 0x09617FD8
     size: 32
@@ -3759,7 +3759,7 @@ entries:
     size: 32
 - name: banb
   format: palette
-  symbol: gUnk_09617FF8
+  symbol: gBanbPalette
   us:
     address: 0x09617FF8
     size: 32
@@ -3771,7 +3771,7 @@ entries:
     size: 32
 - name: shinba
   format: palette
-  symbol: gUnk_09618018
+  symbol: gShinbaPalette
   us:
     address: 0x09618018
     size: 32
@@ -3783,7 +3783,7 @@ entries:
     size: 32
 - name: mushu
   format: palette
-  symbol: gUnk_09618038
+  symbol: gMushuPalette
   us:
     address: 0x09618038
     size: 32
@@ -3795,7 +3795,7 @@ entries:
     size: 32
 - name: kairi
   format: palette
-  symbol: gUnk_09618058
+  symbol: gKairiPalette
   us:
     address: 0x09618058
     size: 32
@@ -3807,7 +3807,7 @@ entries:
     size: 32
 - name: earis
   format: palette
-  symbol: gUnk_09618078
+  symbol: gEarisPalette
   us:
     address: 0x09618078
     size: 32
@@ -3819,7 +3819,7 @@ entries:
     size: 32
 - name: tink
   format: palette
-  symbol: gUnk_09618098
+  symbol: gTinkPalette
   us:
     address: 0x09618098
     size: 32
@@ -3831,7 +3831,7 @@ entries:
     size: 32
 - name: sebastian
   format: palette
-  symbol: gUnk_096180B8
+  symbol: gSebastianPalette
   us:
     address: 0x096180B8
     size: 32
@@ -3843,7 +3843,7 @@ entries:
     size: 32
 - name: flounder
   format: palette
-  symbol: gUnk_096180D8
+  symbol: gFlounderPalette
   us:
     address: 0x096180D8
     size: 32
@@ -3855,7 +3855,7 @@ entries:
     size: 32
 - name: accele
   format: palette
-  symbol: gUnk_096180F8
+  symbol: gAccelePalette
   us:
     address: 0x096180F8
     size: 32
@@ -3867,7 +3867,7 @@ entries:
     size: 32
 - name: riku
   format: palette
-  symbol: gUnk_09618118
+  symbol: gRikuPalette
   us:
     address: 0x09618118
     size: 32
@@ -3879,7 +3879,7 @@ entries:
     size: 32
 - name: sari
   format: palette
-  symbol: gUnk_09618138
+  symbol: gSariPalette
   us:
     address: 0x09618138
     size: 32
@@ -3891,7 +3891,7 @@ entries:
     size: 32
 - name: hook
   format: palette
-  symbol: gUnk_09618158
+  symbol: gHookPalette
   us:
     address: 0x09618158
     size: 32
@@ -3903,7 +3903,7 @@ entries:
     size: 32
 - name: jasmine
   format: palette
-  symbol: gUnk_09618178
+  symbol: gJasminePalette
   us:
     address: 0x09618178
     size: 32
@@ -3915,7 +3915,7 @@ entries:
     size: 32
 - name: omamori
   format: palette
-  symbol: gUnk_09618198
+  symbol: gOmamoriPalette
   us:
     address: 0x09618198
     size: 32
@@ -3927,7 +3927,7 @@ entries:
     size: 32
 - name: goofy2
   format: palette
-  symbol: gUnk_096181B8
+  symbol: gGoofy2Palette
   us:
     address: 0x096181B8
     size: 32
@@ -3939,7 +3939,7 @@ entries:
     size: 32
 - name: donald2
   format: palette
-  symbol: gUnk_096181D8
+  symbol: gDonald2Palette
   us:
     address: 0x096181D8
     size: 32
@@ -3951,7 +3951,7 @@ entries:
     size: 32
 - name: shido
   format: palette
-  symbol: gUnk_096181F8
+  symbol: gShidoPalette
   us:
     address: 0x096181F8
     size: 32
@@ -3963,7 +3963,7 @@ entries:
     size: 32
 - name: selphie
   format: palette
-  symbol: gUnk_09618218
+  symbol: gSelphiePalette
   us:
     address: 0x09618218
     size: 32
@@ -3975,7 +3975,7 @@ entries:
     size: 32
 - name: jaffer
   format: palette
-  symbol: gUnk_09618238
+  symbol: gJafferPalette
   us:
     address: 0x09618238
     size: 32
@@ -3987,7 +3987,7 @@ entries:
     size: 32
 - name: reon
   format: palette
-  symbol: gUnk_09618258
+  symbol: gReonPalette
   us:
     address: 0x09618258
     size: 32
@@ -3999,7 +3999,7 @@ entries:
     size: 32
 - name: wakka
   format: palette
-  symbol: gUnk_09618278
+  symbol: gWakkaPalette
   us:
     address: 0x09618278
     size: 32
@@ -4011,7 +4011,7 @@ entries:
     size: 32
 - name: genie
   format: palette
-  symbol: gUnk_09618298
+  symbol: gGeniePalette
   us:
     address: 0x09618298
     size: 32
@@ -4023,7 +4023,7 @@ entries:
     size: 32
 - name: tidus
   format: palette
-  symbol: gUnk_096182B8
+  symbol: gTidusPalette
   us:
     address: 0x096182B8
     size: 32
@@ -4035,7 +4035,7 @@ entries:
     size: 32
 - name: wendy
   format: palette
-  symbol: gUnk_096182D8
+  symbol: gWendyPalette
   us:
     address: 0x096182D8
     size: 32
@@ -4047,7 +4047,7 @@ entries:
     size: 32
 - name: yuffie
   format: palette
-  symbol: gUnk_096182F8
+  symbol: gYuffiePalette
   us:
     address: 0x096182F8
     size: 32
@@ -4059,7 +4059,7 @@ entries:
     size: 32
 - name: ansem
   format: palette
-  symbol: gUnk_09618318
+  symbol: gAnsemPalette
   us:
     address: 0x09618318
     size: 32
@@ -4071,7 +4071,7 @@ entries:
     size: 32
 - name: niseriku
   format: palette
-  symbol: gUnk_09618338
+  symbol: gNiserikuPalette
   us:
     address: 0x09618338
     size: 32
@@ -4094,7 +4094,7 @@ entries:
     size: 32
 - name: ansemback
   format: palette
-  symbol: gUnk_09618378
+  symbol: gAnsembackPalette
   us:
     address: 0x09618378
     size: 32
@@ -4117,7 +4117,7 @@ entries:
     size: 32
 - name: vixen
   format: palette
-  symbol: gUnk_096183B8
+  symbol: gVixenPalette
   us:
     address: 0x096183B8
     size: 32
@@ -4140,7 +4140,7 @@ entries:
     size: 32
 - name: mickey
   format: palette
-  symbol: gUnk_096183F8
+  symbol: gMickeyPalette
   us:
     address: 0x096183F8
     size: 32
@@ -4163,7 +4163,7 @@ entries:
     size: 32
 - name: maruxha
   format: palette
-  symbol: gUnk_09618438
+  symbol: gMaruxhaPalette
   us:
     address: 0x09618438
     size: 32
@@ -4175,7 +4175,7 @@ entries:
     size: 32
 - name: laxine
   format: palette
-  symbol: gUnk_09618458
+  symbol: gLaxinePalette
   us:
     address: 0x09618458
     size: 32
@@ -4187,7 +4187,7 @@ entries:
     size: 32
 - name: rexeus
   format: palette
-  symbol: gUnk_09618478
+  symbol: gRexeusPalette
   us:
     address: 0x09618478
     size: 32
@@ -4199,7 +4199,7 @@ entries:
     size: 32
 - name: xexion
   format: palette
-  symbol: gUnk_09618498
+  symbol: gXexionPalette
   us:
     address: 0x09618498
     size: 32
@@ -4211,7 +4211,7 @@ entries:
     size: 32
 - name: diz
   format: palette
-  symbol: gUnk_096184B8
+  symbol: gDizPalette
   us:
     address: 0x096184B8
     size: 32
@@ -4223,7 +4223,7 @@ entries:
     size: 32
 - name: namine
   format: palette
-  symbol: gUnk_096184D8
+  symbol: gNaminePalette
   us:
     address: 0x096184D8
     size: 32
@@ -4246,7 +4246,7 @@ entries:
     address: 0x0954B3E4
     size: 32
     symbol: gUnkEu_0954B3E4
-- name: gUnk_09618518
+- name: gKoukyuPalette
   format: palette
   us:
     address: 0x09618518
@@ -4257,7 +4257,7 @@ entries:
   eu:
     address: 0x0954B404
     size: 32
-- name: gUnk_09618538
+- name: gMareficentBallPalette
   format: palette
   us:
     address: 0x09618538
@@ -4281,7 +4281,7 @@ entries:
     address: 0x0954B444
     size: 64
     symbol: gUnkEu_0954B444
-- name: gUnk_09618598
+- name: gCardRoom01Palette
   format: palette
   us:
     address: 0x09618598
@@ -4292,7 +4292,7 @@ entries:
   eu:
     address: 0x0954B484
     size: 32
-- name: gUnk_096185B8
+- name: gCardRoom02Palette
   format: palette
   us:
     address: 0x096185B8
@@ -4303,7 +4303,7 @@ entries:
   eu:
     address: 0x0954B4A4
     size: 32
-- name: gUnk_096185D8
+- name: gCardRoom03Palette
   format: palette
   us:
     address: 0x096185D8
@@ -4314,7 +4314,7 @@ entries:
   eu:
     address: 0x0954B4C4
     size: 32
-- name: gUnk_096185F8
+- name: gCardRoom04Palette
   format: palette
   us:
     address: 0x096185F8
@@ -4325,7 +4325,7 @@ entries:
   eu:
     address: 0x0954B4E4
     size: 32
-- name: gUnk_09618618
+- name: gCardRoom05Palette
   format: palette
   us:
     address: 0x09618618
@@ -4336,7 +4336,7 @@ entries:
   eu:
     address: 0x0954B504
     size: 32
-- name: gUnk_09618638
+- name: gCardRoom06Palette
   format: palette
   us:
     address: 0x09618638
@@ -4347,7 +4347,7 @@ entries:
   eu:
     address: 0x0954B524
     size: 32
-- name: gUnk_09618658
+- name: gCardRoom07Palette
   format: palette
   us:
     address: 0x09618658
@@ -4358,7 +4358,7 @@ entries:
   eu:
     address: 0x0954B544
     size: 32
-- name: gUnk_09618678
+- name: gCardRoom08Palette
   format: palette
   us:
     address: 0x09618678
@@ -4369,7 +4369,7 @@ entries:
   eu:
     address: 0x0954B564
     size: 32
-- name: gUnk_09618698
+- name: gCardRoom09Palette
   format: palette
   us:
     address: 0x09618698
@@ -4380,7 +4380,7 @@ entries:
   eu:
     address: 0x0954B584
     size: 32
-- name: gUnk_096186B8
+- name: gCardRoom10Palette
   format: palette
   us:
     address: 0x096186B8
@@ -4391,7 +4391,7 @@ entries:
   eu:
     address: 0x0954B5A4
     size: 32
-- name: gUnk_096186D8
+- name: gCardRoom11Palette
   format: palette
   us:
     address: 0x096186D8
@@ -4402,7 +4402,7 @@ entries:
   eu:
     address: 0x0954B5C4
     size: 32
-- name: gUnk_096186F8
+- name: gCardRoom12Palette
   format: palette
   us:
     address: 0x096186F8
@@ -4413,7 +4413,7 @@ entries:
   eu:
     address: 0x0954B5E4
     size: 32
-- name: gUnk_09618718
+- name: gCardRoom13Palette
   format: palette
   us:
     address: 0x09618718
@@ -4424,7 +4424,7 @@ entries:
   eu:
     address: 0x0954B604
     size: 32
-- name: gUnk_09618738
+- name: gCardRoom14Palette
   format: palette
   us:
     address: 0x09618738
@@ -4435,7 +4435,7 @@ entries:
   eu:
     address: 0x0954B624
     size: 32
-- name: gUnk_09618758
+- name: gCardRoom15Palette
   format: palette
   us:
     address: 0x09618758
@@ -4446,7 +4446,7 @@ entries:
   eu:
     address: 0x0954B644
     size: 32
-- name: gUnk_09618778
+- name: gCardRoom16Palette
   format: palette
   us:
     address: 0x09618778
@@ -4457,7 +4457,7 @@ entries:
   eu:
     address: 0x0954B664
     size: 32
-- name: gUnk_09618798
+- name: gCardRoom17Palette
   format: palette
   us:
     address: 0x09618798
@@ -4468,7 +4468,7 @@ entries:
   eu:
     address: 0x0954B684
     size: 32
-- name: gUnk_096187B8
+- name: gCardRoom18Palette
   format: palette
   us:
     address: 0x096187B8
@@ -4479,7 +4479,7 @@ entries:
   eu:
     address: 0x0954B6A4
     size: 32
-- name: gUnk_096187D8
+- name: gCardRoom19Palette
   format: palette
   us:
     address: 0x096187D8
@@ -4490,7 +4490,7 @@ entries:
   eu:
     address: 0x0954B6C4
     size: 32
-- name: gUnk_096187F8
+- name: gCardRoom20Palette
   format: palette
   us:
     address: 0x096187F8
@@ -4501,7 +4501,7 @@ entries:
   eu:
     address: 0x0954B6E4
     size: 32
-- name: gUnk_09618818
+- name: gCardRoom21Palette
   format: palette
   us:
     address: 0x09618818
@@ -4512,7 +4512,7 @@ entries:
   eu:
     address: 0x0954B704
     size: 32
-- name: gUnk_09618838
+- name: gCardRoom22Palette
   format: palette
   us:
     address: 0x09618838
@@ -4523,7 +4523,7 @@ entries:
   eu:
     address: 0x0954B724
     size: 32
-- name: gUnk_09618858
+- name: gCardRoom23Palette
   format: palette
   us:
     address: 0x09618858
@@ -4820,7 +4820,7 @@ entries:
   eu:
     address: 0x0954BA84
     size: 64
-- name: gUnk_09618BD8
+- name: gCardEve00Palette
   format: palette
   us:
     address: 0x09618BD8
@@ -4831,7 +4831,7 @@ entries:
   eu:
     address: 0x0954BAC4
     size: 32
-- name: gUnk_09618BF8
+- name: gCardEve01Palette
   format: palette
   us:
     address: 0x09618BF8
@@ -4842,7 +4842,7 @@ entries:
   eu:
     address: 0x0954BAE4
     size: 32
-- name: gUnk_09618C18
+- name: gCardEve02Palette
   format: palette
   us:
     address: 0x09618C18
@@ -5002,7 +5002,7 @@ entries:
     size: 32
 - name: boss03obj
   format: palette
-  symbol: gUnk_096FB2A4
+  symbol: gBoss03objPalette
   us:
     address: 0x096FB2A4
     size: 32
@@ -5036,7 +5036,7 @@ entries:
     size: 32
 - name: boss00_obj
   format: palette
-  symbol: gUnk_096FB8A4
+  symbol: gBoss00ObjPalette
   us:
     address: 0x096FB8A4
     size: 32
@@ -5290,7 +5290,7 @@ entries:
     size: 32
 - name: pooh
   format: palette
-  symbol: gUnk_09849A98
+  symbol: gPoohPalette
   us:
     address: 0x09849A98
     size: 32
@@ -5313,7 +5313,7 @@ entries:
     size: 32
 - name: trap00_01
   format: palette
-  symbol: gUnk_09849AD8
+  symbol: gTrap0001Palette
   us:
     address: 0x09849AD8
     size: 32
@@ -5323,7 +5323,7 @@ entries:
   eu:
     address: 0x0981E180
     size: 32
-- name: gUnk_09849AF8
+- name: gTrap0002Palette
   format: palette
   us:
     address: 0x09849AF8
@@ -5334,7 +5334,7 @@ entries:
   eu:
     address: 0x0981E1A0
     size: 32
-- name: gUnk_09849B18
+- name: gTrap0003Palette
   format: palette
   us:
     address: 0x09849B18
@@ -5345,7 +5345,7 @@ entries:
   eu:
     address: 0x0981E1C0
     size: 32
-- name: gUnk_09849B38
+- name: gTrap0004Palette
   format: palette
   us:
     address: 0x09849B38
@@ -5380,7 +5380,7 @@ entries:
     size: 32
 - name: pooh_gauge
   format: palette
-  symbol: gUnk_09849B98
+  symbol: gPoohGaugePalette
   us:
     address: 0x09849B98
     size: 32
@@ -5403,7 +5403,7 @@ entries:
     size: 32
 - name: tigger
   format: palette
-  symbol: gUnk_09849BD8
+  symbol: gTiggerPalette
   us:
     address: 0x09849BD8
     size: 32
@@ -5437,7 +5437,7 @@ entries:
     size: 32
 - name: trap01_00
   format: palette
-  symbol: gUnk_09849C38
+  symbol: gTrap0100Palette
   us:
     address: 0x09849C38
     size: 32
@@ -5449,7 +5449,7 @@ entries:
     size: 32
 - name: eeyore
   format: palette
-  symbol: gUnk_09849C58
+  symbol: gEeyorePalette
   us:
     address: 0x09849C58
     size: 32
@@ -5461,7 +5461,7 @@ entries:
     size: 32
 - name: owl
   format: palette
-  symbol: gUnk_09849C78
+  symbol: gOwlPalette
   us:
     address: 0x09849C78
     size: 32
@@ -5484,7 +5484,7 @@ entries:
     size: 32
 - name: rabbit
   format: palette
-  symbol: gUnk_09849CB8
+  symbol: gRabbitPalette
   us:
     address: 0x09849CB8
     size: 32
@@ -5509,7 +5509,7 @@ entries:
     symbol: gUnkEu_0981E380
 - name: roo
   format: palette
-  symbol: gUnk_09849CF8
+  symbol: gRooPalette
   us:
     address: 0x09849CF8
     size: 32
@@ -5519,7 +5519,7 @@ entries:
   eu:
     address: 0x0981E3A0
     size: 32
-- name: gUnk_09849D18
+- name: gRoFootmarkPalette
   format: palette
   us:
     address: 0x09849D18
@@ -5552,7 +5552,7 @@ entries:
   eu:
     address: 0x0981E400
     size: 32
-- name: gUnk_09849D78
+- name: gEeHoneycombPalette
   format: palette
   us:
     address: 0x09849D78
@@ -5563,7 +5563,7 @@ entries:
   eu:
     address: 0x0981E420
     size: 32
-- name: gUnk_09849D98
+- name: gEeBeePalette
   format: palette
   us:
     address: 0x09849D98
@@ -5574,7 +5574,7 @@ entries:
   eu:
     address: 0x0981E440
     size: 32
-- name: gUnk_09849DB8
+- name: gRaVegetablesPalette
   format: palette
   us:
     address: 0x09849DB8
@@ -5585,7 +5585,7 @@ entries:
   eu:
     address: 0x0981E460
     size: 32
-- name: gUnk_09849DD8
+- name: gRaWagonPalette
   format: palette
   us:
     address: 0x09849DD8
@@ -5796,7 +5796,7 @@ entries:
     size: 32
 - name: boss02obj
   format: palette
-  symbol: gUnk_0984AF78
+  symbol: gBoss02objPalette
   us:
     address: 0x0984AF78
     size: 32
@@ -5817,7 +5817,7 @@ entries:
   eu:
     address: 0x0981F640
     size: 32
-- name: gUnk_0984AFB8
+- name: gKaifukuPalette
   format: palette
   us:
     address: 0x0984AFB8
@@ -5828,7 +5828,7 @@ entries:
   eu:
     address: 0x0981F660
     size: 32
-- name: gUnk_0984AFD8
+- name: gKnifePalette
   format: palette
   us:
     address: 0x0984AFD8
@@ -6210,7 +6210,7 @@ entries:
     size: 32
 - name: boss01obj
   format: palette
-  symbol: gUnk_09A3C89C
+  symbol: gBoss01objPalette
   us:
     address: 0x09A3C89C
     size: 32
@@ -6722,7 +6722,7 @@ entries:
     size: 32
 - name: bos_pc_bg
   format: palette
-  symbol: gUnk_09D69274
+  symbol: gBosPcBgPalette
   us:
     address: 0x09D69274
     size: 32

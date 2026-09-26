@@ -103,7 +103,7 @@ typedef struct FrdPoohArgs {
     u8 unk_03;
 } FrdPoohArgs;
 
-extern u8 gUnk_09849A98[];
+extern u8 gPoohPalette[];
 extern const AnimDef gUnkEu_08896524[];
 
 #endif
@@ -163,9 +163,9 @@ extern s32* gUnk_02039DC4;
 extern EventState* gEventState;
 
 extern Mode gModeChkbtl;
-extern u8 gUnk_08B24DAA[];
+extern u8 gBHpgagETiles[];
 extern u8 gUnk_096148B8[];
-extern u8 gUnk_08F69BA4[];
+extern u8 gBStatesPalette[];
 extern u8 gUnk_08F69BE4[];
 
 extern vu16 gSystemFlags;

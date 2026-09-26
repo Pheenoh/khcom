@@ -35,72 +35,72 @@ objects:
     start: 0x08896654
     end: 0x088B149C
 entries:
-- name: gUnk_09EDE4F0
+- name: gGoofy05Frames
   record: SpriteTable
-  items: [gUnk_0886AD30, gUnk_0886AD4C, gUnk_0886AD68, gUnk_0886AD78, gUnk_0886AD88, gUnk_0886AD98, gUnk_0886ADAE]
+  items: [gGoofy05Frame0, gGoofy05Frame1, gGoofy05Frame2, gGoofy05Frame3, gGoofy05Frame4, gGoofy05Frame5, gGoofy05Frame6]
   us:
     address: 0x09EDE4F0
   jp:
     address: 0x09EB5F6C
   eu:
     address: 0x09F59148
-- name: gUnk_09EDE50C
+- name: gGoofy05Anims
   record: AnimTable
-  items: [gUnk_0886ADBE, gUnk_0886ADC8, gUnk_0886ADD6]
+  items: [gGoofy05Anim0, gGoofy05Anim1, gGoofy05Anim2]
   us:
     address: 0x09EDE50C
   jp:
     address: 0x09EB5F88
   eu:
     address: 0x09F59164
-- name: gUnk_09EDE518
+- name: gGoofy14Frames
   record: SpriteTable
-  items: [gUnk_0886E2EC, gUnk_0886E302, gUnk_0886E318, gUnk_0886E32E, gUnk_0886E350, gUnk_0886E35A, gUnk_0886E36A]
+  items: [gGoofy14Frame0, gGoofy14Frame1, gGoofy14Frame2, gGoofy14Frame3, gGoofy14Frame4, gGoofy14Frame5, gGoofy14Frame6]
   us:
     address: 0x09EDE518
   jp:
     address: 0x09EB5F94
   eu:
     address: 0x09F59170
-- name: gUnk_09EDE534
+- name: gGoofy14Anims
   record: AnimTable
-  items: [gUnk_0886E374]
+  items: [gGoofy14Anim0]
   us:
     address: 0x09EDE534
   jp:
     address: 0x09EB5FB0
   eu:
     address: 0x09F5918C
-- name: gUnk_09EDE538
+- name: gGoofy16Frames
   record: SpriteTable
-  items: [gUnk_08871798, gUnk_088717AE]
+  items: [gGoofy16Frame0, gGoofy16Frame1]
   us:
     address: 0x09EDE538
   jp:
     address: 0x09EB5FB4
   eu:
     address: 0x09F59190
-- name: gUnk_09EDE540
+- name: gGoofy16Anims
   record: AnimTable
-  items: [gUnk_088717C4, gUnk_088717CE]
+  items: [gGoofy16Anim0, gGoofy16Anim1]
   us:
     address: 0x09EDE540
   jp:
     address: 0x09EB5FBC
   eu:
     address: 0x09F59198
-- name: gUnk_09EDE548
+- name: gDonaBtLl00Frames
   record: SpriteTable
-  items: [gUnk_08872358, gUnk_08872368, gUnk_0887237E, gUnk_0887238E, gUnk_0887239E, gUnk_088723B4, gUnk_088723CA, gUnk_088723DA, gUnk_088723EA, gUnk_08872400, gUnk_08872410, gUnk_08872420, gUnk_08872436, gUnk_08872446, gUnk_08872456]
+  items: [gDonaBtLl00Frame0, gDonaBtLl00Frame1, gDonaBtLl00Frame2, gDonaBtLl00Frame3, gDonaBtLl00Frame4, gDonaBtLl00Frame5, gDonaBtLl00Frame6, gDonaBtLl00Frame7, gDonaBtLl00Frame8, gDonaBtLl00Frame9, gDonaBtLl00Frame10, gDonaBtLl00Frame11, gDonaBtLl00Frame12, gDonaBtLl00Frame13, gDonaBtLl00Frame14]
   us:
     address: 0x09EDE548
   jp:
     address: 0x09EB5FC4
   eu:
     address: 0x09F591A0
-- name: gUnk_09EDE584
+- name: gDonaBtLl00Anims
   record: AnimTable
-  items: [gUnk_08872466, gUnk_0887249C, gUnk_088724CE, gUnk_088724D8]
+  items: [gDonaBtLl00Anim0, gDonaBtLl00Anim1, gDonaBtLl00Anim2, gDonaBtLl00Anim3]
   us:
     address: 0x09EDE584
   jp:
@@ -143,54 +143,54 @@ entries:
     address: 0x09EB606C
   eu:
     address: 0x09F59248
-- name: gUnk_09EDE5FC
+- name: gAladdin10Frames
   record: SpriteTable
-  items: [gUnk_0887A298, gUnk_0887A2B4, gUnk_0887A2CA, gUnk_0887A2D4, gUnk_0887A2F0, gUnk_0887A30C, gUnk_0887A31C, gUnk_0887A332, gUnk_0887A34E, gUnk_0887A35E, gUnk_0887A374, gUnk_0887A38A, gUnk_0887A3A6]
+  items: [gAladdin10Frame0, gAladdin10Frame1, gAladdin10Frame2, gAladdin10Frame3, gAladdin10Frame4, gAladdin10Frame5, gAladdin10Frame6, gAladdin10Frame7, gAladdin10Frame8, gAladdin10Frame9, gAladdin10Frame10, gAladdin10Frame11, gAladdin10Frame12]
   us:
     address: 0x09EDE5FC
   jp:
     address: 0x09EB6078
   eu:
     address: 0x09F59254
-- name: gUnk_09EDE630
+- name: gAladdin10Anims
   record: AnimTable
-  items: [gUnk_0887A3B6, gUnk_0887A3CC, gUnk_0887A3F6]
+  items: [gAladdin10Anim0, gAladdin10Anim1, gAladdin10Anim2]
   us:
     address: 0x09EDE630
   jp:
     address: 0x09EB60AC
   eu:
     address: 0x09F59288
-- name: gUnk_09EDE63C
+- name: gPeterTukiFrames
   record: SpriteTable
-  items: [gUnk_088800E0, gUnk_088800F6, gUnk_0888010C, gUnk_08880122, gUnk_0888013E, gUnk_08880160]
+  items: [gPeterTukiFrame0, gPeterTukiFrame1, gPeterTukiFrame2, gPeterTukiFrame3, gPeterTukiFrame4, gPeterTukiFrame5]
   us:
     address: 0x09EDE63C
   jp:
     address: 0x09EB60B8
   eu:
     address: 0x09F59294
-- name: gUnk_09EDE654
+- name: gPeterTukiAnims
   record: AnimTable
-  items: [gUnk_0888018E, gUnk_08880198, gUnk_088801AA, gUnk_088801B4]
+  items: [gPeterTukiAnim0, gPeterTukiAnim1, gPeterTukiAnim2, gPeterTukiAnim3]
   us:
     address: 0x09EDE654
   jp:
     address: 0x09EB60D0
   eu:
     address: 0x09F592AC
-- name: gUnk_09EDE664
+- name: gFelosiaslangeFrames
   record: SpriteTable
-  items: [gUnk_08881560, gUnk_088815B2, gUnk_088815F8, gUnk_0888164A, gUnk_08881684, gUnk_088816D0, gUnk_0888171C]
+  items: [gFelosiaslangeFrame0, gFelosiaslangeFrame1, gFelosiaslangeFrame2, gFelosiaslangeFrame3, gFelosiaslangeFrame4, gFelosiaslangeFrame5, gFelosiaslangeFrame6]
   us:
     address: 0x09EDE664
   jp:
     address: 0x09EB60E0
   eu:
     address: 0x09F592BC
-- name: gUnk_09EDE680
+- name: gFelosiaslangeAnims
   record: AnimTable
-  items: [gUnk_0888175C, gUnk_0888177A]
+  items: [gFelosiaslangeAnim0, gFelosiaslangeAnim1]
   us:
     address: 0x09EDE680
   jp:
@@ -200,53 +200,53 @@ entries:
 - name: goofy_05
   format: sprite_sheet
   palette: goofy
-  symbol: gUnk_0886ADEC
+  symbol: gGoofy05Tiles
   align: 4
   cell: [86, 78]
   anchor: [41, 70]
   columns: 7
   frames:
-  - symbol: gUnk_0886AD30
+  - symbol: gGoofy05Frame0
     pieces:
     - [32x64, -15, -70]
     - [32x16, -31, -30]
     - [32x16, -15, -14]
     - [16x32, 9, -62]
-  - symbol: gUnk_0886AD4C
+  - symbol: gGoofy05Frame1
     pieces:
     - [32x64, -6, -56]
     - [16x32, 18, -48]
     - [32x32, -22, -40]
     - [16x8, -14, -8]
-  - symbol: gUnk_0886AD68
+  - symbol: gGoofy05Frame2
     pieces:
     - [32x64, -8, -63]
     - [16x32, -16, -31]
-  - symbol: gUnk_0886AD78
+  - symbol: gGoofy05Frame3
     pieces:
     - [64x64, -41, -61, {layer: 1}]
     - [8x32, 22, -61, {layer: 2}]
-  - symbol: gUnk_0886AD88
+  - symbol: gGoofy05Frame4
     pieces:
     - [64x64, -31, -61]
     - [16x8, -7, -67, {layer: 1}]
-  - symbol: gUnk_0886AD98
+  - symbol: gGoofy05Frame5
     pieces:
     - [64x64, -25, -61]
     - [8x16, 37, -46, {layer: 1}]
     - [8x16, -37, -45]
-  - symbol: gUnk_0886ADAE
+  - symbol: gGoofy05Frame6
     pieces:
     - [64x64, -32, -62, {layer: 1}]
     - [8x32, 31, -59, {layer: 2}]
   animations:
-  - symbol: gUnk_0886ADBE
+  - symbol: gGoofy05Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7]]
-  - symbol: gUnk_0886ADC8
+  - symbol: gGoofy05Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 13], [2, 7]]
-  - symbol: gUnk_0886ADD6
+  - symbol: gGoofy05Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 6], [4, 6], [5, 6], [6, 6]]
   us:
@@ -261,46 +261,46 @@ entries:
 - name: goofy_14
   format: sprite_sheet
   palette: goofy
-  symbol: gUnk_0886E396
+  symbol: gGoofy14Tiles
   align: 4
   cell: [92, 83]
   anchor: [44, 72]
   columns: 7
   frames:
-  - symbol: gUnk_0886E2EC
+  - symbol: gGoofy14Frame0
     pieces:
     - [32x64, -17, -54]
     - [32x32, -33, -38]
     - [16x16, -25, -46]
-  - symbol: gUnk_0886E302
+  - symbol: gGoofy14Frame1
     pieces:
     - [32x64, -19, -72]
     - [16x32, -27, -48]
     - [16x32, -3, -24]
-  - symbol: gUnk_0886E318
+  - symbol: gGoofy14Frame2
     pieces:
     - [32x64, -16, -65]
     - [16x16, 0, -9]
     - [16x32, -24, -41]
-  - symbol: gUnk_0886E32E
+  - symbol: gGoofy14Frame3
     pieces:
     - [32x64, -8, -72]
     - [32x32, 16, -56]
     - [16x16, 16, -72]
     - [16x32, -16, -56]
     - [32x32, -8, -24]
-  - symbol: gUnk_0886E350
+  - symbol: gGoofy14Frame4
     pieces:
     - [64x64, -32, -57]
-  - symbol: gUnk_0886E35A
+  - symbol: gGoofy14Frame5
     pieces:
     - [64x64, -44, -53]
     - [16x16, 12, -13]
-  - symbol: gUnk_0886E36A
+  - symbol: gGoofy14Frame6
     pieces:
     - [64x64, -31, -55]
   animations:
-  - symbol: gUnk_0886E374
+  - symbol: gGoofy14Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 9], [1, 9], [2, 10], [3, 11], [4, 9], [5, 13], [6, 9]]
   us:
@@ -315,27 +315,27 @@ entries:
 - name: goofy_16
   format: sprite_sheet
   palette: goofy
-  symbol: gUnk_088717D8
+  symbol: gGoofy16Tiles
   align: 4
   cell: [42, 81]
   anchor: [26, 65]
   columns: 2
   frames:
-  - symbol: gUnk_08871798
+  - symbol: gGoofy16Frame0
     pieces:
     - [32x64, -16, -65]
     - [16x16, 0, -9]
     - [16x32, -24, -41]
-  - symbol: gUnk_088717AE
+  - symbol: gGoofy16Frame1
     pieces:
     - [32x64, -18, -64]
     - [16x32, -26, -40]
     - [16x32, -2, -16]
   animations:
-  - symbol: gUnk_088717C4
+  - symbol: gGoofy16Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 13]]
-  - symbol: gUnk_088717CE
+  - symbol: gGoofy16Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 8]]
   us:
@@ -350,88 +350,88 @@ entries:
 - name: dona_bt_ll00
   format: sprite_sheet
   palette: donald
-  symbol: gUnk_088724E2
+  symbol: gDonaBtLl00Tiles
   align: 4
   cell: [72, 90]
   anchor: [49, 72]
   columns: 8
   frames:
-  - symbol: gUnk_08872358
+  - symbol: gDonaBtLl00Frame0
     pieces:
     - [32x32, -17, -29]
     - [16x16, -9, 2]
-  - symbol: gUnk_08872368
+  - symbol: gDonaBtLl00Frame1
     pieces:
     - [32x32, -20, -43]
     - [16x16, -28, -35]
     - [32x16, -20, -12, {layer: 1}]
-  - symbol: gUnk_0887237E
+  - symbol: gDonaBtLl00Frame2
     pieces:
     - [32x32, -14, -55]
     - [32x16, -14, -24, {layer: 1}]
-  - symbol: gUnk_0887238E
+  - symbol: gDonaBtLl00Frame3
     pieces:
     - [32x32, -13, -49]
     - [32x16, -13, -18]
-  - symbol: gUnk_0887239E
+  - symbol: gDonaBtLl00Frame4
     pieces:
     - [32x32, -37, -38]
     - [32x32, -21, -22]
     - [16x8, -13, -30]
-  - symbol: gUnk_088723B4
+  - symbol: gDonaBtLl00Frame5
     pieces:
     - [32x32, -22, -23]
     - [32x16, -46, -7]
     - [16x8, -6, 8]
-  - symbol: gUnk_088723CA
+  - symbol: gDonaBtLl00Frame6
     pieces:
     - [32x32, -25, -21]
     - [32x16, -49, -5]
-  - symbol: gUnk_088723DA
+  - symbol: gDonaBtLl00Frame7
     pieces:
     - [32x32, -17, -28, {same: [0, 0]}]
     - [32x16, -17, -4, {layer: 1}]
-  - symbol: gUnk_088723EA
+  - symbol: gDonaBtLl00Frame8
     pieces:
     - [32x32, -19, -35]
     - [32x16, -19, -4]
     - [8x16, -26, -35]
-  - symbol: gUnk_08872400
+  - symbol: gDonaBtLl00Frame9
     pieces:
     - [32x32, -15, -33]
     - [32x8, -15, -2]
-  - symbol: gUnk_08872410
+  - symbol: gDonaBtLl00Frame10
     pieces:
     - [32x32, -17, -29]
     - [32x8, -17, 2]
-  - symbol: gUnk_08872420
+  - symbol: gDonaBtLl00Frame11
     pieces:
     - [32x32, -19, -32]
     - [32x16, -19, -1]
     - [16x8, -34, -24]
-  - symbol: gUnk_08872436
+  - symbol: gDonaBtLl00Frame12
     pieces:
     - [32x32, -9, -38]
     - [32x32, -9, -69]
-  - symbol: gUnk_08872446
+  - symbol: gDonaBtLl00Frame13
     pieces:
     - [32x32, -9, -41]
     - [32x32, -9, -72]
-  - symbol: gUnk_08872456
+  - symbol: gDonaBtLl00Frame14
     pieces:
     - [32x32, -11, -21]
     - [32x32, -19, -52]
   animations:
-  - symbol: gUnk_08872466
+  - symbol: gDonaBtLl00Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8], [5, 7], [6, 6], [4, 6], [3, 6], [1, 6], [7, 6], [0, 6]]
-  - symbol: gUnk_0887249C
+  - symbol: gDonaBtLl00Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 7], [8, 7], [9, 7], [10, 7], [11, 8], [12, 9], [13, 10], [12, 7], [14, 7], [7, 7], [0, 7]]
-  - symbol: gUnk_088724CE
+  - symbol: gDonaBtLl00Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[3, 4]]
-  - symbol: gUnk_088724D8
+  - symbol: gDonaBtLl00Anim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[7, 6]]
   us:
@@ -598,85 +598,85 @@ entries:
 - name: aladdin_10
   format: sprite_sheet
   palette: aladdin
-  symbol: gUnk_0887A400
+  symbol: gAladdin10Tiles
   align: 4
   cell: [87, 105]
   anchor: [57, 91]
   columns: 8
   frames:
-  - symbol: gUnk_0887A298
+  - symbol: gAladdin10Frame0
     pieces:
     - [32x64, -15, -57, {layer: 1}]
     - [16x32, -23, -33]
     - [16x16, 9, -9, {layer: 1}]
     - [16x8, 9, 6, {layer: 2}]
-  - symbol: gUnk_0887A2B4
+  - symbol: gAladdin10Frame1
     pieces:
     - [32x64, -12, -51]
     - [16x32, 12, -35]
     - [16x32, -20, -35]
-  - symbol: gUnk_0887A2CA
+  - symbol: gAladdin10Frame2
     pieces:
     - [32x64, -17, -55]
-  - symbol: gUnk_0887A2D4
+  - symbol: gAladdin10Frame3
     pieces:
     - [32x64, -20, -61]
     - [16x16, -28, -29]
     - [16x32, 4, -45]
     - [16x16, 4, -13]
-  - symbol: gUnk_0887A2F0
+  - symbol: gAladdin10Frame4
     pieces:
     - [64x64, -42, -69]
     - [16x16, 14, -29]
     - [16x32, -57, -77]
     - [8x8, -49, -45]
-  - symbol: gUnk_0887A30C
+  - symbol: gAladdin10Frame5
     pieces:
     - [64x64, -37, -60]
     - [16x8, -45, -28]
-  - symbol: gUnk_0887A31C
+  - symbol: gAladdin10Frame6
     pieces:
     - [32x64, -21, -57]
     - [16x32, -29, -57]
     - [16x16, 3, -33]
-  - symbol: gUnk_0887A332
+  - symbol: gAladdin10Frame7
     pieces:
     - [32x64, -23, -57]
     - [16x32, 1, -25]
     - [16x16, -31, -57]
     - [8x16, -23, -72, {layer: 1}]
-  - symbol: gUnk_0887A34E
+  - symbol: gAladdin10Frame8
     pieces:
     - [64x64, -38, -65]
     - [16x32, -53, -81]
-  - symbol: gUnk_0887A35E
+  - symbol: gAladdin10Frame9
     pieces:
     - [64x64, -43, -59]
     - [16x16, 13, -27]
     - [16x16, -51, -19]
-  - symbol: gUnk_0887A374
+  - symbol: gAladdin10Frame10
     pieces:
     - [64x64, -43, -58]
     - [16x16, -51, -50]
     - [16x16, 13, -26]
-  - symbol: gUnk_0887A38A
+  - symbol: gAladdin10Frame11
     pieces:
     - [32x64, -21, -61]
     - [16x16, 3, -21]
     - [16x32, -29, -61]
     - [16x32, -29, -91]
-  - symbol: gUnk_0887A3A6
+  - symbol: gAladdin10Frame12
     pieces:
     - [64x64, -44, -61]
     - [16x16, -36, -76, {layer: 1}]
   animations:
-  - symbol: gUnk_0887A3B6
+  - symbol: gAladdin10Anim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 10], [1, 7], [2, 7], [3, 8]]
-  - symbol: gUnk_0887A3CC
+  - symbol: gAladdin10Anim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 6], [5, 6], [6, 6], [7, 6], [8, 6], [9, 6], [10, 6], [11, 6], [12, 6]]
-  - symbol: gUnk_0887A3F6
+  - symbol: gAladdin10Anim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 10]]
   us:
@@ -691,41 +691,41 @@ entries:
 - name: peter_tuki
   format: sprite_sheet
   palette: peter
-  symbol: gUnk_088801BE
+  symbol: gPeterTukiTiles
   align: 4
   cell: [94, 79]
   anchor: [54, 80]
   columns: 6
   frames:
-  - symbol: gUnk_088800E0
+  - symbol: gPeterTukiFrame0
     pieces:
     - [32x64, -20, -65, {hflip: true}]
     - [8x16, -8, -80, {hflip: true}]
     - [8x8, -27, -41, {hflip: true}]
-  - symbol: gUnk_088800F6
+  - symbol: gPeterTukiFrame1
     pieces:
     - [32x64, -20, -68, {hflip: true}]
     - [8x8, -7, -75, {hflip: true}]
     - [8x8, -27, -47, {hflip: true}]
-  - symbol: gUnk_0888010C
+  - symbol: gPeterTukiFrame2
     pieces:
     - [32x64, -9, -68, {hflip: true}]
     - [8x8, 4, -75, {hflip: true}]
     - [8x8, -16, -47, {hflip: true}]
-  - symbol: gUnk_08880122
+  - symbol: gPeterTukiFrame3
     pieces:
     - [32x32, -23, -46, {hflip: true}]
     - [32x16, 8, -30, {hflip: true}]
     - [8x8, 8, -37, {hflip: true}]
     - [16x16, -23, -61, {hflip: true}]
-  - symbol: gUnk_0888013E
+  - symbol: gPeterTukiFrame4
     pieces:
     - [32x16, -1, -28, {hflip: true}]
     - [32x32, -32, -44, {hflip: true}]
     - [8x8, -39, -37, {hflip: true}]
     - [16x8, -47, -21, {hflip: true}]
     - [8x8, -54, -21, {hflip: true}]
-  - symbol: gUnk_08880160
+  - symbol: gPeterTukiFrame5
     pieces:
     - [32x32, -29, -55, {hflip: true}]
     - [8x8, -21, -62, {hflip: true}]
@@ -735,16 +735,16 @@ entries:
     - [32x16, -13, -24, {hflip: true}]
     - [8x8, 10, -9, {hflip: true}]
   animations:
-  - symbol: gUnk_0888018E
+  - symbol: gPeterTukiAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 4]]
-  - symbol: gUnk_08880198
+  - symbol: gPeterTukiAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 3], [2, 6], [3, 6]]
-  - symbol: gUnk_088801AA
+  - symbol: gPeterTukiAnim2
     fields: {unk_00: 64, unk_02: 64}
     frames: [[4, 4]]
-  - symbol: gUnk_088801B4
+  - symbol: gPeterTukiAnim3
     fields: {unk_00: 64, unk_02: 64}
     frames: [[5, 8]]
   us:
@@ -759,13 +759,13 @@ entries:
 - name: felosiaslange
   format: sprite_sheet
   palette: beast
-  symbol: gUnk_08881798
+  symbol: gFelosiaslangeTiles
   align: 4
   cell: [118, 88]
   anchor: [61, 78]
   columns: 7
   frames:
-  - symbol: gUnk_08881560
+  - symbol: gFelosiaslangeFrame0
     pieces:
     - [64x32, -41, -49]
     - [16x32, 22, -49]
@@ -780,7 +780,7 @@ entries:
     - [8x32, 37, -41, {layer: 2}]
     - [8x16, 44, -25]
     - [16x16, 6, -64]
-  - symbol: gUnk_088815B2
+  - symbol: gFelosiaslangeFrame1
     pieces:
     - [64x32, -35, -52, {layer: 1}]
     - [32x8, -20, -59, {layer: 2}]
@@ -793,7 +793,7 @@ entries:
     - [8x8, 27, -13, {layer: 1}]
     - [32x16, 5, -6, {layer: 1}]
     - [16x16, 35, -29]
-  - symbol: gUnk_088815F8
+  - symbol: gFelosiaslangeFrame2
     pieces:
     - [64x32, -49, -56]
     - [32x8, -32, -63]
@@ -808,7 +808,7 @@ entries:
     - [8x32, 29, -25, {layer: 2}]
     - [16x16, 36, -32, {layer: 1}]
     - [8x8, 23, -3, {layer: 1}]
-  - symbol: gUnk_0888164A
+  - symbol: gFelosiaslangeFrame3
     pieces:
     - [64x32, -46, -67]
     - [16x16, -61, -59]
@@ -819,7 +819,7 @@ entries:
     - [32x16, 10, -36]
     - [16x16, 41, -36]
     - [32x8, 2, -74]
-  - symbol: gUnk_08881684
+  - symbol: gFelosiaslangeFrame4
     pieces:
     - [32x16, -61, -27]
     - [64x32, -38, -58]
@@ -833,7 +833,7 @@ entries:
     - [16x16, 40, -50]
     - [8x8, 33, -65]
     - [16x32, 25, -58]
-  - symbol: gUnk_088816D0
+  - symbol: gFelosiaslangeFrame5
     pieces:
     - [64x32, -40, -48]
     - [32x16, -48, -17]
@@ -847,7 +847,7 @@ entries:
     - [8x16, 23, -48]
     - [8x8, 30, -48]
     - [16x16, 23, -33]
-  - symbol: gUnk_0888171C
+  - symbol: gFelosiaslangeFrame6
     pieces:
     - [64x32, -31, -51]
     - [32x8, -31, -58]
@@ -860,10 +860,10 @@ entries:
     - [32x8, -31, -5]
     - [32x8, 17, -5]
   animations:
-  - symbol: gUnk_0888175C
+  - symbol: gFelosiaslangeAnim0
     fields: {unk_00: 64, unk_02: 64}
     frames: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8], [5, 8]]
-  - symbol: gUnk_0888177A
+  - symbol: gFelosiaslangeAnim1
     fields: {unk_00: 64, unk_02: 64}
     frames: [[1, 8], [6, 8], [2, 8], [3, 8], [4, 8], [5, 8]]
   us:

@@ -49,7 +49,7 @@ void task_bos_dsd_main_0(DsdMainWork* work, DsdWork* arg) {
     work->dsd->palette2 = LoadObjPalette(gUnk_096FB864, 32);
     work->dsd->palette3 = LoadObjPalette(gUnk_096FB884, 32);
     work->dsd->tiles3 = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->dsd->palette4 = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->dsd->palette4 = LoadObjPalette(gBStatesPalette, 32);
     s->x = 0xDC00;
     s->y = 0x16800;
     s->z = 0;

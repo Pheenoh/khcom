@@ -358,7 +358,7 @@ u8 func_080FA644(GaWork* work);
 u8 func_080FAA18(GaWork* work);
 u8 func_080FABE4(GaWork* work);
 void func_080FB000(GaWork* work, GaEntryWork* p);
-extern u8 gUnk_09A3C89C[];
+extern u8 gBoss01objPalette[];
 void func_080FB930(MdWork* work, u16 id);
 void func_080FB8DC(MdWork* work, s32 state);
 void MdAnimStart(MdWork* work, s16 id);

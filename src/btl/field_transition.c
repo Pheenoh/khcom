@@ -35,7 +35,7 @@ void func_080100A0(void) {
     if (gFieldTransitionWork->initialized == 0) {
         gFieldTransitionWork->tiles = AllocObjTiles(0xA00, 0);
         if (gGameState.flags & 8) {
-            gFieldTransitionWork->palette = LoadObjPalette(gUnk_09618118, 0x20);
+            gFieldTransitionWork->palette = LoadObjPalette(gRikuPalette, 0x20);
             AnimInit(&gFieldTransitionWork->anim, 0, 0);
             switch (gGameState.unk_024) {
             case 0:
@@ -43,18 +43,18 @@ void func_080100A0(void) {
                 SetObjTileSource(gFieldTransitionWork->tiles, gUnk_08935BC2);
                 break;
             case 45:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092F15E4);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1bl01Anims, gRik1bl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1bl01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 64:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092EFAD4);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1ll01Anims, gRik1ll01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1ll01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 83:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092ED9F6);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1fl01Anims, gRik1fl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1fl01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 128:
@@ -62,56 +62,56 @@ void func_080100A0(void) {
                 SetObjTileSource(gFieldTransitionWork->tiles, gUnk_0893416A);
                 break;
             case 173:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF8F0, gUnk_09EEF8D0);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092ED9F6);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1fl01Anims, gRik1fl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1fl01Tiles);
                 break;
             case 192:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF914, gUnk_09EEF8F4);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092EFAD4);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1ll01Anims, gRik1ll01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1ll01Tiles);
                 break;
             default:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EEF938, gUnk_09EEF918);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_092F15E4);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gRik1bl01Anims, gRik1bl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gRik1bl01Tiles);
                 break;
             }
         } else {
-            gFieldTransitionWork->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
+            gFieldTransitionWork->palette = LoadObjPalette(gSoraPalette, 0x20);
             AnimInit(&gFieldTransitionWork->anim, 0, 0);
             switch (gGameState.unk_024) {
             case 0:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDED5C, gUnk_09EDED3C);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088DC192);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1bb01Anims, gSor1bb01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1bb01Tiles);
                 break;
             case 45:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088CE0C2);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1bl01Anims, gSor1bl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1bl01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 64:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088C5AAA);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1ll01Anims, gSor1ll01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1ll01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 83:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088C1388);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1fl01Anims, gSor1fl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1fl01Tiles);
                 gFieldTransitionWork->flipped = 1;
                 break;
             case 128:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDE940, gUnk_09EDE920);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088BAC36);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1ff01Anims, gSor1ff01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1ff01Tiles);
                 break;
             case 173:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEA0C, gUnk_09EDE9EC);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088C1388);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1fl01Anims, gSor1fl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1fl01Tiles);
                 break;
             case 192:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEA90, gUnk_09EDEA70);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088C5AAA);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1ll01Anims, gSor1ll01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1ll01Tiles);
                 break;
             default:
-                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gUnk_09EDEB88, gUnk_09EDEB68);
-                SetObjTileSource(gFieldTransitionWork->tiles, gUnk_088CE0C2);
+                AnimChangeWithTables(&gFieldTransitionWork->anim, 0, 1, (s32)gSor1bl01Anims, gSor1bl01Frames);
+                SetObjTileSource(gFieldTransitionWork->tiles, gSor1bl01Tiles);
                 break;
             }
         }

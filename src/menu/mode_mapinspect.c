@@ -1128,7 +1128,7 @@ void mode_mapinspect_0(void) {
 #else
     LoadBgTiles(0, gUnk_09A03CFC, 0x2980);
 #endif
-    LoadBgPalette(2, gUnk_09611AB8, 0x20);
+    LoadBgPalette(2, gCard00Palette, 0x20);
     LoadBgTiles(2, gUnk_099597E4, 0x140);
     LoadBgMap(2, gUnk_09985F44, 0x800);
     LoadBgMap(0, gUnk_09A3439C, 0x500);

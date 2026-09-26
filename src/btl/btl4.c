@@ -67,7 +67,7 @@ extern u8 gUnkEu_08B53FFA[];
 
 void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
 #ifdef VERSION_EU
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
 
     switch (gLanguage) {
     case 0:
@@ -223,7 +223,7 @@ void task_btl_pop_cb_0(BtlPopCbWork* work, BtlPopSrc* src) {
     }
 #else
     work->tiles = AllocObjTiles(0x200, gUnk_08B1FD66);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
 
     switch (src->unk_12) {
     case 0:
@@ -366,7 +366,7 @@ void func_0805CE60(BtlExpWork* work, u32 value) {
 void task_btl_exp_0(BtlExpWork* work) {
     s32 i;
 
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
 #ifdef VERSION_EU
     work->tiles = AllocObjTiles(0xC0, gUnk_08B25EF0);
 #else
@@ -587,7 +587,7 @@ void task_btl_exp_3(BtlExpWork* work) {
 
 void task_btl_vslockon_0(BtlVslockonWork* work) {
     work->tiles = LoadObjTiles(gUnk_08B1D8BC, 0x180);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
     AnimInit(&work->anim, gUnk_09EE10F8, gUnk_09EE10EC);
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
@@ -634,12 +634,12 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
     work->tiles = AllocObjTiles(0x280, gUnk_08B20D6E);
     work->gfx = gUnk_08B20D20;
     AnimInit(&work->anim, gUnk_09EE12B0, gUnk_09EE12A4);
-    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
-    work->tiles2 = AllocObjTiles(0x280, gUnk_08B24016);
-    work->tiles3 = AllocObjTiles(0x120, gUnk_08B24016);
-    work->tiles4 = AllocObjTiles(0x80, gUnk_08B24016);
-    work->gfx2 = gUnk_08B23CBA;
-    AnimInit(&work->anim2, gUnk_09EE1498, gUnk_09EE1420);
+    work->palette2 = LoadObjPalette(gBStatesPalette, 32);
+    work->tiles2 = AllocObjTiles(0x280, gBHpgagTiles);
+    work->tiles3 = AllocObjTiles(0x120, gBHpgagTiles);
+    work->tiles4 = AllocObjTiles(0x80, gBHpgagTiles);
+    work->gfx2 = gBHpgagFrame1;
+    AnimInit(&work->anim2, gBHpgagAnims, gBHpgagFrames);
     AnimStart(&work->anim, 0, 1);
 
     if (gUnk_02039B9C->actor->unk_02E <= 40) {
@@ -720,26 +720,26 @@ void task_btl_hpoth_0(BtlHpothWork* work) {
 
         switch (work->unk_64) {
         case 0:
-            work->gfx3 = gUnk_08B23E7C;
+            work->gfx3 = gBHpgagFrame19;
             break;
         case 1:
-            work->gfx3 = gUnk_08B23E8C;
+            work->gfx3 = gBHpgagFrame20;
             break;
         case 2:
-            work->gfx3 = gUnk_08B23E9C;
+            work->gfx3 = gBHpgagFrame21;
             break;
         case 3:
-            work->gfx3 = gUnk_08B23EAC;
+            work->gfx3 = gBHpgagFrame22;
             break;
         case 4:
-            work->gfx3 = gUnk_08B23EBC;
+            work->gfx3 = gBHpgagFrame23;
             break;
         case 5:
-            work->gfx3 = gUnk_08B23ED2;
+            work->gfx3 = gBHpgagFrame24;
             break;
         case 6:
         default:
-            work->gfx3 = gUnk_08B23EE8;
+            work->gfx3 = gBHpgagFrame25;
             break;
         }
     }
@@ -899,7 +899,7 @@ void task_btl_hpoth_2(BtlHpothWork* work) {
         DrawSprite(236, 2, work->gfx2, work->tiles2, work->palette2, 0, 0x411, 4);
         break;
     case 1:
-        DrawSprite(236, 2, gUnk_08B23F08, work->tiles2, work->palette2, 0, 0x411, 4);
+        DrawSprite(236, 2, gBHpgagFrame27, work->tiles2, work->palette2, 0, 0x411, 4);
         DrawSprite(236, 2, work->gfx3, work->tiles3, work->palette2, 0, 0x411, 3);
         break;
     case 2:
@@ -979,9 +979,9 @@ void task_btl_hpoth_2(BtlHpothWork* work) {
         }
 
         if (work->unk_68 == 1) {
-            DrawSprite(209, 9, gUnk_08B23F2E, work->tiles4, work->palette2, affine, 0x410, 2);
+            DrawSprite(209, 9, gBHpgagFrame29, work->tiles4, work->palette2, affine, 0x410, 2);
         } else {
-            DrawSprite(209, 6, gUnk_08B23F24, work->tiles4, work->palette2, affine, 0x410, 2);
+            DrawSprite(209, 6, gBHpgagFrame28, work->tiles4, work->palette2, affine, 0x410, 2);
         }
     }
 }

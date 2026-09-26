@@ -6,7 +6,7 @@
 #include "poo_background_data.h"
 
 extern u8 gUnk_09755F34[];
-extern u8 gUnk_09756D16[];
+extern u8 gRaVegetablesFrame9[];
 extern u8 gUnk_0985D208[];
 extern u8 gUnk_0985E638[];
 extern u8 gUnk_0985F660[];
@@ -62,6 +62,6 @@ extern u8 gUnk_098A24FC[];
 extern u8 gUnk_098A2D98[];
 extern u8 gUnk_098A3634[];
 extern u8 gUnk_098A3950[];
-extern u8 gUnk_09D69274[];
+extern u8 gBosPcBgPalette[];
 
 #endif

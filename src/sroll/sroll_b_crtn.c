@@ -22,19 +22,19 @@ void task_sroll_b_crtn_0(SrollBCrtnWork* w, SrollBCrtnArg* a) {
     case 5:
         w->x = a->x;
         w->y = a->y + 0xFFFFE000;
-        w->tiles = AllocObjTiles(128, gUnk_09320796);
+        w->tiles = AllocObjTiles(128, gFEventTiles);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
-        AnimInit(anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+        AnimInit(anim, gFEventAnims, gFEventFrames);
         AnimStart(anim, w->unk_04, 0);
         break;
     case 3:
         w->x = a->x;
         w->y = a->y + 0xFFFFD000;
-        w->tiles = AllocObjTiles(128, gUnk_09320796);
+        w->tiles = AllocObjTiles(128, gFEventTiles);
         w->palette = LoadObjPalette(gUnk_08F69BE4, 32);
         anim = &w->anim;
-        AnimInit(anim, gUnk_09EEFD38, gUnk_09EEFCAC);
+        AnimInit(anim, gFEventAnims, gFEventFrames);
         AnimStart(anim, 0, 0);
         break;
     case 2:

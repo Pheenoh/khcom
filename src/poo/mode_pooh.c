@@ -9,7 +9,7 @@ Mode gModePooh = {
     mode_pooh_2,
 };
 
-const PoohHit gUnk_096FC010 = { gUnk_09849A98, 36, 16, 6, 0 };
+const PoohHit gUnk_096FC010 = { gPoohPalette, 36, 16, 6, 0 };
 
 const s8 gUnk_096FC01C[8][8] = {
     { 0, 1, 2, 2, 3, -2, -2, -1 },
@@ -23,144 +23,144 @@ const s8 gUnk_096FC01C[8][8] = {
 };
 
 AnimDef gUnk_09EF3C98[5] = {
-    { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
-    { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
-    { gUnk_09EF52A0, gUnk_09EF52A4, gUnk_096FE5E2, 0, { 0, 0, 0 } },
-    { gUnk_09EF52A8, gUnk_09EF52AC, gUnk_096FE83E, 0, { 0, 0, 0 } },
-    { gUnk_09EF52B0, gUnk_09EF52B4, gUnk_096FEA7A, 0, { 0, 0, 0 } },
+    { gPoohBb00Frames, gPoohBb00Anims, gPoohBb00Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf00Frames, gPoohFf00Anims, gPoohFf00Tiles, 0, { 0, 0, 0 } },
+    { gPoohFr00Frames, gPoohFr00Anims, gPoohFr00Tiles, 0, { 0, 0, 0 } },
+    { gPoohRr00Frames, gPoohRr00Anims, gPoohRr00Tiles, 0, { 0, 0, 0 } },
+    { gPoohBr00Frames, gPoohBr00Anims, gPoohBr00Tiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3CE8[5] = {
-    { gUnk_09EF54E0, gUnk_09EF5508, gUnk_0970F5C4, 0, { 0, 0, 0 } },
-    { gUnk_09EF5590, gUnk_09EF55B8, gUnk_09714D3A, 0, { 0, 0, 0 } },
-    { gUnk_09EF5564, gUnk_09EF558C, gUnk_0971381C, 0, { 0, 0, 0 } },
-    { gUnk_09EF5538, gUnk_09EF5560, gUnk_09712406, 0, { 0, 0, 0 } },
-    { gUnk_09EF550C, gUnk_09EF5534, gUnk_09710CA0, 0, { 0, 0, 0 } },
+    { gPoohBb04Frames, gPoohBb04Anims, gPoohBb04Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf04Frames, gPoohFf04Anims, gPoohFf04Tiles, 0, { 0, 0, 0 } },
+    { gPoohFl04Frames, gPoohFl04Anims, gPoohFl04Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl04Frames, gPoohLl04Anims, gPoohLl04Tiles, 0, { 0, 0, 0 } },
+    { gPoohBl04Frames, gPoohBl04Anims, gPoohBl04Tiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3D38[5] = {
-    { gUnk_09EF55BC, gUnk_09EF55F4, gUnk_09716366, 0, { 0, 0, 0 } },
-    { gUnk_09EF56B4, gUnk_09EF56F0, gUnk_0971C3F2, 0, { 0, 0, 0 } },
-    { gUnk_09EF5674, gUnk_09EF56B0, gUnk_0971AB32, 0, { 0, 0, 0 } },
-    { gUnk_09EF5634, gUnk_09EF5670, gUnk_09719286, 0, { 0, 0, 0 } },
-    { gUnk_09EF55F8, gUnk_09EF5630, gUnk_097179FA, 0, { 0, 0, 0 } },
+    { gPoohBb04aFrames, gPoohBb04aAnims, gPoohBb04aTiles, 0, { 0, 0, 0 } },
+    { gPoohFf04aFrames, gPoohFf04aAnims, gPoohFf04aTiles, 0, { 0, 0, 0 } },
+    { gPoohFl04aFrames, gPoohFl04aAnims, gPoohFl04aTiles, 0, { 0, 0, 0 } },
+    { gPoohLl04aFrames, gPoohLl04aAnims, gPoohLl04aTiles, 0, { 0, 0, 0 } },
+    { gPoohBl04aFrames, gPoohBl04aAnims, gPoohBl04aTiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3D88[8] = {
-    { gUnk_09EF5380, gUnk_09EF53AC, gUnk_097058D2, 0, { 0, 0, 0 } },
-    { gUnk_09EF52C0, gUnk_09EF52EC, gUnk_096FEFBE, 0, { 0, 0, 0 } },
-    { gUnk_09EF52F0, gUnk_09EF531C, gUnk_097006F8, 0, { 0, 0, 0 } },
-    { gUnk_09EF5320, gUnk_09EF534C, gUnk_09701FDA, 0, { 0, 0, 0 } },
-    { gUnk_09EF5350, gUnk_09EF537C, gUnk_09703C44, 0, { 0, 0, 0 } },
-    { gUnk_09EF53B0, gUnk_09EF53DC, gUnk_0970754C, 0, { 0, 0, 0 } },
-    { gUnk_09EF53E0, gUnk_09EF540C, gUnk_09708E2E, 0, { 0, 0, 0 } },
-    { gUnk_09EF5410, gUnk_09EF543C, gUnk_0970AA98, 0, { 0, 0, 0 } },
+    { gPoohBb01Frames, gPoohBb01Anims, gPoohBb01Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf01Frames, gPoohFf01Anims, gPoohFf01Tiles, 0, { 0, 0, 0 } },
+    { gPoohFr01Frames, gPoohFr01Anims, gPoohFr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohRr01Frames, gPoohRr01Anims, gPoohRr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohBr01Frames, gPoohBr01Anims, gPoohBr01Tiles, 0, { 0, 0, 0 } },
+    { gPoohFl01Frames, gPoohFl01Anims, gPoohFl01Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl01Frames, gPoohLl01Anims, gPoohLl01Tiles, 0, { 0, 0, 0 } },
+    { gPoohBl01Frames, gPoohBl01Anims, gPoohBl01Tiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3E08[8] = {
-    { gUnk_09EF59C4, gUnk_09EF59D4, gUnk_0972BED0, 0, { 0, 0, 0 } },
-    { gUnk_09EF59D8, gUnk_09EF59E8, gUnk_0972C694, 0, { 0, 0, 0 } },
-    { gUnk_09EF5A28, gUnk_09EF5A38, gUnk_0972E5A4, 0, { 0, 0, 0 } },
-    { gUnk_09EF5A3C, gUnk_09EF5A4C, gUnk_0972ED68, 0, { 0, 0, 0 } },
-    { gUnk_09EF5A00, gUnk_09EF5A10, gUnk_0972D61C, 0, { 0, 0, 0 } },
-    { gUnk_09EF5A14, gUnk_09EF5A24, gUnk_0972DDE0, 0, { 0, 0, 0 } },
-    { gUnk_09EF5A50, gUnk_09EF5A60, gUnk_0972F52C, 0, { 0, 0, 0 } },
-    { gUnk_09EF59EC, gUnk_09EF59FC, gUnk_0972CE58, 0, { 0, 0, 0 } },
+    { gTrap0001bbFrames, gTrap0001bbAnims, gTrap0001bbTiles, 0, { 0, 0, 0 } },
+    { gTrap0001ffFrames, gTrap0001ffAnims, gTrap0001ffTiles, 0, { 0, 0, 0 } },
+    { gTrap0001frFrames, gTrap0001frAnims, gTrap0001frTiles, 0, { 0, 0, 0 } },
+    { gTrap0001rrFrames, gTrap0001rrAnims, gTrap0001rrTiles, 0, { 0, 0, 0 } },
+    { gTrap0001brFrames, gTrap0001brAnims, gTrap0001brTiles, 0, { 0, 0, 0 } },
+    { gTrap0001flFrames, gTrap0001flAnims, gTrap0001flTiles, 0, { 0, 0, 0 } },
+    { gTrap0001llFrames, gTrap0001llAnims, gTrap0001llTiles, 0, { 0, 0, 0 } },
+    { gTrap0001blFrames, gTrap0001blAnims, gTrap0001blTiles, 0, { 0, 0, 0 } },
 };
 
-AnimDef gUnk_09EF3E88 = { gUnk_09EF5A64, gUnk_09EF5A90, gUnk_0972FD80, 0, { 0, 0, 0 } };
+AnimDef gUnk_09EF3E88 = { gTrap0002Frames, gTrap0002Anims, gTrap0002Tiles, 0, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3E98 = { gUnk_09EF5A64, gUnk_09EF5A90, gUnk_0972FD80, 1, { 0, 0, 0 } };
+AnimDef gUnk_09EF3E98 = { gTrap0002Frames, gTrap0002Anims, gTrap0002Tiles, 1, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3EA8 = { gUnk_09EF5A98, gUnk_09EF5A9C, gUnk_09732026, 0, { 0, 0, 0 } };
+AnimDef gUnk_09EF3EA8 = { gTrap0003Frames, gTrap0003Anims, gTrap0003Tiles, 0, { 0, 0, 0 } };
 
 AnimDef gUnk_09EF3EB8 = { gUnk_09EF5824, gUnk_09EF583C, gUnk_09724C1C, 1, { 0, 0, 0 } };
 
 AnimDef gUnk_09EF3EC8[2] = {
-    { gUnk_09EF57C8, gUnk_09EF57E8, gUnk_0972186A, 0, { 0, 0, 0 } },
-    { gUnk_09EF57A4, gUnk_09EF57C4, gUnk_097205C2, 0, { 0, 0, 0 } },
+    { gPoohBl03Frames, gPoohBl03Anims, gPoohBl03Tiles, 0, { 0, 0, 0 } },
+    { gPoohFl03Frames, gPoohFl03Anims, gPoohFl03Tiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3EE8[2] = {
-    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 0, { 0, 0, 0 } },
-    { gUnk_09EF56F4, gUnk_09EF5744, gUnk_0971DD78, 0, { 0, 0, 0 } },
+    { gPoohBl07Frames, gPoohBl07Anims, gPoohBl07Tiles, 0, { 0, 0, 0 } },
+    { gPoohFl07Frames, gPoohFl07Anims, gPoohFl07Tiles, 0, { 0, 0, 0 } },
 };
 
 AnimDef gUnk_09EF3F08[2] = {
-    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 1, { 0, 0, 0 } },
-    { gUnk_09EF56F4, gUnk_09EF5744, gUnk_0971DD78, 1, { 0, 0, 0 } },
+    { gPoohBl07Frames, gPoohBl07Anims, gPoohBl07Tiles, 1, { 0, 0, 0 } },
+    { gPoohFl07Frames, gPoohFl07Anims, gPoohFl07Tiles, 1, { 0, 0, 0 } },
 };
 
-AnimDef gUnk_09EF3F28 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 0, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F28 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 0, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F38 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 1, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F38 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 1, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F48 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 2, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F48 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 2, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F58 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 3, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F58 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 3, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F68 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 4, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F68 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 4, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F78 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 5, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F78 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 5, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F88 = { gUnk_09EF5844, gUnk_09EF5904, gUnk_097257D8, 9, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F88 = { gPoohFl05Frames, gPoohFl05Anims, gPoohFl05Tiles, 9, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3F98 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 1, { 0, 0, 0 } };
+AnimDef gUnk_09EF3F98 = { gPoohFl06Frames, gPoohFl06Anims, gPoohFl06Tiles, 1, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3FA8 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 2, { 0, 0, 0 } };
+AnimDef gUnk_09EF3FA8 = { gPoohFl06Frames, gPoohFl06Anims, gPoohFl06Tiles, 2, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3FB8 = { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 3, { 0, 0, 0 } };
+AnimDef gUnk_09EF3FB8 = { gPoohFl06Frames, gPoohFl06Anims, gPoohFl06Tiles, 3, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3FC8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 0, { 0, 0, 0 } };
+AnimDef gUnk_09EF3FC8 = { gPoohFl09Frames, gPoohFl09Anims, gPoohFl09Tiles, 0, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3FD8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 1, { 0, 0, 0 } };
+AnimDef gUnk_09EF3FD8 = { gPoohFl09Frames, gPoohFl09Anims, gPoohFl09Tiles, 1, { 0, 0, 0 } };
 
-AnimDef gUnk_09EF3FE8 = { gUnk_09EF595C, gUnk_09EF59B0, gUnk_0972A136, 2, { 0, 0, 0 } };
+AnimDef gUnk_09EF3FE8 = { gPoohFl09Frames, gPoohFl09Anims, gPoohFl09Tiles, 2, { 0, 0, 0 } };
 
 AnimDef gUnk_09EF3FF8[4] = {
-    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
-    { gUnk_09EF5808, gUnk_09EF5820, gUnk_09723C6A, 0, { 0, 0, 0 } },
-    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
-    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
+    { gPoohLl10Frames, gPoohLl10Anims, gPoohLl10Tiles, 0, { 0, 0, 0 } },
+    { gPoohFf10Frames, gPoohFf10Anims, gPoohFf10Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl10Frames, gPoohLl10Anims, gPoohLl10Tiles, 0, { 0, 0, 0 } },
+    { gPoohLl10Frames, gPoohLl10Anims, gPoohLl10Tiles, 0, { 0, 0, 0 } },
 };
 
-AnimDef gUnk_09EF4038 = { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } };
+AnimDef gUnk_09EF4038 = { gPoohLl10Frames, gPoohLl10Anims, gPoohLl10Tiles, 0, { 0, 0, 0 } };
 
 AnimDef gUnk_09EF4048[5][5] = {
     {
-        { gUnk_09EF5458, gUnk_09EF545C, gUnk_0970CD86, 0, { 0, 0, 0 } },
-        { gUnk_09EF5448, gUnk_09EF544C, gUnk_0970C8CE, 0, { 0, 0, 0 } },
-        { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
-        { gUnk_09EF5450, gUnk_09EF5454, gUnk_0970CB2A, 0, { 0, 0, 0 } },
-        { gUnk_09EF5440, gUnk_09EF5444, gUnk_0970C672, 0, { 0, 0, 0 } },
+        { gPoohBb00LlFrames, gPoohBb00LlAnims, gPoohBb00LlTiles, 0, { 0, 0, 0 } },
+        { gPoohBb00BlFrames, gPoohBb00BlAnims, gPoohBb00BlTiles, 0, { 0, 0, 0 } },
+        { gPoohBb00Frames, gPoohBb00Anims, gPoohBb00Tiles, 0, { 0, 0, 0 } },
+        { gPoohBb00BrFrames, gPoohBb00BrAnims, gPoohBb00BrTiles, 0, { 0, 0, 0 } },
+        { gPoohBb00RrFrames, gPoohBb00RrAnims, gPoohBb00RrTiles, 0, { 0, 0, 0 } },
     },
     {
-        { gUnk_09EF5488, gUnk_09EF548C, gUnk_0970DBAE, 0, { 0, 0, 0 } },
-        { gUnk_09EF5490, gUnk_09EF5494, gUnk_0970DE0A, 0, { 0, 0, 0 } },
-        { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
-        { gUnk_09EF5480, gUnk_09EF5484, gUnk_0970D952, 0, { 0, 0, 0 } },
-        { gUnk_09EF5498, gUnk_09EF549C, gUnk_0970E066, 0, { 0, 0, 0 } },
+        { gPoohFf00RrFrames, gPoohFf00RrAnims, gPoohFf00RrTiles, 0, { 0, 0, 0 } },
+        { gPoohFf00FrFrames, gPoohFf00FrAnims, gPoohFf00FrTiles, 0, { 0, 0, 0 } },
+        { gPoohFf00Frames, gPoohFf00Anims, gPoohFf00Tiles, 0, { 0, 0, 0 } },
+        { gPoohFf00FlFrames, gPoohFf00FlAnims, gPoohFf00FlTiles, 0, { 0, 0, 0 } },
+        { gPoohFf00LlFrames, gPoohFf00LlAnims, gPoohFf00LlTiles, 0, { 0, 0, 0 } },
     },
     {
-        { gUnk_09EF54A8, gUnk_09EF54AC, gUnk_0970E51E, 0, { 0, 0, 0 } },
-        { gUnk_09EF54A0, gUnk_09EF54A4, gUnk_0970E2C2, 0, { 0, 0, 0 } },
-        { gUnk_09EF52A0, gUnk_09EF52A4, gUnk_096FE5E2, 0, { 0, 0, 0 } },
-        { gUnk_09EF54B0, gUnk_09EF54B4, gUnk_0970E77A, 0, { 0, 0, 0 } },
-        { gUnk_09EF54B8, gUnk_09EF54BC, gUnk_0970E9D6, 0, { 0, 0, 0 } },
+        { gPoohFr00BrFrames, gPoohFr00BrAnims, gPoohFr00BrTiles, 0, { 0, 0, 0 } },
+        { gPoohFr00RrFrames, gPoohFr00RrAnims, gPoohFr00RrTiles, 0, { 0, 0, 0 } },
+        { gPoohFr00Frames, gPoohFr00Anims, gPoohFr00Tiles, 0, { 0, 0, 0 } },
+        { gPoohFr00FfFrames, gPoohFr00FfAnims, gPoohFr00FfTiles, 0, { 0, 0, 0 } },
+        { gPoohFr00FlFrames, gPoohFr00FlAnims, gPoohFr00FlTiles, 0, { 0, 0, 0 } },
     },
     {
-        { gUnk_09EF54C0, gUnk_09EF54C4, gUnk_0970EC32, 0, { 0, 0, 0 } },
-        { gUnk_09EF54D8, gUnk_09EF54DC, gUnk_0970F2E6, 0, { 0, 0, 0 } },
-        { gUnk_09EF52A8, gUnk_09EF52AC, gUnk_096FE83E, 0, { 0, 0, 0 } },
-        { gUnk_09EF54D0, gUnk_09EF54D4, gUnk_0970F0AA, 0, { 0, 0, 0 } },
-        { gUnk_09EF54C8, gUnk_09EF54CC, gUnk_0970EE6E, 0, { 0, 0, 0 } },
+        { gPoohRr00BbFrames, gPoohRr00BbAnims, gPoohRr00BbTiles, 0, { 0, 0, 0 } },
+        { gPoohRr00BrFrames, gPoohRr00BrAnims, gPoohRr00BrTiles, 0, { 0, 0, 0 } },
+        { gPoohRr00Frames, gPoohRr00Anims, gPoohRr00Tiles, 0, { 0, 0, 0 } },
+        { gPoohRr00FrFrames, gPoohRr00FrAnims, gPoohRr00FrTiles, 0, { 0, 0, 0 } },
+        { gPoohRr00FfFrames, gPoohRr00FfAnims, gPoohRr00FfTiles, 0, { 0, 0, 0 } },
     },
     {
-        { gUnk_09EF5470, gUnk_09EF5474, gUnk_0970D49A, 0, { 0, 0, 0 } },
-        { gUnk_09EF5460, gUnk_09EF5464, gUnk_0970CFE2, 0, { 0, 0, 0 } },
-        { gUnk_09EF52B0, gUnk_09EF52B4, gUnk_096FEA7A, 0, { 0, 0, 0 } },
-        { gUnk_09EF5478, gUnk_09EF547C, gUnk_0970D6F6, 0, { 0, 0, 0 } },
-        { gUnk_09EF5468, gUnk_09EF546C, gUnk_0970D23E, 0, { 0, 0, 0 } },
+        { gPoohBr00BlFrames, gPoohBr00BlAnims, gPoohBr00BlTiles, 0, { 0, 0, 0 } },
+        { gPoohBr00BbFrames, gPoohBr00BbAnims, gPoohBr00BbTiles, 0, { 0, 0, 0 } },
+        { gPoohBr00Frames, gPoohBr00Anims, gPoohBr00Tiles, 0, { 0, 0, 0 } },
+        { gPoohBr00RrFrames, gPoohBr00RrAnims, gPoohBr00RrTiles, 0, { 0, 0, 0 } },
+        { gPoohBr00FrFrames, gPoohBr00FrAnims, gPoohBr00FrTiles, 0, { 0, 0, 0 } },
     },
 };
 
@@ -1041,18 +1041,18 @@ void func_080C8428(PoohWork* w, u32 b) {
 
     switch (b) {
     case 16:
-        pal = gUnk_09849AD8;
+        pal = gTrap0001Palette;
         break;
     case 36:
     case 37:
-        pal = gUnk_09849AF8;
+        pal = gTrap0002Palette;
         break;
     case 38:
     case 39:
-        pal = gUnk_09849B18;
+        pal = gTrap0003Palette;
         break;
     default:
-        pal = gUnk_09849A98;
+        pal = gPoohPalette;
         break;
     }
 

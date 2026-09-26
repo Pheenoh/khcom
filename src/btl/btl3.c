@@ -235,7 +235,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
         work->unk_3D = 1;
         work->tiles2 = gBtlWork->tiles2;
         work->actor = gBtlWork->actor;
-        work->palette = LoadObjPalette(gUnk_08F683A4, 32);
+        work->palette = LoadObjPalette(gSoraPalette, 32);
     } else {
         work->unk_3D = 0;
         work->tiles2 = gBtlWork->tiles2;
@@ -244,8 +244,8 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     }
 
     AnimInit(&work->anim, 0, 0);
-    AnimChangeWithTables(&work->anim, 0, 1, gUnk_09EDF154, gUnk_09EDF124);
-    SetObjTileSource(work->tiles2, gUnk_08901C8A);
+    AnimChangeWithTables(&work->anim, 0, 1, gSor1ll68wAnims, gSor1ll68wFrames);
+    SetObjTileSource(work->tiles2, gSor1ll68wTiles);
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
@@ -315,7 +315,7 @@ void task_btl_raid_0(BtlRaidWork* work, BtlRaidArgs* args) {
     }
 
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette2 = LoadObjPalette(gBStatesPalette, 32);
     m4aSongNumStart(SONG_BTL_LT2_SW);
 }
 
@@ -591,8 +591,8 @@ void task_btl_badstatus_0(BtlBadStatusWork* work, BtlObj* obj) {
     work->unk_28 = 0;
     work->actor = obj;
     work->tiles = AllocObjTiles(128, 0);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
-    work->palette2 = LoadObjPalette(gUnk_09611AB8, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
+    work->palette2 = LoadObjPalette(gCard00Palette, 32);
     work->palette3 = work->palette;
     AnimInit(&work->anim, 0, 0);
     AnimChangeWithDef(gBtlBadstatusAnimDefs, &work->anim, 0, 1, work->tiles);

@@ -65,7 +65,7 @@ s32 eu_0805E9AC(void* text) {
 void task_monsgage_0(MonsgageWork* work) {
     work->tiles = AllocObjTiles(0x200, gUnk_08B255B4);
     work->tiles2 = AllocObjTiles(0x80, gUnk_08B255B4);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 32);
+    work->palette = LoadObjPalette(gBStatesPalette, 32);
     work->unk_10 = 0;
     work->unk_0C = 0;
     work->gfx = gUnk_08B2556C;

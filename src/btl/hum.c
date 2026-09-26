@@ -18,29 +18,29 @@ const u32 gUnk_0813EDD0[2][3] = {
 };
 
 const AnimDef gHumCloudAnimDefs[20] = {
-    { gUnk_09EE15FC, gUnk_09EE1614, gUnk_08B268D2, 0, { 0, 0, 0 } },
-    { gUnk_09EE1618, gUnk_09EE1638, gUnk_08B2A57A, 0, { 0, 0, 0 } },
-    { gUnk_09EE163C, gUnk_09EE1650, gUnk_08B2F5FE, 0, { 0, 0, 0 } },
-    { gUnk_09EE1654, gUnk_09EE1670, gUnk_08B326C8, 0, { 0, 0, 0 } },
-    { gUnk_09EE1654, gUnk_09EE1670, gUnk_08B326C8, 1, { 0, 0, 0 } },
-    { gUnk_09EE1654, gUnk_09EE1670, gUnk_08B326C8, 2, { 0, 0, 0 } },
-    { gUnk_09EE1654, gUnk_09EE1670, gUnk_08B326C8, 3, { 0, 0, 0 } },
-    { gUnk_09EE1654, gUnk_09EE1670, gUnk_08B326C8, 4, { 0, 0, 0 } },
-    { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 2, { 0, 0, 0 } },
-    { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 2, { 0, 0, 0 } },
-    { gUnk_09EDE688, gUnk_09EDE69C, gUnk_08885C06, 0, { 0, 0, 0 } },
-    { gUnk_09EDE688, gUnk_09EDE69C, gUnk_08885C06, 1, { 0, 0, 0 } },
-    { gUnk_09EDE688, gUnk_09EDE69C, gUnk_08885C06, 2, { 0, 0, 0 } },
-    { gUnk_09EDE688, gUnk_09EDE69C, gUnk_08885C06, 3, { 0, 0, 0 } },
-    { gUnk_09EDE714, gUnk_09EDE720, gUnk_08895A7E, 0, { 0, 0, 0 } },
-    { gUnk_09EDE724, gUnk_09EDE740, gUnk_08897494, 0, { 0, 0, 0 } },
-    { gUnk_09EDE744, gUnk_09EDE764, gUnk_0889B1A4, 0, { 0, 0, 0 } },
-    { gUnk_09EDE768, gUnk_09EDE78C, gUnk_0889F73C, 0, { 0, 0, 0 } },
-    { gUnk_09EDE6AC, gUnk_09EDE6D4, gUnk_08888D44, 0, { 0, 0, 0 } },
-    { gUnk_09EDE6E0, gUnk_09EDE70C, gUnk_0888F218, 0, { 0, 0, 0 } },
+    { gCroudBt00Frames, gCroudBt00Anims, gCroudBt00Tiles, 0, { 0, 0, 0 } },
+    { gCroudBt01Frames, gCroudBt01Anims, gCroudBt01Tiles, 0, { 0, 0, 0 } },
+    { gCroudBt02Frames, gCroudBt02Anims, gCroudBt02Tiles, 0, { 0, 0, 0 } },
+    { gCroudBt03Frames, gCroudBt03Anims, gCroudBt03Tiles, 0, { 0, 0, 0 } },
+    { gCroudBt03Frames, gCroudBt03Anims, gCroudBt03Tiles, 1, { 0, 0, 0 } },
+    { gCroudBt03Frames, gCroudBt03Anims, gCroudBt03Tiles, 2, { 0, 0, 0 } },
+    { gCroudBt03Frames, gCroudBt03Anims, gCroudBt03Tiles, 3, { 0, 0, 0 } },
+    { gCroudBt03Frames, gCroudBt03Anims, gCroudBt03Tiles, 4, { 0, 0, 0 } },
+    { gCroud01Frames, gCroud01Anims, gCroud01Tiles, 2, { 0, 0, 0 } },
+    { gCroud01Frames, gCroud01Anims, gCroud01Tiles, 2, { 0, 0, 0 } },
+    { gCroud00Frames, gCroud00Anims, gCroud00Tiles, 0, { 0, 0, 0 } },
+    { gCroud00Frames, gCroud00Anims, gCroud00Tiles, 1, { 0, 0, 0 } },
+    { gCroud00Frames, gCroud00Anims, gCroud00Tiles, 2, { 0, 0, 0 } },
+    { gCroud00Frames, gCroud00Anims, gCroud00Tiles, 3, { 0, 0, 0 } },
+    { gCroud10Frames, gCroud10Anims, gCroud10Tiles, 0, { 0, 0, 0 } },
+    { gCroud11Frames, gCroud11Anims, gCroud11Tiles, 0, { 0, 0, 0 } },
+    { gCroud12Frames, gCroud12Anims, gCroud12Tiles, 0, { 0, 0, 0 } },
+    { gCroud13Frames, gCroud13Anims, gCroud13Tiles, 0, { 0, 0, 0 } },
+    { gCroud01Frames, gCroud01Anims, gCroud01Tiles, 0, { 0, 0, 0 } },
+    { gCroud02Frames, gCroud02Anims, gCroud02Tiles, 0, { 0, 0, 0 } },
 };
 
-const HumDef gHumCloudDef = { 128, 0, gUnk_08F6DC24, 0, { 43, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumCloudDef = { 128, 0, gCroudPalette, 0, { 43, 99, 38, 14, 24, 99, 0 } };
 
 TaskDesc gTaskDescHumCloud = { "task_hum_cloud", task_hum_cloud_0, task_hum_cloud_1, task_hum_cloud_2, task_hum_cloud_3, 0x194 };
 
@@ -53,24 +53,24 @@ const u32 gUnk_0813EF60[3] = {
 };
 
 const AnimDef gHumHookAnimDefs[15] = {
-    { gUnk_09EE1684, gUnk_09EE16A4, gUnk_08B36DEC, 0, { 0, 0, 0 } },
-    { gUnk_09EE16A8, gUnk_09EE16C8, gUnk_08B3BFE6, 0, { 0, 0, 0 } },
-    { gUnk_09EE16CC, gUnk_09EE16E4, gUnk_08B4181C, 0, { 0, 0, 0 } },
-    { gUnk_09EE16E8, gUnk_09EE170C, gUnk_08B452A4, 0, { 0, 0, 0 } },
-    { gUnk_09EE16E8, gUnk_09EE170C, gUnk_08B452A4, 1, { 0, 0, 0 } },
-    { gUnk_09EE16E8, gUnk_09EE170C, gUnk_08B452A4, 2, { 0, 0, 0 } },
-    { gUnk_09EE16E8, gUnk_09EE170C, gUnk_08B452A4, 3, { 0, 0, 0 } },
-    { gUnk_09EE16E8, gUnk_09EE170C, gUnk_08B452A4, 4, { 0, 0, 0 } },
-    { gUnk_09EE1720, gUnk_09EE173C, gUnk_08B4A9A0, 0, { 0, 0, 0 } },
-    { gUnk_09EE1740, gUnk_09EE1768, gUnk_08B4ECCA, 1, { 0, 0, 0 } },
-    { gUnk_09EE1740, gUnk_09EE1768, gUnk_08B4ECCA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1740, gUnk_09EE1768, gUnk_08B4ECCA, 2, { 0, 0, 0 } },
-    { gUnk_09EE1774, gUnk_09EE1794, gUnk_08B54EC0, 0, { 0, 0, 0 } },
-    { gUnk_09EEFC38, gUnk_09EEFC60, gUnk_09317A62, 2, { 0, 0, 0 } },
-    { gUnk_09EEFC38, gUnk_09EEFC60, gUnk_09317A62, 3, { 0, 0, 0 } },
+    { gHookBt00Frames, gHookBt00Anims, gHookBt00Tiles, 0, { 0, 0, 0 } },
+    { gHookBt01Frames, gHookBt01Anims, gHookBt01Tiles, 0, { 0, 0, 0 } },
+    { gHookBt02Frames, gHookBt02Anims, gHookBt02Tiles, 0, { 0, 0, 0 } },
+    { gHookBt03Frames, gHookBt03Anims, gHookBt03Tiles, 0, { 0, 0, 0 } },
+    { gHookBt03Frames, gHookBt03Anims, gHookBt03Tiles, 1, { 0, 0, 0 } },
+    { gHookBt03Frames, gHookBt03Anims, gHookBt03Tiles, 2, { 0, 0, 0 } },
+    { gHookBt03Frames, gHookBt03Anims, gHookBt03Tiles, 3, { 0, 0, 0 } },
+    { gHookBt03Frames, gHookBt03Anims, gHookBt03Tiles, 4, { 0, 0, 0 } },
+    { gHookBt10Frames, gHookBt10Anims, gHookBt10Tiles, 0, { 0, 0, 0 } },
+    { gHookBt11Frames, gHookBt11Anims, gHookBt11Tiles, 1, { 0, 0, 0 } },
+    { gHookBt11Frames, gHookBt11Anims, gHookBt11Tiles, 0, { 0, 0, 0 } },
+    { gHookBt11Frames, gHookBt11Anims, gHookBt11Tiles, 2, { 0, 0, 0 } },
+    { gHookBt12Frames, gHookBt12Anims, gHookBt12Tiles, 0, { 0, 0, 0 } },
+    { gHookF03Frames, gHookF03Anims, gHookF03Tiles, 2, { 0, 0, 0 } },
+    { gHookF03Frames, gHookF03Anims, gHookF03Tiles, 3, { 0, 0, 0 } },
 };
 
-const HumDef gHumHookDef = { 128, 0, gUnk_09618158, 0, { 42, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumHookDef = { 128, 0, gHookPalette, 0, { 42, 99, 38, 14, 24, 99, 0 } };
 
 const u8 gUnk_0813F078[8] = {
     0, 4, 4, 6, 8, 10, 8, 6,
@@ -91,31 +91,31 @@ const u32 gUnk_0813F0C4[3] = {
 };
 
 const AnimDef gUnk_0813F0D0[7] = {
-    { gUnk_09EE17C0, gUnk_09EE17D0, gUnk_08B5B51E, 0, { 0, 0, 0 } },
-    { gUnk_09EE17D4, gUnk_09EE17E4, gUnk_08B5CC5E, 0, { 0, 0, 0 } },
-    { gUnk_09EE17E8, gUnk_09EE1814, gUnk_08B5E3CA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1818, gUnk_09EE1830, gUnk_08B621F8, 0, { 0, 0, 0 } },
-    { gUnk_09EE1834, gUnk_09EE184C, gUnk_08B64412, 0, { 0, 0, 0 } },
-    { gUnk_09EE1834, gUnk_09EE184C, gUnk_08B64412, 1, { 0, 0, 0 } },
-    { gUnk_09EE1834, gUnk_09EE184C, gUnk_08B64412, 2, { 0, 0, 0 } },
+    { gAnsemBt00Frames, gAnsemBt00Anims, gAnsemBt00Tiles, 0, { 0, 0, 0 } },
+    { gAnsemBt01Frames, gAnsemBt01Anims, gAnsemBt01Tiles, 0, { 0, 0, 0 } },
+    { gAnsemBt03Frames, gAnsemBt03Anims, gAnsemBt03Tiles, 0, { 0, 0, 0 } },
+    { gAnsemBt04Frames, gAnsemBt04Anims, gAnsemBt04Tiles, 0, { 0, 0, 0 } },
+    { gAnsemBt05Frames, gAnsemBt05Anims, gAnsemBt05Tiles, 0, { 0, 0, 0 } },
+    { gAnsemBt05Frames, gAnsemBt05Anims, gAnsemBt05Tiles, 1, { 0, 0, 0 } },
+    { gAnsemBt05Frames, gAnsemBt05Anims, gAnsemBt05Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813F140[10] = {
-    { gUnk_09EE1858, gUnk_09EE1878, gUnk_08B67572, 0, { 0, 0, 0 } },
-    { gUnk_09EE187C, gUnk_09EE1890, gUnk_08B6C8F2, 0, { 0, 0, 0 } },
-    { gUnk_09EE1894, gUnk_09EE18B0, gUnk_08B704A2, 0, { 0, 0, 0 } },
-    { gUnk_09EE18B4, gUnk_09EE18D8, gUnk_08B748D0, 0, { 0, 0, 0 } },
-    { gUnk_09EE18DC, gUnk_09EE18F8, gUnk_08B7B81C, 1, { 0, 0, 0 } },
-    { gUnk_09EE18DC, gUnk_09EE18F8, gUnk_08B7B81C, 0, { 0, 0, 0 } },
-    { gUnk_09EE1900, gUnk_09EE191C, gUnk_08B7DF70, 0, { 0, 0, 0 } },
-    { gUnk_09EE1920, gUnk_09EE1930, gUnk_08B82F32, 0, { 0, 0, 0 } },
-    { gUnk_09EE1920, gUnk_09EE1930, gUnk_08B82F32, 1, { 0, 0, 0 } },
-    { gUnk_09EE1920, gUnk_09EE1930, gUnk_08B82F32, 2, { 0, 0, 0 } },
+    { gAnsembackBt00Frames, gAnsembackBt00Anims, gAnsembackBt00Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt01Frames, gAnsembackBt01Anims, gAnsembackBt01Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt02Frames, gAnsembackBt02Anims, gAnsembackBt02Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt03Frames, gAnsembackBt03Anims, gAnsembackBt03Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt03bFrames, gAnsembackBt03bAnims, gAnsembackBt03bTiles, 1, { 0, 0, 0 } },
+    { gAnsembackBt03bFrames, gAnsembackBt03bAnims, gAnsembackBt03bTiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt04Frames, gAnsembackBt04Anims, gAnsembackBt04Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt05Frames, gAnsembackBt05Anims, gAnsembackBt05Tiles, 0, { 0, 0, 0 } },
+    { gAnsembackBt05Frames, gAnsembackBt05Anims, gAnsembackBt05Tiles, 1, { 0, 0, 0 } },
+    { gAnsembackBt05Frames, gAnsembackBt05Anims, gAnsembackBt05Tiles, 2, { 0, 0, 0 } },
 };
 
-const HumSubDef gHumAnsemSubDef = { gUnk_09618378, 128, 0 };
+const HumSubDef gHumAnsemSubDef = { gAnsembackPalette, 128, 0 };
 
-const HumDef gHumAnsemDef = { 80, 0, gUnk_09618318, 0, { 52, 99, 65, 14, 42, 99, 0 } };
+const HumDef gHumAnsemDef = { 80, 0, gAnsemPalette, 0, { 52, 99, 65, 14, 42, 99, 0 } };
 
 TaskDesc gTaskDescHumAnsem = { "task_hum_ansem", task_hum_ansem_0, task_hum_ansem_1, task_hum_ansem_2, task_hum_ansem_3, 0x1DC };
 
@@ -128,27 +128,27 @@ const u32 gUnk_0813F220[3] = {
 };
 
 const AnimDef gUnk_0813F22C[10] = {
-    { gUnk_09EE193C, gUnk_09EE1950, gUnk_08B85CB4, 0, { 0, 0, 0 } },
-    { gUnk_09EE1954, gUnk_09EE1968, gUnk_08B88BD4, 0, { 0, 0, 0 } },
-    { gUnk_09EE196C, gUnk_09EE1988, gUnk_08B8BE78, 0, { 0, 0, 0 } },
-    { gUnk_09EE198C, gUnk_09EE19C8, gUnk_08B90EDA, 0, { 0, 0, 0 } },
-    { gUnk_09EE19F4, gUnk_09EE1A2C, gUnk_08B971A4, 0, { 0, 0, 0 } },
-    { gUnk_09EE1A30, gUnk_09EE1A54, gUnk_08B9CCEE, 0, { 0, 0, 0 } },
-    { gUnk_09EEF444, gUnk_09EEF474, gUnk_092B03A2, 0, { 0, 0, 0 } },
-    { gUnk_09EE1AFC, gUnk_09EE1B28, gUnk_08BA9958, 1, { 0, 0, 0 } },
-    { gUnk_09EE1AFC, gUnk_09EE1B28, gUnk_08BA9958, 2, { 0, 0, 0 } },
-    { gUnk_09EE1AFC, gUnk_09EE1B28, gUnk_08BA9958, 3, { 0, 0, 0 } },
+    { gHadesFloatFollowFrames, gHadesFloatFollowAnims, gHadesFloatFollowTiles, 0, { 0, 0, 0 } },
+    { gHadesFloatBackFrames, gHadesFloatBackAnims, gHadesFloatBackTiles, 0, { 0, 0, 0 } },
+    { gHadesDamageFrames, gHadesDamageAnims, gHadesDamageTiles, 0, { 0, 0, 0 } },
+    { gHadesFirashotFrames, gHadesFirashotAnims, gHadesFirashotTiles, 0, { 0, 0, 0 } },
+    { gHadesFigaballFrames, gHadesFigaballAnims, gHadesFigaballTiles, 0, { 0, 0, 0 } },
+    { gHadesNailofframeFrames, gHadesNailofframeAnims, gHadesNailofframeTiles, 0, { 0, 0, 0 } },
+    { gHadesAngryFrames, gHadesAngryAnims, gHadesAngryTiles, 0, { 0, 0, 0 } },
+    { gHadesFramespreadFrames, gHadesFramespreadAnims, gHadesFramespreadTiles, 1, { 0, 0, 0 } },
+    { gHadesFramespreadFrames, gHadesFramespreadAnims, gHadesFramespreadTiles, 2, { 0, 0, 0 } },
+    { gHadesFramespreadFrames, gHadesFramespreadAnims, gHadesFramespreadTiles, 3, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813F2CC[5] = {
-    { gUnk_09EE1AE0, gUnk_09EE1AF8, gUnk_08BA6EAE, 0, { 0, 0, 0 } },
-    { gUnk_09EE1AC0, gUnk_09EE1ADC, gUnk_08BA4592, 0, { 0, 0, 0 } },
-    { gUnk_09EE1A58, gUnk_09EE1AB4, gUnk_08BA17EE, 0, { 0, 0, 0 } },
-    { gUnk_09EE1A58, gUnk_09EE1AB4, gUnk_08BA17EE, 1, { 0, 0, 0 } },
-    { gUnk_09EE19CC, gUnk_09EE19F0, gUnk_08B95CE2, 0, { 0, 0, 0 } },
+    { gHadesAngryHiFrames, gHadesAngryHiAnims, gHadesAngryHiTiles, 0, { 0, 0, 0 } },
+    { gHadesNailFrameFrames, gHadesNailFrameAnims, gHadesNailFrameTiles, 0, { 0, 0, 0 } },
+    { gHadesFigaballBallFrames, gHadesFigaballBallAnims, gHadesFigaballBallTiles, 0, { 0, 0, 0 } },
+    { gHadesFigaballBallFrames, gHadesFigaballBallAnims, gHadesFigaballBallTiles, 1, { 0, 0, 0 } },
+    { gHadesFirashotFiraFrames, gHadesFirashotFiraAnims, gHadesFirashotFiraTiles, 0, { 0, 0, 0 } },
 };
 
-const HumSubDef gHumHadesSubDef = { gUnk_08F69BA4, 75, 0 };
+const HumSubDef gHumHadesSubDef = { gBStatesPalette, 75, 0 };
 
 const HumDef gHumHadesDef = {
 #ifdef VERSION_EU
@@ -156,7 +156,7 @@ const HumDef gHumHadesDef = {
 #else
         128
 #endif
-    , 0, gUnk_09617F18, 0, { 44, 99, 90, 14, 52, 99, 4 } };
+    , 0, gHadesPalette, 0, { 44, 99, 90, 14, 52, 99, 4 } };
 
 TaskDesc gTaskDescHumHades = { "task_hum_hades", task_hum_hades_0, task_hum_hades_1, task_hum_hades_2, task_hum_hades_3, 0x280 };
 
@@ -169,26 +169,26 @@ const u32 gUnk_0813F35C[3] = {
 };
 
 const AnimDef gUnk_0813F368[13] = {
-    { gUnk_09EE1B84, gUnk_09EE1B94, gUnk_08BB1F72, 0, { 0, 0, 0 } },
-    { gUnk_09EE1B98, gUnk_09EE1BA8, gUnk_08BB37EA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1BAC, gUnk_09EE1BC0, gUnk_08BB5ABC, 0, { 0, 0, 0 } },
-    { gUnk_09EE1BC4, gUnk_09EE1BE4, gUnk_08BB86CC, 0, { 0, 0, 0 } },
-    { gUnk_09EE1C50, gUnk_09EE1C68, gUnk_08BC70E8, 0, { 0, 0, 0 } },
-    { gUnk_09EE1C50, gUnk_09EE1C68, gUnk_08BC70E8, 1, { 0, 0, 0 } },
-    { gUnk_09EE1C50, gUnk_09EE1C68, gUnk_08BC70E8, 2, { 0, 0, 0 } },
-    { gUnk_09EE1BC4, gUnk_09EE1BE4, gUnk_08BB86CC, 1, { 0, 0, 0 } },
-    { gUnk_09EE1C24, gUnk_09EE1C4C, gUnk_08BC2318, 0, { 0, 0, 0 } },
-    { gUnk_09EE1BF8, gUnk_09EE1C20, gUnk_08BBD3CA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1BC4, gUnk_09EE1BE4, gUnk_08BB86CC, 2, { 0, 0, 0 } },
-    { gUnk_09EE1BC4, gUnk_09EE1BE4, gUnk_08BB86CC, 3, { 0, 0, 0 } },
-    { gUnk_09EE1BC4, gUnk_09EE1BE4, gUnk_08BB86CC, 4, { 0, 0, 0 } },
+    { gMaruxhaIdleFrames, gMaruxhaIdleAnims, gMaruxhaIdleTiles, 0, { 0, 0, 0 } },
+    { gMaruxhaMoveFrames, gMaruxhaMoveAnims, gMaruxhaMoveTiles, 0, { 0, 0, 0 } },
+    { gMaruxhaDamegeFrames, gMaruxhaDamegeAnims, gMaruxhaDamegeTiles, 0, { 0, 0, 0 } },
+    { gMaruxhaAtk1Frames, gMaruxhaAtk1Anims, gMaruxhaAtk1Tiles, 0, { 0, 0, 0 } },
+    { gMaruxhaAtk4Frames, gMaruxhaAtk4Anims, gMaruxhaAtk4Tiles, 0, { 0, 0, 0 } },
+    { gMaruxhaAtk4Frames, gMaruxhaAtk4Anims, gMaruxhaAtk4Tiles, 1, { 0, 0, 0 } },
+    { gMaruxhaAtk4Frames, gMaruxhaAtk4Anims, gMaruxhaAtk4Tiles, 2, { 0, 0, 0 } },
+    { gMaruxhaAtk1Frames, gMaruxhaAtk1Anims, gMaruxhaAtk1Tiles, 1, { 0, 0, 0 } },
+    { gMaruxhaAtk3Frames, gMaruxhaAtk3Anims, gMaruxhaAtk3Tiles, 0, { 0, 0, 0 } },
+    { gMaruxhaAtk2Frames, gMaruxhaAtk2Anims, gMaruxhaAtk2Tiles, 0, { 0, 0, 0 } },
+    { gMaruxhaAtk1Frames, gMaruxhaAtk1Anims, gMaruxhaAtk1Tiles, 2, { 0, 0, 0 } },
+    { gMaruxhaAtk1Frames, gMaruxhaAtk1Anims, gMaruxhaAtk1Tiles, 3, { 0, 0, 0 } },
+    { gMaruxhaAtk1Frames, gMaruxhaAtk1Anims, gMaruxhaAtk1Tiles, 4, { 0, 0, 0 } },
 };
 
-const AnimDef gUnk_0813F438 = { gUnk_09EE1C74, gUnk_09EE1C90, gUnk_08BCA01C, 0, { 0, 0, 0 } };
+const AnimDef gUnk_0813F438 = { gMaruxhaBtEff1Frames, gMaruxhaBtEff1Anims, gMaruxhaBtEff1Tiles, 0, { 0, 0, 0 } };
 
-const HumSubDef gHumMahluxiaSubDef = { gUnk_08F6DC84, 90, 0 };
+const HumSubDef gHumMahluxiaSubDef = { gMaruxhaBtEffPalette, 90, 0 };
 
-const HumDef gHumMahluxiaDef = { 90, 0, gUnk_09618438, 0, { 51, 99, 60, 14, 40, 99, 0 } };
+const HumDef gHumMahluxiaDef = { 90, 0, gMaruxhaPalette, 0, { 51, 99, 60, 14, 40, 99, 0 } };
 
 TaskDesc gTaskDescHumMahluxia = { "task_hum_mahluxia", task_hum_mahluxia_0, task_hum_mahluxia_1, task_hum_mahluxia_2, task_hum_mahluxia_3, 0x3A4 };
 
@@ -198,24 +198,24 @@ const u32 gUnk_0813F480[2][3] = {
 };
 
 const AnimDef gHumLaxeneAnimDefs[15] = {
-    { gUnk_09EE1CBC, gUnk_09EE1CD0, gUnk_08BCB542, 0, { 0, 0, 0 } },
-    { gUnk_09EE1CD4, gUnk_09EE1CE8, gUnk_08BCCC34, 0, { 0, 0, 0 } },
-    { gUnk_09EE1CD4, gUnk_09EE1CE8, gUnk_08BCCC34, 1, { 0, 0, 0 } },
-    { gUnk_09EE1CF0, gUnk_09EE1D00, gUnk_08BCE468, 0, { 0, 0, 0 } },
-    { gUnk_09EE1D04, gUnk_09EE1D38, gUnk_08BCFC2A, 1, { 0, 0, 0 } },
-    { gUnk_09EE1D04, gUnk_09EE1D38, gUnk_08BCFC2A, 2, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 0, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 1, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 2, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 3, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 4, { 0, 0, 0 } },
-    { gUnk_09EE1D4C, gUnk_09EE1D88, gUnk_08BD46AE, 5, { 0, 0, 0 } },
-    { gUnk_09EE1DBC, gUnk_09EE1DDC, gUnk_08BD9D9C, 0, { 0, 0, 0 } },
-    { gUnk_09EE1D04, gUnk_09EE1D38, gUnk_08BCFC2A, 3, { 0, 0, 0 } },
-    { gUnk_09EE1D04, gUnk_09EE1D38, gUnk_08BCFC2A, 4, { 0, 0, 0 } },
+    { gLaxineIdleFrames, gLaxineIdleAnims, gLaxineIdleTiles, 0, { 0, 0, 0 } },
+    { gLaxineMoveFrames, gLaxineMoveAnims, gLaxineMoveTiles, 0, { 0, 0, 0 } },
+    { gLaxineMoveFrames, gLaxineMoveAnims, gLaxineMoveTiles, 1, { 0, 0, 0 } },
+    { gLaxineDamageFrames, gLaxineDamageAnims, gLaxineDamageTiles, 0, { 0, 0, 0 } },
+    { gLaxineRenzokFrames, gLaxineRenzokAnims, gLaxineRenzokTiles, 1, { 0, 0, 0 } },
+    { gLaxineRenzokFrames, gLaxineRenzokAnims, gLaxineRenzokTiles, 2, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 0, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 1, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 2, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 3, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 4, { 0, 0, 0 } },
+    { gLaxineMagicFrames, gLaxineMagicAnims, gLaxineMagicTiles, 5, { 0, 0, 0 } },
+    { gLaxineKnifethrowFrames, gLaxineKnifethrowAnims, gLaxineKnifethrowTiles, 0, { 0, 0, 0 } },
+    { gLaxineRenzokFrames, gLaxineRenzokAnims, gLaxineRenzokTiles, 3, { 0, 0, 0 } },
+    { gLaxineRenzokFrames, gLaxineRenzokAnims, gLaxineRenzokTiles, 4, { 0, 0, 0 } },
 };
 
-const HumDef gHumLaxeneDef = { 128, 0, gUnk_09618458, 0, { 49, 99, 60, 14, 46, 99, 0 } };
+const HumDef gHumLaxeneDef = { 128, 0, gLaxinePalette, 0, { 49, 99, 60, 14, 46, 99, 0 } };
 
 TaskDesc gTaskDescHumLaxene = { "task_hum_laxene", task_hum_laxene_0, task_hum_laxene_1, task_hum_laxene_2, task_hum_laxene_3, 0x1A8 };
 
@@ -227,36 +227,36 @@ const u32 gUnk_0813F5C8[2][3] = {
 };
 
 const AnimDef gUnk_0813F5E0[14] = {
-    { gUnk_09EE1DE0, gUnk_09EE1DF8, gUnk_08BDC7B6, 0, { 0, 0, 0 } },
-    { gUnk_09EE1DFC, gUnk_09EE1E0C, gUnk_08BDF086, 0, { 0, 0, 0 } },
-    { gUnk_09EE1E10, gUnk_09EE1E24, gUnk_08BE1504, 0, { 0, 0, 0 } },
-    { gUnk_09EE1E28, gUnk_09EE1E50, gUnk_08BE412A, 1, { 0, 0, 0 } },
-    { gUnk_09EE1E28, gUnk_09EE1E50, gUnk_08BE412A, 2, { 0, 0, 0 } },
-    { gUnk_09EE1E64, gUnk_09EE1E74, gUnk_08BE95F8, 0, { 0, 0, 0 } },
-    { gUnk_09EE1E64, gUnk_09EE1E74, gUnk_08BE95F8, 1, { 0, 0, 0 } },
-    { gUnk_09EE1E64, gUnk_09EE1E74, gUnk_08BE95F8, 2, { 0, 0, 0 } },
-    { gUnk_09EE1EB0, gUnk_09EE1EE8, gUnk_08BEEBAA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1EB0, gUnk_09EE1EE8, gUnk_08BEEBAA, 1, { 0, 0, 0 } },
-    { gUnk_09EE1EB0, gUnk_09EE1EE8, gUnk_08BEEBAA, 2, { 0, 0, 0 } },
-    { gUnk_09EE1E80, gUnk_09EE1EA4, gUnk_08BEB9A0, 0, { 0, 0, 0 } },
-    { gUnk_09EE1E80, gUnk_09EE1EA4, gUnk_08BEB9A0, 1, { 0, 0, 0 } },
-    { gUnk_09EE1E80, gUnk_09EE1EA4, gUnk_08BEB9A0, 2, { 0, 0, 0 } },
+    { gAcceleBt00Frames, gAcceleBt00Anims, gAcceleBt00Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt01Frames, gAcceleBt01Anims, gAcceleBt01Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt02Frames, gAcceleBt02Anims, gAcceleBt02Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt03Frames, gAcceleBt03Anims, gAcceleBt03Tiles, 1, { 0, 0, 0 } },
+    { gAcceleBt03Frames, gAcceleBt03Anims, gAcceleBt03Tiles, 2, { 0, 0, 0 } },
+    { gAcceleBt04Frames, gAcceleBt04Anims, gAcceleBt04Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt04Frames, gAcceleBt04Anims, gAcceleBt04Tiles, 1, { 0, 0, 0 } },
+    { gAcceleBt04Frames, gAcceleBt04Anims, gAcceleBt04Tiles, 2, { 0, 0, 0 } },
+    { gAcceleBt06Frames, gAcceleBt06Anims, gAcceleBt06Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt06Frames, gAcceleBt06Anims, gAcceleBt06Tiles, 1, { 0, 0, 0 } },
+    { gAcceleBt06Frames, gAcceleBt06Anims, gAcceleBt06Tiles, 2, { 0, 0, 0 } },
+    { gAcceleBt05Frames, gAcceleBt05Anims, gAcceleBt05Tiles, 0, { 0, 0, 0 } },
+    { gAcceleBt05Frames, gAcceleBt05Anims, gAcceleBt05Tiles, 1, { 0, 0, 0 } },
+    { gAcceleBt05Frames, gAcceleBt05Anims, gAcceleBt05Tiles, 2, { 0, 0, 0 } },
 };
 
 const AnimDef gUnk_0813F6C0[10] = {
-    { gUnk_09EE1FCC, gUnk_09EE1FD8, gUnk_08BF76FE, 0, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 0, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 1, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 2, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 7, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 3, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 4, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 5, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 8, { 0, 0, 0 } },
-    { gUnk_09EE1EF4, gUnk_09EE1F6C, gUnk_08BF50CA, 6, { 0, 0, 0 } },
+    { gAcceleBtWepFrames, gAcceleBtWepAnims, gAcceleBtWepTiles, 0, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 0, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 1, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 2, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 7, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 3, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 4, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 5, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 8, { 0, 0, 0 } },
+    { gAcceleBt06WepFrames, gAcceleBt06WepAnims, gAcceleBt06WepTiles, 6, { 0, 0, 0 } },
 };
 
-const HumSubDef gHumAxcelSubDef = { gUnk_08F69BA4, 64, 0 };
+const HumSubDef gHumAxcelSubDef = { gBStatesPalette, 64, 0 };
 
 const HumDef gHumAxcelDef = {
 #ifdef VERSION_EU
@@ -264,7 +264,7 @@ const HumDef gHumAxcelDef = {
 #else
         128
 #endif
-    , 0, gUnk_096180F8, 0, { 48, 99, 60, 14, 32, 99, 0 } };
+    , 0, gAccelePalette, 0, { 48, 99, 60, 14, 32, 99, 0 } };
 
 TaskDesc gTaskDescHumAxcel = { "task_hum_axcel", task_hum_axcel_0, task_hum_axcel_1, task_hum_axcel_2, task_hum_axcel_3, 0x238 };
 
@@ -287,24 +287,24 @@ const u32 gUnk_0813F7CC[3] = {
 };
 
 const AnimDef gHumVixenAnimDefs[15] = {
-    { gUnk_09EE1FDC, gUnk_09EE1FEC, gUnk_08BF7A1A, 0, { 0, 0, 0 } },
-    { gUnk_09EE1FF0, gUnk_09EE1FFC, gUnk_08BF97D4, 0, { 0, 0, 0 } },
-    { gUnk_09EE2000, gUnk_09EE2010, gUnk_08BFB696, 0, { 0, 0, 0 } },
-    { gUnk_09EE2014, gUnk_09EE2030, gUnk_08BFD4A2, 0, { 0, 0, 0 } },
-    { gUnk_09EE2054, gUnk_09EE2070, gUnk_08C0319C, 0, { 0, 0, 0 } },
-    { gUnk_09EE2074, gUnk_09EE2088, gUnk_08C067EC, 0, { 0, 0, 0 } },
-    { gUnk_09EE2074, gUnk_09EE2088, gUnk_08C067EC, 2, { 0, 0, 0 } },
-    { gUnk_09EE2074, gUnk_09EE2088, gUnk_08C067EC, 3, { 0, 0, 0 } },
-    { gUnk_09EE20B4, gUnk_09EE20E4, gUnk_08C0B5EE, 0, { 0, 0, 0 } },
-    { gUnk_09EE2034, gUnk_09EE2048, gUnk_08C00AB6, 0, { 0, 0, 0 } },
-    { gUnk_09EE2034, gUnk_09EE2048, gUnk_08C00AB6, 1, { 0, 0, 0 } },
-    { gUnk_09EE2034, gUnk_09EE2048, gUnk_08C00AB6, 2, { 0, 0, 0 } },
+    { gVixenS1Frames, gVixenS1Anims, gVixenS1Tiles, 0, { 0, 0, 0 } },
+    { gVixenW1Frames, gVixenW1Anims, gVixenW1Tiles, 0, { 0, 0, 0 } },
+    { gVixenD1Frames, gVixenD1Anims, gVixenD1Tiles, 0, { 0, 0, 0 } },
+    { gVixenA1Frames, gVixenA1Anims, gVixenA1Tiles, 0, { 0, 0, 0 } },
+    { gVixenM1bFrames, gVixenM1bAnims, gVixenM1bTiles, 0, { 0, 0, 0 } },
+    { gVixenM2aFrames, gVixenM2aAnims, gVixenM2aTiles, 0, { 0, 0, 0 } },
+    { gVixenM2aFrames, gVixenM2aAnims, gVixenM2aTiles, 2, { 0, 0, 0 } },
+    { gVixenM2aFrames, gVixenM2aAnims, gVixenM2aTiles, 3, { 0, 0, 0 } },
+    { gVixenM4Frames, gVixenM4Anims, gVixenM4Tiles, 0, { 0, 0, 0 } },
+    { gVixenM1aFrames, gVixenM1aAnims, gVixenM1aTiles, 0, { 0, 0, 0 } },
+    { gVixenM1aFrames, gVixenM1aAnims, gVixenM1aTiles, 1, { 0, 0, 0 } },
+    { gVixenM1aFrames, gVixenM1aAnims, gVixenM1aTiles, 2, { 0, 0, 0 } },
     { gUnk_09EE2098, gUnk_09EE20A8, gUnk_08C08E48, 0, { 0, 0, 0 } },
     { gUnk_09EE2098, gUnk_09EE20A8, gUnk_08C08E48, 1, { 0, 0, 0 } },
     { gUnk_09EE2098, gUnk_09EE20A8, gUnk_08C08E48, 2, { 0, 0, 0 } },
 };
 
-const HumDef gHumVixenDef = { 83, 0, gUnk_096183B8, 0, { 50, 99, 80, 14, 48, 99, 0 } };
+const HumDef gHumVixenDef = { 83, 0, gVixenPalette, 0, { 50, 99, 80, 14, 48, 99, 0 } };
 
 TaskDesc gTaskDescHumVixen = { "task_hum_vixen", task_hum_vixen_0, task_hum_vixen_1, task_hum_vixen_2, task_hum_vixen_3, 0x218 };
 
@@ -313,19 +313,19 @@ TaskDesc gTaskDescHumVixenNdl = { "task_hum_vixen_ndl", task_hum_vixen_ndl_0, ta
 TaskDesc gTaskDescHumVixenIce = { "task_hum_vixen_ice", task_hum_vixen_ice_0, task_hum_vixen_ice_1, task_hum_vixen_ice_2, task_hum_vixen_ice_3, 0x94 };
 
 const AnimDef gHumVixenFrzAnimDefs[13] = {
-    { gUnk_09EE20E8, gUnk_09EE2110, gUnk_08C10A58, 0, { 0, 0, 0 } },
-    { gUnk_09EE20E8, gUnk_09EE2110, gUnk_08C10A58, 1, { 0, 0, 0 } },
-    { gUnk_09EE2120, gUnk_09EE2138, gUnk_08C1516A, 0, { 0, 0, 0 } },
-    { gUnk_09EE20E8, gUnk_09EE2110, gUnk_08C10A58, 2, { 0, 0, 0 } },
-    { gUnk_09EE2120, gUnk_09EE2138, gUnk_08C1516A, 1, { 0, 0, 0 } },
-    { gUnk_09EE20E8, gUnk_09EE2110, gUnk_08C10A58, 3, { 0, 0, 0 } },
-    { gUnk_09EE2120, gUnk_09EE2138, gUnk_08C1516A, 2, { 0, 0, 0 } },
-    { gUnk_09EE2144, gUnk_09EE215C, gUnk_08C1837E, 0, { 0, 0, 0 } },
-    { gUnk_09EE2144, gUnk_09EE215C, gUnk_08C1837E, 1, { 0, 0, 0 } },
-    { gUnk_09EE2144, gUnk_09EE215C, gUnk_08C1837E, 2, { 0, 0, 0 } },
-    { gUnk_09EE2168, gUnk_09EE2180, gUnk_08C1B592, 0, { 0, 0, 0 } },
-    { gUnk_09EE2168, gUnk_09EE2180, gUnk_08C1B592, 1, { 0, 0, 0 } },
-    { gUnk_09EE2168, gUnk_09EE2180, gUnk_08C1B592, 2, { 0, 0, 0 } },
+    { gVixenReitouFrames, gVixenReitouAnims, gVixenReitouTiles, 0, { 0, 0, 0 } },
+    { gVixenReitouFrames, gVixenReitouAnims, gVixenReitouTiles, 1, { 0, 0, 0 } },
+    { gReitouSoraFrames, gReitouSoraAnims, gReitouSoraTiles, 0, { 0, 0, 0 } },
+    { gVixenReitouFrames, gVixenReitouAnims, gVixenReitouTiles, 2, { 0, 0, 0 } },
+    { gReitouSoraFrames, gReitouSoraAnims, gReitouSoraTiles, 1, { 0, 0, 0 } },
+    { gVixenReitouFrames, gVixenReitouAnims, gVixenReitouTiles, 3, { 0, 0, 0 } },
+    { gReitouSoraFrames, gReitouSoraAnims, gReitouSoraTiles, 2, { 0, 0, 0 } },
+    { gReitouRikuFrames, gReitouRikuAnims, gReitouRikuTiles, 0, { 0, 0, 0 } },
+    { gReitouRikuFrames, gReitouRikuAnims, gReitouRikuTiles, 1, { 0, 0, 0 } },
+    { gReitouRikuFrames, gReitouRikuAnims, gReitouRikuTiles, 2, { 0, 0, 0 } },
+    { gReitouNiseFrames, gReitouNiseAnims, gReitouNiseTiles, 0, { 0, 0, 0 } },
+    { gReitouNiseFrames, gReitouNiseAnims, gReitouNiseTiles, 1, { 0, 0, 0 } },
+    { gReitouNiseFrames, gReitouNiseAnims, gReitouNiseTiles, 2, { 0, 0, 0 } },
 };
 
 TaskDesc gTaskDescHumVixenFrz = { "task_hum_vixen_frz", task_hum_vixen_frz_0, task_hum_vixen_frz_1, task_hum_vixen_frz_2, task_hum_vixen_frz_3, 0x38 };
@@ -355,19 +355,19 @@ const u32 gUnk_0813FA8C[3] = {
 };
 
 const AnimDef gHumLexceusAnimDefs[10] = {
-    { gUnk_09EE21BC, gUnk_09EE21DC, gUnk_08C1ED72, 0, { 0, 0, 0 } },
-    { gUnk_09EE21E0, gUnk_09EE21EC, gUnk_08C238AC, 0, { 0, 0, 0 } },
-    { gUnk_09EE21F0, gUnk_09EE2200, gUnk_08C25516, 0, { 0, 0, 0 } },
-    { gUnk_09EE2204, gUnk_09EE2224, gUnk_08C27FBE, 0, { 0, 0, 0 } },
-    { gUnk_09EE222C, gUnk_09EE2248, gUnk_08C2D1B6, 1, { 0, 0, 0 } },
-    { gUnk_09EE2250, gUnk_09EE2288, gUnk_08C3151E, 0, { 0, 0, 0 } },
-    { gUnk_09EE2250, gUnk_09EE2288, gUnk_08C3151E, 1, { 0, 0, 0 } },
-    { gUnk_09EE22B4, gUnk_09EE22D8, gUnk_08C3866C, 0, { 0, 0, 0 } },
-    { gUnk_09EE22B4, gUnk_09EE22D8, gUnk_08C3866C, 1, { 0, 0, 0 } },
-    { gUnk_09EE22E0, gUnk_09EE2308, gUnk_08C3D7E6, 0, { 0, 0, 0 } },
+    { gRexeusIdlFrames, gRexeusIdlAnims, gRexeusIdlTiles, 0, { 0, 0, 0 } },
+    { gRexeusMovFrames, gRexeusMovAnims, gRexeusMovTiles, 0, { 0, 0, 0 } },
+    { gRexeusDmgFrames, gRexeusDmgAnims, gRexeusDmgTiles, 0, { 0, 0, 0 } },
+    { gRexeusCmb1Frames, gRexeusCmb1Anims, gRexeusCmb1Tiles, 0, { 0, 0, 0 } },
+    { gRexeusCmb2Frames, gRexeusCmb2Anims, gRexeusCmb2Tiles, 1, { 0, 0, 0 } },
+    { gRexeusTmhFrames, gRexeusTmhAnims, gRexeusTmhTiles, 0, { 0, 0, 0 } },
+    { gRexeusTmhFrames, gRexeusTmhAnims, gRexeusTmhTiles, 1, { 0, 0, 0 } },
+    { gRexeusRckFrames, gRexeusRckAnims, gRexeusRckTiles, 0, { 0, 0, 0 } },
+    { gRexeusRckFrames, gRexeusRckAnims, gRexeusRckTiles, 1, { 0, 0, 0 } },
+    { gRexeusImpFrames, gRexeusImpAnims, gRexeusImpTiles, 0, { 0, 0, 0 } },
 };
 
-const HumDef gHumLexceusDef = { 128, 0, gUnk_09618478, 0, { 53, 99, 70, 24, 52, 99, 4 } };
+const HumDef gHumLexceusDef = { 128, 0, gRexeusPalette, 0, { 53, 99, 70, 24, 52, 99, 4 } };
 
 TaskDesc gTaskDescHumLexceus = { "task_hum_lexceus", task_hum_lexceus_0, task_hum_lexceus_1, task_hum_lexceus_2, task_hum_lexceus_3, 0x204 };
 
@@ -385,53 +385,53 @@ const u32 gUnk_0813FBBC[2][3] = {
 };
 
 const AnimDef gHumRikuAnimDefs[21] = {
-    { gUnk_09EE23B8, gUnk_09EE23D0, gUnk_08C492E2, 0, { 0, 0, 0 } },
-    { gUnk_09EE23D8, gUnk_09EE23F8, gUnk_08C4AEA0, 0, { 0, 0, 0 } },
-    { gUnk_09EE23FC, gUnk_09EE2410, gUnk_08C4D30E, 0, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 0, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 1, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 2, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 3, { 0, 0, 0 } },
-    { gUnk_09EE2414, gUnk_09EE243C, gUnk_08C4EAE2, 4, { 0, 0, 0 } },
-    { gUnk_09EE2458, gUnk_09EE2480, gUnk_08C51312, 0, { 0, 0, 0 } },
-    { gUnk_09EE2490, gUnk_09EE24C0, gUnk_08C5411E, 0, { 0, 0, 0 } },
-    { gUnk_09EE24C8, gUnk_09EE24E4, gUnk_08C579A4, 0, { 0, 0, 0 } },
-    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 0, { 0, 0, 0 } },
-    { gUnk_09EE24EC, gUnk_09EE2518, gUnk_08C5997A, 2, { 0, 0, 0 } },
-    { gUnk_09EE25A8, gUnk_09EE25CC, gUnk_08C63E3C, 0, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 0, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 1, { 0, 0, 0 } },
-    { gUnk_09EE2524, gUnk_09EE2554, gUnk_08C5C794, 2, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 0, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 1, { 0, 0, 0 } },
-    { gUnk_09EE2560, gUnk_09EE2578, gUnk_08C5FFFA, 2, { 0, 0, 0 } },
-    { gUnk_09EE2584, gUnk_09EE25A4, gUnk_08C61980, 0, { 0, 0, 0 } },
+    { gNiserikuIdolFrames, gNiserikuIdolAnims, gNiserikuIdolTiles, 0, { 0, 0, 0 } },
+    { gNiserikuRunFrames, gNiserikuRunAnims, gNiserikuRunTiles, 0, { 0, 0, 0 } },
+    { gNiserikuDamageFrames, gNiserikuDamageAnims, gNiserikuDamageTiles, 0, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 0, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 1, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 2, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 3, { 0, 0, 0 } },
+    { gNiserikuJumpFrames, gNiserikuJumpAnims, gNiserikuJumpTiles, 4, { 0, 0, 0 } },
+    { gNiserikuDashFrames, gNiserikuDashAnims, gNiserikuDashTiles, 0, { 0, 0, 0 } },
+    { gNiserikuFuriharaiFrames, gNiserikuFuriharaiAnims, gNiserikuFuriharaiTiles, 0, { 0, 0, 0 } },
+    { gNiserikuTategiriFrames, gNiserikuTategiriAnims, gNiserikuTategiriTiles, 0, { 0, 0, 0 } },
+    { gNiserikuKabutoFrames, gNiserikuKabutoAnims, gNiserikuKabutoTiles, 0, { 0, 0, 0 } },
+    { gNiserikuKabutoFrames, gNiserikuKabutoAnims, gNiserikuKabutoTiles, 2, { 0, 0, 0 } },
+    { gNiserikuDarkfigaFrames, gNiserikuDarkfigaAnims, gNiserikuDarkfigaTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 1, { 0, 0, 0 } },
+    { gNiserikuYamiStartFrames, gNiserikuYamiStartAnims, gNiserikuYamiStartTiles, 2, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 0, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 1, { 0, 0, 0 } },
+    { gNiserikuYamiIngFrames, gNiserikuYamiIngAnims, gNiserikuYamiIngTiles, 2, { 0, 0, 0 } },
+    { gNiserikuYamiEndFrames, gNiserikuYamiEndAnims, gNiserikuYamiEndTiles, 0, { 0, 0, 0 } },
 };
 
-const HumDef gHumRikuDef = { 64, 0, gUnk_09618338, 0, { 45, 99, 38, 14, 24, 99, 0 } };
+const HumDef gHumRikuDef = { 64, 0, gNiserikuPalette, 0, { 45, 99, 38, 14, 24, 99, 0 } };
 
-const HumSubDef gHumRikuSubDef = { gUnk_09618338, 64, 0 };
+const HumSubDef gHumRikuSubDef = { gNiserikuPalette, 64, 0 };
 
 TaskDesc gTaskDescHumRiku = { "task_hum_riku", task_hum_riku_0, task_hum_riku_1, task_hum_riku_2, task_hum_riku_3, 0x384 };
 
 const AnimDef gHumLeonAnimDefs[5] = {
-    { gUnk_09EF01F0, gUnk_09EF01F8, gUnk_0934B7EC, 0, { 0, 0, 0 } },
+    { gReonFl00Frames, gReonFl00Anims, gReonFl00Tiles, 0, { 0, 0, 0 } },
     { gUnk_09EE25D0, gUnk_09EE25E4, gUnk_08C6668E, 0, { 0, 0, 0 } },
     { gUnk_09EE25D0, gUnk_09EE25E4, gUnk_08C6668E, 3, { 0, 0, 0 } },
     { gUnk_09EE25D0, gUnk_09EE25E4, gUnk_08C6668E, 1, { 0, 0, 0 } },
     { gUnk_09EE25D0, gUnk_09EE25E4, gUnk_08C6668E, 2, { 0, 0, 0 } },
 };
 
-const HumDef gHumLeonDef = { 128, 0, gUnk_09618258, 0, { 41, 99, 64, 14, 40, 99, 0 } };
+const HumDef gHumLeonDef = { 128, 0, gReonPalette, 0, { 41, 99, 64, 14, 40, 99, 0 } };
 
 TaskDesc gTaskDescHumLeon = { "task_hum_leon", task_hum_leon_0, task_hum_leon_1, task_hum_leon_2, task_hum_leon_3, 0x19C };
 
 const AnimDef gHumRobeAnimDefs[2] = {
-    { gUnk_09EEE36C, gUnk_09EEE3BC, gUnk_091C37E0, 5, { 0, 0, 0 } },
+    { gRobeFl00Frames, gRobeFl00Anims, gRobeFl00Tiles, 5, { 0, 0, 0 } },
     { gUnk_09EE25F4, gUnk_09EE2604, gUnk_08C67F86, 0, { 0, 0, 0 } },
 };
 
-const HumDef gHumRobeDef = { 128, 0, gUnk_09617C78, 0, { 51, 99, 64, 14, 32, 99, 0 } };
+const HumDef gHumRobeDef = { 128, 0, gRobePalette, 0, { 51, 99, 64, 14, 32, 99, 0 } };
 
 void task_hum_cloud_0(CloudWork* work, void* obj) {
     HumInit(&work->base, &gHumCloudDef);
@@ -1771,9 +1771,9 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
     } else {
         work->unk_2C = 0;
     }
-    work->palette = LoadObjPalette(gUnk_08F6DC44, 0x20);
-    work->tiles = AllocObjTiles(0x280, gUnk_08B59E52);
-    AnimInit(&work->anim, gUnk_09EE17AC, gUnk_09EE1798);
+    work->palette = LoadObjPalette(gPBakudanPalette, 0x20);
+    work->tiles = AllocObjTiles(0x280, gPBakudanTiles);
+    AnimInit(&work->anim, gPBakudanAnims, gPBakudanFrames);
     AnimStart(&work->anim, 0, 1);
     work->x = args->x;
     work->y = args->y;
@@ -1805,7 +1805,7 @@ void task_hum_hook_bomb_0(HookBombWork* work, VixenNdlArgs* args) {
         break;
     }
     work->tiles2 = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette2 = LoadObjPalette(gBStatesPalette, 0x20);
     work->unk_48 = 1;
 }
 
@@ -2525,8 +2525,8 @@ void func_0804E404(AnsemWork* work) {
     BtlObj* act = &work->base.actor;
 
     if (work->unk_1CC > 2) {
-        LoadObjPaletteBank(((u16*)work->base.palette)[3], gUnk_09617F18);
-        work->base.unk_178 = gUnk_09617F18;
+        LoadObjPaletteBank(((u16*)work->base.palette)[3], gHadesPalette);
+        work->base.unk_178 = gHadesPalette;
         work->unk_1CA &= 0xFFFE;
         work->base.unk_184 = gUnk_0813F214;
     } else {
@@ -2543,15 +2543,15 @@ void task_hum_hades_0(HadesWork* work) {
     work->unk_1CA = 0;
     work->unk_1C4 = -0xA00;
     work->sub.flags |= 3;
-    work->tiles = AllocObjTiles(0x80, gUnk_08BAFB62);
-    work->tiles2 = AllocObjTiles(0x280, gUnk_08BAFB62);
-    work->tiles3 = AllocObjTiles(0x3A0, gUnk_08BAFB62);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
-    AnimInit(&work->anim, gUnk_09EE1B78, gUnk_09EE1B38);
+    work->tiles = AllocObjTiles(0x80, gHadesFramespreadHiTiles);
+    work->tiles2 = AllocObjTiles(0x280, gHadesFramespreadHiTiles);
+    work->tiles3 = AllocObjTiles(0x3A0, gHadesFramespreadHiTiles);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
+    AnimInit(&work->anim, gHadesFramespreadHiAnims, gHadesFramespreadHiFrames);
     AnimStart(&work->anim, 2, 1);
-    AnimInit(&work->anim2, gUnk_09EE1B78, gUnk_09EE1B38);
+    AnimInit(&work->anim2, gHadesFramespreadHiAnims, gHadesFramespreadHiFrames);
     AnimStart(&work->anim2, 1, 1);
-    AnimInit(&work->anim3, gUnk_09EE1B78, gUnk_09EE1B38);
+    AnimInit(&work->anim3, gHadesFramespreadHiAnims, gHadesFramespreadHiFrames);
     AnimStart(&work->anim3, 0, 1);
     work->base.unk_184 = gUnk_0813F214;
 }
@@ -2678,8 +2678,8 @@ u8 task_hum_hades_1(HadesWork* work) {
         }
 
         if (AnimGetFrame(&work->base.anim) == 5 && work->base.anim.timer == 0) {
-            LoadObjPaletteBank(((u16*)work->base.palette)[3], gUnk_09617F38);
-            work->base.unk_178 = gUnk_09617F38;
+            LoadObjPaletteBank(((u16*)work->base.palette)[3], gHadesAngryPalette);
+            work->base.unk_178 = gHadesAngryPalette;
             w->unk_1CA |= 1;
             work->base.unk_184 = gUnk_0813F220;
             w->unk_1CC = 0;
@@ -4558,9 +4558,9 @@ void task_hum_laxene_3(LaxeneWork* work) {
 }
 
 void task_hum_laxene_knf_0(LaxeneKnfWork* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_09618458, 0x20);
-    work->tiles = LoadObjTiles(gUnk_08BD99F4, 0x2C0);
-    AnimInit(&work->anim, gUnk_09EE1DB4, gUnk_09EE1DA4);
+    work->palette = LoadObjPalette(gLaxinePalette, 0x20);
+    work->tiles = LoadObjTiles(gLaxineKnifeTiles, 0x2C0);
+    AnimInit(&work->anim, gLaxineKnifeAnims, gLaxineKnifeFrames);
     AnimStart(&work->anim, 0, 0);
 
     if (args->unk_12 != 0) {
@@ -4705,7 +4705,7 @@ void task_hum_axcel_0(AxcelWork* work) {
     work->sub.flags |= 2;
     work->sub2.flags |= 2;
     work->tiles = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     TaskPoolInit(&work->tasks, 16);
 }
 
@@ -5424,7 +5424,7 @@ void task_hum_axcel_ptc_0(AxcelPtcWork* work, s32* args) {
     work->y = args[1];
     work->z = args[2];
     work->tiles = LoadObjTiles(gUnk_08BF73C6, 0x300);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     AnimInit(&work->anim, gUnk_09EE1FC0, gUnk_09EE1F90);
 
     switch (GetRandom() % 3) {
@@ -5819,7 +5819,7 @@ u8 task_hum_vixen_1(VixenWork* work) {
             }
             work->unk_19C = act->y;
             m4aSongNumStart(SONG_VO_VIC_ATTACK01);
-            InitObjTilesAtSlot(&work->unk_1E8, *(u16*)((u8*)gBtlWork->tiles2 + 6), gUnk_08EE3A84, 0x7E0);
+            InitObjTilesAtSlot(&work->unk_1E8, *(u16*)((u8*)gBtlWork->tiles2 + 6), gVixenE1Tiles, 0x7E0);
         }
 
         if (AnimGetFrame(&w->base.anim) > 2) {
@@ -6039,9 +6039,9 @@ void task_hum_vixen_3(VixenWork* work) {
 }
 
 void task_hum_vixen_ndl_0(VixenNdlWork* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
+    work->palette = LoadObjPalette(gVixEPalette, 0x20);
     work->tiles = args->unk_18;
-    AnimInit(&work->anim, gUnk_09EE26B0, gUnk_09EE2690);
+    AnimInit(&work->anim, gVixenE1Anims, gVixenE1Frames);
     AnimStart(&work->anim, 0, 0);
     work->unk_2C = args->unk_12;
     work->x = args->x;
@@ -6106,11 +6106,11 @@ void task_hum_vixen_ndl_3(VixenNdlWork* work) {
 }
 
 void task_hum_vixen_ice_0(VixenIceWork* work, VixenSub* args) {
-    work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
-    work->tiles = LoadObjTiles(gUnk_08EE4264, 0x800);
+    work->palette = LoadObjPalette(gVixEPalette, 0x20);
+    work->tiles = LoadObjTiles(gVixenE2Tiles, 0x800);
     work->sub = args;
     work->state = 3;
-    AnimInit(&work->anim, gUnk_09EE26CC, gUnk_09EE26B4);
+    AnimInit(&work->anim, gVixenE2Anims, gVixenE2Frames);
     AnimStart(&work->anim, 0, 0);
     ColliderInit(&work->collider, 12, 27, 1);
     ColliderSetDisabled(&work->collider, 1);
@@ -6229,7 +6229,7 @@ void task_hum_vixen_ice_3(VixenIceWork* work) {
 }
 
 void task_hum_vixen_frz_0(VixenFrzWork* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
+    work->palette = LoadObjPalette(gVixEPalette, 0x20);
     work->tiles = gBtlWork->tiles2;
 
     if (gGameState.flags & 8) {
@@ -6426,9 +6426,9 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
     s32 a;
     s32 b;
 
-    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->tiles2)->index, gUnk_08C1E78C, 0x4C0);
+    InitObjTilesAtSlot(work, ((ObjTiles*)gBtlWork->tiles2)->index, gVixenReitouHahenTiles, 0x4C0);
     work->tiles = work;
-    work->palette = LoadObjPalette(gUnk_08F6DCA4, 0x20);
+    work->palette = LoadObjPalette(gVixEPalette, 0x20);
     work->unk_38 = 0;
     work->unk_21C = 0;
 
@@ -6439,7 +6439,7 @@ void task_hum_vixen_frg_0(VixenFrgWork* work, VixenNdlArgs* args) {
         e->y = args->y;
         e->z = args->z + (d->unk_02 << 8);
         e->unk_1C = d->unk_06;
-        e->gfx = gUnk_09EE218C[d->unk_04];
+        e->gfx = gVixenReitouHahenFrames[d->unk_04];
         e->vz = GetRandom() % 0x401 - 0x500;
         a = (u8)GetRandom();
         b = GetRandom() % 0x380;
@@ -7006,9 +7006,9 @@ void task_hum_lexceus_3(LexceusWork* work) {
 }
 
 void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_09618478, 0x20);
-    work->tiles = AllocObjTiles(0x400, gUnk_08C3724C);
-    AnimInit(&work->anim, gUnk_09EE22B0, gUnk_09EE2298);
+    work->palette = LoadObjPalette(gRexeusPalette, 0x20);
+    work->tiles = AllocObjTiles(0x400, gRexeusTmhAxTiles);
+    AnimInit(&work->anim, gRexeusTmhAxAnims, gRexeusTmhAxFrames);
     AnimStart(&work->anim, 0, 1);
 
     if (args->unk_12 != 0) {
@@ -7026,7 +7026,7 @@ void task_hum_lex_tmh_0(LexTmhWork* work, VixenNdlArgs* args) {
     work->unk_2D = 0;
     work->vz = -0x980;
     work->tiles2 = LoadObjTiles(gUnk_08B22BBC, 0x100);
-    work->palette2 = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette2 = LoadObjPalette(gBStatesPalette, 0x20);
     m4aSongNumStart(SONG_BTL_LEC_THRSW);
 }
 
@@ -7139,9 +7139,9 @@ void task_hum_lex_tmh_3(LexTmhWork* work) {
 }
 
 void task_hum_lex_tmh0_0(LexTmh0Work* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_09618478, 0x20);
-    work->tiles = AllocObjTiles(0x400, gUnk_08C3151E);
-    AnimInit(&work->anim, gUnk_09EE2288, gUnk_09EE2250);
+    work->palette = LoadObjPalette(gRexeusPalette, 0x20);
+    work->tiles = AllocObjTiles(0x400, gRexeusTmhTiles);
+    AnimInit(&work->anim, gRexeusTmhAnims, gRexeusTmhFrames);
     AnimStart(&work->anim, 2, 1);
 
     if (args->unk_12 != 0) {
@@ -7216,7 +7216,7 @@ void task_hum_lex_rock_0(LexRockWork* work, VixenNdlArgs* args) {
     work->state = 0;
     work->unk_164 = 0;
     work->tiles = LoadObjTiles(gUnk_08B22CE4, 0x200);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     work->unk_2C0 = 0;
 }
 
@@ -7233,9 +7233,9 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
     switch (work->state) {
     case 0:
         work->unk_164 = 1;
-        work->palette2 = LoadObjPalette(gUnk_08F6DCC4, 0x20);
-        work->tiles2[0] = AllocObjTiles(0xDC0, gUnk_08C42BBE);
-        AnimInit(&work->anim[0], gUnk_09EE2338, gUnk_09EE230C);
+        work->palette2 = LoadObjPalette(gRexeusRock01Palette, 0x20);
+        work->tiles2[0] = AllocObjTiles(0xDC0, gRexeusRock01Tiles);
+        AnimInit(&work->anim[0], gRexeusRock01Anims, gRexeusRock01Frames);
         AnimStart(&work->anim[0], 0, 0);
         work->state++;
         break;
@@ -7249,9 +7249,9 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
         ReleaseObjTiles(work->tiles2[0]);
         ReleaseObjPalette(work->palette2);
         work->unk_164 = 1;
-        work->palette2 = LoadObjPalette(gUnk_08F6DCE4, 0x20);
-        work->tiles2[0] = AllocObjTiles(0xDC0, gUnk_08C46790);
-        AnimInit(&work->anim[0], gUnk_09EE239C, gUnk_09EE233C);
+        work->palette2 = LoadObjPalette(gRexeusRock02Palette, 0x20);
+        work->tiles2[0] = AllocObjTiles(0xDC0, gRexeusRock02Tiles);
+        AnimInit(&work->anim[0], gRexeusRock02Anims, gRexeusRock02Frames);
         AnimStart(&work->anim[0], 0, 0);
         work->z -= 0x4000;
         work->state++;
@@ -7274,8 +7274,8 @@ u8 task_hum_lex_rock_1(LexRockWork* work) {
 
         for (i = 0; i < 12; i++) {
             e = &work->sub[i];
-            work->tiles2[i] = AllocObjTiles(0xC0, gUnk_08C46790);
-            AnimInit(&work->anim[i], gUnk_09EE239C, gUnk_09EE233C);
+            work->tiles2[i] = AllocObjTiles(0xC0, gRexeusRock02Tiles);
+            AnimInit(&work->anim[i], gRexeusRock02Anims, gRexeusRock02Frames);
             AnimStart(&work->anim[i], GetRandom() % 5 + 2, 3);
 
             if (work->unk_160 != 0) {
@@ -7411,15 +7411,15 @@ void task_hum_lex_rock_3(LexRockWork* work) {
 }
 
 void task_hum_mahluxia_flw_0(MahluxiaFlwWork* work, VixenNdlArgs* args) {
-    work->palette = LoadObjPalette(gUnk_08F6DC84, 0x20);
-    work->tiles = LoadObjTiles(gUnk_08BCB3D8, 0x100);
+    work->palette = LoadObjPalette(gMaruxhaBtEffPalette, 0x20);
+    work->tiles = LoadObjTiles(gMaruxhaBtEff2Tiles, 0x100);
     work->state = 0;
     work->x = args->x;
     work->y = args->y;
     work->z = args->z;
     work->vx = GetRandom() % 717 - 358;
     work->vz = -(GetRandom() % 539 + 102);
-    AnimInit(&work->anim, gUnk_09EE1CB4, gUnk_09EE1C94);
+    AnimInit(&work->anim, gMaruxhaBtEff2Anims, gMaruxhaBtEff2Frames);
     AnimStart(&work->anim, GetRandom() & 1, 1);
 }
 

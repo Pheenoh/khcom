@@ -197,11 +197,11 @@ extern u8 gUnk_08B1EA00[];
 extern u8 gUnk_08CB06E4[];
 extern u8 gUnk_08EFD384[];
 extern u8 gUnk_08F69404[];
-extern u8 gUnk_08F683A4[];
+extern u8 gSoraPalette[];
 extern u8 gUnk_08F69BC4[];
 extern u8 gUnk_096FAC64[];
-extern u8 gUnk_09618118[];
-extern u8 gUnk_08F69BA4[];
+extern u8 gRikuPalette[];
+extern u8 gBStatesPalette[];
 extern u32 gFrameCounter;
 
 void func_0801DEB8(BtlSoraWork* work);

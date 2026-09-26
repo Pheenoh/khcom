@@ -1157,7 +1157,7 @@ void mode_ms_charge_0(void) {
     func_08104FA4();
     func_08104FF8();
     func_08105090();
-    gUnk_02035D90 = LoadObjPalette(gUnk_09611AB8, 32);
+    gUnk_02035D90 = LoadObjPalette(gCard00Palette, 32);
     gUnk_02035D9C = LoadObjTiles(gUnk_0908B1B4, 0x9A0);
     AnimInit(&gUnk_02035DA0, gUnk_09EEA164, gUnk_09EEA148);
     AnimStart(&gUnk_02035DA0, 0, 1);
@@ -1171,7 +1171,7 @@ void mode_ms_charge_0(void) {
     AnimStart(&gUnk_02035C50, 1, 1);
     AnimInit(&gUnk_02035C68, gUnk_09EF9AA4, gUnk_09EF9A68);
     AnimStart(&gUnk_02035C68, 2, 1);
-    gUnk_02035C80 = LoadObjPalette(gUnk_09617D58, 32);
+    gUnk_02035C80 = LoadObjPalette(gMoguPalette, 32);
     gUnk_02035C84 = LoadObjTiles(
 #ifdef VERSION_EU
         gUnkEu_099AEE98
@@ -1191,15 +1191,15 @@ void mode_ms_charge_0(void) {
         gUnk_09EF9928
     );
     AnimStart(&gUnk_02035CA0, 0, 1);
-    gUnk_02035CC0 = LoadObjPalette(gUnk_09617D58, 32);
+    gUnk_02035CC0 = LoadObjPalette(gMoguPalette, 32);
     gUnk_02035CC4 = LoadObjTiles(
 #ifdef VERSION_EU
         gUnkEu_092D1F74
 #else
-        gUnk_092028EC
+        gMoguFl00Tiles
 #endif
     , 0xC00);
-    AnimInit(&gUnk_02035CC8, gUnk_09EEEAC8, gUnk_09EEEA98);
+    AnimInit(&gUnk_02035CC8, gMoguFl00Anims, gMoguFl00Frames);
     {
         void** dst = &gUnk_02035DDC;
         *dst = EwramAlloc(0x120);

@@ -387,14 +387,14 @@ void task_status_tab_3(StatusTabWork* work) {
 void task_status_sora_0(StatusSoraWork* work) {
     if (gGameState.flags & 8) {
         work->tiles = AllocObjTiles(0x800, 0);
-        work->palette = LoadObjPalette(gUnk_09618118, 0x20);
-        SetObjTileSource(work->tiles, gUnk_0891ED26);
-        AnimInit(&work->anim, gUnk_09EDF38C, gUnk_09EDF374);
+        work->palette = LoadObjPalette(gRikuPalette, 0x20);
+        SetObjTileSource(work->tiles, gRikuBt00Tiles);
+        AnimInit(&work->anim, gRikuBt00Anims, gRikuBt00Frames);
     } else {
         work->tiles = AllocObjTiles(0x500, 0);
-        work->palette = LoadObjPalette(gUnk_08F683A4, 0x20);
-        SetObjTileSource(work->tiles, gUnk_088E33C2);
-        AnimInit(&work->anim, gUnk_09EDEE14, gUnk_09EDEE08);
+        work->palette = LoadObjPalette(gSoraPalette, 0x20);
+        SetObjTileSource(work->tiles, gSor1ll51Tiles);
+        AnimInit(&work->anim, gSor1ll51Anims, gSor1ll51Frames);
     }
     AnimStart(&work->anim, 0, 1);
     work->gfx = AnimGetGfx(&work->anim);
@@ -548,7 +548,7 @@ void task_status_stocklist_0(StatusStocklistWork* work, s32* arg) {
         work->tiles2[i] = 0;
     }
     func_080D8474(0);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
 #ifdef VERSION_EU
     work->tiles = LoadObjTiles(gUnkEu_09F80350[gLanguage], gUnkEu_096CB104[gLanguage]);
 #else
@@ -1037,7 +1037,7 @@ void stock_mes_disp_0(StockMesDispWork* work, StockMesDispParam* arg) {
         work->textIndex = work->textCount - 1;
     }
     work->tiles = func_080D85C0(work->helpIndex);
-    work->palette = LoadObjPalette(gUnk_08F69BA4, 0x20);
+    work->palette = LoadObjPalette(gBStatesPalette, 0x20);
     TaskPoolInit(&work->tasks, 1);
     work->task = (void*)CreateStatusMessageTask(&work->tasks, work->x + 6, work->y + 16,
                                         GetCardHelpText(work->helpIndex, work->textIndex));
