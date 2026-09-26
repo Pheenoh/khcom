@@ -4,7 +4,6 @@
 #define GUARD_BOS6_H
 
 #include "pc_sprite_types.h"
-#include "staff_roll_command_sprite_data.h"
 
 #include "battle_actor_types.h"
 

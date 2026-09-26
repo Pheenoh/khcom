@@ -2818,6 +2818,8 @@ def main():
     for manifest in manifests:
         for obj in manifest.objects.get(ver, []):
             cdata.append((obj["start"], obj["end"] - obj["start"], f"{obj['name']}(.rodata)"))
+            if "data_start" in obj:
+                cdata.append((obj["data_start"], obj["data_end"] - obj["data_start"], f"{obj['name']}(.data)"))
     for line in Path("config/us/units.txt").read_text().splitlines():
         t = line.strip()
         if not t or t.startswith("#"):

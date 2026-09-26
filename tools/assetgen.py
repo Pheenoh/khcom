@@ -143,29 +143,45 @@ class Manifest:
             if version not in entry:
                 continue
             address = entry[version]["address"]
-            owner = [obj for obj in objects if obj["start"] <= address < obj["end"]]
+            owner = [obj for obj in objects if any(lo <= address < hi for lo, hi, _data in spans(obj))]
             if len(owner) != 1:
                 raise ManifestError(f"{self.group}: {entry['name']} is in {len(owner)} {version} objects")
             found[owner[0]["name"]].append(entry)
         for obj in objects:
             members = sorted(found[obj["name"]], key=lambda e: e[version]["address"])
-            position = obj["start"]
-            for entry in members:
-                position = aligned(position, entry)
-                if entry[version]["address"] != position:
-                    raise ManifestError(f"{self.group}: {obj['name']} has a gap before {entry['name']} at {position:#x} in {version}")
-                position += self.size(entry, version)
-                kind = self.kind(entry)
-                if obj["name"].endswith(".c") and entry.get("format") == "sprite_sheet":
-                    raise ManifestError(f"{self.group}: {obj['name']} holds sprite sheet {entry['name']} but is not an assembler object")
-                if obj["name"].endswith(".s") and kind in ("struct", "table"):
-                    raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not a C object")
-                if obj["name"].endswith(".c") and kind in ASM_KINDS:
-                    raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not an assembler object")
-            if not position <= obj["end"] < position + 4:
-                raise ManifestError(f"{self.group}: {obj['name']} ends at {position:#x}, not {obj['end']:#x}, in {version}")
+            for lo, hi, data in spans(obj):
+                position = lo
+                for entry in members:
+                    if not lo <= entry[version]["address"] < hi:
+                        continue
+                    position = aligned(position, entry)
+                    if entry[version]["address"] != position:
+                        raise ManifestError(f"{self.group}: {obj['name']} has a gap before {entry['name']} at {position:#x} in {version}")
+                    position += self.size(entry, version)
+                    kind = self.kind(entry)
+                    if "data_start" in obj and (kind == "table") != data:
+                        raise ManifestError(f"{self.group}: {obj['name']} holds {entry['name']} in its {'.data' if data else 'payload'} range, which takes {'only' if data else 'no'} table records")
+                    if obj["name"].endswith(".c") and entry.get("format") == "sprite_sheet":
+                        raise ManifestError(f"{self.group}: {obj['name']} holds sprite sheet {entry['name']} but is not an assembler object")
+                    if obj["name"].endswith(".s") and (kind == "struct" or kind == "table" and not data):
+                        raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not a C object")
+                    if obj["name"].endswith(".c") and kind in ASM_KINDS:
+                        raise ManifestError(f"{self.group}: {obj['name']} holds a {kind} record but is not an assembler object")
+                if not position <= hi < position + 4:
+                    raise ManifestError(f"{self.group}: {obj['name']} ends at {position:#x}, not {hi:#x}, in {version}")
             found[obj["name"]] = members
         return found
+
+
+def spans(obj):
+    out = [(obj["start"], obj["end"], False)]
+    if "data_start" in obj:
+        out.append((obj["data_start"], obj["data_end"], True))
+    return out
+
+
+def in_data(obj, entry, version):
+    return "data_start" in obj and obj["data_start"] <= entry[version]["address"] < obj["data_end"]
 
 
 def aligned(position, entry):
@@ -442,7 +458,7 @@ def c_value(manifest, resolve, field, value):
     return str(value)
 
 
-def emit_c(manifest, version, members, out_path, all_manifests):
+def resolver(all_manifests, version):
     lookup = {}
     for other in all_manifests:
         for entry in other.entries:
@@ -453,6 +469,11 @@ def emit_c(manifest, version, members, out_path, all_manifests):
     def resolve(name):
         return lookup.get(name, name)
 
+    return resolve
+
+
+def emit_c(manifest, version, members, out_path, all_manifests):
+    resolve = resolver(all_manifests, version)
     defined = {manifest.symbol(e, version) for e in members}
     referenced = set()
     for entry in members:
@@ -477,11 +498,18 @@ def emit_c(manifest, version, members, out_path, all_manifests):
         lines.append(f"extern u8 {name}[];")
     if referenced - defined:
         lines.append("")
+    declared = False
     for entry in members:
         symbol = manifest.symbol(entry, version)
         if "record" not in entry:
             lines.append(f"extern const u8 {symbol}[{manifest.size(entry, version)}];")
-    if any("record" not in e for e in members):
+            declared = True
+        elif manifest.kind(entry) == "table" and symbol in referenced:
+            ctype = manifest.types[entry["record"]]["type"]
+            count = "" if manifest.data(entry, version, "scalar") else f"[{len(manifest.data(entry, version, 'items'))}]"
+            lines.append(f"extern {ctype} {symbol}{count};")
+            declared = True
+    if declared:
         lines.append("")
     for entry in members:
         symbol = manifest.symbol(entry, version)
@@ -552,14 +580,17 @@ def emit_sheet(manifest, entry, version, sheet, lines):
     lines.append(f'\t.incbin "{binary.relative_to(ROOT).as_posix()}"')
 
 
-def emit_s(manifest, version, members, out_path, tmp, obj, sheets):
+def emit_s(manifest, version, members, out_path, tmp, obj, sheets, resolve):
     lines = ["\t.section .rodata"]
     position = obj["start"]
     if position % 4 == 0:
         lines.append("\t.balign 4")
     elif position % 2 == 0:
         lines.append("\t.balign 2")
+    tables = [e for e in members if in_data(obj, e, version)]
     for entry in members:
+        if in_data(obj, entry, version):
+            continue
         symbol = manifest.symbol(entry, version)
         pad = aligned(position, entry) - position
         if pad:
@@ -594,6 +625,20 @@ def emit_s(manifest, version, members, out_path, tmp, obj, sheets):
         position += manifest.size(entry, version)
     if obj["end"] > position:
         lines.append(f"\t.byte {words([0] * (obj['end'] - position))}")
+    if "data_start" in obj:
+        lines.append("\t.section .data")
+        position = obj["data_start"]
+        if position % 4 == 0:
+            lines.append("\t.balign 4")
+        for entry in tables:
+            symbol = manifest.symbol(entry, version)
+            lines.append(f"\t.global {symbol}")
+            lines.append(f"{symbol}:")
+            items = [resolve(item) if item else 0 for item in manifest.data(entry, version, "items")]
+            lines.append(f"\t.4byte {words(items)}")
+            position += manifest.size(entry, version)
+        if obj["data_end"] > position:
+            lines.append(f"\t.byte {words([0] * (obj['data_end'] - position))}")
     write_if_changed(out_path, "\n".join(lines) + "\n")
 
 
@@ -684,11 +729,12 @@ def generate(version, manifest_path, all_manifests=None):
         sheets = {e["name"]: encode_sheet(manifest, e, version,
                                           borrowed=borrowed_block(lookup, e, version, tmp) if e.get("tiles") else None)
                   for members in members_by_object.values() for e in members if e.get("format") == "sprite_sheet"}
+        resolve = resolver(all_manifests, version) if any("data_start" in obj for obj in objects.values()) else None
         for name, members in members_by_object.items():
             if name.endswith(".c"):
                 emit_c(manifest, version, members, gen / name, all_manifests)
             else:
-                emit_s(manifest, version, members, gen / name, tmp, objects[name], sheets)
+                emit_s(manifest, version, members, gen / name, tmp, objects[name], sheets, resolve)
     emit_header(manifest, version, members_by_object, gen / f"{manifest.group}.h", sheets)
 
 

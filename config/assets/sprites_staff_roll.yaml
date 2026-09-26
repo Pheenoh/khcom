@@ -51,6 +51,8 @@ objects:
   - name: sprites_staff_roll_frames_4.s
     start: 0x09C44708
     end: 0x09C448D2
+    data_start: 0x09EFAB18
+    data_end: 0x09EFAB68
   jp:
   - name: sprites_staff_roll_1.c
     start: 0x09ED23F0
@@ -85,6 +87,8 @@ objects:
   - name: sprites_staff_roll_frames_4.s
     start: 0x09C1CE2C
     end: 0x09C1CFF6
+    data_start: 0x09ED2024
+    data_end: 0x09ED2074
   eu:
   - name: sprites_staff_roll_1.c
     start: 0x09F86C30
@@ -119,6 +123,8 @@ objects:
   - name: sprites_staff_roll_frames_4.s
     start: 0x09CA2450
     end: 0x09CA261A
+    data_start: 0x09F86864
+    data_end: 0x09F868B4
 entries:
 - name: gUnkJp_09ED2484
   record: SpriteTable
@@ -38177,3 +38183,23 @@ entries:
     address: 0x09C1CFEC
   eu:
     address: 0x09CA2610
+- name: gUnk_09EFAB18
+  record: SpriteTable
+  items: [gUnk_09C44708, gUnk_09C4471E, gUnk_09C44734, gUnk_09C4474A, gUnk_09C44766, gUnk_09C4477C, gUnk_09C44798, gUnk_09C447AE, gUnk_09C447CA, gUnk_09C447E0, gUnk_09C447F6, gUnk_09C4480C, gUnk_09C44828, gUnk_09C4483E, gUnk_09C4485A, gUnk_09C44870, gUnk_09C44886, gUnk_09C4489C, gUnk_09C448B2]
+  us:
+    address: 0x09EFAB18
+  jp:
+    address: 0x09ED2024
+  eu:
+    address: 0x09F86864
+- name: gUnkUs_09EFAB64
+  record: AnimTable
+  items: [gUnk_09C448C8]
+  us:
+    address: 0x09EFAB64
+  jp:
+    address: 0x09ED2070
+    symbol: gUnkJp_09ED2070
+  eu:
+    address: 0x09F868B0
+    symbol: gUnkEu_09F868B0
