@@ -93,9 +93,12 @@ Mode gModeSioDbgFlg = {
 static s8 gUnk_02034CF4;
 static s8 gUnk_02034CF5;
 
-#ifdef VERSION_EU
 void mode_sio_dbg_flg_0(s32 arg) {
+#ifdef VERSION_EU
     s32 zero;
+#else
+    s32 i;
+#endif
 
     SetBgMode0();
     SetupBg(0, 0, 0x0F, 0);
@@ -103,10 +106,14 @@ void mode_sio_dbg_flg_0(s32 arg) {
     func_0805FA8C(0, 0x5400, 0x500);
     func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
     gUnk_02034CF4 = 0;
+#ifdef VERSION_EU
     zero = 0;
+#endif
     func_0805FCB0(8, 0x24, 2, gUnk_0961A9C8);
-    gUnk_02034CF5 = 10;
+    gUnk_02034CF5 = sizeof(gUnk_09EF34F0) / sizeof(gUnk_09EF34F0[0]);
     func_0805FCB0(0x0C, 0x12, 2, gUnk_0961A9CC);
+
+#ifdef VERSION_EU
     func_0805FCB0(0x14, 0x24, 2, gUnk_09EF34F0[0]);
     func_0805FCB0(0x14, 0x2D, 2, gUnk_09EF34F0[1]);
     func_0805FCB0(0x14, 0x36, 2, gUnk_09EF34F0[2]);
@@ -137,21 +144,7 @@ void mode_sio_dbg_flg_0(s32 arg) {
     func_0805FC04(0x78, 0x6C, 2, gUnk_0203C3C8);
     func_0805FC04(0x78, 0x75, 2, gUnkEu_0203C9BC);
     func_0805FC04(0x78, 0x7E, 2, gUnk_0203C3D4);
-}
 #else
-void mode_sio_dbg_flg_0(s32 arg) {
-    s32 i;
-
-    SetBgMode0();
-    SetupBg(0, 0, 0x0F, 0);
-    EnableBg(0);
-    func_0805FA8C(0, 0x5400, 0x500);
-    func_0805FA60(0, gWhitePalette, 0x20, 0x0F);
-    gUnk_02034CF4 = 0;
-    func_0805FCB0(8, 0x24, 2, gUnk_0961A9C8);
-    gUnk_02034CF5 = 5;
-    func_0805FCB0(0x0C, 0x12, 2, gUnk_0961A9CC);
-
     for (i = 0; i < gUnk_02034CF5; i++) {
         func_0805FCB0(0x14, i * 9 + 0x24, 2, gUnk_09EF34F0[i]);
     }
@@ -166,15 +159,15 @@ void mode_sio_dbg_flg_0(s32 arg) {
     func_0805FC04(0x64, 0x36, 2, gUnk_0203C3D0);
     func_0805FCB0(0x64, 0x3F, 2, gUnk_09EF3504[gUnk_0203C3C4]);
     func_0805FCB0(0x64, 0x48, 2, gUnk_09EF3504[gUnk_0203C3D4]);
-}
 #endif
+}
 
-#ifdef VERSION_EU
 void mode_sio_dbg_flg_1(void) {
     u8 prev;
 
     prev = gUnk_02034CF4;
 
+#ifdef VERSION_EU
     if (GetKeysRepeat() & DPAD_UP) {
         if (gUnk_02034CF4 == 0) {
             gUnk_02034CF4 = 10;
@@ -194,13 +187,31 @@ void mode_sio_dbg_flg_1(void) {
             gUnk_02034CF4++;
         }
     }
+#else
+    if (GetKeysRepeat() & DPAD_UP) {
+        gUnk_02034CF4--;
+    }
+
+    if (GetKeysRepeat() & DPAD_DOWN) {
+        gUnk_02034CF4++;
+    }
+#endif
 
     if (prev != gUnk_02034CF4) {
+#ifndef VERSION_EU
+        if (gUnk_02034CF4 < 0) {
+            gUnk_02034CF4 = gUnk_02034CF5 - 1;
+        } else if (gUnk_02034CF4 >= gUnk_02034CF5) {
+            gUnk_02034CF4 = 0;
+        }
+#endif
+
         func_0805FCB0(8, (prev + 4) * 9, 2, gUnk_0961A9E8);
         func_0805FCB0(8, (gUnk_02034CF4 + 4) * 9, 2, gUnk_0961A9C8);
     }
 
     switch (gUnk_02034CF4) {
+#ifdef VERSION_EU
     case 0:
         if (GetKeysRepeat() & DPAD_LEFT) {
             if (gUnkEu_0203C9B4 > 1) {
@@ -341,43 +352,7 @@ void mode_sio_dbg_flg_1(void) {
         }
         func_0805FC04(0x78, 0x7E, 2, gUnk_0203C3D4);
         break;
-    }
-
-    if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
-        gUnk_0203A9E4 = 1;
-        func_08085CB0();
-        ModeRequest(&gModeSioBtlConnect, 0);
-    } else {
-        func_080605A4(0);
-        func_08060598();
-    }
-}
 #else
-void mode_sio_dbg_flg_1(void) {
-    u8 prev;
-
-    prev = gUnk_02034CF4;
-
-    if (GetKeysRepeat() & DPAD_UP) {
-        gUnk_02034CF4--;
-    }
-
-    if (GetKeysRepeat() & DPAD_DOWN) {
-        gUnk_02034CF4++;
-    }
-
-    if (prev != gUnk_02034CF4) {
-        if (gUnk_02034CF4 < 0) {
-            gUnk_02034CF4 = gUnk_02034CF5 - 1;
-        } else if (gUnk_02034CF4 >= gUnk_02034CF5) {
-            gUnk_02034CF4 = 0;
-        }
-
-        func_0805FCB0(8, (prev + 4) * 9, 2, gUnk_0961A9E8);
-        func_0805FCB0(8, (gUnk_02034CF4 + 4) * 9, 2, gUnk_0961A9C8);
-    }
-
-    switch (gUnk_02034CF4) {
     case 0:
         if (GetKeysHeld() & DPAD_LEFT) {
             if (gUnk_0203C3C8 > 1) {
@@ -424,6 +399,7 @@ void mode_sio_dbg_flg_1(void) {
         break;
     case 4:
         break;
+#endif
     }
 
     if (GetKeysPressed() & (A_BUTTON | B_BUTTON | START_BUTTON)) {
@@ -435,7 +411,6 @@ void mode_sio_dbg_flg_1(void) {
         func_08060598();
     }
 }
-#endif
 
 void mode_sio_dbg_flg_2(void) {
     func_080609A0();
