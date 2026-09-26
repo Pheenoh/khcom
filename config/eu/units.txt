@@ -21,7 +21,6 @@ mode_chkmov.c
 mode_dummy.c
 mode_debflag.c
 mode_vsbattle.c
-rodata_movie_alignment.s
 asset_movie_opening.s
 asset_gfx.s
 movie_text.c

@@ -92,8 +92,9 @@ def link_order(entries):
     return order
 
 
-def blob_source(ver, lo, hi, data):
-    head = f'\t.section .rodata\n\t.global data_{lo:08X}\ndata_{lo:08X}:\n'
+def blob_source(ver, lo, hi, data, align=False):
+    head = (f'\t.section .rodata\n' + ('\t.balign 4\n' if align else '')
+            + f'\t.global data_{lo:08X}\ndata_{lo:08X}:\n')
     names = veneer_labels(data)
 
     if not names:
@@ -2259,10 +2260,8 @@ TARGET_DATA_ADDR = {
 TARGET_BLOB_REGIONS = {
     "jp": (
         (0x0814E57C, "rodata_script_gap_1"),
-        (0x0814FC76, "rodata_movie_alignment"),
     ),
     "eu": (
-        (0x0812FB22, "rodata_movie_alignment"),
         (0x08896522, "mode_test_rodata"),
         (0x08F8EA09, "msg_localized_text"),
         (0x090D1E59, "card_mode_deck_tables"),
@@ -2964,6 +2963,16 @@ def main():
     for nm, a, b in blob(pos, ROM_BASE + pad, prev):
         bounds.append((nm, a, b))
         tail.append(f"{nm}(.rodata)")
+    aligned, kept = set(), []
+    for k, (nm, a, b) in enumerate(bounds):
+        after = bounds[k + 1] if k + 1 < len(bounds) else None
+        if (after is not None and after[1] == b and b - a < 4 and b % 4 == 0
+                and not any(ot[a - ROM_BASE:b - ROM_BASE])):
+            aligned.add(after[0])
+            tail.remove(f"{nm}(.rodata)")
+            continue
+        kept.append((nm, a, b))
+    bounds = kept
     entries, line_of = [], {}
     for line in head + ordered + tail:
         t = line.strip()
@@ -2980,7 +2989,7 @@ def main():
 
     for nm, lo, hi in bounds:
         Path(f"asm/{ver}/{nm}").write_text(
-            blob_source(ver, lo, hi, ot[lo - ROM_BASE:hi - ROM_BASE]))
+            blob_source(ver, lo, hi, ot[lo - ROM_BASE:hi - ROM_BASE], nm in aligned))
     fresh = {nm for nm, _lo, _hi in bounds}
     for old in Path(f"asm/{ver}").glob("*.s"):
         if old.name not in fresh and ".global data_" in old.read_text():

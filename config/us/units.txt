@@ -59,7 +59,6 @@ rodata_script_gap_1.s
 monsgage.c
 btl4.c
 tutorial.c
-rodata_movie_alignment.s
 asset_movie_opening.s
 asset_gfx.s
 movie_text.c
