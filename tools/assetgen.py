@@ -645,8 +645,8 @@ def emit_s(manifest, version, members, out_path, tmp, obj, sheets, resolve):
 def emit_header(manifest, version, members_by_object, out_path, sheets):
     guard = "GUARD_GEN_" + manifest.group.upper() + "_H"
     lines = [f"#ifndef {guard}", f"#define {guard}", ""]
-    headers = {manifest.types[e["record"]].get("header") for members in members_by_object.values()
-               for e in members if "record" in e}
+    headers = {manifest.types[e.get("record", e.get("type"))].get("header") for members in members_by_object.values()
+               for e in members if "record" in e or "type" in e}
     if any(manifest.animations(e, version) for members in members_by_object.values()
            for e in members if e.get("format") == "sprite_sheet"):
         headers.add(manifest.types[manifest.anim_type()].get("header"))
@@ -684,6 +684,8 @@ def emit_header(manifest, version, members_by_object, out_path, sheets):
                 lines.append(f"extern {entry['record']} {symbol};")
             elif kind == "sprite":
                 lines.append(f"extern u8 {symbol}[];")
+            elif name.endswith(".s") and "type" in entry:
+                lines.append(f"extern {entry['type']} {symbol};")
             elif name.endswith(".s"):
                 lines.append(f"extern u8 {symbol}[{entry[version]['size']}];")
     lines += ["", "#endif"]

@@ -506,6 +506,7 @@ snd_stream.c
 @libc.a:strcmp.o
 m4a_catalog_data.c
 m4a_songs.s
+engine_core_data.s
 m4a_1.s
 m4a2.c -O2
 transform_veneers.s

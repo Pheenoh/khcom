@@ -511,4 +511,5 @@ m4a_1.s
 m4a2.c -O2
 m4a_catalog_data.c
 m4a_songs.s
+engine_core_data.s
 transform_veneers.s

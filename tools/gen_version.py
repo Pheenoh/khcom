@@ -2233,6 +2233,7 @@ TARGET_DATA_ADDR = {
 TARGET_BLOB_REGIONS = {
     "jp": (
         (0x0814E57C, "rodata_script_gap_1"),
+        (0x09EA6C7C, "engine_core_data"),
     ),
     "eu": (
         (0x08F8EA09, "msg_localized_text"),
