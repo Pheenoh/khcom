@@ -10,6 +10,7 @@ random.c
 sio.c
 pallet.c
 util.c
+sram_error_screen.s
 save.c
 mode_battle.c
 mode_chkbtl.c

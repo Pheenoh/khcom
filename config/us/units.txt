@@ -11,6 +11,7 @@ sio.c
 pallet.c
 util.c
 save.c
+sram_error_screen.s
 mode_battle.c
 mode_chkbtl.c
 mode_debug.c

@@ -1,0 +1,51 @@
+group: sram_error_screen
+types: {}
+objects:
+  us:
+  - name: sram_error_screen.s
+    start: 0x08121724
+    end: 0x08125E24
+  jp:
+  - name: sram_error_screen.s
+    start: 0x081217A0
+    end: 0x08125EA0
+  eu:
+  - name: sram_error_screen.s
+    start: 0x08120244
+    end: 0x08124944
+entries:
+- name: gSramErrorPalette
+  format: raw
+  us:
+    address: 0x08121724
+    size: 512
+  jp:
+    address: 0x081217A0
+    size: 512
+  eu:
+    address: 0x08120244
+    size: 512
+- name: gSramErrorTiles
+  format: tiles8
+  width: 16
+  palette: gSramErrorPalette
+  us:
+    address: 0x08121924
+    size: 16384
+  jp:
+    address: 0x081219A0
+    size: 16384
+  eu:
+    address: 0x08120444
+    size: 16384
+- name: gSramErrorTilemap
+  format: tilemap
+  us:
+    address: 0x08125924
+    size: 1280
+  jp:
+    address: 0x081259A0
+    size: 1280
+  eu:
+    address: 0x08124444
+    size: 1280
