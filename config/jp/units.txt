@@ -454,7 +454,17 @@ sroll_c_char.c
 sroll_tmr.c
 sroll_rodata.s
 staff_roll_audio.s
-audio_block_codec_tables.s
+pcm_audio.c
+staff_roll_command_sprite_data.c
+sprites_bos6_1.c
+sprites_staff_roll_1.c
+sprites_bos7_1.c
+sprites_staff_roll_2.c
+staff_roll_timer_sprite_data.c
+sprites_bos6_2.c
+sprites_staff_roll_3.c
+sprites_bos7_2.c
+audio_block_codec.c
 sprites_staff_roll_frames_4.s
 sprites_bos6_frames_1.s
 sprites_staff_roll_frames_1.s
@@ -478,17 +488,6 @@ sprites_bos6_palettes_2.s
 sprites_staff_roll_palettes.s
 sprite_palettes_18.s
 library_pool_rodata.s
-pcm_audio.c
-staff_roll_command_sprite_data.c
-sprites_bos6_1.c
-sprites_staff_roll_1.c
-sprites_bos7_1.c
-sprites_staff_roll_2.c
-staff_roll_timer_sprite_data.c
-sprites_bos6_2.c
-sprites_staff_roll_3.c
-sprites_bos7_2.c
-audio_block_codec.c
 libagbsyscall.s
 agb_sram.c -O1
 movie.c -O0
