@@ -328,8 +328,8 @@ typedef struct LstSnpArg {
 } LstSnpArg;
 
 extern const LstFalAnim gBosLstFalAnims[8];
-extern u8 gUnk_09A4D234[];
-extern u8 gUnk_09A4F2B4[];
+extern const u16 gUnk_09A4D234[];
+extern const u16 gUnk_09A4F2B4[];
 extern const s32 gUnk_09A4FDDC[3];
 extern const s32 gUnk_09A4FDE8[16];
 extern const EmyKind gBosLstBitEmyKind;

@@ -436,7 +436,6 @@ bos_pc_fld.c
 bos_pc_flt.c
 bos_pc_acd.c
 bos_lst.c
-bos_lst_fld_tables.s
 bos_lst_fld.c
 bos_lst_edg.c
 bos_lst_bit.c
