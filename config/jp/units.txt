@@ -194,7 +194,6 @@ sprites_premire_chance.c
 sprites_card_1.c
 sprites_level_up.c
 sprites_card_2.c
-card_localized_deck_labels_data.c
 sprites_deck_menu.c
 sprites_continue.c
 msg_font_data.c

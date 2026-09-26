@@ -45,6 +45,7 @@
 #include "prize_card.h"
 #include "sprites_card_pictures.h"
 #include "sprites_card.h"
+#include "sprites_deck_menu.h"
 
 u8 gUnk_02034AB8[20];
 
