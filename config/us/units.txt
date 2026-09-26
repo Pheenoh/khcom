@@ -191,7 +191,6 @@ card_riku_tutorial.c
 card_print.c
 sprites_number_plus.c
 sprites_card_pictures.c
-card_picture_sprite_data.c
 sprites_premire_chance.c
 sprites_card_1.c
 sprites_level_up.c

@@ -1,6 +1,5 @@
 #include "macros.h"
 #include "card_localized_data.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
@@ -41,6 +40,7 @@
 #include <stddef.h>
 #include "game.h"
 #include "bos4_api.h"
+#include "sprites_card_pictures.h"
 
 s16 gUnk_02034AB4;
 

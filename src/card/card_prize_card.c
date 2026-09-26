@@ -1,6 +1,5 @@
 #include "macros.h"
 #include "card_localized_data.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"

@@ -2,7 +2,6 @@
 #ifndef GUARD_MS_CHARGE_H
 #define GUARD_MS_CHARGE_H
 
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "registration_data.h"
 #include "map_card_data.h"

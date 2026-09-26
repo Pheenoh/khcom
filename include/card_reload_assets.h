@@ -2,7 +2,6 @@
 #define GUARD_CARD_RELOAD_ASSETS_H
 
 #include "anim.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "card_lookup_data.h"
 #include "reload_animation_data.h"

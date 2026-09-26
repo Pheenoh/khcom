@@ -1,6 +1,5 @@
 #include "card_def_data.h"
 #include "card_lookup_data.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS_H

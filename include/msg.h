@@ -2,7 +2,6 @@
 #include "event_index_data.h"
 #include "msg_portrait_data.h"
 #include "event_background_types.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"

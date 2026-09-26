@@ -1,4 +1,3 @@
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #ifndef GUARD_MODE_MAPINSPECT_H
 #define GUARD_MODE_MAPINSPECT_H

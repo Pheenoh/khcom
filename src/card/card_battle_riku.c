@@ -1,6 +1,5 @@
 #include "macros.h"
 #include "card_localized_data.h"
-#include "card_label_sprite_data.h"
 #include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "msg_localized_data.h"
@@ -42,6 +41,7 @@
 #include "game.h"
 #include "bos4_api.h"
 #include "sprites_card.h"
+#include "sprites_card_pictures.h"
 
 u8 gUnk_02039DD8 EWRAM_COMMON(4);
 
