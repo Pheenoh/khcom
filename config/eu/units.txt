@@ -318,7 +318,6 @@ mode_copyright1.c
 mode_copyright2.c
 mode_status.c
 status.c
-boss_boogie_rodata.s
 boss_boogie.c
 bos_boogie_dice.c
 bos_ursula_bubble.c

@@ -12,15 +12,102 @@
 #include "game_state.h"
 #include "engine.h"
 #include "m4a.h"
+#include "battle_bg_types.h"
+#include "boss_map_block_assets.h"
+#include "copyright_screens.h"
+#include "sprites_evt.h"
+#include "sprites_title.h"
 
-extern StatusAnimDef gUnk_096FDE54[];
-extern StatusObjDef gUnk_096FDEE4[];
-extern u8 gUnk_096FDF14[];
-extern u8 gUnk_096FDF24[];
 extern u8 gUnk_0984AF78[];
 extern u8 gUnk_08F69BC4[];
 
 static BoogieWork* gBoogieWork;
+
+#if defined(VERSION_US)
+const StatusAnimDef gUnk_096FDE54[9] = {
+    { gUnkUs_09EF66C4, gUnkUs_09EF66A8, gUnk_0977A53C, 0, 0 },
+    { gUnkUs_09EF66E8, gUnkUs_09EF66C8, gUnk_0977F7B4, 0, 0 },
+    { gUnkUs_09EF6710, gUnkUs_09EF66EC, gUnk_097856FA, 0, 0 },
+    { gUnkUs_09EF6710, gUnkUs_09EF66EC, gUnk_097856FA, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 0, 0 },
+    { gUnkUs_09EF6750, gUnkUs_09EF6738, gUnk_0978DF7A, 0, 0 },
+    { gUnkUs_09EF676C, gUnkUs_09EF6754, gUnk_097920CA, 0, 0 },
+    { gUnkUs_09EF676C, gUnkUs_09EF6754, gUnk_097920CA, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 2, 0 },
+};
+#elif defined(VERSION_JP)
+const StatusAnimDef gUnk_096FDE54[9] = {
+    { gUnkJp_09ECDAB0, gUnkJp_09ECDA94, gUnk_0977A53C, 0, 0 },
+    { gUnkJp_09ECDAD4, gUnkJp_09ECDAB4, gUnk_0977F7B4, 0, 0 },
+    { gUnkJp_09ECDAFC, gUnkJp_09ECDAD8, gUnk_097856FA, 0, 0 },
+    { gUnkJp_09ECDAFC, gUnkJp_09ECDAD8, gUnk_097856FA, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 0, 0 },
+    { gUnkJp_09ECDB3C, gUnkJp_09ECDB24, gUnk_0978DF7A, 0, 0 },
+    { gUnkJp_09ECDB58, gUnkJp_09ECDB40, gUnk_097920CA, 0, 0 },
+    { gUnkJp_09ECDB58, gUnkJp_09ECDB40, gUnk_097920CA, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 2, 0 },
+};
+#elif defined(VERSION_EU)
+const StatusAnimDef gUnk_096FDE54[9] = {
+    { gUnkEu_09F81CAC, gUnkEu_09F81C90, gUnkEu_09756750, 0, 0 },
+    { gUnkEu_09F81CD0, gUnkEu_09F81CB0, gUnkEu_0975B9C8, 0, 0 },
+    { gUnkEu_09F81CF8, gUnkEu_09F81CD4, gUnkEu_0976190E, 0, 0 },
+    { gUnkEu_09F81CF8, gUnkEu_09F81CD4, gUnkEu_0976190E, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 0, 0 },
+    { gUnkEu_09F81D38, gUnkEu_09F81D20, gUnkEu_0976A18E, 0, 0 },
+    { gUnkEu_09F81D54, gUnkEu_09F81D3C, gUnkEu_0976E2DE, 0, 0 },
+    { gUnkEu_09F81D54, gUnkEu_09F81D3C, gUnkEu_0976E2DE, 1, 0 },
+    { gUnk_09EF672C, gUnk_09EF6718, gUnk_0978A4E8, 2, 0 },
+};
+#endif
+
+#if defined(VERSION_US)
+const StatusObjDef gUnk_096FDEE4[6] = {
+    { gUnkUs_09EF66A8, 7, 0 },
+    { gUnkUs_09EF66C8, 8, 0 },
+    { gUnkUs_09EF66EC, 9, 0 },
+    { gUnk_09EF6718, 5, 0 },
+    { gUnkUs_09EF6738, 6, 0 },
+    { gUnkUs_09EF6754, 6, 0 },
+};
+#elif defined(VERSION_JP)
+const StatusObjDef gUnk_096FDEE4[6] = {
+    { gUnkJp_09ECDA94, 7, 0 },
+    { gUnkJp_09ECDAB4, 8, 0 },
+    { gUnkJp_09ECDAD8, 9, 0 },
+    { gUnk_09EF6718, 5, 0 },
+    { gUnkJp_09ECDB24, 6, 0 },
+    { gUnkJp_09ECDB40, 6, 0 },
+};
+#elif defined(VERSION_EU)
+const StatusObjDef gUnk_096FDEE4[6] = {
+    { gUnkEu_09F81C90, 7, 0 },
+    { gUnkEu_09F81CB0, 8, 0 },
+    { gUnkEu_09F81CD4, 9, 0 },
+    { gUnk_09EF6718, 5, 0 },
+    { gUnkEu_09F81D20, 6, 0 },
+    { gUnkEu_09F81D3C, 6, 0 },
+};
+#endif
+
+const EmyKind gUnk_096FDF14 = { 39, 0, 68, 16, 32, 0, 4 };
+
+#if defined(VERSION_US)
+const BattleBackgroundDef gUnk_096FDF24 = {
+    gUnk_097E05B8 + 0x4FC0, 0x7F00, { 0, 0 }, gUnk_0984AE38, 0x140, { 0, 0 },
+    { gBossMapBlockUs_08125E24, gUnk_09841F98 + 0x1000, gBossMapBlockUs_08125E24, gUnk_09841F98 + 0x800 },
+};
+#elif defined(VERSION_JP)
+const BattleBackgroundDef gUnk_096FDF24 = {
+    gUnk_097E05B8 + 0x4FC0, 0x7F00, { 0, 0 }, gUnkJp_097FFB0C, 0x140, { 0, 0 },
+    { gBossMapBlockJp_08125EA0, gUnk_09841F98 + 0x1000, gBossMapBlockJp_08125EA0, gUnk_09841F98 + 0x800 },
+};
+#elif defined(VERSION_EU)
+const BattleBackgroundDef gUnk_096FDF24 = {
+    gUnk_097E05B8 + 0x4FC0, 0x7F00, { 0, 0 }, gUnkEu_0981F4E0, 0x140, { 0, 0 },
+    { gBossMapBlockEu_08124944, gUnk_09841F98 + 0x1000, gBossMapBlockEu_08124944, gUnk_09841F98 + 0x800 },
+};
+#endif
 
 void func_080D8F14(BoogieWork* work) {
     if (gUnk_0203C560 <= 2) {
@@ -96,7 +183,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     u16 t;
 
     gBoogieWork = work;
-    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosBoogieMap, gUnk_096FDF24);
+    TaskCreate(&gBtlWork->taskPools[1], &gTaskDescBosBoogieMap, (void*)&gUnk_096FDF24);
     work->unk_000 = 0;
     work->timer = 0;
     gUnk_0203C564 = 0;
@@ -106,7 +193,7 @@ void task_bos_boogie_0(BoogieWork* work) {
     gUnk_0203C55C = &work->actor;
     gUnk_0203C560 = 0;
     SetBattleBounds(128, 368, 576, 632);
-    func_0801B37C(&work->actor, gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
+    func_0801B37C(&work->actor, &gUnk_096FDF14, 0x15000, 0x22800, -0x2000);
     work->actor.unk_010 = -0x2000;
     work->actor.flags |= 4;
     func_0801C2DC(&work->actor, 1);
@@ -208,7 +295,7 @@ u8 task_bos_boogie_1(BoogieWork* work) {
             break;
         case 2:
             if (FadeIsActive() == 0) {
-                func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)gUnk_096FDF14)->unk_0A << 8));
+                func_08014AAC(a->x, a->y + a->z - (((BoogieResource*)&gUnk_096FDF14)->unk_0A << 8));
                 func_0801C298(((BoogiePalette*)work->palette)->unk_06 + 16, 0);
                 FadeToAmount(0, gBtlWork->fadeAmount, 8);
                 work->unk_170 = 3;

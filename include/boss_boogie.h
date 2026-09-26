@@ -36,8 +36,8 @@ typedef struct StatusObjDef {
 } StatusObjDef;
 
 typedef struct StatusAnimDef {
-    u32 anims;
-    u32 gfxTable;
+    AnimHeader** anims;
+    void** gfxTable;
     void* tiles;
     u16 animId;
     u16 unk_0E;
