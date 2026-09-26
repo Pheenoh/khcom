@@ -18,6 +18,33 @@ static BgTextLine* gBgTextLines;
 static u8 gUnk_02034A90;
 static u8 gUnk_02034A91;
 
+const GlyphWidthTable gUnk_08F7D438 = {
+    {
+        0, 4, 4, 5, 5, 6, 8, 8, 8, 6, 6, 6, 8, 8, 8, 8,
+        8, 8, 7, 8, 8, 8, 8, 8, 6, 12, 0, 0, 0, 0, 0, 0,
+        3, 2, 5, 8, 6, 7, 7, 3, 4, 4, 6, 6, 3, 6, 3, 5,
+        6, 4, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 5, 6, 5, 6,
+        8, 6, 6, 6, 6, 5, 5, 6, 6, 4, 6, 6, 6, 7, 6, 6,
+        6, 6, 6, 6, 6, 6, 6, 8, 7, 6, 6, 3, 5, 3, 6, 6,
+        3, 6, 6, 5, 6, 6, 5, 6, 6, 2, 4, 5, 3, 6, 6, 6,
+        6, 6, 5, 6, 5, 6, 6, 8, 6, 6, 6, 4, 2, 4, 8, 7,
+        7, 7, 3, 6,
+#ifdef VERSION_EU
+        5,
+#else
+        4,
+#endif
+        9, 6, 6, 5, 9, 6, 4, 9, 4, 6, 7,
+        7, 3, 3, 5, 5, 7, 7, 8, 5, 9, 6, 4, 8, 7, 6, 6,
+        0, 2, 6, 7, 5, 6, 2, 5, 4, 8, 4, 6, 6, 4, 8, 6,
+        5, 6, 5, 5, 3, 7, 7, 3, 3, 4, 4, 6, 7, 7, 8, 5,
+        6, 6, 6, 6, 6, 6, 9, 6, 5, 5, 5, 5, 3, 3, 4, 4,
+        7, 6, 6, 6, 6, 6, 6, 7, 8, 6, 6, 6, 6, 6, 5, 6,
+        6, 6, 6, 6, 6, 6, 8, 5, 6, 6, 6, 6, 3, 3, 4, 4,
+        6, 6, 6, 6, 6, 6, 6, 8, 6, 6, 6, 6, 6, 6, 5, 6,
+    },
+};
+
 void func_08062D64(void) {
     u8 i;
     u8 j;
@@ -1396,7 +1423,7 @@ s32 func_08064DD4(TextChar* a) {
                 }
             }
 
-            sum = (u16)(gUnk_08F7D438[v] + ((s32)(sum << 16) >> 16));
+            sum = (u16)(gUnk_08F7D438.widths[v] + ((s32)(sum << 16) >> 16));
         }
 
         a++;
@@ -1515,7 +1542,7 @@ u8 func_08064EF4(s32 x, s32 y, s32 s, s32* d) {
                 gUnk_02034A84[gUnk_02034A90].tiles = NULL;
             }
 
-            cx += (s16)gUnk_08F7D438[v] << 8;
+            cx += (s16)gUnk_08F7D438.widths[v] << 8;
 
             if (v != 32) {
 #ifdef VERSION_EU
@@ -1645,7 +1672,7 @@ u8 func_08065170(s32 x, s32 y, MsgLatinChar* s) {
                 gUnk_02034A84[gUnk_02034A90].tiles = NULL;
             }
 
-            cx += (s16)gUnk_08F7D438[v] << 8;
+            cx += (s16)gUnk_08F7D438.widths[v] << 8;
 
             if (v != 32) {
 #ifdef VERSION_EU
@@ -2227,7 +2254,7 @@ s32 LoadLatinTextSlots(u16* a, TextSlot* b) {
             }
 
             if (v != 32) {
-                b->unk_05 = gUnk_08F7D438[v];
+                b->unk_05 = gUnk_08F7D438.widths[v];
             } else {
                 b->unk_05 = 255;
             }
@@ -6244,7 +6271,7 @@ u8 func_0806BB44(s32 x, s32 y, s32 s, s32* d) {
                 gUnk_02034A88[gUnk_02034A90].tiles = NULL;
             }
 
-            cx += (s16)gUnk_08F7D438[v] << 8;
+            cx += (s16)gUnk_08F7D438.widths[v] << 8;
 
             if (v != 32) {
 #ifdef VERSION_EU
@@ -7033,7 +7060,7 @@ u8 func_0806CBAC(TextChar* a, u16* b, u16 tile) {
             }
 #endif
             if (v != 32) {
-                *b = gUnk_08F7D438[v];
+                *b = gUnk_08F7D438.widths[v];
 #ifdef VERSION_EU
                 v = ((u16*)gUnk_09EEB204[v])[3];
                 CpuSet(&gUnk_090AB5B2[v * 32], dst, 0x40);

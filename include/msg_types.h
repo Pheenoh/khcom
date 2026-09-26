@@ -100,4 +100,8 @@ typedef struct MsgFaceControl {
     u8 unk_08;
 } MsgFaceControl;
 
+typedef struct GlyphWidthTable {
+    u16 widths[256];
+} GlyphWidthTable;
+
 #endif

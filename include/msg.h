@@ -319,7 +319,7 @@ extern u8 gUnk_09614418[];
 extern u8 gUnk_09611AB8[];
 extern u16 gUnk_08159E10[];
 extern u16 gUnk_08159E18[];
-extern u16 gUnk_08F7D438[];
+extern const GlyphWidthTable gUnk_08F7D438;
 extern u8 gUnk_090CBFB2[];
 extern const EventCharaParams gUnk_0903380C[];
 

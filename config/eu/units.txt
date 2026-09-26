@@ -146,9 +146,8 @@ card_catalog.c
 mode_deck.c
 mode_continue.c
 mode_event.c
-msg_glyph_widths.s
-boss_card_data.c
 msg.c
+boss_card_data.c
 continue_ui.c
 msg_localized_data.c
 event_background_data.c
