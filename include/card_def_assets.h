@@ -4,7 +4,6 @@
 #include "types.h"
 #include "animation_resource_assets.h"
 #include "card_localized_assets.h"
-#include "card_lookup_assets.h"
 #include "event_sprite_assets.h"
 #include "jiminy_data.h"
 #include "jiminy_text_assets.h"
