@@ -11,7 +11,6 @@
 #include "map_text_data.h"
 #include "card_localized_data.h"
 #include "card_message_data.h"
-#include "card_lookup_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_CARD_H

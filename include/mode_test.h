@@ -2,7 +2,6 @@
 #include "mode.h"
 #include "taskpool.h"
 #include "card_def_data.h"
-#include "card_lookup_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_TEST_H

@@ -1,5 +1,4 @@
 #include "card_def_data.h"
-#include "card_lookup_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_MS_H
 #define GUARD_MODE_MS_H

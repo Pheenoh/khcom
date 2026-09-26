@@ -1,4 +1,3 @@
-#include "card_lookup_data.h"
 #include "registration_data.h"
 #ifndef GUARD_ALLMAP_H
 #define GUARD_ALLMAP_H

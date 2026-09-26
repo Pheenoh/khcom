@@ -6,7 +6,6 @@
 #ifndef GUARD_MSG_H
 #define GUARD_MSG_H
 
-#include "msg_font_data.h"
 
 #include "bg_animation_data.h"
 
