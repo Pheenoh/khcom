@@ -2,6 +2,8 @@
 #include "agb_sram.h"
 #include "gba/io_reg.h"
 
+static const char sSramVersion[] = "SRAM_F_V103";
+
 void (*ReadSramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
 u32 (*VerifySramFast)(const u8* src, u8* dest, u32 size) EWRAM_COMMON(4);
 

@@ -479,7 +479,6 @@ sprites_bos7_palettes.s
 sprites_bos6_palettes_2.s
 sprites_staff_roll_palettes.s
 sprite_palettes_18.s
-library_pool_rodata.s
 staff_roll_command_sprite_data.c
 sprites_bos6_1.c
 sprites_staff_roll_1.c

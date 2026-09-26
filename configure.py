@@ -63,7 +63,6 @@ IWRAM_AFTER_HEAP = [
     ("src/engine.o", ".iwram_common.*"),
 ]
 BIOS_SYMBOLS = {"gSoundInfoPtr": 0x03007FF0, "gIntrCheck": 0x03007FF8}
-LIBRARY_POOL_OBJECTS = ["agb_sram.o", "movie.o"]
 
 DEFAULT_VERSION = "us"
 ROM_TITLE = "KINGDOMHEART"
@@ -304,8 +303,7 @@ with open(ldscript, "w") as f:
     f.write("SECTIONS\n{\n    . = 0x8000000;\n\n    .text :\n    {\n")
     for obj in objs_linked:
         f.write(f"        {obj}(.text);\n")
-    excluded = " ".join(f"*/{name}" for name in LIBRARY_POOL_OBJECTS)
-    f.write(f"        *(EXCLUDE_FILE ({excluded}) .rodata);\n        *(.data);\n    }}\n")
+    f.write("        *(.rodata);\n        *(.data);\n    }\n")
     f.write("\n    .iwram 0x03000000 (NOLOAD) :\n    {\n")
     for obj, section in IWRAM_BEFORE_HEAP:
         f.write(f"        {build_dir}/{obj}({section});\n")

@@ -491,7 +491,6 @@ sprites_bos7_palettes.s
 sprites_bos6_palettes_2.s
 sprites_staff_roll_palettes.s
 sprite_palettes_19.s
-library_pool_rodata.s
 libagbsyscall.s
 agb_sram.c -O1
 movie.c -O0
