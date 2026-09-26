@@ -430,6 +430,7 @@ sprites_worldinspect_palettes_2.s
 sprites_moogle_shop_palettes.s
 sprite_palettes_16.s
 transform.s
+sprites_bos6_palettes_3.s
 bos_pc.c
 bos_pc_event.c
 bos_pc_fld.c

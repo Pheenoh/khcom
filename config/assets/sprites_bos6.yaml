@@ -41,6 +41,9 @@ objects:
   - name: sprites_bos6_palettes_2.s
     start: 0x09D69594
     end: 0x09D695F4
+  - name: sprites_bos6_palettes_3.s
+    start: 0x09A3DE9C
+    end: 0x09A3DEFC
   jp:
   - name: sprites_bos6_1.c
     start: 0x09ED2074
@@ -69,6 +72,9 @@ objects:
   - name: sprites_bos6_palettes_2.s
     start: 0x09D42AA0
     end: 0x09D42B00
+  - name: sprites_bos6_palettes_3.s
+    start: 0x099F2924
+    end: 0x099F2984
   eu:
   - name: sprites_bos6_1.c
     start: 0x09F868B4
@@ -97,7 +103,21 @@ objects:
   - name: sprites_bos6_palettes_2.s
     start: 0x09DD94C0
     end: 0x09DD9520
+  - name: sprites_bos6_palettes_3.s
+    start: 0x09A9B960
+    end: 0x09A9B9C0
 entries:
+- name: gUnk_09A3DE9C
+  format: palette
+  us:
+    address: 0x09A3DE9C
+    size: 96
+  jp:
+    address: 0x099F2924
+    size: 96
+  eu:
+    address: 0x09A9B960
+    size: 96
 - name: gUnk_09EFAB68
   record: SpriteTable
   items: [gUnk_09C488D4, gUnk_09C488DE, gUnk_09C488E8, gUnk_09C488F2, gUnk_09C488FC, gUnk_09C48906, gUnk_09C48910, gUnk_09C48920, gUnk_09C48930, gUnk_09C48940, gUnk_09C48950, gUnk_09C4895A, gUnk_09C4896A, gUnk_09C4897A, gUnk_09C4898A]
