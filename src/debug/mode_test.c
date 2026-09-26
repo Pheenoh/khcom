@@ -3,6 +3,7 @@
 #include "mode_test_assets.h"
 #include "gba/keys.h"
 #include "sprites_mode_test.h"
+#include "sprites_pooh.h"
 
 #ifndef VERSION_EU
 static struct ObjTiles* gUnk_02034A08;
@@ -50,6 +51,27 @@ void ApproachValueHalf(s32* p, s32 v) {
 }
 
 #ifdef VERSION_EU
+const AnimDef gUnkEu_08896524[18] = {
+    { gUnk_09EF52C0, gUnk_09EF52EC, gUnk_096FEFBE, 0, { 0, 0, 0 } },
+    { gUnk_09EF52F0, gUnk_09EF531C, gUnk_097006F8, 0, { 0, 0, 0 } },
+    { gUnk_09EF5320, gUnk_09EF534C, gUnk_09701FDA, 0, { 0, 0, 0 } },
+    { gUnk_09EF5350, gUnk_09EF537C, gUnk_09703C44, 0, { 0, 0, 0 } },
+    { gUnk_09EF5380, gUnk_09EF53AC, gUnk_097058D2, 0, { 0, 0, 0 } },
+    { gUnk_09EF57EC, gUnk_09EF5804, gUnk_09722CEA, 0, { 0, 0, 0 } },
+    { gUnk_09EF574C, gUnk_09EF579C, gUnk_0971F0F2, 0, { 0, 0, 0 } },
+    { gUnk_09EF5538, gUnk_09EF5560, gUnk_09712406, 0, { 0, 0, 0 } },
+    { gUnk_09EF5634, gUnk_09EF5670, gUnk_09719286, 0, { 0, 0, 0 } },
+    { gUnk_09EF592C, gUnk_09EF594C, gUnk_097293BE, 0, { 0, 0, 0 } },
+    { gUnk_09EF5298, gUnk_09EF529C, gUnk_096FE386, 0, { 0, 0, 0 } },
+    { gUnk_09EF5490, gUnk_09EF5494, gUnk_0970DE0A, 0, { 0, 0, 0 } },
+    { gUnk_09EF5488, gUnk_09EF548C, gUnk_0970DBAE, 0, { 0, 0, 0 } },
+    { gUnk_09EF5450, gUnk_09EF5454, gUnk_0970CB2A, 0, { 0, 0, 0 } },
+    { gUnk_09EF52B8, gUnk_09EF52BC, gUnk_096FECD6, 0, { 0, 0, 0 } },
+    { gUnk_09EF5448, gUnk_09EF544C, gUnk_0970C8CE, 0, { 0, 0, 0 } },
+    { gUnk_09EF5498, gUnk_09EF549C, gUnk_0970E066, 0, { 0, 0, 0 } },
+    { gUnk_09EF5480, gUnk_09EF5484, gUnk_0970D952, 0, { 0, 0, 0 } },
+};
+
 u8 eu_08060C44(FrdPoohWork* work) {
     FrdPoohBody* body;
 

@@ -62,7 +62,6 @@ localized_names_eu.c
 monsgage.c
 btl4.c
 tutorial.c
-mode_test_rodata.s
 mode_test.c
 sprites_frd.c
 sprites_cloud.c

@@ -107,7 +107,7 @@ typedef struct FrdPoohArgs {
 } FrdPoohArgs;
 
 extern u8 gUnk_09849A98[];
-extern u8 gUnkEu_08896524[];
+extern const AnimDef gUnkEu_08896524[];
 
 #endif
 
