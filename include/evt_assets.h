@@ -1,5 +1,4 @@
 #include "anim.h"
-#include "card_reload_sprite_data.h"
 #ifndef GUARD_EVT_ASSETS_H
 #define GUARD_EVT_ASSETS_H
 

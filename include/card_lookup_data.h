@@ -2,7 +2,6 @@
 #define GUARD_CARD_LOOKUP_DATA_H
 
 #include "anim.h"
-#include "card_reload_sprite_data.h"
 
 extern void* gUnk_09EEC5F0;
 extern void* gUnk_09EEC5F4;

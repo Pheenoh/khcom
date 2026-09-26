@@ -3,7 +3,6 @@
 #include "taskpool.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
-#include "card_reload_sprite_data.h"
 #include "registration_data.h"
 #include "system_state.h"
 #ifndef GUARD_MODE_TEST_H

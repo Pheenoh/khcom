@@ -1,6 +1,5 @@
 #include "event_index_data.h"
 #include "card_localized_data.h"
-#include "card_reload_sprite_data.h"
 #include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_EVENTSELECT_H

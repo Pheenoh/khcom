@@ -18,7 +18,7 @@ objects:
     start: 0x09EEA180
     end: 0x09EEA19C
   - name: sprites_card_2.c
-    start: 0x09EEAF4C
+    start: 0x09EEA2F4
     end: 0x09EEAFD4
   - name: sprites_card_frames_1.s
     start: 0x0908C374
@@ -34,7 +34,7 @@ objects:
     start: 0x09EC1574
     end: 0x09EC1590
   - name: sprites_card_2.c
-    start: 0x09EC2340
+    start: 0x09EC16E8
     end: 0x09EC23C8
   - name: sprites_card_frames_1.s
     start: 0x09047BE4
@@ -50,7 +50,7 @@ objects:
     start: 0x09F75F98
     end: 0x09F75FD4
   - name: sprites_card_2.c
-    start: 0x09F76FBC
+    start: 0x09F76364
     end: 0x09F77044
   - name: sprites_card_frames_1.s
     start: 0x09162648
@@ -80,6 +80,5256 @@ entries:
     address: 0x09EC158C
   eu:
     address: 0x09F75FB0
+- name: gUnk_09EEA2F4
+  record: SpriteTable
+  items: [gUnk_09098808, gUnk_09098818, gUnk_09098828, gUnk_09098838]
+  us:
+    address: 0x09EEA2F4
+  jp:
+    address: 0x09EC16E8
+  eu:
+    address: 0x09F76364
+- name: gUnk_09EEA304
+  record: AnimTable
+  items: [gUnk_09098848]
+  us:
+    address: 0x09EEA304
+  jp:
+    address: 0x09EC16F8
+  eu:
+    address: 0x09F76374
+- name: gUnk_09EEA308
+  record: SpriteTable
+  items: [gUnk_09098AE0, gUnk_09098AF0, gUnk_09098B00, gUnk_09098B10]
+  us:
+    address: 0x09EEA308
+  jp:
+    address: 0x09EC16FC
+  eu:
+    address: 0x09F76378
+- name: gUnk_09EEA318
+  record: AnimTable
+  items: [gUnk_09098B20]
+  us:
+    address: 0x09EEA318
+  jp:
+    address: 0x09EC170C
+  eu:
+    address: 0x09F76388
+- name: gUnk_09EEA31C
+  record: SpriteTable
+  items: [gUnk_09098DB8, gUnk_09098DC8, gUnk_09098DD8, gUnk_09098DE8]
+  us:
+    address: 0x09EEA31C
+  jp:
+    address: 0x09EC1710
+  eu:
+    address: 0x09F7638C
+- name: gUnk_09EEA32C
+  record: AnimTable
+  items: [gUnk_09098DF8]
+  us:
+    address: 0x09EEA32C
+  jp:
+    address: 0x09EC1720
+  eu:
+    address: 0x09F7639C
+- name: gUnk_09EEA330
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099090]
+  us:
+    address: 0x09EEA330
+  jp:
+    address: 0x09EC1724
+  eu:
+    address: 0x09F763A0
+- name: gUnk_09EEA334
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090990A0]
+  us:
+    address: 0x09EEA334
+  jp:
+    address: 0x09EC1728
+  eu:
+    address: 0x09F763A4
+- name: gUnk_09EEA338
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090990B0]
+  us:
+    address: 0x09EEA338
+  jp:
+    address: 0x09EC172C
+  eu:
+    address: 0x09F763A8
+- name: gUnk_09EEA33C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090990C0]
+  us:
+    address: 0x09EEA33C
+  jp:
+    address: 0x09EC1730
+  eu:
+    address: 0x09F763AC
+- name: gUnk_09EEA340
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090990D0]
+  us:
+    address: 0x09EEA340
+  jp:
+    address: 0x09EC1734
+  eu:
+    address: 0x09F763B0
+- name: gUnk_09EEA344
+  record: SpriteTable
+  items: [gUnk_09099368]
+  us:
+    address: 0x09EEA344
+  jp:
+    address: 0x09EC1738
+  eu:
+    address: 0x09F763B4
+- name: gUnk_09EEA348
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099372]
+  us:
+    address: 0x09EEA348
+  jp:
+    address: 0x09EC173C
+  eu:
+    address: 0x09F763B8
+- name: gUnk_09EEA34C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090993FC]
+  us:
+    address: 0x09EEA34C
+  jp:
+    address: 0x09EC1740
+  eu:
+    address: 0x09F763BC
+- name: gUnk_09EEA350
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099406]
+  us:
+    address: 0x09EEA350
+  jp:
+    address: 0x09EC1744
+  eu:
+    address: 0x09F763C0
+- name: gUnk_09EEA354
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099490]
+  us:
+    address: 0x09EEA354
+  jp:
+    address: 0x09EC1748
+  eu:
+    address: 0x09F763C4
+- name: gUnk_09EEA358
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909949A]
+  us:
+    address: 0x09EEA358
+  jp:
+    address: 0x09EC174C
+  eu:
+    address: 0x09F763C8
+- name: gUnk_09EEA35C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099524]
+  us:
+    address: 0x09EEA35C
+  jp:
+    address: 0x09EC1750
+  eu:
+    address: 0x09F763CC
+- name: gUnk_09EEA360
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909952E]
+  us:
+    address: 0x09EEA360
+  jp:
+    address: 0x09EC1754
+  eu:
+    address: 0x09F763D0
+- name: gUnk_09EEA364
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995B8]
+  us:
+    address: 0x09EEA364
+  jp:
+    address: 0x09EC1758
+  eu:
+    address: 0x09F763D4
+- name: gUnk_09EEA368
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995C2]
+  us:
+    address: 0x09EEA368
+  jp:
+    address: 0x09EC175C
+  eu:
+    address: 0x09F763D8
+- name: gUnk_09EEA36C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995CC]
+  us:
+    address: 0x09EEA36C
+  jp:
+    address: 0x09EC1760
+  eu:
+    address: 0x09F763DC
+- name: gUnk_09EEA370
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995D6]
+  us:
+    address: 0x09EEA370
+  jp:
+    address: 0x09EC1764
+  eu:
+    address: 0x09F763E0
+- name: gUnk_09EEA374
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995E0]
+  us:
+    address: 0x09EEA374
+  jp:
+    address: 0x09EC1768
+  eu:
+    address: 0x09F763E4
+- name: gUnk_09EEA378
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995EA]
+  us:
+    address: 0x09EEA378
+  jp:
+    address: 0x09EC176C
+  eu:
+    address: 0x09F763E8
+- name: gUnk_09EEA37C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995F4]
+  us:
+    address: 0x09EEA37C
+  jp:
+    address: 0x09EC1770
+  eu:
+    address: 0x09F763EC
+- name: gUnk_09EEA380
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090995FE]
+  us:
+    address: 0x09EEA380
+  jp:
+    address: 0x09EC1774
+  eu:
+    address: 0x09F763F0
+- name: gUnk_09EEA384
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099608]
+  us:
+    address: 0x09EEA384
+  jp:
+    address: 0x09EC1778
+  eu:
+    address: 0x09F763F4
+- name: gUnk_09EEA388
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099612]
+  us:
+    address: 0x09EEA388
+  jp:
+    address: 0x09EC177C
+  eu:
+    address: 0x09F763F8
+- name: gUnk_09EEA38C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099622]
+  us:
+    address: 0x09EEA38C
+  jp:
+    address: 0x09EC1780
+  eu:
+    address: 0x09F763FC
+- name: gUnk_09EEA390
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099632]
+  us:
+    address: 0x09EEA390
+  jp:
+    address: 0x09EC1784
+  eu:
+    address: 0x09F76400
+- name: gUnk_09EEA394
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099642]
+  us:
+    address: 0x09EEA394
+  jp:
+    address: 0x09EC1788
+  eu:
+    address: 0x09F76404
+- name: gUnk_09EEA398
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099652]
+  us:
+    address: 0x09EEA398
+  jp:
+    address: 0x09EC178C
+  eu:
+    address: 0x09F76408
+- name: gUnk_09EEA39C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099662]
+  us:
+    address: 0x09EEA39C
+  jp:
+    address: 0x09EC1790
+  eu:
+    address: 0x09F7640C
+- name: gUnk_09EEA3A0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099672]
+  us:
+    address: 0x09EEA3A0
+  jp:
+    address: 0x09EC1794
+  eu:
+    address: 0x09F76410
+- name: gUnk_09EEA3A4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099682]
+  us:
+    address: 0x09EEA3A4
+  jp:
+    address: 0x09EC1798
+  eu:
+    address: 0x09F76414
+- name: gUnk_09EEA3A8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_09099692]
+  us:
+    address: 0x09EEA3A8
+  jp:
+    address: 0x09EC179C
+  eu:
+    address: 0x09F76418
+- name: gUnk_09EEA3AC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_090996A2]
+  us:
+    address: 0x09EEA3AC
+  jp:
+    address: 0x09EC17A0
+  eu:
+    address: 0x09F7641C
+- name: gUnk_09EEA3B0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996B2]
+  us:
+    address: 0x09EEA3B0
+  jp:
+    address: 0x09EC17A4
+  eu:
+    address: 0x09F76420
+- name: gUnk_09EEA3B4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996BC]
+  us:
+    address: 0x09EEA3B4
+  jp:
+    address: 0x09EC17A8
+  eu:
+    address: 0x09F76424
+- name: gUnk_09EEA3B8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996C6]
+  us:
+    address: 0x09EEA3B8
+  jp:
+    address: 0x09EC17AC
+  eu:
+    address: 0x09F76428
+- name: gUnk_09EEA3BC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996D0]
+  us:
+    address: 0x09EEA3BC
+  jp:
+    address: 0x09EC17B0
+  eu:
+    address: 0x09F7642C
+- name: gUnk_09EEA3C0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996DA]
+  us:
+    address: 0x09EEA3C0
+  jp:
+    address: 0x09EC17B4
+  eu:
+    address: 0x09F76430
+- name: gUnk_09EEA3C4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996E4]
+  us:
+    address: 0x09EEA3C4
+  jp:
+    address: 0x09EC17B8
+  eu:
+    address: 0x09F76434
+- name: gUnk_09EEA3C8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996EE]
+  us:
+    address: 0x09EEA3C8
+  jp:
+    address: 0x09EC17BC
+  eu:
+    address: 0x09F76438
+- name: gUnk_09EEA3CC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_090996F8]
+  us:
+    address: 0x09EEA3CC
+  jp:
+    address: 0x09EC17C0
+  eu:
+    address: 0x09F7643C
+- name: gUnk_09EEA3D0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099702]
+  us:
+    address: 0x09EEA3D0
+  jp:
+    address: 0x09EC17C4
+  eu:
+    address: 0x09F76440
+- name: gUnk_09EEA3D4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909970C]
+  us:
+    address: 0x09EEA3D4
+  jp:
+    address: 0x09EC17C8
+  eu:
+    address: 0x09F76444
+- name: gUnk_09EEA3D8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099716]
+  us:
+    address: 0x09EEA3D8
+  jp:
+    address: 0x09EC17CC
+  eu:
+    address: 0x09F76448
+- name: gUnk_09EEA3DC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099720]
+  us:
+    address: 0x09EEA3DC
+  jp:
+    address: 0x09EC17D0
+  eu:
+    address: 0x09F7644C
+- name: gUnk_09EEA3E0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909972A]
+  us:
+    address: 0x09EEA3E0
+  jp:
+    address: 0x09EC17D4
+  eu:
+    address: 0x09F76450
+- name: gUnk_09EEA3E4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099734]
+  us:
+    address: 0x09EEA3E4
+  jp:
+    address: 0x09EC17D8
+  eu:
+    address: 0x09F76454
+- name: gUnk_09EEA3E8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909973E]
+  us:
+    address: 0x09EEA3E8
+  jp:
+    address: 0x09EC17DC
+  eu:
+    address: 0x09F76458
+- name: gUnk_09EEA3EC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099748]
+  us:
+    address: 0x09EEA3EC
+  jp:
+    address: 0x09EC17E0
+  eu:
+    address: 0x09F7645C
+- name: gUnk_09EEA3F0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099752]
+  us:
+    address: 0x09EEA3F0
+  jp:
+    address: 0x09EC17E4
+  eu:
+    address: 0x09F76460
+- name: gUnk_09EEA3F4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909975C]
+  us:
+    address: 0x09EEA3F4
+  jp:
+    address: 0x09EC17E8
+  eu:
+    address: 0x09F76464
+- name: gUnk_09EEA3F8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_09099766]
+  us:
+    address: 0x09EEA3F8
+  jp:
+    address: 0x09EC17EC
+  eu:
+    address: 0x09F76468
+- name: gUnk_09EEA3FC
+  record: SpriteTable
+  items: [gUnk_09099C70, gUnk_09099C7A, gUnk_09099C84, gUnk_09099C8E, gUnk_09099C98, gUnk_09099CA2, gUnk_09099CAC, gUnk_09099CB6, gUnk_09099CC0, gUnk_09099CCA, gUnk_09099CDA, gUnk_09099CEA, gUnk_09099CFA, gUnk_09099D0A, gUnk_09099D1A, gUnk_09099D2A, gUnk_09099D3A, gUnk_09099D4A, gUnk_09099D5A]
+  us:
+    address: 0x09EEA3FC
+  jp:
+    address: 0x09EC17F0
+  eu:
+    address: 0x09F7646C
+- name: gUnk_09EEA448
+  record: AnimTable
+  items: [gUnk_09099D6A, gUnk_09099D74, gUnk_09099D7E, gUnk_09099D88, gUnk_09099D92, gUnk_09099D9C, gUnk_09099DA6, gUnk_09099DB0, gUnk_09099DBA, gUnk_09099DC4, gUnk_09099DCE, gUnk_09099DD8, gUnk_09099DE2, gUnk_09099DEC, gUnk_09099DF6, gUnk_09099E00, gUnk_09099E0A, gUnk_09099E14, gUnk_09099E1E]
+  us:
+    address: 0x09EEA448
+  jp:
+    address: 0x09EC183C
+  eu:
+    address: 0x09F764B8
+- name: gUnk_09EEA494
+  record: SpriteTable
+  items: [gUnk_0909A328, gUnk_0909A332, gUnk_0909A33C, gUnk_0909A346, gUnk_0909A350, gUnk_0909A35A, gUnk_0909A364, gUnk_0909A36E, gUnk_0909A378, gUnk_0909A382, gUnk_0909A392, gUnk_0909A3A2, gUnk_0909A3B2, gUnk_0909A3C2, gUnk_0909A3D2, gUnk_0909A3E2, gUnk_0909A3F2, gUnk_0909A402, gUnk_0909A412]
+  us:
+    address: 0x09EEA494
+  jp:
+    address: 0x09EC1888
+  eu:
+    address: 0x09F76504
+- name: gUnk_09EEA4E0
+  record: AnimTable
+  items: [gUnk_0909A422, gUnk_0909A42C, gUnk_0909A436, gUnk_0909A440, gUnk_0909A44A, gUnk_0909A454, gUnk_0909A45E, gUnk_0909A468, gUnk_0909A472, gUnk_0909A47C, gUnk_0909A486, gUnk_0909A490, gUnk_0909A49A, gUnk_0909A4A4, gUnk_0909A4AE, gUnk_0909A4B8, gUnk_0909A4C2, gUnk_0909A4CC, gUnk_0909A4D6]
+  us:
+    address: 0x09EEA4E0
+  jp:
+    address: 0x09EC18D4
+  eu:
+    address: 0x09F76550
+- name: gUnk_09EEA52C
+  record: SpriteTable
+  items: [gUnk_0909A9E0, gUnk_0909A9EA, gUnk_0909A9F4, gUnk_0909A9FE, gUnk_0909AA08, gUnk_0909AA12, gUnk_0909AA1C, gUnk_0909AA26, gUnk_0909AA30, gUnk_0909AA3A, gUnk_0909AA4A, gUnk_0909AA5A, gUnk_0909AA6A, gUnk_0909AA7A, gUnk_0909AA8A, gUnk_0909AA9A, gUnk_0909AAAA, gUnk_0909AABA, gUnk_0909AACA]
+  us:
+    address: 0x09EEA52C
+  jp:
+    address: 0x09EC1920
+  eu:
+    address: 0x09F7659C
+- name: gUnk_09EEA578
+  record: AnimTable
+  items: [gUnk_0909AADA, gUnk_0909AAE4, gUnk_0909AAEE, gUnk_0909AAF8, gUnk_0909AB02, gUnk_0909AB0C, gUnk_0909AB16, gUnk_0909AB20, gUnk_0909AB2A, gUnk_0909AB34, gUnk_0909AB3E, gUnk_0909AB48, gUnk_0909AB52, gUnk_0909AB5C, gUnk_0909AB66, gUnk_0909AB70, gUnk_0909AB7A, gUnk_0909AB84, gUnk_0909AB8E]
+  us:
+    address: 0x09EEA578
+  jp:
+    address: 0x09EC196C
+  eu:
+    address: 0x09F765E8
+- name: gUnk_09EEA5C4
+  record: SpriteTable
+  items: [gUnk_0909B098, gUnk_0909B0A8, gUnk_0909B0B8, gUnk_0909B0C8, gUnk_0909B0D8, gUnk_0909B0E8, gUnk_0909B0F8, gUnk_0909B108, gUnk_0909B118, gUnk_0909B128, gUnk_0909B13E, gUnk_0909B154, gUnk_0909B16A, gUnk_0909B180, gUnk_0909B196, gUnk_0909B1AC, gUnk_0909B1C2, gUnk_0909B1D8, gUnk_0909B1EE, gUnk_0909B204, gUnk_0909B21A, gUnk_0909B230, gUnk_0909B246, gUnk_0909B25C, gUnk_0909B272, gUnk_0909B288, gUnk_0909B29E, gUnk_0909B2B4, gUnk_0909B2CA, gUnk_0909B2E0, gUnk_0909B2F6, gUnk_0909B30C, gUnk_0909B322, gUnk_0909B338, gUnk_0909B34E, gUnk_0909B364, gUnk_0909B37A, gUnk_0909B390, gUnk_0909B3A6, gUnk_0909B3BC, gUnk_0909B3D2, gUnk_0909B3E8, gUnk_0909B3FE, gUnk_0909B414, gUnk_0909B42A, gUnk_0909B440, gUnk_0909B456, gUnk_0909B46C, gUnk_0909B482, gUnk_0909B498, gUnk_0909B4AE, gUnk_0909B4C4, gUnk_0909B4DA, gUnk_0909B4F0, gUnk_0909B506, gUnk_0909B51C, gUnk_0909B532, gUnk_0909B548, gUnk_0909B55E, gUnk_0909B574, gUnk_0909B58A, gUnk_0909B5A0, gUnk_0909B5B6, gUnk_0909B5CC, gUnk_0909B5E2, gUnk_0909B5F8, gUnk_0909B60E, gUnk_0909B624, gUnk_0909B63A, gUnk_0909B650, gUnk_0909B666, gUnk_0909B67C, gUnk_0909B692, gUnk_0909B6A8, gUnk_0909B6BE, gUnk_0909B6D4, gUnk_0909B6EA, gUnk_0909B700, gUnk_0909B716, gUnk_0909B72C, gUnk_0909B742, gUnk_0909B758, gUnk_0909B76E, gUnk_0909B784, gUnk_0909B79A, gUnk_0909B7B0, gUnk_0909B7C6, gUnk_0909B7DC, gUnk_0909B7F2, gUnk_0909B808, gUnk_0909B81E, gUnk_0909B834, gUnk_0909B84A, gUnk_0909B860, gUnk_0909B876, gUnk_0909B88C, gUnk_0909B8A2, gUnk_0909B8B8, gUnk_0909B8CE]
+  us:
+    address: 0x09EEA5C4
+  jp:
+    address: 0x09EC19B8
+  eu:
+    address: 0x09F76634
+- name: gUnk_09EEA750
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B8E4]
+  us:
+    address: 0x09EEA750
+  jp:
+    address: 0x09EC1B44
+  eu:
+    address: 0x09F767C0
+- name: gUnk_09EEA754
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B8EE]
+  us:
+    address: 0x09EEA754
+  jp:
+    address: 0x09EC1B48
+  eu:
+    address: 0x09F767C4
+- name: gUnk_09EEA758
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B8F8]
+  us:
+    address: 0x09EEA758
+  jp:
+    address: 0x09EC1B4C
+  eu:
+    address: 0x09F767C8
+- name: gUnk_09EEA75C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B902]
+  us:
+    address: 0x09EEA75C
+  jp:
+    address: 0x09EC1B50
+  eu:
+    address: 0x09F767CC
+- name: gUnk_09EEA760
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B90C]
+  us:
+    address: 0x09EEA760
+  jp:
+    address: 0x09EC1B54
+  eu:
+    address: 0x09F767D0
+- name: gUnk_09EEA764
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B916]
+  us:
+    address: 0x09EEA764
+  jp:
+    address: 0x09EC1B58
+  eu:
+    address: 0x09F767D4
+- name: gUnk_09EEA768
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B920]
+  us:
+    address: 0x09EEA768
+  jp:
+    address: 0x09EC1B5C
+  eu:
+    address: 0x09F767D8
+- name: gUnk_09EEA76C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B92A]
+  us:
+    address: 0x09EEA76C
+  jp:
+    address: 0x09EC1B60
+  eu:
+    address: 0x09F767DC
+- name: gUnk_09EEA770
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B934]
+  us:
+    address: 0x09EEA770
+  jp:
+    address: 0x09EC1B64
+  eu:
+    address: 0x09F767E0
+- name: gUnk_09EEA774
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B93E]
+  us:
+    address: 0x09EEA774
+  jp:
+    address: 0x09EC1B68
+  eu:
+    address: 0x09F767E4
+- name: gUnk_09EEA778
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B948]
+  us:
+    address: 0x09EEA778
+  jp:
+    address: 0x09EC1B6C
+  eu:
+    address: 0x09F767E8
+- name: gUnk_09EEA77C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B952]
+  us:
+    address: 0x09EEA77C
+  jp:
+    address: 0x09EC1B70
+  eu:
+    address: 0x09F767EC
+- name: gUnk_09EEA780
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B95C]
+  us:
+    address: 0x09EEA780
+  jp:
+    address: 0x09EC1B74
+  eu:
+    address: 0x09F767F0
+- name: gUnk_09EEA784
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B966]
+  us:
+    address: 0x09EEA784
+  jp:
+    address: 0x09EC1B78
+  eu:
+    address: 0x09F767F4
+- name: gUnk_09EEA788
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B970]
+  us:
+    address: 0x09EEA788
+  jp:
+    address: 0x09EC1B7C
+  eu:
+    address: 0x09F767F8
+- name: gUnk_09EEA78C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B97A]
+  us:
+    address: 0x09EEA78C
+  jp:
+    address: 0x09EC1B80
+  eu:
+    address: 0x09F767FC
+- name: gUnk_09EEA790
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B984]
+  us:
+    address: 0x09EEA790
+  jp:
+    address: 0x09EC1B84
+  eu:
+    address: 0x09F76800
+- name: gUnk_09EEA794
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B98E]
+  us:
+    address: 0x09EEA794
+  jp:
+    address: 0x09EC1B88
+  eu:
+    address: 0x09F76804
+- name: gUnk_09EEA798
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B998]
+  us:
+    address: 0x09EEA798
+  jp:
+    address: 0x09EC1B8C
+  eu:
+    address: 0x09F76808
+- name: gUnk_09EEA79C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9A2]
+  us:
+    address: 0x09EEA79C
+  jp:
+    address: 0x09EC1B90
+  eu:
+    address: 0x09F7680C
+- name: gUnk_09EEA7A0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9AC]
+  us:
+    address: 0x09EEA7A0
+  jp:
+    address: 0x09EC1B94
+  eu:
+    address: 0x09F76810
+- name: gUnk_09EEA7A4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9B6]
+  us:
+    address: 0x09EEA7A4
+  jp:
+    address: 0x09EC1B98
+  eu:
+    address: 0x09F76814
+- name: gUnk_09EEA7A8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9C0]
+  us:
+    address: 0x09EEA7A8
+  jp:
+    address: 0x09EC1B9C
+  eu:
+    address: 0x09F76818
+- name: gUnk_09EEA7AC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9CA]
+  us:
+    address: 0x09EEA7AC
+  jp:
+    address: 0x09EC1BA0
+  eu:
+    address: 0x09F7681C
+- name: gUnk_09EEA7B0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9D4]
+  us:
+    address: 0x09EEA7B0
+  jp:
+    address: 0x09EC1BA4
+  eu:
+    address: 0x09F76820
+- name: gUnk_09EEA7B4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9DE]
+  us:
+    address: 0x09EEA7B4
+  jp:
+    address: 0x09EC1BA8
+  eu:
+    address: 0x09F76824
+- name: gUnk_09EEA7B8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9E8]
+  us:
+    address: 0x09EEA7B8
+  jp:
+    address: 0x09EC1BAC
+  eu:
+    address: 0x09F76828
+- name: gUnk_09EEA7BC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9F2]
+  us:
+    address: 0x09EEA7BC
+  jp:
+    address: 0x09EC1BB0
+  eu:
+    address: 0x09F7682C
+- name: gUnk_09EEA7C0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909B9FC]
+  us:
+    address: 0x09EEA7C0
+  jp:
+    address: 0x09EC1BB4
+  eu:
+    address: 0x09F76830
+- name: gUnk_09EEA7C4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA06]
+  us:
+    address: 0x09EEA7C4
+  jp:
+    address: 0x09EC1BB8
+  eu:
+    address: 0x09F76834
+- name: gUnk_09EEA7C8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA10]
+  us:
+    address: 0x09EEA7C8
+  jp:
+    address: 0x09EC1BBC
+  eu:
+    address: 0x09F76838
+- name: gUnk_09EEA7CC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA1A]
+  us:
+    address: 0x09EEA7CC
+  jp:
+    address: 0x09EC1BC0
+  eu:
+    address: 0x09F7683C
+- name: gUnk_09EEA7D0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA24]
+  us:
+    address: 0x09EEA7D0
+  jp:
+    address: 0x09EC1BC4
+  eu:
+    address: 0x09F76840
+- name: gUnk_09EEA7D4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA2E]
+  us:
+    address: 0x09EEA7D4
+  jp:
+    address: 0x09EC1BC8
+  eu:
+    address: 0x09F76844
+- name: gUnk_09EEA7D8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA38]
+  us:
+    address: 0x09EEA7D8
+  jp:
+    address: 0x09EC1BCC
+  eu:
+    address: 0x09F76848
+- name: gUnk_09EEA7DC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA42]
+  us:
+    address: 0x09EEA7DC
+  jp:
+    address: 0x09EC1BD0
+  eu:
+    address: 0x09F7684C
+- name: gUnk_09EEA7E0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA4C]
+  us:
+    address: 0x09EEA7E0
+  jp:
+    address: 0x09EC1BD4
+  eu:
+    address: 0x09F76850
+- name: gUnk_09EEA7E4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA56]
+  us:
+    address: 0x09EEA7E4
+  jp:
+    address: 0x09EC1BD8
+  eu:
+    address: 0x09F76854
+- name: gUnk_09EEA7E8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA60]
+  us:
+    address: 0x09EEA7E8
+  jp:
+    address: 0x09EC1BDC
+  eu:
+    address: 0x09F76858
+- name: gUnk_09EEA7EC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909BA6A]
+  us:
+    address: 0x09EEA7EC
+  jp:
+    address: 0x09EC1BE0
+  eu:
+    address: 0x09F7685C
+- name: gUnk_09EEA7F0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BCB4]
+  us:
+    address: 0x09EEA7F0
+  jp:
+    address: 0x09EC1BE4
+  eu:
+    address: 0x09F76860
+- name: gUnk_09EEA7F4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BCC4]
+  us:
+    address: 0x09EEA7F4
+  jp:
+    address: 0x09EC1BE8
+  eu:
+    address: 0x09F76864
+- name: gUnk_09EEA7F8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BCD4]
+  us:
+    address: 0x09EEA7F8
+  jp:
+    address: 0x09EC1BEC
+  eu:
+    address: 0x09F76868
+- name: gUnk_09EEA7FC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BCE4]
+  us:
+    address: 0x09EEA7FC
+  jp:
+    address: 0x09EC1BF0
+  eu:
+    address: 0x09F7686C
+- name: gUnk_09EEA800
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BCF4]
+  us:
+    address: 0x09EEA800
+  jp:
+    address: 0x09EC1BF4
+  eu:
+    address: 0x09F76870
+- name: gUnk_09EEA804
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD04]
+  us:
+    address: 0x09EEA804
+  jp:
+    address: 0x09EC1BF8
+  eu:
+    address: 0x09F76874
+- name: gUnk_09EEA808
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD14]
+  us:
+    address: 0x09EEA808
+  jp:
+    address: 0x09EC1BFC
+  eu:
+    address: 0x09F76878
+- name: gUnk_09EEA80C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD24]
+  us:
+    address: 0x09EEA80C
+  jp:
+    address: 0x09EC1C00
+  eu:
+    address: 0x09F7687C
+- name: gUnk_09EEA810
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD34]
+  us:
+    address: 0x09EEA810
+  jp:
+    address: 0x09EC1C04
+  eu:
+    address: 0x09F76880
+- name: gUnk_09EEA814
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD44]
+  us:
+    address: 0x09EEA814
+  jp:
+    address: 0x09EC1C08
+  eu:
+    address: 0x09F76884
+- name: gUnk_09EEA818
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD5A]
+  us:
+    address: 0x09EEA818
+  jp:
+    address: 0x09EC1C0C
+  eu:
+    address: 0x09F76888
+- name: gUnk_09EEA81C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD70]
+  us:
+    address: 0x09EEA81C
+  jp:
+    address: 0x09EC1C10
+  eu:
+    address: 0x09F7688C
+- name: gUnk_09EEA820
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD86]
+  us:
+    address: 0x09EEA820
+  jp:
+    address: 0x09EC1C14
+  eu:
+    address: 0x09F76890
+- name: gUnk_09EEA824
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BD9C]
+  us:
+    address: 0x09EEA824
+  jp:
+    address: 0x09EC1C18
+  eu:
+    address: 0x09F76894
+- name: gUnk_09EEA828
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BDB2]
+  us:
+    address: 0x09EEA828
+  jp:
+    address: 0x09EC1C1C
+  eu:
+    address: 0x09F76898
+- name: gUnk_09EEA82C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BDC8]
+  us:
+    address: 0x09EEA82C
+  jp:
+    address: 0x09EC1C20
+  eu:
+    address: 0x09F7689C
+- name: gUnk_09EEA830
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BDDE]
+  us:
+    address: 0x09EEA830
+  jp:
+    address: 0x09EC1C24
+  eu:
+    address: 0x09F768A0
+- name: gUnk_09EEA834
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BDF4]
+  us:
+    address: 0x09EEA834
+  jp:
+    address: 0x09EC1C28
+  eu:
+    address: 0x09F768A4
+- name: gUnk_09EEA838
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE0A]
+  us:
+    address: 0x09EEA838
+  jp:
+    address: 0x09EC1C2C
+  eu:
+    address: 0x09F768A8
+- name: gUnk_09EEA83C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE20]
+  us:
+    address: 0x09EEA83C
+  jp:
+    address: 0x09EC1C30
+  eu:
+    address: 0x09F768AC
+- name: gUnk_09EEA840
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE36]
+  us:
+    address: 0x09EEA840
+  jp:
+    address: 0x09EC1C34
+  eu:
+    address: 0x09F768B0
+- name: gUnk_09EEA844
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE4C]
+  us:
+    address: 0x09EEA844
+  jp:
+    address: 0x09EC1C38
+  eu:
+    address: 0x09F768B4
+- name: gUnk_09EEA848
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE62]
+  us:
+    address: 0x09EEA848
+  jp:
+    address: 0x09EC1C3C
+  eu:
+    address: 0x09F768B8
+- name: gUnk_09EEA84C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE78]
+  us:
+    address: 0x09EEA84C
+  jp:
+    address: 0x09EC1C40
+  eu:
+    address: 0x09F768BC
+- name: gUnk_09EEA850
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BE8E]
+  us:
+    address: 0x09EEA850
+  jp:
+    address: 0x09EC1C44
+  eu:
+    address: 0x09F768C0
+- name: gUnk_09EEA854
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BEA4]
+  us:
+    address: 0x09EEA854
+  jp:
+    address: 0x09EC1C48
+  eu:
+    address: 0x09F768C4
+- name: gUnk_09EEA858
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BEBA]
+  us:
+    address: 0x09EEA858
+  jp:
+    address: 0x09EC1C4C
+  eu:
+    address: 0x09F768C8
+- name: gUnk_09EEA85C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BED0]
+  us:
+    address: 0x09EEA85C
+  jp:
+    address: 0x09EC1C50
+  eu:
+    address: 0x09F768CC
+- name: gUnk_09EEA860
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BEE6]
+  us:
+    address: 0x09EEA860
+  jp:
+    address: 0x09EC1C54
+  eu:
+    address: 0x09F768D0
+- name: gUnk_09EEA864
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BEFC]
+  us:
+    address: 0x09EEA864
+  jp:
+    address: 0x09EC1C58
+  eu:
+    address: 0x09F768D4
+- name: gUnk_09EEA868
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF12]
+  us:
+    address: 0x09EEA868
+  jp:
+    address: 0x09EC1C5C
+  eu:
+    address: 0x09F768D8
+- name: gUnk_09EEA86C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF28]
+  us:
+    address: 0x09EEA86C
+  jp:
+    address: 0x09EC1C60
+  eu:
+    address: 0x09F768DC
+- name: gUnk_09EEA870
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF3E]
+  us:
+    address: 0x09EEA870
+  jp:
+    address: 0x09EC1C64
+  eu:
+    address: 0x09F768E0
+- name: gUnk_09EEA874
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF54]
+  us:
+    address: 0x09EEA874
+  jp:
+    address: 0x09EC1C68
+  eu:
+    address: 0x09F768E4
+- name: gUnk_09EEA878
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF6A]
+  us:
+    address: 0x09EEA878
+  jp:
+    address: 0x09EC1C6C
+  eu:
+    address: 0x09F768E8
+- name: gUnk_09EEA87C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF80]
+  us:
+    address: 0x09EEA87C
+  jp:
+    address: 0x09EC1C70
+  eu:
+    address: 0x09F768EC
+- name: gUnk_09EEA880
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BF96]
+  us:
+    address: 0x09EEA880
+  jp:
+    address: 0x09EC1C74
+  eu:
+    address: 0x09F768F0
+- name: gUnk_09EEA884
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BFAC]
+  us:
+    address: 0x09EEA884
+  jp:
+    address: 0x09EC1C78
+  eu:
+    address: 0x09F768F4
+- name: gUnk_09EEA888
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BFC2]
+  us:
+    address: 0x09EEA888
+  jp:
+    address: 0x09EC1C7C
+  eu:
+    address: 0x09F768F8
+- name: gUnk_09EEA88C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BFD8]
+  us:
+    address: 0x09EEA88C
+  jp:
+    address: 0x09EC1C80
+  eu:
+    address: 0x09F768FC
+- name: gUnk_09EEA890
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909BFEE]
+  us:
+    address: 0x09EEA890
+  jp:
+    address: 0x09EC1C84
+  eu:
+    address: 0x09F76900
+- name: gUnk_09EEA894
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C004]
+  us:
+    address: 0x09EEA894
+  jp:
+    address: 0x09EC1C88
+  eu:
+    address: 0x09F76904
+- name: gUnk_09EEA898
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C01A]
+  us:
+    address: 0x09EEA898
+  jp:
+    address: 0x09EC1C8C
+  eu:
+    address: 0x09F76908
+- name: gUnk_09EEA89C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C030]
+  us:
+    address: 0x09EEA89C
+  jp:
+    address: 0x09EC1C90
+  eu:
+    address: 0x09F7690C
+- name: gUnk_09EEA8A0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C046]
+  us:
+    address: 0x09EEA8A0
+  jp:
+    address: 0x09EC1C94
+  eu:
+    address: 0x09F76910
+- name: gUnk_09EEA8A4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C05C]
+  us:
+    address: 0x09EEA8A4
+  jp:
+    address: 0x09EC1C98
+  eu:
+    address: 0x09F76914
+- name: gUnk_09EEA8A8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C072]
+  us:
+    address: 0x09EEA8A8
+  jp:
+    address: 0x09EC1C9C
+  eu:
+    address: 0x09F76918
+- name: gUnk_09EEA8AC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C088]
+  us:
+    address: 0x09EEA8AC
+  jp:
+    address: 0x09EC1CA0
+  eu:
+    address: 0x09F7691C
+- name: gUnk_09EEA8B0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C09E]
+  us:
+    address: 0x09EEA8B0
+  jp:
+    address: 0x09EC1CA4
+  eu:
+    address: 0x09F76920
+- name: gUnk_09EEA8B4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C0B4]
+  us:
+    address: 0x09EEA8B4
+  jp:
+    address: 0x09EC1CA8
+  eu:
+    address: 0x09F76924
+- name: gUnk_09EEA8B8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C0CA]
+  us:
+    address: 0x09EEA8B8
+  jp:
+    address: 0x09EC1CAC
+  eu:
+    address: 0x09F76928
+- name: gUnk_09EEA8BC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C0E0]
+  us:
+    address: 0x09EEA8BC
+  jp:
+    address: 0x09EC1CB0
+  eu:
+    address: 0x09F7692C
+- name: gUnk_09EEA8C0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C0F6]
+  us:
+    address: 0x09EEA8C0
+  jp:
+    address: 0x09EC1CB4
+  eu:
+    address: 0x09F76930
+- name: gUnk_09EEA8C4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C10C]
+  us:
+    address: 0x09EEA8C4
+  jp:
+    address: 0x09EC1CB8
+  eu:
+    address: 0x09F76934
+- name: gUnk_09EEA8C8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C122]
+  us:
+    address: 0x09EEA8C8
+  jp:
+    address: 0x09EC1CBC
+  eu:
+    address: 0x09F76938
+- name: gUnk_09EEA8CC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C138]
+  us:
+    address: 0x09EEA8CC
+  jp:
+    address: 0x09EC1CC0
+  eu:
+    address: 0x09F7693C
+- name: gUnk_09EEA8D0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C14E]
+  us:
+    address: 0x09EEA8D0
+  jp:
+    address: 0x09EC1CC4
+  eu:
+    address: 0x09F76940
+- name: gUnk_09EEA8D4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C164]
+  us:
+    address: 0x09EEA8D4
+  jp:
+    address: 0x09EC1CC8
+  eu:
+    address: 0x09F76944
+- name: gUnk_09EEA8D8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C17A]
+  us:
+    address: 0x09EEA8D8
+  jp:
+    address: 0x09EC1CCC
+  eu:
+    address: 0x09F76948
+- name: gUnk_09EEA8DC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C190]
+  us:
+    address: 0x09EEA8DC
+  jp:
+    address: 0x09EC1CD0
+  eu:
+    address: 0x09F7694C
+- name: gUnk_09EEA8E0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C1A6]
+  us:
+    address: 0x09EEA8E0
+  jp:
+    address: 0x09EC1CD4
+  eu:
+    address: 0x09F76950
+- name: gUnk_09EEA8E4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C1BC]
+  us:
+    address: 0x09EEA8E4
+  jp:
+    address: 0x09EC1CD8
+  eu:
+    address: 0x09F76954
+- name: gUnk_09EEA8E8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C1D2]
+  us:
+    address: 0x09EEA8E8
+  jp:
+    address: 0x09EC1CDC
+  eu:
+    address: 0x09F76958
+- name: gUnk_09EEA8EC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C1E8]
+  us:
+    address: 0x09EEA8EC
+  jp:
+    address: 0x09EC1CE0
+  eu:
+    address: 0x09F7695C
+- name: gUnk_09EEA8F0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C1FE]
+  us:
+    address: 0x09EEA8F0
+  jp:
+    address: 0x09EC1CE4
+  eu:
+    address: 0x09F76960
+- name: gUnk_09EEA8F4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C214]
+  us:
+    address: 0x09EEA8F4
+  jp:
+    address: 0x09EC1CE8
+  eu:
+    address: 0x09F76964
+- name: gUnk_09EEA8F8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C22A]
+  us:
+    address: 0x09EEA8F8
+  jp:
+    address: 0x09EC1CEC
+  eu:
+    address: 0x09F76968
+- name: gUnk_09EEA8FC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C240]
+  us:
+    address: 0x09EEA8FC
+  jp:
+    address: 0x09EC1CF0
+  eu:
+    address: 0x09F7696C
+- name: gUnk_09EEA900
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C256]
+  us:
+    address: 0x09EEA900
+  jp:
+    address: 0x09EC1CF4
+  eu:
+    address: 0x09F76970
+- name: gUnk_09EEA904
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C26C]
+  us:
+    address: 0x09EEA904
+  jp:
+    address: 0x09EC1CF8
+  eu:
+    address: 0x09F76974
+- name: gUnk_09EEA908
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C282]
+  us:
+    address: 0x09EEA908
+  jp:
+    address: 0x09EC1CFC
+  eu:
+    address: 0x09F76978
+- name: gUnk_09EEA90C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C298]
+  us:
+    address: 0x09EEA90C
+  jp:
+    address: 0x09EC1D00
+  eu:
+    address: 0x09F7697C
+- name: gUnk_09EEA910
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C2AE]
+  us:
+    address: 0x09EEA910
+  jp:
+    address: 0x09EC1D04
+  eu:
+    address: 0x09F76980
+- name: gUnk_09EEA914
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C2C4]
+  us:
+    address: 0x09EEA914
+  jp:
+    address: 0x09EC1D08
+  eu:
+    address: 0x09F76984
+- name: gUnk_09EEA918
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C2DA]
+  us:
+    address: 0x09EEA918
+  jp:
+    address: 0x09EC1D0C
+  eu:
+    address: 0x09F76988
+- name: gUnk_09EEA91C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C2F0]
+  us:
+    address: 0x09EEA91C
+  jp:
+    address: 0x09EC1D10
+  eu:
+    address: 0x09F7698C
+- name: gUnk_09EEA920
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C306]
+  us:
+    address: 0x09EEA920
+  jp:
+    address: 0x09EC1D14
+  eu:
+    address: 0x09F76990
+- name: gUnk_09EEA924
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C31C]
+  us:
+    address: 0x09EEA924
+  jp:
+    address: 0x09EC1D18
+  eu:
+    address: 0x09F76994
+- name: gUnk_09EEA928
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C332]
+  us:
+    address: 0x09EEA928
+  jp:
+    address: 0x09EC1D1C
+  eu:
+    address: 0x09F76998
+- name: gUnk_09EEA92C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C348]
+  us:
+    address: 0x09EEA92C
+  jp:
+    address: 0x09EC1D20
+  eu:
+    address: 0x09F7699C
+- name: gUnk_09EEA930
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C35E]
+  us:
+    address: 0x09EEA930
+  jp:
+    address: 0x09EC1D24
+  eu:
+    address: 0x09F769A0
+- name: gUnk_09EEA934
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C374]
+  us:
+    address: 0x09EEA934
+  jp:
+    address: 0x09EC1D28
+  eu:
+    address: 0x09F769A4
+- name: gUnk_09EEA938
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C38A]
+  us:
+    address: 0x09EEA938
+  jp:
+    address: 0x09EC1D2C
+  eu:
+    address: 0x09F769A8
+- name: gUnk_09EEA93C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C3A0]
+  us:
+    address: 0x09EEA93C
+  jp:
+    address: 0x09EC1D30
+  eu:
+    address: 0x09F769AC
+- name: gUnk_09EEA940
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C3B6]
+  us:
+    address: 0x09EEA940
+  jp:
+    address: 0x09EC1D34
+  eu:
+    address: 0x09F769B0
+- name: gUnk_09EEA944
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C3CC]
+  us:
+    address: 0x09EEA944
+  jp:
+    address: 0x09EC1D38
+  eu:
+    address: 0x09F769B4
+- name: gUnk_09EEA948
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C3E2]
+  us:
+    address: 0x09EEA948
+  jp:
+    address: 0x09EC1D3C
+  eu:
+    address: 0x09F769B8
+- name: gUnk_09EEA94C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C3F8]
+  us:
+    address: 0x09EEA94C
+  jp:
+    address: 0x09EC1D40
+  eu:
+    address: 0x09F769BC
+- name: gUnk_09EEA950
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C40E]
+  us:
+    address: 0x09EEA950
+  jp:
+    address: 0x09EC1D44
+  eu:
+    address: 0x09F769C0
+- name: gUnk_09EEA954
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C424]
+  us:
+    address: 0x09EEA954
+  jp:
+    address: 0x09EC1D48
+  eu:
+    address: 0x09F769C4
+- name: gUnk_09EEA958
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C43A]
+  us:
+    address: 0x09EEA958
+  jp:
+    address: 0x09EC1D4C
+  eu:
+    address: 0x09F769C8
+- name: gUnk_09EEA95C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C450]
+  us:
+    address: 0x09EEA95C
+  jp:
+    address: 0x09EC1D50
+  eu:
+    address: 0x09F769CC
+- name: gUnk_09EEA960
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C466]
+  us:
+    address: 0x09EEA960
+  jp:
+    address: 0x09EC1D54
+  eu:
+    address: 0x09F769D0
+- name: gUnk_09EEA964
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C47C]
+  us:
+    address: 0x09EEA964
+  jp:
+    address: 0x09EC1D58
+  eu:
+    address: 0x09F769D4
+- name: gUnk_09EEA968
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C492]
+  us:
+    address: 0x09EEA968
+  jp:
+    address: 0x09EC1D5C
+  eu:
+    address: 0x09F769D8
+- name: gUnk_09EEA96C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C4A8]
+  us:
+    address: 0x09EEA96C
+  jp:
+    address: 0x09EC1D60
+  eu:
+    address: 0x09F769DC
+- name: gUnk_09EEA970
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C4BE]
+  us:
+    address: 0x09EEA970
+  jp:
+    address: 0x09EC1D64
+  eu:
+    address: 0x09F769E0
+- name: gUnk_09EEA974
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C4D4]
+  us:
+    address: 0x09EEA974
+  jp:
+    address: 0x09EC1D68
+  eu:
+    address: 0x09F769E4
+- name: gUnk_09EEA978
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C4EA]
+  us:
+    address: 0x09EEA978
+  jp:
+    address: 0x09EC1D6C
+  eu:
+    address: 0x09F769E8
+- name: gUnk_09EEA97C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C500]
+  us:
+    address: 0x09EEA97C
+  jp:
+    address: 0x09EC1D70
+  eu:
+    address: 0x09F769EC
+- name: gUnk_09EEA980
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C50A]
+  us:
+    address: 0x09EEA980
+  jp:
+    address: 0x09EC1D74
+  eu:
+    address: 0x09F769F0
+- name: gUnk_09EEA984
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C514]
+  us:
+    address: 0x09EEA984
+  jp:
+    address: 0x09EC1D78
+  eu:
+    address: 0x09F769F4
+- name: gUnk_09EEA988
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C51E]
+  us:
+    address: 0x09EEA988
+  jp:
+    address: 0x09EC1D7C
+  eu:
+    address: 0x09F769F8
+- name: gUnk_09EEA98C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C528]
+  us:
+    address: 0x09EEA98C
+  jp:
+    address: 0x09EC1D80
+  eu:
+    address: 0x09F769FC
+- name: gUnk_09EEA990
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C532]
+  us:
+    address: 0x09EEA990
+  jp:
+    address: 0x09EC1D84
+  eu:
+    address: 0x09F76A00
+- name: gUnk_09EEA994
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C53C]
+  us:
+    address: 0x09EEA994
+  jp:
+    address: 0x09EC1D88
+  eu:
+    address: 0x09F76A04
+- name: gUnk_09EEA998
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C546]
+  us:
+    address: 0x09EEA998
+  jp:
+    address: 0x09EC1D8C
+  eu:
+    address: 0x09F76A08
+- name: gUnk_09EEA99C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C550]
+  us:
+    address: 0x09EEA99C
+  jp:
+    address: 0x09EC1D90
+  eu:
+    address: 0x09F76A0C
+- name: gUnk_09EEA9A0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C55A]
+  us:
+    address: 0x09EEA9A0
+  jp:
+    address: 0x09EC1D94
+  eu:
+    address: 0x09F76A10
+- name: gUnk_09EEA9A4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C564]
+  us:
+    address: 0x09EEA9A4
+  jp:
+    address: 0x09EC1D98
+  eu:
+    address: 0x09F76A14
+- name: gUnk_09EEA9A8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C56E]
+  us:
+    address: 0x09EEA9A8
+  jp:
+    address: 0x09EC1D9C
+  eu:
+    address: 0x09F76A18
+- name: gUnk_09EEA9AC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C578]
+  us:
+    address: 0x09EEA9AC
+  jp:
+    address: 0x09EC1DA0
+  eu:
+    address: 0x09F76A1C
+- name: gUnk_09EEA9B0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C582]
+  us:
+    address: 0x09EEA9B0
+  jp:
+    address: 0x09EC1DA4
+  eu:
+    address: 0x09F76A20
+- name: gUnk_09EEA9B4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C58C]
+  us:
+    address: 0x09EEA9B4
+  jp:
+    address: 0x09EC1DA8
+  eu:
+    address: 0x09F76A24
+- name: gUnk_09EEA9B8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C596]
+  us:
+    address: 0x09EEA9B8
+  jp:
+    address: 0x09EC1DAC
+  eu:
+    address: 0x09F76A28
+- name: gUnk_09EEA9BC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5A0]
+  us:
+    address: 0x09EEA9BC
+  jp:
+    address: 0x09EC1DB0
+  eu:
+    address: 0x09F76A2C
+- name: gUnk_09EEA9C0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5AA]
+  us:
+    address: 0x09EEA9C0
+  jp:
+    address: 0x09EC1DB4
+  eu:
+    address: 0x09F76A30
+- name: gUnk_09EEA9C4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5B4]
+  us:
+    address: 0x09EEA9C4
+  jp:
+    address: 0x09EC1DB8
+  eu:
+    address: 0x09F76A34
+- name: gUnk_09EEA9C8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5BE]
+  us:
+    address: 0x09EEA9C8
+  jp:
+    address: 0x09EC1DBC
+  eu:
+    address: 0x09F76A38
+- name: gUnk_09EEA9CC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5C8]
+  us:
+    address: 0x09EEA9CC
+  jp:
+    address: 0x09EC1DC0
+  eu:
+    address: 0x09F76A3C
+- name: gUnk_09EEA9D0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5D2]
+  us:
+    address: 0x09EEA9D0
+  jp:
+    address: 0x09EC1DC4
+  eu:
+    address: 0x09F76A40
+- name: gUnk_09EEA9D4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5DC]
+  us:
+    address: 0x09EEA9D4
+  jp:
+    address: 0x09EC1DC8
+  eu:
+    address: 0x09F76A44
+- name: gUnk_09EEA9D8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5E6]
+  us:
+    address: 0x09EEA9D8
+  jp:
+    address: 0x09EC1DCC
+  eu:
+    address: 0x09F76A48
+- name: gUnk_09EEA9DC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5F0]
+  us:
+    address: 0x09EEA9DC
+  jp:
+    address: 0x09EC1DD0
+  eu:
+    address: 0x09F76A4C
+- name: gUnk_09EEA9E0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C5FA]
+  us:
+    address: 0x09EEA9E0
+  jp:
+    address: 0x09EC1DD4
+  eu:
+    address: 0x09F76A50
+- name: gUnk_09EEA9E4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C604]
+  us:
+    address: 0x09EEA9E4
+  jp:
+    address: 0x09EC1DD8
+  eu:
+    address: 0x09F76A54
+- name: gUnk_09EEA9E8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C60E]
+  us:
+    address: 0x09EEA9E8
+  jp:
+    address: 0x09EC1DDC
+  eu:
+    address: 0x09F76A58
+- name: gUnk_09EEA9EC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C618]
+  us:
+    address: 0x09EEA9EC
+  jp:
+    address: 0x09EC1DE0
+  eu:
+    address: 0x09F76A5C
+- name: gUnk_09EEA9F0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C622]
+  us:
+    address: 0x09EEA9F0
+  jp:
+    address: 0x09EC1DE4
+  eu:
+    address: 0x09F76A60
+- name: gUnk_09EEA9F4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C62C]
+  us:
+    address: 0x09EEA9F4
+  jp:
+    address: 0x09EC1DE8
+  eu:
+    address: 0x09F76A64
+- name: gUnk_09EEA9F8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C636]
+  us:
+    address: 0x09EEA9F8
+  jp:
+    address: 0x09EC1DEC
+  eu:
+    address: 0x09F76A68
+- name: gUnk_09EEA9FC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C640]
+  us:
+    address: 0x09EEA9FC
+  jp:
+    address: 0x09EC1DF0
+  eu:
+    address: 0x09F76A6C
+- name: gUnk_09EEAA00
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C64A]
+  us:
+    address: 0x09EEAA00
+  jp:
+    address: 0x09EC1DF4
+  eu:
+    address: 0x09F76A70
+- name: gUnk_09EEAA04
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C654]
+  us:
+    address: 0x09EEAA04
+  jp:
+    address: 0x09EC1DF8
+  eu:
+    address: 0x09F76A74
+- name: gUnk_09EEAA08
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C65E]
+  us:
+    address: 0x09EEAA08
+  jp:
+    address: 0x09EC1DFC
+  eu:
+    address: 0x09F76A78
+- name: gUnk_09EEAA0C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C668]
+  us:
+    address: 0x09EEAA0C
+  jp:
+    address: 0x09EC1E00
+  eu:
+    address: 0x09F76A7C
+- name: gUnk_09EEAA10
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C672]
+  us:
+    address: 0x09EEAA10
+  jp:
+    address: 0x09EC1E04
+  eu:
+    address: 0x09F76A80
+- name: gUnk_09EEAA14
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C67C]
+  us:
+    address: 0x09EEAA14
+  jp:
+    address: 0x09EC1E08
+  eu:
+    address: 0x09F76A84
+- name: gUnk_09EEAA18
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909C686]
+  us:
+    address: 0x09EEAA18
+  jp:
+    address: 0x09EC1E0C
+  eu:
+    address: 0x09F76A88
+- name: gUnk_09EEAA1C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C8D0]
+  us:
+    address: 0x09EEAA1C
+  jp:
+    address: 0x09EC1E10
+  eu:
+    address: 0x09F76A8C
+- name: gUnk_09EEAA20
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C8E0]
+  us:
+    address: 0x09EEAA20
+  jp:
+    address: 0x09EC1E14
+  eu:
+    address: 0x09F76A90
+- name: gUnk_09EEAA24
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C8F0]
+  us:
+    address: 0x09EEAA24
+  jp:
+    address: 0x09EC1E18
+  eu:
+    address: 0x09F76A94
+- name: gUnk_09EEAA28
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C900]
+  us:
+    address: 0x09EEAA28
+  jp:
+    address: 0x09EC1E1C
+  eu:
+    address: 0x09F76A98
+- name: gUnk_09EEAA2C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C910]
+  us:
+    address: 0x09EEAA2C
+  jp:
+    address: 0x09EC1E20
+  eu:
+    address: 0x09F76A9C
+- name: gUnk_09EEAA30
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C920]
+  us:
+    address: 0x09EEAA30
+  jp:
+    address: 0x09EC1E24
+  eu:
+    address: 0x09F76AA0
+- name: gUnk_09EEAA34
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C930]
+  us:
+    address: 0x09EEAA34
+  jp:
+    address: 0x09EC1E28
+  eu:
+    address: 0x09F76AA4
+- name: gUnk_09EEAA38
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C940]
+  us:
+    address: 0x09EEAA38
+  jp:
+    address: 0x09EC1E2C
+  eu:
+    address: 0x09F76AA8
+- name: gUnk_09EEAA3C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C950]
+  us:
+    address: 0x09EEAA3C
+  jp:
+    address: 0x09EC1E30
+  eu:
+    address: 0x09F76AAC
+- name: gUnk_09EEAA40
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C960]
+  us:
+    address: 0x09EEAA40
+  jp:
+    address: 0x09EC1E34
+  eu:
+    address: 0x09F76AB0
+- name: gUnk_09EEAA44
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C976]
+  us:
+    address: 0x09EEAA44
+  jp:
+    address: 0x09EC1E38
+  eu:
+    address: 0x09F76AB4
+- name: gUnk_09EEAA48
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C98C]
+  us:
+    address: 0x09EEAA48
+  jp:
+    address: 0x09EC1E3C
+  eu:
+    address: 0x09F76AB8
+- name: gUnk_09EEAA4C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C9A2]
+  us:
+    address: 0x09EEAA4C
+  jp:
+    address: 0x09EC1E40
+  eu:
+    address: 0x09F76ABC
+- name: gUnk_09EEAA50
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C9B8]
+  us:
+    address: 0x09EEAA50
+  jp:
+    address: 0x09EC1E44
+  eu:
+    address: 0x09F76AC0
+- name: gUnk_09EEAA54
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C9CE]
+  us:
+    address: 0x09EEAA54
+  jp:
+    address: 0x09EC1E48
+  eu:
+    address: 0x09F76AC4
+- name: gUnk_09EEAA58
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C9E4]
+  us:
+    address: 0x09EEAA58
+  jp:
+    address: 0x09EC1E4C
+  eu:
+    address: 0x09F76AC8
+- name: gUnk_09EEAA5C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909C9FA]
+  us:
+    address: 0x09EEAA5C
+  jp:
+    address: 0x09EC1E50
+  eu:
+    address: 0x09F76ACC
+- name: gUnk_09EEAA60
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA10]
+  us:
+    address: 0x09EEAA60
+  jp:
+    address: 0x09EC1E54
+  eu:
+    address: 0x09F76AD0
+- name: gUnk_09EEAA64
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA26]
+  us:
+    address: 0x09EEAA64
+  jp:
+    address: 0x09EC1E58
+  eu:
+    address: 0x09F76AD4
+- name: gUnk_09EEAA68
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA3C]
+  us:
+    address: 0x09EEAA68
+  jp:
+    address: 0x09EC1E5C
+  eu:
+    address: 0x09F76AD8
+- name: gUnk_09EEAA6C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA52]
+  us:
+    address: 0x09EEAA6C
+  jp:
+    address: 0x09EC1E60
+  eu:
+    address: 0x09F76ADC
+- name: gUnk_09EEAA70
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA68]
+  us:
+    address: 0x09EEAA70
+  jp:
+    address: 0x09EC1E64
+  eu:
+    address: 0x09F76AE0
+- name: gUnk_09EEAA74
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA7E]
+  us:
+    address: 0x09EEAA74
+  jp:
+    address: 0x09EC1E68
+  eu:
+    address: 0x09F76AE4
+- name: gUnk_09EEAA78
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CA94]
+  us:
+    address: 0x09EEAA78
+  jp:
+    address: 0x09EC1E6C
+  eu:
+    address: 0x09F76AE8
+- name: gUnk_09EEAA7C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CAAA]
+  us:
+    address: 0x09EEAA7C
+  jp:
+    address: 0x09EC1E70
+  eu:
+    address: 0x09F76AEC
+- name: gUnk_09EEAA80
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CAC0]
+  us:
+    address: 0x09EEAA80
+  jp:
+    address: 0x09EC1E74
+  eu:
+    address: 0x09F76AF0
+- name: gUnk_09EEAA84
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CAD6]
+  us:
+    address: 0x09EEAA84
+  jp:
+    address: 0x09EC1E78
+  eu:
+    address: 0x09F76AF4
+- name: gUnk_09EEAA88
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CAEC]
+  us:
+    address: 0x09EEAA88
+  jp:
+    address: 0x09EC1E7C
+  eu:
+    address: 0x09F76AF8
+- name: gUnk_09EEAA8C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB02]
+  us:
+    address: 0x09EEAA8C
+  jp:
+    address: 0x09EC1E80
+  eu:
+    address: 0x09F76AFC
+- name: gUnk_09EEAA90
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB18]
+  us:
+    address: 0x09EEAA90
+  jp:
+    address: 0x09EC1E84
+  eu:
+    address: 0x09F76B00
+- name: gUnk_09EEAA94
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB2E]
+  us:
+    address: 0x09EEAA94
+  jp:
+    address: 0x09EC1E88
+  eu:
+    address: 0x09F76B04
+- name: gUnk_09EEAA98
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB44]
+  us:
+    address: 0x09EEAA98
+  jp:
+    address: 0x09EC1E8C
+  eu:
+    address: 0x09F76B08
+- name: gUnk_09EEAA9C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB5A]
+  us:
+    address: 0x09EEAA9C
+  jp:
+    address: 0x09EC1E90
+  eu:
+    address: 0x09F76B0C
+- name: gUnk_09EEAAA0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB70]
+  us:
+    address: 0x09EEAAA0
+  jp:
+    address: 0x09EC1E94
+  eu:
+    address: 0x09F76B10
+- name: gUnk_09EEAAA4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB86]
+  us:
+    address: 0x09EEAAA4
+  jp:
+    address: 0x09EC1E98
+  eu:
+    address: 0x09F76B14
+- name: gUnk_09EEAAA8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CB9C]
+  us:
+    address: 0x09EEAAA8
+  jp:
+    address: 0x09EC1E9C
+  eu:
+    address: 0x09F76B18
+- name: gUnk_09EEAAAC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CBB2]
+  us:
+    address: 0x09EEAAAC
+  jp:
+    address: 0x09EC1EA0
+  eu:
+    address: 0x09F76B1C
+- name: gUnk_09EEAAB0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CBC8]
+  us:
+    address: 0x09EEAAB0
+  jp:
+    address: 0x09EC1EA4
+  eu:
+    address: 0x09F76B20
+- name: gUnk_09EEAAB4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CBDE]
+  us:
+    address: 0x09EEAAB4
+  jp:
+    address: 0x09EC1EA8
+  eu:
+    address: 0x09F76B24
+- name: gUnk_09EEAAB8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CBF4]
+  us:
+    address: 0x09EEAAB8
+  jp:
+    address: 0x09EC1EAC
+  eu:
+    address: 0x09F76B28
+- name: gUnk_09EEAABC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC0A]
+  us:
+    address: 0x09EEAABC
+  jp:
+    address: 0x09EC1EB0
+  eu:
+    address: 0x09F76B2C
+- name: gUnk_09EEAAC0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC20]
+  us:
+    address: 0x09EEAAC0
+  jp:
+    address: 0x09EC1EB4
+  eu:
+    address: 0x09F76B30
+- name: gUnk_09EEAAC4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC36]
+  us:
+    address: 0x09EEAAC4
+  jp:
+    address: 0x09EC1EB8
+  eu:
+    address: 0x09F76B34
+- name: gUnk_09EEAAC8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC4C]
+  us:
+    address: 0x09EEAAC8
+  jp:
+    address: 0x09EC1EBC
+  eu:
+    address: 0x09F76B38
+- name: gUnk_09EEAACC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC62]
+  us:
+    address: 0x09EEAACC
+  jp:
+    address: 0x09EC1EC0
+  eu:
+    address: 0x09F76B3C
+- name: gUnk_09EEAAD0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC78]
+  us:
+    address: 0x09EEAAD0
+  jp:
+    address: 0x09EC1EC4
+  eu:
+    address: 0x09F76B40
+- name: gUnk_09EEAAD4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CC8E]
+  us:
+    address: 0x09EEAAD4
+  jp:
+    address: 0x09EC1EC8
+  eu:
+    address: 0x09F76B44
+- name: gUnk_09EEAAD8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CCA4]
+  us:
+    address: 0x09EEAAD8
+  jp:
+    address: 0x09EC1ECC
+  eu:
+    address: 0x09F76B48
+- name: gUnk_09EEAADC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CCBA]
+  us:
+    address: 0x09EEAADC
+  jp:
+    address: 0x09EC1ED0
+  eu:
+    address: 0x09F76B4C
+- name: gUnk_09EEAAE0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CCD0]
+  us:
+    address: 0x09EEAAE0
+  jp:
+    address: 0x09EC1ED4
+  eu:
+    address: 0x09F76B50
+- name: gUnk_09EEAAE4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CCE6]
+  us:
+    address: 0x09EEAAE4
+  jp:
+    address: 0x09EC1ED8
+  eu:
+    address: 0x09F76B54
+- name: gUnk_09EEAAE8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CCFC]
+  us:
+    address: 0x09EEAAE8
+  jp:
+    address: 0x09EC1EDC
+  eu:
+    address: 0x09F76B58
+- name: gUnk_09EEAAEC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD12]
+  us:
+    address: 0x09EEAAEC
+  jp:
+    address: 0x09EC1EE0
+  eu:
+    address: 0x09F76B5C
+- name: gUnk_09EEAAF0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD28]
+  us:
+    address: 0x09EEAAF0
+  jp:
+    address: 0x09EC1EE4
+  eu:
+    address: 0x09F76B60
+- name: gUnk_09EEAAF4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD3E]
+  us:
+    address: 0x09EEAAF4
+  jp:
+    address: 0x09EC1EE8
+  eu:
+    address: 0x09F76B64
+- name: gUnk_09EEAAF8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD54]
+  us:
+    address: 0x09EEAAF8
+  jp:
+    address: 0x09EC1EEC
+  eu:
+    address: 0x09F76B68
+- name: gUnk_09EEAAFC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD6A]
+  us:
+    address: 0x09EEAAFC
+  jp:
+    address: 0x09EC1EF0
+  eu:
+    address: 0x09F76B6C
+- name: gUnk_09EEAB00
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD80]
+  us:
+    address: 0x09EEAB00
+  jp:
+    address: 0x09EC1EF4
+  eu:
+    address: 0x09F76B70
+- name: gUnk_09EEAB04
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CD96]
+  us:
+    address: 0x09EEAB04
+  jp:
+    address: 0x09EC1EF8
+  eu:
+    address: 0x09F76B74
+- name: gUnk_09EEAB08
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CDAC]
+  us:
+    address: 0x09EEAB08
+  jp:
+    address: 0x09EC1EFC
+  eu:
+    address: 0x09F76B78
+- name: gUnk_09EEAB0C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CDC2]
+  us:
+    address: 0x09EEAB0C
+  jp:
+    address: 0x09EC1F00
+  eu:
+    address: 0x09F76B7C
+- name: gUnk_09EEAB10
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CDD8]
+  us:
+    address: 0x09EEAB10
+  jp:
+    address: 0x09EC1F04
+  eu:
+    address: 0x09F76B80
+- name: gUnk_09EEAB14
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CDEE]
+  us:
+    address: 0x09EEAB14
+  jp:
+    address: 0x09EC1F08
+  eu:
+    address: 0x09F76B84
+- name: gUnk_09EEAB18
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE04]
+  us:
+    address: 0x09EEAB18
+  jp:
+    address: 0x09EC1F0C
+  eu:
+    address: 0x09F76B88
+- name: gUnk_09EEAB1C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE1A]
+  us:
+    address: 0x09EEAB1C
+  jp:
+    address: 0x09EC1F10
+  eu:
+    address: 0x09F76B8C
+- name: gUnk_09EEAB20
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE30]
+  us:
+    address: 0x09EEAB20
+  jp:
+    address: 0x09EC1F14
+  eu:
+    address: 0x09F76B90
+- name: gUnk_09EEAB24
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE46]
+  us:
+    address: 0x09EEAB24
+  jp:
+    address: 0x09EC1F18
+  eu:
+    address: 0x09F76B94
+- name: gUnk_09EEAB28
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE5C]
+  us:
+    address: 0x09EEAB28
+  jp:
+    address: 0x09EC1F1C
+  eu:
+    address: 0x09F76B98
+- name: gUnk_09EEAB2C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE72]
+  us:
+    address: 0x09EEAB2C
+  jp:
+    address: 0x09EC1F20
+  eu:
+    address: 0x09F76B9C
+- name: gUnk_09EEAB30
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE88]
+  us:
+    address: 0x09EEAB30
+  jp:
+    address: 0x09EC1F24
+  eu:
+    address: 0x09F76BA0
+- name: gUnk_09EEAB34
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CE9E]
+  us:
+    address: 0x09EEAB34
+  jp:
+    address: 0x09EC1F28
+  eu:
+    address: 0x09F76BA4
+- name: gUnk_09EEAB38
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CEB4]
+  us:
+    address: 0x09EEAB38
+  jp:
+    address: 0x09EC1F2C
+  eu:
+    address: 0x09F76BA8
+- name: gUnk_09EEAB3C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CECA]
+  us:
+    address: 0x09EEAB3C
+  jp:
+    address: 0x09EC1F30
+  eu:
+    address: 0x09F76BAC
+- name: gUnk_09EEAB40
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CEE0]
+  us:
+    address: 0x09EEAB40
+  jp:
+    address: 0x09EC1F34
+  eu:
+    address: 0x09F76BB0
+- name: gUnk_09EEAB44
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CEF6]
+  us:
+    address: 0x09EEAB44
+  jp:
+    address: 0x09EC1F38
+  eu:
+    address: 0x09F76BB4
+- name: gUnk_09EEAB48
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF0C]
+  us:
+    address: 0x09EEAB48
+  jp:
+    address: 0x09EC1F3C
+  eu:
+    address: 0x09F76BB8
+- name: gUnk_09EEAB4C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF22]
+  us:
+    address: 0x09EEAB4C
+  jp:
+    address: 0x09EC1F40
+  eu:
+    address: 0x09F76BBC
+- name: gUnk_09EEAB50
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF38]
+  us:
+    address: 0x09EEAB50
+  jp:
+    address: 0x09EC1F44
+  eu:
+    address: 0x09F76BC0
+- name: gUnk_09EEAB54
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF4E]
+  us:
+    address: 0x09EEAB54
+  jp:
+    address: 0x09EC1F48
+  eu:
+    address: 0x09F76BC4
+- name: gUnk_09EEAB58
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF64]
+  us:
+    address: 0x09EEAB58
+  jp:
+    address: 0x09EC1F4C
+  eu:
+    address: 0x09F76BC8
+- name: gUnk_09EEAB5C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF7A]
+  us:
+    address: 0x09EEAB5C
+  jp:
+    address: 0x09EC1F50
+  eu:
+    address: 0x09F76BCC
+- name: gUnk_09EEAB60
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CF90]
+  us:
+    address: 0x09EEAB60
+  jp:
+    address: 0x09EC1F54
+  eu:
+    address: 0x09F76BD0
+- name: gUnk_09EEAB64
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CFA6]
+  us:
+    address: 0x09EEAB64
+  jp:
+    address: 0x09EC1F58
+  eu:
+    address: 0x09F76BD4
+- name: gUnk_09EEAB68
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CFBC]
+  us:
+    address: 0x09EEAB68
+  jp:
+    address: 0x09EC1F5C
+  eu:
+    address: 0x09F76BD8
+- name: gUnk_09EEAB6C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CFD2]
+  us:
+    address: 0x09EEAB6C
+  jp:
+    address: 0x09EC1F60
+  eu:
+    address: 0x09F76BDC
+- name: gUnk_09EEAB70
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CFE8]
+  us:
+    address: 0x09EEAB70
+  jp:
+    address: 0x09EC1F64
+  eu:
+    address: 0x09F76BE0
+- name: gUnk_09EEAB74
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909CFFE]
+  us:
+    address: 0x09EEAB74
+  jp:
+    address: 0x09EC1F68
+  eu:
+    address: 0x09F76BE4
+- name: gUnk_09EEAB78
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D014]
+  us:
+    address: 0x09EEAB78
+  jp:
+    address: 0x09EC1F6C
+  eu:
+    address: 0x09F76BE8
+- name: gUnk_09EEAB7C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D02A]
+  us:
+    address: 0x09EEAB7C
+  jp:
+    address: 0x09EC1F70
+  eu:
+    address: 0x09F76BEC
+- name: gUnk_09EEAB80
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D040]
+  us:
+    address: 0x09EEAB80
+  jp:
+    address: 0x09EC1F74
+  eu:
+    address: 0x09F76BF0
+- name: gUnk_09EEAB84
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D056]
+  us:
+    address: 0x09EEAB84
+  jp:
+    address: 0x09EC1F78
+  eu:
+    address: 0x09F76BF4
+- name: gUnk_09EEAB88
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D06C]
+  us:
+    address: 0x09EEAB88
+  jp:
+    address: 0x09EC1F7C
+  eu:
+    address: 0x09F76BF8
+- name: gUnk_09EEAB8C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D082]
+  us:
+    address: 0x09EEAB8C
+  jp:
+    address: 0x09EC1F80
+  eu:
+    address: 0x09F76BFC
+- name: gUnk_09EEAB90
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D098]
+  us:
+    address: 0x09EEAB90
+  jp:
+    address: 0x09EC1F84
+  eu:
+    address: 0x09F76C00
+- name: gUnk_09EEAB94
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D0AE]
+  us:
+    address: 0x09EEAB94
+  jp:
+    address: 0x09EC1F88
+  eu:
+    address: 0x09F76C04
+- name: gUnk_09EEAB98
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D0C4]
+  us:
+    address: 0x09EEAB98
+  jp:
+    address: 0x09EC1F8C
+  eu:
+    address: 0x09F76C08
+- name: gUnk_09EEAB9C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D0DA]
+  us:
+    address: 0x09EEAB9C
+  jp:
+    address: 0x09EC1F90
+  eu:
+    address: 0x09F76C0C
+- name: gUnk_09EEABA0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D0F0]
+  us:
+    address: 0x09EEABA0
+  jp:
+    address: 0x09EC1F94
+  eu:
+    address: 0x09F76C10
+- name: gUnk_09EEABA4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D106]
+  us:
+    address: 0x09EEABA4
+  jp:
+    address: 0x09EC1F98
+  eu:
+    address: 0x09F76C14
+- name: gUnk_09EEABA8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D11C]
+  us:
+    address: 0x09EEABA8
+  jp:
+    address: 0x09EC1F9C
+  eu:
+    address: 0x09F76C18
+- name: gUnk_09EEABAC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D126]
+  us:
+    address: 0x09EEABAC
+  jp:
+    address: 0x09EC1FA0
+  eu:
+    address: 0x09F76C1C
+- name: gUnk_09EEABB0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D130]
+  us:
+    address: 0x09EEABB0
+  jp:
+    address: 0x09EC1FA4
+  eu:
+    address: 0x09F76C20
+- name: gUnk_09EEABB4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D13A]
+  us:
+    address: 0x09EEABB4
+  jp:
+    address: 0x09EC1FA8
+  eu:
+    address: 0x09F76C24
+- name: gUnk_09EEABB8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D144]
+  us:
+    address: 0x09EEABB8
+  jp:
+    address: 0x09EC1FAC
+  eu:
+    address: 0x09F76C28
+- name: gUnk_09EEABBC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D14E]
+  us:
+    address: 0x09EEABBC
+  jp:
+    address: 0x09EC1FB0
+  eu:
+    address: 0x09F76C2C
+- name: gUnk_09EEABC0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D158]
+  us:
+    address: 0x09EEABC0
+  jp:
+    address: 0x09EC1FB4
+  eu:
+    address: 0x09F76C30
+- name: gUnk_09EEABC4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D162]
+  us:
+    address: 0x09EEABC4
+  jp:
+    address: 0x09EC1FB8
+  eu:
+    address: 0x09F76C34
+- name: gUnk_09EEABC8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D16C]
+  us:
+    address: 0x09EEABC8
+  jp:
+    address: 0x09EC1FBC
+  eu:
+    address: 0x09F76C38
+- name: gUnk_09EEABCC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D176]
+  us:
+    address: 0x09EEABCC
+  jp:
+    address: 0x09EC1FC0
+  eu:
+    address: 0x09F76C3C
+- name: gUnk_09EEABD0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D180]
+  us:
+    address: 0x09EEABD0
+  jp:
+    address: 0x09EC1FC4
+  eu:
+    address: 0x09F76C40
+- name: gUnk_09EEABD4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D18A]
+  us:
+    address: 0x09EEABD4
+  jp:
+    address: 0x09EC1FC8
+  eu:
+    address: 0x09F76C44
+- name: gUnk_09EEABD8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D194]
+  us:
+    address: 0x09EEABD8
+  jp:
+    address: 0x09EC1FCC
+  eu:
+    address: 0x09F76C48
+- name: gUnk_09EEABDC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D19E]
+  us:
+    address: 0x09EEABDC
+  jp:
+    address: 0x09EC1FD0
+  eu:
+    address: 0x09F76C4C
+- name: gUnk_09EEABE0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1A8]
+  us:
+    address: 0x09EEABE0
+  jp:
+    address: 0x09EC1FD4
+  eu:
+    address: 0x09F76C50
+- name: gUnk_09EEABE4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1B2]
+  us:
+    address: 0x09EEABE4
+  jp:
+    address: 0x09EC1FD8
+  eu:
+    address: 0x09F76C54
+- name: gUnk_09EEABE8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1BC]
+  us:
+    address: 0x09EEABE8
+  jp:
+    address: 0x09EC1FDC
+  eu:
+    address: 0x09F76C58
+- name: gUnk_09EEABEC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1C6]
+  us:
+    address: 0x09EEABEC
+  jp:
+    address: 0x09EC1FE0
+  eu:
+    address: 0x09F76C5C
+- name: gUnk_09EEABF0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1D0]
+  us:
+    address: 0x09EEABF0
+  jp:
+    address: 0x09EC1FE4
+  eu:
+    address: 0x09F76C60
+- name: gUnk_09EEABF4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1DA]
+  us:
+    address: 0x09EEABF4
+  jp:
+    address: 0x09EC1FE8
+  eu:
+    address: 0x09F76C64
+- name: gUnk_09EEABF8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1E4]
+  us:
+    address: 0x09EEABF8
+  jp:
+    address: 0x09EC1FEC
+  eu:
+    address: 0x09F76C68
+- name: gUnk_09EEABFC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1EE]
+  us:
+    address: 0x09EEABFC
+  jp:
+    address: 0x09EC1FF0
+  eu:
+    address: 0x09F76C6C
+- name: gUnk_09EEAC00
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D1F8]
+  us:
+    address: 0x09EEAC00
+  jp:
+    address: 0x09EC1FF4
+  eu:
+    address: 0x09F76C70
+- name: gUnk_09EEAC04
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D202]
+  us:
+    address: 0x09EEAC04
+  jp:
+    address: 0x09EC1FF8
+  eu:
+    address: 0x09F76C74
+- name: gUnk_09EEAC08
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D20C]
+  us:
+    address: 0x09EEAC08
+  jp:
+    address: 0x09EC1FFC
+  eu:
+    address: 0x09F76C78
+- name: gUnk_09EEAC0C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D216]
+  us:
+    address: 0x09EEAC0C
+  jp:
+    address: 0x09EC2000
+  eu:
+    address: 0x09F76C7C
+- name: gUnk_09EEAC10
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D220]
+  us:
+    address: 0x09EEAC10
+  jp:
+    address: 0x09EC2004
+  eu:
+    address: 0x09F76C80
+- name: gUnk_09EEAC14
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D22A]
+  us:
+    address: 0x09EEAC14
+  jp:
+    address: 0x09EC2008
+  eu:
+    address: 0x09F76C84
+- name: gUnk_09EEAC18
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D234]
+  us:
+    address: 0x09EEAC18
+  jp:
+    address: 0x09EC200C
+  eu:
+    address: 0x09F76C88
+- name: gUnk_09EEAC1C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D23E]
+  us:
+    address: 0x09EEAC1C
+  jp:
+    address: 0x09EC2010
+  eu:
+    address: 0x09F76C8C
+- name: gUnk_09EEAC20
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D248]
+  us:
+    address: 0x09EEAC20
+  jp:
+    address: 0x09EC2014
+  eu:
+    address: 0x09F76C90
+- name: gUnk_09EEAC24
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D252]
+  us:
+    address: 0x09EEAC24
+  jp:
+    address: 0x09EC2018
+  eu:
+    address: 0x09F76C94
+- name: gUnk_09EEAC28
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D25C]
+  us:
+    address: 0x09EEAC28
+  jp:
+    address: 0x09EC201C
+  eu:
+    address: 0x09F76C98
+- name: gUnk_09EEAC2C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D266]
+  us:
+    address: 0x09EEAC2C
+  jp:
+    address: 0x09EC2020
+  eu:
+    address: 0x09F76C9C
+- name: gUnk_09EEAC30
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D270]
+  us:
+    address: 0x09EEAC30
+  jp:
+    address: 0x09EC2024
+  eu:
+    address: 0x09F76CA0
+- name: gUnk_09EEAC34
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D27A]
+  us:
+    address: 0x09EEAC34
+  jp:
+    address: 0x09EC2028
+  eu:
+    address: 0x09F76CA4
+- name: gUnk_09EEAC38
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D284]
+  us:
+    address: 0x09EEAC38
+  jp:
+    address: 0x09EC202C
+  eu:
+    address: 0x09F76CA8
+- name: gUnk_09EEAC3C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D28E]
+  us:
+    address: 0x09EEAC3C
+  jp:
+    address: 0x09EC2030
+  eu:
+    address: 0x09F76CAC
+- name: gUnk_09EEAC40
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D298]
+  us:
+    address: 0x09EEAC40
+  jp:
+    address: 0x09EC2034
+  eu:
+    address: 0x09F76CB0
+- name: gUnk_09EEAC44
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909D2A2]
+  us:
+    address: 0x09EEAC44
+  jp:
+    address: 0x09EC2038
+  eu:
+    address: 0x09F76CB4
+- name: gUnk_09EEAC48
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D4EC]
+  us:
+    address: 0x09EEAC48
+  jp:
+    address: 0x09EC203C
+  eu:
+    address: 0x09F76CB8
+- name: gUnk_09EEAC4C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D4FC]
+  us:
+    address: 0x09EEAC4C
+  jp:
+    address: 0x09EC2040
+  eu:
+    address: 0x09F76CBC
+- name: gUnk_09EEAC50
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D50C]
+  us:
+    address: 0x09EEAC50
+  jp:
+    address: 0x09EC2044
+  eu:
+    address: 0x09F76CC0
+- name: gUnk_09EEAC54
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D51C]
+  us:
+    address: 0x09EEAC54
+  jp:
+    address: 0x09EC2048
+  eu:
+    address: 0x09F76CC4
+- name: gUnk_09EEAC58
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D52C]
+  us:
+    address: 0x09EEAC58
+  jp:
+    address: 0x09EC204C
+  eu:
+    address: 0x09F76CC8
+- name: gUnk_09EEAC5C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D53C]
+  us:
+    address: 0x09EEAC5C
+  jp:
+    address: 0x09EC2050
+  eu:
+    address: 0x09F76CCC
+- name: gUnk_09EEAC60
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D54C]
+  us:
+    address: 0x09EEAC60
+  jp:
+    address: 0x09EC2054
+  eu:
+    address: 0x09F76CD0
+- name: gUnk_09EEAC64
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D55C]
+  us:
+    address: 0x09EEAC64
+  jp:
+    address: 0x09EC2058
+  eu:
+    address: 0x09F76CD4
+- name: gUnk_09EEAC68
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D56C]
+  us:
+    address: 0x09EEAC68
+  jp:
+    address: 0x09EC205C
+  eu:
+    address: 0x09F76CD8
+- name: gUnk_09EEAC6C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D57C]
+  us:
+    address: 0x09EEAC6C
+  jp:
+    address: 0x09EC2060
+  eu:
+    address: 0x09F76CDC
+- name: gUnk_09EEAC70
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D592]
+  us:
+    address: 0x09EEAC70
+  jp:
+    address: 0x09EC2064
+  eu:
+    address: 0x09F76CE0
+- name: gUnk_09EEAC74
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D5A8]
+  us:
+    address: 0x09EEAC74
+  jp:
+    address: 0x09EC2068
+  eu:
+    address: 0x09F76CE4
+- name: gUnk_09EEAC78
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D5BE]
+  us:
+    address: 0x09EEAC78
+  jp:
+    address: 0x09EC206C
+  eu:
+    address: 0x09F76CE8
+- name: gUnk_09EEAC7C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D5D4]
+  us:
+    address: 0x09EEAC7C
+  jp:
+    address: 0x09EC2070
+  eu:
+    address: 0x09F76CEC
+- name: gUnk_09EEAC80
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D5EA]
+  us:
+    address: 0x09EEAC80
+  jp:
+    address: 0x09EC2074
+  eu:
+    address: 0x09F76CF0
+- name: gUnk_09EEAC84
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D600]
+  us:
+    address: 0x09EEAC84
+  jp:
+    address: 0x09EC2078
+  eu:
+    address: 0x09F76CF4
+- name: gUnk_09EEAC88
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D616]
+  us:
+    address: 0x09EEAC88
+  jp:
+    address: 0x09EC207C
+  eu:
+    address: 0x09F76CF8
+- name: gUnk_09EEAC8C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D62C]
+  us:
+    address: 0x09EEAC8C
+  jp:
+    address: 0x09EC2080
+  eu:
+    address: 0x09F76CFC
+- name: gUnk_09EEAC90
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D642]
+  us:
+    address: 0x09EEAC90
+  jp:
+    address: 0x09EC2084
+  eu:
+    address: 0x09F76D00
+- name: gUnk_09EEAC94
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D658]
+  us:
+    address: 0x09EEAC94
+  jp:
+    address: 0x09EC2088
+  eu:
+    address: 0x09F76D04
+- name: gUnk_09EEAC98
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D66E]
+  us:
+    address: 0x09EEAC98
+  jp:
+    address: 0x09EC208C
+  eu:
+    address: 0x09F76D08
+- name: gUnk_09EEAC9C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D684]
+  us:
+    address: 0x09EEAC9C
+  jp:
+    address: 0x09EC2090
+  eu:
+    address: 0x09F76D0C
+- name: gUnk_09EEACA0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D69A]
+  us:
+    address: 0x09EEACA0
+  jp:
+    address: 0x09EC2094
+  eu:
+    address: 0x09F76D10
+- name: gUnk_09EEACA4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D6B0]
+  us:
+    address: 0x09EEACA4
+  jp:
+    address: 0x09EC2098
+  eu:
+    address: 0x09F76D14
+- name: gUnk_09EEACA8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D6C6]
+  us:
+    address: 0x09EEACA8
+  jp:
+    address: 0x09EC209C
+  eu:
+    address: 0x09F76D18
+- name: gUnk_09EEACAC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D6DC]
+  us:
+    address: 0x09EEACAC
+  jp:
+    address: 0x09EC20A0
+  eu:
+    address: 0x09F76D1C
+- name: gUnk_09EEACB0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D6F2]
+  us:
+    address: 0x09EEACB0
+  jp:
+    address: 0x09EC20A4
+  eu:
+    address: 0x09F76D20
+- name: gUnk_09EEACB4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D708]
+  us:
+    address: 0x09EEACB4
+  jp:
+    address: 0x09EC20A8
+  eu:
+    address: 0x09F76D24
+- name: gUnk_09EEACB8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D71E]
+  us:
+    address: 0x09EEACB8
+  jp:
+    address: 0x09EC20AC
+  eu:
+    address: 0x09F76D28
+- name: gUnk_09EEACBC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D734]
+  us:
+    address: 0x09EEACBC
+  jp:
+    address: 0x09EC20B0
+  eu:
+    address: 0x09F76D2C
+- name: gUnk_09EEACC0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D74A]
+  us:
+    address: 0x09EEACC0
+  jp:
+    address: 0x09EC20B4
+  eu:
+    address: 0x09F76D30
+- name: gUnk_09EEACC4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D760]
+  us:
+    address: 0x09EEACC4
+  jp:
+    address: 0x09EC20B8
+  eu:
+    address: 0x09F76D34
+- name: gUnk_09EEACC8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D776]
+  us:
+    address: 0x09EEACC8
+  jp:
+    address: 0x09EC20BC
+  eu:
+    address: 0x09F76D38
+- name: gUnk_09EEACCC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D78C]
+  us:
+    address: 0x09EEACCC
+  jp:
+    address: 0x09EC20C0
+  eu:
+    address: 0x09F76D3C
+- name: gUnk_09EEACD0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D7A2]
+  us:
+    address: 0x09EEACD0
+  jp:
+    address: 0x09EC20C4
+  eu:
+    address: 0x09F76D40
+- name: gUnk_09EEACD4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D7B8]
+  us:
+    address: 0x09EEACD4
+  jp:
+    address: 0x09EC20C8
+  eu:
+    address: 0x09F76D44
+- name: gUnk_09EEACD8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D7CE]
+  us:
+    address: 0x09EEACD8
+  jp:
+    address: 0x09EC20CC
+  eu:
+    address: 0x09F76D48
+- name: gUnk_09EEACDC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D7E4]
+  us:
+    address: 0x09EEACDC
+  jp:
+    address: 0x09EC20D0
+  eu:
+    address: 0x09F76D4C
+- name: gUnk_09EEACE0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D7FA]
+  us:
+    address: 0x09EEACE0
+  jp:
+    address: 0x09EC20D4
+  eu:
+    address: 0x09F76D50
+- name: gUnk_09EEACE4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D810]
+  us:
+    address: 0x09EEACE4
+  jp:
+    address: 0x09EC20D8
+  eu:
+    address: 0x09F76D54
+- name: gUnk_09EEACE8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D826]
+  us:
+    address: 0x09EEACE8
+  jp:
+    address: 0x09EC20DC
+  eu:
+    address: 0x09F76D58
+- name: gUnk_09EEACEC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D83C]
+  us:
+    address: 0x09EEACEC
+  jp:
+    address: 0x09EC20E0
+  eu:
+    address: 0x09F76D5C
+- name: gUnk_09EEACF0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D852]
+  us:
+    address: 0x09EEACF0
+  jp:
+    address: 0x09EC20E4
+  eu:
+    address: 0x09F76D60
+- name: gUnk_09EEACF4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D868]
+  us:
+    address: 0x09EEACF4
+  jp:
+    address: 0x09EC20E8
+  eu:
+    address: 0x09F76D64
+- name: gUnk_09EEACF8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D87E]
+  us:
+    address: 0x09EEACF8
+  jp:
+    address: 0x09EC20EC
+  eu:
+    address: 0x09F76D68
+- name: gUnk_09EEACFC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D894]
+  us:
+    address: 0x09EEACFC
+  jp:
+    address: 0x09EC20F0
+  eu:
+    address: 0x09F76D6C
+- name: gUnk_09EEAD00
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D8AA]
+  us:
+    address: 0x09EEAD00
+  jp:
+    address: 0x09EC20F4
+  eu:
+    address: 0x09F76D70
+- name: gUnk_09EEAD04
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D8C0]
+  us:
+    address: 0x09EEAD04
+  jp:
+    address: 0x09EC20F8
+  eu:
+    address: 0x09F76D74
+- name: gUnk_09EEAD08
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D8D6]
+  us:
+    address: 0x09EEAD08
+  jp:
+    address: 0x09EC20FC
+  eu:
+    address: 0x09F76D78
+- name: gUnk_09EEAD0C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D8EC]
+  us:
+    address: 0x09EEAD0C
+  jp:
+    address: 0x09EC2100
+  eu:
+    address: 0x09F76D7C
+- name: gUnk_09EEAD10
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D902]
+  us:
+    address: 0x09EEAD10
+  jp:
+    address: 0x09EC2104
+  eu:
+    address: 0x09F76D80
+- name: gUnk_09EEAD14
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D918]
+  us:
+    address: 0x09EEAD14
+  jp:
+    address: 0x09EC2108
+  eu:
+    address: 0x09F76D84
+- name: gUnk_09EEAD18
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D92E]
+  us:
+    address: 0x09EEAD18
+  jp:
+    address: 0x09EC210C
+  eu:
+    address: 0x09F76D88
+- name: gUnk_09EEAD1C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D944]
+  us:
+    address: 0x09EEAD1C
+  jp:
+    address: 0x09EC2110
+  eu:
+    address: 0x09F76D8C
+- name: gUnk_09EEAD20
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D95A]
+  us:
+    address: 0x09EEAD20
+  jp:
+    address: 0x09EC2114
+  eu:
+    address: 0x09F76D90
+- name: gUnk_09EEAD24
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D970]
+  us:
+    address: 0x09EEAD24
+  jp:
+    address: 0x09EC2118
+  eu:
+    address: 0x09F76D94
+- name: gUnk_09EEAD28
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D986]
+  us:
+    address: 0x09EEAD28
+  jp:
+    address: 0x09EC211C
+  eu:
+    address: 0x09F76D98
+- name: gUnk_09EEAD2C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D99C]
+  us:
+    address: 0x09EEAD2C
+  jp:
+    address: 0x09EC2120
+  eu:
+    address: 0x09F76D9C
+- name: gUnk_09EEAD30
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D9B2]
+  us:
+    address: 0x09EEAD30
+  jp:
+    address: 0x09EC2124
+  eu:
+    address: 0x09F76DA0
+- name: gUnk_09EEAD34
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D9C8]
+  us:
+    address: 0x09EEAD34
+  jp:
+    address: 0x09EC2128
+  eu:
+    address: 0x09F76DA4
+- name: gUnk_09EEAD38
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D9DE]
+  us:
+    address: 0x09EEAD38
+  jp:
+    address: 0x09EC212C
+  eu:
+    address: 0x09F76DA8
+- name: gUnk_09EEAD3C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909D9F4]
+  us:
+    address: 0x09EEAD3C
+  jp:
+    address: 0x09EC2130
+  eu:
+    address: 0x09F76DAC
+- name: gUnk_09EEAD40
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA0A]
+  us:
+    address: 0x09EEAD40
+  jp:
+    address: 0x09EC2134
+  eu:
+    address: 0x09F76DB0
+- name: gUnk_09EEAD44
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA20]
+  us:
+    address: 0x09EEAD44
+  jp:
+    address: 0x09EC2138
+  eu:
+    address: 0x09F76DB4
+- name: gUnk_09EEAD48
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA36]
+  us:
+    address: 0x09EEAD48
+  jp:
+    address: 0x09EC213C
+  eu:
+    address: 0x09F76DB8
+- name: gUnk_09EEAD4C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA4C]
+  us:
+    address: 0x09EEAD4C
+  jp:
+    address: 0x09EC2140
+  eu:
+    address: 0x09F76DBC
+- name: gUnk_09EEAD50
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA62]
+  us:
+    address: 0x09EEAD50
+  jp:
+    address: 0x09EC2144
+  eu:
+    address: 0x09F76DC0
+- name: gUnk_09EEAD54
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA78]
+  us:
+    address: 0x09EEAD54
+  jp:
+    address: 0x09EC2148
+  eu:
+    address: 0x09F76DC4
+- name: gUnk_09EEAD58
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DA8E]
+  us:
+    address: 0x09EEAD58
+  jp:
+    address: 0x09EC214C
+  eu:
+    address: 0x09F76DC8
+- name: gUnk_09EEAD5C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DAA4]
+  us:
+    address: 0x09EEAD5C
+  jp:
+    address: 0x09EC2150
+  eu:
+    address: 0x09F76DCC
+- name: gUnk_09EEAD60
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DABA]
+  us:
+    address: 0x09EEAD60
+  jp:
+    address: 0x09EC2154
+  eu:
+    address: 0x09F76DD0
+- name: gUnk_09EEAD64
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DAD0]
+  us:
+    address: 0x09EEAD64
+  jp:
+    address: 0x09EC2158
+  eu:
+    address: 0x09F76DD4
+- name: gUnk_09EEAD68
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DAE6]
+  us:
+    address: 0x09EEAD68
+  jp:
+    address: 0x09EC215C
+  eu:
+    address: 0x09F76DD8
+- name: gUnk_09EEAD6C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DAFC]
+  us:
+    address: 0x09EEAD6C
+  jp:
+    address: 0x09EC2160
+  eu:
+    address: 0x09F76DDC
+- name: gUnk_09EEAD70
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB12]
+  us:
+    address: 0x09EEAD70
+  jp:
+    address: 0x09EC2164
+  eu:
+    address: 0x09F76DE0
+- name: gUnk_09EEAD74
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB28]
+  us:
+    address: 0x09EEAD74
+  jp:
+    address: 0x09EC2168
+  eu:
+    address: 0x09F76DE4
+- name: gUnk_09EEAD78
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB3E]
+  us:
+    address: 0x09EEAD78
+  jp:
+    address: 0x09EC216C
+  eu:
+    address: 0x09F76DE8
+- name: gUnk_09EEAD7C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB54]
+  us:
+    address: 0x09EEAD7C
+  jp:
+    address: 0x09EC2170
+  eu:
+    address: 0x09F76DEC
+- name: gUnk_09EEAD80
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB6A]
+  us:
+    address: 0x09EEAD80
+  jp:
+    address: 0x09EC2174
+  eu:
+    address: 0x09F76DF0
+- name: gUnk_09EEAD84
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB80]
+  us:
+    address: 0x09EEAD84
+  jp:
+    address: 0x09EC2178
+  eu:
+    address: 0x09F76DF4
+- name: gUnk_09EEAD88
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DB96]
+  us:
+    address: 0x09EEAD88
+  jp:
+    address: 0x09EC217C
+  eu:
+    address: 0x09F76DF8
+- name: gUnk_09EEAD8C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DBAC]
+  us:
+    address: 0x09EEAD8C
+  jp:
+    address: 0x09EC2180
+  eu:
+    address: 0x09F76DFC
+- name: gUnk_09EEAD90
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DBC2]
+  us:
+    address: 0x09EEAD90
+  jp:
+    address: 0x09EC2184
+  eu:
+    address: 0x09F76E00
+- name: gUnk_09EEAD94
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DBD8]
+  us:
+    address: 0x09EEAD94
+  jp:
+    address: 0x09EC2188
+  eu:
+    address: 0x09F76E04
+- name: gUnk_09EEAD98
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DBEE]
+  us:
+    address: 0x09EEAD98
+  jp:
+    address: 0x09EC218C
+  eu:
+    address: 0x09F76E08
+- name: gUnk_09EEAD9C
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC04]
+  us:
+    address: 0x09EEAD9C
+  jp:
+    address: 0x09EC2190
+  eu:
+    address: 0x09F76E0C
+- name: gUnk_09EEADA0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC1A]
+  us:
+    address: 0x09EEADA0
+  jp:
+    address: 0x09EC2194
+  eu:
+    address: 0x09F76E10
+- name: gUnk_09EEADA4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC30]
+  us:
+    address: 0x09EEADA4
+  jp:
+    address: 0x09EC2198
+  eu:
+    address: 0x09F76E14
+- name: gUnk_09EEADA8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC46]
+  us:
+    address: 0x09EEADA8
+  jp:
+    address: 0x09EC219C
+  eu:
+    address: 0x09F76E18
+- name: gUnk_09EEADAC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC5C]
+  us:
+    address: 0x09EEADAC
+  jp:
+    address: 0x09EC21A0
+  eu:
+    address: 0x09F76E1C
+- name: gUnk_09EEADB0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC72]
+  us:
+    address: 0x09EEADB0
+  jp:
+    address: 0x09EC21A4
+  eu:
+    address: 0x09F76E20
+- name: gUnk_09EEADB4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC88]
+  us:
+    address: 0x09EEADB4
+  jp:
+    address: 0x09EC21A8
+  eu:
+    address: 0x09F76E24
+- name: gUnk_09EEADB8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DC9E]
+  us:
+    address: 0x09EEADB8
+  jp:
+    address: 0x09EC21AC
+  eu:
+    address: 0x09F76E28
+- name: gUnk_09EEADBC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DCB4]
+  us:
+    address: 0x09EEADBC
+  jp:
+    address: 0x09EC21B0
+  eu:
+    address: 0x09F76E2C
+- name: gUnk_09EEADC0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DCCA]
+  us:
+    address: 0x09EEADC0
+  jp:
+    address: 0x09EC21B4
+  eu:
+    address: 0x09F76E30
+- name: gUnk_09EEADC4
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DCE0]
+  us:
+    address: 0x09EEADC4
+  jp:
+    address: 0x09EC21B8
+  eu:
+    address: 0x09F76E34
+- name: gUnk_09EEADC8
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DCF6]
+  us:
+    address: 0x09EEADC8
+  jp:
+    address: 0x09EC21BC
+  eu:
+    address: 0x09F76E38
+- name: gUnk_09EEADCC
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DD0C]
+  us:
+    address: 0x09EEADCC
+  jp:
+    address: 0x09EC21C0
+  eu:
+    address: 0x09F76E3C
+- name: gUnk_09EEADD0
+  record: SpriteTable
+  scalar: true
+  items: [gUnk_0909DD22]
+  us:
+    address: 0x09EEADD0
+  jp:
+    address: 0x09EC21C4
+  eu:
+    address: 0x09F76E40
+- name: gUnk_09EEADD4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD38]
+  us:
+    address: 0x09EEADD4
+  jp:
+    address: 0x09EC21C8
+  eu:
+    address: 0x09F76E44
+- name: gUnk_09EEADD8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD42]
+  us:
+    address: 0x09EEADD8
+  jp:
+    address: 0x09EC21CC
+  eu:
+    address: 0x09F76E48
+- name: gUnk_09EEADDC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD4C]
+  us:
+    address: 0x09EEADDC
+  jp:
+    address: 0x09EC21D0
+  eu:
+    address: 0x09F76E4C
+- name: gUnk_09EEADE0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD56]
+  us:
+    address: 0x09EEADE0
+  jp:
+    address: 0x09EC21D4
+  eu:
+    address: 0x09F76E50
+- name: gUnk_09EEADE4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD60]
+  us:
+    address: 0x09EEADE4
+  jp:
+    address: 0x09EC21D8
+  eu:
+    address: 0x09F76E54
+- name: gUnk_09EEADE8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD6A]
+  us:
+    address: 0x09EEADE8
+  jp:
+    address: 0x09EC21DC
+  eu:
+    address: 0x09F76E58
+- name: gUnk_09EEADEC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD74]
+  us:
+    address: 0x09EEADEC
+  jp:
+    address: 0x09EC21E0
+  eu:
+    address: 0x09F76E5C
+- name: gUnk_09EEADF0
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD7E]
+  us:
+    address: 0x09EEADF0
+  jp:
+    address: 0x09EC21E4
+  eu:
+    address: 0x09F76E60
+- name: gUnk_09EEADF4
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD88]
+  us:
+    address: 0x09EEADF4
+  jp:
+    address: 0x09EC21E8
+  eu:
+    address: 0x09F76E64
+- name: gUnk_09EEADF8
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD92]
+  us:
+    address: 0x09EEADF8
+  jp:
+    address: 0x09EC21EC
+  eu:
+    address: 0x09F76E68
+- name: gUnk_09EEADFC
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DD9C]
+  us:
+    address: 0x09EEADFC
+  jp:
+    address: 0x09EC21F0
+  eu:
+    address: 0x09F76E6C
+- name: gUnk_09EEAE00
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDA6]
+  us:
+    address: 0x09EEAE00
+  jp:
+    address: 0x09EC21F4
+  eu:
+    address: 0x09F76E70
+- name: gUnk_09EEAE04
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDB0]
+  us:
+    address: 0x09EEAE04
+  jp:
+    address: 0x09EC21F8
+  eu:
+    address: 0x09F76E74
+- name: gUnk_09EEAE08
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDBA]
+  us:
+    address: 0x09EEAE08
+  jp:
+    address: 0x09EC21FC
+  eu:
+    address: 0x09F76E78
+- name: gUnk_09EEAE0C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDC4]
+  us:
+    address: 0x09EEAE0C
+  jp:
+    address: 0x09EC2200
+  eu:
+    address: 0x09F76E7C
+- name: gUnk_09EEAE10
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDCE]
+  us:
+    address: 0x09EEAE10
+  jp:
+    address: 0x09EC2204
+  eu:
+    address: 0x09F76E80
+- name: gUnk_09EEAE14
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDD8]
+  us:
+    address: 0x09EEAE14
+  jp:
+    address: 0x09EC2208
+  eu:
+    address: 0x09F76E84
+- name: gUnk_09EEAE18
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDE2]
+  us:
+    address: 0x09EEAE18
+  jp:
+    address: 0x09EC220C
+  eu:
+    address: 0x09F76E88
+- name: gUnk_09EEAE1C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDEC]
+  us:
+    address: 0x09EEAE1C
+  jp:
+    address: 0x09EC2210
+  eu:
+    address: 0x09F76E8C
+- name: gUnk_09EEAE20
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DDF6]
+  us:
+    address: 0x09EEAE20
+  jp:
+    address: 0x09EC2214
+  eu:
+    address: 0x09F76E90
+- name: gUnk_09EEAE24
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE00]
+  us:
+    address: 0x09EEAE24
+  jp:
+    address: 0x09EC2218
+  eu:
+    address: 0x09F76E94
+- name: gUnk_09EEAE28
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE0A]
+  us:
+    address: 0x09EEAE28
+  jp:
+    address: 0x09EC221C
+  eu:
+    address: 0x09F76E98
+- name: gUnk_09EEAE2C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE14]
+  us:
+    address: 0x09EEAE2C
+  jp:
+    address: 0x09EC2220
+  eu:
+    address: 0x09F76E9C
+- name: gUnk_09EEAE30
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE1E]
+  us:
+    address: 0x09EEAE30
+  jp:
+    address: 0x09EC2224
+  eu:
+    address: 0x09F76EA0
+- name: gUnk_09EEAE34
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE28]
+  us:
+    address: 0x09EEAE34
+  jp:
+    address: 0x09EC2228
+  eu:
+    address: 0x09F76EA4
+- name: gUnk_09EEAE38
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE32]
+  us:
+    address: 0x09EEAE38
+  jp:
+    address: 0x09EC222C
+  eu:
+    address: 0x09F76EA8
+- name: gUnk_09EEAE3C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE3C]
+  us:
+    address: 0x09EEAE3C
+  jp:
+    address: 0x09EC2230
+  eu:
+    address: 0x09F76EAC
+- name: gUnk_09EEAE40
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE46]
+  us:
+    address: 0x09EEAE40
+  jp:
+    address: 0x09EC2234
+  eu:
+    address: 0x09F76EB0
+- name: gUnk_09EEAE44
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE50]
+  us:
+    address: 0x09EEAE44
+  jp:
+    address: 0x09EC2238
+  eu:
+    address: 0x09F76EB4
+- name: gUnk_09EEAE48
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE5A]
+  us:
+    address: 0x09EEAE48
+  jp:
+    address: 0x09EC223C
+  eu:
+    address: 0x09F76EB8
+- name: gUnk_09EEAE4C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE64]
+  us:
+    address: 0x09EEAE4C
+  jp:
+    address: 0x09EC2240
+  eu:
+    address: 0x09F76EBC
+- name: gUnk_09EEAE50
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE6E]
+  us:
+    address: 0x09EEAE50
+  jp:
+    address: 0x09EC2244
+  eu:
+    address: 0x09F76EC0
+- name: gUnk_09EEAE54
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE78]
+  us:
+    address: 0x09EEAE54
+  jp:
+    address: 0x09EC2248
+  eu:
+    address: 0x09F76EC4
+- name: gUnk_09EEAE58
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE82]
+  us:
+    address: 0x09EEAE58
+  jp:
+    address: 0x09EC224C
+  eu:
+    address: 0x09F76EC8
+- name: gUnk_09EEAE5C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE8C]
+  us:
+    address: 0x09EEAE5C
+  jp:
+    address: 0x09EC2250
+  eu:
+    address: 0x09F76ECC
+- name: gUnk_09EEAE60
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DE96]
+  us:
+    address: 0x09EEAE60
+  jp:
+    address: 0x09EC2254
+  eu:
+    address: 0x09F76ED0
+- name: gUnk_09EEAE64
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DEA0]
+  us:
+    address: 0x09EEAE64
+  jp:
+    address: 0x09EC2258
+  eu:
+    address: 0x09F76ED4
+- name: gUnk_09EEAE68
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DEAA]
+  us:
+    address: 0x09EEAE68
+  jp:
+    address: 0x09EC225C
+  eu:
+    address: 0x09F76ED8
+- name: gUnk_09EEAE6C
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DEB4]
+  us:
+    address: 0x09EEAE6C
+  jp:
+    address: 0x09EC2260
+  eu:
+    address: 0x09F76EDC
+- name: gUnk_09EEAE70
+  record: AnimTable
+  scalar: true
+  items: [gUnk_0909DEBE]
+  us:
+    address: 0x09EEAE70
+  jp:
+    address: 0x09EC2264
+  eu:
+    address: 0x09F76EE0
+- name: gUnk_09EEAE74
+  record: SpriteTable
+  items: [gUnk_0909E108, gUnk_0909E118, gUnk_0909E122, gUnk_0909E12C, gUnk_0909E136, gUnk_0909E140, gUnk_0909E14A, gUnk_0909E154, gUnk_0909E15E, gUnk_0909E168, gUnk_0909E172, gUnk_0909E17C, gUnk_0909E186]
+  us:
+    address: 0x09EEAE74
+  jp:
+    address: 0x09EC2268
+  eu:
+    address: 0x09F76EE4
+- name: gUnk_09EEAEA8
+  record: AnimTable
+  items: [gUnk_0909E190, gUnk_0909E19A, gUnk_0909E1B0, gUnk_0909E1C6, gUnk_0909E1DC]
+  us:
+    address: 0x09EEAEA8
+  jp:
+    address: 0x09EC229C
+  eu:
+    address: 0x09F76F18
+- name: gUnk_09EEAEBC
+  record: SpriteTable
+  items: [gUnk_0909EEF4, gUnk_0909EF04, gUnk_0909EF0E, gUnk_0909EF18, gUnk_0909EF22, gUnk_0909EF2C, gUnk_0909EF36, gUnk_0909EF40, gUnk_0909EF4A, gUnk_0909EF54, gUnk_0909EF5E, gUnk_0909EF68, gUnk_0909EF72]
+  us:
+    address: 0x09EEAEBC
+  jp:
+    address: 0x09EC22B0
+  eu:
+    address: 0x09F76F2C
+- name: gUnk_09EEAEF0
+  record: AnimTable
+  items: [gUnk_0909EF7C, gUnk_0909EF86, gUnk_0909EF9C, gUnk_0909EFB2, gUnk_0909EFC8]
+  us:
+    address: 0x09EEAEF0
+  jp:
+    address: 0x09EC22E4
+  eu:
+    address: 0x09F76F60
+- name: gUnk_09EEAF04
+  record: SpriteTable
+  items: [gUnk_0909FCE0, gUnk_0909FCF0, gUnk_0909FCFA, gUnk_0909FD04, gUnk_0909FD0E, gUnk_0909FD18, gUnk_0909FD22, gUnk_0909FD2C, gUnk_0909FD36, gUnk_0909FD40, gUnk_0909FD4A, gUnk_0909FD54, gUnk_0909FD5E]
+  us:
+    address: 0x09EEAF04
+  jp:
+    address: 0x09EC22F8
+  eu:
+    address: 0x09F76F74
+- name: gUnk_09EEAF38
+  record: AnimTable
+  items: [gUnk_0909FD68, gUnk_0909FD72, gUnk_0909FD88, gUnk_0909FD9E, gUnk_0909FDB4]
+  us:
+    address: 0x09EEAF38
+  jp:
+    address: 0x09EC232C
+  eu:
+    address: 0x09F76FA8
 - name: gUnk_09EEAF4C
   record: SpriteTable
   items: [gUnk_090A0ACC, gUnk_090A0ADC, gUnk_090A0AE6, gUnk_090A0AF0, gUnk_090A0AFA, gUnk_090A0B04, gUnk_090A0B0E, gUnk_090A0B18, gUnk_090A0B22, gUnk_090A0B2C, gUnk_090A0B36, gUnk_090A0B40, gUnk_090A0B4A, gUnk_090A0B54, gUnk_090A0B5E, gUnk_090A0B68, gUnk_090A0B72, gUnk_090A0B7C, gUnk_090A0B86, gUnk_090A0B90, gUnk_090A0B9A, gUnk_090A0BA4, gUnk_090A0BAE, gUnk_090A0BB8, gUnk_090A0BC2]
