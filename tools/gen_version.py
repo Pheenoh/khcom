@@ -1893,7 +1893,6 @@ TARGET_ONLY_SYMBOLS = {
         "gMoogleAssetEu_099B23E8": 0x99b23e8,
         "gMoogleAssetEu_099B2668": 0x99b2668,
         "gBossMapBlockEu_08124944": 0x8124944,
-        "gUnkEu_090D1FB0": 0x090D1FB0,
         "gUnkEu_090D1DA5": 0x090D1DA5,
         "gUnk_08B1ED76": 0x08b4a686,
         "gUnk_08B1EF0C": 0x08b4a81c,
@@ -2171,6 +2170,7 @@ TARGET_DATA_SIZE = {
         ("card_level_up.c", ".rodata"): 0x9c,
         ("card_deckmenu2_2.c", ".rodata"): 0x56,
         ("card_mode_deck.c", ".rodata"): 0xa,
+        ("card_riku_tutorial.c", ".rodata"): 0x57,
     },
     "jp": {
         ("sroll_b_secn.c", ".rodata"): 0x192,

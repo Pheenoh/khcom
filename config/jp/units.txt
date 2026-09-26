@@ -187,7 +187,6 @@ card_mode_deck.c
 card_mode_deck_tables.s
 card_description_text.s
 card_riku_tutorial.c
-card_riku_tutorial_tables.s
 card_print.c
 sprites_number_plus.c
 sprites_card_pictures.c

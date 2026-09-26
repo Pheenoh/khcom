@@ -2045,9 +2045,13 @@ Mode gModeRikuDeckTutorial = {
     Mode_riku_deckTutorial_1,
     func_080ABA70,
 };
+
+const UnkStruct_080ABA80 gUnk_09045188 = {
+    { -1, -1, -1, -1, -1, -1 },
+};
 #ifdef VERSION_EU
 Mode gUnkEu_09F74600 = {
-    gUnkEu_090D1FB0,
+    "Mode_textcheck",
     (ModeInitFunc)eu_080AB9FC,
     eu_080ABA38,
     eu_080ABA7C,
