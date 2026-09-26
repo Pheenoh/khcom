@@ -93,7 +93,11 @@ void mode_sio_dbg_flg_0(s32 arg) {
     zero = 0;
 #endif
     func_0805FCB0(8, 0x24, 2, gUnk_0961A9C8);
-    gUnk_02034CF5 = sizeof(gUnk_09EF34F0) / sizeof(gUnk_09EF34F0[0]);
+#ifdef VERSION_EU
+    gUnk_02034CF5 = 10;
+#else
+    gUnk_02034CF5 = 5;
+#endif
     func_0805FCB0(0x0C, 0x12, 2, gUnk_0961A9CC);
 
 #ifdef VERSION_EU
