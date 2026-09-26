@@ -1,5 +1,4 @@
 #include "card_lookup_data.h"
-#include "card_sprite_data.h"
 #ifndef GUARD_MAP_CARD_ASSETS_H
 #define GUARD_MAP_CARD_ASSETS_H
 

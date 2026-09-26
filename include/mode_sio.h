@@ -1,7 +1,6 @@
 #include "mode_deck.h"
 #include "card_def_data.h"
 #include "card_lookup_data.h"
-#include "card_sprite_data.h"
 #include "registration_data.h"
 #ifndef GUARD_MODE_SIO_H
 #define GUARD_MODE_SIO_H

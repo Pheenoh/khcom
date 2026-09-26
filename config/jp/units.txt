@@ -207,7 +207,6 @@ sprites_evt_4.c
 sprites_map_1.c
 sprites_worldselect.c
 sprites_map_2.c
-card_sprite_data.c
 sprites_number_plus_frames.s
 sprites_card_pictures_frames.s
 sprites_premire_chance_frames.s
